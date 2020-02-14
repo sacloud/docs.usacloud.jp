@@ -40,6 +40,12 @@ data "sakuracloud_container_registry" "foobar" {
 * `subdomain_label` - コンテナレジストリにアクセスするためのFQDNのラベル  
 `subdomain_label` + `.sakuracr.jp`がFQDNとなる  
 * `tags` - タグ
+* `user` - ユーザー情報。詳細は[userブロック](#user)を参照
+* `virtual_domain` - 独自ドメイン(FQDN)
 
+#### userブロック
+
+* `name` - ユーザー名
+* `permission` - ユーザーの権限。次のいずれかとなる [`all`/`readwrite`/`readonly`]
 
 

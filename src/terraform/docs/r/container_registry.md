@@ -5,23 +5,27 @@
 ```hcl
 variable users {
   type = list(object({
-    name     = string
-    password = string
+    name       = string
+    password   = string
+    permission = string
   }))
   default = [
     {
-      name     = "user1"
-      password = "password1"
+      name       = "user1"
+      password   = "password1"
+      permission = "all"
     },
     {
-      name     = "user2"
-      password = "password2"
+      name       = "user2"
+      password   = "password2"
+      permission = "readwrite"
     }
   ]
 }
 
 resource "sakuracloud_container_registry" "foobar" {
   name            = "foobar"
+  virtual_domain  = "your-domain.example.com"
   subdomain_label = "your-subdomain-label"
   access_level    = "readwrite" # this must be one of ["readwrite"/"readonly"/"none"]
 
@@ -31,8 +35,9 @@ resource "sakuracloud_container_registry" "foobar" {
   dynamic user {
     for_each = var.users
     content {
-      name     = user.value.name
-      password = user.value.password
+      name       = user.value.name
+      password   = user.value.password
+      permission = user.value.permission
     }
   }
 }
@@ -44,11 +49,14 @@ resource "sakuracloud_container_registry" "foobar" {
 * `access_level` - (Required) アクセスレベル / この値は次のいずれかを指定 [`readwrite`/`readonly`/`none`]
 * `subdomain_label` - (Required) サブドメインラベル /  `1`-`64`文字で指定 / この値を変更するとリソースの再作成が行われる
 * `user` - (Optional) ユーザー設定のリスト。詳細は[userブロック](#user)を参照
+* `virtual_domain` - (Optional) 独自ドメイン(FQDN)
+
 
 ##### userブロック
 
 * `name` - (Required) ユーザー名
 * `password` - (Required) パスワード
+* `permission` - (Required) ユーザーの権限 / 次のいずれかを指定 [`all`/`readwrite`/`readonly`]
 
 #### Common Arguments
 

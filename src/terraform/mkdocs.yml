@@ -15,6 +15,7 @@ pages:
   - ドキュメント:
     - アップグレードガイド:
       - v2.0での変更点: guides/upgrade_to_v2.0.0.md
+      - v2.1での変更点: guides/upgrade_to_v2.1.0.md
   - 設定リファレンス:
     - プロバイダ設定: provider.md
     - プロバイダデータソース:
