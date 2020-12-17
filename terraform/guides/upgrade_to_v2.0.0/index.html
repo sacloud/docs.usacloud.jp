@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="@yamamoto-febc">
+  <link rel="canonical" href="https://docs.usacloud.jp/terraform/guides/upgrade_to_v2.0.0/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>v2.0での変更点 - Terraform for さくらのクラウド(v2)</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "v2.0\u3067\u306e\u5909\u66f4\u70b9";
+    var mkdocs_page_input_path = "guides/upgrade_to_v2.0.0.md";
+    var mkdocs_page_url = "/terraform/guides/upgrade_to_v2.0.0/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63739336-5', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Terraform for さくらのクラウド(v2)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">ホーム</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">ドキュメント</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">アップグレードガイド</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">v2.0での変更点</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_1">目次</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upgrade_to_v2.1.0/">v2.1での変更点</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upgrade_to_v2.2.0/">v2.2での変更点</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upgrade_to_v2.3.0/">v2.3での変更点</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upgrade_to_v2.4.0/">v2.4での変更点</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upgrade_to_v2.5.0/">v2.5での変更点</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">設定リファレンス</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../provider/">プロバイダ設定</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">プロバイダデータソース</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../d/zone/">ゾーン</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">コンピュート</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/private_host/">専有ホスト</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/server/">サーバ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/server_vnc_info/">VNC接続情報</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/private_host/">専有ホスト</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/server/">サーバ</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">ストレージ</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/archive/">アーカイブ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/cdrom/">CD-ROM</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/disk/">ディスク</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/archive/">アーカイブ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/archive_share/">アーカイブ共有</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/cdrom/">CD-ROM</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/disk/">ディスク</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">ネットワーク</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/bridge/">ブリッジ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/internet/">スイッチ+ルータ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/local_router/">ローカルルータ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/packet_filter/">パケットフィルタ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/subnet/">サブネット</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/switch/">スイッチ</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/bridge/">ブリッジ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/internet/">スイッチ+ルータ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/ipv4_ptr/">IPv4逆引き</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/local_router/">ローカルルータ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/packet_filter/">パケットフィルタ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/packet_filter_rules/">パケットフィルタ(ルール)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/subnet/">サブネット</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/switch/">スイッチ</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">アプライアンス</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/database/">データベース</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/load_balancer/">ロードバランサ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/nfs/">NFS</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/vpc_router/">VPCルータ</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/auto_backup/">自動バックアップ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/database/">データベース</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/database_read_replica/">データベース(リードレプリカ)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/load_balancer/">ロードバランサ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/nfs/">NFS</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/vpc_router/">VPCルータ</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">グローバル</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/gslb/">GSLB</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/proxylb/">エンハンスドロードバランサ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/simple_monitor/">シンプル監視</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/dns_record/">DNSレコード</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/gslb/">GSLB</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/proxylb/">エンハンスドロードバランサ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/proxylb_acme/">エンハンスドロードバランサ(ACME設定)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/simple_monitor/">シンプル監視</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">セキュアモバイル</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/mobile_gateway/">モバイルゲートウェイ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/sim/">SIM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">SMS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/esme/">2要素認証SMS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/esme/">2要素認証SMS</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Lab</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/container_registry/">コンテナレジストリ</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/container_registry/">コンテナレジストリ</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">その他</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/icon/">アイコン</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/note/">スタートアップスクリプト</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/ssh_key/">SSH公開鍵</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/icon/">アイコン</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/note/">スタートアップスクリプト</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/ssh_key/">SSH公開鍵</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/ssh_key_gen/">SSH公開鍵生成</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">オブジェクトストレージ</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/bucket_object/">バケットオブジェクト</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/bucket_object/">バケットオブジェクト</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Terraform for さくらのクラウド(v2)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>アップグレードガイド &raquo;</li>
+        
+      
+        
+          <li>ドキュメント &raquo;</li>
+        
+      
+    
+    <li>v2.0での変更点</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="v200">アップグレードガイド(v2.0.0)</h1>
+<p>terraform-provider-sakuracloud v1系をご利用中の方向けのアップグレードガイドです。</p>
+<h2 id="_1">目次</h2>
+<ul>
+<li><a href="#overview">概要</a></li>
+<li><a href="#generalDiff">追加/変更/削除されたリソース</a><ul>
+<li><a href="#dataSourcesDiff">データソース</a></li>
+<li><a href="#resourcesDiff">リソース</a></li>
+</ul>
+</li>
+<li><a href="#diffDetail">各リソースの変更点</a><ul>
+<li><a href="#diffProvider">プロバイダー</a></li>
+<li><a href="#diffDetailDataSource">データソースの変更点</a><ul>
+<li><a href="#dataSourceBridge">ブリッジ: <code>sakuracloud_bridge</code></a></li>
+<li><a href="#dataSourceDatabase">データベース: <code>sakuracloud_database</code></a></li>
+<li><a href="#dataSourceDisk">ディスク: <code>sakuracloud_disk</code></a></li>
+<li><a href="#dataSourceDNS">DNS: <code>sakuracloud_dns</code></a></li>
+<li><a href="#dataSourceGSLB">GSLB: <code>sakuracloud_gslb</code></a></li>
+<li><a href="#dataSourceIcon">アイコン: <code>sakuracloud_icon</code></a></li>
+<li><a href="#dataSourceLocaBalancer">ロードバランサ: <code>sakuracloud_load_balancer</code></a></li>
+<li><a href="#dataSourceNFS">NFS: <code>sakuracloud_nfs</code></a></li>
+<li><a href="#dataSourcePacketFilter">パケットフィルタ : <code>sakuracloud_packet_filter</code></a></li>
+<li><a href="#dataSourcePrivateHost">専有ホスト: <code>sakuracloud_private_host</code></a></li>
+<li><a href="#dataSourceProxyLB">エンハンスドロードバランサ: <code>sakuracloud_proxylb</code></a></li>
+<li><a href="#dataSourceServer">サーバ: <code>sakuracloud_server</code></a></li>
+<li><a href="#dataSourceSimpleMonitor">シンプル監視: <code>sakuracloud_simple_monitor</code></a></li>
+<li><a href="#dataSourceSubnet">サブネット: <code>sakuracloud_subnet</code></a></li>
+<li><a href="#dataSourceVPCRouter">VPCルータ: <code>sakuracloud_vpc_router</code></a></li>
+<li><a href="#dataSourceWebAccel">ウェブアクセラレータ: <code>sakuracloud_webaccel</code></a></li>
+</ul>
+</li>
+<li><a href="#diffDetailResource">リソースの変更点</a><ul>
+<li><a href="#resourceBridge">ブリッジ: <code>sakuracloud_bridge</code></a></li>
+<li><a href="#resourceDatabase">データベース: <code>sakuracloud_database</code></a></li>
+<li><a href="#resourceDatabaseReadReplica">データベース(リードレプリカ): <code>sakuracloud_database_read_replica</code></a></li>
+<li><a href="#resourceDisk">ディスク: <code>sakuracloud_disk</code></a></li>
+<li><a href="#resourceDNS">DNS: <code>sakuracloud_dns</code></a></li>
+<li><a href="#resourceGSLB">GSLB: <code>sakuracloud_gslb</code></a></li>
+<li><a href="#resourceIcon">アイコン: <code>sakuracloud_icon</code></a></li>
+<li><a href="#resourceInternet">スイッチ+ルータ: <code>sakuracloud_internet</code></a></li>
+<li><a href="#resourceIPv4PTR">IPv4逆引きレコード: <code>sakuracloud_ipv4_ptr</code></a></li>
+<li><a href="#resourceLoadBalancer">ロードバランサ: <code>sakuracloud_loadbalancer</code></a></li>
+<li><a href="#resourceMobileGateway">モバイルゲートウェイ : <code>sakuracloud_mobile_gateway</code></a></li>
+<li><a href="#resourceNFS">NFS: <code>sakuracloud_nfs</code></a></li>
+<li><a href="#resourcePacketFilter">パケットフィルタ : <code>sakuracloud_packet_filter</code></a></li>
+<li><a href="#resourcePacketFilterRule">パケットフィルタ (ルール): <code>sakuracloud_packet_filter_rule</code></a></li>
+<li><a href="#resourcePrivateHost">専有ホスト: <code>sakuracloud_private_host</code></a></li>
+<li><a href="#resourceProxyLB">エンハンスドロードバランサ: <code>sakuracloud_proxylb</code></a></li>
+<li><a href="#resourceProxyLBACME">エンハンスドロードバランサ(ACME): <code>sakuracloud_proxylb_acme</code></a></li>
+<li><a href="#resourceServer">サーバ: <code>sakuracloud_server</code></a></li>
+<li><a href="#resourceSIM">SIM: <code>sakuracloud_sim</code></a></li>
+<li><a href="#resourceSimpleMonitor">シンプル監視: <code>sakuracloud_simple_monitor</code></a></li>
+<li><a href="#resourceSubnet">サブネット: <code>sakuracloud_subnet</code></a></li>
+<li><a href="#resourceSwitch">スイッチ: <code>sakuracloud_switch</code></a></li>
+<li><a href="#resourceVPCRouter">VPCルータ: <code>sakuracloud_vpc_router</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="overview">概要</h1>
+<p>v1からv2へ移行する際のStateのマイグレーションはサポートされていません。<br />
+このため、既存のv1を利用して作成されたリソースをv2に移行する場合は、tfファイルの変更だけでなく、手作業でのtfstateファイルの修正が必要になります。</p>
+<p>当面v1のメンテナンスは継続されるため、リソースの再作成が許容できないケースなどではv1を継続利用することを推奨します。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>v1は今後バグ修正が中心となり、新規リソースの追加などはv2に対してのみ行われます。<br />
+さくらのクラウドの最新機能を利用したい場合はv2への移行をご検討ください。</p>
+</div>
+<h1 id="generalDiff">追加/変更/削除されたリソース</h1>
+<h2 id="dataSourcesDiff">データソース</h2>
+<h3 id="_2">新旧対応表</h3>
+<table>
+<thead>
+<tr>
+<th>キー</th>
+<th>データソース名</th>
+<th>v1</th>
+<th>v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sakuracloud_container_registry</code></td>
+<td>コンテナレジストリ</td>
+<td></td>
+<td>○</td>
+</tr>
+<tr>
+<td><code>sakuracloud_local_router</code></td>
+<td>ローカルルータ</td>
+<td></td>
+<td>○</td>
+</tr>
+<tr>
+<td><code>sakuracloud_server_vnc_info</code></td>
+<td>サーバ(VNC接続情報)</td>
+<td></td>
+<td>○</td>
+</tr>
+<tr>
+<td><code>sakuracloud_webaccel</code></td>
+<td>ウェブアクセラレータ</td>
+<td>○</td>
+<td>(近日対応予定)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ウェブアクセラレータ向けデータソースはv2で近日実装予定です</p>
+</div>
+<h3 id="dataSourceDiff">データソースの全体的な変更点</h3>
+<h3 id="_3">検索条件の記載方法</h3>
+<p>v1では以下のように<code>name_selectors</code>や<code>tag_selectors</code>、<code>os_type</code>などのデータソースの検索条件をトップレベルに記載していましたが、
+v2では<code>filter</code>配下に記載する形へ変更されました。</p>
+<h4 id="v1">v1でのデータソース:</h4>
+<pre><code class="language-hcl"># v1でのデータソース
+data &quot;sakuracloud_archive&quot; &quot;foobar&quot; {
+  name_selectors = [&quot;Ubuntu&quot;, &quot;Server&quot;, &quot;18&quot;]
+}
+</code></pre>
+<h4 id="v2">v2でのデータソース:</h4>
+<pre><code class="language-hcl"># v1でのデータソース
+data &quot;sakuracloud_archive&quot; &quot;foobar&quot; {
+  filter {
+    names = [&quot;Ubuntu&quot;, &quot;Server&quot;, &quot;18&quot;]
+  }
+}
+</code></pre>
+<p>また、v2ではIDを検索条件として指定可能になりました。</p>
+<pre><code class="language-hcl"># v1でのデータソース
+data &quot;sakuracloud_archive&quot; &quot;foobar&quot; {
+  filter {
+    id = &quot;123456789012&quot;
+  }
+}
+</code></pre>
+<h2 id="resourcesDiff">リソース</h2>
+<h3 id="_4">新旧対応表</h3>
+<table>
+<thead>
+<tr>
+<th>キー</th>
+<th>データソース名</th>
+<th>v1</th>
+<th>v2</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sakuracloud_container_registry</code></td>
+<td>コンテナレジストリ</td>
+<td></td>
+<td>○</td>
+<td>v2から導入</td>
+</tr>
+<tr>
+<td><code>sakuracloud_gslb_server</code></td>
+<td>GSLB(実サーバ)</td>
+<td>○</td>
+<td></td>
+<td>GSLBリソースと統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_loadbalancer_server</code></td>
+<td>ロードバランサ(実サーバ)</td>
+<td>○</td>
+<td></td>
+<td>ロードバランサリソースと統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_loadbalancer_vip</code></td>
+<td>ロードバランサ(VIP)</td>
+<td>○</td>
+<td></td>
+<td>ロードバランサリソースと統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_local_router</code></td>
+<td>ローカルルータ</td>
+<td></td>
+<td>○</td>
+<td>v2から導入</td>
+</tr>
+<tr>
+<td><code>sakuracloud_mobile_gateway_sim_route</code></td>
+<td>モバイルゲートウェイ (SIMルート)</td>
+<td>○</td>
+<td></td>
+<td>モバイルゲートウェイ リソースと統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_mobile_gateway_static_route</code></td>
+<td>モバイルゲートウェイ (スタティックルート)</td>
+<td>○</td>
+<td></td>
+<td>モバイルゲートウェイ リソースと統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_packet_filter_rule</code></td>
+<td>パケットフィルタ (ルール)</td>
+<td>○</td>
+<td></td>
+<td>単一のルールを表すリソース。v2で廃止</td>
+</tr>
+<tr>
+<td><code>sakuracloud_packet_filter_rules</code></td>
+<td>パケットフィルタ (ルール)</td>
+<td></td>
+<td>○</td>
+<td>ルール全体を表すリソース。v2から導入</td>
+</tr>
+<tr>
+<td><code>sakuracloud_server_connector</code></td>
+<td>サーバコネクタ</td>
+<td>○</td>
+<td></td>
+<td>廃止</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_dhcp_server</code></td>
+<td>VPCルータ(DHCPサーバ)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_dhcp_static_mapping</code></td>
+<td>VPCルータ(DHCPスタティックマッピング)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_firewall</code></td>
+<td>VPCルータ(ファイアウォール)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_interface</code></td>
+<td>VPCルータ(インターフェース)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_l2tp</code></td>
+<td>VPCルータ(L2TP/IPsec)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_port_forwarding</code></td>
+<td>VPCルータ(ポートフォワーディング)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_pptp</code></td>
+<td>VPCルータ(PPTP)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_site_to_site_vpn</code></td>
+<td>VPCルータ(サイト間VPN)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_static_nat</code></td>
+<td>VPCルータ(スタティックNAT)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_static_route</code></td>
+<td>VPCルータ(スタティックルート)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_vpc_router_user</code></td>
+<td>VPCルータ(リモートアクセスユーザー)</td>
+<td>○</td>
+<td></td>
+<td>VPCルータリソースに統合</td>
+</tr>
+<tr>
+<td><code>sakuracloud_webaccel_certificate</code></td>
+<td>ウェブアクセラレータ(証明書)</td>
+<td>○</td>
+<td></td>
+<td>(近日実装予定)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resourceDiff">リソースの全体的な変更点</h3>
+<h4 id="_5">命名規則の変更</h4>
+<p>ブロックで記載する要素(例: パケットフィルタのルール)の名称を単数形に統一</p>
+<ul>
+<li>v1: <code>expressions</code> =&gt;  v2: <code>expression</code></li>
+</ul>
+<p>詳細は各リソースの変更点をご確認ください。</p>
+<h4 id="_6">子リソースの廃止</h4>
+<p>VPCルータやロードバランサなどの子リソースを持つリソースについて、親リソースに統合されました。<br />
+例: ロードバランサの実サーバ(<code>sakuracloud_load_balancer_server</code>など)</p>
+<p>動的に子要素を増減させたいケースではTerraform v0.12で導入された<a href="https://www.terraform.io/docs/configuration/expressions.html#dynamic-blocks">Dynamicブロック</a>を利用してください。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DNSなどの一部のリソースでは子リソースが残ったままとなっています。これらのリソースでは親子でライフサイクルの異なるケースが一般的にあり得るためです。<br />
+(例: DNSのゾーンは複数プロジェクトで共通、各レコードは各プロジェクトごとに管理、というケースなど)<br />
+現在親子リソースになっていないリソースを親子に分割したいユースケースがある場合は<a href="https://github.com/sacloud/terraform-provider-sakuracloud">GitHub</a>にIssueを投稿して要望を出してください。<br />
+ユースケースによっては実装する可能性があります。</p>
+</div>
+<h4 id="timeouts">Timeoutsブロックのサポート</h4>
+<p>各リソースで<a href="https://www.terraform.io/docs/configuration/resources.html#operation-timeouts">timeoutsブロック</a>を指定可能になりました。</p>
+<h4 id="_7">ゾーンのスキーマレベルでのバリデーションの廃止</h4>
+<p>これまでは各リソースのスキーマで静的に利用可能なゾーンを定義していましたが、v2ではプロバイダーブロックで<code>zones</code>を指定することにより動的に利用可能なゾーンを指定可能になりました。<br />
+この影響で、入力値の検証が実行時となり<code>terraform validate</code>などでエラーを返さなくなりました。</p>
+<h4 id="_8">タグなどでのデータ型変更</h4>
+<p>タグなどのいくつかの項目データ型が<code>schema.TypeList</code>から<code>schema.TypeSet</code>に変更されました。<br />
+これまではリスト内の値を参照する際に<code>sakuracloud_server.tags[0]</code>のようにインデックスを指定して参照していましたが、v2では<code>sakuracloud_server.tags[NNNN(ハッシュ値)]</code>となりました。<br />
+tfファイルでの値の定義方法については従来通り<code>tags = ["tag1", "tag2"]</code>という形式が利用可能です。  </p>
+<p>変更された項目は以下の通りです。</p>
+<ul>
+<li>各リソースの<code>tags</code></li>
+<li><code>sakuracloud_auto_backup.weekdays</code></li>
+<li><code>sakuracloud_database.backup.weekdays</code></li>
+<li><code>sakuracloud_sim.carrier</code></li>
+<li><code>sakuracloud_vpc_router.site_to_site_vpn.routes</code></li>
+<li><code>sakuracloud_vpc_router.site_to_site_vpn.local_prefix</code></li>
+</ul>
+<h1 id="diffDetail">各リソースの変更点</h1>
+<h2 id="diffProvider"><a href="https://docs.usacloud.jp/terraform/provider/">プロバイダー</a></h2>
+<h4 id="_9">プロファイル機能のサポート</h4>
+<p>v2から<a href="https://github.com/sacloud/usacloud">Usacloud</a>互換のファイルベースの共有クレデンシャル(プロファイル)がサポートされました。<br />
+詳細は<a href="https://docs.usacloud.jp/terraform/provider/">プロバイダーのドキュメント</a>を参照してください。</p>
+<h4 id="_10">項目変更</h4>
+<ul>
+<li>
+<p><code>retry_interval</code>(廃止/変更): さくらのクラウドAPIがレスポンスコード423(Locked)、または503(ServiceUnavailable)を返した場合にリトライする際の待ち時間秒数。<br />
+v2ではExponential backoffアルゴリズムが導入され、最小待ち時間秒数:<code>retry_wait_min</code>と最大待ち時間秒数<code>retry_wait_max</code>の2つの項目で設定するようになりました。   </p>
+</li>
+<li>
+<p><code>timeout</code>(廃止): 起動/シャットダウン待ちのタイムアウト設定が廃止されました。<br />
+v2では代わりに各リソースで<a href="https://www.terraform.io/docs/configuration/resources.html#operation-timeouts">timeoutsブロック</a>が指定可能となりました。<br />
+各リソース/各操作のデフォルトタイムアウトについては各リソースのドキュメントを参照してください。</p>
+</li>
+<li>
+<p><code>zones</code>(追加): 利用可能なゾーンをリストで指定可能になりました。<br />
+例えば石狩第1と石狩第2のみを利用したい場合、<code>zones = ["is1a", "is1b"]</code>と指定します。  </p>
+</li>
+<li>
+<p><code>fake_mode</code>/<code>fake_store_path</code>(追加): 開発者向けにさくらのクラウドAPI呼び出しをシミュレーションするfakeモードという機能が追加されました。  </p>
+</li>
+</ul>
+<hr />
+<h2 id="diffDetailDataSource">データソースの変更点</h2>
+<h3 id="dataSourceBridge"><a href="https://docs.usacloud.jp/terraform/d/bridge">ブリッジ: <code>sakuracloud_bridge</code></a></h3>
+<ul>
+<li><code>switch_ids</code>(廃止) </li>
+</ul>
+<hr />
+<h3 id="dataSourceDatabase"><a href="https://docs.usacloud.jp/terraform/d/database">データベース: <code>sakuracloud_database</code></a></h3>
+<ul>
+<li><code>backup</code>(追加)<ul>
+<li><code>backup_time</code>(名称変更) =&gt; <code>time</code></li>
+<li><code>backup_weekdays</code>(名称変更) =&gt; <code>weekdays</code></li>
+</ul>
+</li>
+<li><code>database_type</code>(追加) =&gt; データベース種別(MariaDB or PostgreSQL)</li>
+<li><code>user_name</code>(名称変更) =&gt; <code>username</code></li>
+<li><code>user_password</code>(名称変更) =&gt; <code>password</code></li>
+<li><code>network_interface</code>(追加)<ul>
+<li><code>allow_networks</code>(名称変更) =&gt; <code>source_ranges</code>  </li>
+<li><code>default_route</code>(名称変更) =&gt; <code>gateway</code></li>
+<li><code>ipaddress1</code>(名称変更) =&gt; <code>ip_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+<li><code>port</code>(移動)</li>
+<li><code>switch_id</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="dataSourceDisk"><a href="https://docs.usacloud.jp/terraform/d/disk">ディスク: <code>sakuracloud_disk</code></a></h3>
+<ul>
+<li><code>source_archive_id</code>(追加)</li>
+<li><code>source_disk_id</code>(追加)</li>
+</ul>
+<hr />
+<h3 id="dataSourceDNS"><a href="https://docs.usacloud.jp/terraform/d/dns">DNS: <code>sakuracloud_dns</code></a></h3>
+<ul>
+<li><code>record</code>(追加) =&gt; レコード</li>
+</ul>
+<hr />
+<h3 id="dataSourceGSLB"><a href="https://docs.usacloud.jp/terraform/d/gslb">GSLB: <code>sakuracloud_gslb</code></a></h3>
+<ul>
+<li><code>server</code>(追加) =&gt; 実サーバ</li>
+</ul>
+<hr />
+<h3 id="dataSourceIcon"><a href="https://docs.usacloud.jp/terraform/d/icon">アイコン: <code>sakuracloud_icon</code></a></h3>
+<ul>
+<li><code>body</code>(廃止) </li>
+</ul>
+<hr />
+<h3 id="dataSourceInternet"><a href="https://docs.usacloud.jp/terraform/d/internet">スイッチ+ルータ: <code>sakuracloud_internet</code></a></h3>
+<ul>
+<li><code>ipaddresses</code>(名称変更) =&gt; <code>ip_addresses</code></li>
+<li><code>ipv6_nw_address</code>(名称変更) =&gt; <code>ipv6_network_address</code></li>
+<li><code>max_ipaddress</code>(名称変更) =&gt; <code>max_ip_address</code></li>
+<li><code>min_ipaddress</code>(名称変更) =&gt; <code>min_ip_address</code></li>
+<li><code>nw_address</code>(名称変更) =&gt; <code>network_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+</ul>
+<hr />
+<h3 id="dataSourceLocaBalancer"><a href="https://docs.usacloud.jp/terraform/d/load_balancer">ロードバランサ: <code>sakuracloud_load_balancer</code></a></h3>
+<ul>
+<li><code>vip</code>(追加) =&gt; 仮想IPアドレス(配下の実サーバを含む)</li>
+<li><code>is_double</code>(廃止)</li>
+<li><code>high_availability</code>(廃止)</li>
+<li><code>network_interface</code>(追加)<ul>
+<li><code>default_route</code>(名称変更) =&gt; <code>gateway</code></li>
+<li><code>ipaddress1</code>/<code>ipaddress2</code>(統合) =&gt; <code>ip_addresses</code>(リスト)</li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+<li><code>switch_id</code>(移動)</li>
+<li><code>vrid</code>(移動)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="dataSourceNFS"><a href="https://docs.usacloud.jp/terraform/d/nfs">NFS: <code>sakuracloud_nfs</code></a></h3>
+<ul>
+<li><code>network_interface</code>(追加)<ul>
+<li><code>gateway</code>(移動)</li>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+<li><code>switch_id</code>(移動)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="dataSourcePacketFilter"><a href="https://docs.usacloud.jp/terraform/d/packet_filter">パケットフィルタ : <code>sakuracloud_packet_filter</code></a></h3>
+<ul>
+<li><code>expressions</code>(名称変更) =&gt; <code>expression</code><ul>
+<li><code>dest_port</code>(名称変更) =&gt; <code>destination_port</code></li>
+<li><code>source_nw</code>(名称変更) =&gt; <code>source_network</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="dataSourcePrivateHost"><a href="https://docs.usacloud.jp/terraform/d/private_host">専有ホスト: <code>sakuracloud_private_host</code></a></h3>
+<ul>
+<li><code>class</code>(追加) =&gt; 種別(標準/Windows)</li>
+<li><code>icon_id</code>(追加) =&gt; アイコンID</li>
+</ul>
+<hr />
+<h3 id="dataSourceProxyLB"><a href="https://docs.usacloud.jp/terraform/d/proxylb">エンハンスドロードバランサ: <code>sakuracloud_proxylb</code></a></h3>
+<ul>
+<li><code>bind_ports</code>(名称変更) =&gt; <code>bind_port</code></li>
+<li><code>certificate</code><ul>
+<li><code>additional_certificates</code>(名称変更) =&gt; <code>additional_certificate</code></li>
+</ul>
+</li>
+<li><code>region</code>(追加) =&gt; 設置リージョン</li>
+<li><code>rule</code> =&gt; 振り分けルール</li>
+<li><code>servers</code>(名称変更) =&gt; <code>server</code><ul>
+<li><code>group</code>(追加) =&gt; 振り分け先グループ名</li>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+</ul>
+</li>
+<li><code>sorry_server</code><ul>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="dataSourceServer"><a href="https://docs.usacloud.jp/terraform/d/server">サーバ: <code>sakuracloud_server</code></a></h3>
+<ul>
+<li><code>display_ipaddress</code>/<code>additional_display_ipaddresses</code>(移動/名称変更) =&gt; <code>network_interface</code>ブロック内へ移動、<code>user_ip_address</code>へ名称変更</li>
+<li><code>nic</code>/<code>additional_nics</code>(統合/変更) =&gt; <code>network_interface</code>に統合</li>
+<li><code>gateway</code>(挙動変更) =&gt; <code>gateway</code>(読み取り専用)</li>
+<li><code>hostname</code>(挙動変更) =&gt; <code>hostname</code>(読み取り専用)</li>
+<li><code>ipaddress</code>(名称変更/挙動変更) =&gt; <code>ip_address</code>(読み取り専用)</li>
+<li><code>macaddresses</code>(名称変更/移動) =&gt; <code>network_interface</code>ブロック内へ移動、<code>mac_address</code>へ名称変更</li>
+<li><code>nw_address</code>(名称変更) =&gt; <code>network_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code>(読み取り専用)</li>
+<li><code>packet_filter_ids</code> =&gt; <code>network_interface</code>ブロック内へ移動、<code>packet_filter_id</code>へ名称変更</li>
+<li><code>vnc_host</code>/<code>vnc_password</code>/<code>vnc_port</code>(廃止) =&gt; 代わりに<code>sakuracloud_server_vnc_info</code>データソースが利用可能</li>
+</ul>
+<hr />
+<h3 id="dataSourceSimpleMonitor"><a href="https://docs.usacloud.jp/terraform/d/simple_monitor">シンプル監視: <code>sakuracloud_simple_monitor</code></a></h3>
+<ul>
+<li><code>health_check</code><ul>
+<li><code>delay_loop</code>(移動) =&gt; トップレベルへ移動</li>
+<li><code>status</code>(データ型変更) =&gt; 文字列から数値型へ変更</li>
+</ul>
+</li>
+<li><code>notify_interval</code>(単位変更) =&gt; 秒単位で指定から時間単位で指定するように変更    </li>
+</ul>
+<hr />
+<h3 id="dataSourceSubnet"><a href="https://docs.usacloud.jp/terraform/d/subnet">サブネット: <code>sakuracloud_subnet</code></a></h3>
+<ul>
+<li><code>ipaddresses</code>(名称変更) =&gt; <code>ip_addresses</code></li>
+<li><code>ipv6_nw_address</code>(名称変更) =&gt; <code>ipv6_network_address</code></li>
+<li><code>max_ipaddress</code>(名称変更) =&gt; <code>max_ip_address</code></li>
+<li><code>min_ipaddress</code>(名称変更) =&gt; <code>min_ip_address</code></li>
+<li><code>nw_address</code>(名称変更) =&gt; <code>network_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+</ul>
+<hr />
+<h3 id="dataSourceVPCRouter"><a href="https://docs.usacloud.jp/terraform/d/vpc_router">VPCルータ: <code>sakuracloud_vpc_router</code></a></h3>
+<ul>
+<li><code>dhcp_server</code><ul>
+<li><code>vpc_router_interface_index</code>(名称変更) =&gt; <code>interface_index</code></li>
+</ul>
+</li>
+<li><code>dhcp_static_mapping</code><ul>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+<li><code>macaddress</code>(名称変更) =&gt; <code>mac_address</code></li>
+</ul>
+</li>
+<li><code>firewall</code><ul>
+<li><code>expressions</code>(名称変更) =&gt; <code>expression</code><ul>
+<li><code>dest_nw</code>(名称変更) =&gt; <code>destination_network</code></li>
+<li><code>dest_port</code>(名称変更) =&gt; <code>destination_port</code></li>
+<li><code>source_nw</code>(名称変更) =&gt; <code>source_network</code></li>
+</ul>
+</li>
+<li><code>vpc_router_interface_index</code>(名称変更) =&gt; <code>interface_index</code></li>
+</ul>
+</li>
+<li><code>global_address</code>(名称変更) =&gt; <code>public_ip</code></li>
+<li><code>interface</code>(名称変更) =&gt; <code>private_network_interface</code><ul>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+</ul>
+</li>
+<li><code>public_network_interface</code>(追加)<ul>
+<li><code>aliases</code>(移動)</li>
+<li><code>ipaddress1</code>/<code>ipaddress2</code>(移動/統合) =&gt; <code>ip_addresses</code>(リスト)</li>
+<li><code>switch_id</code>(移動)</li>
+<li><code>vip</code>(移動)</li>
+<li><code>vrid</code>(移動)</li>
+</ul>
+</li>
+<li><code>public_netmask</code>(追加)</li>
+<li><code>port_forwarding</code><ul>
+<li><code>private_address</code>(名称変更) =&gt; <code>private_ip</code></li>
+<li><code>global_port</code>(名称変更) =&gt; <code>public_port</code></li>
+</ul>
+</li>
+<li><code>site_to_site_vpn</code><ul>
+<li><code>esp_authentication_protocol</code>(廃止)</li>
+<li><code>esp_dh_group</code>(廃止)</li>
+<li><code>esp_encryption_protocol</code>(廃止)</li>
+<li><code>esp_lifetime</code>(廃止)</li>
+<li><code>esp_mode</code>(廃止)</li>
+<li><code>esp_perfect_forward_secrecy</code>(廃止)</li>
+<li><code>ike_authentication_protocol</code>(廃止)</li>
+<li><code>ike_encryption_protocol</code>(廃止)</li>
+<li><code>ike_lifetime</code>(廃止)</li>
+<li><code>ike_mode</code>(廃止)</li>
+<li><code>ike_perfect_forward_secrecy</code>(廃止)</li>
+<li><code>ike_pre_shared_secret</code>(廃止)</li>
+<li><code>peer_id</code>(廃止)</li>
+<li><code>peer_inside_networks</code>(廃止)</li>
+<li><code>peer_outside_ipaddress</code>(廃止)</li>
+<li><code>vpc_router_inside_networks</code>(廃止)</li>
+<li><code>vpc_router_outside_ipaddress</code>(廃止)</li>
+</ul>
+</li>
+<li><code>static_nat</code><ul>
+<li><code>global_address</code>(名称変更) =&gt; <code>public_ip</code></li>
+<li><code>private_address</code>(名称変更) =&gt; <code>private_ip</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="dataSourceWebAccel">ウェブアクセラレータ: <code>sakuracloud_webaccel</code></h3>
+<p>v2時点では未実装(近日実装予定)</p>
+<h2 id="diffDetailResource">リソースの変更点</h2>
+<h3 id="resourceBridge"><a href="https://docs.usacloud.jp/terraform/r/bridge">ブリッジ: <code>sakuracloud_bridge</code></a></h3>
+<ul>
+<li><code>switch_ids</code>(廃止)</li>
+</ul>
+<hr />
+<h3 id="resourceDatabase"><a href="https://docs.usacloud.jp/terraform/r/database">データベース: <code>sakuracloud_database</code></a></h3>
+<ul>
+<li><code>backup</code>(追加)<ul>
+<li><code>backup_time</code>(名称変更) =&gt; <code>time</code></li>
+<li><code>backup_weekdays</code>(名称変更) =&gt; <code>weekdays</code></li>
+</ul>
+</li>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+<li><code>network_interface</code>(追加)<ul>
+<li><code>allow_networks</code>(名称変更) =&gt; <code>source_ranges</code>  </li>
+<li><code>default_route</code>(名称変更) =&gt; <code>gateway</code></li>
+<li><code>ipaddress1</code>(名称変更) =&gt; <code>ip_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+<li><code>port</code>(移動)</li>
+<li><code>switch_id</code>(移動)</li>
+</ul>
+</li>
+<li><code>replica_user</code>(挙動変更) =&gt; 読み取り専用から書き込み可能に</li>
+<li><code>user_name</code>(名称変更) =&gt; <code>username</code></li>
+<li><code>user_password</code>(名称変更) =&gt; <code>password</code></li>
+</ul>
+<hr />
+<h3 id="resourceDatabaseReadReplica"><a href="https://docs.usacloud.jp/terraform/r/database_read_replica">データベース(リードレプリカ): <code>sakuracloud_database_read_replica</code></a></h3>
+<ul>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+<li><code>network_interface</code>(追加)<ul>
+<li><code>source_ranges</code>(追加)  </li>
+<li><code>default_route</code>(名称変更) =&gt; <code>gateway</code></li>
+<li><code>ipaddress1</code>(名称変更) =&gt; <code>ip_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+<li><code>port</code>(移動)</li>
+<li><code>switch_id</code>(移動)</li>
+</ul>
+</li>
+<li><code>replica_user</code>(挙動変更) =&gt; 読み取り専用から書き込み可能に</li>
+<li><code>replica_user</code>(挙動変更) =&gt; 読み取り専用から書き込み可能に</li>
+</ul>
+<hr />
+<h3 id="resourceDisk"><a href="https://docs.usacloud.jp/terraform/r/disk">ディスク: <code>sakuracloud_disk</code></a></h3>
+<ul>
+<li><code>disable_pw_auth</code>(廃止)</li>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+<li><code>hostname</code>(廃止)</li>
+<li><code>note_ids</code>(廃止)</li>
+<li><code>password</code>(廃止)</li>
+<li><code>ssh_key_ids</code>(廃止)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ディスクの修正関連のパラメータが廃止されました。<br />
+代わりに<code>sakuracloud_server</code>の<code>disk_edit_parameter</code>ブロックを利用してください。  </p>
+</div>
+<hr />
+<h3 id="resourceDNS"><a href="https://docs.usacloud.jp/terraform/r/dns">DNS: <code>sakuracloud_dns</code></a></h3>
+<ul>
+<li><code>records</code>(名称変更) =&gt; <code>record</code></li>
+</ul>
+<hr />
+<h3 id="resourceGSLB"><a href="https://docs.usacloud.jp/terraform/r/gslb">GSLB: <code>sakuracloud_gslb</code></a></h3>
+<ul>
+<li><code>servers</code>(名称変更) =&gt; <code>server</code><ul>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="resourceIcon"><a href="https://docs.usacloud.jp/terraform/r/icon">アイコン: <code>sakuracloud_icon</code></a></h3>
+<ul>
+<li><code>body</code>(廃止)</li>
+</ul>
+<hr />
+<h3 id="resourceInternet"><a href="https://docs.usacloud.jp/terraform/r/internet">スイッチ+ルータ: <code>sakuracloud_internet</code></a></h3>
+<ul>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+<li><code>ipaddresses</code>(名称変更) =&gt; <code>ip_addresses</code></li>
+<li><code>ipv6_nw_address</code>(名称変更) =&gt; <code>ipv6_network_address</code></li>
+<li><code>max_ipaddress</code>(名称変更) =&gt; <code>max_ip_address</code></li>
+<li><code>min_ipaddress</code>(名称変更) =&gt; <code>min_ip_address</code></li>
+<li><code>nw_address</code>(名称変更) =&gt; <code>network_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+</ul>
+<hr />
+<h3 id="resourceIPv4PTR"><a href="https://docs.usacloud.jp/terraform/r/ipv4_ptr">IPv4逆引きレコード: <code>sakuracloud_ipv4_ptr</code></a></h3>
+<ul>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+</ul>
+<h3 id="resourceLoadBalancer"><a href="https://docs.usacloud.jp/terraform/r/load_balancer">ロードバランサ: <code>sakuracloud_load_balancer</code></a></h3>
+<ul>
+<li><code>default_route</code>(名称変更) =&gt; <code>gateway</code></li>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+<li><code>is_double</code>(廃止)</li>
+<li><code>high_availability</code>(廃止)</li>
+<li><code>network_interface</code>(追加)<ul>
+<li><code>default_route</code>(名称変更) =&gt; <code>gateway</code></li>
+<li><code>ipaddress1</code>/<code>ipaddress2</code>(統合) =&gt; <code>ip_addresses</code>(リスト)</li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+<li><code>switch_id</code>(移動)</li>
+<li><code>vrid</code>(移動)</li>
+</ul>
+</li>
+<li><code>vip_ids</code>(廃止)</li>
+<li><code>vips</code>(名称変更) =&gt; <code>vip</code><ul>
+<li><code>servers</code>(名称変更) =&gt; <code>server</code><ul>
+<li><code>check_path</code>(名称変更) =&gt; <code>path</code></li>
+<li><code>check_protocol</code>(名称変更) =&gt; <code>protocol</code></li>
+<li><code>check_status</code>(名称変更) =&gt; <code>status</code></li>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="resourceMobileGateway"><a href="https://docs.usacloud.jp/terraform/r/mobile_gateway">モバイルゲートウェイ : <code>sakuracloud_mobile_gateway</code></a></h3>
+<ul>
+<li><code>dns_server1</code>/<code>dns_server2</code>(統合) =&gt; <code>dns_servers</code>(リスト)</li>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+<li><code>inter_device_communication</code>(追加)</li>
+<li><code>private_ipaddress</code>/<code>private_nw_mask_len</code>/<code>switch_id</code>(統合) =&gt; <code>private_network_interface</code>(ブロック)</li>
+<li><code>sim_ids</code>(廃止)</li>
+<li><code>sim</code>(追加)</li>
+<li><code>sim_route</code>(追加)</li>
+</ul>
+<hr />
+<h3 id="resourceNFS"><a href="https://docs.usacloud.jp/terraform/r/nfs">NFS: <code>sakuracloud_nfs</code></a></h3>
+<ul>
+<li><code>network_interface</code>(追加)<ul>
+<li><code>gateway</code>(移動)</li>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+<li><code>switch_id</code>(移動)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="resourcePacketFilter"><a href="https://docs.usacloud.jp/terraform/r/packet_filter">パケットフィルタ : <code>sakuracloud_packet_filter</code></a></h3>
+<ul>
+<li><code>expressions</code>(名称変更) =&gt; <code>expression</code><ul>
+<li><code>dest_port</code>(名称変更) =&gt; <code>dest_port</code></li>
+<li><code>source_nw</code>(名称変更) =&gt; <code>source_network</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="resourcePacketFilterRule"><a href="https://docs.usacloud.jp/terraform/r/packet_filter_rules">パケットフィルタ (ルール): <code>sakuracloud_packet_filter_rule</code></a></h3>
+<p>v1では1つのパケットフィルタ内の1つのルールを表すリソースとして<code>sakuracloud_packet_filter_rule</code>がありましたが、
+v2ではルール全体を表す<code>sakuracloud_packet_filter_rules</code>に変更されました。</p>
+<p>ドキュメント: <a href="https://docs.usacloud.jp/terraform/r/packet_filter_rules">sakuracloud_packet_filter_rules</a></p>
+<hr />
+<h3 id="resourcePrivateHost"><a href="https://docs.usacloud.jp/terraform/r/private_host">専有ホスト: <code>sakuracloud_private_host</code></a></h3>
+<ul>
+<li><code>class</code>(追加) =&gt; 種別(標準/Windows)を表す項目を追加</li>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+</ul>
+<hr />
+<h3 id="resourceProxyLB"><a href="https://docs.usacloud.jp/terraform/r/proxylb">エンハンスドロードバランサ: <code>sakuracloud_proxylb</code></a></h3>
+<ul>
+<li><code>region</code>(追加) =&gt; 設置先リージョン</li>
+<li><code>bind_ports</code>(名称変更) =&gt; <code>bind_port</code></li>
+<li><code>certificate</code><ul>
+<li><code>additional_certificates</code>(名称変更) =&gt; <code>additional_certificate</code></li>
+</ul>
+</li>
+<li><code>health_check</code><ul>
+<li><code>port</code>(追加)</li>
+</ul>
+</li>
+<li><code>rule</code>(追加) =&gt; 振り分けルール</li>
+<li><code>servers</code>(名称変更) =&gt; <code>server</code><ul>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+<li><code>group</code>(追加) =&gt; 振り分け先グループ名</li>
+</ul>
+</li>
+<li><code>sorry_server</code><ul>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="resourceProxyLBACME"><a href="https://docs.usacloud.jp/terraform/r/proxylb_acme">エンハンスドロードバランサ(ACME): <code>sakuracloud_proxylb_acme</code></a></h3>
+<ul>
+<li><code>certificate</code><ul>
+<li><code>additional_certificates</code>(名称変更) =&gt; <code>additional_certificate</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="resourceServer"><a href="https://docs.usacloud.jp/terraform/r/server">サーバ: <code>sakuracloud_server</code></a></h3>
+<ul>
+<li><code>display_ipaddress</code>/<code>additional_display_ipaddresses</code>(移動/名称変更) =&gt; <code>network_interface</code>ブロック内へ移動、<code>user_ip_address</code>へ名称変更</li>
+<li><code>nic</code>/<code>additional_nics</code>(統合/変更) =&gt; <code>network_interface</code>に統合</li>
+<li><code>disk_edit_parameter</code>(追加) =&gt; ディスクの修正関連パラメータ</li>
+<li><code>force_shutdown</code>(追加) =&gt; シャットダウン/リブートの際に強制終了するかのフラグ</li>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+<li><code>gateway</code>(挙動変更) =&gt; <code>gateway</code>(読み取り専用)</li>
+<li><code>hostname</code>(挙動変更) =&gt; <code>hostname</code>(読み取り専用)</li>
+<li><code>ipaddress</code>(名称変更/挙動変更) =&gt; <code>ip_address</code>(読み取り専用)</li>
+<li><code>macaddresses</code>(名称変更/移動) =&gt; <code>network_interface</code>ブロック内へ移動、<code>mac_address</code>へ名称変更</li>
+<li><code>nw_address</code>(名称変更) =&gt; <code>network_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code>(読み取り専用)</li>
+<li><code>packet_filter_ids</code> =&gt; <code>network_interface</code>ブロック内へ移動、<code>packet_filter_id</code>へ名称変更</li>
+<li><code>vnc_host</code>/<code>vnc_password</code>/<code>vnc_port</code>(廃止) =&gt; 代わりに<code>sakuracloud_server_vnc_info</code>データソースが利用可能</li>
+</ul>
+<h4 id="_11">ネットワークインターフェース設定の変更</h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>これまで<code>nic</code>と<code>additional_nics</code>で設定していたネットワークインターフェース(NIC)は<code>network_interface</code>で指定するように変更されました。<br />
+これに伴い、<code>nic</code>を省略した場合の挙動が変更されました。</p>
+<p>旧: 共有セグメントに接続<br />
+新: NICなし  </p>
+<p>v2でのNIC設定は明示的に<code>network_interface</code>を記載する必要があります。</p>
+</div>
+<h5 id="v2network_interface">v2でのnetwork_interfaceの設定例:</h5>
+<pre><code class="language-hcl">resource &quot;sakuracloud_server&quot; &quot;example&quot; {
+  name        = &quot;foobar&quot;
+  disks       = [sakuracloud_disk.foobar.id]
+  description = &quot;description&quot;
+  tags        = [&quot;tag1&quot;, &quot;tag2&quot;]
+
+  # eth0
+  network_interface {
+    upstream         = &quot;shared&quot;
+    packet_filter_id = data.sakuracloud_packet_filter.foobar.id
+  }
+  # eth1
+  network_interface {
+    upstream         = &quot;123456789012&quot; # スイッチのID
+    packet_filter_id = data.sakuracloud_packet_filter.foobar.id
+  }
+
+  disk_edit_parameter {
+    hostname        = &quot;hostname&quot;
+    password        = &quot;password&quot;
+    disable_pw_auth = true
+  }
+}
+</code></pre>
+<hr />
+<h3 id="resourceSIM"><a href="https://docs.usacloud.jp/terraform/r/sim">SIM: <code>sakuracloud_sim</code></a></h3>
+<ul>
+<li><code>ipaddress</code>(名称変更/挙動変更) =&gt; <code>ip_address</code>(読み取り専用)</li>
+<li><code>mobile_gateway_id</code>(挙動変更) =&gt; 読み取り専用へ変更</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>モバイルゲートウェイに接続するには<code>sakuracloud_mobile_gateway</code>の<code>sim</code>ブロックを設定するように変更されました。</p>
+</div>
+<hr />
+<h3 id="resourceSimpleMonitor"><a href="https://docs.usacloud.jp/terraform/r/simple_monitor">シンプル監視: <code>sakuracloud_simple_monitor</code></a></h3>
+<ul>
+<li><code>health_check</code><ul>
+<li><code>delay_loop</code>(移動) =&gt; トップレベルへ移動</li>
+<li><code>status</code>(データ型変更) =&gt; 文字列から数値型へ変更</li>
+</ul>
+</li>
+<li><code>notify_interval</code>(単位変更) =&gt; 秒単位で指定から時間単位で指定するように変更    </li>
+</ul>
+<hr />
+<h3 id="resourceSubnet"><a href="https://docs.usacloud.jp/terraform/r/subnet">サブネット: <code>sakuracloud_subnet</code></a></h3>
+<ul>
+<li><code>ipaddresses</code>(名称変更) =&gt; <code>ip_addresses</code></li>
+<li><code>ipv6_nw_address</code>(名称変更) =&gt; <code>ipv6_network_address</code></li>
+<li><code>max_ipaddress</code>(名称変更) =&gt; <code>max_ip_address</code></li>
+<li><code>min_ipaddress</code>(名称変更) =&gt; <code>min_ip_address</code></li>
+<li><code>nw_address</code>(名称変更) =&gt; <code>network_address</code></li>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+</ul>
+<hr />
+<h3 id="resourceSwitch"><a href="https://docs.usacloud.jp/terraform/r/switch">スイッチ: <code>sakuracloud_switch</code></a></h3>
+<ul>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+</ul>
+<hr />
+<h3 id="resourceVPCRouter"><a href="https://docs.usacloud.jp/terraform/r/vpc_router">VPCルータ: <code>sakuracloud_vpc_router</code></a></h3>
+<ul>
+<li><code>dhcp_server</code><ul>
+<li><code>vpc_router_interface_index</code>(名称変更) =&gt; <code>interface_index</code></li>
+</ul>
+</li>
+<li><code>dhcp_static_mapping</code><ul>
+<li><code>ipaddress</code>(名称変更) =&gt; <code>ip_address</code></li>
+<li><code>macaddress</code>(名称変更) =&gt; <code>mac_address</code></li>
+</ul>
+</li>
+<li><code>firewall</code><ul>
+<li><code>expressions</code>(名称変更) =&gt; <code>expression</code><ul>
+<li><code>dest_nw</code>(名称変更) =&gt; <code>destination_network</code></li>
+<li><code>dest_port</code>(名称変更) =&gt; <code>destination_port</code></li>
+<li><code>source_nw</code>(名称変更) =&gt; <code>source_network</code></li>
+</ul>
+</li>
+<li><code>vpc_router_interface_index</code>(名称変更) =&gt; <code>interface_index</code></li>
+</ul>
+</li>
+<li><code>global_address</code>(名称変更) =&gt; <code>public_ip</code></li>
+<li><code>graceful_shutdown_timeout</code>(廃止)</li>
+<li><code>interface</code>(名称変更) =&gt; <code>private_network_interface</code><ul>
+<li><code>nw_mask_len</code>(名称変更) =&gt; <code>netmask</code></li>
+</ul>
+</li>
+<li><code>public_network_interface</code>(追加)<ul>
+<li><code>aliases</code>(移動)</li>
+<li><code>ipaddress1</code>/<code>ipaddress2</code>(移動/統合) =&gt; <code>ip_addresses</code>(リスト)</li>
+<li><code>switch_id</code>(移動)</li>
+<li><code>vip</code>(移動)</li>
+<li><code>vrid</code>(移動)</li>
+</ul>
+</li>
+<li><code>public_netmask</code>(追加)</li>
+<li><code>port_forwarding</code><ul>
+<li><code>private_address</code>(名称変更) =&gt; <code>private_ip</code></li>
+<li><code>global_port</code>(名称変更) =&gt; <code>public_port</code></li>
+</ul>
+</li>
+<li><code>site_to_site_vpn</code><ul>
+<li><code>esp_authentication_protocol</code>(廃止)</li>
+<li><code>esp_dh_group</code>(廃止)</li>
+<li><code>esp_encryption_protocol</code>(廃止)</li>
+<li><code>esp_lifetime</code>(廃止)</li>
+<li><code>esp_mode</code>(廃止)</li>
+<li><code>esp_perfect_forward_secrecy</code>(廃止)</li>
+<li><code>ike_authentication_protocol</code>(廃止)</li>
+<li><code>ike_encryption_protocol</code>(廃止)</li>
+<li><code>ike_lifetime</code>(廃止)</li>
+<li><code>ike_mode</code>(廃止)</li>
+<li><code>ike_perfect_forward_secrecy</code>(廃止)</li>
+<li><code>ike_pre_shared_secret</code>(廃止)</li>
+<li><code>peer_id</code>(廃止)</li>
+<li><code>peer_inside_networks</code>(廃止)</li>
+<li><code>peer_outside_ipaddress</code>(廃止)</li>
+<li><code>vpc_router_inside_networks</code>(廃止)</li>
+<li><code>vpc_router_outside_ipaddress</code>(廃止)</li>
+</ul>
+</li>
+<li><code>static_nat</code><ul>
+<li><code>global_address</code>(名称変更) =&gt; <code>public_ip</code></li>
+<li><code>private_address</code>(名称変更) =&gt; <code>private_ip</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../upgrade_to_v2.1.0/" class="btn btn-neutral float-right" title="v2.1での変更点">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="ホーム"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright (C) 2016-2020 terraform-provider-sakuracloud authors</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../upgrade_to_v2.1.0/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
