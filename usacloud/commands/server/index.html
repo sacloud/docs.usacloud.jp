@@ -62,134 +62,234 @@
                     <li class="toctree-l1"><a class="reference internal" href="../..">ホーム</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">利用方法/ガイド</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../start_guide/">usacloud 導入ガイド</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">インストール</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/start_guide/">Usacloud導入ガイド</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">利用方法/ガイド</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/basic_usage/">基本的な使い方</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/completion/">completionコマンド</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/rest/">restコマンド</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">アップグレード</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../upgrade/v1_0_0/">v1.0へのアップグレード</a>
+                </li>
+    </ul>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">usacloud コマンド</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../basic_usage/">基本的な使い方</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../usage_server_build/">サーバの作成</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../usage_server_power/">電源操作</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../usage_server_connect/">接続(SSH/VNC)</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../usage_server_scp/">ファイル送受信(SCP)</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../usage_ojs/">オブジェクトストレージの操作</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../usage_download/">アーカイブのダウンロード</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../usage_upload/">ISOイメージのアップロード</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../usage_monitoring/">監視/モニタリング</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">コマンドリファレンス</span></p>
+                <p class="caption"><span class="caption-text">リファレンス</span></p>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">コンピューティング</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">オプション/設定</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../global/">グローバルオプション</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../profile/">プロファイル</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">コマンド</a>
     <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">server</a>
+                <li class="toctree-l2"><a class="reference internal" href="#">Configuration / プロファイル/コンフィグ</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../config/">config</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Authentication / 認証情報</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../auth-status/">auth-status</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Computing / コンピューティング</a>
     <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../private-host/">private-host</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">server</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#_1">コマンド一覧</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#list">list</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create">create</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#read">read</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update">update</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#delete">delete</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ssh">ssh</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vnc">vnc</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rdp">rdp</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#boot">boot</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#shutdown">shutdown</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#reset">reset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#monitor-cpu">monitor-cpu</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#wait-until-ready">wait-until-ready</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#wait-until-shutdown">wait-until-shutdown</a>
+    </li>
     </ul>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">ストレージ</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Storage / ストレージ</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../archive/">archive</a>
+                <li class="toctree-l3"><a class="reference internal" href="../archive/">archive</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../auto_backup/">auto-backup</a>
+                <li class="toctree-l3"><a class="reference internal" href="../auto-backup/">auto-backup</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../disk/">disk</a>
+                <li class="toctree-l3"><a class="reference internal" href="../cdrom/">cdrom</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../iso_image/">iso-image</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../object_storage/">object-storage</a>
+                <li class="toctree-l3"><a class="reference internal" href="../disk/">disk</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">ネットワーキング</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Networking / ネットワーキング</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../bridge/">bridge</a>
+                <li class="toctree-l3"><a class="reference internal" href="../bridge/">bridge</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../internet/">internet</a>
+                <li class="toctree-l3"><a class="reference internal" href="../internet/">internet</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../packet_filter/">packet-filter</a>
+                <li class="toctree-l3"><a class="reference internal" href="../local-router/">local-router</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../switch/">switch</a>
+                <li class="toctree-l3"><a class="reference internal" href="../packet-filter/">packet-filter</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../interface/">interface</a>
+                <li class="toctree-l3"><a class="reference internal" href="../switch/">switch</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">アプライアンス</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">ネットワーク関連サブリソース</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../database/">database</a>
+                <li class="toctree-l3"><a class="reference internal" href="../interface/">interface</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../load_balancer/">load-balancer</a>
+                <li class="toctree-l3"><a class="reference internal" href="../ipaddress/">ipaddress</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../vpc_router/">vpc-router</a>
+                <li class="toctree-l3"><a class="reference internal" href="../ipv6addr/">ipv6addr</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ipv6net/">ipv6net</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../subnet/">subnet</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">共通サービスアイテム</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Appliance / アプライアンス</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../dns/">dns</a>
+                <li class="toctree-l3"><a class="reference internal" href="../database/">database</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../gslb/">gslb</a>
+                <li class="toctree-l3"><a class="reference internal" href="../load-balancer/">load-balancer</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../simple_monitor/">simple-monitor</a>
+                <li class="toctree-l3"><a class="reference internal" href="../nfs/">nfs</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../vpc-router/">vpc-router</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">共通アイテム</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Secure Mobile / セキュアモバイル</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../license/">license</a>
+                <li class="toctree-l3"><a class="reference internal" href="../mobile-gateway/">mobile-gateway</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../icon/">icon</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../ssh_key/">ssh-key</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../startup_script/">startup-script</a>
+                <li class="toctree-l3"><a class="reference internal" href="../sim/">sim</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">請求</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Common service items / 共通サービスアイテム</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../bill/">bill</a>
+                <li class="toctree-l3"><a class="reference internal" href="../dns/">dns</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../gslb/">gslb</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../proxy-lb/">proxy-lb</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../simple-monitor/">simple-monitor</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">サービス</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Billing / 請求関連</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../webaccel/">web-accel</a>
+                <li class="toctree-l3"><a class="reference internal" href="../bill/">bill</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../coupon/">coupon</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">製品/プラン/情報</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Lab / Labプロダクト</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../price/">price</a>
+                <li class="toctree-l3"><a class="reference internal" href="../container-registry/">container-registry</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../product_disk/">product-disk</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../product_internet/">product-internet</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../product_license/">product-license</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../product_server/">product-server</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../region/">region</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../zone/">zone</a>
+                <li class="toctree-l3"><a class="reference internal" href="../esme/">esme</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">その他</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">WebAccelerator / ウェブアクセラレータ</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../config/">confg</a>
+                <li class="toctree-l3"><a class="reference internal" href="../web-accelerator/">web-accelerator</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other services / その他サービス</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../icon/">icon</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../license/">license</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../note/">note</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ssh-key/">ssh-key</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Region/Zone information / リージョン/ゾーン情報参照</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../region/">region</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../zone/">zone</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Service/Product information / サービス/プロダクト情報参照</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../disk-plan/">disk-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internet-plan/">internet-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../license-info/">license-info</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../private-host-plan/">private-host-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../server-plan/">server-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../service-class/">service-class</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other commands / その他</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../completion/">completion</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../rest/">rest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../self/">self</a>
+                </li>
+    </ul>
                 </li>
     </ul>
                     </li>
@@ -215,11 +315,15 @@
     
       
         
-          <li>コンピューティング &raquo;</li>
+          <li>Computing / コンピューティング &raquo;</li>
         
       
         
-          <li>コマンドリファレンス &raquo;</li>
+          <li>コマンド &raquo;</li>
+        
+      
+        
+          <li>リファレンス &raquo;</li>
         
       
     
@@ -236,472 +340,719 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="server">server</h1>
-<hr />
-<p>サーバー関連の操作。</p>
-<h1 id="_1">コマンド</h1>
+                <h1 id="server">コマンドリファレンス / server</h1>
+<h2 id="_1">コマンド一覧</h2>
 <ul>
-<li>基本的な操作<ul>
-<li><a href="#list"><code>list</code></a> - 一覧表示</li>
-<li><a href="#build"><code>build</code></a> - 作成</li>
-<li><a href="#read"><code>read</code></a> - 詳細表示</li>
-<li><a href="#update"><code>update</code></a> - 更新</li>
-<li><a href="#delete"><code>delete</code></a> - 削除</li>
-<li><a href="#plan-change"><code>plan-change</code></a> - プラン変更</li>
+<li>Basic Commands<ul>
+<li><a href="#list">list</a></li>
+<li><a href="#create">create</a></li>
+<li><a href="#read">read</a></li>
+<li><a href="#update">update</a></li>
+<li><a href="#delete">delete</a></li>
 </ul>
 </li>
-<li>電源操作<ul>
-<li><a href="#boot"><code>boot</code></a> - 起動</li>
-<li><a href="#shutdown"><code>shutdown</code></a> - シャットダウン(graceful)</li>
-<li><a href="#shutdown-force"><code>shutdown-force</code></a> - シャットダウン(force)</li>
-<li><a href="#reset"><code>reset</code></a> - リセット</li>
-<li><a href="#wait-for-boot"><code>wait-for-boot</code></a> - 起動するまで待機</li>
-<li><a href="#wait-for-down"><code>wait-for-down</code></a> - 終了するまで待機</li>
+<li>Connect Commands<ul>
+<li><a href="#ssh">ssh</a></li>
+<li><a href="#vnc">vnc</a></li>
+<li><a href="#rdp">rdp</a></li>
 </ul>
 </li>
-<li>SSH/SCP/VNC<ul>
-<li><a href="#ssh"><code>ssh</code></a> - SSH接続</li>
-<li><a href="#ssh-exec"><code>ssh-exec</code></a> - SSH接続(コマンド実行)</li>
-<li><a href="#scp"><code>scp</code></a> - SCPでのファイル送受信</li>
-<li><a href="#vnc"><code>vnc</code></a> - VNCクライアント起動</li>
-<li><a href="#vnc-info"><code>vnc-info</code></a> - VNC接続情報の表示</li>
+<li>Power Management Commands<ul>
+<li><a href="#boot">boot</a></li>
+<li><a href="#shutdown">shutdown</a></li>
+<li><a href="#reset">reset</a></li>
 </ul>
 </li>
-<li>ディスク管理<ul>
-<li><a href="#disk-info1"><code>disk-info</code></a> - 接続されているディスクを一覧表示</li>
-<li><a href="#disk-connect"><code>disk-connect</code></a> - ディスクの接続</li>
-<li><a href="#disk-disconnect"><code>disk-disconnect</code></a> - ディスクの切断</li>
+<li>Monitoring Commands<ul>
+<li><a href="#monitor-cpu">monitor-cpu</a></li>
 </ul>
 </li>
-<li>ネットワーク(NIC)管理<ul>
-<li><a href="#interface-info"><code>interface-info</code></a> - 接続されているNICを一覧表示</li>
-<li><a href="#interface-add-for-internet"><code>interface-add-for-internet</code></a> - インターネット(共有セグメント)に接続するNICを追加</li>
-<li><a href="#interface-add-for-router"><code>interface-add-for-router</code></a> - ルーターに接続するNICを追加</li>
-<li><a href="#interface-add-for-switch"><code>interface-add-for-switch</code></a> - スイッチに接続するNICを追加</li>
-<li><a href="#interface-add-disconnected"><code>interface-add-disconnected</code></a> - 上流ネットワークに接続していないNICを追加</li>
-</ul>
-</li>
-<li>ISOイメージ(CD-ROM)<ul>
-<li><a href="#iso-info"><code>iso-info</code></a> - 挿入されているISOイメージ(CD-ROM)の詳細表示</li>
-<li><a href="#iso-insert"><code>iso-insert</code></a> - ISOイメージ(CD-ROM)の挿入</li>
-<li><a href="#iso-eject"><code>iso-eject</code></a> - ISOイメージ(CD-ROM)の排出</li>
-</ul>
-</li>
-<li>監視/モニタリング<ul>
-<li><a href="#monitor-cpu"><code>monitor-cpu</code></a> - アクティビティモニタ(CPU)取得</li>
-<li><a href="#monitor-nic"><code>monitor-nic</code></a> - アクティビティモニタ(NIC)取得</li>
-<li><a href="#monitor-disk"><code>monitor-disk</code></a> - アクティビティモニタ(ディスク)取得</li>
+<li>Other Commands<ul>
+<li><a href="#wait-until-ready">wait-until-ready</a></li>
+<li><a href="#wait-until-shutdown">wait-until-shutdown</a></li>
 </ul>
 </li>
 </ul>
-<h1 id="_2">== 基本的な操作 ==</h1>
-<hr />
 <h2 id="list">list</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server list [command options] [arguments...]
+<h5 id="usage">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  list [flags]
 
-OPTIONS:
-   --from value  set offset (default: 0)
-   --id value    set filter by id(s)
-   --max value   set limit (default: 0)
-   --name value  set filter by name(s)
-   --sort value  set field(s) for sort
-   --help, -h    show help (default: false)
+Aliases:
+  list, ls, find, select
+
+Flags:
+
+  === Filter options ===
+
+      --names strings   
+      --tags strings    
+
+  === Limit/Offset options ===
+
+      --count int   (aliases: --max, --limit)
+      --from int    (aliases: --offset)
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Output options ===
+
+      --format string        Output format in Go templates (aliases: --fmt)
+  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
+      --query string         JMESPath query
+  -q, --quiet                Output IDs only
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
-<h2 id="build">build</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server build [command options] [arguments...]
 
-OPTIONS:
- === For server-plan options ===
-   --core value    [Required] set CPU core count (default: 1)
-   --memory value  [Required] set memory size(GB) (default: 1)
+<h2 id="create">create</h2>
+<h5 id="usage_1">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  create [flags]
 
- === For disk options ===
-   --disk-mode value          [Required] disk create mode[create/connect/diskless] (default: &quot;create&quot;)
-   --os-type value            set source OS type
-   --disk-plan value          set disk plan('hdd' or 'ssd') (default: &quot;ssd&quot;)
-   --disk-connection value    set disk connection('virtio' or 'ide') (default: &quot;virtio&quot;)
-   --disk-size value          set disk size(GB) (default: 20)
-   --source-archive-id value  set source disk ID (default: 0)
-   --source-disk-id value     set source disk ID (default: 0)
-   --distant-from value       set distant from disk IDs
-   --disk-id value            set connect disk ID (default: 0)
+Aliases:
+  create, build
 
- === For ISO image options ===
-   --iso-image-id value  set iso-image ID (default: 0)
+Flags:
 
- === For network options ===
-   --network-mode value      [Required] network connection mode[shared/switch/disconnect/none] (default: &quot;shared&quot;)
-   --use-nic-virtio          use virtio on nic (default: true)
-   --packet-filter-id value  set packet filter ID (default: 0)
-   --switch-id value         set connect switch ID (default: 0)
+  === Common options ===
 
- === For edit-disk options ===
-   --hostname value                            set hostname
-   --password value                            set password
-   --disable-password-auth, --disable-pw-auth  disable password auth on SSH (default: false)
+      --disk-name string          
+      --name string               (*required) 
+      --description string        
+      --disk-description string   
+      --disk-tags strings         
+      --tags strings              
+      --disk-icon-id int          
+      --icon-id int               
 
- === For edit-disk(network settings) options ===
-   --ipaddress value, --ip value                set ipaddress
-   --nw-masklen value, --network-masklen value  set ipaddress  prefix (default: 24)
-   --default-route value, --gateway value       set default gateway
+  === Plan options ===
 
- === For edit-disk(startup-script) options ===
-   --startup-scripts value, --notes value        set startup script(s)
-   --startup-script-ids value, --note-ids value  set startup script ID(s)
-   --startup-scripts-ephemeral                   set startup script persist mode (default: true)
+      --cpu int             (*required) (aliases: --core) (default 1)
+      --memory int          (*required)  (default 1)
+      --commitment string   (*required) options: [standard/dedicatedcpu] (default &quot;standard&quot;)
+      --generation string   (*required) options: [default/g100/g200] (default &quot;default&quot;)
 
- === For edit-disk(ssh-key) options ===
-   --ssh-key-mode value                ssh-key mode[none/id/generate/upload]
-   --ssh-key-name value                set ssh-key name
-   --ssh-key-ids value                 set ssh-key ID(s)
-   --ssh-key-pass-phrase value         set ssh-key pass phrase
-   --ssh-key-description value         set ssh-key description
-   --ssh-key-private-key-output value  set ssh-key privatekey output path
-   --ssh-key-public-keys value         set ssh-key public key
-   --ssh-key-public-key-files value    set ssh-key public key file
-   --ssh-key-ephemeral                 set ssh-key persist mode (default: true)
+  === Server-specific options ===
 
- === For server-info options ===
-   --name value                       [Required] set resource display name
-   --description value, --desc value  set resource description
-   --tags value                       set resource tags
-   --icon-id value                    set Icon ID (default: 0)
+      --boot-after-create         
+      --cdrom-id int              (aliases: --iso-image-id)
+      --interface-driver string   (*required) options: [virtio/e1000] (default &quot;virtio&quot;)
+      --private-host-id int       
 
- === Common options ===
-   --assumeyes, -y              assume that the answer to any question which would be asked is yes (default: false)
-   --us-keyboard                use us-keyboard (default: false)
-   --disable-boot-after-create  boot after create (default: false)
-   --help, -h                   show help (default: false)
+  === Disk options ===
+
+      --disk-connection string       options: [virtio/ide]
+      --disk-disk-plan string        options: [ssd/hdd]
+      --disk-distant-from int        
+      --disk-id int                  
+      --disk-no-wait                 
+      --disk-os-type string          options: [centos/centos8stream/centos8/ubuntu/ubuntu2004/debian/debian10/coreos/rancheros/k3os/freebsd/...]
+      --disk-size int                (aliases: --size-gb)
+      --disk-source-archive-id int   
+      --disk-source-disk-id int      
+      --disk-ids int                 
+      --disks string                 
+
+  === Edit disk options ===
+
+      --disk-edit-host-name string          
+      --disk-edit-password string           
+      --disk-edit-ip-address string         
+      --disk-edit-netmask int               (aliases: --network-mask-len)
+      --disk-edit-gateway string            (aliases: --default-route)
+      --disk-edit-disable-pw-auth           
+      --disk-edit-enable-dhcp               
+      --disk-edit-change-partition-uuid     
+      --disk-edit-ssh-keys strings          
+      --disk-edit-ssh-key-ids int           
+      --disk-edit-make-ssh-keys-ephemeral   
+      --disk-edit-note-ids int              
+      --disk-edit-notes string              
+      --disk-edit-make-notes-ephemeral      
+
+  === Network options ===
+
+      --network-interface-packet-filter-id int     
+      --network-interface-upstream string          options: [shared/disconnected/(switch-id)]
+      --network-interface-user-ip-address string   
+      --network-interfaces string                  
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Wait options ===
+
+      --no-wait   
+
+  === Input options ===
+
+  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Output options ===
+
+      --format string        Output format in Go templates (aliases: --fmt)
+  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
+      --query string         JMESPath query
+  -q, --quiet                Output IDs only
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
+
+<h5 id="parameter-examples">Parameter Examples</h5>
+<pre class="codehilite"><code class="language-console">{
+    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
+    &quot;Name&quot;: &quot;example&quot;,
+    &quot;Description&quot;: &quot;example&quot;,
+    &quot;Tags&quot;: [
+        &quot;tag1=example1&quot;,
+        &quot;tag2=example2&quot;
+    ],
+    &quot;IconID&quot;: 123456789012,
+    &quot;CPU&quot;: 1,
+    &quot;Memory&quot;: 2,
+    &quot;Commitment&quot;: &quot;standard | dedicatedcpu&quot;,
+    &quot;Generation&quot;: &quot;default | g100 | g200&quot;,
+    &quot;InterfaceDriver&quot;: &quot;virtio | e1000&quot;,
+    &quot;BootAfterCreate&quot;: true,
+    &quot;CDROMID&quot;: 123456789012,
+    &quot;PrivateHostID&quot;: 123456789012,
+    &quot;NetworkInterfaces&quot;: [
+        {
+            &quot;Upstream&quot;: &quot;shared | disconnected | (switch-id)&quot;,
+            &quot;PacketFilterID&quot;: 123456789012,
+            &quot;UserIPAddress&quot;: &quot;192.0.2.11&quot;
+        }
+    ],
+    &quot;Disks&quot;: [
+        {
+            &quot;Description&quot;: &quot;新規ディスクを作成する例&quot;,
+            &quot;Tags&quot;: [
+                &quot;tag1=example1&quot;,
+                &quot;tag2=example2&quot;
+            ],
+            &quot;IconID&quot;: 123456789012,
+            &quot;DiskPlan&quot;: &quot;ssd | hdd&quot;,
+            &quot;Connection&quot;: &quot;virtio | ide&quot;,
+            &quot;SourceDiskID&quot;: 123456789012,
+            &quot;SourceArchiveID&quot;: 123456789012,
+            &quot;SizeGB&quot;: 20,
+            &quot;DistantFrom&quot;: [
+                123456789012
+            ],
+            &quot;OSType&quot;: &quot;centos | centos8stream | centos8 | centos7 | ubuntu | ubuntu2004 | ubuntu1804 | ubuntu1604 | debian | debian10 | debian9 | coreos | rancheros | k3os | kusanagi | freebsd | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all&quot;,
+            &quot;EditDisk&quot;: {
+                &quot;HostName&quot;: &quot;hostname&quot;,
+                &quot;Password&quot;: &quot;password&quot;,
+                &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
+                &quot;NetworkMaskLen&quot;: 24,
+                &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,
+                &quot;DisablePWAuth&quot;: true,
+                &quot;EnableDHCP&quot;: true,
+                &quot;ChangePartitionUUID&quot;: true,
+                &quot;SSHKeys&quot;: [
+                    &quot;/path/to/your/public/key&quot;,
+                    &quot;ssh-rsa ...&quot;
+                ],
+                &quot;SSHKeyIDs&quot;: [
+                    123456789012
+                ],
+                &quot;IsSSHKeysEphemeral&quot;: true,
+                &quot;NoteIDs&quot;: [
+                    123456789012
+                ],
+                &quot;IsNotesEphemeral&quot;: true,
+                &quot;Notes&quot;: [
+                    {
+                        &quot;ID&quot;: 123456789012,
+                        &quot;Variables&quot;: {
+                            &quot;variable1&quot;: &quot;foo&quot;,
+                            &quot;variable2&quot;: &quot;bar&quot;
+                        }
+                    }
+                ]
+            },
+            &quot;NoWait&quot;: true
+        },
+        {
+            &quot;ID&quot;: 123456789012,
+            &quot;Description&quot;: &quot;既存のディスクを接続する例&quot;,
+            &quot;EditDisk&quot;: {},
+            &quot;NoWait&quot;: false
+        }
+    ],
+    &quot;NoWait&quot;: false
+}
+</code></pre>
+
 <h2 id="read">read</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server read [command options] &lt;ID or Name(allow multiple target)&gt;
+<h5 id="usage_2">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  read [flags]
 
-OPTIONS:
- === Common options ===
-   --help, -h  show help (default: false)
+Aliases:
+  read, show
+
+Flags:
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Output options ===
+
+      --format string        Output format in Go templates (aliases: --fmt)
+  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
+      --query string         JMESPath query
+  -q, --quiet                Output IDs only
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
+
 <h2 id="update">update</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server update [command options] &lt;ID or Name(allow multiple target)&gt;
+<h5 id="usage_3">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  update [flags]
 
-OPTIONS:
- === Common options ===
-   --assumeyes, -y                    assume that the answer to any question which would be asked is yes (default: false)
-   --description value, --desc value  set resource description
-   --icon-id value                    set Icon ID (default: 0)
-   --name value                       set resource display name
-   --tags value                       set resource tags
-   --help, -h                         show help (default: false)
+Flags:
+
+  === Common options ===
+
+      --name string          
+      --description string   
+      --tags strings         
+      --icon-id int          
+
+  === Plan options ===
+
+      --cpu int             (aliases: --core)
+      --memory int          
+      --commitment string   options: [standard/dedicatedcpu]
+      --generation string   options: [default/g100/g200]
+
+  === Server-specific options ===
+
+      --cdrom-id int                (aliases: --iso-image-id)
+      --disks string                
+      --force-shutdown              
+      --interface-driver string     options: [interface_dirver]
+      --network-interfaces string   
+      --private-host-id int         
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Wait options ===
+
+      --no-wait   
+
+  === Input options ===
+
+  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Output options ===
+
+      --format string        Output format in Go templates (aliases: --fmt)
+  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
+      --query string         JMESPath query
+  -q, --quiet                Output IDs only
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
+
+<h5 id="parameter-examples_1">Parameter Examples</h5>
+<pre class="codehilite"><code class="language-console">{
+    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
+    &quot;Name&quot;: &quot;example&quot;,
+    &quot;Description&quot;: &quot;example&quot;,
+    &quot;Tags&quot;: [
+        &quot;tag1=example1&quot;,
+        &quot;tag2=example2&quot;
+    ],
+    &quot;IconID&quot;: 123456789012,
+    &quot;CPU&quot;: 1,
+    &quot;Memory&quot;: 2,
+    &quot;Commitment&quot;: &quot;standard | dedicatedcpu&quot;,
+    &quot;Generation&quot;: &quot;default | g100 | g200&quot;,
+    &quot;InterfaceDriver&quot;: &quot;virtio | e1000&quot;,
+    &quot;CDROMID&quot;: 123456789012,
+    &quot;PrivateHostID&quot;: 123456789012,
+    &quot;NetworkInterfaces&quot;: [
+        {
+            &quot;Upstream&quot;: &quot;shared | disconnected | (switch-id)&quot;,
+            &quot;PacketFilterID&quot;: 123456789012,
+            &quot;UserIPAddress&quot;: &quot;192.0.2.11&quot;
+        }
+    ],
+    &quot;Disks&quot;: [
+        {
+            &quot;Description&quot;: &quot;新規ディスクを作成する例&quot;,
+            &quot;Tags&quot;: [
+                &quot;tag1=example1&quot;,
+                &quot;tag2=example2&quot;
+            ],
+            &quot;IconID&quot;: 123456789012,
+            &quot;DiskPlan&quot;: &quot;ssd | hdd&quot;,
+            &quot;Connection&quot;: &quot;virtio | ide&quot;,
+            &quot;SourceDiskID&quot;: 123456789012,
+            &quot;SourceArchiveID&quot;: 123456789012,
+            &quot;SizeGB&quot;: 20,
+            &quot;DistantFrom&quot;: [
+                123456789012
+            ],
+            &quot;OSType&quot;: &quot;centos | centos8stream | centos8 | centos7 | ubuntu | ubuntu2004 | ubuntu1804 | ubuntu1604 | debian | debian10 | debian9 | coreos | rancheros | k3os | kusanagi | freebsd | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all&quot;,
+            &quot;EditDisk&quot;: {
+                &quot;HostName&quot;: &quot;hostname&quot;,
+                &quot;Password&quot;: &quot;password&quot;,
+                &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
+                &quot;NetworkMaskLen&quot;: 24,
+                &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,
+                &quot;DisablePWAuth&quot;: true,
+                &quot;EnableDHCP&quot;: true,
+                &quot;ChangePartitionUUID&quot;: true,
+                &quot;SSHKeys&quot;: [
+                    &quot;/path/to/your/public/key&quot;,
+                    &quot;ssh-rsa ...&quot;
+                ],
+                &quot;SSHKeyIDs&quot;: [
+                    123456789012
+                ],
+                &quot;IsSSHKeysEphemeral&quot;: true,
+                &quot;NoteIDs&quot;: [
+                    123456789012
+                ],
+                &quot;IsNotesEphemeral&quot;: true,
+                &quot;Notes&quot;: [
+                    {
+                        &quot;ID&quot;: 123456789012,
+                        &quot;Variables&quot;: {
+                            &quot;variable1&quot;: &quot;foo&quot;,
+                            &quot;variable2&quot;: &quot;bar&quot;
+                        }
+                    }
+                ]
+            },
+            &quot;NoWait&quot;: true
+        },
+        {
+            &quot;ID&quot;: 123456789012,
+            &quot;Description&quot;: &quot;既存のディスクを接続する例&quot;,
+            &quot;EditDisk&quot;: {},
+            &quot;NoWait&quot;: false
+        }
+    ],
+    &quot;NoWait&quot;: false,
+    &quot;ForceShutdown&quot;: false
+}
+</code></pre>
+
 <h2 id="delete">delete</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server delete [command options] &lt;ID or Name(allow multiple target)&gt;
+<h5 id="usage_4">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  delete [flags]
 
-OPTIONS:
- === Common options ===
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --force, -f      forced-shutdown flag if server is running (default: false)
-   --with-disk      delete connected disks with server (default: true)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h2 id="plan-change">plan-change</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server plan-change [command options] &lt;ID or Name(allow multiple target)&gt;
+Aliases:
+  delete, rm
 
-OPTIONS:
- === Common options ===
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --core value     [Required] set CPU core count (default: 0)
-   --memory value   [Required] set memory size(GB) (default: 0)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h1 id="_3">== 電源操作 ==</h1>
-<hr />
-<h2 id="boot">boot</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server boot [command options] &lt;ID or Name(allow multiple target)&gt;
+Flags:
 
-OPTIONS:
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h2 id="shutdown">shutdown</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server shutdown [command options] &lt;ID or Name(allow multiple target)&gt;
+  === Delete options ===
 
-OPTIONS:
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h2 id="shutdown-force">shutdown-force</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server shutdown-force [command options] &lt;ID or Name(allow multiple target)&gt;
+  -f, --force        
+      --with-disks   
 
-OPTIONS:
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h2 id="reset">reset</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server reset [command options] &lt;ID or Name(allow multiple target)&gt;
+  === Zone options ===
 
-OPTIONS:
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h2 id="wait-for-boot">wait-for-boot</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server wait-for-boot [command options] &lt;ID or Name(allow multiple target)&gt;
+      --zone string   (*required) 
 
-OPTIONS:
-   --help, -h  show help (default: false)
-</code></pre>
-<hr />
-<h2 id="wait-for-down">wait-for-down</h2>
-<hr />
-<h1 id="sshscpvnc">== SSH/SCP/VNC ==</h1>
-<pre><code class="language-bash">USAGE:
-   usacloud server wait-for-down [command options] &lt;ID or Name(allow multiple target)&gt;
+  === Error handling options ===
 
-OPTIONS:
-   --help, -h  show help (default: false)
+      --fail-if-not-found   
+
+  === Input options ===
+
+  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
+
 <h2 id="ssh">ssh</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server ssh [command options] &lt;ID or Name(only single target)&gt;
+<h5 id="usage_5">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  ssh [flags]
 
-OPTIONS:
-   --key value, -i value   private-key file path
-   --password value        password(or private-key pass phrase) [$SAKURACLOUD_SSH_PASSWORD]
-   --port value, -p value  [Required] port (default: 22)
-   --quiet, -q             disable information messages (default: false)
-   --user value, -l value  user name
-   --help, -h              show help (default: false)
-</code></pre>
-<hr />
-<h2 id="ssh-exec">ssh-exec</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server ssh-exec [command options] &lt;ID or Name(only single target)&gt;
+Flags:
 
-OPTIONS:
-   --key value, -i value   private-key file path
-   --password value        password(or private-key pass phrase) [$SAKURACLOUD_SSH_PASSWORD]
-   --port value, -p value  [Required] port (default: 22)
-   --quiet, -q             disable information messages (default: false)
-   --user value, -l value  user name
-   --help, -h              show help (default: false)
-</code></pre>
-<hr />
-<h2 id="scp">scp</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server scp [command options] [ServerID:]&lt;FROM&gt; [ServerID:]&lt;TO&gt;
+  === Server-specific options ===
 
-OPTIONS:
-   --assumeyes, -y         assume that the answer to any question which would be asked is yes (default: false)
-   --key value, -i value   private-key file path
-   --password value        password(or private-key pass phrase) [$SAKURACLOUD_SSH_PASSWORD]
-   --port value, -p value  [Required] port (default: 22)
-   --quiet, -q             disable information messages (default: false)
-   --recursive, -r         set recursive copy flag (default: false)
-   --user value, -l value  user name
-   --help, -h              show help (default: false)
+  -i, --key string         
+      --password string    (aliases: --pass-phrase)
+  -p, --port int           (*required)  (default 22)
+  -l, --user string        
+      --wait-until-ready   (aliases: --wait)
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
+
 <h2 id="vnc">vnc</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server vnc [command options] &lt;ID or Name(allow multiple target)&gt;
+<h5 id="usage_6">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  vnc [flags]
 
-OPTIONS:
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h2 id="vnc-info">vnc-info</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server vnc-info [command options] &lt;ID or Name(allow multiple target)&gt;
+Flags:
 
-OPTIONS:
- === Common options ===
-   --help, -h  show help (default: false)
-</code></pre>
-<hr />
-<h1 id="_4">== ディスク管理 ===</h1>
-<hr />
-<h2 id="disk-info">disk-info</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server disk-info [command options] &lt;ID or Name(only single target)&gt;
+  === Server-specific options ===
 
-OPTIONS:
- === Common options ===
-   --help, -h  show help (default: false)
-</code></pre>
-<hr />
-<h2 id="disk-connect">disk-connect</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server disk-connect [command options] &lt;ID or Name(only single target)&gt;
+      --wait-until-ready   (aliases: --wait)
 
-OPTIONS:
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --disk-id value  [Required] set target disk ID (default: 0)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h2 id="disk-disconnect">disk-disconnect</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server disk-disconnect [command options] &lt;ID or Name(only single target)&gt;
+  === Zone options ===
 
-OPTIONS:
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --disk-id value  [Required] set target disk ID (default: 0)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h1 id="nic">== ネットワーク(NIC)管理 ==</h1>
-<hr />
-<h2 id="interface-info">interface-info</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server interface-info [command options] &lt;ID or Name(only single target)&gt;
+      --zone string   (*required) 
 
-OPTIONS:
- === Common options ===
-   --help, -h  show help (default: false)
-</code></pre>
-<hr />
-<h2 id="interface-add-for-internet">interface-add-for-internet</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server interface-add-for-internet [command options] &lt;ID or Name(only single target)&gt;
+  === Input options ===
 
-OPTIONS:
-   --assumeyes, -y      assume that the answer to any question which would be asked is yes (default: false)
-   --without-disk-edit  set skip edit-disk flag. if true, don't call DiskEdit API after interface added (default: false)
-   --help, -h           show help (default: false)
-</code></pre>
-<hr />
-<h2 id="interface-add-for-router">interface-add-for-router</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server interface-add-for-router [command options] &lt;ID or Name(only single target)&gt;
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
 
-OPTIONS:
-   --assumeyes, -y                              assume that the answer to any question which would be asked is yes (default: false)
-   --default-route value, --gateway value       set default gateway
-   --ipaddress value, --ip value                set ipaddress
-   --nw-masklen value, --network-masklen value  set ipaddress  prefix (default: 24)
-   --switch-id value                            [Required] set connect switch(connected to router) ID (default: 0)
-   --without-disk-edit                          set skip edit-disk flag. if true, don't call DiskEdit API after interface added (default: false)
-   --help, -h                                   show help (default: false)
-</code></pre>
-<hr />
-<h2 id="interface-add-for-switch">interface-add-for-switch</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server interface-add-for-switch [command options] &lt;ID or Name(only single target)&gt;
+  === Parameter example ===
 
-OPTIONS:
-   --assumeyes, -y                              assume that the answer to any question which would be asked is yes (default: false)
-   --default-route value, --gateway value       set default gateway
-   --ipaddress value, --ip value                set ipaddress
-   --nw-masklen value, --network-masklen value  set ipaddress  prefix (default: 24)
-   --switch-id value                            [Required] set connect switch ID (default: 0)
-   --without-disk-edit                          set skip edit-disk flag. if true, don't call DiskEdit API after interface added (default: false)
-   --help, -h                                   show help (default: false)
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
-<h2 id="interface-add-disconnected">interface-add-disconnected</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server interface-add-disconnected [command options] &lt;ID or Name(only single target)&gt;
 
-OPTIONS:
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --help, -h       show help (default: false)
-</code></pre>
-<hr />
-<h1 id="isocd-rom">== ISOイメージ(CD-ROM) ==</h1>
-<hr />
-<h2 id="iso-info">iso-info</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server iso-info [command options] &lt;ID or Name(only single target)&gt;
+<h2 id="rdp">rdp</h2>
+<h5 id="usage_7">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  rdp [flags]
 
-OPTIONS:
- === Common options ===
-   --help, -h  show help (default: false)
-</code></pre>
-<hr />
-<h2 id="iso-insert">iso-insert</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server iso-insert [command options] &lt;ID or Name(only single target)&gt;
+Aliases:
+  rdp, remote-desktop
 
-OPTIONS:
-   --assumeyes, -y                    assume that the answer to any question which would be asked is yes (default: false)
-   --description value, --desc value  set resource description
-   --icon-id value                    set Icon ID (default: 0)
-   --iso-file value                   set iso image file
-   --iso-image-id value               set iso-image ID (default: 0)
-   --name value                       set resource display name
-   --size value                       set iso size(GB) (default: 5)
-   --tags value                       set resource tags
-   --help, -h                         show help (default: false)
-</code></pre>
-<hr />
-<h2 id="iso-eject">iso-eject</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server iso-eject [command options] &lt;ID or Name(only single target)&gt;
+Flags:
 
-OPTIONS:
-   --assumeyes, -y  assume that the answer to any question which would be asked is yes (default: false)
-   --help, -h       show help (default: false)
+  === Server-specific options ===
+
+      --port int            (default 3389)
+      --user string         (default &quot;Administrator&quot;)
+      --wait-until-ready   (aliases: --wait)
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
-<h1 id="_5">== 監視/モニタリング ==</h1>
-<hr />
+
+<h2 id="boot">boot</h2>
+<h5 id="usage_8">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  boot [flags]
+
+Aliases:
+  boot, power-on
+
+Flags:
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Wait options ===
+
+      --no-wait   
+
+  === Input options ===
+
+  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
+</code></pre>
+
+<h2 id="shutdown">shutdown</h2>
+<h5 id="usage_9">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  shutdown [flags]
+
+Aliases:
+  shutdown, power-off
+
+Flags:
+
+  === Server-specific options ===
+
+  -f, --force-shutdown   (aliases: --force)
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Wait options ===
+
+      --no-wait   
+
+  === Input options ===
+
+  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
+</code></pre>
+
+<h2 id="reset">reset</h2>
+<h5 id="usage_10">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  reset [flags]
+
+Flags:
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
+</code></pre>
+
 <h2 id="monitor-cpu">monitor-cpu</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server monitor-cpu [command options] &lt;ID or Name(allow multiple target)&gt;
+<h5 id="usage_11">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  monitor-cpu [flags]
 
-OPTIONS:
- === Common options ===
-   --end value         set end-time
-   --key-format value  [Required] set monitoring value key-format (default: &quot;sakuracloud.{{.ID}}.cpu&quot;)
-   --start value       set start-time
-   --help, -h          show help (default: false)
+Flags:
+
+  === Monitor options ===
+
+      --end string     
+      --start string   
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Output options ===
+
+      --format string        Output format in Go templates (aliases: --fmt)
+  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
+      --query string         JMESPath query
+  -q, --quiet                Output IDs only
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
-<h2 id="monitor-nic">monitor-nic</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server monitor-nic [command options] &lt;ID or Name(allow multiple target)&gt;
 
-OPTIONS:
- === Common options ===
-   --end value         set end-time
-   --index value       target index(es)
-   --key-format value  [Required] set monitoring value key-format (default: &quot;sakuracloud.{{.ID}}.nic.{{.Index}}&quot;)
-   --start value       set start-time
-   --help, -h          show help (default: false)
+<h2 id="wait-until-ready">wait-until-ready</h2>
+<h5 id="usage_12">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  wait-until-ready [flags]
+
+Aliases:
+  wait-until-ready, wait-for-boot
+
+Flags:
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
-<hr />
-<h2 id="monitor-disk">monitor-disk</h2>
-<pre><code class="language-bash">USAGE:
-   usacloud server monitor-disk [command options] &lt;ID or Name(allow multiple target)&gt;
 
-OPTIONS:
- === Common options ===
-   --end value         set end-time
-   --index value       target index(es)
-   --key-format value  [Required] set monitoring value key-format (default: &quot;sakuracloud.{{.ID}}.disk.{{.Index}}&quot;)
-   --start value       set start-time
-   --help, -h          show help (default: false)
+<h2 id="wait-until-shutdown">wait-until-shutdown</h2>
+<h5 id="usage_13">Usage</h5>
+<pre class="codehilite"><code class="language-console">Usage:
+  wait-until-shutdown [flags]
+
+Aliases:
+  wait-until-shutdown, wait-for-down
+
+Flags:
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
 </code></pre>
               
             </div>
@@ -713,7 +1064,7 @@ OPTIONS:
         <a href="../archive/" class="btn btn-neutral float-right" title="archive">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../usage_monitoring/" class="btn btn-neutral" title="監視/モニタリング"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../private-host/" class="btn btn-neutral" title="private-host"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -741,7 +1092,7 @@ OPTIONS:
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../usage_monitoring/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../private-host/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../archive/" style="color: #fcfcfc">Next &raquo;</a></span>

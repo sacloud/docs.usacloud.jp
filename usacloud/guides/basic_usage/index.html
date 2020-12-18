@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="@sacloud-authors">
+  <link rel="canonical" href="https://sacloud.github.io/usacloud/guides/basic_usage/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>基本的な使い方 - Usacloudドキュメント</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u57fa\u672c\u7684\u306a\u4f7f\u3044\u65b9";
+    var mkdocs_page_input_path = "guides/basic_usage.md";
+    var mkdocs_page_url = "/usacloud/guides/basic_usage/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63739336-5', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Usacloudドキュメント</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">ホーム</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">利用方法/ガイド</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">インストール</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/start_guide/">Usacloud導入ガイド</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">利用方法/ガイド</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">基本的な使い方</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">コマンド基本構文</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">指定できる値</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">コマンド実行例</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#help">help表示</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">グローバルオプション/操作対象のリソースのヘルプ表示</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">コマンドのヘルプ表示</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">コマンドオプション/引数のヘルプ表示</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">グローバルオプション</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#-config">コンフィグ(--config)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#api-token">APIトークン(--token)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#api-secret">APIシークレット(--secret)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_9">共通オプション: 出力の設定</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#-output-type-or-out">出力タイプ(--output-type or --out)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#quiet-quiet-or-q">quietモード(--quiet or -q)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-format-or-fmt">フォーマット(--format or --fmt)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">共通オプション: ゾーン指定</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">全ゾーン一括操作</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#or-json-parameters">共通オプション: ファイル or JSONでのパラメータ指定(--parameters)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-example">共通オプション: パラメータ例の出力(--example)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#yes-y-or-assumeyes">共通オプション: yesオプション(-y or --assumeyes)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#id-or-or">引数: ID or 名称 or タグでの指定</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../completion/">completionコマンド</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../rest/">restコマンド</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">アップグレード</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../upgrade/v1_0_0/">v1.0へのアップグレード</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">リファレンス</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">オプション/設定</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../commands/global/">グローバルオプション</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../commands/profile/">プロファイル</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">コマンド</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">Configuration / プロファイル/コンフィグ</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/config/">config</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Authentication / 認証情報</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/auth-status/">auth-status</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Computing / コンピューティング</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/private-host/">private-host</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/server/">server</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Storage / ストレージ</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/archive/">archive</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/auto-backup/">auto-backup</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/cdrom/">cdrom</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/disk/">disk</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Networking / ネットワーキング</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/bridge/">bridge</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/internet/">internet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/local-router/">local-router</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/packet-filter/">packet-filter</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/switch/">switch</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">ネットワーク関連サブリソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/interface/">interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/ipaddress/">ipaddress</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/ipv6addr/">ipv6addr</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/ipv6net/">ipv6net</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/subnet/">subnet</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Appliance / アプライアンス</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/database/">database</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/load-balancer/">load-balancer</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/nfs/">nfs</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/vpc-router/">vpc-router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Secure Mobile / セキュアモバイル</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/mobile-gateway/">mobile-gateway</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/sim/">sim</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Common service items / 共通サービスアイテム</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/dns/">dns</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/gslb/">gslb</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/proxy-lb/">proxy-lb</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/simple-monitor/">simple-monitor</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Billing / 請求関連</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/bill/">bill</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/coupon/">coupon</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Lab / Labプロダクト</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/container-registry/">container-registry</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/esme/">esme</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">WebAccelerator / ウェブアクセラレータ</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/web-accelerator/">web-accelerator</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other services / その他サービス</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/icon/">icon</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/license/">license</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/note/">note</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/ssh-key/">ssh-key</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Region/Zone information / リージョン/ゾーン情報参照</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/region/">region</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/zone/">zone</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Service/Product information / サービス/プロダクト情報参照</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/disk-plan/">disk-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/internet-plan/">internet-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/license-info/">license-info</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/private-host-plan/">private-host-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/server-plan/">server-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/service-class/">service-class</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other commands / その他</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/completion/">completion</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/rest/">rest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../commands/self/">self</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Usacloudドキュメント</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>利用方法/ガイド &raquo;</li>
+        
+      
+        
+          <li>利用方法/ガイド &raquo;</li>
+        
+      
+    
+    <li>基本的な使い方</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/sacloud/usacloud/edit/master/docs/guides/basic_usage.md"> Edit on usacloud</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">基本的な使い方</h1>
+<hr />
+<h2 id="_2">コマンド基本構文</h2>
+<p><code>usacloud</code>コマンドの基本構文は以下の通りです。</p>
+<pre class="codehilite"><code class="language-bash">$ usacloud &lt;操作対象のリソース&gt; &lt;コマンド&gt; [コマンドオプション] [引数]
+</code></pre>
+
+<h4 id="_3">指定できる値</h4>
+<p>リソースやコマンド、オプションに指定できる値は<a href="#help">help表示</a>で確認できます。</p>
+<h4 id="_4">コマンド実行例</h4>
+<pre class="codehilite"><code class="language-bash">#------------------------------------------------------------------------------
+# サーバー(server)に対する一覧表示コマンド(ls)の場合の例
+#------------------------------------------------------------------------------
+
+# 基本的な使い方(オプション/引数なし)
+$ usacloud server ls
+
+# グローバルオプションあり
+$ usacloud --zone tk1a server ls
+
+# オプション(短い形式)
+$ usacloud server ls -q
+
+# オプション(長い形式)
+$ usacloud server ls --quiet
+
+# オプションは=を明示してもOK
+$ usacloud server ls --name=foovar
+</code></pre>
+
+<hr />
+<h2 id="help">help表示</h2>
+<p><code>-h</code>または<code>--help</code>フラグを指定するとヘルプを表示します。 <br />
+フラグを指定する位置で表示できる内容が変化します。</p>
+<h4 id="_5">グローバルオプション/操作対象のリソースのヘルプ表示</h4>
+<pre class="codehilite"><code class="language-bash">usacloud -h
+</code></pre>
+
+<h4 id="_6">コマンドのヘルプ表示</h4>
+<pre class="codehilite"><code class="language-bash">#
+# 書式: usacloud &lt;操作対象のリソース&gt; -h
+#
+
+# サーバー(server)のヘルプ表示の例
+usacloud server -h
+</code></pre>
+
+<h4 id="_7">コマンドオプション/引数のヘルプ表示</h4>
+<pre class="codehilite"><code class="language-bash">#
+# 書式: usacloud &lt;操作対象のリソース&gt; &lt;コマンド&gt; -h
+#
+
+# サーバー(server1)の一覧表示コマンド(ls)のヘルプ表示の例
+usacloud server ls -h
+</code></pre>
+
+<hr />
+<h2 id="_8">グローバルオプション</h2>
+<p>主なオプションを以下に記載します。全てのオプションについては<a href="../commands/global">グローバルオプション</a>を参照してください。</p>
+<hr />
+<h4 id="-config">コンフィグ(<code>--config</code>)</h4>
+<p>利用するコンフィグ(プロファイル)を指定します。(エイリアス:<code>--profile</code>)<br />
+指定可能な値は<code>usacloud config list</code>コマンドで調べることが可能なほか、<code>usacloud config create</code>コマンドなどで新規作成も可能です。</p>
+<blockquote>
+<p>通常この値は<code>~/.usacloud/current</code>の値が利用されます。<br />
+環境変数<code>USACLOUD_PROFILE</code>での指定、またはコマンド実行時の<code>--config</code>の指定でこの設定を上書き可能です。  </p>
+</blockquote>
+<hr />
+<h4 id="api-token">APIトークン(<code>--token</code>)</h4>
+<p>さくらのクラウドのAPIトークンを指定します。  </p>
+<blockquote>
+<p>通常この値は<code>~/.usacloud/[current-profile-nane]/config.json</code>の値が利用されます。<br />
+環境変数<code>SAKURACLOUD_ACCESS_TOKEN</code>での指定、またはコマンド実行時の<code>--token</code>の指定でこれらの設定を上書き可能です。  </p>
+</blockquote>
+<hr />
+<h4 id="api-secret">APIシークレット(<code>--secret</code>)</h4>
+<p>さくらのクラウドのAPIシークレットを指定します。  </p>
+<blockquote>
+<p>通常この値は<code>~/.usacloud/[current-profile-nane]/config.json</code>の値が利用されます。<br />
+環境変数<code>SAKURACLOUD_ACCESS_TOKEN_SECRET</code>での指定、またはコマンド実行時の<code>--secret</code>の指定でこれらの設定を上書き可能です。  </p>
+</blockquote>
+<hr />
+<h2 id="_9">共通オプション: 出力の設定</h2>
+<p>出力の行われるコマンドでは以下の出力オプションが利用可能です。<br />
+(<code>bill csv</code>などの一部コマンドでは出力オプションを利用できない場合があります)  </p>
+<hr />
+<h4 id="-output-type-or-out">出力タイプ(<code>--output-type</code> or <code>--out</code>)</h4>
+<p>出力形式を選択します。指定可能な値は以下のいずれかです。  </p>
+<ul>
+<li><code>table</code> : テーブル形式</li>
+<li><code>json</code>  : JSON形式</li>
+<li><code>yaml</code>  : YAML形式</li>
+</ul>
+<p>未指定の場合はグローバルオプション<code>--default-output-type</code>の設定が利用されます。</p>
+<hr />
+<h4 id="quiet-quiet-or-q">quietモード(<code>--quiet</code> or <code>-q</code>)</h4>
+<p>IDのみ出力します。</p>
+<p><strong>このオプションは<code>--output-type</code>と一緒に指定できません。 </strong></p>
+<hr />
+<h4 id="-format-or-fmt">フォーマット(<code>--format</code> or <code>--fmt</code>)</h4>
+<p>出力フォーマットをgo言語の<a href="https://golang.org/pkg/text/template/">text/template</a>形式で指定します。</p>
+<pre class="codehilite"><code class="language-bash">usacloud server ls --format &quot;ID is {{.ID}}, Name is {{.Name}}&quot;
+</code></pre>
+
+<hr />
+<h2 id="_10">共通オプション: ゾーン指定</h2>
+<p>ゾーンを指定する必要があるリソースの場合<code>--zone</code>で指定します。</p>
+<pre class="codehilite"><code class="language-bash">$ usacloud server list --zone is1a
+</code></pre>
+
+<p>プロファイルでゾーンをセットしている場合は省略可能です。</p>
+<h3 id="_11">全ゾーン一括操作</h3>
+<p><code>--zone</code>に<code>all</code>を指定することで全ゾーン一括操作が可能です。</p>
+<pre class="codehilite"><code class="language-bash"># 全ゾーンのサーバを一覧表示
+$ usacloud server list --zone=all
+
+# 全ゾーンのサーバのうち、名称にexampleを含むサーバをシャットダウン
+$ usacloud server shutdown --zone=all example
+
+# 全ゾーンにサーバ作成
+$ usacloud server create --name example ... --zone=all
+</code></pre>
+
+<hr />
+<h2 id="or-json-parameters">共通オプション: ファイル or JSONでのパラメータ指定(<code>--parameters</code>)</h2>
+<p>コマンドに渡すパラメータをJSONまたはJSONを記述したファイルパスで指定します。</p>
+<pre class="codehilite"><code class="language-bash"># 文字列で指定する例
+$ usacloud server list --parameters '{&quot;Names&quot;: [&quot;example&quot;]}'
+
+# ファイルパスで指定する例
+$ cat example.json
+{
+  &quot;Names&quot;: [&quot;example&quot;]
+}
+$ usacloud server list --parameters example.json
+</code></pre>
+
+<p>JSONファイルは<code>--example</code>パラメータで記述例を確認出来ます。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>--parameters</code>はコマンドラインオプションとの併用/コマンドラインオプションでの上書きが可能です。<br />
+共通的なパラメータをファイルに保存しておき、個別の値はコマンドラインで指定する、という使い方が出来ます。</p>
+</div>
+<hr />
+<h2 id="-example">共通オプション: パラメータ例の出力(<code>--example</code>)</h2>
+<p><code>--parameters</code>で指定するJSONファイルの例を出力します。</p>
+<pre class="codehilite"><code class="language-bash">$ usacloud switch create --example
+{
+    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
+    &quot;Name&quot;: &quot;example&quot;,
+    &quot;Description&quot;: &quot;example&quot;,
+    &quot;Tags&quot;: [
+        &quot;tag1=example1&quot;,
+        &quot;tag2=example2&quot;
+    ],
+    &quot;IconID&quot;: 123456789012
+}
+</code></pre>
+
+<p>通常はファイルなどに保存した上で編集して利用します。</p>
+<pre class="codehilite"><code class="language-bash"># パラメータ例をファイルに出力
+$ usacloud switch create --example &gt; parameters.json
+# 編集
+$ vi parameters.json
+# 利用
+$ usacloud switch create --parameters parameters.json
+</code></pre>
+
+<h2 id="yes-y-or-assumeyes">共通オプション: yesオプション(<code>-y</code> or <code>--assumeyes</code>)</h2>
+<p>実行時に確認ダイアログが表示されるコマンドで利用可能です。<br />
+確認ダイアログ全てに<code>y</code> または <code>yes</code>を入力します。  </p>
+<h2 id="id-or-or">引数: ID or 名称 or タグでの指定</h2>
+<p>特定のリソースに対するコマンドの場合、ID、名称、またはタグを引数にとります。<br />
+IDとタグの場合は完全一致、名称の場合は部分一致したリソースが操作対象となります。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>複数リソースの一括操作に対応していないコマンドの場合、対象が複数となる指定はエラーとなります。</p>
+</div>
+<p>例:</p>
+<pre class="codehilite"><code class="language-bash">#------------------------------------------------------------------------------
+# 以下のリソースが存在する場合の例
+#------------------------------------------------------------------------------
+$ usacloud server ls
++--------------+---------+-----+--------+---------------+--------+
+|      ID      |  NAME   | CPU | MEMORY |   IPADDRESS   | STATUS |
++--------------+---------+-----+--------+---------------+--------+
+| 000000000011 | Test1-1 | 1   | 1024MB | 192.0.2.11/24 | up     |
+| 000000000021 | Test2-1 | 1   | 1024MB | 192.0.2.21/24 | up     |
+| 000000000031 | Test3-1 | 1   | 1024MB | 192.0.2.31/24 | up     |
+| 000000000032 | Test3-2 | 1   | 1024MB | 192.0.2.32/24 | up     |
++--------------+---------+-----+--------+---------------+--------+
+
+#------------------------------------------------------------------------------
+# 部分一致(例1)
+#------------------------------------------------------------------------------
+$ usacloud server boot Test # 名称にTestを含むもの
+
+Target resource IDs =&gt; [
+    000000000011,
+    000000000021,
+    000000000031,
+    000000000032
+]
+Are you sure you want to boot?(y/n) [n]:
+
+#------------------------------------------------------------------------------
+# 部分一致(例2)
+#------------------------------------------------------------------------------
+$ usacloud server boot Test3 # 名称にTest3を含むもの
+
+Target resource IDs =&gt; [
+    000000000031,
+    000000000032
+]
+Are you sure you want to boot?(y/n) [n]:
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../completion/" class="btn btn-neutral float-right" title="completionコマンド">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../installation/start_guide/" class="btn btn-neutral" title="Usacloud導入ガイド"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright (C) 2017-2020 The Usacloud Authors.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../installation/start_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../completion/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

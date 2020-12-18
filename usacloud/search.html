@@ -55,132 +55,202 @@
                     <li class="toctree-l1"><a class="reference internal" href="./.">ホーム</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">利用方法/ガイド</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="./start_guide/">usacloud 導入ガイド</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">インストール</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="./installation/start_guide/">Usacloud導入ガイド</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">利用方法/ガイド</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="./guides/basic_usage/">基本的な使い方</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="./guides/completion/">completionコマンド</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="./guides/rest/">restコマンド</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">アップグレード</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="./upgrade/v1_0_0/">v1.0へのアップグレード</a>
+                </li>
+    </ul>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">usacloud コマンド</span></p>
+                <p class="caption"><span class="caption-text">リファレンス</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="./basic_usage/">基本的な使い方</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="./usage_server_build/">サーバの作成</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="./usage_server_power/">電源操作</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="./usage_server_connect/">接続(SSH/VNC)</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="./usage_server_scp/">ファイル送受信(SCP)</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="./usage_ojs/">オブジェクトストレージの操作</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="./usage_download/">アーカイブのダウンロード</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="./usage_upload/">ISOイメージのアップロード</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="./usage_monitoring/">監視/モニタリング</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">コマンドリファレンス</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="#">コンピューティング</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">オプション/設定</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/server/">server</a>
+                <li class="toctree-l2"><a class="reference internal" href="./commands/global/">グローバルオプション</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="./commands/profile/">プロファイル</a>
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">ストレージ</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">コマンド</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/archive/">archive</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/auto_backup/">auto-backup</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/disk/">disk</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/iso_image/">iso-image</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/object_storage/">object-storage</a>
+                <li class="toctree-l2"><a class="reference internal" href="#">Configuration / プロファイル/コンフィグ</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/config/">config</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">ネットワーキング</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Authentication / 認証情報</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/bridge/">bridge</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/internet/">internet</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/packet_filter/">packet-filter</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/switch/">switch</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/interface/">interface</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/auth-status/">auth-status</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">アプライアンス</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Computing / コンピューティング</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/database/">database</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/private-host/">private-host</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/load_balancer/">load-balancer</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/vpc_router/">vpc-router</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/server/">server</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">共通サービスアイテム</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Storage / ストレージ</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/dns/">dns</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/archive/">archive</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/gslb/">gslb</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/auto-backup/">auto-backup</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/simple_monitor/">simple-monitor</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/cdrom/">cdrom</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/disk/">disk</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">共通アイテム</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Networking / ネットワーキング</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/license/">license</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/bridge/">bridge</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/icon/">icon</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/internet/">internet</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/ssh_key/">ssh-key</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/local-router/">local-router</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/startup_script/">startup-script</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/packet-filter/">packet-filter</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/switch/">switch</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">請求</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">ネットワーク関連サブリソース</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/bill/">bill</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/interface/">interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/ipaddress/">ipaddress</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/ipv6addr/">ipv6addr</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/ipv6net/">ipv6net</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/subnet/">subnet</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">サービス</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Appliance / アプライアンス</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/webaccel/">web-accel</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/database/">database</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/load-balancer/">load-balancer</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/nfs/">nfs</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/vpc-router/">vpc-router</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">製品/プラン/情報</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Secure Mobile / セキュアモバイル</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/price/">price</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/mobile-gateway/">mobile-gateway</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/product_disk/">product-disk</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/product_internet/">product-internet</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/product_license/">product-license</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/product_server/">product-server</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/region/">region</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/zone/">zone</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/sim/">sim</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">その他</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Common service items / 共通サービスアイテム</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="./commands/config/">confg</a>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/dns/">dns</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/gslb/">gslb</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/proxy-lb/">proxy-lb</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/simple-monitor/">simple-monitor</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Billing / 請求関連</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/bill/">bill</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/coupon/">coupon</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Lab / Labプロダクト</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/container-registry/">container-registry</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/esme/">esme</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">WebAccelerator / ウェブアクセラレータ</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/web-accelerator/">web-accelerator</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other services / その他サービス</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/icon/">icon</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/license/">license</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/note/">note</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/ssh-key/">ssh-key</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Region/Zone information / リージョン/ゾーン情報参照</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/region/">region</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/zone/">zone</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Service/Product information / サービス/プロダクト情報参照</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/disk-plan/">disk-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/internet-plan/">internet-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/license-info/">license-info</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/private-host-plan/">private-host-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/server-plan/">server-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/service-class/">service-class</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other commands / その他</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/completion/">completion</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/rest/">rest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="./commands/self/">self</a>
+                </li>
+    </ul>
                 </li>
     </ul>
                     </li>
