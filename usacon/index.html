@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Usacon日本語ドキュメント">
+  <meta name="author" content="@sacloud-authors">
+  <link rel="canonical" href="https://docs.usacloud.jp/usacon/">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Usaconドキュメント</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Usacon\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/usacon/";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63739336-5', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Usaconドキュメント</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Usaconドキュメント</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install">Install</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#from_chrome_web_store">From Chrome Web Store / Chromeウェブストアから</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#from_source_code">From source code / ソースコードから (for a developer)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#show_console">コンソールの表示</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add_api_key">APIキーの登録</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#choose_api_key">APIキーの選択</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unselect_api_key">APIキーの選択解除</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#console_usage">コンソールの操作</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#console_commands">コマンド</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#keyboard_shortcut">キーボードショートカット</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Usaconドキュメント</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Usaconドキュメント</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/sacloud/usacon/edit/master/docs/index.md"> Edit on usacon</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="usacon">usacon日本語ドキュメント</h1>
+<p>A browser extension for using SakuraCloud CLI in the control panel.</p>
+<p><code>Usacon</code>は<a href="https://cloud.sakura.ad.jp">さくらのクラウド</a>のコントロールパネル上でCLIである<a href="https://github.com/sacloud/usacloud">Usacloud</a>を
+利用できるようにするChrome拡張です。<br />
+WebAssemblyを利用しており別途サーバを必要とせずにブラウザだけでUsacloudコマンドが実行可能になります。</p>
+<p><a href="https://github.com/sacloud/usacon">https://github.com/sacloud/usacon</a></p>
+<p><img alt="UsaCon Overview" src="images/overview.png" /></p>
+<hr />
+<ul>
+<li><a href="#install">Install / インストール</a><ul>
+<li><a href="#from_chrome_web_store">From Chrome Web Store / Chromeウェブストアから</a></li>
+<li><a href="#from_source_code">From source code / ソースコードから (for a developer)</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage / 使い方</a><ul>
+<li><a href="#show_console">コンソールの表示</a></li>
+<li><a href="#add_api_key">APIキーの登録</a></li>
+<li><a href="#choose_api_key">APIキーの選択</a></li>
+<li><a href="#unselect_api_key">APIキーの選択解除</a></li>
+<li><a href="#console_usage">コンソールの操作</a><ul>
+<li><a href="#console_commands">コマンド</a></li>
+<li><a href="#keyboard_shortcut">キーボードショートカット</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="install">Install</h2>
+<h3 id="from_chrome_web_store">From Chrome Web Store / Chromeウェブストアから</h3>
+<p><strong>TODO ストアに公開したら追記</strong></p>
+<h3 id="from_source_code">From source code / ソースコードから (for a developer)</h3>
+<p>1: ブラウザ拡張のビルド</p>
+<pre class="codehilite"><code>$ git clone https://github.com/sacloud/usacon.git
+$ cd usacon
+$ make tools release-build
+
+# ./dist配下にファイル一式が出力される
+</code></pre>
+
+<p>2: Chromeへインストール</p>
+<ul>
+<li>Chromeで<code>chrome://extensions</code>を開く</li>
+<li><code>パッケージ化されていない拡張機能を読み込む</code>をクリック</li>
+<li>1で出力された<code>dist</code>ディレクトリを指定</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>UsaConはさくらのクラウドのコントロールパネルのうち、IaaS部分でのみ利用可能です。<br />
+具体的には<code>https://secure.sakura.ad.jp/cloud/iaas</code>を開いている場合が対象となります。</p>
+<h3 id="show_console">コンソールの表示</h3>
+<p>ブラウザ右上に表示されているのUsaConのブラウザ拡張アイコンをクリックするとコンソールの表示/非表示が切り替わります。</p>
+<p><img alt="Open/Close" src="images/open-close.png" /></p>
+<h3 id="add_api_key">APIキーの登録</h3>
+<p><code>Add API Key</code>ボタンをクリックするとAPI入力画面が表示されます。
+<img alt="Add API Key" src="images/add-api-key.png" /></p>
+<p>入力して<code>Save To The Browser</code>ボタンをクリックするとブラウザにAPIキーを保存するダイアログが表示されます。</p>
+<p><img alt="Save API Key" src="images/save-api-key.png" /></p>
+<p><strong> Note: もしダイアログが表示されない場合はURLバーの右側の鍵アイコンをクリックすると表示されることがあります </strong></p>
+<h3 id="choose_api_key">APIキーの選択</h3>
+<p><code>Choose API Key</code>ボタンをクリックするとブラウザに保存済みのAPIキーの選択ダイアログが表示されます。</p>
+<p><img alt="Choose API Key" src="images/choose-api-key.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>既に<code>secure.sakura.ad.jp</code>でログインパスワードなどを保存済みの場合、上記で登録したAPIキー以外の候補も表示されます。 <br />
+このためUsaconで登録したAPIキーには目印としてUsacloudアイコンを見出しに設定しています。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>既にUsaconでAPIキーを登録している場合、登録されている全てのAPIキーが候補として表示されます。<br />
+現在コントロールパネルにログインしているアカウントとは別のアカウントと紐づけられたAPIキーの場合でも一覧表示される点にご注意ください。</p>
+</div>
+<h3 id="unselect_api_key">APIキーの選択解除</h3>
+<p>APIキーを選択した状態だと保存時に指定したAPIキーの名前がツールバーに表示されています。<br />
+APIキーの名前をクリックすることで選択解除が行えます。</p>
+<p><img alt="Unselect API Key" src="images/unselect-api-key.png" /></p>
+<h3 id="console_usage">コンソールの操作</h3>
+<h4 id="console_commands">コマンド</h4>
+<p>以下のコマンドが利用可能です。</p>
+<ul>
+<li><code>usacloud</code></li>
+<li><code>echo</code></li>
+<li><code>env</code></li>
+<li><code>clear</code> or <code>cls</code></li>
+</ul>
+<h4 id="keyboard_shortcut">キーボードショートカット</h4>
+<p>bash風のキーボードショートカットが利用可能です。</p>
+<ul>
+<li><code>↑</code> または <code>↓</code>: ヒストリーの表示</li>
+<li><code>tab</code>: (未実装) オートコンプリート</li>
+<li><code>ctrl + c</code>: 実行中のコマンドの終了</li>
+<li><code>ctrl + z</code>: 実行中のコマンドの中断(現在は<code>ctrl + c</code>と同等の処理)</li>
+<li>
+<p><code>ctrl + l</code>: 画面のクリア</p>
+</li>
+<li>
+<p><code>ctrl + a</code>: カーソルを行頭へ移動</p>
+</li>
+<li><code>ctrl + e</code>: カーソルを行末へ移動</li>
+<li><code>ctrl + b</code>: カーソルを1文字前へ移動</li>
+<li><code>ctrl + f</code>: カーソルを1文字後ろへ移動</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright (C) 2017-2020 The Usacon Authors.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2020-12-19 11:00:12.715560+00:00
+-->
