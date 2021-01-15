@@ -48,6 +48,7 @@ data "sakuracloud_database" "foobar" {
 * `icon_id` - アイコンID
 * `name` - 名前
 * `network_interface` - ネットワーク設定。詳細は[network_interfaceブロック](#network_interface)を参照
+* `parameters` - RDBMS固有のパラメータ設定のマップ  
 * `password` - デフォルトユーザーのパスワード
 * `plan` - プラン。次のいずれかとなる [`10g`/`30g`/`90g`/`240g`/`500g`/`1t`].
 * `replica_password` - レプリケーションユーザーのパスワード
