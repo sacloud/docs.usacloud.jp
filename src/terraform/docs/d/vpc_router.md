@@ -62,6 +62,7 @@ data "sakuracloud_vpc_router" "foobar" {
 * `syslog_host` - VPCルータのログを送信するsyslogホストのIPアドレス
 * `tags` - タグ
 * `user` - リモートアクセスユーザー設定のリスト。詳細は[userブロック](#user)を参照
+* `version` - VPCルータのバージョン
 
 ##### dhcp_serverブロック
 
