@@ -141,6 +141,7 @@ resource sakuracloud_switch "foobar" {
 * `name` - (Required) 名前 / `1`-`64`文字で指定
 * `internet_connection` - (Optional) インターネットへの接続を許可するフラグ / デフォルト:`true`
 * `plan` - (Optional) プラン / 次のいずれかを指定 [`standard`/`premium`/`highspec`/`highspec4000`] / この値を変更するとリソースの再作成が行われる / デフォルト:`standard`
+* `version` - (Optional) VPCルータのバージョン / この値を変更するとリソースの再作成が行われる / デフォルト:`2`  
 * `syslog_host` - (Optional) syslogホストのIPアドレス
 
 #### ネットワーク関連
