@@ -412,6 +412,10 @@ resource &quot;sakuracloud_database&quot; &quot;foobar&quot; {
     weekdays = [&quot;mon&quot;, &quot;tue&quot;]
   }
 
+  parameters = {
+    max_connections = 100
+  }
+
   description = &quot;description&quot;
   tags        = [&quot;tag1&quot;, &quot;tag2&quot;]
 }
@@ -460,6 +464,10 @@ resource &quot;sakuracloud_switch&quot; &quot;foobar&quot; {
 <ul>
 <li><code>time</code> - (Optional) バックアップ取得時刻 / <code>HH:mm</code>形式で指定</li>
 <li><code>weekdays</code> - (Optional) バックアップ取得曜日のリスト / 各要素は次のいずれかを指定 [<code>sun</code>/<code>mon</code>/<code>tue</code>/<code>wed</code>/<code>thu</code>/<code>fri</code>/<code>sat</code>]</li>
+</ul>
+<h4 id="rdbms">RDBMS固有パラメータ関連</h4>
+<ul>
+<li><code>parameters</code> - RDBMS固有のパラメータ設定のマップ。指定可能なキーの一覧は<code>usacloud database list-parameters &lt;ID or Name or Tags&gt;</code>コマンドで参照可能</li>
 </ul>
 <h4 id="_4">レプリケーション関連</h4>
 <ul>
