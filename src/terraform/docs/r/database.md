@@ -30,6 +30,10 @@ resource "sakuracloud_database" "foobar" {
     time     = "00:00"
     weekdays = ["mon", "tue"]
   }
+  
+  parameters = {
+    max_connections = 100
+  }
 
   description = "description"
   tags        = ["tag1", "tag2"]
@@ -80,6 +84,10 @@ resource "sakuracloud_switch" "foobar" {
 
 * `time` - (Optional) バックアップ取得時刻 / `HH:mm`形式で指定
 * `weekdays` - (Optional) バックアップ取得曜日のリスト / 各要素は次のいずれかを指定 [`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`]
+
+#### RDBMS固有パラメータ関連
+
+* `parameters` - RDBMS固有のパラメータ設定のマップ。指定可能なキーの一覧は`usacloud database list-parameters <ID or Name or Tags>`コマンドで参照可能
 
 #### レプリケーション関連
 
