@@ -86,7 +86,10 @@ usacloud server ls -h
 指定可能な値は`usacloud config list`コマンドで調べることが可能なほか、`usacloud config create`コマンドなどで新規作成も可能です。
 
 > 通常この値は`~/.usacloud/current`の値が利用されます。  
-> 環境変数`USACLOUD_PROFILE`での指定、またはコマンド実行時の`--config`の指定でこの設定を上書き可能です。  
+> 環境変数`SAKURACLOUD_PROFILE`/`USACLOUD_PROFILE`での指定、またはコマンド実行時の`--profile`の指定でこの設定を上書き可能です。
+
+!!! Warning
+    Usacloud v0との互換性維持のためv1でも環境変数`USACLOUD_PROFILE`が利用可能ですが、将来のバージョンでは廃止される予定です。
 
 ---
 
