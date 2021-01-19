@@ -29,7 +29,9 @@ $ usacloud config create example
 
 ### Usacloudコマンド動作関連
 
+- `ArgumentMatchMode`(string): 操作対象リソースを引数で指定するコマンドでのリソース名と引数の比較方法(有効な値: `partial`(部分一致)/`exact`(完全一致))
 - `DefaultOutputType`(string): デフォルトのアウトプットタイプ(有効な値: `table`/`json`/`yaml`)
+- `DefaultQueryDriver`(string): 各コマンドの`--query`を処理するデフォルトのドライバ(有効な値: `jmespath`/`jq`)
 - `NoColor`(bool): ANSIエスケープシーケンスによる色つけを無効化
 - `ProcessTimeoutSec`(int): コマンド全体の実行タイムアウトまでの秒数
 
@@ -60,7 +62,9 @@ $ usacloud config create example
   "AcceptLanguage": "en-US,en;q=0.9",
   "AccessToken": "<your-access-token>",
   "AccessTokenSecret": "<your-access-secret>",
+  "ArgumentMatchMode": "exact",
   "DefaultOutputType": "table",
+  "DefaultQueryDriver": "jq",
   "DefaultZone": "is1a",
   "FakeMode": false,
   "FakeStorePath": "~/.usacloud/fake_store.json",
