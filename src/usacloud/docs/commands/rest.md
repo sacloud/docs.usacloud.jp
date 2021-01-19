@@ -21,6 +21,10 @@ Flags:
   -X, --method string   (*required) options: [get/post/put/delete/GET/POST/PUT/DELETE] (default "get")
       --zone string     
 
+  === Output options ===
+
+      --query string   JMESPath query
+
 ```
 
 
