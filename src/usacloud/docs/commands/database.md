@@ -8,6 +8,7 @@
     - [read](#read)
     - [update](#update)
     - [delete](#delete)
+    - [list-parameters](#list-parameters)
 - Power Management Commands
     - [boot](#boot)
     - [shutdown](#shutdown)
@@ -55,10 +56,11 @@ Flags:
 
   === Output options ===
 
-      --format string        Output format in Go templates (aliases: --fmt)
-  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
-      --query string         JMESPath query
-  -q, --quiet                Output IDs only
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
@@ -87,6 +89,10 @@ Flags:
 
       --database-type string   (*required) options: [postgresql/postgres/mariadb]
       --plan string            (*required) options: [10g/30g/90g/240g/500g/1t]
+
+  === Database-specific options ===
+
+      --database-parameters strings   
 
   === WebUI options ===
 
@@ -134,10 +140,11 @@ Flags:
 
   === Output options ===
 
-      --format string        Output format in Go templates (aliases: --fmt)
-  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
-      --query string         JMESPath query
-  -q, --quiet                Output IDs only
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
@@ -179,6 +186,9 @@ Flags:
     ],
     "BackupStartTimeHour": 1,
     "BackupStartTimeMinute": 30,
+    "DatabaseParameters": {
+        "max_connections": "150"
+    },
     "NoWait": false
 }
 ```
@@ -207,10 +217,11 @@ Flags:
 
   === Output options ===
 
-      --format string        Output format in Go templates (aliases: --fmt)
-  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
-      --query string         JMESPath query
-  -q, --quiet                Output IDs only
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
@@ -234,6 +245,10 @@ Flags:
       --description string   
       --tags strings         
       --icon-id int          
+
+  === Database-specific options ===
+
+      --database-parameters strings   
 
   === WebUI options ===
 
@@ -271,10 +286,11 @@ Flags:
 
   === Output options ===
 
-      --format string        Output format in Go templates (aliases: --fmt)
-  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
-      --query string         JMESPath query
-  -q, --quiet                Output IDs only
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
@@ -305,6 +321,7 @@ Flags:
     ],
     "BackupStartTimeHour": 1,
     "BackupStartTimeMinute": 30,
+    "DatabaseParameters": null,
     "NoWait": false
 }
 ```
@@ -342,10 +359,47 @@ Flags:
 
   === Output options ===
 
-      --format string        Output format in Go templates (aliases: --fmt)
-  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
-      --query string         JMESPath query
-  -q, --quiet                Output IDs only
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
+
+```
+
+
+## list-parameters {: #list-parameters }
+
+##### Usage
+```console
+Usage:
+  list-parameters { ID | NAME | TAG }... [flags]
+
+Aliases:
+  list-parameters, list-parameter
+
+Flags:
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Output options ===
+
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
@@ -475,10 +529,11 @@ Flags:
 
   === Output options ===
 
-      --format string        Output format in Go templates (aliases: --fmt)
-  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
-      --query string         JMESPath query
-  -q, --quiet                Output IDs only
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
@@ -512,10 +567,11 @@ Flags:
 
   === Output options ===
 
-      --format string        Output format in Go templates (aliases: --fmt)
-  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
-      --query string         JMESPath query
-  -q, --quiet                Output IDs only
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
@@ -549,10 +605,11 @@ Flags:
 
   === Output options ===
 
-      --format string        Output format in Go templates (aliases: --fmt)
-  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
-      --query string         JMESPath query
-  -q, --quiet                Output IDs only
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
@@ -589,10 +646,11 @@ Flags:
 
   === Output options ===
 
-      --format string        Output format in Go templates (aliases: --fmt)
-  -o, --output-type string   Output format: one of the following [table/json/yaml] (aliases: --out)
-      --query string         JMESPath query
-  -q, --quiet                Output IDs only
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
