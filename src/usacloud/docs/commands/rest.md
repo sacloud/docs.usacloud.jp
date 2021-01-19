@@ -23,7 +23,8 @@ Flags:
 
   === Output options ===
 
-      --query string   JMESPath query
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
 
 ```
 
