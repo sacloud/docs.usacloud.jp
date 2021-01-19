@@ -18,6 +18,7 @@
 - [`--fake`](#fake)
 - [`--fake-store`](#fake_store)
 - [`--process-timeout-sec`](#process_timeout_sec)
+- [`--argument-match-mode`](#argument_match_mode)
 - [`--version`/`-v`](#version)
 - [`--help`/`-h`](#help)
 
@@ -91,6 +92,14 @@ Fakeドライバーが利用するデータストアのファイルパスを指�
 
 `usacloud`コマンド実行全体に対するタイムアウト秒数を指定します。  
 未指定の場合は`2時間(7200)`が設定されます。
+
+#### 引数とリソース名の比較方法(`--argument-match-mode`) {: #argument_match_mode }
+
+操作対象を引数で指定するコマンドにおいてリソース名と引数を比較する方法を指定します。  
+指定可能な値は以下のとおりです。
+
+- `partial`(デフォルト): 部分一致
+- `exact`: 完全一致
 
 #### トレース出力(`--trace`) {: #trace }
 
