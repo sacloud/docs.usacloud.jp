@@ -97,3 +97,4 @@ nav:
               - completion: commands/completion.md
               - rest: commands/rest.md
               - self: commands/self.md
+              - update-self: commands/update-self.md

@@ -88,3 +88,4 @@ v0系については以下を参照してください。
             - [completion](commands/completion)
             - [rest](commands/rest)
             - [self](commands/self)
+            - [update-self](commands/update-self)
