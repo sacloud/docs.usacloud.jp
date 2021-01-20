@@ -67,6 +67,8 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="/usacloud/guides/basic_usage/">基本的な使い方</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="/usacloud/guides/query/">クエリ/出力の加工</a>
+                </li>
                 <li class="toctree-l2"><a class="reference internal" href="/usacloud/guides/completion/">completionコマンド</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="/usacloud/guides/rest/">restコマンド</a>
@@ -77,6 +79,8 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="/usacloud/upgrade/v1_0_0/">v1.0へのアップグレード</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="/usacloud/upgrade/v1_1_0/">v1.1へのアップグレード</a>
+                </li>
     </ul>
                     </li>
                 </ul>
@@ -84,9 +88,11 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="#">オプション/設定</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="/usacloud/commands/global/">グローバルオプション</a>
+                <li class="toctree-l2"><a class="reference internal" href="/usacloud/references/global/">グローバルオプション</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="/usacloud/commands/profile/">プロファイル</a>
+                <li class="toctree-l2"><a class="reference internal" href="/usacloud/references/profile/">プロファイル</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="/usacloud/references/env/">環境変数</a>
                 </li>
     </ul>
                     </li>
@@ -94,161 +100,163 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">Configuration / プロファイル/コンフィグ</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/config/">config</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/config/">config</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Authentication / 認証情報</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/auth-status/">auth-status</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/auth-status/">auth-status</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Computing / コンピューティング</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/private-host/">private-host</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/private-host/">private-host</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/server/">server</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/server/">server</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Storage / ストレージ</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/archive/">archive</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/archive/">archive</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/auto-backup/">auto-backup</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/auto-backup/">auto-backup</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/cdrom/">cdrom</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/cdrom/">cdrom</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/disk/">disk</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/disk/">disk</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Networking / ネットワーキング</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/bridge/">bridge</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/bridge/">bridge</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/internet/">internet</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/internet/">internet</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/local-router/">local-router</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/local-router/">local-router</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/packet-filter/">packet-filter</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/packet-filter/">packet-filter</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/switch/">switch</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/switch/">switch</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">ネットワーク関連サブリソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/interface/">interface</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/interface/">interface</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/ipaddress/">ipaddress</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/ipaddress/">ipaddress</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/ipv6addr/">ipv6addr</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/ipv6addr/">ipv6addr</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/ipv6net/">ipv6net</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/ipv6net/">ipv6net</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/subnet/">subnet</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/subnet/">subnet</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Appliance / アプライアンス</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/database/">database</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/database/">database</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/load-balancer/">load-balancer</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/load-balancer/">load-balancer</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/nfs/">nfs</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/nfs/">nfs</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/vpc-router/">vpc-router</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/vpc-router/">vpc-router</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Secure Mobile / セキュアモバイル</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/mobile-gateway/">mobile-gateway</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/mobile-gateway/">mobile-gateway</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/sim/">sim</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/sim/">sim</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Common service items / 共通サービスアイテム</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/dns/">dns</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/dns/">dns</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/gslb/">gslb</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/gslb/">gslb</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/proxy-lb/">proxy-lb</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/proxy-lb/">proxy-lb</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/simple-monitor/">simple-monitor</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/simple-monitor/">simple-monitor</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Billing / 請求関連</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/bill/">bill</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/bill/">bill</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/coupon/">coupon</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/coupon/">coupon</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Lab / Labプロダクト</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/container-registry/">container-registry</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/container-registry/">container-registry</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/esme/">esme</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/esme/">esme</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">WebAccelerator / ウェブアクセラレータ</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/web-accelerator/">web-accelerator</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/web-accelerator/">web-accelerator</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Other services / その他サービス</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/icon/">icon</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/icon/">icon</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/license/">license</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/license/">license</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/note/">note</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/note/">note</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/ssh-key/">ssh-key</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/ssh-key/">ssh-key</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Region/Zone information / リージョン/ゾーン情報参照</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/region/">region</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/region/">region</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/zone/">zone</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/zone/">zone</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Service/Product information / サービス/プロダクト情報参照</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/disk-plan/">disk-plan</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/disk-plan/">disk-plan</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/internet-plan/">internet-plan</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/internet-plan/">internet-plan</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/license-info/">license-info</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/license-info/">license-info</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/private-host-plan/">private-host-plan</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/private-host-plan/">private-host-plan</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/server-plan/">server-plan</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/server-plan/">server-plan</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/service-class/">service-class</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/service-class/">service-class</a>
                 </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">Other commands / その他</a>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other references / その他</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/completion/">completion</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/completion/">completion</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/rest/">rest</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/rest/">rest</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="/usacloud/commands/self/">self</a>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/self/">self</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="/usacloud/references/update-self/">update-self</a>
                 </li>
     </ul>
                 </li>

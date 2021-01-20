@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="@sacloud-authors">
+  <link rel="canonical" href="https://sacloud.github.io/usacloud/references/global/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>グローバルオプション - Usacloudドキュメント</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u30b0\u30ed\u30fc\u30d0\u30eb\u30aa\u30d7\u30b7\u30e7\u30f3";
+    var mkdocs_page_input_path = "references/global.md";
+    var mkdocs_page_url = "/usacloud/references/global/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63739336-5', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Usacloudドキュメント</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">ホーム</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">利用方法/ガイド</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">インストール</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/start_guide/">Usacloud導入ガイド</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">利用方法/ガイド</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/basic_usage/">基本的な使い方</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/query/">クエリ/出力の加工</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/completion/">completionコマンド</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/rest/">restコマンド</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">アップグレード</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../upgrade/v1_0_0/">v1.0へのアップグレード</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../upgrade/v1_1_0/">v1.1へのアップグレード</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">リファレンス</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">オプション/設定</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">グローバルオプション</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">グローバルオプション一覧</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#profile">プロファイル(--profile)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#token">APIトークン(--token)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#secret">APIシークレット(--secret)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#zones">操作対象ゾーン(--zones)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#no_color">カラー出力の無効化(--no-color)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fake">Fakeドライバの有効化(--fake)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fake_store">FakeドライバでのJSONデータストアファイルパス(--fake-store)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#process_timeout_sec">コマンド実行タイムアウト(--process-timeout-sec)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#argument_match_mode">引数とリソース名の比較方法(--argument-match-mode)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trace">トレース出力(--trace)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#version">バージョン表示(--version / -v)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#help">ヘルプ表示(--help / -h)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../profile/">プロファイル</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../env/">環境変数</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">コマンド</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">Configuration / プロファイル/コンフィグ</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../config/">config</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Authentication / 認証情報</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../auth-status/">auth-status</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Computing / コンピューティング</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../private-host/">private-host</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../server/">server</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Storage / ストレージ</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../archive/">archive</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../auto-backup/">auto-backup</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../cdrom/">cdrom</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../disk/">disk</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Networking / ネットワーキング</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../bridge/">bridge</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internet/">internet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../local-router/">local-router</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../packet-filter/">packet-filter</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../switch/">switch</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">ネットワーク関連サブリソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../interface/">interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ipaddress/">ipaddress</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ipv6addr/">ipv6addr</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ipv6net/">ipv6net</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../subnet/">subnet</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Appliance / アプライアンス</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../database/">database</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../load-balancer/">load-balancer</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../nfs/">nfs</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../vpc-router/">vpc-router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Secure Mobile / セキュアモバイル</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../mobile-gateway/">mobile-gateway</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../sim/">sim</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Common service items / 共通サービスアイテム</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../dns/">dns</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../gslb/">gslb</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../proxy-lb/">proxy-lb</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../simple-monitor/">simple-monitor</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Billing / 請求関連</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../bill/">bill</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../coupon/">coupon</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Lab / Labプロダクト</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../container-registry/">container-registry</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../esme/">esme</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">WebAccelerator / ウェブアクセラレータ</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../web-accelerator/">web-accelerator</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other services / その他サービス</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../icon/">icon</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../license/">license</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../note/">note</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ssh-key/">ssh-key</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Region/Zone information / リージョン/ゾーン情報参照</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../region/">region</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../zone/">zone</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Service/Product information / サービス/プロダクト情報参照</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../disk-plan/">disk-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internet-plan/">internet-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../license-info/">license-info</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../private-host-plan/">private-host-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../server-plan/">server-plan</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../service-class/">service-class</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other references / その他</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../completion/">completion</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../rest/">rest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../self/">self</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../update-self/">update-self</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Usacloudドキュメント</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>オプション/設定 &raquo;</li>
+        
+      
+        
+          <li>リファレンス &raquo;</li>
+        
+      
+    
+    <li>グローバルオプション</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">リファレンス / グローバルオプション</h1>
+<hr />
+<p><code>usacloud</code>コマンドラインオプションとして指定可能なグローバルオプション。  </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>プロファイルを用いることでグローバルオプションでは指定できない項目の設定が行えます。<br />
+詳細は<a href="../profile">リファレンス/プロファイル</a>を参照してください。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>一部の項目は環境変数での設定に対応しています。<br />
+詳細は<a href="../env">リファレンス/環境変数</a>を参照してください。  </p>
+</div>
+<h2 id="_2">グローバルオプション一覧</h2>
+<ul>
+<li><a href="#profile"><code>--profile</code></a></li>
+<li><a href="#token"><code>--token</code></a></li>
+<li><a href="#secret"><code>--secret</code></a></li>
+<li><a href="#zones"><code>--zones</code></a></li>
+<li><a href="#no_color"><code>--no-color</code></a></li>
+<li><a href="#trace"><code>--trace</code></a></li>
+<li><a href="#fake"><code>--fake</code></a></li>
+<li><a href="#fake_store"><code>--fake-store</code></a></li>
+<li><a href="#process_timeout_sec"><code>--process-timeout-sec</code></a></li>
+<li><a href="#argument_match_mode"><code>--argument-match-mode</code></a></li>
+<li><a href="#version"><code>--version</code>/<code>-v</code></a></li>
+<li><a href="#help"><code>--help</code>/<code>-h</code></a></li>
+</ul>
+<hr />
+<h4 id="profile">プロファイル(<code>--profile</code>)</h4>
+<p>利用するプロファイル(コンフィグ)を指定します。(エイリアス:<code>--config</code>)<br />
+指定可能な値は<code>usacloud profile list</code>コマンドで調べることが可能なほか、<code>usacloud profile create</code>コマンドなどで新規作成も可能です。</p>
+<blockquote>
+<p>通常この値は<code>~/.usacloud/current</code>の値が利用されます。<br />
+環境変数<code>SAKURACLOUD_PROFILE</code>/<code>USACLOUD_PROFILE</code>での指定、またはコマンド実行時の<code>--profile</code>の指定でこの設定を上書き可能です。</p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Usacloud v0との互換性維持のためv1でも環境変数<code>USACLOUD_PROFILE</code>が利用可能ですが、将来のバージョンでは廃止される予定です。</p>
+</div>
+<hr />
+<h4 id="token">APIトークン(<code>--token</code>)</h4>
+<p>さくらのクラウドのAPIトークンを指定します。</p>
+<blockquote>
+<p>通常この値は<code>~/.usacloud/[current-profile-nane]/config.json</code>の値が利用されます。<br />
+環境変数<code>SAKURACLOUD_ACCESS_TOKEN</code>での指定、またはコマンド実行時の<code>--token</code>の指定でこれらの設定を上書き可能です。</p>
+</blockquote>
+<hr />
+<h4 id="secret">APIシークレット(<code>--secret</code>)</h4>
+<p>さくらのクラウドのAPIシークレットを指定します。</p>
+<blockquote>
+<p>通常この値は<code>~/.usacloud/[current-profile-nane]/config.json</code>の値が利用されます。<br />
+環境変数<code>SAKURACLOUD_ACCESS_TOKEN_SECRET</code>での指定、またはコマンド実行時の<code>--secret</code>の指定でこれらの設定を上書き可能です。</p>
+</blockquote>
+<hr />
+<h4 id="zones">操作対象ゾーン(<code>--zones</code>)</h4>
+<p><code>usacloud</code>コマンドで操作可能なゾーンの一覧を指定します。<br />
+ここでの指定は各コマンドでの<code>--zone</code>指定や<code>--zone=all</code>を指定した際の挙動に影響します。</p>
+<p>省略した場合は以下の値が設定されます。</p>
+<p><a href="https://github.com/sacloud/libsacloud/blob/master/v2/sacloud/types/zone.go#L30-L31">libsacloud: types.ZoneNames</a></p>
+<hr />
+<h4 id="no_color">カラー出力の無効化(<code>--no-color</code>)</h4>
+<p>端末への出力時にANSIエスケープシーケンスを用いたカラー出力を無効にします。</p>
+<hr />
+<h4 id="fake">Fakeドライバの有効化(<code>--fake</code>)</h4>
+<p>さくらのクラウドAPI呼び出しにFakeドライバーを利用します。<br />
+主にコマンドの書式確認などのテスト用途で利用します。</p>
+<p><code>--fake-store</code>オプションを指定しない場合はダミーAPIのデータストアはインメモリとなります。</p>
+<hr />
+<h4 id="fake_store">FakeドライバでのJSONデータストアファイルパス(<code>--fake-store</code>)</h4>
+<p>Fakeドライバーが利用するデータストアのファイルパスを指定します。
+この値を指定するとFakeドライバーがJSONデータストアを利用するようになります。</p>
+<hr />
+<h4 id="process_timeout_sec">コマンド実行タイムアウト(<code>--process-timeout-sec</code>)</h4>
+<p><code>usacloud</code>コマンド実行全体に対するタイムアウト秒数を指定します。<br />
+未指定の場合は<code>2時間(7200)</code>が設定されます。</p>
+<h4 id="argument_match_mode">引数とリソース名の比較方法(<code>--argument-match-mode</code>)</h4>
+<p>操作対象を引数で指定するコマンドにおいてリソース名と引数を比較する方法を指定します。<br />
+指定可能な値は以下のとおりです。</p>
+<ul>
+<li><code>partial</code>(デフォルト): 部分一致</li>
+<li><code>exact</code>: 完全一致</li>
+</ul>
+<h4 id="trace">トレース出力(<code>--trace</code>)</h4>
+<p>さくらのクラウドAPI呼び出しのトレースログを標準エラーへ書き込みます。</p>
+<hr />
+<h4 id="version">バージョン表示(<code>--version</code> / <code>-v</code>)</h4>
+<p>usacloudのバージョン情報を表示します。</p>
+<hr />
+<h4 id="help">ヘルプ表示(<code>--help</code> / <code>-h</code>)</h4>
+<p>ヘルプを表示します。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../profile/" class="btn btn-neutral float-right" title="プロファイル">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../upgrade/v1_1_0/" class="btn btn-neutral" title="v1.1へのアップグレード"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright (C) 2017-2020 The Usacloud Authors.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../upgrade/v1_1_0/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../profile/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

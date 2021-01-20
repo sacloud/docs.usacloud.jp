@@ -110,6 +110,8 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#-format-or-fmt">フォーマット(--format or --fmt)</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-query-query-driver">クエリ(--query | --query-driver)</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#_10">共通オプション: ゾーン指定</a>
@@ -125,8 +127,14 @@
     <li class="toctree-l3"><a class="reference internal" href="#yes-y-or-assumeyes">共通オプション: yesオプション(-y or --assumeyes)</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#id-or-or">引数: ID or 名称 or タグでの指定</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#readlist">read/listコマンドの使い分け</a>
+    </li>
+        </ul>
     </li>
     </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../query/">クエリ/出力の加工</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../completion/">completionコマンド</a>
                 </li>
@@ -138,6 +146,8 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../upgrade/v1_0_0/">v1.0へのアップグレード</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../upgrade/v1_1_0/">v1.1へのアップグレード</a>
+                </li>
     </ul>
                     </li>
                 </ul>
@@ -145,9 +155,11 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="#">オプション/設定</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../commands/global/">グローバルオプション</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../references/global/">グローバルオプション</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../commands/profile/">プロファイル</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../references/profile/">プロファイル</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../references/env/">環境変数</a>
                 </li>
     </ul>
                     </li>
@@ -155,161 +167,163 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">Configuration / プロファイル/コンフィグ</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/config/">config</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/config/">config</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Authentication / 認証情報</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/auth-status/">auth-status</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/auth-status/">auth-status</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Computing / コンピューティング</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/private-host/">private-host</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/private-host/">private-host</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/server/">server</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/server/">server</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Storage / ストレージ</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/archive/">archive</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/archive/">archive</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/auto-backup/">auto-backup</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/auto-backup/">auto-backup</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/cdrom/">cdrom</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/cdrom/">cdrom</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/disk/">disk</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/disk/">disk</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Networking / ネットワーキング</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/bridge/">bridge</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/bridge/">bridge</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/internet/">internet</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/internet/">internet</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/local-router/">local-router</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/local-router/">local-router</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/packet-filter/">packet-filter</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/packet-filter/">packet-filter</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/switch/">switch</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/switch/">switch</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">ネットワーク関連サブリソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/interface/">interface</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/interface/">interface</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/ipaddress/">ipaddress</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/ipaddress/">ipaddress</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/ipv6addr/">ipv6addr</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/ipv6addr/">ipv6addr</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/ipv6net/">ipv6net</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/ipv6net/">ipv6net</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/subnet/">subnet</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/subnet/">subnet</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Appliance / アプライアンス</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/database/">database</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/database/">database</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/load-balancer/">load-balancer</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/load-balancer/">load-balancer</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/nfs/">nfs</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/nfs/">nfs</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/vpc-router/">vpc-router</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/vpc-router/">vpc-router</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Secure Mobile / セキュアモバイル</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/mobile-gateway/">mobile-gateway</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/mobile-gateway/">mobile-gateway</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/sim/">sim</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/sim/">sim</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Common service items / 共通サービスアイテム</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/dns/">dns</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/dns/">dns</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/gslb/">gslb</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/gslb/">gslb</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/proxy-lb/">proxy-lb</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/proxy-lb/">proxy-lb</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/simple-monitor/">simple-monitor</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/simple-monitor/">simple-monitor</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Billing / 請求関連</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/bill/">bill</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/bill/">bill</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/coupon/">coupon</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/coupon/">coupon</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Lab / Labプロダクト</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/container-registry/">container-registry</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/container-registry/">container-registry</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/esme/">esme</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/esme/">esme</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">WebAccelerator / ウェブアクセラレータ</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/web-accelerator/">web-accelerator</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/web-accelerator/">web-accelerator</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Other services / その他サービス</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/icon/">icon</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/icon/">icon</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/license/">license</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/license/">license</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/note/">note</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/note/">note</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/ssh-key/">ssh-key</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/ssh-key/">ssh-key</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Region/Zone information / リージョン/ゾーン情報参照</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/region/">region</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/region/">region</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/zone/">zone</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/zone/">zone</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Service/Product information / サービス/プロダクト情報参照</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/disk-plan/">disk-plan</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/disk-plan/">disk-plan</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/internet-plan/">internet-plan</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/internet-plan/">internet-plan</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/license-info/">license-info</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/license-info/">license-info</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/private-host-plan/">private-host-plan</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/private-host-plan/">private-host-plan</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/server-plan/">server-plan</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/server-plan/">server-plan</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/service-class/">service-class</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/service-class/">service-class</a>
                 </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">Other commands / その他</a>
+                <li class="toctree-l2"><a class="reference internal" href="#">Other references / その他</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/completion/">completion</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/completion/">completion</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/rest/">rest</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/rest/">rest</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../commands/self/">self</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/self/">self</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../references/update-self/">update-self</a>
                 </li>
     </ul>
                 </li>
@@ -414,15 +428,19 @@ usacloud server ls -h
 
 <hr />
 <h2 id="_8">グローバルオプション</h2>
-<p>主なオプションを以下に記載します。全てのオプションについては<a href="../../commands/global">グローバルオプション</a>を参照してください。</p>
+<p>主なオプションを以下に記載します。全てのオプションについては<a href="../../references/global">グローバルオプション</a>を参照してください。</p>
 <hr />
 <h4 id="-config">コンフィグ(<code>--config</code>)</h4>
 <p>利用するコンフィグ(プロファイル)を指定します。(エイリアス:<code>--profile</code>)<br />
 指定可能な値は<code>usacloud config list</code>コマンドで調べることが可能なほか、<code>usacloud config create</code>コマンドなどで新規作成も可能です。</p>
 <blockquote>
 <p>通常この値は<code>~/.usacloud/current</code>の値が利用されます。<br />
-環境変数<code>USACLOUD_PROFILE</code>での指定、またはコマンド実行時の<code>--config</code>の指定でこの設定を上書き可能です。  </p>
+環境変数<code>SAKURACLOUD_PROFILE</code>/<code>USACLOUD_PROFILE</code>での指定、またはコマンド実行時の<code>--profile</code>の指定でこの設定を上書き可能です。</p>
 </blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Usacloud v0との互換性維持のためv1でも環境変数<code>USACLOUD_PROFILE</code>が利用可能ですが、将来のバージョンでは廃止される予定です。</p>
+</div>
 <hr />
 <h4 id="api-token">APIトークン(<code>--token</code>)</h4>
 <p>さくらのクラウドのAPIトークンを指定します。  </p>
@@ -460,6 +478,25 @@ usacloud server ls -h
 <pre class="codehilite"><code class="language-bash">usacloud server ls --format &quot;ID is {{.ID}}, Name is {{.Name}}&quot;
 </code></pre>
 
+<h4 id="-query-query-driver">クエリ(<code>--query</code> | <code>--query-driver</code>)</h4>
+<p><a href="https://jmespath.org">JMESPath</a>または<a href="https://stedolan.github.io/jq/">jq</a>で出力の加工が行えます。  </p>
+<h5 id="jmespath">利用例(JMESPath):</h5>
+<pre class="codehilite"><code class="language-sh">$ usacloud server list --query &quot;[].Name&quot;
+[
+    &quot;server1&quot;,
+    &quot;server2&quot;,
+    &quot;server3&quot;
+]
+</code></pre>
+
+<h5 id="jq">利用例(jq):</h5>
+<pre class="codehilite"><code class="language-sh">$ usacloud server list --query-driver jq --query &quot;.[].Name&quot;
+&quot;server1&quot;
+&quot;server2&quot;
+&quot;server3&quot;
+</code></pre>
+
+<p><code>--query</code>と<code>--query-driver</code>の詳細は<a href="../query">クエリ</a>を参照してください。</p>
 <hr />
 <h2 id="_10">共通オプション: ゾーン指定</h2>
 <p>ゾーンを指定する必要があるリソースの場合<code>--zone</code>で指定します。</p>
@@ -529,7 +566,12 @@ $ usacloud switch create --parameters parameters.json
 確認ダイアログ全てに<code>y</code> または <code>yes</code>を入力します。  </p>
 <h2 id="id-or-or">引数: ID or 名称 or タグでの指定</h2>
 <p>特定のリソースに対するコマンドの場合、ID、名称、またはタグを引数にとります。<br />
-IDとタグの場合は完全一致、名称の場合は部分一致したリソースが操作対象となります。</p>
+IDとタグの場合は完全一致、名称の場合は(デフォルトでは)部分一致したリソースが操作対象となります。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>グローバルオプション<code>--argument-match-mode</code>またはプロファイル<code>ArgumentMatchMode</code>に<code>exact</code>を指定することで引数と名称を完全一致させることができます。<br />
+詳細は<a href="../../references/global">リファレンス/グローバルオプション</a>、<a href="../../references/profile">リファレンス/プロファイル</a>を参照してください。  </p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>複数リソースの一括操作に対応していないコマンドの場合、対象が複数となる指定はエラーとなります。</p>
@@ -572,6 +614,30 @@ Target resource IDs =&gt; [
 ]
 Are you sure you want to boot?(y/n) [n]:
 </code></pre>
+
+<h3 id="readlist"><code>read</code>/<code>list</code>コマンドの使い分け</h3>
+<p>Usacloudではリソースの情報を参照するためのサブコマンドとして<code>list</code>と<code>read</code>を多くのリソースで提供しています。<br />
+これらの違いは以下のとおりです。</p>
+<ul>
+<li>複数件ヒットを許容するか</li>
+<li>対象リソースの指定方法</li>
+</ul>
+<h4 id="read"><code>read</code>の特徴</h4>
+<ul>
+<li>複数件ヒットした場合はエラーとなる</li>
+<li>対象リソースの指定は引数で行う</li>
+</ul>
+<h4 id="list"><code>list</code>の特徴</h4>
+<ul>
+<li>複数件ヒットしてもエラーとならない</li>
+<li>対象リソースの指定はフラグ(オプション)で行う</li>
+</ul>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p><code>read</code>は他のコマンドとの組み合わせて利用可能になっています。<br />
+例: アイコンを名前で検索し、IDをスイッチ作成のパラメータに渡す(アイコンが複数ヒットしたらエラーとなる)<br />
+<code>usacloud switch create --icon-id=$(usacloud icon read -q example)</code></p>
+</div>
               
             </div>
           </div>
@@ -579,7 +645,7 @@ Are you sure you want to boot?(y/n) [n]:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../completion/" class="btn btn-neutral float-right" title="completionコマンド">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../query/" class="btn btn-neutral float-right" title="クエリ/出力の加工">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../../installation/start_guide/" class="btn btn-neutral" title="Usacloud導入ガイド"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -613,7 +679,7 @@ Are you sure you want to boot?(y/n) [n]:
         <span><a href="../../installation/start_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../completion/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../query/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
