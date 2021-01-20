@@ -32,6 +32,7 @@ nav:
       - オプション/設定:
           - グローバルオプション: references/global.md
           - プロファイル: references/profile.md
+          - 環境変数: references/env.md
       - コマンド:
           - Configuration / プロファイル/コンフィグ:
               - config: references/config.md

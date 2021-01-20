@@ -22,6 +22,7 @@ v0系については以下を参照してください。
     * オプション/設定
         - [グローバルオプション](references/global.md)
         - [プロファイル](references/profile.md)
+        - [環境変数](references/env.md)
     * コマンド
         * Configuration / プロファイル/コンフィグ
             - [config](references/config)
