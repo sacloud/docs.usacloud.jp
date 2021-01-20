@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	destination = "/docs/commands"
+	destination = "/docs/references"
 	templateFile = "../tools/template.tmpl"
 )
 

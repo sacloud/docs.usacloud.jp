@@ -76,7 +76,7 @@ usacloud server ls -h
 
 ## グローバルオプション
 
-主なオプションを以下に記載します。全てのオプションについては[グローバルオプション](../../commands/global)を参照してください。
+主なオプションを以下に記載します。全てのオプションについては[グローバルオプション](../../references/global)を参照してください。
 
 ---
 
@@ -86,7 +86,10 @@ usacloud server ls -h
 指定可能な値は`usacloud config list`コマンドで調べることが可能なほか、`usacloud config create`コマンドなどで新規作成も可能です。
 
 > 通常この値は`~/.usacloud/current`の値が利用されます。  
-> 環境変数`USACLOUD_PROFILE`での指定、またはコマンド実行時の`--config`の指定でこの設定を上書き可能です。  
+> 環境変数`SAKURACLOUD_PROFILE`/`USACLOUD_PROFILE`での指定、またはコマンド実行時の`--profile`の指定でこの設定を上書き可能です。
+
+!!! Warning
+    Usacloud v0との互換性維持のためv1でも環境変数`USACLOUD_PROFILE`が利用可能ですが、将来のバージョンでは廃止される予定です。
 
 ---
 
@@ -142,7 +145,33 @@ IDのみ出力します。
 ```bash
 usacloud server ls --format "ID is {{.ID}}, Name is {{.Name}}"
 ```
-   
+
+#### クエリ(`--query` | `--query-driver`)
+
+[JMESPath](https://jmespath.org)または[jq](https://stedolan.github.io/jq/)で出力の加工が行えます。  
+
+##### 利用例(JMESPath):
+
+```sh
+$ usacloud server list --query "[].Name"
+[
+    "server1",
+    "server2",
+    "server3"
+]
+```
+
+##### 利用例(jq):
+
+```sh
+$ usacloud server list --query-driver jq --query ".[].Name"
+"server1"
+"server2"
+"server3"
+```
+
+`--query`と`--query-driver`の詳細は[クエリ](../query)を参照してください。
+
 ---
 
 ## 共通オプション: ゾーン指定
@@ -235,7 +264,11 @@ $ usacloud switch create --parameters parameters.json
 ## 引数: ID or 名称 or タグでの指定
 
 特定のリソースに対するコマンドの場合、ID、名称、またはタグを引数にとります。  
-IDとタグの場合は完全一致、名称の場合は部分一致したリソースが操作対象となります。
+IDとタグの場合は完全一致、名称の場合は(デフォルトでは)部分一致したリソースが操作対象となります。
+
+!!! info
+    グローバルオプション`--argument-match-mode`またはプロファイル`ArgumentMatchMode`に`exact`を指定することで引数と名称を完全一致させることができます。  
+    詳細は[リファレンス/グローバルオプション](../../references/global)、[リファレンス/プロファイル](../../references/profile)を参照してください。  
 
 !!! warning
     複数リソースの一括操作に対応していないコマンドの場合、対象が複数となる指定はエラーとなります。
@@ -280,3 +313,26 @@ Target resource IDs => [
 ]
 Are you sure you want to boot?(y/n) [n]:
 ```
+
+### `read`/`list`コマンドの使い分け
+
+Usacloudではリソースの情報を参照するためのサブコマンドとして`list`と`read`を多くのリソースで提供しています。  
+これらの違いは以下のとおりです。
+
+- 複数件ヒットを許容するか
+- 対象リソースの指定方法
+
+#### `read`の特徴
+
+- 複数件ヒットした場合はエラーとなる
+- 対象リソースの指定は引数で行う
+
+#### `list`の特徴
+
+- 複数件ヒットしてもエラーとならない
+- 対象リソースの指定はフラグ(オプション)で行う
+
+!!! Tips
+    `read`は他のコマンドとの組み合わせて利用可能になっています。  
+    例: アイコンを名前で検索し、IDをスイッチ作成のパラメータに渡す(アイコンが複数ヒットしたらエラーとなる)  
+    `usacloud switch create --icon-id=$(usacloud icon read -q example)`

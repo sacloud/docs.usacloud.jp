@@ -24,76 +24,80 @@ nav:
           - installation/start_guide.md
       - 利用方法/ガイド:
           - 基本的な使い方: guides/basic_usage.md
+          - クエリ/出力の加工: guides/query.md
           - completionコマンド: guides/completion.md
           - restコマンド: guides/rest.md
       - アップグレード:
             - v1.0へのアップグレード: upgrade/v1_0_0.md
+            - v1.1へのアップグレード: upgrade/v1_1_0.md
   - リファレンス:
       - オプション/設定:
-          - グローバルオプション: commands/global.md
-          - プロファイル: commands/profile.md
+          - グローバルオプション: references/global.md
+          - プロファイル: references/profile.md
+          - 環境変数: references/env.md
       - コマンド:
           - Configuration / プロファイル/コンフィグ:
-              - config: commands/config.md
+              - config: references/config.md
           - Authentication / 認証情報:
-              - auth-status: commands/auth-status.md
+              - auth-status: references/auth-status.md
           - Computing / コンピューティング:
-              - private-host: commands/private-host.md
-              - server: commands/server.md
+              - private-host: references/private-host.md
+              - server: references/server.md
           - Storage / ストレージ:
-              - archive: commands/archive.md
-              - auto-backup: commands/auto-backup.md
-              - cdrom: commands/cdrom.md
-              - disk: commands/disk.md
+              - archive: references/archive.md
+              - auto-backup: references/auto-backup.md
+              - cdrom: references/cdrom.md
+              - disk: references/disk.md
           - Networking / ネットワーキング:
-              - bridge: commands/bridge.md
-              - internet: commands/internet.md
-              - local-router: commands/local-router.md
-              - packet-filter: commands/packet-filter.md
-              - switch: commands/switch.md
+              - bridge: references/bridge.md
+              - internet: references/internet.md
+              - local-router: references/local-router.md
+              - packet-filter: references/packet-filter.md
+              - switch: references/switch.md
           - ネットワーク関連サブリソース:
-              - interface: commands/interface.md
-              - ipaddress: commands/ipaddress.md
-              - ipv6addr: commands/ipv6addr.md
-              - ipv6net: commands/ipv6net.md
-              - subnet: commands/subnet.md
+              - interface: references/interface.md
+              - ipaddress: references/ipaddress.md
+              - ipv6addr: references/ipv6addr.md
+              - ipv6net: references/ipv6net.md
+              - subnet: references/subnet.md
           - Appliance / アプライアンス:
-              - database: commands/database.md
-              - load-balancer: commands/load-balancer.md
-              - nfs: commands/nfs.md
-              - vpc-router: commands/vpc-router.md
+              - database: references/database.md
+              - load-balancer: references/load-balancer.md
+              - nfs: references/nfs.md
+              - vpc-router: references/vpc-router.md
           - Secure Mobile / セキュアモバイル:
-                - mobile-gateway: commands/mobile-gateway.md
-                - sim: commands/sim.md
+                - mobile-gateway: references/mobile-gateway.md
+                - sim: references/sim.md
           - Common service items / 共通サービスアイテム:
-              - dns: commands/dns.md
-              - gslb: commands/gslb.md
-              - proxy-lb: commands/proxy-lb.md
-              - simple-monitor: commands/simple-monitor.md
+              - dns: references/dns.md
+              - gslb: references/gslb.md
+              - proxy-lb: references/proxy-lb.md
+              - simple-monitor: references/simple-monitor.md
           - Billing / 請求関連:
-              - bill: commands/bill.md
-              - coupon: commands/coupon.md
+              - bill: references/bill.md
+              - coupon: references/coupon.md
           - Lab / Labプロダクト:
-              - container-registry: commands/container-registry.md
-              - esme: commands/esme.md
+              - container-registry: references/container-registry.md
+              - esme: references/esme.md
           - WebAccelerator / ウェブアクセラレータ:
-              - web-accelerator: commands/web-accelerator.md
+              - web-accelerator: references/web-accelerator.md
           - Other services / その他サービス:
-              - icon: commands/icon.md
-              - license: commands/license.md
-              - note: commands/note.md
-              - ssh-key: commands/ssh-key.md
+              - icon: references/icon.md
+              - license: references/license.md
+              - note: references/note.md
+              - ssh-key: references/ssh-key.md
           - Region/Zone information / リージョン/ゾーン情報参照:
-              - region: commands/region.md
-              - zone: commands/zone.md
+              - region: references/region.md
+              - zone: references/zone.md
           - Service/Product information / サービス/プロダクト情報参照:
-              - disk-plan: commands/disk-plan.md
-              - internet-plan: commands/internet-plan.md
-              - license-info: commands/license-info.md
-              - private-host-plan: commands/private-host-plan.md
-              - server-plan: commands/server-plan.md
-              - service-class: commands/service-class.md
-          - Other commands / その他:
-              - completion: commands/completion.md
-              - rest: commands/rest.md
-              - self: commands/self.md
+              - disk-plan: references/disk-plan.md
+              - internet-plan: references/internet-plan.md
+              - license-info: references/license-info.md
+              - private-host-plan: references/private-host-plan.md
+              - server-plan: references/server-plan.md
+              - service-class: references/service-class.md
+          - Other references / その他:
+              - completion: references/completion.md
+              - rest: references/rest.md
+              - self: references/self.md
+              - update-self: references/update-self.md
