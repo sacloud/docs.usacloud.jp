@@ -16,6 +16,7 @@ v0系については以下を参照してください。
     - [v1.0へのアップグレード](upgrade/v1_0_0)
 * Usage / 使い方
     - [基本的な使い方](guides/basic_usage)
+    - [クエリ](guides/query)
     - [completionコマンド](guides/completion)
     - [restコマンド](guides/rest)
 * References / リファレンス

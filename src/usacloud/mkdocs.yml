@@ -24,6 +24,7 @@ nav:
           - installation/start_guide.md
       - 利用方法/ガイド:
           - 基本的な使い方: guides/basic_usage.md
+          - クエリ/出力の加工: guides/query.md
           - completionコマンド: guides/completion.md
           - restコマンド: guides/rest.md
       - アップグレード:

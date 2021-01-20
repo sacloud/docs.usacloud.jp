@@ -145,7 +145,33 @@ IDのみ出力します。
 ```bash
 usacloud server ls --format "ID is {{.ID}}, Name is {{.Name}}"
 ```
-   
+
+#### クエリ(`--query` | `--query-driver`)
+
+[JMESPath](https://jmespath.org)または[jq](https://stedolan.github.io/jq/)で出力の加工が行えます。  
+
+##### 利用例(JMESPath):
+
+```sh
+$ usacloud server list --query "[].Name"
+[
+    "server1",
+    "server2",
+    "server3"
+]
+```
+
+##### 利用例(jq):
+
+```sh
+$ usacloud server list --query-driver jq --query ".[].Name"
+"server1"
+"server2"
+"server3"
+```
+
+`--query`と`--query-driver`の詳細は[クエリ](../query)を参照してください。
+
 ---
 
 ## 共通オプション: ゾーン指定
