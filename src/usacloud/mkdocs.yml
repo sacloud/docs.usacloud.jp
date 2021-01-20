@@ -29,6 +29,7 @@ nav:
           - restコマンド: guides/rest.md
       - アップグレード:
             - v1.0へのアップグレード: upgrade/v1_0_0.md
+            - v1.1へのアップグレード: upgrade/v1_1_0.md
   - リファレンス:
       - オプション/設定:
           - グローバルオプション: references/global.md
