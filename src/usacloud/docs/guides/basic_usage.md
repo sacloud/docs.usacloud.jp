@@ -76,7 +76,7 @@ usacloud server ls -h
 
 ## グローバルオプション
 
-主なオプションを以下に記載します。全てのオプションについては[グローバルオプション](../../commands/global)を参照してください。
+主なオプションを以下に記載します。全てのオプションについては[グローバルオプション](../../references/global)を参照してください。
 
 ---
 
@@ -145,7 +145,33 @@ IDのみ出力します。
 ```bash
 usacloud server ls --format "ID is {{.ID}}, Name is {{.Name}}"
 ```
-   
+
+#### クエリ(`--query` | `--query-driver`)
+
+[JMESPath](https://jmespath.org)または[jq](https://stedolan.github.io/jq/)で出力の加工が行えます。  
+
+##### 利用例(JMESPath):
+
+```sh
+$ usacloud server list --query "[].Name"
+[
+    "server1",
+    "server2",
+    "server3"
+]
+```
+
+##### 利用例(jq):
+
+```sh
+$ usacloud server list --query-driver jq --query ".[].Name"
+"server1"
+"server2"
+"server3"
+```
+
+`--query`と`--query-driver`の詳細は[クエリ](../query)を参照してください。
+
 ---
 
 ## 共通オプション: ゾーン指定
@@ -238,7 +264,11 @@ $ usacloud switch create --parameters parameters.json
 ## 引数: ID or 名称 or タグでの指定
 
 特定のリソースに対するコマンドの場合、ID、名称、またはタグを引数にとります。  
-IDとタグの場合は完全一致、名称の場合は部分一致したリソースが操作対象となります。
+IDとタグの場合は完全一致、名称の場合は(デフォルトでは)部分一致したリソースが操作対象となります。
+
+!!! info
+    グローバルオプション`--argument-match-mode`またはプロファイル`ArgumentMatchMode`に`exact`を指定することで引数と名称を完全一致させることができます。  
+    詳細は[リファレンス/グローバルオプション](../../references/global)、[リファレンス/プロファイル](../../references/profile)を参照してください。  
 
 !!! warning
     複数リソースの一括操作に対応していないコマンドの場合、対象が複数となる指定はエラーとなります。
