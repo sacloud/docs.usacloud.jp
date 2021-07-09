@@ -30,6 +30,10 @@
 - [v2.4での変更点](guides/upgrade_to_v2.4.0)
 - [v2.5での変更点](guides/upgrade_to_v2.5.0)
 
+#### その他ガイド
+
+- [オブジェクトストレージの扱いについて](guides/object_storage)
+
 #### 設定リファレンス:
 - [プロバイダ設定](provider/)
 - プロバイダデータソース
