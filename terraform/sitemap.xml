@@ -21,11 +21,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.usacloud.jp/terraform/d/bucket_object/</loc>
-         <lastmod>2021-07-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.usacloud.jp/terraform/d/cdrom/</loc>
          <lastmod>2021-07-09</lastmod>
          <changefreq>daily</changefreq>
@@ -141,7 +136,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.usacloud.jp/terraform/d/webaccel/</loc>
+         <lastmod>2021-07-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.usacloud.jp/terraform/d/zone/</loc>
+         <lastmod>2021-07-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.usacloud.jp/terraform/guides/object_storage/</loc>
          <lastmod>2021-07-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -176,6 +181,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.usacloud.jp/terraform/guides/upgrade_to_v2.6.0/</loc>
+         <lastmod>2021-07-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.usacloud.jp/terraform/r/archive/</loc>
          <lastmod>2021-07-09</lastmod>
          <changefreq>daily</changefreq>
@@ -192,11 +202,6 @@
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform/r/bridge/</loc>
-         <lastmod>2021-07-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.usacloud.jp/terraform/r/bucket_object/</loc>
          <lastmod>2021-07-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -347,6 +352,11 @@
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform/r/vpc_router/</loc>
+         <lastmod>2021-07-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.usacloud.jp/terraform/r/webaccel_certificate/</loc>
          <lastmod>2021-07-09</lastmod>
          <changefreq>daily</changefreq>
     </url>

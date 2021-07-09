@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="@yamamoto-febc">
-  <link rel="canonical" href="https://docs.usacloud.jp/terraform/r/ssh_key/">
+  <link rel="canonical" href="https://docs.usacloud.jp/terraform/d/webaccel/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>SSH公開鍵 - Terraform for さくらのクラウド(v2)</title>
+  <title>サイト情報 - Terraform for さくらのクラウド(v2)</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "SSH\u516c\u958b\u9375";
-    var mkdocs_page_input_path = "r/ssh_key.md";
-    var mkdocs_page_url = "/terraform/r/ssh_key/";
+    var mkdocs_page_name = "\u30b5\u30a4\u30c8\u60c5\u5831";
+    var mkdocs_page_input_path = "d/webaccel.md";
+    var mkdocs_page_url = "/terraform/d/webaccel/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -94,7 +94,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">プロバイダデータソース</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../d/zone/">ゾーン</a>
+                <li class="toctree-l2"><a class="reference internal" href="../zone/">ゾーン</a>
                 </li>
     </ul>
                     </li>
@@ -102,19 +102,19 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/private_host/">専有ホスト</a>
+                <li class="toctree-l3"><a class="reference internal" href="../private_host/">専有ホスト</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/server/">サーバ</a>
+                <li class="toctree-l3"><a class="reference internal" href="../server/">サーバ</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/server_vnc_info/">VNC接続情報</a>
+                <li class="toctree-l3"><a class="reference internal" href="../server_vnc_info/">VNC接続情報</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../private_host/">専有ホスト</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/private_host/">専有ホスト</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../server/">サーバ</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/server/">サーバ</a>
                 </li>
     </ul>
                 </li>
@@ -124,23 +124,23 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/archive/">アーカイブ</a>
+                <li class="toctree-l3"><a class="reference internal" href="../archive/">アーカイブ</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/cdrom/">CD-ROM</a>
+                <li class="toctree-l3"><a class="reference internal" href="../cdrom/">CD-ROM</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/disk/">ディスク</a>
+                <li class="toctree-l3"><a class="reference internal" href="../disk/">ディスク</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../archive/">アーカイブ</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/archive/">アーカイブ</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../archive_share/">アーカイブ共有</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/archive_share/">アーカイブ共有</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../cdrom/">CD-ROM</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/cdrom/">CD-ROM</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../disk/">ディスク</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/disk/">ディスク</a>
                 </li>
     </ul>
                 </li>
@@ -150,37 +150,37 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/bridge/">ブリッジ</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/internet/">スイッチ+ルータ</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/local_router/">ローカルルータ</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/packet_filter/">パケットフィルタ</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/subnet/">サブネット</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/switch/">スイッチ</a>
-                </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
-    <ul>
                 <li class="toctree-l3"><a class="reference internal" href="../bridge/">ブリッジ</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../internet/">スイッチ+ルータ</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../ipv4_ptr/">IPv4逆引き</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../local_router/">ローカルルータ</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../packet_filter/">パケットフィルタ</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../packet_filter_rules/">パケットフィルタ(ルール)</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../subnet/">サブネット</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../switch/">スイッチ</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/bridge/">ブリッジ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/internet/">スイッチ+ルータ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/ipv4_ptr/">IPv4逆引き</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/local_router/">ローカルルータ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/packet_filter/">パケットフィルタ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/packet_filter_rules/">パケットフィルタ(ルール)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/subnet/">サブネット</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/switch/">スイッチ</a>
                 </li>
     </ul>
                 </li>
@@ -190,23 +190,7 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/database/">データベース</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/load_balancer/">ロードバランサ</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/nfs/">NFS</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/vpc_router/">VPCルータ</a>
-                </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../auto_backup/">自動バックアップ</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../database/">データベース</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../database_read_replica/">データベース(リードレプリカ)</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../load_balancer/">ロードバランサ</a>
                 </li>
@@ -216,35 +200,51 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/auto_backup/">自動バックアップ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/database/">データベース</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/database_read_replica/">データベース(リードレプリカ)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/load_balancer/">ロードバランサ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/nfs/">NFS</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/vpc_router/">VPCルータ</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">グローバル</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/dns/">DNS</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/gslb/">GSLB</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/proxylb/">エンハンスドロードバランサ</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/simple_monitor/">シンプル監視</a>
-                </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
-    <ul>
                 <li class="toctree-l3"><a class="reference internal" href="../dns/">DNS</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../dns_record/">DNSレコード</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../gslb/">GSLB</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../proxylb/">エンハンスドロードバランサ</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../proxylb_acme/">エンハンスドロードバランサ(ACME設定)</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../simple_monitor/">シンプル監視</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/dns/">DNS</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/dns_record/">DNSレコード</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/gslb/">GSLB</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/proxylb/">エンハンスドロードバランサ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/proxylb_acme/">エンハンスドロードバランサ(ACME設定)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/simple_monitor/">シンプル監視</a>
                 </li>
     </ul>
                 </li>
@@ -254,9 +254,9 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../mobile_gateway/">モバイルゲートウェイ</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/mobile_gateway/">モバイルゲートウェイ</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../sim/">SIM</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/sim/">SIM</a>
                 </li>
     </ul>
                 </li>
@@ -266,13 +266,13 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/esme/">2要素認証SMS</a>
+                <li class="toctree-l3"><a class="reference internal" href="../esme/">2要素認証SMS</a>
                 </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../esme/">2要素認証SMS</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/esme/">2要素認証SMS</a>
                 </li>
     </ul>
                 </li>
@@ -282,53 +282,23 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/container_registry/">コンテナレジストリ</a>
-                </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
-    <ul>
                 <li class="toctree-l3"><a class="reference internal" href="../container_registry/">コンテナレジストリ</a>
                 </li>
     </ul>
                 </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">ウェブアクセラレータ</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/webaccel/">サイト情報</a>
-                </li>
-    </ul>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../webaccel_certificate/">証明書</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/container_registry/">コンテナレジストリ</a>
                 </li>
     </ul>
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">その他</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">ウェブアクセラレータ</a>
     <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/icon/">アイコン</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/note/">スタートアップスクリプト</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../d/ssh_key/">SSH公開鍵</a>
-                </li>
-    </ul>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">リソース</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">データソース</a>
     <ul class="current">
-                <li class="toctree-l3"><a class="reference internal" href="../icon/">アイコン</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../note/">スタートアップスクリプト</a>
-                </li>
-                <li class="toctree-l3 current"><a class="reference internal current" href="./">SSH公開鍵</a>
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">サイト情報</a>
     <ul class="current">
     <li class="toctree-l4"><a class="reference internal" href="#example-usage">Example Usage</a>
     </li>
@@ -338,7 +308,37 @@
     </li>
     </ul>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../ssh_key_gen/">SSH公開鍵生成</a>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/webaccel_certificate/">証明書</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">その他</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">データソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../icon/">アイコン</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../note/">スタートアップスクリプト</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ssh_key/">SSH公開鍵</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/icon/">アイコン</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/note/">スタートアップスクリプト</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/ssh_key/">SSH公開鍵</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../r/ssh_key_gen/">SSH公開鍵生成</a>
                 </li>
     </ul>
                 </li>
@@ -366,11 +366,11 @@
     
       
         
-          <li>リソース &raquo;</li>
+          <li>データソース &raquo;</li>
         
       
         
-          <li>その他 &raquo;</li>
+          <li>ウェブアクセラレータ &raquo;</li>
         
       
         
@@ -378,7 +378,7 @@
         
       
     
-    <li>SSH公開鍵</li>
+    <li>サイト情報</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -390,41 +390,45 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ssh-sakuracloud_ssh_key">SSH公開鍵: sakuracloud_ssh_key</h1>
+                <h1 id="sakuracloud_webaccel">ウェブアクセラレータサイト情報: sakuracloud_webaccel</h1>
+<p>ウェブアクセラレータのサイト情報を参照するためのデータソース</p>
 <h2 id="example-usage">Example Usage</h2>
-<pre><code class="language-hcl">resource &quot;sakuracloud_ssh_key&quot; &quot;foobar&quot; {
-  name       = &quot;foobar&quot;
-  public_key = file(&quot;~/.ssh/id_rsa.pub&quot;)
+<pre><code class="language-hcl"># サイト情報を取得
+data sakuracloud_webaccel &quot;site&quot; {
+  name = &quot;your-site-name&quot;
+  # or
+  # domain = &quot;your-domain&quot;
 }
 </code></pre>
 <div class="editor">
 
 <h2>Code Editor</h2>
 
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/ssh_key"></iframe>
+<iframe src="https://zouen-alpha.usacloud.jp/#data/webaccel"></iframe>
 
 </div>
 
 <h2 id="argument-reference">Argument Reference</h2>
 <ul>
-<li><code>name</code> - (Required) 名前 / <code>1</code>-<code>64</code>文字で指定</li>
-<li><code>public_key</code> - (Required) 公開鍵 / この値を変更するとリソースの再作成が行われる</li>
-</ul>
-<h4 id="common-arguments">Common Arguments</h4>
-<ul>
-<li><code>description</code> - (Optional) 説明 / <code>1</code>-<code>512</code>文字で指定</li>
-</ul>
-<h4 id="timeouts">Timeouts</h4>
-<p><code>timeouts</code>ブロックで<a href="https://www.terraform.io/docs/configuration/resources.html#operation-timeouts">カスタムタイムアウト</a>が設定可能です。  </p>
-<ul>
-<li><code>create</code> - 作成 (デフォルト: 5分)</li>
-<li><code>update</code> - 更新 (デフォルト: 5分)</li>
-<li><code>delete</code> - 削除 (デフォルト: 5分)</li>
+<li><code>name</code> - (Optional) 対象サイトの名前</li>
+<li><code>domain</code> - (Optional) 対象サイトのドメイン名</li>
 </ul>
 <h2 id="attribute-reference">Attribute Reference</h2>
 <ul>
 <li><code>id</code> - ID</li>
-<li><code>fingerprint</code> - 公開鍵のフィンガープリント</li>
+<li><code>domain_type</code> </li>
+<li><code>has_certificate</code> </li>
+<li><code>host_header</code> </li>
+<li><code>origin</code> </li>
+<li><code>site_id</code></li>
+<li><code>status</code> </li>
+<li>
+<p><code>subdomain</code> </p>
+</li>
+<li>
+<p><code>cname_record_value</code></p>
+</li>
+<li><code>txt_record_value</code> </li>
 </ul>
               
             </div>
@@ -433,10 +437,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ssh_key_gen/" class="btn btn-neutral float-right" title="SSH公開鍵生成">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../r/webaccel_certificate/" class="btn btn-neutral float-right" title="証明書">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../note/" class="btn btn-neutral" title="スタートアップスクリプト"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../r/container_registry/" class="btn btn-neutral" title="コンテナレジストリ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -464,10 +468,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../note/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../r/container_registry/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../ssh_key_gen/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../r/webaccel_certificate/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
