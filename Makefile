@@ -19,8 +19,6 @@ build-mkdocs:
 lint: build-textlint
 	@echo "running textlint in $(TOP_DIR)..."
 	@(cd $(TOP_DIR); make lint)
-	@echo "running textlint in $(TERRAFORM_V1_DIR)..."
-	@(cd $(TERRAFORM_V1_DIR); make lint)
 	@echo "running textlint in $(TERRAFORM_V2_DIR)..."
 	@(cd $(TERRAFORM_V2_DIR); make lint)
 	@echo "running textlint in $(USACLOUD_DIR)..."
