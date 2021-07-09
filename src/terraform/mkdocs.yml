@@ -23,6 +23,7 @@ pages:
       - v2.6での変更点: guides/upgrade_to_v2.6.0.md
       - v2.7での変更点: guides/upgrade_to_v2.7.0.md
       - v2.8での変更点: guides/upgrade_to_v2.8.0.md
+      - v2.9での変更点: guides/upgrade_to_v2.9.0.md
     - その他ガイド:
         - オブジェクトストレージ: guides/object_storage.md
   - 設定リファレンス:

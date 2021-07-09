@@ -96,9 +96,21 @@ data "sakuracloud_proxylb" "foobar" {
 
 ##### ruleブロック
 
+* `action` - マッチした場合のアクション
 * `group` - 振り分け先グループ名。 `host`と`path`にマッチするリクエストを受信した場合に同じ`group`の値を持つ実サーバに振り分けられる
 * `host` - リクエストのHostヘッダ
 * `path` - リクエストパス
+
+固定応答:
+* `fixed_content_type` - 固定応答で返すContent-Type
+* `fixed_message_body` - 固定応答で返すボディ
+* `fixed_status_code` - 固定応答で返すステータスコード
+
+リダイレクト:
+* `redirect_location` - リダイレクト先 / 詳細は https://manual.sakura.ad.jp/cloud/appliance/enhanced-lb/#enhanced-lb-rule を参照
+* `redirect_status_code` - リダイレクトで返すステータスコード
+
+
 
 ##### serverブロック
 

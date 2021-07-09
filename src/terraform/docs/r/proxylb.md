@@ -125,9 +125,20 @@ resource sakuracloud_server "foobar" {
 
 ##### ruleブロック
 
+* `action` - (Optional) マッチした場合のアクション / 次のいずれかを指定［`forward`(デフォルト)/`redirect`/`fixed`]
 * `group` - (Optional) 振り分け先グループ名 / `host`と`path`にマッチするリクエストを受信した場合に同じ`group`の値を持つ実サーバに振り分けられる / `1`-`10`文字で指定
 * `host` - (Optional) リクエストのHostヘッダ
 * `path` - (Optional) リクエストパス
+
+固定応答:
+* `fixed_content_type` - (Optional) 固定応答で返すContent-Type/次のいずれかを指定［`text/plain`/`text/html`/`application/javascript`/`application/json`]
+* `fixed_message_body` - (Optional) 固定応答で返すボディ
+* `fixed_status_code` - (Optional) 固定応答で返すステータスコード/次のいずれかを指定［`200`/`403`/`503`]
+  
+リダイレクト:
+* `redirect_location` - (Optional) リダイレクト先/詳細は https://manual.sakura.ad.jp/cloud/appliance/enhanced-lb/#enhanced-lb-rule を参照
+* `redirect_status_code` - (Optional) リダイレクトで返すステータスコード/次のいずれかを指定［`301`/`302`]
+
 
 ##### serverブロック
 
