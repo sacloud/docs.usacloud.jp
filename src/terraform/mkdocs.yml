@@ -20,6 +20,9 @@ pages:
       - v2.3での変更点: guides/upgrade_to_v2.3.0.md
       - v2.4での変更点: guides/upgrade_to_v2.4.0.md
       - v2.5での変更点: guides/upgrade_to_v2.5.0.md
+      - v2.6での変更点: guides/upgrade_to_v2.6.0.md
+    - その他ガイド:
+        - オブジェクトストレージ: guides/object_storage.md
   - 設定リファレンス:
     - プロバイダ設定: provider.md
     - プロバイダデータソース:
@@ -99,6 +102,11 @@ pages:
         - コンテナレジストリ: d/container_registry.md
       - リソース:
         - コンテナレジストリ: r/container_registry.md
+    - ウェブアクセラレータ:
+        - データソース:
+            - サイト情報: d/webaccel.md
+        - リソース:
+            - 証明書: r/webaccel_certificate.md
     - その他:
       - データソース:
         - アイコン: d/icon.md
@@ -109,8 +117,3 @@ pages:
         - スタートアップスクリプト: r/note.md
         - SSH公開鍵: r/ssh_key.md
         - SSH公開鍵生成: r/ssh_key_gen.md
-    - オブジェクトストレージ:
-      - データソース:
-        - バケットオブジェクト: d/bucket_object.md
-      - リソース:
-        - バケットオブジェクト: r/bucket_object.md

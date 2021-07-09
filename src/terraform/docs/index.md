@@ -30,6 +30,10 @@
 - [v2.4での変更点](guides/upgrade_to_v2.4.0)
 - [v2.5での変更点](guides/upgrade_to_v2.5.0)
 
+#### その他ガイド
+
+- [オブジェクトストレージの扱いについて](guides/object_storage)
+
 #### 設定リファレンス:
 - [プロバイダ設定](provider/)
 - プロバイダデータソース
@@ -109,6 +113,11 @@
         - [コンテナレジストリ](d/container_registry)
     - リソース
         - [コンテナレジストリ](r/container_registry)
+- ウェブアクセラレータ
+    - データソース
+        - [サイト情報](d/webaccel)
+    - リソース
+        - [証明書](r/webaccel_certificate)
 - その他
     - データソース
         - [アイコン](d/icon)
@@ -119,9 +128,3 @@
         - [スタートアップスクリプト](r/note)
         - [SSH公開鍵](r/ssh_key)
         - [SSH公開鍵生成](r/ssh_key_gen)
-- オブジェクトストレージ
-    - データソース
-        - [バケットオブジェクト](d/bucket_object)
-    - リソース
-        - [バケットオブジェクト](r/bucket_object)
-
