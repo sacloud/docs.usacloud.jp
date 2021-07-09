@@ -101,6 +101,11 @@ pages:
         - コンテナレジストリ: d/container_registry.md
       - リソース:
         - コンテナレジストリ: r/container_registry.md
+    - ウェブアクセラレータ:
+        - データソース:
+            - サイト情報: d/webaccel.md
+        - リソース:
+            - 証明書: r/webaccel_certificate.md
     - その他:
       - データソース:
         - アイコン: d/icon.md

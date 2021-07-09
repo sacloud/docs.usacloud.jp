@@ -113,6 +113,11 @@
         - [コンテナレジストリ](d/container_registry)
     - リソース
         - [コンテナレジストリ](r/container_registry)
+- ウェブアクセラレータ
+    - データソース
+        - [サイト情報](d/webaccel)
+    - リソース
+        - [証明書](r/webaccel_certificate)
 - その他
     - データソース
         - [アイコン](d/icon)
