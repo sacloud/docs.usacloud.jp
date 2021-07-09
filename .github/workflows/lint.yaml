@@ -8,7 +8,6 @@ jobs:
       matrix:
         working-directory:
           - './src/terraform'
-          - './src/terraform-v1'
           - './src/top'
           - './src/usacloud'
           - './src/usacon'

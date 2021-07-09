@@ -46,7 +46,7 @@ data "sakuracloud_load_balancer" "foobar" {
 * `icon_id` - アイコンID
 * `name` - 名前
 * `network_interface` - ネットワーク設定。詳細は[network_interfaceブロック](#network_interface)を参照
-* `plan` - プラン。次のいずれかとなる [`standard`/`highspec`]
+* `plan` - プラン。次のいずれかとなる［`standard`/`highspec`]
 * `tags` - タグ
 * `vip` - VIPのリスト。詳細は[vipブロック](#vip)を参照
 
@@ -72,7 +72,7 @@ data "sakuracloud_load_balancer" "foobar" {
 * `enabled` - 有効フラグ
 * `ip_address` - IPアドレス
 * `path` - HTTP/HTTPSチェック時に利用されるリクエストパス
-* `protocol` - ヘルスチェックのプロトコル。次のいずれかとなる [`http`/`https`/`tcp`/`ping`]
+* `protocol` - ヘルスチェックのプロトコル。次のいずれかとなる［`http`/`https`/`tcp`/`ping`]
 * `status` - HTTP/HTTPSチェック時に利用されるレスポンスコード
 
 

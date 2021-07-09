@@ -52,7 +52,7 @@ data "sakuracloud_server" "foobar" {
 * `gateway` - ゲートウェイIPアドレス
 * `hostname` - ホスト名
 * `icon_id` - アイコンID
-* `interface_driver` - NICのドライバー。次のいずれかとなる [`virtio`/`e1000`]
+* `interface_driver` - NICのドライバー。次のいずれかとなる［`virtio`/`e1000`]
 * `ip_address` - IPアドレス
 * `memory` - メモリサイズ(GiB単位)
 * `name` - 名前

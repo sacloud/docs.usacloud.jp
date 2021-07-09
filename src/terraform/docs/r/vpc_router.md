@@ -140,7 +140,7 @@ resource sakuracloud_switch "foobar" {
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
 * `internet_connection` - (Optional) インターネットへの接続を許可するフラグ / デフォルト:`true`
-* `plan` - (Optional) プラン / 次のいずれかを指定 [`standard`/`premium`/`highspec`/`highspec4000`] / この値を変更するとリソースの再作成が行われる / デフォルト:`standard`
+* `plan` - (Optional) プラン / 次のいずれかを指定［`standard`/`premium`/`highspec`/`highspec4000`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`standard`
 * `version` - (Optional) VPCルータのバージョン / この値を変更するとリソースの再作成が行われる / デフォルト:`2`  
 * `syslog_host` - (Optional) syslogホストのIPアドレス
 
@@ -173,13 +173,13 @@ resource sakuracloud_switch "foobar" {
 
 ##### firewallブロック
 
-* `direction` - (Required) ファイアウォールを適用する通信方向 / 次のいずれかを指定 [`send`/`receive`]
+* `direction` - (Required) ファイアウォールを適用する通信方向 / 次のいずれかを指定［`send`/`receive`]
 * `expression` - (Required) フィルタリングルールのリスト。詳細は[expressionブロック](#expression)を参照
 * `interface_index` - (Optional) ファイアウォールを適用するNICのインデックス /  `0`-`7`の範囲で指定
 
 ##### expressionブロック
 
-* `protocol` - (Required) プロトコル / 次のいずれかを指定 [`tcp`/`udp`/`icmp`/`ip`]
+* `protocol` - (Required) プロトコル / 次のいずれかを指定［`tcp`/`udp`/`icmp`/`ip`]
 * `allow` - (Required) ルールにマッチしたパケットを許可するフラグ
 * `destination_network` - (Optional) 宛先IPアドレス、または宛先CIDRブロック (例: `192.0.2.1`, `192.0.2.0/24`)
 * `destination_port` - (Optional) 宛先ポート番号、または宛先ポート番号範囲 (例: `1024`, `1024-2048`) / `protocol`が`tcp`/`udp`の場合に利用される
@@ -224,7 +224,7 @@ resource sakuracloud_switch "foobar" {
 
 * `private_ip` - (Required) プライベート側IPアドレス
 * `private_port` - (Required) プライベート側ポート番号
-* `protocol` - (Required) プロトコル / 次のいずれかを指定 [`tcp`/`udp`]
+* `protocol` - (Required) プロトコル / 次のいずれかを指定［`tcp`/`udp`]
 * `public_port` - (Required) パブリック側ポート番号
 * `description` - (Optional) 説明 / `0`-`512`文字で指定
 

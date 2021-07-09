@@ -50,7 +50,7 @@ resource "sakuracloud_simple_monitor" "foobar" {
 
 ##### health_checkブロック
 
-* `protocol` - (Required) プロトコル / 次のいずれかを指定 [`http`/`https`/`ping`/`tcp`/`dns`/`ssh`/`smtp`/`pop3`/`snmp`/`sslcertificate`]
+* `protocol` - (Required) プロトコル / 次のいずれかを指定［`http`/`https`/`ping`/`tcp`/`dns`/`ssh`/`smtp`/`pop3`/`snmp`/`sslcertificate`]
 * `port` - (Optional) ポート番号
 
 ###### DNSチェック関連
@@ -75,7 +75,7 @@ resource "sakuracloud_simple_monitor" "foobar" {
 
 * `community` - (Optional) SNMPコミュニティ名
 * `oid` - (Optional) SNMP OID
-* `snmp_version` - (Optional) SNMPバージョン / 次のいずれかを指定 [`1`/`2c`]
+* `snmp_version` - (Optional) SNMPバージョン / 次のいずれかを指定［`1`/`2c`]
 
 #### 通知関連
 

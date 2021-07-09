@@ -23,8 +23,8 @@ resource "sakuracloud_icon" "foobar" {
 ## Argument Reference
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
-* `base64content` - (Optional) base64エンコードされたコンテンツ / [`source`]と同時に指定できません / この値を変更するとリソースの再作成が行われる
-* `source` - (Optional) アップロードするアイコンファイルのパス / [`base64content`]と同時に指定できません / この値を変更するとリソースの再作成が行われる
+* `base64content` - (Optional) base64エンコードされたコンテンツ /[`source`]と同時に指定できません / この値を変更するとリソースの再作成が行われる
+* `source` - (Optional) アップロードするアイコンファイルのパス /[`base64content`]と同時に指定できません / この値を変更するとリソースの再作成が行われる
 * `tags` - (Optional) タグ
 
 #### Timeouts

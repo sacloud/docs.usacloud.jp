@@ -35,8 +35,8 @@ resource "sakuracloud_disk" "foobar" {
 
 #### スペック関連
 
-* `connector` - (Optional) ディスク接続インターフェース / 次のいずれかを指定 [`virtio`/`ide`] / この値を変更するとリソースの再作成が行われる / デフォルト:`virtio`
-* `plan` - (Optional) ディスクプラン / 次のいずれかを指定 [`ssd`/`hdd`] / この値を変更するとリソースの再作成が行われる / デフォルト:`ssd`
+* `connector` - (Optional) ディスク接続インターフェース / 次のいずれかを指定［`virtio`/`ide`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`virtio`
+* `plan` - (Optional) ディスクプラン / 次のいずれかを指定［`ssd`/`hdd`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`ssd`
 * `size` - (Optional) サイズ(GiB単位) / この値を変更するとリソースの再作成が行われる / デフォルト:`20`
 * `distant_from` - (Optional) 別のストレージに格納する対象となるディスクのIDのリスト / この値を変更するとリソースの再作成が行われる
 
@@ -46,8 +46,8 @@ resource "sakuracloud_disk" "foobar" {
 
 #### コピー元関連
 
-* `source_archive_id` - (Optional) コピー元アーカイブID / [`source_disk_id`]と同時に指定できません / この値を変更するとリソースの再作成が行われる
-* `source_disk_id` - (Optional) コピー元ディスクID / [`source_archive_id`]と同時に指定できません / この値を変更するとリソースの再作成が行われる
+* `source_archive_id` - (Optional) コピー元アーカイブID /[`source_disk_id`]と同時に指定できません / この値を変更するとリソースの再作成が行われる
+* `source_disk_id` - (Optional) コピー元ディスクID /[`source_archive_id`]と同時に指定できません / この値を変更するとリソースの再作成が行われる
 
 #### Common Arguments
 

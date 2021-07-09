@@ -41,7 +41,7 @@ data "sakuracloud_container_registry" "foobar" {
 
 * `id` - ID
 * `access_level` - アクセスレベル。ユーザーがコンテナレジストリにアクセスできる操作のレベルを表す  
-次のいずれかの値となる。 [`readwrite`/`readonly`/`none`]
+次のいずれかの値となる。[`readwrite`/`readonly`/`none`]
 * `description` - 説明
 * `fqdn` - コンテナレジストリにアクセスするためのFQDN
 * `icon_id` - アイコンID
@@ -55,6 +55,6 @@ data "sakuracloud_container_registry" "foobar" {
 #### userブロック
 
 * `name` - ユーザー名
-* `permission` - ユーザーの権限。次のいずれかとなる [`all`/`readwrite`/`readonly`]
+* `permission` - ユーザーの権限。次のいずれかとなる［`all`/`readwrite`/`readonly`]
 
 

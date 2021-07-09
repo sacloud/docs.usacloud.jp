@@ -44,7 +44,7 @@ data "sakuracloud_private_host" "foobar" {
 * `id` - ID
 * `assigned_core` - サーバに割り当てたCPUコアの総数
 * `assigned_memory` - サーバに割り当てたメモリ(GiB単位)の総数
-* `class` - クラス。次のいずれかとなる [`dynamic`/`ms_windows`]
+* `class` - クラス。次のいずれかとなる［`dynamic`/`ms_windows`]
 * `description` - 説明
 * `hostname` - ホスト名
 * `icon_id` - アイコンID

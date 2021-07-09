@@ -29,7 +29,7 @@ resource "sakuracloud_auto_backup" "foobar" {
 
 * `name` -  (Required) 名前 / `1`-`64`文字で指定
 * `disk_id` - (Required) バックアップ対象のディスクID / この値を変更するとリソースの再作成が行われる
-* `weekdays` - (Required) バックアップ取得曜日のリスト / 各要素は次のいずれかを指定 [`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`]
+* `weekdays` - (Required) バックアップ取得曜日のリスト / 各要素は次のいずれかを指定［`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`]
 * `max_backup_num` - (Optional) バックアップ数 / `1`-`10`の範囲で指定 / デフォルト:`1`
 
 #### Common Arguments

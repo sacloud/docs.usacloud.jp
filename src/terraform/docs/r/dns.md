@@ -37,7 +37,7 @@ resource "sakuracloud_dns" "foobar" {
 ##### recordブロック
 
 * `name` - (Required) レコード名 /  `1`-`64`文字で指定
-* `type` - (Required) レコード種別 / 次のいずれかを指定 [`A`/`AAAA`/`ALIAS`/`CNAME`/`NS`/`MX`/`TXT`/`SRV`/`CAA`/`PTR`]
+* `type` - (Required) レコード種別 / 次のいずれかを指定［`A`/`AAAA`/`ALIAS`/`CNAME`/`NS`/`MX`/`TXT`/`SRV`/`CAA`/`PTR`]
 * `value` - (Required) 値
 * `ttl` - (Optional) TTL
 

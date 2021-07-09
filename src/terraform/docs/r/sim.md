@@ -35,7 +35,7 @@ resource "sakuracloud_sim" "foobar" {
 
 * `iccid` - (Required) ICCID(Integrated Circuit Card ID) / この値を変更するとリソースの再作成が行われる
 * `passcode` - (Required) パスコード / この値を変更するとリソースの再作成が行われる
-* `carrier` - (Required) 利用するキャリアのリスト / 各要素は次のいずれかを指定 [`kddi`/`docomo`/`softbank`]
+* `carrier` - (Required) 利用するキャリアのリスト / 各要素は次のいずれかを指定［`kddi`/`docomo`/`softbank`]
 
 #### IMEIロック
 

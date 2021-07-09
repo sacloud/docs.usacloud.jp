@@ -49,7 +49,7 @@ data "sakuracloud_packet_filter" "foobar" {
 * `allow` - ルールにマッチした通信を許可するかのフラグ
 * `description` - 説明
 * `destination_port` - 宛先ポート、または宛先ポート範囲。次のような値となる (`1024`, `1024-2048`)
-* `protocol` - プロトコル。次のいずれかとなる [`http`/`https`/`tcp`/`udp`/`icmp`/`fragment`/`ip`]
+* `protocol` - プロトコル。次のいずれかとなる［`http`/`https`/`tcp`/`udp`/`icmp`/`fragment`/`ip`]
 * `source_network` - 送信元IPアドレス、または送信元CIDRブロック。次のような値となる (`192.0.2.1`, `192.0.2.0/24`)
 * `source_port` - 送信元ポート、または送信元ポート範囲。次のような値となる (`1024`, `1024-2048`)
 

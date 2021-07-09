@@ -35,7 +35,7 @@ resource "sakuracloud_switch" "foobar" {
 ## Argument Reference
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
-* `plan` - (Optional) ディスクプラン / 次のいずれかを指定 [`hdd`/`ssd`] / この値を変更するとリソースの再作成が行われる / デフォルト:`hdd`
+* `plan` - (Optional) ディスクプラン / 次のいずれかを指定［`hdd`/`ssd`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`hdd`
 * `size` - (Optional) ディスクサイズ(GiB単位) / この値を変更するとリソースの再作成が行われる / デフォルト:`100`
 
 #### ネットワーク関連
