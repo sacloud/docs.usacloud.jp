@@ -45,6 +45,7 @@ data "sakuracloud_proxylb" "foobar" {
 * `certificate` - 証明書のリスト。詳細は[certificateブロック](#certificate)を参照
 * `description` - 説明
 * `fqdn` - エンハンスドロードバランサにアクセスするためのFQDN。 通常CNAMEレコードの値として利用する
+* `gzip` - コンテンツ配信時のgzip圧縮の有効フラグ
 * `health_check` - ヘルスチェック。詳細は[health_checkブロック](#health_check)を参照
 * `icon_id` - アイコンID
 * `name` - 名前
