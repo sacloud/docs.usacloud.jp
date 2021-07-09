@@ -81,6 +81,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.7.0/">v2.7での変更点</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.8.0/">v2.8での変更点</a>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">その他ガイド</a>
@@ -460,6 +462,7 @@ resource sakuracloud_server &quot;foobar&quot; {
 <li><code>plan</code> - (Optional) プラン / 次のいずれかを指定［<code>100</code>/<code>500</code>/<code>1000</code>/<code>5000</code>/<code>10000</code>/<code>50000</code>/<code>100000</code>]/ この値を変更するとリソースの再作成が行われる / デフォルト:<code>100</code></li>
 <li><code>region</code> - (Optional) エンハンスドロードバランサが配置されるリージョン / <code>anycast</code>を指定した場合は複数リージョンに設置される / 次のいずれかを指定［<code>tk1</code>/<code>is1</code>/<code>anycast</code>]/ この値を変更するとリソースの再作成が行われる / デフォルト:<code>is1</code></li>
 <li><code>timeout</code> - (Optional) 実サーバの通信タイムアウト秒数 / デフォルト:<code>10</code></li>
+<li><code>gzip</code> - (Optional) コンテンツ配信時のgzip圧縮の有効フラグ</li>
 </ul>
 <h4 id="_1">証明書関連</h4>
 <ul>

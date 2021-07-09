@@ -81,6 +81,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.7.0/">v2.7での変更点</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.8.0/">v2.8での変更点</a>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">その他ガイド</a>
@@ -395,10 +397,11 @@
                 <h1 id="acme-sakuracloud_proxylb_acme">エンハンスドロードバランサ(ACME設定): sakuracloud_proxylb_acme</h1>
 <h2 id="example-usage">Example Usage</h2>
 <pre><code class="language-hcl">resource sakuracloud_proxylb_acme &quot;foobar&quot; {
-  proxylb_id       = sakuracloud_proxylb.foobar.id
-  accept_tos       = true
-  common_name      = &quot;www.example.com&quot;
-  update_delay_sec = 120
+  proxylb_id        = sakuracloud_proxylb.foobar.id
+  accept_tos        = true
+  common_name       = &quot;www.example.com&quot;
+  subject_alt_names = [&quot;www1.example.com&quot;]
+  update_delay_sec  = 120
 }
 
 data &quot;sakuracloud_proxylb&quot; &quot;foobar&quot; {
@@ -426,6 +429,7 @@ data &quot;sakuracloud_proxylb&quot; &quot;foobar&quot; {
 この項目は明示的に<code>true</code>に設定する必要があります / この値を変更するとリソースの再作成が行われる</li>
 <li><code>common_name</code> - (Required) 証明書発行対象のFQDN / 名前解決できる値を指定する必要があります / この値を変更するとリソースの再作成が行われる</li>
 <li><code>proxylb_id</code> - (Required) ACMEを設定する対象のエンハンスドロードバランサID / この値を変更するとリソースの再作成が行われる</li>
+<li><code>subject_alt_names</code> - (Optional) 証明書発行対象のSANs / この値を変更するとリソースの再作成が行われる</li>
 <li><code>update_delay_sec</code> - (Optional) ACMEを有効にするまでの待ち時間 / この値を変更するとリソースの再作成が行われる</li>
 </ul>
 <div class="admonition note">

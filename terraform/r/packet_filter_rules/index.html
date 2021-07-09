@@ -81,6 +81,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.7.0/">v2.7での変更点</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.8.0/">v2.8での変更点</a>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">その他ガイド</a>
@@ -403,18 +405,18 @@ resource &quot;sakuracloud_packet_filter_rules&quot; &quot;rules&quot; {
   packet_filter_id = sakuracloud_packet_filter.foobar.id
 
   expression {
-    protocol  = &quot;tcp&quot;
-    dest_port = &quot;22&quot;
+    protocol         = &quot;tcp&quot;
+    destination_port = &quot;22&quot;
   }
 
   expression {
-    protocol  = &quot;tcp&quot;
-    dest_port = &quot;80&quot;
+    protocol         = &quot;tcp&quot;
+    destination_port = &quot;80&quot;
   }
 
   expression {
-    protocol  = &quot;tcp&quot;
-    dest_port = &quot;443&quot;
+    protocol         = &quot;tcp&quot;
+    destination_port = &quot;443&quot;
   }
 
   expression {
@@ -431,13 +433,13 @@ resource &quot;sakuracloud_packet_filter_rules&quot; &quot;rules&quot; {
   }
 
   expression {
-    protocol  = &quot;tcp&quot;
-    dest_port = &quot;32768-61000&quot;
+    protocol         = &quot;tcp&quot;
+    destination_port = &quot;32768-61000&quot;
   }
 
   expression {
-    protocol  = &quot;udp&quot;
-    dest_port = &quot;32768-61000&quot;
+    protocol         = &quot;udp&quot;
+    destination_port = &quot;32768-61000&quot;
   }
 
   expression {
