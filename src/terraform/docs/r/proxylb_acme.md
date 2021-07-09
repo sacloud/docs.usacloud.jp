@@ -4,10 +4,11 @@
 
 ```hcl
 resource sakuracloud_proxylb_acme "foobar" {
-  proxylb_id       = sakuracloud_proxylb.foobar.id
-  accept_tos       = true
-  common_name      = "www.example.com"
-  update_delay_sec = 120
+  proxylb_id        = sakuracloud_proxylb.foobar.id
+  accept_tos        = true
+  common_name       = "www.example.com"
+  subject_alt_names = ["www1.example.com"]
+  update_delay_sec  = 120
 }
 
 data "sakuracloud_proxylb" "foobar" {
@@ -35,6 +36,7 @@ data "sakuracloud_proxylb" "foobar" {
 この項目は明示的に`true`に設定する必要があります / この値を変更するとリソースの再作成が行われる
 * `common_name` - (Required) 証明書発行対象のFQDN / 名前解決できる値を指定する必要があります / この値を変更するとリソースの再作成が行われる
 * `proxylb_id` - (Required) ACMEを設定する対象のエンハンスドロードバランサID / この値を変更するとリソースの再作成が行われる
+* `subject_alt_names` - (Optional) 証明書発行対象のSANs / この値を変更するとリソースの再作成が行われる
 * `update_delay_sec` - (Optional) ACMEを有効にするまでの待ち時間 / この値を変更するとリソースの再作成が行われる
 
 !!! Note
