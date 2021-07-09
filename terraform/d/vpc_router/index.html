@@ -83,6 +83,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.8.0/">v2.8での変更点</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.9.0/">v2.9での変更点</a>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">その他ガイド</a>
@@ -501,6 +503,17 @@
 <ul>
 <li><code>range_start</code> - クライアントに割り当てるIPアドレスの開始値</li>
 <li><code>range_stop</code> - クライアントに割り当てるIPアドレスの終了値</li>
+</ul>
+<h5 id="wire_guard">wire_guardブロック</h5>
+<ul>
+<li><code>ip_address</code> - クライアントに割り当てるIPアドレスブロック、<code>xxx.xxx.xxx.xxx/nn</code>形式で指定</li>
+<li><code>peer</code> - WireGuardクライアント設定。詳細は<a href="#peer">peerブロック</a>を参照</li>
+</ul>
+<h5 id="peer">peerブロック</h5>
+<ul>
+<li><code>ip_address</code> - ピアのIPアドレス</li>
+<li><code>name</code> - ピアの名前</li>
+<li><code>public_key</code> - 公開鍵</li>
 </ul>
 <h5 id="private_network_interface">private_network_interfaceブロック</h5>
 <ul>

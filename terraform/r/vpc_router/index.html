@@ -83,6 +83,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.8.0/">v2.8での変更点</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.9.0/">v2.9での変更点</a>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">その他ガイド</a>
@@ -486,6 +488,15 @@ resource &quot;sakuracloud_vpc_router&quot; &quot;premium&quot; {
     range_stop  = &quot;192.168.11.40&quot;
   }
 
+  wire_guard {
+    ip_address = &quot;192.168.31.1/24&quot;
+    peer {
+      name       = &quot;example&quot;
+      ip_address = &quot;192.168.31.11&quot;
+      public_key = &quot;&lt;your-public-key&gt;&quot;
+    }
+  }
+
   site_to_site_vpn {
     peer              = &quot;10.0.0.1&quot;
     remote_id         = &quot;10.0.0.1&quot;
@@ -630,6 +641,7 @@ resource sakuracloud_switch &quot;foobar&quot; {
 <li><code>l2tp</code> - (Optional) L2TP/IPsec設定。詳細は<a href="#l2tp">l2tpブロック</a>を参照</li>
 <li><code>pptp</code> - (Optional) PPTP設定。詳細は<a href="#pptp">pptpブロック</a>を参照</li>
 <li><code>user</code> - (Optional) リモートアクセスユーザー設定のリスト。詳細は<a href="#user">userブロック</a>を参照</li>
+<li><code>wire_guard</code> - (Optional) WireGuardサーバ設定。詳細は<a href="#wire_guard">wire_guardブロック</a>を参照</li>
 </ul>
 <h5 id="l2tp">l2tpブロック</h5>
 <ul>
@@ -646,6 +658,17 @@ resource sakuracloud_switch &quot;foobar&quot; {
 <ul>
 <li><code>name</code> - (Required) ユーザー名</li>
 <li><code>password</code> - (Required) パスワード</li>
+</ul>
+<h5 id="wire_guard">wire_guardブロック</h5>
+<ul>
+<li><code>ip_address</code> - (Required) クライアントに割り当てるIPアドレスブロック、<code>xxx.xxx.xxx.xxx/nn</code>形式で指定</li>
+<li><code>peer</code> - (Optional) WireGuardクライアント設定。詳細は<a href="#peer">peerブロック</a>を参照</li>
+</ul>
+<h5 id="peer">peerブロック</h5>
+<ul>
+<li><code>ip_address</code> - (Required) ピアのIPアドレス</li>
+<li><code>name</code> - (Required) ピアの名前</li>
+<li><code>public_key</code> - (Required) 公開鍵</li>
 </ul>
 <h4 id="common-arguments">Common Arguments</h4>
 <ul>
