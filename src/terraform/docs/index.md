@@ -31,6 +31,7 @@
 - [v2.5での変更点](guides/upgrade_to_v2.5.0)
 - [v2.6での変更点](guides/upgrade_to_v2.6.0)
 - [v2.7での変更点](guides/upgrade_to_v2.7.0)
+- [v2.8での変更点](guides/upgrade_to_v2.8.0)
 
 #### その他ガイド
 

@@ -109,6 +109,7 @@ ACPIが利用できないサーバの場合`true`に設定する
 * `note` - (Optional) スタートアップスクリプト。詳細は[noteブロック](#note)を参照
 * `password` - (Optional) 管理ユーザーのパスワード / `8`-`64`文字で指定
 * `ssh_key_ids` - (Optional) SSH公開鍵IDのリスト
+* `ssh_keys` - (Optional) SSH公開鍵IDのリスト
 
 !!! Note
     ディスクの修正API(`disk_edit_parameter`)はサーバに接続された先頭のディスクに対してのみ有効です。
