@@ -40,11 +40,11 @@ data "sakuracloud_disk" "foobar" {
 ## Attribute Reference
 
 * `id` - ID
-* `connector` - ディスク接続インターフェース。 次のいずれかとなる [`virtio`/`ide`]
+* `connector` - ディスク接続インターフェース。 次のいずれかとなる［`virtio`/`ide`]
 * `description` - 説明
 * `icon_id` - アイコンID
 * `name` - 名称
-* `plan` - プラン。 次のいずれかとなる [`ssd`/`hdd`]
+* `plan` - プラン。 次のいずれかとなる［`ssd`/`hdd`]
 * `server_id` - ディスクが接続されたサーバのID
 * `size` - サイズ(GiB)
 * `source_archive_id` - コピー元アーカイブID

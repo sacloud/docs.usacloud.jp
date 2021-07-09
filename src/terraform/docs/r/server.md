@@ -70,7 +70,7 @@ ACPIが利用できないサーバの場合`true`に設定する
 * `core` - (Optional) vCPUの割り当て数 / デフォルト:`1`
 * `memory` - (Optional) メモリサイズ(GiB単位) / デフォルト:`1`
 * `network_interface` - (Optional) NIC設定のリスト。詳細は[network_interfaceブロック](#network_interface)を参照
-* `interface_driver` - (Optional) NICのドライバー / 次のいずれかを指定 [`virtio`/`e1000`] / デフォルト:`virtio`
+* `interface_driver` - (Optional) NICのドライバー / 次のいずれかを指定［`virtio`/`e1000`]/ デフォルト:`virtio`
 * `private_host_id` - (Optional) 専有ホストのID
 
 !!! Note

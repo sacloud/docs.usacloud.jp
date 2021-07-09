@@ -55,7 +55,7 @@ resource "sakuracloud_container_registry" "foobar" {
 ## Argument Reference
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
-* `access_level` - (Required) アクセスレベル / この値は次のいずれかを指定 [`readwrite`/`readonly`/`none`]
+* `access_level` - (Required) アクセスレベル / この値は次のいずれかを指定［`readwrite`/`readonly`/`none`]
 * `subdomain_label` - (Required) サブドメインラベル /  `1`-`64`文字で指定 / この値を変更するとリソースの再作成が行われる
 * `user` - (Optional) ユーザー設定のリスト。詳細は[userブロック](#user)を参照
 * `virtual_domain` - (Optional) 独自ドメイン(FQDN)
@@ -65,7 +65,7 @@ resource "sakuracloud_container_registry" "foobar" {
 
 * `name` - (Required) ユーザー名
 * `password` - (Required) パスワード
-* `permission` - (Required) ユーザーの権限 / 次のいずれかを指定 [`all`/`readwrite`/`readonly`]
+* `permission` - (Required) ユーザーの権限 / 次のいずれかを指定［`all`/`readwrite`/`readonly`]
 
 #### Common Arguments
 

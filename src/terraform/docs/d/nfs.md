@@ -46,7 +46,7 @@ data "sakuracloud_nfs" "foobar" {
 * `icon_id` - アイコンID
 * `name` - 名前
 * `network_interface` - ネットワーク設定。詳細は[network_interfaceブロック](#network_interface)を参照
-* `plan` - ディスクプラン。次のいずれかとなる [`hdd`/`ssd`]
+* `plan` - ディスクプラン。次のいずれかとなる［`hdd`/`ssd`]
 * `size` - ディスクサイズ(GiB単位)
 * `tags` - タグ
 

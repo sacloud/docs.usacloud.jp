@@ -63,7 +63,7 @@ data "sakuracloud_simple_monitor" "foobar" {
 * `password` - HTTP/HTTPSチェック時のBASIC認証で利用されるパスワード
 * `path` - HTTP/HTTPSチェック時のリクエストパス
 * `port` - 対象ポート番号
-* `protocol` - プロトコル。次のいずれかとなる [`http`/`https`/`ping`/`tcp`/`dns`/`ssh`/`smtp`/`pop3`/`snmp`/`sslcertificate`]
+* `protocol` - プロトコル。次のいずれかとなる［`http`/`https`/`ping`/`tcp`/`dns`/`ssh`/`smtp`/`pop3`/`snmp`/`sslcertificate`]
 * `qname` - DNSチェック時のクエリの値
 * `remaining_days` - SSL証明書チェック時の証明書有効日数の閾値
 * `sni` - HTTP/HTTPSチェック時のSNI有効フラグ

@@ -73,7 +73,7 @@ resource "sakuracloud_packet_filter_rules" "rules" {
 
 ##### expressionブロック
 
-* `protocol` - (Required) プロトコル / 次のいずれかを指定 [`http`/`https`/`tcp`/`udp`/`icmp`/`fragment`/`ip`]
+* `protocol` - (Required) プロトコル / 次のいずれかを指定［`http`/`https`/`tcp`/`udp`/`icmp`/`fragment`/`ip`]
 * `allow` - (Optional) マッチしたパケットを許可するフラグ
 * `destination_port` - (Optional) 宛先ポート、または宛先ポート範囲 (例:`1024`, `1024-2048`)
 * `source_network` - (Optional) 送信元IPアドレス、または送信元CIDRブロック (例: `192.0.2.1`, `192.0.2.0/24`)

@@ -20,10 +20,10 @@ resource "sakuracloud_bucket_object" "foobar" {
 * `secret_key` - (Required) オブジェクトストレージAPIのシークレットキー
 * `bucket` - (Required) バケット名 / この値を変更するとリソースの再作成が行われる
 * `key` - (Required) オブジェクトのキー(ファイル名) / この値を変更するとリソースの再作成が行われる
-* `content` - (Optional) オブジェクトのコンテンツ / [`source`]と同時に指定できません
+* `content` - (Optional) オブジェクトのコンテンツ /[`source`]と同時に指定できません
 * `content_type` - (Optional) Content-Type
 * `etag` - (Optional) HTTP ETag
-* `source` - (Optional) オブジェクトのコンテンツファイルのパス /  [`content`]と同時に指定できません
+* `source` - (Optional) オブジェクトのコンテンツファイルのパス / `content`と同時に指定できません
 
 ## Attribute Reference
 

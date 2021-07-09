@@ -35,7 +35,7 @@ resource "sakuracloud_dns_record" "record2" {
 
 * `dns_id` - (Required) レコードを登録する対象ゾーン(DNSリソース)のID / この値を変更するとリソースの再作成が行われる
 * `name` - (Required) レコード名 / この値を変更するとリソースの再作成が行われる
-* `type` - (Required) レコード種別 / 次のいずれかを指定 [`A`/`AAAA`/`ALIAS`/`CNAME`/`NS`/`MX`/`TXT`/`SRV`/`CAA`/`PTR`] / この値を変更するとリソースの再作成が行われる
+* `type` - (Required) レコード種別 / 次のいずれかを指定［`A`/`AAAA`/`ALIAS`/`CNAME`/`NS`/`MX`/`TXT`/`SRV`/`CAA`/`PTR`]/ この値を変更するとリソースの再作成が行われる
 * `value` - (Required) レコードの値 / この値を変更するとリソースの再作成が行われる
 * `ttl` - (Optional) TTL / この値を変更するとリソースの再作成が行われる / デフォルト:`3600`
 

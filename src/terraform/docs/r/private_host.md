@@ -22,7 +22,7 @@ resource "sakuracloud_private_host" "foobar" {
 ## Argument Reference
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
-* `class` - (Optional) クラス / 次のいずれかを指定 [`dynamic`/`ms_windows`] / デフォルト:`dynamic`
+* `class` - (Optional) クラス / 次のいずれかを指定［`dynamic`/`ms_windows`]/ デフォルト:`dynamic`
 
 #### Common Arguments
 

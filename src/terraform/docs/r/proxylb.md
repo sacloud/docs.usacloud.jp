@@ -68,8 +68,8 @@ resource sakuracloud_server "foobar" {
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
 * `vip_failover` - (Optional) VIPフェイルオーバ機能の有効フラグ / この値を変更するとリソースの再作成が行われる
-* `plan` - (Optional) プラン / 次のいずれかを指定 [`100`/`500`/`1000`/`5000`/`10000`/`50000`/`100000`] / この値を変更するとリソースの再作成が行われる / デフォルト:`100`
-* `region` - (Optional) エンハンスドロードバランサが配置されるリージョン / `anycast`を指定した場合は複数リージョンに設置される / 次のいずれかを指定 [`tk1`/`is1`/`anycast`] / この値を変更するとリソースの再作成が行われる / デフォルト:`is1`
+* `plan` - (Optional) プラン / 次のいずれかを指定［`100`/`500`/`1000`/`5000`/`10000`/`50000`/`100000`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`100`
+* `region` - (Optional) エンハンスドロードバランサが配置されるリージョン / `anycast`を指定した場合は複数リージョンに設置される / 次のいずれかを指定［`tk1`/`is1`/`anycast`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`is1`
 * `timeout` - (Optional) 実サーバの通信タイムアウト秒数 / デフォルト:`10`
 
 #### 証明書関連
@@ -103,7 +103,7 @@ resource sakuracloud_server "foobar" {
 
 ##### bind_portブロック
 
-* `proxy_mode` - (Required) プロキシモード / 次のいずれかを指定 [`http`/`https`/`tcp`]
+* `proxy_mode` - (Required) プロキシモード / 次のいずれかを指定［`http`/`https`/`tcp`]
 * `port` - (Optional) 待ち受けポート番号
 * `redirect_to_https` - (Optional) httpからhttpsへのリダイレクト有効化フラグ / `proxy_mode`が`http`の場合のみ有効
 * `response_header` - (Optional) レスポンスに付与するHTTPヘッダのリスト。詳細は[response_headerブロック](#response_header)を参照
@@ -116,7 +116,7 @@ resource sakuracloud_server "foobar" {
 
 ##### health_checkブロック
 
-* `protocol` - (Required) プロトコル / 次のいずれかを指定 [`http`/`tcp`]
+* `protocol` - (Required) プロトコル / 次のいずれかを指定［`http`/`tcp`]
 * `delay_loop` - (Optional) チェック間隔秒数 / `10`-`60`の範囲で指定
 * `host_header` - (Optional) HTTPチェック時のHostヘッダの値
 * `path` - (Optional) HTTPチェック時のリクエストパス

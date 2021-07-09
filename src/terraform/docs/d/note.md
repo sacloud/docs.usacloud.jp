@@ -41,7 +41,7 @@ data "sakuracloud_note" "foobar" {
 ## Attribute Reference
 
 * `id` - ID
-* `class` - クラス。次のいずれかとなる [`shell`/`yaml_cloud_config`]
+* `class` - クラス。次のいずれかとなる［`shell`/`yaml_cloud_config`]
 * `content` - 内容/コンテンツ。 シェルスクリプト or yamlとなる
 * `description` - 説明
 * `icon_id` - アイコン

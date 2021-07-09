@@ -55,8 +55,8 @@ resource "sakuracloud_switch" "foobar" {
 ## Argument Reference
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
-* `database_type` - (Optional) データベースタイプ / 次のいずれかを指定 [`mariadb`/`postgres`] / この値を変更するとリソースの再作成が行われる / デフォルト:`postgres`.
-* `plan` - (Optional) プラン / 次のいずれかを指定 [`10g`/`30g`/`90g`/`240g`/`500g`/`1t`] /  この値を変更するとリソースの再作成が行われる / デフォルト:`10g`.
+* `database_type` - (Optional) データベースタイプ / 次のいずれかを指定［`mariadb`/`postgres`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`postgres`.
+* `plan` - (Optional) プラン / 次のいずれかを指定［`10g`/`30g`/`90g`/`240g`/`500g`/`1t`]/  この値を変更するとリソースの再作成が行われる / デフォルト:`10g`.
 
 #### ユーザー関連
 
@@ -83,7 +83,7 @@ resource "sakuracloud_switch" "foobar" {
 ##### backupブロック
 
 * `time` - (Optional) バックアップ取得時刻 / `HH:mm`形式で指定
-* `weekdays` - (Optional) バックアップ取得曜日のリスト / 各要素は次のいずれかを指定 [`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`]
+* `weekdays` - (Optional) バックアップ取得曜日のリスト / 各要素は次のいずれかを指定［`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`]
 
 #### RDBMS固有パラメータ関連
 

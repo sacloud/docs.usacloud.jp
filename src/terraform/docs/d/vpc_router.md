@@ -49,7 +49,7 @@ data "sakuracloud_vpc_router" "foobar" {
 * `internet_connection` - インターネット接続の有効フラグ
 * `l2tp` - L2TP/IPsec設定。詳細は[l2tpブロック](#l2tp)を参照
 * `name` - 名前
-* `plan` - プラン。次のいずれかとなる [`standard`/`premium`/`highspec`/`highspec4000`]
+* `plan` - プラン。次のいずれかとなる［`standard`/`premium`/`highspec`/`highspec4000`]
 * `port_forwarding` - ポートフォワーディング設定のリスト。詳細は[port_forwardingブロック](#port_forwarding)を参照
 * `pptp` - PPTP設定。詳細は[pptpブロック](#pptp)を参照
 * `private_network_interface` - プライベート側NIC設定のリスト。詳細は[private_network_interfaceブロック](#private_network_interface)を参照
@@ -67,7 +67,7 @@ data "sakuracloud_vpc_router" "foobar" {
 ##### dhcp_serverブロック
 
 * `dns_servers` - DHCPクライアントに配布するDHCPサーバのIPアドレスのリスト
-* `interface_index` - DHCPサーバを有効にするNICのインデックス。次のいずれかとなる [`1`-`7`]
+* `interface_index` - DHCPサーバを有効にするNICのインデックス。次のいずれかとなる［`1`-`7`]
 * `range_start` - DHCPクライアントに割り当てるIPアドレスの開始値
 * `range_stop` - DHCPクライアントに割り当てるIPアドレスの終了値
 
@@ -78,9 +78,9 @@ data "sakuracloud_vpc_router" "foobar" {
 
 ##### firewallブロック
 
-* `direction` - ファイアウォールを適用する方向。次のいずれかとなる [`send`/`receive`]
+* `direction` - ファイアウォールを適用する方向。次のいずれかとなる［`send`/`receive`]
 * `expression` - ファイアウォールのルールのリスト。詳細は[expressionブロック](#expression)を参照
-* `interface_index` - ファイアウォールを適用するNICのインデックス。次のいずれかとなる [`0`-`7`]
+* `interface_index` - ファイアウォールを適用するNICのインデックス。次のいずれかとなる［`0`-`7`]
 
 ##### expressionブロック
 
@@ -89,7 +89,7 @@ data "sakuracloud_vpc_router" "foobar" {
 * `destination_network` - 宛先IPアドレス、または宛先CIDRブロック。次のような値となる `192.0.2.1`, `192.0.2.0/24`
 * `destination_port` - 宛先ポート番号、または宛先ポート番号範囲。`protocol`が`tcp`/`udp`の場合に利用される。次のような値となる `1024`, `1024-2048`
 * `logging` - マッチしたパケットのロギング有効フラグ
-* `protocol` - プロトコル。次のいずれかとなる [`tcp`/`udp`/`icmp`/`ip`]
+* `protocol` - プロトコル。次のいずれかとなる［`tcp`/`udp`/`icmp`/`ip`]
 * `source_network` - 送信元IPアドレス、または送信元CIDRブロック。次のような値となる `192.0.2.1`, `192.0.2.0/24`
 * `source_port` - 送信元ポート、または送信元ポート範囲。 `protocol`が`tcp`/`udp`の場合に利用される。次のような値となる `1024`, `1024-2048`
 
@@ -104,7 +104,7 @@ data "sakuracloud_vpc_router" "foobar" {
 * `description` - 説明
 * `private_ip` - プライベート側IPアドレス
 * `private_port` - プライベート側ポート番号
-* `protocol` - プロトコル。次のいずれかとなる [`tcp`/`udp`]
+* `protocol` - プロトコル。次のいずれかとなる［`tcp`/`udp`]
 * `public_port` - パブリック側ポート番号
 
 ##### pptpブロック
@@ -114,7 +114,7 @@ data "sakuracloud_vpc_router" "foobar" {
 
 ##### private_network_interfaceブロック
 
-* `index` - NICのインデックス。次のいずれかとなる [`1`-`7`]
+* `index` - NICのインデックス。次のいずれかとなる［`1`-`7`]
 * `ip_addresses` - NICに割り当てられたIPアドレスのリスト。 `plan`が`standard`の場合は1つ、以外の場合は2つの要素を持つ
 * `netmask` - サブネットマスク長
 * `switch_id` - スイッチID

@@ -57,7 +57,7 @@ resource "sakuracloud_switch" "foobar" {
 ## Argument Reference
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
-* `plan` - (Optional) プラン / 次のいずれかを指定 [`standard`/`highspec`] / この値を変更するとリソースの再作成が行われる / デフォルト:`standard`
+* `plan` - (Optional) プラン / 次のいずれかを指定［`standard`/`highspec`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`standard`
 
 #### ネットワーク関連
 
@@ -87,7 +87,7 @@ resource "sakuracloud_switch" "foobar" {
 ##### serverブロック
 
 * `ip_address` - (Required) IPアドレス
-* `protocol` - (Required) ヘルスチェックで用いるプロコとる / 次のいずれかを指定 [`http`/`https`/`tcp`/`ping`]
+* `protocol` - (Required) ヘルスチェックで用いるプロコとる / 次のいずれかを指定［`http`/`https`/`tcp`/`ping`]
 * `enabled` - (Optional) 有効フラグ
 * `path` - (Optional) HTTP/HTTPSチェック時のリクエストパス
 * `status` - (Optional) HTTP/HTTPSチェック時のレスポンスコード

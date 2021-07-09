@@ -54,7 +54,7 @@ data "sakuracloud_dns" "foobar" {
 * `port` - ポート番号
 * `priority` - プライオリティ
 * `ttl` - TTL
-* `type` - レコード種別。次のいずれかとなる [`A`/`AAAA`/`ALIAS`/`CNAME`/`NS`/`MX`/`TXT`/`SRV`/`CAA`/`PTR`]
+* `type` - レコード種別。次のいずれかとなる［`A`/`AAAA`/`ALIAS`/`CNAME`/`NS`/`MX`/`TXT`/`SRV`/`CAA`/`PTR`]
 * `value` - 値
 * `weight` - ウェイト
 

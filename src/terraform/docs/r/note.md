@@ -22,7 +22,7 @@ resource "sakuracloud_note" "foobar" {
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
 * `content` - (Required) スタートアップスクリプトのコンテンツ / シェルスクリプト、またはyamlとなる
-* `class` - (Optional) クラス / 次のいずれかを指定 [`shell`/`yaml_cloud_config`] / デフォルト:`shell`
+* `class` - (Optional) クラス / 次のいずれかを指定［`shell`/`yaml_cloud_config`]/ デフォルト:`shell`
 
 #### Common Arguments
 

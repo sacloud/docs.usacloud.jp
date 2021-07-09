@@ -51,7 +51,7 @@ resource "sakuracloud_gslb" "foobar" {
 
 ##### health_checkブロック
 
-* `protocol` - (Required) プロトコル / 次のいずれかを指定 [`http`/`https`/`tcp`/`ping`]
+* `protocol` - (Required) プロトコル / 次のいずれかを指定［`http`/`https`/`tcp`/`ping`]
 * `delay_loop` - (Optional) チェック間隔秒数 / `10`-`60`の範囲で指定
 * `host_header` - (Optional) HTTP/HTTPSチェック時に利用されるHostヘッダの値
 * `path` - (Optional) HTTP/HTTPSチェック時のリクエストパス

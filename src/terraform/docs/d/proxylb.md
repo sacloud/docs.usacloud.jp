@@ -48,9 +48,9 @@ data "sakuracloud_proxylb" "foobar" {
 * `health_check` - ヘルスチェック。詳細は[health_checkブロック](#health_check)を参照
 * `icon_id` - アイコンID
 * `name` - 名前
-* `plan` - プラン。次のいずれかとなる [`100`/`500`/`1000`/`5000`/`10000`/`50000`/`100000`]
+* `plan` - プラン。次のいずれかとなる［`100`/`500`/`1000`/`5000`/`10000`/`50000`/`100000`]
 * `proxy_networks` - エンハンスドロードバランサが実サーバにアクセスする際のアクセス元CIDRブロックのリスト
-* `region` - エンハンスドロードバランサを設置するリージョン名。`anycast`を指定した場合は複数リージョンに設置される。次のいずれかとなる [`tk1`/`is1`/`anycast`]
+* `region` - エンハンスドロードバランサを設置するリージョン名。`anycast`を指定した場合は複数リージョンに設置される。次のいずれかとなる［`tk1`/`is1`/`anycast`]
 * `rule` - ルールベースバランシングを行う際のルールのリスト。詳細は[ruleブロック](#rule)を参照
 * `server` - 実サーバのリスト。詳細は[serverブロック](#server)を参照
 * `sorry_server` - ソーリーサーバの設定。詳細は[sorry_serverブロック](#sorry_server)を参照
@@ -63,7 +63,7 @@ data "sakuracloud_proxylb" "foobar" {
 ##### bind_portブロック
 
 * `port` - ポート番号
-* `proxy_mode` - 待ち受けモード。次のいずれかとなる [`http`/`https`/`tcp`]
+* `proxy_mode` - 待ち受けモード。次のいずれかとなる［`http`/`https`/`tcp`]
 * `redirect_to_https` - HTTPからHTTPSへのリダイレクト有効フラグ。 `proxy_mode`が`http`の場合にのみ使用される
 * `response_header` - エンハンスドロードバランサが付与するレスポンスヘッダのリスト。詳細は[response_headerブロック](#response_header)を参照
 * `support_http2` - HTTP/2の有効フラグ。 proxy_mode`が`https`の場合にのみ利用される
@@ -91,7 +91,7 @@ data "sakuracloud_proxylb" "foobar" {
 * `host_header` - HTTPチェック時に利用されるHostヘッダの値
 * `path` - HTTPチェック時に利用されるリクエストパス
 * `port` - TCPチェック時に利用されるポート番号
-* `protocol` - プロトコル。次のいずれかとなる [`http`/`tcp`]
+* `protocol` - プロトコル。次のいずれかとなる［`http`/`tcp`]
 
 ##### ruleブロック
 
