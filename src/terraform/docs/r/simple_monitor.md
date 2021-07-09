@@ -67,6 +67,7 @@ resource "sakuracloud_simple_monitor" "foobar" {
 * `sni` - (Optional) HTTP/HTTPSチェック時のSNI有効フラグ
 * `https` - (Optional) HTTP/HTTPSチェック時のHTTP/2有効フラグ
 * `status` - (Optional) HTTP/HTTPSチェック時のレスポンスコード
+* `contains_string` - (Optional) HTTP/HTTPSチェック時の期待するレスポンスボディ
 
 ###### 証明書チェック関連
 

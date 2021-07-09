@@ -70,6 +70,7 @@ data "sakuracloud_simple_monitor" "foobar" {
 * `https` - HTTP/HTTPSチェック時のHTTP/2有効フラグ
 * `snmp_version` - SNMPチェック時のSNMPバージョン
 * `status` - HTTP/HTTPSチェック時のレスポンスコード
+* `contains_string` - HTTP/HTTPSチェック時の期待するレスポンスボディ
 * `username` - HTTP/HTTPSチェック時のBASIC認証で利用されるユーザー名
 
 
