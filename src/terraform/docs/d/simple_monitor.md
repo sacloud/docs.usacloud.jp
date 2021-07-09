@@ -53,6 +53,7 @@ data "sakuracloud_simple_monitor" "foobar" {
 * `notify_slack_webhook` - slack/discordでの通知を利用する場合のwebhookのURL
 * `tags` - タグ
 * `target` - 監視対象のIPアドレス、またはFQDN
+* `timeout` - タイムアウト秒数
 
 ##### health_checkブロック
 
