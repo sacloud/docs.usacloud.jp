@@ -109,8 +109,3 @@ pages:
         - スタートアップスクリプト: r/note.md
         - SSH公開鍵: r/ssh_key.md
         - SSH公開鍵生成: r/ssh_key_gen.md
-    - オブジェクトストレージ:
-      - データソース:
-        - バケットオブジェクト: d/bucket_object.md
-      - リソース:
-        - バケットオブジェクト: r/bucket_object.md

@@ -119,9 +119,3 @@
         - [スタートアップスクリプト](r/note)
         - [SSH公開鍵](r/ssh_key)
         - [SSH公開鍵生成](r/ssh_key_gen)
-- オブジェクトストレージ
-    - データソース
-        - [バケットオブジェクト](d/bucket_object)
-    - リソース
-        - [バケットオブジェクト](r/bucket_object)
-
