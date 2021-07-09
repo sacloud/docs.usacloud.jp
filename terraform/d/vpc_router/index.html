@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="../../css/theme.css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../../css/extra.css" rel="stylesheet" />
   
   <script>
@@ -26,9 +26,8 @@
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -52,7 +51,7 @@
         <a href="../.." class="icon icon-home"> Terraform for さくらのクラウド(v2)</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -379,6 +378,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -427,7 +427,7 @@
 <li><code>internet_connection</code> - インターネット接続の有効フラグ</li>
 <li><code>l2tp</code> - L2TP/IPsec設定。詳細は<a href="#l2tp">l2tpブロック</a>を参照</li>
 <li><code>name</code> - 名前</li>
-<li><code>plan</code> - プラン。次のいずれかとなる [<code>standard</code>/<code>premium</code>/<code>highspec</code>/<code>highspec4000</code>]</li>
+<li><code>plan</code> - プラン。次のいずれかとなる［<code>standard</code>/<code>premium</code>/<code>highspec</code>/<code>highspec4000</code>]</li>
 <li><code>port_forwarding</code> - ポートフォワーディング設定のリスト。詳細は<a href="#port_forwarding">port_forwardingブロック</a>を参照</li>
 <li><code>pptp</code> - PPTP設定。詳細は<a href="#pptp">pptpブロック</a>を参照</li>
 <li><code>private_network_interface</code> - プライベート側NIC設定のリスト。詳細は<a href="#private_network_interface">private_network_interfaceブロック</a>を参照</li>
@@ -445,7 +445,7 @@
 <h5 id="dhcp_server">dhcp_serverブロック</h5>
 <ul>
 <li><code>dns_servers</code> - DHCPクライアントに配布するDHCPサーバのIPアドレスのリスト</li>
-<li><code>interface_index</code> - DHCPサーバを有効にするNICのインデックス。次のいずれかとなる [<code>1</code>-<code>7</code>]</li>
+<li><code>interface_index</code> - DHCPサーバを有効にするNICのインデックス。次のいずれかとなる［<code>1</code>-<code>7</code>]</li>
 <li><code>range_start</code> - DHCPクライアントに割り当てるIPアドレスの開始値</li>
 <li><code>range_stop</code> - DHCPクライアントに割り当てるIPアドレスの終了値</li>
 </ul>
@@ -456,9 +456,9 @@
 </ul>
 <h5 id="firewall">firewallブロック</h5>
 <ul>
-<li><code>direction</code> - ファイアウォールを適用する方向。次のいずれかとなる [<code>send</code>/<code>receive</code>]</li>
+<li><code>direction</code> - ファイアウォールを適用する方向。次のいずれかとなる［<code>send</code>/<code>receive</code>]</li>
 <li><code>expression</code> - ファイアウォールのルールのリスト。詳細は<a href="#expression">expressionブロック</a>を参照</li>
-<li><code>interface_index</code> - ファイアウォールを適用するNICのインデックス。次のいずれかとなる [<code>0</code>-<code>7</code>]</li>
+<li><code>interface_index</code> - ファイアウォールを適用するNICのインデックス。次のいずれかとなる［<code>0</code>-<code>7</code>]</li>
 </ul>
 <h5 id="expression">expressionブロック</h5>
 <ul>
@@ -467,7 +467,7 @@
 <li><code>destination_network</code> - 宛先IPアドレス、または宛先CIDRブロック。次のような値となる <code>192.0.2.1</code>, <code>192.0.2.0/24</code></li>
 <li><code>destination_port</code> - 宛先ポート番号、または宛先ポート番号範囲。<code>protocol</code>が<code>tcp</code>/<code>udp</code>の場合に利用される。次のような値となる <code>1024</code>, <code>1024-2048</code></li>
 <li><code>logging</code> - マッチしたパケットのロギング有効フラグ</li>
-<li><code>protocol</code> - プロトコル。次のいずれかとなる [<code>tcp</code>/<code>udp</code>/<code>icmp</code>/<code>ip</code>]</li>
+<li><code>protocol</code> - プロトコル。次のいずれかとなる［<code>tcp</code>/<code>udp</code>/<code>icmp</code>/<code>ip</code>]</li>
 <li><code>source_network</code> - 送信元IPアドレス、または送信元CIDRブロック。次のような値となる <code>192.0.2.1</code>, <code>192.0.2.0/24</code></li>
 <li><code>source_port</code> - 送信元ポート、または送信元ポート範囲。 <code>protocol</code>が<code>tcp</code>/<code>udp</code>の場合に利用される。次のような値となる <code>1024</code>, <code>1024-2048</code></li>
 </ul>
@@ -482,7 +482,7 @@
 <li><code>description</code> - 説明</li>
 <li><code>private_ip</code> - プライベート側IPアドレス</li>
 <li><code>private_port</code> - プライベート側ポート番号</li>
-<li><code>protocol</code> - プロトコル。次のいずれかとなる [<code>tcp</code>/<code>udp</code>]</li>
+<li><code>protocol</code> - プロトコル。次のいずれかとなる［<code>tcp</code>/<code>udp</code>]</li>
 <li><code>public_port</code> - パブリック側ポート番号</li>
 </ul>
 <h5 id="pptp">pptpブロック</h5>
@@ -492,7 +492,7 @@
 </ul>
 <h5 id="private_network_interface">private_network_interfaceブロック</h5>
 <ul>
-<li><code>index</code> - NICのインデックス。次のいずれかとなる [<code>1</code>-<code>7</code>]</li>
+<li><code>index</code> - NICのインデックス。次のいずれかとなる［<code>1</code>-<code>7</code>]</li>
 <li><code>ip_addresses</code> - NICに割り当てられたIPアドレスのリスト。 <code>plan</code>が<code>standard</code>の場合は1つ、以外の場合は2つの要素を持つ</li>
 <li><code>netmask</code> - サブネットマスク長</li>
 <li><code>switch_id</code> - スイッチID</li>
@@ -565,17 +565,18 @@
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../nfs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../../r/auto_backup/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../nfs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../r/auto_backup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
       <script src="../../search/main.js" defer></script>
     <script defer>
