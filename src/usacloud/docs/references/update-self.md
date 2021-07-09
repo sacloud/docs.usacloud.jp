@@ -1,6 +1,6 @@
 # リファレンス / update-self
 
-GitHub APIで最新バージョンがリリースされているかの確認を行い、リリースされていたらUsacloud自身のバージョンアップを行います。  
+GitHub APIで最新バージョンがリリースされているかを確認し、リリースされていたらUsacloud自身のバージョンアップを行います。  
 
 ```console
 Update Usacloud to latest-stable version
