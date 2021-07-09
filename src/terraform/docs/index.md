@@ -116,8 +116,10 @@
 - Lab
     - データソース
         - [コンテナレジストリ](d/container_registry)
+        - [エンハンスドデータベース(TiDB)](d/enhanced_db)
     - リソース
         - [コンテナレジストリ](r/container_registry)
+        - [エンハンスドデータベース(TiDB)](r/enhanced_db)
 - ウェブアクセラレータ
     - データソース
         - [サイト情報](d/webaccel)

@@ -104,8 +104,10 @@ pages:
     - Lab:
       - データソース:
         - コンテナレジストリ: d/container_registry.md
+        - エンハンスドデータベース: d/enhanced_db.md
       - リソース:
         - コンテナレジストリ: r/container_registry.md
+        - エンハンスドデータベース: r/enhanced_db.md
     - ウェブアクセラレータ:
         - データソース:
             - サイト情報: d/webaccel.md
