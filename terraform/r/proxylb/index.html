@@ -85,6 +85,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.9.0/">v2.9での変更点</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.10.0/">v2.10での変更点</a>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">その他ガイド</a>
@@ -298,11 +300,15 @@
     <ul>
                 <li class="toctree-l3"><a class="reference internal" href="../../d/container_registry/">コンテナレジストリ</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/enhanced_db/">エンハンスドデータベース</a>
+                </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
     <ul>
                 <li class="toctree-l3"><a class="reference internal" href="../container_registry/">コンテナレジストリ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../enhanced_db/">エンハンスドデータベース</a>
                 </li>
     </ul>
                 </li>
@@ -418,6 +424,11 @@
     port       = 80
   }
 
+  syslog {
+    server = &quot;192.0.2.1&quot;
+    port   = 514
+  }
+
   bind_port {
     proxy_mode = &quot;http&quot;
     port       = 80
@@ -465,6 +476,12 @@ resource sakuracloud_server &quot;foobar&quot; {
 <li><code>region</code> - (Optional) エンハンスドロードバランサが配置されるリージョン / <code>anycast</code>を指定した場合は複数リージョンに設置される / 次のいずれかを指定［<code>tk1</code>/<code>is1</code>/<code>anycast</code>]/ この値を変更するとリソースの再作成が行われる / デフォルト:<code>is1</code></li>
 <li><code>timeout</code> - (Optional) 実サーバの通信タイムアウト秒数 / デフォルト:<code>10</code></li>
 <li><code>gzip</code> - (Optional) コンテンツ配信時のgzip圧縮の有効フラグ</li>
+<li><code>syslog</code> - (Optional) ログ出力先となるSyslogサーバ設定。詳細は<a href="#syslog">syslogブロック</a>を参照</li>
+</ul>
+<h5 id="syslog">syslogブロック</h5>
+<ul>
+<li><code>server</code> - (Optional) サーバのIPアドレス</li>
+<li><code>port</code> - (Optional) ポート番号</li>
 </ul>
 <h4 id="_1">証明書関連</h4>
 <ul>
@@ -503,6 +520,7 @@ resource sakuracloud_server &quot;foobar&quot; {
 <li><code>redirect_to_https</code> - (Optional) httpからhttpsへのリダイレクト有効化フラグ / <code>proxy_mode</code>が<code>http</code>の場合のみ有効</li>
 <li><code>response_header</code> - (Optional) レスポンスに付与するHTTPヘッダのリスト。詳細は<a href="#response_header">response_headerブロック</a>を参照</li>
 <li><code>support_http2</code> - (Optional) HTTP/2を有効にするフラグ / <code>proxy_mode</code>が<code>https</code>の場合のみ有効</li>
+<li><code>ssl_policy</code> - (Optional) SSLポリシー / 次のいずれかを指定［<code>TLS-1-2-2019-04</code>/<code>TLS-1-2-2021-06</code>/<code>TLS-1-3-2021-06</code>]</li>
 </ul>
 <h5 id="response_header">response_headerブロック</h5>
 <ul>

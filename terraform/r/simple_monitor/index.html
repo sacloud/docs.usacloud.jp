@@ -85,6 +85,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.9.0/">v2.9での変更点</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../guides/upgrade_to_v2.10.0/">v2.10での変更点</a>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">その他ガイド</a>
@@ -298,11 +300,15 @@
     <ul>
                 <li class="toctree-l3"><a class="reference internal" href="../../d/container_registry/">コンテナレジストリ</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../d/enhanced_db/">エンハンスドデータベース</a>
+                </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">リソース</a>
     <ul>
                 <li class="toctree-l3"><a class="reference internal" href="../container_registry/">コンテナレジストリ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../enhanced_db/">エンハンスドデータベース</a>
                 </li>
     </ul>
                 </li>
@@ -435,6 +441,7 @@
 <li><code>target</code> - (Required) 監視対象のIPアドレス、またはFQDN / この値を変更するとリソースの再作成が行われる</li>
 <li><code>health_check</code> - (Required) ヘルスチェック設定。詳細は<a href="#health_check">health_checkブロック</a>を参照</li>
 <li><code>delay_loop</code> - (Optional) チェック間隔秒数 / <code>60</code>-<code>3600</code>の範囲で指定 / デフォルト:<code>60</code></li>
+<li><code>timeout</code> - (Optional) タイムアウト秒数 / <code>10</code>-<code>30</code>の範囲で指定 </li>
 <li><code>enabled</code> - (Optional) 有効フラグ / デフォルト:<code>true</code></li>
 </ul>
 <div class="admonition note">
