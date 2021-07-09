@@ -74,6 +74,7 @@ data "sakuracloud_proxylb" "foobar" {
 * `redirect_to_https` - HTTPからHTTPSへのリダイレクト有効フラグ。 `proxy_mode`が`http`の場合にのみ使用される
 * `response_header` - エンハンスドロードバランサが付与するレスポンスヘッダのリスト。詳細は[response_headerブロック](#response_header)を参照
 * `support_http2` - HTTP/2の有効フラグ。 proxy_mode`が`https`の場合にのみ利用される
+* `ssl_policy` - SSLポリシー
 
 ##### response_headerブロック
 

@@ -120,6 +120,7 @@ resource sakuracloud_server "foobar" {
 * `redirect_to_https` - (Optional) httpからhttpsへのリダイレクト有効化フラグ / `proxy_mode`が`http`の場合のみ有効
 * `response_header` - (Optional) レスポンスに付与するHTTPヘッダのリスト。詳細は[response_headerブロック](#response_header)を参照
 * `support_http2` - (Optional) HTTP/2を有効にするフラグ / `proxy_mode`が`https`の場合のみ有効
+* `ssl_policy` - (Optional) SSLポリシー / 次のいずれかを指定［`TLS-1-2-2019-04`/`TLS-1-2-2021-06`/`TLS-1-3-2021-06`]
 
 ##### response_headerブロック
 
