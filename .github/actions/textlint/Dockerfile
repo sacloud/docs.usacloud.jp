@@ -1,4 +1,4 @@
-FROM node:alpine3.12
+FROM node:lts-alpine3.13
 MAINTAINER Usacloud Members<sacloud.users@gmail.com>
 
 ENV LC_ALL C.UTF-8
