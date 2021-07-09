@@ -93,6 +93,15 @@ resource "sakuracloud_vpc_router" "premium" {
     range_stop  = "192.168.11.40"
   }
 
+  wire_guard {
+    ip_address = "192.168.31.1/24"
+    peer {
+      name       = "example"
+      ip_address = "192.168.31.11"
+      public_key = "<your-public-key>"
+    }
+  }
+
   site_to_site_vpn {
     peer              = "10.0.0.1"
     remote_id         = "10.0.0.1"
@@ -239,6 +248,7 @@ resource sakuracloud_switch "foobar" {
 * `l2tp` - (Optional) L2TP/IPsec設定。詳細は[l2tpブロック](#l2tp)を参照
 * `pptp` - (Optional) PPTP設定。詳細は[pptpブロック](#pptp)を参照
 * `user` - (Optional) リモートアクセスユーザー設定のリスト。詳細は[userブロック](#user)を参照
+* `wire_guard` - (Optional) WireGuardサーバ設定。詳細は[wire_guardブロック](#wire_guard)を参照
 
 ##### l2tpブロック
 
@@ -255,6 +265,17 @@ resource sakuracloud_switch "foobar" {
 
 * `name` - (Required) ユーザー名
 * `password` - (Required) パスワード
+
+##### wire_guardブロック
+
+* `ip_address` - (Required) クライアントに割り当てるIPアドレスブロック、`xxx.xxx.xxx.xxx/nn`形式で指定
+* `peer` - (Optional) WireGuardクライアント設定。詳細は[peerブロック](#peer)を参照
+
+##### peerブロック
+
+* `ip_address` - (Required) ピアのIPアドレス
+* `name` - (Required) ピアの名前
+* `public_key` - (Required) 公開鍵
 
 #### Common Arguments
 

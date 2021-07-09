@@ -112,6 +112,17 @@ data "sakuracloud_vpc_router" "foobar" {
 * `range_start` - クライアントに割り当てるIPアドレスの開始値
 * `range_stop` - クライアントに割り当てるIPアドレスの終了値
 
+##### wire_guardブロック
+
+* `ip_address` - クライアントに割り当てるIPアドレスブロック、`xxx.xxx.xxx.xxx/nn`形式で指定
+* `peer` - WireGuardクライアント設定。詳細は[peerブロック](#peer)を参照
+
+##### peerブロック
+
+* `ip_address` - ピアのIPアドレス
+* `name` - ピアの名前
+* `public_key` - 公開鍵
+
 ##### private_network_interfaceブロック
 
 * `index` - NICのインデックス。次のいずれかとなる［`1`-`7`]
