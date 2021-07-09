@@ -65,6 +65,7 @@ resource "sakuracloud_simple_monitor" "foobar" {
 * `username` - (Optional) HTTP/HTTPSチェック時のBASIC認証で利用するユーザー名
 * `path` - (Optional) HTTP/HTTPSチェック時のリクエストパス
 * `sni` - (Optional) HTTP/HTTPSチェック時のSNI有効フラグ
+* `https` - (Optional) HTTP/HTTPSチェック時のHTTP/2有効フラグ
 * `status` - (Optional) HTTP/HTTPSチェック時のレスポンスコード
 
 ###### 証明書チェック関連
