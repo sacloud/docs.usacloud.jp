@@ -46,6 +46,7 @@ data "sakuracloud_proxylb" "foobar" {
 * `description` - 説明
 * `fqdn` - エンハンスドロードバランサにアクセスするためのFQDN。 通常CNAMEレコードの値として利用する
 * `gzip` - コンテンツ配信時のgzip圧縮の有効フラグ
+* `syslog` - ログ出力先となるSyslogサーバ設定。詳細は[syslogブロック](#syslog)を参照
 * `health_check` - ヘルスチェック。詳細は[health_checkブロック](#health_check)を参照
 * `icon_id` - アイコンID
 * `name` - 名前
@@ -61,6 +62,11 @@ data "sakuracloud_proxylb" "foobar" {
 * `vip` - エンハンスドロードバランサに割り当てられたVIP
 * `vip_failover` - VIPフェイルオーバ機能の有効フラグ
 
+##### syslogブロック
+
+* `server` - サーバのIPアドレス
+* `port` - ポート番号
+
 ##### bind_portブロック
 
 * `port` - ポート番号
@@ -68,6 +74,7 @@ data "sakuracloud_proxylb" "foobar" {
 * `redirect_to_https` - HTTPからHTTPSへのリダイレクト有効フラグ。 `proxy_mode`が`http`の場合にのみ使用される
 * `response_header` - エンハンスドロードバランサが付与するレスポンスヘッダのリスト。詳細は[response_headerブロック](#response_header)を参照
 * `support_http2` - HTTP/2の有効フラグ。 proxy_mode`が`https`の場合にのみ利用される
+* `ssl_policy` - SSLポリシー
 
 ##### response_headerブロック
 

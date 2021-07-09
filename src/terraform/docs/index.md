@@ -32,7 +32,8 @@
 - [v2.6での変更点](guides/upgrade_to_v2.6.0)
 - [v2.7での変更点](guides/upgrade_to_v2.7.0)
 - [v2.8での変更点](guides/upgrade_to_v2.8.0)
-- [v2.8での変更点](guides/upgrade_to_v2.9.0)
+- [v2.9での変更点](guides/upgrade_to_v2.9.0)
+- [v2.10での変更点](guides/upgrade_to_v2.10.0)
 
 #### その他ガイド
 
@@ -115,8 +116,10 @@
 - Lab
     - データソース
         - [コンテナレジストリ](d/container_registry)
+        - [エンハンスドデータベース(TiDB)](d/enhanced_db)
     - リソース
         - [コンテナレジストリ](r/container_registry)
+        - [エンハンスドデータベース(TiDB)](r/enhanced_db)
 - ウェブアクセラレータ
     - データソース
         - [サイト情報](d/webaccel)

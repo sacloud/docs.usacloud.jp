@@ -23,6 +23,11 @@ resource "sakuracloud_proxylb" "foobar" {
     port       = 80
   }
 
+  syslog {
+    server = "192.0.2.1"
+    port   = 514
+  }
+
   bind_port {
     proxy_mode = "http"
     port       = 80
@@ -72,6 +77,12 @@ resource sakuracloud_server "foobar" {
 * `region` - (Optional) エンハンスドロードバランサが配置されるリージョン / `anycast`を指定した場合は複数リージョンに設置される / 次のいずれかを指定［`tk1`/`is1`/`anycast`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`is1`
 * `timeout` - (Optional) 実サーバの通信タイムアウト秒数 / デフォルト:`10`
 * `gzip` - (Optional) コンテンツ配信時のgzip圧縮の有効フラグ
+* `syslog` - (Optional) ログ出力先となるSyslogサーバ設定。詳細は[syslogブロック](#syslog)を参照
+
+##### syslogブロック
+
+* `server` - (Optional) サーバのIPアドレス
+* `port` - (Optional) ポート番号
 
 #### 証明書関連
 
@@ -109,6 +120,7 @@ resource sakuracloud_server "foobar" {
 * `redirect_to_https` - (Optional) httpからhttpsへのリダイレクト有効化フラグ / `proxy_mode`が`http`の場合のみ有効
 * `response_header` - (Optional) レスポンスに付与するHTTPヘッダのリスト。詳細は[response_headerブロック](#response_header)を参照
 * `support_http2` - (Optional) HTTP/2を有効にするフラグ / `proxy_mode`が`https`の場合のみ有効
+* `ssl_policy` - (Optional) SSLポリシー / 次のいずれかを指定［`TLS-1-2-2019-04`/`TLS-1-2-2021-06`/`TLS-1-3-2021-06`]
 
 ##### response_headerブロック
 
