@@ -39,12 +39,18 @@ jobs:
         with:
           working-directory: './src/usacon'
 
+      - name: Build a document with mkdocs - src/autoscaler
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/autoscaler'
+
       - run: |
           mkdir ./public; cp -r ./src/top/site/* public/
           mkdir ./public/terraform; cp -r ./src/terraform/site/* ./public/terraform
           mkdir ./public/terraform-v1; cp -r ./src/terraform-v1/site/* ./public/terraform-v1
           mkdir ./public/usacloud; cp -r ./src/usacloud/site/* ./public/usacloud
           mkdir ./public/usacon; cp -r ./src/usacon/site/* ./public/usacon
+          mkdir ./public/autoscaler; cp -r ./src/autoscaler/site/* ./public/autoscaler
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

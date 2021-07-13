@@ -11,6 +11,7 @@ jobs:
           - './src/top'
           - './src/usacloud'
           - './src/usacon'
+          - './src/autoscaler'
     steps:
       - name: Checkout
         uses: actions/checkout@v2

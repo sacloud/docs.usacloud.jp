@@ -20,3 +20,6 @@ Terraformのさくらのクラウド向けProviderプラグイン(v1)
 
 Usacloudをコントロールパネル上で利用可能にするChrome拡張
 
+#### [AutoScaler](./autoscaler/)
+
+さくらのクラウド上のリソースのオートスケールを実現するためのツール

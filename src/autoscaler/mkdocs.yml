@@ -1,0 +1,37 @@
+site_name: sacloud/autoscaler
+site_url: https://docs.usacloud.jp/autoscaler
+site_description: sacloud/autoscaler
+site_author: '@yamamoto-febc'
+copyright: Copyright (C) 2021 saclodu/autoscaler authors
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+extra:
+  analytics:
+    provider: google
+    property: UA-63739336-5
+extra_css:
+  - css/extra.css
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+nav:
+  - ホーム: index.md
+  - Getting Started: getting_started.md
+  - リファレンス:
+    - CLI: cli.md
+    - Inputs:
+      - 概要: inputs/index.md
+      - 共通設定: inputs/config.md
+      - サポートされているInputs:
+        - AlertManager: inputs/alertmanager/index.md
+        - Grafana: inputs/grafana/index.md
+        - Webhook: inputs/webhook/index.md
+        - Zabbix: inputs/zabbix/index.md
+        - Direct: inputs/direct/index.md
+    - Core Configuration: configuration.md
+    - Exporter: exporter.md

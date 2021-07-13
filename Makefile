@@ -5,6 +5,7 @@ USACLOUD_DIR := src/usacloud
 USACON_DIR := src/usacon
 TERRAFORM_V1_DIR := src/terraform-v1
 TERRAFORM_V2_DIR := src/terraform
+AUTOSCALER_DIR := src/autoscaler
 
 .PHONY: build lint
 
@@ -25,6 +26,8 @@ lint: build-textlint
 	@(cd $(USACLOUD_DIR); make lint)
 	@echo "running textlint in $(USACON_DIR)..."
 	@(cd $(USACON_DIR); make lint)
+	@echo "running textlint in $(AUTOSCALER_DIR)..."
+	@(cd $(AUTOSCALER_DIR); make lint)
 
 .PHONY: preview-top
 preview-top:
@@ -46,10 +49,10 @@ preview-usacloud:
 preview-usacon:
 	@(cd $(USACON_DIR); make preview)
 
-.PHONY: preview-all
-preview: preview-all
-preview-all:
-	@docker run -it --rm -p 8080:80 -v $$PWD:/usr/share/nginx/html
+.PHONY: preview-autoscaler
+preview-autoscaler:
+	@(cd $(AUTOSCALER_DIR); make preview)
+
 
 clean:
 	@echo "cleaning in $(TOP_DIR)..."
@@ -62,3 +65,5 @@ clean:
 	@(cd $(USACLOUD_DIR); make clean)
 	@echo "cleaning in $(USACON_DIR)..."
 	@(cd $(USACON_DIR); make clean)
+	@echo "cleaning in $(AUTOSCALER_DIR)..."
+	@(cd $(AUTOSCALER_DIR); make clean)
