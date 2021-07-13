@@ -372,551 +372,551 @@
 </ul>
 <h2 id="list">list</h2>
 <h5 id="usage">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  list [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  list [flags]</span>
 
-Aliases:
-  list, ls, find, select
+<span class="go">Aliases:</span>
+<span class="go">  list, ls, find, select</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Filter options ===
+<span class="go">  === Filter options ===</span>
 
-      --names strings   
-      --tags strings    
+<span class="go">      --names strings   </span>
+<span class="go">      --tags strings    </span>
 
-  === Limit/Offset options ===
+<span class="go">  === Limit/Offset options ===</span>
 
-      --count int   (aliases: --max, --limit)
-      --from int    (aliases: --offset)
+<span class="go">      --count int   (aliases: --max, --limit)</span>
+<span class="go">      --from int    (aliases: --offset)</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="create">create</h2>
 <h5 id="usage_1">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  create [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  create [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          (*required) 
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          (*required) </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Mobile-Gateway-specific options ===
+<span class="go">  === Mobile-Gateway-specific options ===</span>
 
-      --boot-after-create                                 
-      --dns1 string                                       
-      --dns2 string                                       
-      --inter-device-communication-enabled                
-      --internet-connection-enabled                       
-      --sim-routes string                                 
-      --sims string                                       
-      --static-routes string                              
-      --traffic-config-auto-traffic-shaping               
-      --traffic-config-band-width-limit-in-kbps int       
-      --traffic-config-email-notify-enabled               
-      --traffic-config-slack-notify-enabled               
-      --traffic-config-slack-notify-webhooks-url string   
-      --traffic-config-traffic-quota-in-mb int            
+<span class="go">      --boot-after-create                                 </span>
+<span class="go">      --dns1 string                                       </span>
+<span class="go">      --dns2 string                                       </span>
+<span class="go">      --inter-device-communication-enabled                </span>
+<span class="go">      --internet-connection-enabled                       </span>
+<span class="go">      --sim-routes string                                 </span>
+<span class="go">      --sims string                                       </span>
+<span class="go">      --static-routes string                              </span>
+<span class="go">      --traffic-config-auto-traffic-shaping               </span>
+<span class="go">      --traffic-config-band-width-limit-in-kbps int       </span>
+<span class="go">      --traffic-config-email-notify-enabled               </span>
+<span class="go">      --traffic-config-slack-notify-enabled               </span>
+<span class="go">      --traffic-config-slack-notify-webhooks-url string   </span>
+<span class="go">      --traffic-config-traffic-quota-in-mb int            </span>
 
-  === Network options ===
+<span class="go">  === Network options ===</span>
 
-      --private-interface-ip-address string      (*required) 
-      --private-interface-network-mask-len int   
-      --private-interface-switch-id int          
+<span class="go">      --private-interface-ip-address string      (*required) </span>
+<span class="go">      --private-interface-network-mask-len int   </span>
+<span class="go">      --private-interface-switch-id int          </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;InternetConnectionEnabled&quot;: true,
-    &quot;InterDeviceCommunicationEnabled&quot;: true,
-    &quot;SIMs&quot;: [
-        {
-            &quot;SIMID&quot;: 123456789012,
-            &quot;IPAddress&quot;: &quot;192.0.2.11&quot;
-        }
-    ],
-    &quot;SIMRoutes&quot;: [
-        {
-            &quot;SIMID&quot;: 123456789012,
-            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;
-        }
-    ],
-    &quot;StaticRoutes&quot;: [
-        {
-            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;,
-            &quot;NextHop&quot;: &quot;192.0.2.2&quot;
-        }
-    ],
-    &quot;PrivateInterface&quot;: {
-        &quot;SwitchID&quot;: 123456789012,
-        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
-        &quot;NetworkMaskLen&quot;: 24
-    },
-    &quot;DNS&quot;: {
-        &quot;DNS1&quot;: &quot;133.242.0.3 | 210.188.224.10 | n.n.n.n&quot;,
-        &quot;DNS2&quot;: &quot;133.242.0.4 | 210.188.224.11 | n.n.n.n&quot;
-    },
-    &quot;TrafficConfig&quot;: {
-        &quot;TrafficQuotaInMB&quot;: 10,
-        &quot;BandWidthLimitInKbps&quot;: 128,
-        &quot;EmailNotifyEnabled&quot;: true,
-        &quot;SlackNotifyEnabled&quot;: true,
-        &quot;SlackNotifyWebhooksURL&quot;: &quot;https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX&quot;,
-        &quot;AutoTrafficShaping&quot;: true
-    },
-    &quot;NoWait&quot;: false,
-    &quot;BootAfterCreate&quot;: true
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;InternetConnectionEnabled&quot;: true,</span>
+<span class="go">    &quot;InterDeviceCommunicationEnabled&quot;: true,</span>
+<span class="go">    &quot;SIMs&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;SIMID&quot;: 123456789012,</span>
+<span class="go">            &quot;IPAddress&quot;: &quot;192.0.2.11&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;SIMRoutes&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;SIMID&quot;: 123456789012,</span>
+<span class="go">            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;StaticRoutes&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;,</span>
+<span class="go">            &quot;NextHop&quot;: &quot;192.0.2.2&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;PrivateInterface&quot;: {</span>
+<span class="go">        &quot;SwitchID&quot;: 123456789012,</span>
+<span class="go">        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
+<span class="go">        &quot;NetworkMaskLen&quot;: 24</span>
+<span class="go">    },</span>
+<span class="go">    &quot;DNS&quot;: {</span>
+<span class="go">        &quot;DNS1&quot;: &quot;133.242.0.3 | 210.188.224.10 | n.n.n.n&quot;,</span>
+<span class="go">        &quot;DNS2&quot;: &quot;133.242.0.4 | 210.188.224.11 | n.n.n.n&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;TrafficConfig&quot;: {</span>
+<span class="go">        &quot;TrafficQuotaInMB&quot;: 10,</span>
+<span class="go">        &quot;BandWidthLimitInKbps&quot;: 128,</span>
+<span class="go">        &quot;EmailNotifyEnabled&quot;: true,</span>
+<span class="go">        &quot;SlackNotifyEnabled&quot;: true,</span>
+<span class="go">        &quot;SlackNotifyWebhooksURL&quot;: &quot;https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX&quot;,</span>
+<span class="go">        &quot;AutoTrafficShaping&quot;: true</span>
+<span class="go">    },</span>
+<span class="go">    &quot;NoWait&quot;: false,</span>
+<span class="go">    &quot;BootAfterCreate&quot;: true</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="read">read</h2>
 <h5 id="usage_2">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  read { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  read { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  read, show
+<span class="go">Aliases:</span>
+<span class="go">  read, show</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="update">update</h2>
 <h5 id="usage_3">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  update { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  update { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Mobile-Gateway-specific options ===
+<span class="go">  === Mobile-Gateway-specific options ===</span>
 
-      --dns1 string                                       
-      --dns2 string                                       
-      --inter-device-communication-enabled                
-      --internet-connection-enabled                       
-      --sim-routes string                                 
-      --sims string                                       
-      --static-routes string                              
-      --traffic-config-auto-traffic-shaping               
-      --traffic-config-band-width-limit-in-kbps int       
-      --traffic-config-email-notify-enabled               
-      --traffic-config-slack-notify-enabled               
-      --traffic-config-slack-notify-webhooks-url string   
-      --traffic-config-traffic-quota-in-mb int            
+<span class="go">      --dns1 string                                       </span>
+<span class="go">      --dns2 string                                       </span>
+<span class="go">      --inter-device-communication-enabled                </span>
+<span class="go">      --internet-connection-enabled                       </span>
+<span class="go">      --sim-routes string                                 </span>
+<span class="go">      --sims string                                       </span>
+<span class="go">      --static-routes string                              </span>
+<span class="go">      --traffic-config-auto-traffic-shaping               </span>
+<span class="go">      --traffic-config-band-width-limit-in-kbps int       </span>
+<span class="go">      --traffic-config-email-notify-enabled               </span>
+<span class="go">      --traffic-config-slack-notify-enabled               </span>
+<span class="go">      --traffic-config-slack-notify-webhooks-url string   </span>
+<span class="go">      --traffic-config-traffic-quota-in-mb int            </span>
 
-  === Network options ===
+<span class="go">  === Network options ===</span>
 
-      --private-interface-ip-address string      
-      --private-interface-network-mask-len int   
-      --private-interface-switch-id int          
+<span class="go">      --private-interface-ip-address string      </span>
+<span class="go">      --private-interface-network-mask-len int   </span>
+<span class="go">      --private-interface-switch-id int          </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples_1">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;PrivateInterface&quot;: {
-        &quot;SwitchID&quot;: 123456789012,
-        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
-        &quot;NetworkMaskLen&quot;: 24
-    },
-    &quot;InternetConnectionEnabled&quot;: true,
-    &quot;InterDeviceCommunicationEnabled&quot;: true,
-    &quot;SIMs&quot;: [
-        {
-            &quot;SIMID&quot;: 123456789012,
-            &quot;IPAddress&quot;: &quot;192.0.2.11&quot;
-        }
-    ],
-    &quot;SIMRoutes&quot;: [
-        {
-            &quot;SIMID&quot;: 123456789012,
-            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;
-        }
-    ],
-    &quot;StaticRoutes&quot;: [
-        {
-            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;,
-            &quot;NextHop&quot;: &quot;192.0.2.2&quot;
-        }
-    ],
-    &quot;DNS&quot;: {
-        &quot;DNS1&quot;: &quot;133.242.0.3 | 210.188.224.10 | n.n.n.n&quot;,
-        &quot;DNS2&quot;: &quot;133.242.0.4 | 210.188.224.11 | n.n.n.n&quot;
-    },
-    &quot;TrafficConfig&quot;: {
-        &quot;TrafficQuotaInMB&quot;: 10,
-        &quot;BandWidthLimitInKbps&quot;: 128,
-        &quot;EmailNotifyEnabled&quot;: true,
-        &quot;SlackNotifyEnabled&quot;: true,
-        &quot;SlackNotifyWebhooksURL&quot;: &quot;https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX&quot;,
-        &quot;AutoTrafficShaping&quot;: true
-    },
-    &quot;NoWait&quot;: false
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;PrivateInterface&quot;: {</span>
+<span class="go">        &quot;SwitchID&quot;: 123456789012,</span>
+<span class="go">        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
+<span class="go">        &quot;NetworkMaskLen&quot;: 24</span>
+<span class="go">    },</span>
+<span class="go">    &quot;InternetConnectionEnabled&quot;: true,</span>
+<span class="go">    &quot;InterDeviceCommunicationEnabled&quot;: true,</span>
+<span class="go">    &quot;SIMs&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;SIMID&quot;: 123456789012,</span>
+<span class="go">            &quot;IPAddress&quot;: &quot;192.0.2.11&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;SIMRoutes&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;SIMID&quot;: 123456789012,</span>
+<span class="go">            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;StaticRoutes&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;,</span>
+<span class="go">            &quot;NextHop&quot;: &quot;192.0.2.2&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;DNS&quot;: {</span>
+<span class="go">        &quot;DNS1&quot;: &quot;133.242.0.3 | 210.188.224.10 | n.n.n.n&quot;,</span>
+<span class="go">        &quot;DNS2&quot;: &quot;133.242.0.4 | 210.188.224.11 | n.n.n.n&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;TrafficConfig&quot;: {</span>
+<span class="go">        &quot;TrafficQuotaInMB&quot;: 10,</span>
+<span class="go">        &quot;BandWidthLimitInKbps&quot;: 128,</span>
+<span class="go">        &quot;EmailNotifyEnabled&quot;: true,</span>
+<span class="go">        &quot;SlackNotifyEnabled&quot;: true,</span>
+<span class="go">        &quot;SlackNotifyWebhooksURL&quot;: &quot;https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX&quot;,</span>
+<span class="go">        &quot;AutoTrafficShaping&quot;: true</span>
+<span class="go">    },</span>
+<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="delete">delete</h2>
 <h5 id="usage_4">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  delete { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  delete { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  delete, rm
+<span class="go">Aliases:</span>
+<span class="go">  delete, rm</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Delete options ===
+<span class="go">  === Delete options ===</span>
 
-  -f, --force   
+<span class="go">  -f, --force   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Error handling options ===
+<span class="go">  === Error handling options ===</span>
 
-      --fail-if-not-found   
+<span class="go">      --fail-if-not-found   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="boot">boot</h2>
 <h5 id="usage_5">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  boot { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  boot { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  boot, power-on
+<span class="go">Aliases:</span>
+<span class="go">  boot, power-on</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="shutdown">shutdown</h2>
 <h5 id="usage_6">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  shutdown { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  shutdown { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  shutdown, power-off
+<span class="go">Aliases:</span>
+<span class="go">  shutdown, power-off</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Mobile-Gateway-specific options ===
+<span class="go">  === Mobile-Gateway-specific options ===</span>
 
-  -f, --force-shutdown   (aliases: --force)
+<span class="go">  -f, --force-shutdown   (aliases: --force)</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="reset">reset</h2>
 <h5 id="usage_7">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  reset { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  reset { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="monitor-interface">monitor-interface</h2>
 <h5 id="usage_8">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  monitor-interface { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-interface { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  monitor-interface, monitor-nic
+<span class="go">Aliases:</span>
+<span class="go">  monitor-interface, monitor-nic</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="logs">logs</h2>
 <h5 id="usage_9">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  logs { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  logs { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="wait-until-ready">wait-until-ready</h2>
 <h5 id="usage_10">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  wait-until-ready { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  wait-until-ready { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  wait-until-ready, wait-for-boot
+<span class="go">Aliases:</span>
+<span class="go">  wait-until-ready, wait-for-boot</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="wait-until-shutdown">wait-until-shutdown</h2>
 <h5 id="usage_11">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  wait-until-shutdown { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  wait-until-shutdown { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  wait-until-shutdown, wait-for-down
+<span class="go">Aliases:</span>
+<span class="go">  wait-until-shutdown, wait-for-down</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
               
             </div>
           </div>

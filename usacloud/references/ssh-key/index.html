@@ -345,217 +345,217 @@
 </ul>
 <h2 id="list">list</h2>
 <h5 id="usage">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  list [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  list [flags]</span>
 
-Aliases:
-  list, ls, find, select
+<span class="go">Aliases:</span>
+<span class="go">  list, ls, find, select</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Filter options ===
+<span class="go">  === Filter options ===</span>
 
-      --names strings   
+<span class="go">      --names strings   </span>
 
-  === Limit/Offset options ===
+<span class="go">  === Limit/Offset options ===</span>
 
-      --count int   (aliases: --max, --limit)
-      --from int    (aliases: --offset)
+<span class="go">      --count int   (aliases: --max, --limit)</span>
+<span class="go">      --from int    (aliases: --offset)</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="create">create</h2>
 <h5 id="usage_1">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  create [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  create [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          (*required) 
-      --description string   
+<span class="go">      --name string          (*required) </span>
+<span class="go">      --description string   </span>
 
-  === Ssh-Key-specific options ===
+<span class="go">  === Ssh-Key-specific options ===</span>
 
-      --public-key string   (*required) 
+<span class="go">      --public-key string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;PublicKey&quot;: &quot;/path/to/your/public/key | ssh-rsa ...&quot;
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;PublicKey&quot;: &quot;/path/to/your/public/key | ssh-rsa ...&quot;</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="generate">generate</h2>
 <h5 id="usage_2">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  generate [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  generate [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          (*required) 
-      --description string   
+<span class="go">      --name string          (*required) </span>
+<span class="go">      --description string   </span>
 
-  === Ssh-Key-specific options ===
+<span class="go">  === Ssh-Key-specific options ===</span>
 
-      --pass-phrase string   
+<span class="go">      --pass-phrase string   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="read">read</h2>
 <h5 id="usage_3">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  read { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  read { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  read, show
+<span class="go">Aliases:</span>
+<span class="go">  read, show</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="update">update</h2>
 <h5 id="usage_4">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  update { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  update { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          
-      --description string   
+<span class="go">      --name string          </span>
+<span class="go">      --description string   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples_1">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="delete">delete</h2>
 <h5 id="usage_5">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  delete { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  delete { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  delete, rm
+<span class="go">Aliases:</span>
+<span class="go">  delete, rm</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Error handling options ===
+<span class="go">  === Error handling options ===</span>
 
-      --fail-if-not-found   
+<span class="go">      --fail-if-not-found   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
               
             </div>
           </div>

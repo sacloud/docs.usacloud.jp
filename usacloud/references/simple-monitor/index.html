@@ -351,335 +351,335 @@
 </ul>
 <h2 id="list">list</h2>
 <h5 id="usage">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  list [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  list [flags]</span>
 
-Aliases:
-  list, ls, find, select
+<span class="go">Aliases:</span>
+<span class="go">  list, ls, find, select</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Filter options ===
+<span class="go">  === Filter options ===</span>
 
-      --names strings   
-      --tags strings    
+<span class="go">      --names strings   </span>
+<span class="go">      --tags strings    </span>
 
-  === Limit/Offset options ===
+<span class="go">  === Limit/Offset options ===</span>
 
-      --count int   (aliases: --max, --limit)
-      --from int    (aliases: --offset)
+<span class="go">      --count int   (aliases: --max, --limit)</span>
+<span class="go">      --from int    (aliases: --offset)</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="create">create</h2>
 <h5 id="usage_1">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  create [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  create [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Simple-Monitor-specific options ===
+<span class="go">  === Simple-Monitor-specific options ===</span>
 
-      --delay-loop int                             (default 60)
-      --enabled                                    (default true)
-      --health-check-basic-auth-password string   
-      --health-check-basic-auth-username string   
-      --health-check-community string             
-      --health-check-expected-data string         
-      --health-check-host string                  
-      --health-check-oid string                   
-      --health-check-path string                  
-      --health-check-port int                     
-      --health-check-protocol string              (*required) options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate]
-      --health-check-q-name string                
-      --health-check-remaining-days int           
-      --health-check-sni                          
-      --health-check-snmp-version string          
-      --health-check-status int                   
-      --notify-email-enabled                      
-      --notify-email-html                         
-      --notify-interval int                        (default 7200)
-      --notify-slack-enabled                      
-      --slack-webhooks-url string                 
-      --target string                             (*required) 
+<span class="go">      --delay-loop int                             (default 60)</span>
+<span class="go">      --enabled                                    (default true)</span>
+<span class="go">      --health-check-basic-auth-password string   </span>
+<span class="go">      --health-check-basic-auth-username string   </span>
+<span class="go">      --health-check-community string             </span>
+<span class="go">      --health-check-expected-data string         </span>
+<span class="go">      --health-check-host string                  </span>
+<span class="go">      --health-check-oid string                   </span>
+<span class="go">      --health-check-path string                  </span>
+<span class="go">      --health-check-port int                     </span>
+<span class="go">      --health-check-protocol string              (*required) options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate]</span>
+<span class="go">      --health-check-q-name string                </span>
+<span class="go">      --health-check-remaining-days int           </span>
+<span class="go">      --health-check-sni                          </span>
+<span class="go">      --health-check-snmp-version string          </span>
+<span class="go">      --health-check-status int                   </span>
+<span class="go">      --notify-email-enabled                      </span>
+<span class="go">      --notify-email-html                         </span>
+<span class="go">      --notify-interval int                        (default 7200)</span>
+<span class="go">      --notify-slack-enabled                      </span>
+<span class="go">      --slack-webhooks-url string                 </span>
+<span class="go">      --target string                             (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Target&quot;: &quot;www.example.com&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;DelayLoop&quot;: 60,
-    &quot;Enabled&quot;: true,
-    &quot;HealthCheck&quot;: {
-        &quot;Protocol&quot;: &quot;http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate&quot;,
-        &quot;Port&quot;: 80,
-        &quot;Path&quot;: &quot;/healthz&quot;,
-        &quot;Status&quot;: 200,
-        &quot;SNI&quot;: true,
-        &quot;Host&quot;: &quot;www2.example.com&quot;,
-        &quot;BasicAuthUsername&quot;: &quot;username&quot;,
-        &quot;BasicAuthPassword&quot;: &quot;password&quot;
-    },
-    &quot;NotifyEmailEnabled&quot;: true,
-    &quot;NotifyEmailHTML&quot;: true,
-    &quot;NotifySlackEnabled&quot;: true,
-    &quot;SlackWebhooksURL&quot;: &quot;https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX&quot;,
-    &quot;NotifyInterval&quot;: 7200
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Target&quot;: &quot;www.example.com&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;DelayLoop&quot;: 60,</span>
+<span class="go">    &quot;Enabled&quot;: true,</span>
+<span class="go">    &quot;HealthCheck&quot;: {</span>
+<span class="go">        &quot;Protocol&quot;: &quot;http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate&quot;,</span>
+<span class="go">        &quot;Port&quot;: 80,</span>
+<span class="go">        &quot;Path&quot;: &quot;/healthz&quot;,</span>
+<span class="go">        &quot;Status&quot;: 200,</span>
+<span class="go">        &quot;SNI&quot;: true,</span>
+<span class="go">        &quot;Host&quot;: &quot;www2.example.com&quot;,</span>
+<span class="go">        &quot;BasicAuthUsername&quot;: &quot;username&quot;,</span>
+<span class="go">        &quot;BasicAuthPassword&quot;: &quot;password&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;NotifyEmailEnabled&quot;: true,</span>
+<span class="go">    &quot;NotifyEmailHTML&quot;: true,</span>
+<span class="go">    &quot;NotifySlackEnabled&quot;: true,</span>
+<span class="go">    &quot;SlackWebhooksURL&quot;: &quot;https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX&quot;,</span>
+<span class="go">    &quot;NotifyInterval&quot;: 7200</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="read">read</h2>
 <h5 id="usage_2">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  read { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  read { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  read, show
+<span class="go">Aliases:</span>
+<span class="go">  read, show</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="update">update</h2>
 <h5 id="usage_3">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  update { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  update { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Simple-Monitor-specific options ===
+<span class="go">  === Simple-Monitor-specific options ===</span>
 
-      --delay-loop int                            
-      --enabled                                   
-      --health-check-basic-auth-password string   
-      --health-check-basic-auth-username string   
-      --health-check-community string             
-      --health-check-expected-data string         
-      --health-check-host string                  
-      --health-check-oid string                   
-      --health-check-path string                  
-      --health-check-port int                     
-      --health-check-protocol string              options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate]
-      --health-check-q-name string                
-      --health-check-remaining-days int           
-      --health-check-sni                          
-      --health-check-snmp-version string          
-      --health-check-status int                   
-      --notify-email-enabled                      
-      --notify-email-html                         
-      --notify-interval int                       
-      --notify-slack-enabled                      
-      --slack-webhooks-url string                 
+<span class="go">      --delay-loop int                            </span>
+<span class="go">      --enabled                                   </span>
+<span class="go">      --health-check-basic-auth-password string   </span>
+<span class="go">      --health-check-basic-auth-username string   </span>
+<span class="go">      --health-check-community string             </span>
+<span class="go">      --health-check-expected-data string         </span>
+<span class="go">      --health-check-host string                  </span>
+<span class="go">      --health-check-oid string                   </span>
+<span class="go">      --health-check-path string                  </span>
+<span class="go">      --health-check-port int                     </span>
+<span class="go">      --health-check-protocol string              options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate]</span>
+<span class="go">      --health-check-q-name string                </span>
+<span class="go">      --health-check-remaining-days int           </span>
+<span class="go">      --health-check-sni                          </span>
+<span class="go">      --health-check-snmp-version string          </span>
+<span class="go">      --health-check-status int                   </span>
+<span class="go">      --notify-email-enabled                      </span>
+<span class="go">      --notify-email-html                         </span>
+<span class="go">      --notify-interval int                       </span>
+<span class="go">      --notify-slack-enabled                      </span>
+<span class="go">      --slack-webhooks-url string                 </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples_1">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;DelayLoop&quot;: 60,
-    &quot;Enabled&quot;: true,
-    &quot;HealthCheck&quot;: {
-        &quot;Protocol&quot;: &quot;http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate&quot;,
-        &quot;Port&quot;: 80,
-        &quot;Path&quot;: &quot;/healthz&quot;,
-        &quot;Status&quot;: 200,
-        &quot;SNI&quot;: true,
-        &quot;Host&quot;: &quot;www2.example.com&quot;,
-        &quot;BasicAuthUsername&quot;: &quot;username&quot;,
-        &quot;BasicAuthPassword&quot;: &quot;password&quot;
-    },
-    &quot;NotifyEmailEnabled&quot;: true,
-    &quot;NotifyEmailHTML&quot;: true,
-    &quot;NotifySlackEnabled&quot;: true,
-    &quot;SlackWebhooksURL&quot;: &quot;https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX&quot;,
-    &quot;NotifyInterval&quot;: 7200
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;DelayLoop&quot;: 60,</span>
+<span class="go">    &quot;Enabled&quot;: true,</span>
+<span class="go">    &quot;HealthCheck&quot;: {</span>
+<span class="go">        &quot;Protocol&quot;: &quot;http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate&quot;,</span>
+<span class="go">        &quot;Port&quot;: 80,</span>
+<span class="go">        &quot;Path&quot;: &quot;/healthz&quot;,</span>
+<span class="go">        &quot;Status&quot;: 200,</span>
+<span class="go">        &quot;SNI&quot;: true,</span>
+<span class="go">        &quot;Host&quot;: &quot;www2.example.com&quot;,</span>
+<span class="go">        &quot;BasicAuthUsername&quot;: &quot;username&quot;,</span>
+<span class="go">        &quot;BasicAuthPassword&quot;: &quot;password&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;NotifyEmailEnabled&quot;: true,</span>
+<span class="go">    &quot;NotifyEmailHTML&quot;: true,</span>
+<span class="go">    &quot;NotifySlackEnabled&quot;: true,</span>
+<span class="go">    &quot;SlackWebhooksURL&quot;: &quot;https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX&quot;,</span>
+<span class="go">    &quot;NotifyInterval&quot;: 7200</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="delete">delete</h2>
 <h5 id="usage_4">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  delete { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  delete { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  delete, rm
+<span class="go">Aliases:</span>
+<span class="go">  delete, rm</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Error handling options ===
+<span class="go">  === Error handling options ===</span>
 
-      --fail-if-not-found   
+<span class="go">      --fail-if-not-found   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="health">health</h2>
 <h5 id="usage_5">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  health { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  health { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="monitor-response-time">monitor-response-time</h2>
 <h5 id="usage_6">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  monitor-response-time { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-response-time { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  monitor-response-time, monitor
+<span class="go">Aliases:</span>
+<span class="go">  monitor-response-time, monitor</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
               
             </div>
           </div>

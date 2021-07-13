@@ -325,8 +325,8 @@
 <p><a href="https://jmespath.org">JMESPath</a>または<a href="https://stedolan.github.io/jq/">jq</a>で出力の加工が行えます。 </p>
 <h3 id="_2">クエリの使い方</h3>
 <p>以下の書式で実行します。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud &lt;リソース名&gt; &lt;コマンド&gt; --query=&quot;&lt;query&gt;&quot; [--query-driver=&lt;&quot;jmespath&quot;|&quot;jq&quot;&gt;] [ID or Name or Tags]
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud &lt;リソース名&gt; &lt;コマンド&gt; --query<span class="o">=</span><span class="s2">&quot;&lt;query&gt;&quot;</span> <span class="o">[</span>--query-driver<span class="o">=</span>&lt;<span class="s2">&quot;jmespath&quot;</span><span class="p">|</span><span class="s2">&quot;jq&quot;</span>&gt;<span class="o">]</span> <span class="o">[</span>ID or Name or Tags<span class="o">]</span>
+</code></pre></div>
 
 <ul>
 <li><code>--query</code>: JMESPathまたはjqに渡すクエリ(expression)</li>
@@ -336,14 +336,14 @@
 <p>プロファイルの<code>DefaultQueryDriver</code>を指定することで<code>--query-driver</code>を省略した場合に利用するドライバーを指定可能です。<br />
 詳細は<a href="../../references/profile">リファレンス/プロファイル</a>を参照してください。  </p>
 <h3 id="_4">利用例</h3>
-<pre class="codehilite"><code class="language-sh"># 環境変数経由でデフォルトドライバーを切り替え
-$ export SAKURACLOUD_DEFAULT_QUERY_DRIVER=jq
+<div class="codehilite"><pre><span></span><code><span class="c1"># 環境変数経由でデフォルトドライバーを切り替え</span>
+$ <span class="nb">export</span> <span class="nv">SAKURACLOUD_DEFAULT_QUERY_DRIVER</span><span class="o">=</span>jq
 
-$ usacloud server list --query &quot;.[].Name&quot;
-&quot;server1&quot;
-&quot;server2&quot;
-&quot;server3&quot;
-</code></pre>
+$ usacloud server list --query <span class="s2">&quot;.[].Name&quot;</span>
+<span class="s2">&quot;server1&quot;</span>
+<span class="s2">&quot;server2&quot;</span>
+<span class="s2">&quot;server3&quot;</span>
+</code></pre></div>
 
 <h3 id="-query"><code>--query</code>以外の出力関連オプションとの併用</h3>
 <ul>

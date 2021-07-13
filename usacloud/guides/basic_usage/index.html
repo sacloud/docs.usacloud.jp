@@ -374,57 +374,57 @@
 <hr />
 <h2 id="_2">コマンド基本構文</h2>
 <p><code>usacloud</code>コマンドの基本構文は以下の通りです。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud &lt;操作対象のリソース&gt; &lt;コマンド&gt; [コマンドオプション] [引数]
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud &lt;操作対象のリソース&gt; &lt;コマンド&gt; <span class="o">[</span>コマンドオプション<span class="o">]</span> <span class="o">[</span>引数<span class="o">]</span>
+</code></pre></div>
 
 <h4 id="_3">指定できる値</h4>
 <p>リソースやコマンド、オプションに指定できる値は<a href="#help">help表示</a>で確認できます。</p>
 <h4 id="_4">コマンド実行例</h4>
-<pre class="codehilite"><code class="language-bash">#------------------------------------------------------------------------------
-# サーバー(server)に対する一覧表示コマンド(ls)の場合の例
-#------------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span><code><span class="c1">#------------------------------------------------------------------------------</span>
+<span class="c1"># サーバー(server)に対する一覧表示コマンド(ls)の場合の例</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
 
-# 基本的な使い方(オプション/引数なし)
+<span class="c1"># 基本的な使い方(オプション/引数なし)</span>
 $ usacloud server ls
 
-# グローバルオプションあり
+<span class="c1"># グローバルオプションあり</span>
 $ usacloud --zone tk1a server ls
 
-# オプション(短い形式)
+<span class="c1"># オプション(短い形式)</span>
 $ usacloud server ls -q
 
-# オプション(長い形式)
+<span class="c1"># オプション(長い形式)</span>
 $ usacloud server ls --quiet
 
-# オプションは=を明示してもOK
-$ usacloud server ls --name=foovar
-</code></pre>
+<span class="c1"># オプションは=を明示してもOK</span>
+$ usacloud server ls --name<span class="o">=</span>foovar
+</code></pre></div>
 
 <hr />
 <h2 id="help">help表示</h2>
 <p><code>-h</code>または<code>--help</code>フラグを指定するとヘルプを表示します。 <br />
 フラグを指定する位置で表示できる内容が変化します。</p>
 <h4 id="_5">グローバルオプション/操作対象のリソースのヘルプ表示</h4>
-<pre class="codehilite"><code class="language-bash">usacloud -h
-</code></pre>
+<div class="codehilite"><pre><span></span><code>usacloud -h
+</code></pre></div>
 
 <h4 id="_6">コマンドのヘルプ表示</h4>
-<pre class="codehilite"><code class="language-bash">#
-# 書式: usacloud &lt;操作対象のリソース&gt; -h
-#
+<div class="codehilite"><pre><span></span><code><span class="c1">#</span>
+<span class="c1"># 書式: usacloud &lt;操作対象のリソース&gt; -h</span>
+<span class="c1">#</span>
 
-# サーバー(server)のヘルプ表示の例
+<span class="c1"># サーバー(server)のヘルプ表示の例</span>
 usacloud server -h
-</code></pre>
+</code></pre></div>
 
 <h4 id="_7">コマンドオプション/引数のヘルプ表示</h4>
-<pre class="codehilite"><code class="language-bash">#
-# 書式: usacloud &lt;操作対象のリソース&gt; &lt;コマンド&gt; -h
-#
+<div class="codehilite"><pre><span></span><code><span class="c1">#</span>
+<span class="c1"># 書式: usacloud &lt;操作対象のリソース&gt; &lt;コマンド&gt; -h</span>
+<span class="c1">#</span>
 
-# サーバー(server1)の一覧表示コマンド(ls)のヘルプ表示の例
+<span class="c1"># サーバー(server1)の一覧表示コマンド(ls)のヘルプ表示の例</span>
 usacloud server ls -h
-</code></pre>
+</code></pre></div>
 
 <hr />
 <h2 id="_8">グローバルオプション</h2>
@@ -475,60 +475,60 @@ usacloud server ls -h
 <hr />
 <h4 id="-format-or-fmt">フォーマット(<code>--format</code> or <code>--fmt</code>)</h4>
 <p>出力フォーマットをgo言語の<a href="https://golang.org/pkg/text/template/">text/template</a>形式で指定します。</p>
-<pre class="codehilite"><code class="language-bash">usacloud server ls --format &quot;ID is {{.ID}}, Name is {{.Name}}&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code>usacloud server ls --format <span class="s2">&quot;ID is {{.ID}}, Name is {{.Name}}&quot;</span>
+</code></pre></div>
 
 <h4 id="-query-query-driver">クエリ(<code>--query</code> | <code>--query-driver</code>)</h4>
 <p><a href="https://jmespath.org">JMESPath</a>または<a href="https://stedolan.github.io/jq/">jq</a>で出力の加工が行えます。  </p>
 <h5 id="jmespath">利用例(JMESPath):</h5>
-<pre class="codehilite"><code class="language-sh">$ usacloud server list --query &quot;[].Name&quot;
-[
-    &quot;server1&quot;,
-    &quot;server2&quot;,
-    &quot;server3&quot;
-]
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud server list --query <span class="s2">&quot;[].Name&quot;</span>
+<span class="o">[</span>
+    <span class="s2">&quot;server1&quot;</span>,
+    <span class="s2">&quot;server2&quot;</span>,
+    <span class="s2">&quot;server3&quot;</span>
+<span class="o">]</span>
+</code></pre></div>
 
 <h5 id="jq">利用例(jq):</h5>
-<pre class="codehilite"><code class="language-sh">$ usacloud server list --query-driver jq --query &quot;.[].Name&quot;
-&quot;server1&quot;
-&quot;server2&quot;
-&quot;server3&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud server list --query-driver jq --query <span class="s2">&quot;.[].Name&quot;</span>
+<span class="s2">&quot;server1&quot;</span>
+<span class="s2">&quot;server2&quot;</span>
+<span class="s2">&quot;server3&quot;</span>
+</code></pre></div>
 
 <p><code>--query</code>と<code>--query-driver</code>の詳細は<a href="../query">クエリ</a>を参照してください。</p>
 <hr />
 <h2 id="_10">共通オプション: ゾーン指定</h2>
 <p>ゾーンを指定する必要があるリソースの場合<code>--zone</code>で指定します。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud server list --zone is1a
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud server list --zone is1a
+</code></pre></div>
 
 <p>プロファイルでゾーンをセットしている場合は省略可能です。</p>
 <h3 id="_11">全ゾーン一括操作</h3>
 <p><code>--zone</code>に<code>all</code>を指定することで全ゾーン一括操作が可能です。</p>
-<pre class="codehilite"><code class="language-bash"># 全ゾーンのサーバを一覧表示
-$ usacloud server list --zone=all
+<div class="codehilite"><pre><span></span><code><span class="c1"># 全ゾーンのサーバを一覧表示</span>
+$ usacloud server list --zone<span class="o">=</span>all
 
-# 全ゾーンのサーバのうち、名称にexampleを含むサーバをシャットダウン
-$ usacloud server shutdown --zone=all example
+<span class="c1"># 全ゾーンのサーバのうち、名称にexampleを含むサーバをシャットダウン</span>
+$ usacloud server shutdown --zone<span class="o">=</span>all example
 
-# 全ゾーンにサーバ作成
-$ usacloud server create --name example ... --zone=all
-</code></pre>
+<span class="c1"># 全ゾーンにサーバ作成</span>
+$ usacloud server create --name example ... --zone<span class="o">=</span>all
+</code></pre></div>
 
 <hr />
 <h2 id="or-json-parameters">共通オプション: ファイル or JSONでのパラメータ指定(<code>--parameters</code>)</h2>
 <p>コマンドに渡すパラメータをJSONまたはJSONを記述したファイルパスで指定します。</p>
-<pre class="codehilite"><code class="language-bash"># 文字列で指定する例
-$ usacloud server list --parameters '{&quot;Names&quot;: [&quot;example&quot;]}'
+<div class="codehilite"><pre><span></span><code><span class="c1"># 文字列で指定する例</span>
+$ usacloud server list --parameters <span class="s1">&#39;{&quot;Names&quot;: [&quot;example&quot;]}&#39;</span>
 
-# ファイルパスで指定する例
+<span class="c1"># ファイルパスで指定する例</span>
 $ cat example.json
-{
-  &quot;Names&quot;: [&quot;example&quot;]
-}
+<span class="o">{</span>
+  <span class="s2">&quot;Names&quot;</span>: <span class="o">[</span><span class="s2">&quot;example&quot;</span><span class="o">]</span>
+<span class="o">}</span>
 $ usacloud server list --parameters example.json
-</code></pre>
+</code></pre></div>
 
 <p>JSONファイルは<code>--example</code>パラメータで記述例を確認出来ます。</p>
 <div class="admonition tip">
@@ -539,27 +539,27 @@ $ usacloud server list --parameters example.json
 <hr />
 <h2 id="-example">共通オプション: パラメータ例の出力(<code>--example</code>)</h2>
 <p><code>--parameters</code>で指定するJSONファイルの例を出力します。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud switch create --example
-{
-    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud switch create --example
+<span class="o">{</span>
+    <span class="s2">&quot;Zone&quot;</span>: <span class="s2">&quot;tk1a | tk1b | is1a | is1b | tk1v&quot;</span>,
+    <span class="s2">&quot;Name&quot;</span>: <span class="s2">&quot;example&quot;</span>,
+    <span class="s2">&quot;Description&quot;</span>: <span class="s2">&quot;example&quot;</span>,
+    <span class="s2">&quot;Tags&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;tag1=example1&quot;</span>,
+        <span class="s2">&quot;tag2=example2&quot;</span>
+    <span class="o">]</span>,
+    <span class="s2">&quot;IconID&quot;</span>: <span class="m">123456789012</span>
+<span class="o">}</span>
+</code></pre></div>
 
 <p>通常はファイルなどに保存した上で編集して利用します。</p>
-<pre class="codehilite"><code class="language-bash"># パラメータ例をファイルに出力
+<div class="codehilite"><pre><span></span><code><span class="c1"># パラメータ例をファイルに出力</span>
 $ usacloud switch create --example &gt; parameters.json
-# 編集
+<span class="c1"># 編集</span>
 $ vi parameters.json
-# 利用
+<span class="c1"># 利用</span>
 $ usacloud switch create --parameters parameters.json
-</code></pre>
+</code></pre></div>
 
 <h2 id="yes-y-or-assumeyes">共通オプション: yesオプション(<code>-y</code> or <code>--assumeyes</code>)</h2>
 <p>実行時に確認ダイアログが表示されるコマンドで利用可能です。<br />
@@ -577,43 +577,43 @@ IDとタグの場合は完全一致、名称の場合は(デフォルトでは)�
 <p>複数リソースの一括操作に対応していないコマンドの場合、対象が複数となる指定はエラーとなります。</p>
 </div>
 <p>例:</p>
-<pre class="codehilite"><code class="language-bash">#------------------------------------------------------------------------------
-# 以下のリソースが存在する場合の例
-#------------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span><code><span class="c1">#------------------------------------------------------------------------------</span>
+<span class="c1"># 以下のリソースが存在する場合の例</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
 $ usacloud server ls
 +--------------+---------+-----+--------+---------------+--------+
-|      ID      |  NAME   | CPU | MEMORY |   IPADDRESS   | STATUS |
+<span class="p">|</span>      ID      <span class="p">|</span>  NAME   <span class="p">|</span> CPU <span class="p">|</span> MEMORY <span class="p">|</span>   IPADDRESS   <span class="p">|</span> STATUS <span class="p">|</span>
 +--------------+---------+-----+--------+---------------+--------+
-| 000000000011 | Test1-1 | 1   | 1024MB | 192.0.2.11/24 | up     |
-| 000000000021 | Test2-1 | 1   | 1024MB | 192.0.2.21/24 | up     |
-| 000000000031 | Test3-1 | 1   | 1024MB | 192.0.2.31/24 | up     |
-| 000000000032 | Test3-2 | 1   | 1024MB | 192.0.2.32/24 | up     |
+<span class="p">|</span> <span class="m">000000000011</span> <span class="p">|</span> Test1-1 <span class="p">|</span> <span class="m">1</span>   <span class="p">|</span> 1024MB <span class="p">|</span> <span class="m">192</span>.0.2.11/24 <span class="p">|</span> up     <span class="p">|</span>
+<span class="p">|</span> <span class="m">000000000021</span> <span class="p">|</span> Test2-1 <span class="p">|</span> <span class="m">1</span>   <span class="p">|</span> 1024MB <span class="p">|</span> <span class="m">192</span>.0.2.21/24 <span class="p">|</span> up     <span class="p">|</span>
+<span class="p">|</span> <span class="m">000000000031</span> <span class="p">|</span> Test3-1 <span class="p">|</span> <span class="m">1</span>   <span class="p">|</span> 1024MB <span class="p">|</span> <span class="m">192</span>.0.2.31/24 <span class="p">|</span> up     <span class="p">|</span>
+<span class="p">|</span> <span class="m">000000000032</span> <span class="p">|</span> Test3-2 <span class="p">|</span> <span class="m">1</span>   <span class="p">|</span> 1024MB <span class="p">|</span> <span class="m">192</span>.0.2.32/24 <span class="p">|</span> up     <span class="p">|</span>
 +--------------+---------+-----+--------+---------------+--------+
 
-#------------------------------------------------------------------------------
-# 部分一致(例1)
-#------------------------------------------------------------------------------
-$ usacloud server boot Test # 名称にTestを含むもの
+<span class="c1">#------------------------------------------------------------------------------</span>
+<span class="c1"># 部分一致(例1)</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
+$ usacloud server boot Test <span class="c1"># 名称にTestを含むもの</span>
 
-Target resource IDs =&gt; [
-    000000000011,
-    000000000021,
-    000000000031,
-    000000000032
-]
-Are you sure you want to boot?(y/n) [n]:
+Target resource <span class="nv">IDs</span> <span class="o">=</span>&gt; <span class="o">[</span>
+    <span class="m">000000000011</span>,
+    <span class="m">000000000021</span>,
+    <span class="m">000000000031</span>,
+    <span class="m">000000000032</span>
+<span class="o">]</span>
+Are you sure you want to boot?<span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>:
 
-#------------------------------------------------------------------------------
-# 部分一致(例2)
-#------------------------------------------------------------------------------
-$ usacloud server boot Test3 # 名称にTest3を含むもの
+<span class="c1">#------------------------------------------------------------------------------</span>
+<span class="c1"># 部分一致(例2)</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
+$ usacloud server boot Test3 <span class="c1"># 名称にTest3を含むもの</span>
 
-Target resource IDs =&gt; [
-    000000000031,
-    000000000032
-]
-Are you sure you want to boot?(y/n) [n]:
-</code></pre>
+Target resource <span class="nv">IDs</span> <span class="o">=</span>&gt; <span class="o">[</span>
+    <span class="m">000000000031</span>,
+    <span class="m">000000000032</span>
+<span class="o">]</span>
+Are you sure you want to boot?<span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>:
+</code></pre></div>
 
 <h3 id="readlist"><code>read</code>/<code>list</code>コマンドの使い分け</h3>
 <p>Usacloudではリソースの情報を参照するためのサブコマンドとして<code>list</code>と<code>read</code>を多くのリソースで提供しています。<br />

@@ -354,330 +354,330 @@
 </ul>
 <h2 id="list">list</h2>
 <h5 id="usage">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  list [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  list [flags]</span>
 
-Aliases:
-  list, ls, find, select
+<span class="go">Aliases:</span>
+<span class="go">  list, ls, find, select</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Filter options ===
+<span class="go">  === Filter options ===</span>
 
-      --names strings   
-      --tags strings    
+<span class="go">      --names strings   </span>
+<span class="go">      --tags strings    </span>
 
-  === Limit/Offset options ===
+<span class="go">  === Limit/Offset options ===</span>
 
-      --count int   (aliases: --max, --limit)
-      --from int    (aliases: --offset)
+<span class="go">      --count int   (aliases: --max, --limit)</span>
+<span class="go">      --from int    (aliases: --offset)</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="create">create</h2>
 <h5 id="usage_1">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  create [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  create [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          (*required) 
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          (*required) </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Local-Router-specific options ===
+<span class="go">  === Local-Router-specific options ===</span>
 
-      --ip-addresses strings        
-      --netmask int                 (aliases: --network-mask-len)
-      --peers string                
-      --static-routes string        
-      --switch-category string      
-      --switch-code string          
-      --switch-zone-id string       
-      --virtual-ip-address string   
-      --vrid int                    
+<span class="go">      --ip-addresses strings        </span>
+<span class="go">      --netmask int                 (aliases: --network-mask-len)</span>
+<span class="go">      --peers string                </span>
+<span class="go">      --static-routes string        </span>
+<span class="go">      --switch-category string      </span>
+<span class="go">      --switch-code string          </span>
+<span class="go">      --switch-zone-id string       </span>
+<span class="go">      --virtual-ip-address string   </span>
+<span class="go">      --vrid int                    </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;Switch&quot;: {
-        &quot;Code&quot;: &quot;123456789012&quot;,
-        &quot;Category&quot;: &quot;cloud&quot;,
-        &quot;ZoneID&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;
-    },
-    &quot;Interface&quot;: {
-        &quot;VirtualIPAddress&quot;: &quot;192.0.2.101&quot;,
-        &quot;IPAddress&quot;: [
-            &quot;192.0.2.21&quot;,
-            &quot;192.0.2.22&quot;
-        ],
-        &quot;NetworkMaskLen&quot;: 24,
-        &quot;VRID&quot;: 1
-    },
-    &quot;Peers&quot;: [
-        {
-            &quot;ID&quot;: 123456789012,
-            &quot;SecretKey&quot;: &quot;*****&quot;,
-            &quot;Enabled&quot;: true,
-            &quot;Description&quot;: &quot;example-peer&quot;
-        }
-    ],
-    &quot;StaticRoutes&quot;: [
-        {
-            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;,
-            &quot;NextHop&quot;: &quot;192.0.2.1&quot;
-        }
-    ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;Switch&quot;: {</span>
+<span class="go">        &quot;Code&quot;: &quot;123456789012&quot;,</span>
+<span class="go">        &quot;Category&quot;: &quot;cloud&quot;,</span>
+<span class="go">        &quot;ZoneID&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;Interface&quot;: {</span>
+<span class="go">        &quot;VirtualIPAddress&quot;: &quot;192.0.2.101&quot;,</span>
+<span class="go">        &quot;IPAddress&quot;: [</span>
+<span class="go">            &quot;192.0.2.21&quot;,</span>
+<span class="go">            &quot;192.0.2.22&quot;</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;NetworkMaskLen&quot;: 24,</span>
+<span class="go">        &quot;VRID&quot;: 1</span>
+<span class="go">    },</span>
+<span class="go">    &quot;Peers&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;ID&quot;: 123456789012,</span>
+<span class="go">            &quot;SecretKey&quot;: &quot;*****&quot;,</span>
+<span class="go">            &quot;Enabled&quot;: true,</span>
+<span class="go">            &quot;Description&quot;: &quot;example-peer&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;StaticRoutes&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;,</span>
+<span class="go">            &quot;NextHop&quot;: &quot;192.0.2.1&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="read">read</h2>
 <h5 id="usage_2">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  read { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  read { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  read, show
+<span class="go">Aliases:</span>
+<span class="go">  read, show</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="update">update</h2>
 <h5 id="usage_3">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  update { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  update { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Local-Router-specific options ===
+<span class="go">  === Local-Router-specific options ===</span>
 
-      --ip-addresses strings        
-      --netmask int                 (aliases: --network-mask-len)
-      --peers string                
-      --static-routes string        
-      --switch-category string      
-      --switch-code string          
-      --switch-zone-id string       
-      --virtual-ip-address string   
-      --vrid int                    
+<span class="go">      --ip-addresses strings        </span>
+<span class="go">      --netmask int                 (aliases: --network-mask-len)</span>
+<span class="go">      --peers string                </span>
+<span class="go">      --static-routes string        </span>
+<span class="go">      --switch-category string      </span>
+<span class="go">      --switch-code string          </span>
+<span class="go">      --switch-zone-id string       </span>
+<span class="go">      --virtual-ip-address string   </span>
+<span class="go">      --vrid int                    </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples_1">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;Switch&quot;: {
-        &quot;Code&quot;: &quot;123456789012&quot;,
-        &quot;Category&quot;: &quot;cloud&quot;,
-        &quot;ZoneID&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;
-    },
-    &quot;Interface&quot;: {
-        &quot;VirtualIPAddress&quot;: &quot;192.0.2.101&quot;,
-        &quot;IPAddress&quot;: [
-            &quot;192.0.2.21&quot;,
-            &quot;192.0.2.22&quot;
-        ],
-        &quot;NetworkMaskLen&quot;: 24,
-        &quot;VRID&quot;: 1
-    },
-    &quot;Peers&quot;: [
-        {
-            &quot;ID&quot;: 123456789012,
-            &quot;SecretKey&quot;: &quot;*****&quot;,
-            &quot;Enabled&quot;: true,
-            &quot;Description&quot;: &quot;example-peer&quot;
-        }
-    ],
-    &quot;StaticRoutes&quot;: [
-        {
-            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;,
-            &quot;NextHop&quot;: &quot;192.0.2.1&quot;
-        }
-    ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;Switch&quot;: {</span>
+<span class="go">        &quot;Code&quot;: &quot;123456789012&quot;,</span>
+<span class="go">        &quot;Category&quot;: &quot;cloud&quot;,</span>
+<span class="go">        &quot;ZoneID&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;Interface&quot;: {</span>
+<span class="go">        &quot;VirtualIPAddress&quot;: &quot;192.0.2.101&quot;,</span>
+<span class="go">        &quot;IPAddress&quot;: [</span>
+<span class="go">            &quot;192.0.2.21&quot;,</span>
+<span class="go">            &quot;192.0.2.22&quot;</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;NetworkMaskLen&quot;: 24,</span>
+<span class="go">        &quot;VRID&quot;: 1</span>
+<span class="go">    },</span>
+<span class="go">    &quot;Peers&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;ID&quot;: 123456789012,</span>
+<span class="go">            &quot;SecretKey&quot;: &quot;*****&quot;,</span>
+<span class="go">            &quot;Enabled&quot;: true,</span>
+<span class="go">            &quot;Description&quot;: &quot;example-peer&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;StaticRoutes&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Prefix&quot;: &quot;192.0.2.0/24&quot;,</span>
+<span class="go">            &quot;NextHop&quot;: &quot;192.0.2.1&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="delete">delete</h2>
 <h5 id="usage_4">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  delete { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  delete { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  delete, rm
+<span class="go">Aliases:</span>
+<span class="go">  delete, rm</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Error handling options ===
+<span class="go">  === Error handling options ===</span>
 
-      --fail-if-not-found   
+<span class="go">      --fail-if-not-found   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="monitor-local-router">monitor-local-router</h2>
 <h5 id="usage_5">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  monitor-local-router { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-local-router { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  monitor-local-router, monitor
+<span class="go">Aliases:</span>
+<span class="go">  monitor-local-router, monitor</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="health">health</h2>
 <h5 id="usage_6">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  health { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  health { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
               
             </div>
           </div>

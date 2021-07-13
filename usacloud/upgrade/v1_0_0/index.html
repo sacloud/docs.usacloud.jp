@@ -339,35 +339,35 @@
 代わりにGitHub Releasesを利用してください。</p>
 <p><a href="https://github.com/sacloud/usacloud/releases/latest/">https://github.com/sacloud/usacloud/releases/latest/</a></p>
 <p>MacOS/Linuxの場合は以下のインストールスクリプトが利用可能です。</p>
-<pre class="codehilite"><code class="language-bash">$ curl -fsSL https://github.com/sacloud/usacloud/releases/latest/download/install.sh | bash
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ curl -fsSL https://github.com/sacloud/usacloud/releases/latest/download/install.sh <span class="p">|</span> bash
+</code></pre></div>
 
 <hr />
 <h4 id="shell-completion">シェル補完(Shell Completion)の有効化</h4>
 <p>シェル補完(Shell Completion)を有効にする方法が変更されました。<br />
 <code>bash_completion</code>などのシェル補完が利用できる場合は、以下のコマンドで有効に出来ます。</p>
 <h4 id="bash">Bash</h4>
-<pre class="codehilite"><code>#Linuxの場合
+<div class="codehilite"><pre><span></span><code>#Linuxの場合
 $ usacloud completion bash &gt; /etc/bash_completion.d/usacloud
 
 #MacOSの場合
 $ usacloud completion bash &gt; /usr/local/etc/bash_completion.d/usacloud
-</code></pre>
+</code></pre></div>
 
 <h4 id="zsh">Zsh</h4>
-<pre class="codehilite"><code>$ usacloud completion zsh &gt; &quot;${fpath[1]}/_usacloud&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud completion zsh &gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">fpath</span><span class="p">[1]</span><span class="si">}</span><span class="s2">/_usacloud&quot;</span>
+</code></pre></div>
 
 <h4 id="fish">Fish:</h4>
-<pre class="codehilite"><code>$ usacloud completion fish &gt; ~/.config/fish/completions/usacloud.fish
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud completion fish &gt; ~/.config/fish/completions/usacloud.fish
+</code></pre></div>
 
 <hr />
 <h3 id="_3">全ゾーン対象の操作</h3>
 <p><code>--zone</code>に<code>all</code>を指定することで全ゾーン一括操作が可能になりました。</p>
-<pre class="codehilite"><code class="language-bash"># 全ゾーンのサーバ一覧
-$ usacloud server list --zone=all
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 全ゾーンのサーバ一覧</span>
+$ usacloud server list --zone<span class="o">=</span>all
+</code></pre></div>
 
 <h3 id="rest">restコマンドの追加</h3>
 <p><code>usacloud rest</code>でさくらのクラウドAPIを直接リクエストできるようになりました。<br />

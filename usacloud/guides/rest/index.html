@@ -321,23 +321,23 @@
                 <h1 id="rest">restコマンド(上級者向け)</h1>
 <hr />
 <p>UsacloudではさくらのクラウドAPIを直接呼び出すための<code>usacloud rest</code>コマンドをサポートしています。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud rest -h
+<div class="codehilite"><pre><span></span><code>$ usacloud rest -h
 Usage:
-  usacloud rest [flags]
-  usacloud rest [command]
+  usacloud rest <span class="o">[</span>flags<span class="o">]</span>
+  usacloud rest <span class="o">[</span>command<span class="o">]</span>
 
 Available Commands:
- === Basic Commands ===
+ <span class="o">===</span> Basic <span class="nv">Commands</span> <span class="o">===</span>
     request     
 
 Flags:
   -d, --data string           
-  -h, --help                  help for rest
-  -X, --method string         (*required) options: [get/post/put/delete/GET/POST/PUT/DELETE] (default &quot;get&quot;)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -h, --help                  <span class="nb">help</span> <span class="k">for</span> rest
+  -X, --method string         <span class="o">(</span>*required<span class="o">)</span> options: <span class="o">[</span>get/post/put/delete/GET/POST/PUT/DELETE<span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;get&quot;</span><span class="o">)</span>
+      --query string          Query <span class="k">for</span> JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: <span class="o">[</span>jmespath/jq<span class="o">]</span>
       --zone string
-</code></pre>
+</code></pre></div>
 
 <h2 id="rest_1">restコマンドの挙動</h2>
 <p><code>usacloud rest</code>コマンドはUsacloudのプロファイルやコマンドラインオプションなどからAPIキーなどの設定を参照してAPIリクエストを行うためのコマンドです。<br />
@@ -345,8 +345,8 @@ Usacloudコマンドによる抽象化を挟まずに直接APIリクエストを
 <p><a href="https://developer.sakura.ad.jp/cloud/api/1.1/">さくらのクラウド APIドキュメント</a>を参照しながらAPIリクエストを行うようなユースケースを想定しています。  </p>
 <h2 id="rest_2">restコマンドの書式</h2>
 <p>以下の書式で実行します。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud rest [オプション] &lt;URL&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud rest <span class="o">[</span>オプション<span class="o">]</span> &lt;URL&gt;
+</code></pre></div>
 
 <p>利用できるオプションは以下のとおりです。</p>
 <ul>
@@ -369,10 +369,10 @@ Usacloudコマンドによる抽象化を挟まずに直接APIリクエストを
 </ul>
 <p>パターン2の場合、プロファイルからAPIルートURL(デフォルトは<code>https://secure.sakura.ad.jp/cloud/zone</code>)やゾーンなどを読み出してURLを補完します。  </p>
 <h2 id="_1">利用例</h2>
-<pre class="codehilite"><code class="language-bash"># 特定サーバの電源をOFFにする
-$ export SERVER_ID=123456789012
-$ usacloud rest -X DELETE /server/$SERVER_ID/power 
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 特定サーバの電源をOFFにする</span>
+$ <span class="nb">export</span> <span class="nv">SERVER_ID</span><span class="o">=</span><span class="m">123456789012</span>
+$ usacloud rest -X DELETE /server/<span class="nv">$SERVER_ID</span>/power 
+</code></pre></div>
               
             </div>
           </div>

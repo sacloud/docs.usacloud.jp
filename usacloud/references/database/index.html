@@ -381,633 +381,633 @@
 </ul>
 <h2 id="list">list</h2>
 <h5 id="usage">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  list [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  list [flags]</span>
 
-Aliases:
-  list, ls, find, select
+<span class="go">Aliases:</span>
+<span class="go">  list, ls, find, select</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Filter options ===
+<span class="go">  === Filter options ===</span>
 
-      --names strings   
-      --tags strings    
+<span class="go">      --names strings   </span>
+<span class="go">      --tags strings    </span>
 
-  === Limit/Offset options ===
+<span class="go">  === Limit/Offset options ===</span>
 
-      --count int   (aliases: --max, --limit)
-      --from int    (aliases: --offset)
+<span class="go">      --count int   (aliases: --max, --limit)</span>
+<span class="go">      --from int    (aliases: --offset)</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="create">create</h2>
 <h5 id="usage_1">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  create [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  create [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          (*required) 
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          (*required) </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Plan options ===
+<span class="go">  === Plan options ===</span>
 
-      --database-type string   (*required) options: [postgresql/postgres/mariadb]
-      --plan string            (*required) options: [10g/30g/90g/240g/500g/1t]
+<span class="go">      --database-type string   (*required) options: [postgresql/postgres/mariadb]</span>
+<span class="go">      --plan string            (*required) options: [10g/30g/90g/240g/500g/1t]</span>
 
-  === Database-specific options ===
+<span class="go">  === Database-specific options ===</span>
 
-      --database-parameters strings   
+<span class="go">      --database-parameters strings   </span>
 
-  === WebUI options ===
+<span class="go">  === WebUI options ===</span>
 
-      --enable-web-ui   
+<span class="go">      --enable-web-ui   </span>
 
-  === Backup options ===
+<span class="go">  === Backup options ===</span>
 
-      --enable-backup                  
-      --backup-weekdays strings        (*required when --enable-backup is specified) options: [all/sun/mon/tue/wed/thu/fri/sat]
-      --backup-start-time-hour int     
-      --backup-start-time-minute int   options: [0/15/30/45]
+<span class="go">      --enable-backup                  </span>
+<span class="go">      --backup-weekdays strings        (*required when --enable-backup is specified) options: [all/sun/mon/tue/wed/thu/fri/sat]</span>
+<span class="go">      --backup-start-time-hour int     </span>
+<span class="go">      --backup-start-time-minute int   options: [0/15/30/45]</span>
 
-  === Network options ===
+<span class="go">  === Network options ===</span>
 
-      --switch-id int          (*required) 
-      --ip-address strings     (*required) (aliases: --ipaddress)
-      --netmask int            (*required) (aliases: --network-mask-len)
-      --gateway string         (aliases: --default-route)
-      --port int               
-      --source-range strings   (aliases: --source-network)
+<span class="go">      --switch-id int          (*required) </span>
+<span class="go">      --ip-address strings     (*required) (aliases: --ipaddress)</span>
+<span class="go">      --netmask int            (*required) (aliases: --network-mask-len)</span>
+<span class="go">      --gateway string         (aliases: --default-route)</span>
+<span class="go">      --port int               </span>
+<span class="go">      --source-range strings   (aliases: --source-network)</span>
 
-  === Replication options ===
+<span class="go">  === Replication options ===</span>
 
-      --enable-replication             
-      --replica-user-password string   (*required when --enable-replication is specified)
+<span class="go">      --enable-replication             </span>
+<span class="go">      --replica-user-password string   (*required when --enable-replication is specified)</span>
 
-  === User options ===
+<span class="go">  === User options ===</span>
 
-      --username string   (*required) 
-      --password string   (*required) 
+<span class="go">      --username string   (*required) </span>
+<span class="go">      --password string   (*required) </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;DatabaseType&quot;: &quot;postgresql | postgres | mariadb&quot;,
-    &quot;PlanID&quot;: &quot;10g | 30g | 90g | 240g | 500g | 1t&quot;,
-    &quot;SwitchID&quot;: 123456789012,
-    &quot;IPAddresses&quot;: [
-        &quot;192.0.2.11&quot;
-    ],
-    &quot;NetworkMaskLen&quot;: 24,
-    &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,
-    &quot;Port&quot;: 5432,
-    &quot;SourceNetwork&quot;: [
-        &quot;192.0.2.0/24&quot;
-    ],
-    &quot;Username&quot;: &quot;username&quot;,
-    &quot;Password&quot;: &quot;password&quot;,
-    &quot;EnableReplication&quot;: true,
-    &quot;ReplicaUserPassword&quot;: &quot;password&quot;,
-    &quot;EnableWebUI&quot;: true,
-    &quot;EnableBackup&quot;: true,
-    &quot;BackupWeekdays&quot;: [
-        &quot;all | sun | mon | tue | wed | thu | fri | sat&quot;
-    ],
-    &quot;BackupStartTimeHour&quot;: 1,
-    &quot;BackupStartTimeMinute&quot;: 30,
-    &quot;DatabaseParameters&quot;: {
-        &quot;max_connections&quot;: &quot;150&quot;
-    },
-    &quot;NoWait&quot;: false
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;DatabaseType&quot;: &quot;postgresql | postgres | mariadb&quot;,</span>
+<span class="go">    &quot;PlanID&quot;: &quot;10g | 30g | 90g | 240g | 500g | 1t&quot;,</span>
+<span class="go">    &quot;SwitchID&quot;: 123456789012,</span>
+<span class="go">    &quot;IPAddresses&quot;: [</span>
+<span class="go">        &quot;192.0.2.11&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;NetworkMaskLen&quot;: 24,</span>
+<span class="go">    &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,</span>
+<span class="go">    &quot;Port&quot;: 5432,</span>
+<span class="go">    &quot;SourceNetwork&quot;: [</span>
+<span class="go">        &quot;192.0.2.0/24&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Username&quot;: &quot;username&quot;,</span>
+<span class="go">    &quot;Password&quot;: &quot;password&quot;,</span>
+<span class="go">    &quot;EnableReplication&quot;: true,</span>
+<span class="go">    &quot;ReplicaUserPassword&quot;: &quot;password&quot;,</span>
+<span class="go">    &quot;EnableWebUI&quot;: true,</span>
+<span class="go">    &quot;EnableBackup&quot;: true,</span>
+<span class="go">    &quot;BackupWeekdays&quot;: [</span>
+<span class="go">        &quot;all | sun | mon | tue | wed | thu | fri | sat&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;BackupStartTimeHour&quot;: 1,</span>
+<span class="go">    &quot;BackupStartTimeMinute&quot;: 30,</span>
+<span class="go">    &quot;DatabaseParameters&quot;: {</span>
+<span class="go">        &quot;max_connections&quot;: &quot;150&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="read">read</h2>
 <h5 id="usage_2">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  read { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  read { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  read, show
+<span class="go">Aliases:</span>
+<span class="go">  read, show</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="update">update</h2>
 <h5 id="usage_3">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  update { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  update { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Database-specific options ===
+<span class="go">  === Database-specific options ===</span>
 
-      --database-parameters strings   
+<span class="go">      --database-parameters strings   </span>
 
-  === WebUI options ===
+<span class="go">  === WebUI options ===</span>
 
-      --enable-web-ui   
+<span class="go">      --enable-web-ui   </span>
 
-  === Backup options ===
+<span class="go">  === Backup options ===</span>
 
-      --enable-backup                  
-      --backup-weekdays strings        options: [all/sun/mon/tue/wed/thu/fri/sat]
-      --backup-start-time-hour int     
-      --backup-start-time-minute int   
+<span class="go">      --enable-backup                  </span>
+<span class="go">      --backup-weekdays strings        options: [all/sun/mon/tue/wed/thu/fri/sat]</span>
+<span class="go">      --backup-start-time-hour int     </span>
+<span class="go">      --backup-start-time-minute int   </span>
 
-  === Network options ===
+<span class="go">  === Network options ===</span>
 
-      --source-range strings   (aliases: --source-network)
+<span class="go">      --source-range strings   (aliases: --source-network)</span>
 
-  === Replication options ===
+<span class="go">  === Replication options ===</span>
 
-      --enable-replication             
-      --replica-user-password string   (*required when --enable-replication is specified)
+<span class="go">      --enable-replication             </span>
+<span class="go">      --replica-user-password string   (*required when --enable-replication is specified)</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples_1">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;SourceNetwork&quot;: [
-        &quot;192.0.2.0/24&quot;
-    ],
-    &quot;EnableReplication&quot;: true,
-    &quot;ReplicaUserPassword&quot;: &quot;password&quot;,
-    &quot;EnableWebUI&quot;: true,
-    &quot;EnableBackup&quot;: true,
-    &quot;BackupWeekdays&quot;: [
-        &quot;all | sun | mon | tue | wed | thu | fri | sat&quot;
-    ],
-    &quot;BackupStartTimeHour&quot;: 1,
-    &quot;BackupStartTimeMinute&quot;: 30,
-    &quot;DatabaseParameters&quot;: null,
-    &quot;NoWait&quot;: false
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;SourceNetwork&quot;: [</span>
+<span class="go">        &quot;192.0.2.0/24&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;EnableReplication&quot;: true,</span>
+<span class="go">    &quot;ReplicaUserPassword&quot;: &quot;password&quot;,</span>
+<span class="go">    &quot;EnableWebUI&quot;: true,</span>
+<span class="go">    &quot;EnableBackup&quot;: true,</span>
+<span class="go">    &quot;BackupWeekdays&quot;: [</span>
+<span class="go">        &quot;all | sun | mon | tue | wed | thu | fri | sat&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;BackupStartTimeHour&quot;: 1,</span>
+<span class="go">    &quot;BackupStartTimeMinute&quot;: 30,</span>
+<span class="go">    &quot;DatabaseParameters&quot;: null,</span>
+<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="delete">delete</h2>
 <h5 id="usage_4">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  delete { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  delete { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  delete, rm
+<span class="go">Aliases:</span>
+<span class="go">  delete, rm</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Delete options ===
+<span class="go">  === Delete options ===</span>
 
-  -f, --force   
+<span class="go">  -f, --force   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Error handling options ===
+<span class="go">  === Error handling options ===</span>
 
-      --fail-if-not-found   
+<span class="go">      --fail-if-not-found   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="list-parameters">list-parameters</h2>
 <h5 id="usage_5">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  list-parameters { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  list-parameters { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  list-parameters, list-parameter
+<span class="go">Aliases:</span>
+<span class="go">  list-parameters, list-parameter</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="boot">boot</h2>
 <h5 id="usage_6">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  boot { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  boot { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  boot, power-on
+<span class="go">Aliases:</span>
+<span class="go">  boot, power-on</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="shutdown">shutdown</h2>
 <h5 id="usage_7">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  shutdown { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  shutdown { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  shutdown, power-off
+<span class="go">Aliases:</span>
+<span class="go">  shutdown, power-off</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Database-specific options ===
+<span class="go">  === Database-specific options ===</span>
 
-  -f, --force-shutdown   (aliases: --force)
+<span class="go">  -f, --force-shutdown   (aliases: --force)</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="reset">reset</h2>
 <h5 id="usage_8">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  reset { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  reset { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="monitor-cpu">monitor-cpu</h2>
 <h5 id="usage_9">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  monitor-cpu { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-cpu { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="monitor-database">monitor-database</h2>
 <h5 id="usage_10">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  monitor-database { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-database { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="monitor-disk">monitor-disk</h2>
 <h5 id="usage_11">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  monitor-disk { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-disk { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="monitor-interface">monitor-interface</h2>
 <h5 id="usage_12">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  monitor-interface { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-interface { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  monitor-interface, monitor-nic
+<span class="go">Aliases:</span>
+<span class="go">  monitor-interface, monitor-nic</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="wait-until-ready">wait-until-ready</h2>
 <h5 id="usage_13">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  wait-until-ready { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  wait-until-ready { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  wait-until-ready, wait-for-boot
+<span class="go">Aliases:</span>
+<span class="go">  wait-until-ready, wait-for-boot</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="wait-until-shutdown">wait-until-shutdown</h2>
 <h5 id="usage_14">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  wait-until-shutdown { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  wait-until-shutdown { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  wait-until-shutdown, wait-for-down
+<span class="go">Aliases:</span>
+<span class="go">  wait-until-shutdown, wait-for-down</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
               
             </div>
           </div>

@@ -342,329 +342,329 @@
 </ul>
 <h2 id="list">list</h2>
 <h5 id="usage">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  list [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  list [flags]</span>
 
-Aliases:
-  list, ls, find, select
+<span class="go">Aliases:</span>
+<span class="go">  list, ls, find, select</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Filter options ===
+<span class="go">  === Filter options ===</span>
 
-      --names strings   
+<span class="go">      --names strings   </span>
 
-  === Limit/Offset options ===
+<span class="go">  === Limit/Offset options ===</span>
 
-      --count int   (aliases: --max, --limit)
-      --from int    (aliases: --offset)
+<span class="go">      --count int   (aliases: --max, --limit)</span>
+<span class="go">      --from int    (aliases: --offset)</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="create">create</h2>
 <h5 id="usage_1">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  create [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  create [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          (*required) 
-      --description string   
+<span class="go">      --name string          (*required) </span>
+<span class="go">      --description string   </span>
 
-  === Packet-Filter-specific options ===
+<span class="go">  === Packet-Filter-specific options ===</span>
 
-      --expressions string   (aliases: --rules)
+<span class="go">      --expressions string   (aliases: --rules)</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Expressions&quot;: [
-        {
-            &quot;Protocol&quot;: &quot;http | https | tcp | udp | icmp | fragment | ip&quot;,
-            &quot;SourceNetwork&quot;: &quot;192.0.2.1 | 192.0.2.0/24&quot;,
-            &quot;SourcePort&quot;: &quot;1024 | 1024-2048&quot;,
-            &quot;DestinationPort&quot;: &quot;1024 | 1024-2048&quot;,
-            &quot;Action&quot;: &quot;allow | deny&quot;,
-            &quot;Description&quot;: &quot;description&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;tcp&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;22&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;allow ssh&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;icmp&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;tcp&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;32768-61000&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;udp&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;32768-61000&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;fragment&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;ip&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;&quot;,
-            &quot;Action&quot;: &quot;deny&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        }
-    ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Expressions&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;http | https | tcp | udp | icmp | fragment | ip&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;192.0.2.1 | 192.0.2.0/24&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;1024 | 1024-2048&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;1024 | 1024-2048&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow | deny&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;description&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;tcp&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;22&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;allow ssh&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;icmp&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;tcp&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;32768-61000&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;udp&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;32768-61000&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;fragment&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;ip&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;deny&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="read">read</h2>
 <h5 id="usage_2">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  read { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  read { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  read, show
+<span class="go">Aliases:</span>
+<span class="go">  read, show</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="update">update</h2>
 <h5 id="usage_3">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  update { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  update { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          
-      --description string   
+<span class="go">      --name string          </span>
+<span class="go">      --description string   </span>
 
-  === Packet-Filter-specific options ===
+<span class="go">  === Packet-Filter-specific options ===</span>
 
-      --expressions string   (aliases: --rules)
+<span class="go">      --expressions string   (aliases: --rules)</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples_1">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Expressions&quot;: [
-        {
-            &quot;Protocol&quot;: &quot;http | https | tcp | udp | icmp | fragment | ip&quot;,
-            &quot;SourceNetwork&quot;: &quot;192.0.2.1 | 192.0.2.0/24&quot;,
-            &quot;SourcePort&quot;: &quot;1024 | 1024-2048&quot;,
-            &quot;DestinationPort&quot;: &quot;1024 | 1024-2048&quot;,
-            &quot;Action&quot;: &quot;allow | deny&quot;,
-            &quot;Description&quot;: &quot;description&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;tcp&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;22&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;allow ssh&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;icmp&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;tcp&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;32768-61000&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;udp&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;32768-61000&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;fragment&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;&quot;,
-            &quot;Action&quot;: &quot;allow&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        },
-        {
-            &quot;Protocol&quot;: &quot;ip&quot;,
-            &quot;SourceNetwork&quot;: &quot;&quot;,
-            &quot;SourcePort&quot;: &quot;&quot;,
-            &quot;DestinationPort&quot;: &quot;&quot;,
-            &quot;Action&quot;: &quot;deny&quot;,
-            &quot;Description&quot;: &quot;&quot;
-        }
-    ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Expressions&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;http | https | tcp | udp | icmp | fragment | ip&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;192.0.2.1 | 192.0.2.0/24&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;1024 | 1024-2048&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;1024 | 1024-2048&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow | deny&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;description&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;tcp&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;22&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;allow ssh&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;icmp&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;tcp&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;32768-61000&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;udp&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;32768-61000&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;fragment&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;allow&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Protocol&quot;: &quot;ip&quot;,</span>
+<span class="go">            &quot;SourceNetwork&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;SourcePort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DestinationPort&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;Action&quot;: &quot;deny&quot;,</span>
+<span class="go">            &quot;Description&quot;: &quot;&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="delete">delete</h2>
 <h5 id="usage_4">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  delete { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  delete { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  delete, rm
+<span class="go">Aliases:</span>
+<span class="go">  delete, rm</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Error handling options ===
+<span class="go">  === Error handling options ===</span>
 
-      --fail-if-not-found   
+<span class="go">      --fail-if-not-found   </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --wait-for-release               
-      --wait-for-release-timeout int   
-      --wait-for-release-tick int      
+<span class="go">      --wait-for-release               </span>
+<span class="go">      --wait-for-release-timeout int   </span>
+<span class="go">      --wait-for-release-tick int      </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
               
             </div>
           </div>

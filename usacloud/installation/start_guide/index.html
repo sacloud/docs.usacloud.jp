@@ -343,13 +343,13 @@
 <hr />
 <h3 id="install">インストール</h3>
 <h4 id="macoslinux">macOS/Linux</h4>
-<pre class="codehilite"><code class="language-bash">curl -fsSL https://github.com/sacloud/usacloud/releases/latest/download/install.sh | bash
-</code></pre>
+<div class="codehilite"><pre><span></span><code>curl -fsSL https://github.com/sacloud/usacloud/releases/latest/download/install.sh <span class="p">|</span> bash
+</code></pre></div>
 
 <hr />
 <h4 id="windowschocolatey">Windows(<code>chocolatey</code>)</h4>
-<pre class="codehilite"><code class="language-bash">choco install usacloud
-</code></pre>
+<div class="codehilite"><pre><span></span><code>choco install usacloud
+</code></pre></div>
 
 <blockquote>
 <p>chocolateyの<a href="https://chocolatey.org/packages/usacloud">usacloudパッケージ</a>は @223n さんによってメンテナンスされています。</p>
@@ -362,13 +362,13 @@
 <hr />
 <h4 id="docker">Dockerを利用する場合</h4>
 <p><code>usacloud</code>実行用イメージとして<code>ghcr.io/sacloud/usacloud</code>を公開しています。</p>
-<pre class="codehilite"><code class="language-bash"># Dockerでのusacloud実行例
-docker run -it --rm \
-    -e SAKURACLOUD_ACCESS_TOKEN \
-    -e SAKURACLOUD_ACCESS_TOKEN_SECRET \
-    -e SAKURACLOUD_ZONE \
+<div class="codehilite"><pre><span></span><code><span class="c1"># Dockerでのusacloud実行例</span>
+docker run -it --rm <span class="se">\</span>
+    -e SAKURACLOUD_ACCESS_TOKEN <span class="se">\</span>
+    -e SAKURACLOUD_ACCESS_TOKEN_SECRET <span class="se">\</span>
+    -e SAKURACLOUD_ZONE <span class="se">\</span>
     ghcr.io/sacloud/usacloud server ls
-</code></pre>
+</code></pre></div>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -379,20 +379,20 @@ docker run -it --rm \
 <h4 id="shell_completion">シェル補完(Shell Completion)</h4>
 <p><code>bash_completion</code>などのシェル補完が利用できる場合は、以下のコマンドで有効に出来ます。</p>
 <h5 id="bash">Bash</h5>
-<pre class="codehilite"><code># Linuxの場合
+<div class="codehilite"><pre><span></span><code># Linuxの場合
 $ usacloud completion bash &gt; /etc/bash_completion.d/usacloud
 
 # MacOSの場合
 $ usacloud completion bash &gt; /usr/local/etc/bash_completion.d/usacloud
-</code></pre>
+</code></pre></div>
 
 <h5 id="zsh">Zsh</h5>
-<pre class="codehilite"><code>$ usacloud completion zsh &gt; &quot;${fpath[1]}/_usacloud&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud completion zsh &gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">fpath</span><span class="p">[1]</span><span class="si">}</span><span class="s2">/_usacloud&quot;</span>
+</code></pre></div>
 
 <h5 id="fish">Fish:</h5>
-<pre class="codehilite"><code>$ usacloud completion fish &gt; ~/.config/fish/completions/usacloud.fish
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud completion fish &gt; ~/.config/fish/completions/usacloud.fish
+</code></pre></div>
 
 <p>詳細は<a href="../../guides/completion">completionコマンド</a>を参照してください。</p>
 <hr />
@@ -403,22 +403,22 @@ $ usacloud completion bash &gt; /usr/local/etc/bash_completion.d/usacloud
 <h4 id="api">APIキーの設定</h4>
 <p>APIキーを取得したら、<code>usacloud config</code>を実行しAPIキーを設定します。</p>
 <p>画面の指示に従い、アクセストークン(token)とシークレット(secret)、操作対象のゾーン、デフォルトの出力形式を入力します。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud config
+<div class="codehilite"><pre><span></span><code>$ usacloud config
 
-  Setting SakuraCloud API Token =&gt; 
-    Enter token: [アクセストークンを入力]
+  Setting SakuraCloud API <span class="nv">Token</span> <span class="o">=</span>&gt; 
+    Enter token: <span class="o">[</span>アクセストークンを入力<span class="o">]</span>
 
-  Setting SakuraCloud API Secret =&gt; 
-    Enter secret: [アクセスシークレットを入力]
+  Setting SakuraCloud API <span class="nv">Secret</span> <span class="o">=</span>&gt; 
+    Enter secret: <span class="o">[</span>アクセスシークレットを入力<span class="o">]</span>
 
-  Setting SakuraCloud Zone =&gt; 
-    Enter zone[is1a/is1b/tk1a/tk1b/tk1v]: [ゾーンを入力]
+  Setting SakuraCloud <span class="nv">Zone</span> <span class="o">=</span>&gt; 
+    Enter zone<span class="o">[</span>is1a/is1b/tk1a/tk1b/tk1v<span class="o">]</span>: <span class="o">[</span>ゾーンを入力<span class="o">]</span>
 
-  Setting Default Output Type =&gt; 
-    Enter default-output-type[table/json/yaml]: [デフォルトの出力形式を入力]
+  Setting Default Output <span class="nv">Type</span> <span class="o">=</span>&gt; 
+    Enter default-output-type<span class="o">[</span>table/json/yaml<span class="o">]</span>: <span class="o">[</span>デフォルトの出力形式を入力<span class="o">]</span>
 
   Written your settings to ~/.usacloud/default/config.json
-</code></pre>
+</code></pre></div>
 
 <p>操作対象のゾーンは以下のいずれかを入力してください。</p>
 <ul>
@@ -448,15 +448,15 @@ JSONファイルに記載できる内容の詳細については<a href="../../r
 <h4 id="api_1">その他のAPIキー設定方法</h4>
 <h5 id="_2">環境変数での指定</h5>
 <p>APIキーは環境変数での指定にも対応しています。</p>
-<pre class="codehilite"><code class="language-bash">$ export SAKURACLOUD_ACCESS_TOKEN=アクセストークン
-$ export SAKURACLOUD_ACCESS_TOKEN_SECRET=アクセスシークレット
-$ export SAKURACLOUD_ZONE=ゾーン
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">SAKURACLOUD_ACCESS_TOKEN</span><span class="o">=</span>アクセストークン
+$ <span class="nb">export</span> <span class="nv">SAKURACLOUD_ACCESS_TOKEN_SECRET</span><span class="o">=</span>アクセスシークレット
+$ <span class="nb">export</span> <span class="nv">SAKURACLOUD_ZONE</span><span class="o">=</span>ゾーン
+</code></pre></div>
 
 <h5 id="_3">環境変数での指定</h5>
 <p>コマンド実行時にコマンドラインオプションで指定することが出来ます。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud --token=アクセストークン --secret=アクセスシークレット --zone=ゾーン server ls
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud --token<span class="o">=</span>アクセストークン --secret<span class="o">=</span>アクセスシークレット --zone<span class="o">=</span>ゾーン server ls
+</code></pre></div>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>

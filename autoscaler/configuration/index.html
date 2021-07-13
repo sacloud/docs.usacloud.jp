@@ -1,0 +1,1288 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="sacloud/autoscaler">
+      
+      
+      
+        <meta name="author" content="@yamamoto-febc">
+      
+      
+        <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/configuration/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>Core Configuration - sacloud/autoscaler</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+
+  
+
+
+  
+
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63739336-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration-reference" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="sacloud/autoscaler" class="md-header__button md-logo" aria-label="sacloud/autoscaler" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sacloud/autoscaler
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Core Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      ホーム
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../getting_started/" class="md-tabs__link">
+      Getting Started
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cli/" class="md-tabs__link md-tabs__link--active">
+        リファレンス
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="sacloud/autoscaler" class="md-nav__button md-logo" aria-label="sacloud/autoscaler" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    sacloud/autoscaler
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        ホーム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        リファレンス
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="リファレンス" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          リファレンス
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Inputs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Inputs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Inputs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs/" class="md-nav__link">
+        概要
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs/config/" class="md-nav__link">
+        共通設定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_3" type="checkbox" id="__nav_3_2_3" >
+      
+      <label class="md-nav__link" for="__nav_3_2_3">
+        サポートされているInputs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="サポートされているInputs" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          サポートされているInputs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs/alertmanager/" class="md-nav__link">
+        AlertManager
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs/grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs/webhook/" class="md-nav__link">
+        Webhook
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs/zabbix/" class="md-nav__link">
+        Zabbix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs/direct/" class="md-nav__link">
+        Direct
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Core Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Core Configuration
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    コンフィギュレーションファイルの例:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    スキーマ
+  </a>
+  
+    <nav class="md-nav" aria-label="スキーマ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top_level" class="md-nav__link">
+    &lt;top_level&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_definition" class="md-nav__link">
+    &lt;resource_definition&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_dns" class="md-nav__link">
+    &lt;resource_def_dns&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_elb" class="md-nav__link">
+    &lt;resource_def_elb&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_gslb" class="md-nav__link">
+    &lt;resource_def_gslb&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_load_balancer" class="md-nav__link">
+    &lt;resource_def_load_balancer&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_router" class="md-nav__link">
+    &lt;resource_def_router&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_server" class="md-nav__link">
+    &lt;resource_def_server&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_server_group" class="md-nav__link">
+    &lt;resource_def_server_group&gt;
+  </a>
+  
+    <nav class="md-nav" aria-label="&lt;resource_def_server_group&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handler" class="md-nav__link">
+    &lt;handler&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoscaler_config" class="md-nav__link">
+    &lt;autoscaler_config&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    名前付きプラン
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exporter/" class="md-nav__link">
+        Exporter
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    コンフィギュレーションファイルの例:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    スキーマ
+  </a>
+  
+    <nav class="md-nav" aria-label="スキーマ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top_level" class="md-nav__link">
+    &lt;top_level&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_definition" class="md-nav__link">
+    &lt;resource_definition&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_dns" class="md-nav__link">
+    &lt;resource_def_dns&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_elb" class="md-nav__link">
+    &lt;resource_def_elb&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_gslb" class="md-nav__link">
+    &lt;resource_def_gslb&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_load_balancer" class="md-nav__link">
+    &lt;resource_def_load_balancer&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_router" class="md-nav__link">
+    &lt;resource_def_router&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_server" class="md-nav__link">
+    &lt;resource_def_server&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_def_server_group" class="md-nav__link">
+    &lt;resource_def_server_group&gt;
+  </a>
+  
+    <nav class="md-nav" aria-label="&lt;resource_def_server_group&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handler" class="md-nav__link">
+    &lt;handler&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoscaler_config" class="md-nav__link">
+    &lt;autoscaler_config&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    名前付きプラン
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="configuration-reference">Configuration Reference</h1>
+<p>sacloud/autoscalerのコンフィギュレーションファイルはYAML形式で書かれた、操作対象のリソース定義や動作を調整するためのものです。  </p>
+<h2 id="_1">コンフィギュレーションファイルの例:</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># 操作対象のリソースの定義</span>
+<span class="c1"># スケールさせたいリソース群をここで定義する</span>
+<span class="nt">resources</span><span class="p">:</span>
+  <span class="c1"># GSLB(配下のサーバが垂直スケールする際にサーバのデタッチ&amp;アタッチが行われる)</span>
+  <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">GSLB</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;gslb&quot;</span>
+    <span class="nt">selector</span><span class="p">:</span>
+      <span class="nt">names</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;example-gslb&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">resources</span><span class="p">:</span>
+      <span class="c1"># サーバ(垂直スケール)</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Server</span>
+        <span class="nt">naem</span><span class="p">:</span> <span class="s">&quot;server&quot;</span>
+        <span class="nt">selector</span><span class="p">:</span>
+          <span class="nt">names</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span>
+          <span class="nt">zones</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;is1a&quot;</span><span class="p p-Indicator">]</span>
+        <span class="nt">shutdown_force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="c1"># カスタムハンドラーの定義</span>
+<span class="c1"># handlers:</span>
+<span class="c1">#   - name: &quot;fake&quot;</span>
+<span class="c1">#     endpoint: &quot;unix:autoscaler-handlers-fake.sock&quot;</span>
+
+<span class="c1"># オートスケーラーの動作設定</span>
+<span class="nt">autoscaler</span><span class="p">:</span>
+  <span class="nt">cooldown</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">600</span> 
+
+<span class="c1"># さくらのクラウド API関連</span>
+<span class="c1"># sakuracloud:</span>
+<span class="c1">#   token: &quot;&lt;your-token&gt;&quot;</span>
+<span class="c1">#   secret: &quot;&lt;your-secret&gt;&quot;</span>
+</code></pre></div>
+<h2 id="_2">スキーマ</h2>
+<ul>
+<li><a href="#top_level">&lt;top_level&gt;</a></li>
+<li><a href="#resource_definition">&lt;resource_definition&gt;</a> <ul>
+<li><a href="#resource_def_dns">&lt;resource_def_dns&gt;</a></li>
+<li><a href="#resource_def_elb">&lt;resource_def_elb&gt;</a></li>
+<li><a href="#resource_def_gslb">&lt;resource_def_gslb&gt;</a></li>
+<li><a href="#resource_def_load_balancer">&lt;resource_def_load_balancer&gt;</a></li>
+<li><a href="#resource_def_router">&lt;resource_def_router&gt;</a></li>
+<li><a href="#resource_def_server">&lt;resource_def_server&gt;</a></li>
+<li><a href="#resource_def_server_group">&lt;resource_def_server_group&gt;</a></li>
+</ul>
+</li>
+<li><a href="#handler">&lt;handler&gt;</a></li>
+<li><a href="#autoscaler_config">&lt;autoscaler_config&gt;</a></li>
+</ul>
+<h3 id="top_level">&lt;top_level&gt;</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># オートスケール対象リソースの定義</span>
+<span class="nt">resources</span><span class="p">:</span>
+        <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+
+<span class="c1"># カスタムハンドラーのリスト(省略可能)</span>
+<span class="nt">handlers</span><span class="p">:</span>
+        <span class="p p-Indicator">[</span> <span class="nv">- &lt;handler&gt;</span> <span class="p p-Indicator">]</span>
+
+<span class="c1"># オートスケーラーの動作設定(省略可能)</span>
+<span class="nt">autoscaler</span><span class="p">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">&lt;autoscaler_config&gt;</span>
+
+<span class="c1"># さくらのクラウドAPI関連設定(省略可能)</span>
+<span class="c1"># Note: APIキーにはアクセスレベル`作成・削除`または`設定編集`が必要です</span>
+<span class="nt">sakuracloud</span><span class="p">:</span>
+  <span class="c1"># APIトークン、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKENを参照します</span>
+  <span class="nt">token</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+  <span class="c1"># APIシークレット、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKEN_SECRETを参照します</span>
+  <span class="nt">secret</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+</code></pre></div>
+<h3 id="resource_definition">&lt;resource_definition&gt;</h3>
+<p>操作対象となるさくらのクラウド上のリソースの定義
+resource_def_xxxのいずれかを指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">&lt;resource_def_dns&gt; | &lt;resource_def_elb&gt; | &lt;resource_def_gslb&gt; | &lt;resource_def_load_balancer&gt; | &lt;resource_def_router&gt; | &lt;resource_def_server&gt; | &lt;resource_def_server_group&gt;</span>
+</code></pre></div>
+<h3 id="resource_def_dns">&lt;resource_def_dns&gt;</h3>
+<p>DNSリソースの定義</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;DNS&quot;</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="nt">selector</span><span class="p">:</span>
+  <span class="c1"># idかnamesのどちらかを指定、必須</span>
+  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
+  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
+  <span class="nt">names</span><span class="p">:</span> 
+    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+
+<span class="c1"># 子リソースの定義(省略可能)</span>
+<span class="nt">resources</span><span class="p">:</span>
+  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+</code></pre></div>
+<h3 id="resource_def_elb">&lt;resource_def_elb&gt;</h3>
+<p>エンハンスドロードバランサの定義。<br />
+ここで定義したリソースは垂直スケール可能になります(ハンドラ<code>elb-vertical-scaler</code>)。<br />
+また、<code>resources</code>配下に&lt;resource_def_server&gt;を定義し、かつELBの配信先サーバとIPアドレスが一致するサーバについては
+水平スケールする前にELBからのデタッチ/アタッチが行われます(ハンドラ:<code>elb-servers-handler</code>)。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;ELB&quot;</span> <span class="c1"># or EnhancedLoadBalancer</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="nt">selector</span><span class="p">:</span>
+  <span class="c1"># idかnamesのどちらかを指定、必須</span>
+  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
+  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
+  <span class="nt">names</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+  <span class="c1"># 垂直スケールさせる範囲(省略可能)</span>
+  <span class="nt">plans</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- name</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># プラン名、省略可能 </span>
+        <span class="nv">cps</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="p p-Indicator">]</span>
+<span class="c1"># 子リソースの定義(省略可能)</span>
+<span class="nt">resources</span><span class="p">:</span>
+  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+</code></pre></div>
+<p><code>plans</code>を省略した場合のデフォルト値は以下の通りです。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ELBのデフォルトの垂直スケール範囲</span>
+<span class="nt">plans</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
+  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
+  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5000</span>
+  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10000</span>
+  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">50000</span>
+  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100000</span>
+  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">400000</span>
+</code></pre></div>
+<h3 id="resource_def_gslb">&lt;resource_def_gslb&gt;</h3>
+<p>GSLBの定義。
+<code>resources</code>配下に&lt;resource_def_server&gt;を定義し、かつGSLBの宛先サーバとIPアドレスが一致するサーバについては
+水平スケールする前にGSLBからのデタッチ/アタッチが行われます(ハンドラ:<code>gslb-servers-handler</code>)。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;GSLB&quot;</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="nt">selector</span><span class="p">:</span>
+  <span class="c1"># idかnamesのどちらかを指定、必須</span>
+  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
+  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
+  <span class="nt">names</span><span class="p">:</span> 
+    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+
+<span class="c1"># 子リソースの定義(省略可能)</span>
+<span class="nt">resources</span><span class="p">:</span>
+  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+</code></pre></div>
+<h3 id="resource_def_load_balancer">&lt;resource_def_load_balancer&gt;</h3>
+<p>ロードバランサの定義。
+<code>resources</code>配下に&lt;resource_def_server&gt;を定義し、かつLBの宛先サーバとIPアドレスが一致するサーバについては
+水平スケールする前にLBからのデタッチ/アタッチが行われます(ハンドラ:<code>load-balancer-servers-handler</code>)。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;LoadBalancer&quot;</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="nt">selector</span><span class="p">:</span>
+  <span class="c1"># idかnamesのどちらかを指定、必須</span>
+  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
+  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
+  <span class="nt">names</span><span class="p">:</span> 
+    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+  <span class="nt">zones</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span> <span class="p p-Indicator">]</span>
+
+<span class="c1"># 子リソースの定義(省略可能)</span>
+<span class="nt">resources</span><span class="p">:</span>
+  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+</code></pre></div>
+<h3 id="resource_def_router">&lt;resource_def_router&gt;</h3>
+<p>ルータの定義。<br />
+ここで定義したリソースは垂直スケール可能になります(ハンドラ<code>router-vertical-scaler</code>)。  </p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;Router&quot;</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="nt">selector</span><span class="p">:</span>
+  <span class="c1"># idかnamesのどちらかを指定、必須</span>
+  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
+  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
+  <span class="nt">names</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+  <span class="nt">zones</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span> <span class="p p-Indicator">]</span>
+  <span class="c1"># 垂直スケールさせる範囲(省略可能)</span>
+  <span class="nt">plans</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- name</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># プラン名、省略可能 </span>
+        <span class="nv">band_width</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="p p-Indicator">]</span>
+<span class="c1"># 子リソースの定義(省略可能)</span>
+<span class="nt">resources</span><span class="p">:</span>
+  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+</code></pre></div>
+<p><code>plans</code>を省略した場合のデフォルト値は以下の通りです。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ルータのデフォルトの垂直スケール範囲</span>
+<span class="nt">plans</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">250</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1500</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2000</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2500</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3000</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3500</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4000</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4500</span>
+  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5000</span>
+</code></pre></div>
+<h3 id="resource_def_server">&lt;resource_def_server&gt;</h3>
+<p>サーバの定義。<br />
+ここで定義したリソースは垂直スケール可能になります(ハンドラ<code>server-vertical-scaler</code>)。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;Server&quot;</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="nt">selector</span><span class="p">:</span>
+  <span class="c1"># idかnamesのどちらかを指定、必須</span>
+  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
+  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
+  <span class="nt">names</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+  <span class="nt">zones</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span> <span class="p p-Indicator">]</span>
+
+  <span class="c1"># コア専有プランを利用するか</span>
+  <span class="nt">dedicated_cpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
+
+  <span class="c1"># 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)</span>
+  <span class="nt">shutdown_force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span> 
+
+  <span class="c1"># 垂直スケールさせる範囲(省略可能)</span>
+  <span class="nt">plans</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- name</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># プラン名、省略可能 </span>
+        <span class="nv">core</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="c1"># コア数</span>
+        <span class="nv">memory</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="c1">#メモリサイズ、GB単位 </span>
+    <span class="p p-Indicator">]</span>
+
+<span class="c1"># 子リソースの定義(省略可能)</span>
+<span class="nt">resources</span><span class="p">:</span>
+  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+</code></pre></div>
+<p><code>plans</code>を省略した場合のデフォルト値は以下の通りです。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># サーバのデフォルトの垂直スケール範囲</span>
+<span class="nt">plans</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">24</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">32</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">48</span>
+</code></pre></div>
+<h3 id="resource_def_server_group">&lt;resource_def_server_group&gt;</h3>
+<p>サーバグループの定義。<br />
+ここで定義したリソースは水平スケール可能になります(ハンドラ<code>server-horizontal-scaler</code>)。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;ServerGroup&quot;</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1">#グループ内の各サーバ名のプレフィックスとなる</span>
+<span class="nt">zone</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span>
+
+<span class="c1"># 最小/最大サーバ数</span>
+<span class="nt">min_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
+<span class="nt">max_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
+
+<span class="c1"># 名前付きプラン(サーバグループの場合はサーバ数をプランとして表す)</span>
+<span class="nt">plans</span><span class="p">:</span>
+  <span class="p p-Indicator">[</span> <span class="nv">- name</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># プラン名、省略可能 </span>
+      <span class="nv">size</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="c1"># サーバ数</span>
+  <span class="p p-Indicator">]</span>
+
+<span class="c1"># 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)</span>
+<span class="nt">shutdown_force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
+
+<span class="c1"># グループ内のサーバのテンプレート</span>
+<span class="nt">template</span><span class="p">:</span>
+  <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span> 
+  <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+
+  <span class="nt">icon_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+  <span class="nt">cdrom_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+  <span class="nt">private_host_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+
+  <span class="nt">interface_driver</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;virtio&quot; | &quot;e1000&quot; | default=&quot;virtio&quot;&gt;</span>
+
+  <span class="nt">plan</span><span class="p">:</span>
+    <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>           <span class="c1"># コア数</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>         <span class="c1"># メモリサイズ、GB単位 </span>
+    <span class="nt">dedicated_cpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span> <span class="c1"># コア専有の場合true</span>
+
+  <span class="c1"># 接続するディスクをリストで指定  </span>
+  <span class="nt">disks</span><span class="p">:</span>
+    <span class="p p-Indicator">[</span> <span class="nv">- name_prefix</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># ディスク名のプレフィックス(省略可能)</span>
+        <span class="nv">tags</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+        <span class="nv">description</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span>
+
+        <span class="nv">icon_id</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span>
+
+        <span class="nv">source_archive</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt; | &lt;resource_selector&gt;</span>
+        <span class="nv">source_disk</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt; | &lt;resource_selector&gt;</span>
+        <span class="nv">os_type</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span>
+
+        <span class="nv">plan</span><span class="p p-Indicator">:</span> <span class="nv">&lt;&quot;ssd&quot; | &quot;hdd&quot;&gt;</span>
+        <span class="nv">connection</span><span class="p p-Indicator">:</span> <span class="nv">&lt;&quot;virtio&quot; | &quot;ide&quot;&gt;</span>
+        <span class="nv">size</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span>
+    <span class="p p-Indicator">]</span>
+
+  <span class="nt">edit_parameter</span><span class="p">:</span>
+    <span class="nt">disabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>        <span class="c1"># ディスクの修正を行わない場合true</span>
+    <span class="nt">host_name_prefix</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># ホスト名のプレフィックス(省略可能)</span>
+    <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+    <span class="nt">disable_pw_auth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
+    <span class="nt">enable_dhcp</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
+    <span class="nt">change_partition_uuid</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
+    <span class="nt">startup_scripts</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt; | &lt;filepath&gt;</span> <span class="p p-Indicator">]</span>
+    <span class="nt">ssh_keys</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt; | &lt;filepath&gt;</span> <span class="p p-Indicator">]</span>
+    <span class="nt">ssh_key_ids</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+
+  <span class="nt">network_interfaces</span><span class="p">:</span>
+    <span class="c1"># 上流ネットワーク</span>
+    <span class="nt">upstream</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;shared&quot;&gt; | &lt;resource_selector&gt;</span>
+
+    <span class="c1"># 以下はupstreamがsharedの場合のみ指定可能</span>
+    <span class="nt">assign_cidr_block</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+    <span class="nt">assign_netmask_len</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span>
+    <span class="nt">default_route</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+    <span class="nt">packet_filter_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+
+    <span class="c1"># 上流リソースの操作のためのメタデータ</span>
+    <span class="c1"># サーバグループの上流にELB/GSLB/LB/DNSを定義している場合のみ指定可能</span>
+    <span class="nt">expose</span><span class="p">:</span>
+      <span class="c1"># 公開するポート番号のリスト</span>
+      <span class="nt">ports</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;number&gt;</span> <span class="p p-Indicator">]</span> 
+
+      <span class="c1"># ELB向け: 実サーバ登録時のサーバグループ名</span>
+      <span class="nt">server_group_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+
+      <span class="c1"># GSLB向け: 実サーバ登録時の重み値</span>
+      <span class="nt">weight</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
+
+      <span class="c1"># LB向け: 対象VIPのリスト</span>
+      <span class="c1"># 省略した場合、このNICと同じネットワーク内に存在するVIP全てが対象となる</span>
+      <span class="nt">vips</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+
+      <span class="c1"># LB向け: 実サーバ登録時のヘルスチェック</span>
+      <span class="nt">health_check</span><span class="p">:</span>
+        <span class="c1"># ヘルスチェックで用いるプロトコル</span>
+        <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; &quot;http&quot; | &quot;https&quot; | &quot;ping&quot; | &quot;tcp&quot; &gt;</span>
+
+        <span class="c1"># プロトコルがhttp/httpsの場合のリクエスト先パス 例:/index.html</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+        <span class="c1"># プロトコルがhttp/httpsの場合の期待するレスポンスステータスコード</span>
+        <span class="nt">status_code</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
+
+      <span class="c1"># DNS向け: レコード登録時のレコード名 例:www</span>
+      <span class="nt">record_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+      <span class="c1"># DNS向け: レコード登録時のTTL</span>
+      <span class="nt">record_ttl</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
+
+<span class="c1"># 子リソースの定義(省略可能)</span>
+<span class="nt">resources</span><span class="p">:</span>
+  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+</code></pre></div>
+<p><code>plans</code>を省略した場合、<code>size</code>に<code>min_size</code>から<code>max_size</code>までの値を持つプランが存在するとみなします。</p>
+<h4 id="_3"><resource_selector></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="nt">names</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+</code></pre></div>
+<h3 id="handler">&lt;handler&gt;</h3>
+<p>カスタムハンドラーの定義。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1">#ハンドラ名</span>
+<span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1">#gRPCのエンドポイントアドレス(例: unix:/var/run/your-custom-handler.sock)</span>
+</code></pre></div>
+<h3 id="autoscaler_config">&lt;autoscaler_config&gt;</h3>
+<p>オートスケーラーの動作設定</p>
+<div class="highlight"><pre><span></span><code><span class="nt">cooldown</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number | default = 600&gt;</span> <span class="c1"># 同一ジョブの連続実行を抑制するためのクールダウン期間、秒単位で指定</span>
+
+<span class="c1"># CoreのgRPCエンドポイントのTLS関連設定</span>
+<span class="nt">server_tls_config</span><span class="p">:</span>
+  <span class="nt">cert_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 証明書のファイルパス</span>
+  <span class="nt">key_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 秘密鍵のファイルパス</span>
+  <span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span>
+  <span class="nt">client_auth_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span>
+  <span class="nt">client_ca_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span>
+
+<span class="c1"># HandlersへのgRPCリクエスト時のTLS関連設定</span>
+<span class="nt">handler_tls_config</span><span class="p">:</span>
+  <span class="nt">cert_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 証明書のファイルパス</span>
+  <span class="nt">key_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 秘密鍵のファイルパス </span>
+  <span class="nt">root_ca_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># ルート証明書(チェイン)のファイルパス</span>
+
+<span class="c1"># Exporterの設定</span>
+<span class="nt">exporter_config</span><span class="p">:</span>
+  <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+  <span class="nt">address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | default=&quot;:8081&quot;&gt;</span>
+  <span class="nt">tls_config</span><span class="p">:</span>
+    <span class="nt">cert_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 証明書のファイルパス</span>
+    <span class="nt">key_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 秘密鍵のファイルパス</span>
+    <span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span>
+    <span class="nt">client_auth_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span>
+    <span class="nt">client_ca_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span>
+</code></pre></div>
+<h2 id="_4">名前付きプラン</h2>
+<p>ELB/ルータ/サーバでは名前付きプランを利用可能です。  </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># サーバのでの名前付きプランの例</span>
+<span class="nt">plans</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;low&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;medium&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">24</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;high&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">32</span>
+  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">48</span>
+</code></pre></div>
+<p>プラン名はInputsからの<code>DesiredStateName</code>パラメータで指定されます。<br />
+Coreは<code>DesiredStateName</code>が指定されていると以下のようにあるべき姿を算出します。  </p>
+<ul>
+<li>
+<p>Upリクエストがきた場合、現在のリソースのプランより大きな名前付きプランを返す
+  見つからなかった場合はプラン変更せずエラーとする</p>
+</li>
+<li>
+<p>Downリクエストがきた場合、現在のリソースのプランより小さな名前付きプランを返す
+  見つからなかった場合はプラン変更せずエラーとする</p>
+</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../inputs/direct/" class="md-footer__link md-footer__link--prev" aria-label="前: Direct" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              Direct
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../exporter/" class="md-footer__link md-footer__link--next" aria-label="次: Exporter" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              Exporter
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (C) 2021 saclodu/autoscaler authors
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>

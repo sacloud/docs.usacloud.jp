@@ -323,51 +323,51 @@
                 <h1 id="completion">completionコマンド</h1>
 <hr />
 <p>Usacloudではシェル補完(Shell Completion)のためのスクリプトを出力する<code>usacloud completion</code>コマンドをサポートしています。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud completion -h
+<div class="codehilite"><pre><span></span><code>$ usacloud completion -h
 
 Usage:
-  usacloud completion [bash|zsh|fish|powershell]
+  usacloud completion <span class="o">[</span>bash<span class="p">|</span>zsh<span class="p">|</span>fish<span class="p">|</span>powershell<span class="o">]</span>
 
 Flags:
-  -h, --help   help for completion
-</code></pre>
+  -h, --help   <span class="nb">help</span> <span class="k">for</span> completion
+</code></pre></div>
 
 <h2 id="completion_1">completionコマンドの書式</h2>
 <p>以下の書式で実行します。</p>
-<pre class="codehilite"><code class="language-bash">$ usacloud completion &lt;bash | zsh | fish | powershell&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code>$ usacloud completion &lt;bash <span class="p">|</span> zsh <span class="p">|</span> fish <span class="p">|</span> powershell&gt;
+</code></pre></div>
 
 <h2 id="bash">bash</h2>
 <p>あらかじめbash-completionをパッケージマネージャーなどでインストールしておきます。</p>
 <p>以下のコマンドで有効化します。</p>
-<pre class="codehilite"><code>source &lt;(usacloud completion bash)
-</code></pre>
+<div class="codehilite"><pre><span></span><code>source &lt;(usacloud completion bash)
+</code></pre></div>
 
 <p>各セッションでシェル補完を自動的にロードするには以下のコマンドを実行します。</p>
-<pre class="codehilite"><code>#Linuxの場合
+<div class="codehilite"><pre><span></span><code>#Linuxの場合
 usacloud completion bash &gt; /etc/bash_completion.d/usacloud
 
 #MacOSの場合
 usacloud completion bash &gt; /usr/local/etc/bash_completion.d/usacloud
-</code></pre>
+</code></pre></div>
 
 <h2 id="zsh">zsh</h2>
 <p>If shell completion is not already enabled in your environment you will need  to enable it.  You can execute the following once:</p>
-<pre class="codehilite"><code>echo &quot;autoload -U compinit; compinit&quot; &gt;&gt; ~/.zshrc
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">echo</span> <span class="s2">&quot;autoload -U compinit; compinit&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">zshrc</span>
+</code></pre></div>
 
 <p>To load completions for each session, execute once:</p>
-<pre class="codehilite"><code>usacloud completion zsh &gt; &quot;${fpath[1]}/_usacloud&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code>usacloud completion zsh &gt; &quot;<span class="cp">${</span><span class="n">fpath</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="cp">}</span>/_usacloud&quot;
+</code></pre></div>
 
 <p>You will need to start a new shell for this setup to take effect.</p>
 <h2 id="fish">fish</h2>
-<pre class="codehilite"><code>usacloud completion fish | source
-</code></pre>
+<div class="codehilite"><pre><span></span><code>usacloud completion fish | source
+</code></pre></div>
 
 <p>To load completions for each session, execute once:</p>
-<pre class="codehilite"><code>usacloud completion fish &gt; ~/.config/fish/completions/usacloud.fish
-</code></pre>
+<div class="codehilite"><pre><span></span><code>usacloud completion fish &gt; ~/.config/fish/completions/usacloud.fish
+</code></pre></div>
               
             </div>
           </div>

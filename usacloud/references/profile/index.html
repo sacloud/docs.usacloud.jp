@@ -337,12 +337,12 @@
 </div>
 <h2 id="_2">プロファイルの作成</h2>
 <p><code>usacloud config</code>コマンドでプロファイルの新規作成が可能です。</p>
-<pre class="codehilite"><code class="language-bash"># 現在のプロファイルを編集(プロファイルが存在しない場合はdefaultプロファイルを作成)
+<div class="codehilite"><pre><span></span><code><span class="c1"># 現在のプロファイルを編集(プロファイルが存在しない場合はdefaultプロファイルを作成)</span>
 $ usacloud config
 
-# または名前を指定してプロファイルを作成(exampleプロファイルを作成)
+<span class="c1"># または名前を指定してプロファイルを作成(exampleプロファイルを作成)</span>
 $ usacloud config create example
-</code></pre>
+</code></pre></div>
 
 <h2 id="_3">プロファイルに指定可能な値</h2>
 <p>プロファイルはJSONファイルとして記述します。
@@ -382,31 +382,31 @@ $ usacloud config create example
 <li><code>FakeStorePath</code>(string): フェイクモードでのファイルストアパス</li>
 </ul>
 <h2 id="_5">プロファイルの設定例</h2>
-<pre class="codehilite"><code class="language-js">{
-  &quot;APIRootURL&quot;: &quot;https://secure.sakura.ad.jp/cloud/zone&quot;,
-  &quot;AcceptLanguage&quot;: &quot;en-US,en;q=0.9&quot;,
-  &quot;AccessToken&quot;: &quot;&lt;your-access-token&gt;&quot;,
-  &quot;AccessTokenSecret&quot;: &quot;&lt;your-access-secret&gt;&quot;,
-  &quot;ArgumentMatchMode&quot;: &quot;exact&quot;,
-  &quot;DefaultOutputType&quot;: &quot;table&quot;,
-  &quot;DefaultQueryDriver&quot;: &quot;jq&quot;,
-  &quot;DefaultZone&quot;: &quot;is1a&quot;,
-  &quot;FakeMode&quot;: false,
-  &quot;FakeStorePath&quot;: &quot;~/.usacloud/fake_store.json&quot;,
-  &quot;HTTPRequestRateLimit&quot;: 5,
-  &quot;HTTPRequestTimeout&quot;: 300,
-  &quot;NoColor&quot;: false,
-  &quot;ProcessTimeoutSec&quot;: 7200,
-  &quot;RetryMax&quot;: 0,
-  &quot;RetryWaitMax&quot;: 64,
-  &quot;RetryWaitMin&quot;: 1,
-  &quot;StatePollingInterval&quot;: 0,
-  &quot;StatePollingTimeout&quot;: 0,
-  &quot;TraceMode&quot;: &quot;HTTP&quot;,
-  &quot;Zone&quot;: &quot;is1a&quot;,
-  &quot;Zones&quot;: [&quot;is1a&quot;, &quot;is1b&quot;, &quot;tk1a&quot;, &quot;tk1b&quot;, &quot;tk1v&quot;]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="s2">&quot;APIRootURL&quot;</span><span class="o">:</span> <span class="s2">&quot;https://secure.sakura.ad.jp/cloud/zone&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;AcceptLanguage&quot;</span><span class="o">:</span> <span class="s2">&quot;en-US,en;q=0.9&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;AccessToken&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;your-access-token&gt;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;AccessTokenSecret&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;your-access-secret&gt;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ArgumentMatchMode&quot;</span><span class="o">:</span> <span class="s2">&quot;exact&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;DefaultOutputType&quot;</span><span class="o">:</span> <span class="s2">&quot;table&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;DefaultQueryDriver&quot;</span><span class="o">:</span> <span class="s2">&quot;jq&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;DefaultZone&quot;</span><span class="o">:</span> <span class="s2">&quot;is1a&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;FakeMode&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">&quot;FakeStorePath&quot;</span><span class="o">:</span> <span class="s2">&quot;~/.usacloud/fake_store.json&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;HTTPRequestRateLimit&quot;</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
+  <span class="s2">&quot;HTTPRequestTimeout&quot;</span><span class="o">:</span> <span class="mf">300</span><span class="p">,</span>
+  <span class="s2">&quot;NoColor&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">&quot;ProcessTimeoutSec&quot;</span><span class="o">:</span> <span class="mf">7200</span><span class="p">,</span>
+  <span class="s2">&quot;RetryMax&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+  <span class="s2">&quot;RetryWaitMax&quot;</span><span class="o">:</span> <span class="mf">64</span><span class="p">,</span>
+  <span class="s2">&quot;RetryWaitMin&quot;</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+  <span class="s2">&quot;StatePollingInterval&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+  <span class="s2">&quot;StatePollingTimeout&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+  <span class="s2">&quot;TraceMode&quot;</span><span class="o">:</span> <span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Zone&quot;</span><span class="o">:</span> <span class="s2">&quot;is1a&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Zones&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;is1a&quot;</span><span class="p">,</span> <span class="s2">&quot;is1b&quot;</span><span class="p">,</span> <span class="s2">&quot;tk1a&quot;</span><span class="p">,</span> <span class="s2">&quot;tk1b&quot;</span><span class="p">,</span> <span class="s2">&quot;tk1v&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
               
             </div>
           </div>

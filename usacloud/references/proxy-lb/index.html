@@ -357,420 +357,420 @@
 </ul>
 <h2 id="list">list</h2>
 <h5 id="usage">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  list [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  list [flags]</span>
 
-Aliases:
-  list, ls, find, select
+<span class="go">Aliases:</span>
+<span class="go">  list, ls, find, select</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Filter options ===
+<span class="go">  === Filter options ===</span>
 
-      --names strings   
-      --tags strings    
+<span class="go">      --names strings   </span>
+<span class="go">      --tags strings    </span>
 
-  === Limit/Offset options ===
+<span class="go">  === Limit/Offset options ===</span>
 
-      --count int   (aliases: --max, --limit)
-      --from int    (aliases: --offset)
+<span class="go">      --count int   (aliases: --max, --limit)</span>
+<span class="go">      --from int    (aliases: --offset)</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="create">create</h2>
 <h5 id="usage_1">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  create [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  create [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          (*required) 
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          (*required) </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Proxy-Lb-specific options ===
+<span class="go">  === Proxy-Lb-specific options ===</span>
 
-      --bind-ports string                 
-      --health-check-delay-loop int       (*required)  (default 10)
-      --health-check-host string          
-      --health-check-path string           (default &quot;/&quot;)
-      --health-check-protocol string      (*required)  (default &quot;http&quot;)
-      --inactive-sec int                   (default 10)
-      --lets-encrypt-accept-tos           The flag to accept the current Let's Encrypt terms of service(see: https://letsencrypt.org/repository/)
-      --lets-encrypt-common-name string   
-      --lets-encrypt-enabled              
-      --plan string                       (*required) options: [100/500/1000/5000/10000/50000/100000] (default &quot;100&quot;)
-      --region string                     (*required) options: [tk1/is1/anycast] (default &quot;is1&quot;)
-      --rules string                      
-      --servers string                    
-      --sorry-server-ip-address string    (aliases: --ipaddress)
-      --sorry-server-port int             
-      --sticky-session-enabled            
-      --sticky-session-method string      
-      --vip-fail-over                     
+<span class="go">      --bind-ports string                 </span>
+<span class="go">      --health-check-delay-loop int       (*required)  (default 10)</span>
+<span class="go">      --health-check-host string          </span>
+<span class="go">      --health-check-path string           (default &quot;/&quot;)</span>
+<span class="go">      --health-check-protocol string      (*required)  (default &quot;http&quot;)</span>
+<span class="go">      --inactive-sec int                   (default 10)</span>
+<span class="go">      --lets-encrypt-accept-tos           The flag to accept the current Let&#39;s Encrypt terms of service(see: https://letsencrypt.org/repository/)</span>
+<span class="go">      --lets-encrypt-common-name string   </span>
+<span class="go">      --lets-encrypt-enabled              </span>
+<span class="go">      --plan string                       (*required) options: [100/500/1000/5000/10000/50000/100000] (default &quot;100&quot;)</span>
+<span class="go">      --region string                     (*required) options: [tk1/is1/anycast] (default &quot;is1&quot;)</span>
+<span class="go">      --rules string                      </span>
+<span class="go">      --servers string                    </span>
+<span class="go">      --sorry-server-ip-address string    (aliases: --ipaddress)</span>
+<span class="go">      --sorry-server-port int             </span>
+<span class="go">      --sticky-session-enabled            </span>
+<span class="go">      --sticky-session-method string      </span>
+<span class="go">      --vip-fail-over                     </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;Plan&quot;: &quot;100 | 500 | 1000 | 5000 | 10000 | 50000 | 100000&quot;,
-    &quot;HealthCheck&quot;: {
-        &quot;Protocol&quot;: &quot;http | tcp&quot;,
-        &quot;Path&quot;: &quot;/healthz&quot;,
-        &quot;Host&quot;: &quot;www.example.com&quot;,
-        &quot;DelayLoop&quot;: 10
-    },
-    &quot;SorryServer&quot;: {
-        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
-        &quot;Port&quot;: 80
-    },
-    &quot;LetsEncrypt&quot;: {
-        &quot;CommonName&quot;: &quot;www.example.com&quot;,
-        &quot;Enabled&quot;: true,
-        &quot;AcceptTOS&quot;: false
-    },
-    &quot;StickySession&quot;: {
-        &quot;Method&quot;: &quot;cookie&quot;,
-        &quot;Enabled&quot;: true
-    },
-    &quot;Timeout&quot;: {
-        &quot;InactiveSec&quot;: 10
-    },
-    &quot;UseVIPFailover&quot;: true,
-    &quot;Region&quot;: &quot;tk1 | is1 | anycast&quot;,
-    &quot;BindPorts&quot;: [
-        {
-            &quot;ProxyMode&quot;: &quot;http | https | tcp&quot;,
-            &quot;Port&quot;: 80,
-            &quot;RedirectToHTTPS&quot;: true,
-            &quot;SupportHTTP2&quot;: true,
-            &quot;AddResponseHeader&quot;: [
-                {
-                    &quot;Header&quot;: &quot;Cache-Control&quot;,
-                    &quot;Value&quot;: &quot;public, max-age=900&quot;
-                }
-            ]
-        }
-    ],
-    &quot;Servers&quot;: [
-        {
-            &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
-            &quot;Port&quot;: 80,
-            &quot;ServerGroup&quot;: &quot;group1&quot;,
-            &quot;Enabled&quot;: true
-        }
-    ],
-    &quot;Rules&quot;: [
-        {
-            &quot;Host&quot;: &quot;www2.example.com&quot;,
-            &quot;Path&quot;: &quot;/foo&quot;,
-            &quot;ServerGroup&quot;: &quot;group1&quot;
-        }
-    ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;Plan&quot;: &quot;100 | 500 | 1000 | 5000 | 10000 | 50000 | 100000&quot;,</span>
+<span class="go">    &quot;HealthCheck&quot;: {</span>
+<span class="go">        &quot;Protocol&quot;: &quot;http | tcp&quot;,</span>
+<span class="go">        &quot;Path&quot;: &quot;/healthz&quot;,</span>
+<span class="go">        &quot;Host&quot;: &quot;www.example.com&quot;,</span>
+<span class="go">        &quot;DelayLoop&quot;: 10</span>
+<span class="go">    },</span>
+<span class="go">    &quot;SorryServer&quot;: {</span>
+<span class="go">        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
+<span class="go">        &quot;Port&quot;: 80</span>
+<span class="go">    },</span>
+<span class="go">    &quot;LetsEncrypt&quot;: {</span>
+<span class="go">        &quot;CommonName&quot;: &quot;www.example.com&quot;,</span>
+<span class="go">        &quot;Enabled&quot;: true,</span>
+<span class="go">        &quot;AcceptTOS&quot;: false</span>
+<span class="go">    },</span>
+<span class="go">    &quot;StickySession&quot;: {</span>
+<span class="go">        &quot;Method&quot;: &quot;cookie&quot;,</span>
+<span class="go">        &quot;Enabled&quot;: true</span>
+<span class="go">    },</span>
+<span class="go">    &quot;Timeout&quot;: {</span>
+<span class="go">        &quot;InactiveSec&quot;: 10</span>
+<span class="go">    },</span>
+<span class="go">    &quot;UseVIPFailover&quot;: true,</span>
+<span class="go">    &quot;Region&quot;: &quot;tk1 | is1 | anycast&quot;,</span>
+<span class="go">    &quot;BindPorts&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;ProxyMode&quot;: &quot;http | https | tcp&quot;,</span>
+<span class="go">            &quot;Port&quot;: 80,</span>
+<span class="go">            &quot;RedirectToHTTPS&quot;: true,</span>
+<span class="go">            &quot;SupportHTTP2&quot;: true,</span>
+<span class="go">            &quot;AddResponseHeader&quot;: [</span>
+<span class="go">                {</span>
+<span class="go">                    &quot;Header&quot;: &quot;Cache-Control&quot;,</span>
+<span class="go">                    &quot;Value&quot;: &quot;public, max-age=900&quot;</span>
+<span class="go">                }</span>
+<span class="go">            ]</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Servers&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
+<span class="go">            &quot;Port&quot;: 80,</span>
+<span class="go">            &quot;ServerGroup&quot;: &quot;group1&quot;,</span>
+<span class="go">            &quot;Enabled&quot;: true</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Rules&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Host&quot;: &quot;www2.example.com&quot;,</span>
+<span class="go">            &quot;Path&quot;: &quot;/foo&quot;,</span>
+<span class="go">            &quot;ServerGroup&quot;: &quot;group1&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="read">read</h2>
 <h5 id="usage_2">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  read { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  read { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  read, show
+<span class="go">Aliases:</span>
+<span class="go">  read, show</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="update">update</h2>
 <h5 id="usage_3">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  update { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  update { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Proxy-Lb-specific options ===
+<span class="go">  === Proxy-Lb-specific options ===</span>
 
-      --bind-ports string                 
-      --health-check-delay-loop int       
-      --health-check-host string          
-      --health-check-path string          
-      --health-check-protocol string      
-      --inactive-sec int                  
-      --lets-encrypt-accept-tos           The flag to accept the current Let's Encrypt terms of service(see: https://letsencrypt.org/repository/)
-      --lets-encrypt-common-name string   
-      --lets-encrypt-enabled              
-      --plan string                       options: [100/500/1000/5000/10000/50000/100000]
-      --rules string                      
-      --servers string                    
-      --sorry-server-ip-address string    (aliases: --ipaddress)
-      --sorry-server-port int             
-      --sticky-session-enabled            
-      --sticky-session-method string      
+<span class="go">      --bind-ports string                 </span>
+<span class="go">      --health-check-delay-loop int       </span>
+<span class="go">      --health-check-host string          </span>
+<span class="go">      --health-check-path string          </span>
+<span class="go">      --health-check-protocol string      </span>
+<span class="go">      --inactive-sec int                  </span>
+<span class="go">      --lets-encrypt-accept-tos           The flag to accept the current Let&#39;s Encrypt terms of service(see: https://letsencrypt.org/repository/)</span>
+<span class="go">      --lets-encrypt-common-name string   </span>
+<span class="go">      --lets-encrypt-enabled              </span>
+<span class="go">      --plan string                       options: [100/500/1000/5000/10000/50000/100000]</span>
+<span class="go">      --rules string                      </span>
+<span class="go">      --servers string                    </span>
+<span class="go">      --sorry-server-ip-address string    (aliases: --ipaddress)</span>
+<span class="go">      --sorry-server-port int             </span>
+<span class="go">      --sticky-session-enabled            </span>
+<span class="go">      --sticky-session-method string      </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples_1">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;Plan&quot;: &quot;100 | 500 | 1000 | 5000 | 10000 | 50000 | 100000&quot;,
-    &quot;HealthCheck&quot;: {
-        &quot;Protocol&quot;: &quot;http | tcp&quot;,
-        &quot;Path&quot;: &quot;/healthz&quot;,
-        &quot;Host&quot;: &quot;www.example.com&quot;,
-        &quot;DelayLoop&quot;: 10
-    },
-    &quot;SorryServer&quot;: {
-        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
-        &quot;Port&quot;: 80
-    },
-    &quot;LetsEncrypt&quot;: {
-        &quot;CommonName&quot;: &quot;www.example.com&quot;,
-        &quot;Enabled&quot;: true,
-        &quot;AcceptTOS&quot;: false
-    },
-    &quot;StickySession&quot;: {
-        &quot;Method&quot;: &quot;cookie&quot;,
-        &quot;Enabled&quot;: true
-    },
-    &quot;Timeout&quot;: {
-        &quot;InactiveSec&quot;: 10
-    },
-    &quot;BindPortsData&quot;: null,
-    &quot;BindPorts&quot;: [
-        {
-            &quot;ProxyMode&quot;: &quot;http | https | tcp&quot;,
-            &quot;Port&quot;: 80,
-            &quot;RedirectToHTTPS&quot;: true,
-            &quot;SupportHTTP2&quot;: true,
-            &quot;AddResponseHeader&quot;: [
-                {
-                    &quot;Header&quot;: &quot;Cache-Control&quot;,
-                    &quot;Value&quot;: &quot;public, max-age=900&quot;
-                }
-            ]
-        }
-    ],
-    &quot;ServersData&quot;: null,
-    &quot;Servers&quot;: [
-        {
-            &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
-            &quot;Port&quot;: 80,
-            &quot;ServerGroup&quot;: &quot;group1&quot;,
-            &quot;Enabled&quot;: true
-        }
-    ],
-    &quot;RulesData&quot;: null,
-    &quot;Rules&quot;: [
-        {
-            &quot;Host&quot;: &quot;www2.example.com&quot;,
-            &quot;Path&quot;: &quot;/foo&quot;,
-            &quot;ServerGroup&quot;: &quot;group1&quot;
-        }
-    ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;Plan&quot;: &quot;100 | 500 | 1000 | 5000 | 10000 | 50000 | 100000&quot;,</span>
+<span class="go">    &quot;HealthCheck&quot;: {</span>
+<span class="go">        &quot;Protocol&quot;: &quot;http | tcp&quot;,</span>
+<span class="go">        &quot;Path&quot;: &quot;/healthz&quot;,</span>
+<span class="go">        &quot;Host&quot;: &quot;www.example.com&quot;,</span>
+<span class="go">        &quot;DelayLoop&quot;: 10</span>
+<span class="go">    },</span>
+<span class="go">    &quot;SorryServer&quot;: {</span>
+<span class="go">        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
+<span class="go">        &quot;Port&quot;: 80</span>
+<span class="go">    },</span>
+<span class="go">    &quot;LetsEncrypt&quot;: {</span>
+<span class="go">        &quot;CommonName&quot;: &quot;www.example.com&quot;,</span>
+<span class="go">        &quot;Enabled&quot;: true,</span>
+<span class="go">        &quot;AcceptTOS&quot;: false</span>
+<span class="go">    },</span>
+<span class="go">    &quot;StickySession&quot;: {</span>
+<span class="go">        &quot;Method&quot;: &quot;cookie&quot;,</span>
+<span class="go">        &quot;Enabled&quot;: true</span>
+<span class="go">    },</span>
+<span class="go">    &quot;Timeout&quot;: {</span>
+<span class="go">        &quot;InactiveSec&quot;: 10</span>
+<span class="go">    },</span>
+<span class="go">    &quot;BindPortsData&quot;: null,</span>
+<span class="go">    &quot;BindPorts&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;ProxyMode&quot;: &quot;http | https | tcp&quot;,</span>
+<span class="go">            &quot;Port&quot;: 80,</span>
+<span class="go">            &quot;RedirectToHTTPS&quot;: true,</span>
+<span class="go">            &quot;SupportHTTP2&quot;: true,</span>
+<span class="go">            &quot;AddResponseHeader&quot;: [</span>
+<span class="go">                {</span>
+<span class="go">                    &quot;Header&quot;: &quot;Cache-Control&quot;,</span>
+<span class="go">                    &quot;Value&quot;: &quot;public, max-age=900&quot;</span>
+<span class="go">                }</span>
+<span class="go">            ]</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;ServersData&quot;: null,</span>
+<span class="go">    &quot;Servers&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
+<span class="go">            &quot;Port&quot;: 80,</span>
+<span class="go">            &quot;ServerGroup&quot;: &quot;group1&quot;,</span>
+<span class="go">            &quot;Enabled&quot;: true</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;RulesData&quot;: null,</span>
+<span class="go">    &quot;Rules&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Host&quot;: &quot;www2.example.com&quot;,</span>
+<span class="go">            &quot;Path&quot;: &quot;/foo&quot;,</span>
+<span class="go">            &quot;ServerGroup&quot;: &quot;group1&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="delete">delete</h2>
 <h5 id="usage_4">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  delete { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  delete { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  delete, rm
+<span class="go">Aliases:</span>
+<span class="go">  delete, rm</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Error handling options ===
+<span class="go">  === Error handling options ===</span>
 
-      --fail-if-not-found   
+<span class="go">      --fail-if-not-found   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="health-status">health-status</h2>
 <h5 id="usage_5">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  health-status { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  health-status { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  health-status, health
+<span class="go">Aliases:</span>
+<span class="go">  health-status, health</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="renew-lets-encrypt-cert">renew-lets-encrypt-cert</h2>
 <h5 id="usage_6">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  renew-lets-encrypt-cert { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  renew-lets-encrypt-cert { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="monitor-connection">monitor-connection</h2>
 <h5 id="usage_7">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  monitor-connection { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-connection { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  monitor-connection, monitor
+<span class="go">Aliases:</span>
+<span class="go">  monitor-connection, monitor</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
               
             </div>
           </div>

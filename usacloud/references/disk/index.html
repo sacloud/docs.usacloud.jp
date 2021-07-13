@@ -369,546 +369,546 @@
 </ul>
 <h2 id="list">list</h2>
 <h5 id="usage">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  list [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  list [flags]</span>
 
-Aliases:
-  list, ls, find, select
+<span class="go">Aliases:</span>
+<span class="go">  list, ls, find, select</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Filter options ===
+<span class="go">  === Filter options ===</span>
 
-      --names strings   
-      --tags strings    
+<span class="go">      --names strings   </span>
+<span class="go">      --tags strings    </span>
 
-  === Limit/Offset options ===
+<span class="go">  === Limit/Offset options ===</span>
 
-      --count int   (aliases: --max, --limit)
-      --from int    (aliases: --offset)
+<span class="go">      --count int   (aliases: --max, --limit)</span>
+<span class="go">      --from int    (aliases: --offset)</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="create">create</h2>
 <h5 id="usage_1">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  create [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  create [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          (*required) 
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          (*required) </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Plan options ===
+<span class="go">  === Plan options ===</span>
 
-      --disk-plan string   (*required) options: [ssd/hdd] (default &quot;ssd&quot;)
-      --size int            (default 20)
-      --connector string   (*required) options: [virtio/ide] (aliases: --connection) (default &quot;virtio&quot;)
+<span class="go">      --disk-plan string   (*required) options: [ssd/hdd] (default &quot;ssd&quot;)</span>
+<span class="go">      --size int            (default 20)</span>
+<span class="go">      --connector string   (*required) options: [virtio/ide] (aliases: --connection) (default &quot;virtio&quot;)</span>
 
-  === Disk-specific options ===
+<span class="go">  === Disk-specific options ===</span>
 
-      --distant-from int   
-      --server-id int      
+<span class="go">      --distant-from int   </span>
+<span class="go">      --server-id int      </span>
 
-  === Edit disk options ===
+<span class="go">  === Edit disk options ===</span>
 
-      --edit-disk-host-name string          
-      --edit-disk-password string           
-      --edit-disk-ip-address string         
-      --edit-disk-netmask int               (aliases: --network-mask-len)
-      --edit-disk-gateway string            (aliases: --default-route)
-      --edit-disk-disable-pw-auth           
-      --edit-disk-enable-dhcp               
-      --edit-disk-change-partition-uuid     
-      --edit-disk-ssh-keys strings          
-      --edit-disk-ssh-key-ids int           
-      --edit-disk-make-ssh-keys-ephemeral   
-      --edit-disk-note-ids int              
-      --edit-disk-notes string              
-      --edit-disk-make-notes-ephemeral      
+<span class="go">      --edit-disk-host-name string          </span>
+<span class="go">      --edit-disk-password string           </span>
+<span class="go">      --edit-disk-ip-address string         </span>
+<span class="go">      --edit-disk-netmask int               (aliases: --network-mask-len)</span>
+<span class="go">      --edit-disk-gateway string            (aliases: --default-route)</span>
+<span class="go">      --edit-disk-disable-pw-auth           </span>
+<span class="go">      --edit-disk-enable-dhcp               </span>
+<span class="go">      --edit-disk-change-partition-uuid     </span>
+<span class="go">      --edit-disk-ssh-keys strings          </span>
+<span class="go">      --edit-disk-ssh-key-ids int           </span>
+<span class="go">      --edit-disk-make-ssh-keys-ephemeral   </span>
+<span class="go">      --edit-disk-note-ids int              </span>
+<span class="go">      --edit-disk-notes string              </span>
+<span class="go">      --edit-disk-make-notes-ephemeral      </span>
 
-  === Source options ===
+<span class="go">  === Source options ===</span>
 
-      --os-type string          options: [centos/centos8stream/centos8/ubuntu/ubuntu2004/debian/debian10/coreos/rancheros/k3os/freebsd/...]
-      --source-disk-id int      
-      --source-archive-id int   
+<span class="go">      --os-type string          options: [centos/centos8stream/centos8/ubuntu/ubuntu2004/debian/debian10/coreos/rancheros/k3os/freebsd/...]</span>
+<span class="go">      --source-disk-id int      </span>
+<span class="go">      --source-archive-id int   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;DiskPlan&quot;: &quot;ssd | hdd&quot;,
-    &quot;SizeGB&quot;: 20,
-    &quot;Connection&quot;: &quot;virtio | ide&quot;,
-    &quot;OSType&quot;: &quot;centos | centos8stream | centos8 | centos7 | ubuntu | ubuntu2004 | ubuntu1804 | ubuntu1604 | debian | debian10 | debian9 | coreos | rancheros | k3os | kusanagi | freebsd | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all&quot;,
-    &quot;SourceDiskID&quot;: 123456789012,
-    &quot;SourceArchiveID&quot;: 123456789012,
-    &quot;ServerID&quot;: 123456789012,
-    &quot;DistantFrom&quot;: [
-        123456789012
-    ],
-    &quot;EditDisk&quot;: {
-        &quot;HostName&quot;: &quot;hostname&quot;,
-        &quot;Password&quot;: &quot;password&quot;,
-        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
-        &quot;NetworkMaskLen&quot;: 24,
-        &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,
-        &quot;DisablePWAuth&quot;: true,
-        &quot;EnableDHCP&quot;: true,
-        &quot;ChangePartitionUUID&quot;: true,
-        &quot;SSHKeys&quot;: [
-            &quot;/path/to/your/public/key&quot;,
-            &quot;ssh-rsa ...&quot;
-        ],
-        &quot;SSHKeyIDs&quot;: [
-            123456789012
-        ],
-        &quot;IsSSHKeysEphemeral&quot;: true,
-        &quot;NoteIDs&quot;: [
-            123456789012
-        ],
-        &quot;IsNotesEphemeral&quot;: true,
-        &quot;Notes&quot;: [
-            {
-                &quot;ID&quot;: 123456789012,
-                &quot;Variables&quot;: {
-                    &quot;variable1&quot;: &quot;foo&quot;,
-                    &quot;variable2&quot;: &quot;bar&quot;
-                }
-            }
-        ]
-    },
-    &quot;NoWait&quot;: false
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;DiskPlan&quot;: &quot;ssd | hdd&quot;,</span>
+<span class="go">    &quot;SizeGB&quot;: 20,</span>
+<span class="go">    &quot;Connection&quot;: &quot;virtio | ide&quot;,</span>
+<span class="go">    &quot;OSType&quot;: &quot;centos | centos8stream | centos8 | centos7 | ubuntu | ubuntu2004 | ubuntu1804 | ubuntu1604 | debian | debian10 | debian9 | coreos | rancheros | k3os | kusanagi | freebsd | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all&quot;,</span>
+<span class="go">    &quot;SourceDiskID&quot;: 123456789012,</span>
+<span class="go">    &quot;SourceArchiveID&quot;: 123456789012,</span>
+<span class="go">    &quot;ServerID&quot;: 123456789012,</span>
+<span class="go">    &quot;DistantFrom&quot;: [</span>
+<span class="go">        123456789012</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;EditDisk&quot;: {</span>
+<span class="go">        &quot;HostName&quot;: &quot;hostname&quot;,</span>
+<span class="go">        &quot;Password&quot;: &quot;password&quot;,</span>
+<span class="go">        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
+<span class="go">        &quot;NetworkMaskLen&quot;: 24,</span>
+<span class="go">        &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,</span>
+<span class="go">        &quot;DisablePWAuth&quot;: true,</span>
+<span class="go">        &quot;EnableDHCP&quot;: true,</span>
+<span class="go">        &quot;ChangePartitionUUID&quot;: true,</span>
+<span class="go">        &quot;SSHKeys&quot;: [</span>
+<span class="go">            &quot;/path/to/your/public/key&quot;,</span>
+<span class="go">            &quot;ssh-rsa ...&quot;</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;SSHKeyIDs&quot;: [</span>
+<span class="go">            123456789012</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;IsSSHKeysEphemeral&quot;: true,</span>
+<span class="go">        &quot;NoteIDs&quot;: [</span>
+<span class="go">            123456789012</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;IsNotesEphemeral&quot;: true,</span>
+<span class="go">        &quot;Notes&quot;: [</span>
+<span class="go">            {</span>
+<span class="go">                &quot;ID&quot;: 123456789012,</span>
+<span class="go">                &quot;Variables&quot;: {</span>
+<span class="go">                    &quot;variable1&quot;: &quot;foo&quot;,</span>
+<span class="go">                    &quot;variable2&quot;: &quot;bar&quot;</span>
+<span class="go">                }</span>
+<span class="go">            }</span>
+<span class="go">        ]</span>
+<span class="go">    },</span>
+<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="read">read</h2>
 <h5 id="usage_2">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  read { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  read { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  read, show
+<span class="go">Aliases:</span>
+<span class="go">  read, show</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="update">update</h2>
 <h5 id="usage_3">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  update { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  update { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Common options ===
+<span class="go">  === Common options ===</span>
 
-      --name string          
-      --description string   
-      --tags strings         
-      --icon-id int          
+<span class="go">      --name string          </span>
+<span class="go">      --description string   </span>
+<span class="go">      --tags strings         </span>
+<span class="go">      --icon-id int          </span>
 
-  === Plan options ===
+<span class="go">  === Plan options ===</span>
 
-      --connector string   options: [virtio/ide] (aliases: --connection)
+<span class="go">      --connector string   options: [virtio/ide] (aliases: --connection)</span>
 
-  === Edit disk options ===
+<span class="go">  === Edit disk options ===</span>
 
-      --edit-disk-host-name string          
-      --edit-disk-password string           
-      --edit-disk-ip-address string         
-      --edit-disk-netmask int               (aliases: --network-mask-len)
-      --edit-disk-gateway string            (aliases: --default-route)
-      --edit-disk-disable-pw-auth           
-      --edit-disk-enable-dhcp               
-      --edit-disk-change-partition-uuid     
-      --edit-disk-ssh-keys strings          
-      --edit-disk-ssh-key-ids int           
-      --edit-disk-make-ssh-keys-ephemeral   
-      --edit-disk-note-ids int              
-      --edit-disk-notes string              
-      --edit-disk-make-notes-ephemeral      
+<span class="go">      --edit-disk-host-name string          </span>
+<span class="go">      --edit-disk-password string           </span>
+<span class="go">      --edit-disk-ip-address string         </span>
+<span class="go">      --edit-disk-netmask int               (aliases: --network-mask-len)</span>
+<span class="go">      --edit-disk-gateway string            (aliases: --default-route)</span>
+<span class="go">      --edit-disk-disable-pw-auth           </span>
+<span class="go">      --edit-disk-enable-dhcp               </span>
+<span class="go">      --edit-disk-change-partition-uuid     </span>
+<span class="go">      --edit-disk-ssh-keys strings          </span>
+<span class="go">      --edit-disk-ssh-key-ids int           </span>
+<span class="go">      --edit-disk-make-ssh-keys-ephemeral   </span>
+<span class="go">      --edit-disk-note-ids int              </span>
+<span class="go">      --edit-disk-notes string              </span>
+<span class="go">      --edit-disk-make-notes-ephemeral      </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h5 id="parameter-examples_1">Parameter Examples</h5>
-<pre class="codehilite"><code class="language-console">{
-    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,
-    &quot;Name&quot;: &quot;example&quot;,
-    &quot;Description&quot;: &quot;example&quot;,
-    &quot;Tags&quot;: [
-        &quot;tag1=example1&quot;,
-        &quot;tag2=example2&quot;
-    ],
-    &quot;IconID&quot;: 123456789012,
-    &quot;Connection&quot;: &quot;virtio | ide&quot;,
-    &quot;EditDisk&quot;: {
-        &quot;HostName&quot;: &quot;hostname&quot;,
-        &quot;Password&quot;: &quot;password&quot;,
-        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,
-        &quot;NetworkMaskLen&quot;: 24,
-        &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,
-        &quot;DisablePWAuth&quot;: true,
-        &quot;EnableDHCP&quot;: true,
-        &quot;ChangePartitionUUID&quot;: true,
-        &quot;SSHKeys&quot;: [
-            &quot;/path/to/your/public/key&quot;,
-            &quot;ssh-rsa ...&quot;
-        ],
-        &quot;SSHKeyIDs&quot;: [
-            123456789012
-        ],
-        &quot;IsSSHKeysEphemeral&quot;: true,
-        &quot;NoteIDs&quot;: [
-            123456789012
-        ],
-        &quot;IsNotesEphemeral&quot;: true,
-        &quot;Notes&quot;: [
-            {
-                &quot;ID&quot;: 123456789012,
-                &quot;Variables&quot;: {
-                    &quot;variable1&quot;: &quot;foo&quot;,
-                    &quot;variable2&quot;: &quot;bar&quot;
-                }
-            }
-        ]
-    },
-    &quot;NoWait&quot;: false
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="go">{</span>
+<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
+<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
+<span class="go">    &quot;Tags&quot;: [</span>
+<span class="go">        &quot;tag1=example1&quot;,</span>
+<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;IconID&quot;: 123456789012,</span>
+<span class="go">    &quot;Connection&quot;: &quot;virtio | ide&quot;,</span>
+<span class="go">    &quot;EditDisk&quot;: {</span>
+<span class="go">        &quot;HostName&quot;: &quot;hostname&quot;,</span>
+<span class="go">        &quot;Password&quot;: &quot;password&quot;,</span>
+<span class="go">        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
+<span class="go">        &quot;NetworkMaskLen&quot;: 24,</span>
+<span class="go">        &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,</span>
+<span class="go">        &quot;DisablePWAuth&quot;: true,</span>
+<span class="go">        &quot;EnableDHCP&quot;: true,</span>
+<span class="go">        &quot;ChangePartitionUUID&quot;: true,</span>
+<span class="go">        &quot;SSHKeys&quot;: [</span>
+<span class="go">            &quot;/path/to/your/public/key&quot;,</span>
+<span class="go">            &quot;ssh-rsa ...&quot;</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;SSHKeyIDs&quot;: [</span>
+<span class="go">            123456789012</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;IsSSHKeysEphemeral&quot;: true,</span>
+<span class="go">        &quot;NoteIDs&quot;: [</span>
+<span class="go">            123456789012</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;IsNotesEphemeral&quot;: true,</span>
+<span class="go">        &quot;Notes&quot;: [</span>
+<span class="go">            {</span>
+<span class="go">                &quot;ID&quot;: 123456789012,</span>
+<span class="go">                &quot;Variables&quot;: {</span>
+<span class="go">                    &quot;variable1&quot;: &quot;foo&quot;,</span>
+<span class="go">                    &quot;variable2&quot;: &quot;bar&quot;</span>
+<span class="go">                }</span>
+<span class="go">            }</span>
+<span class="go">        ]</span>
+<span class="go">    },</span>
+<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">}</span>
+</code></pre></div>
 
 <h2 id="delete">delete</h2>
 <h5 id="usage_4">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  delete { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  delete { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  delete, rm
+<span class="go">Aliases:</span>
+<span class="go">  delete, rm</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Error handling options ===
+<span class="go">  === Error handling options ===</span>
 
-      --fail-if-not-found   
+<span class="go">      --fail-if-not-found   </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --wait-for-release               
-      --wait-for-release-timeout int   
-      --wait-for-release-tick int      
+<span class="go">      --wait-for-release               </span>
+<span class="go">      --wait-for-release-timeout int   </span>
+<span class="go">      --wait-for-release-tick int      </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="connect-to-server">connect-to-server</h2>
 <h5 id="usage_5">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  connect-to-server { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  connect-to-server { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  connect-to-server, server-connect
+<span class="go">Aliases:</span>
+<span class="go">  connect-to-server, server-connect</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Disk-specific options ===
+<span class="go">  === Disk-specific options ===</span>
 
-      --server-id int   (*required) 
+<span class="go">      --server-id int   (*required) </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="edit">edit</h2>
 <h5 id="usage_6">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  edit { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  edit { ID | NAME | TAG }... [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Edit disk options ===
+<span class="go">  === Edit disk options ===</span>
 
-      --host-name string          
-      --password string           
-      --ip-address string         
-      --netmask int               (aliases: --network-mask-len)
-      --gateway string            (aliases: --default-route)
-      --disable-pw-auth           
-      --enable-dhcp               
-      --change-partition-uuid     
-      --ssh-keys strings          
-      --ssh-key-ids int           
-      --make-ssh-keys-ephemeral   
-      --note-ids int              
-      --notes string              
-      --make-notes-ephemeral      
+<span class="go">      --host-name string          </span>
+<span class="go">      --password string           </span>
+<span class="go">      --ip-address string         </span>
+<span class="go">      --netmask int               (aliases: --network-mask-len)</span>
+<span class="go">      --gateway string            (aliases: --default-route)</span>
+<span class="go">      --disable-pw-auth           </span>
+<span class="go">      --enable-dhcp               </span>
+<span class="go">      --change-partition-uuid     </span>
+<span class="go">      --ssh-keys strings          </span>
+<span class="go">      --ssh-key-ids int           </span>
+<span class="go">      --make-ssh-keys-ephemeral   </span>
+<span class="go">      --note-ids int              </span>
+<span class="go">      --notes string              </span>
+<span class="go">      --make-notes-ephemeral      </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Wait options ===
+<span class="go">  === Wait options ===</span>
 
-      --no-wait   
+<span class="go">      --no-wait   </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="disconnect-from-server">disconnect-from-server</h2>
 <h5 id="usage_7">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  disconnect-from-server { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  disconnect-from-server { ID | NAME | TAG } [flags]</span>
 
-Aliases:
-  disconnect-from-server, server-disconnect
+<span class="go">Aliases:</span>
+<span class="go">  disconnect-from-server, server-disconnect</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="resize-partition">resize-partition</h2>
 <h5 id="usage_8">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  resize-partition { ID | NAME | TAG } [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  resize-partition { ID | NAME | TAG } [flags]</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">  -y, --assumeyes           Assume that the answer to any question which would be asked is yes</span>
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="monitor-disk">monitor-disk</h2>
 <h5 id="usage_9">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  monitor-disk { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-disk { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  monitor-disk, monitor
+<span class="go">Aliases:</span>
+<span class="go">  monitor-disk, monitor</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Monitor options ===
+<span class="go">  === Monitor options ===</span>
 
-      --end string     
-      --start string   
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Output options ===
+<span class="go">  === Output options ===</span>
 
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
 
 <h2 id="wait-until-ready">wait-until-ready</h2>
 <h5 id="usage_10">Usage</h5>
-<pre class="codehilite"><code class="language-console">Usage:
-  wait-until-ready { ID | NAME | TAG }... [flags]
+<div class="codehilite"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  wait-until-ready { ID | NAME | TAG }... [flags]</span>
 
-Aliases:
-  wait-until-ready, wait, wait-for-copy
+<span class="go">Aliases:</span>
+<span class="go">  wait-until-ready, wait, wait-for-copy</span>
 
-Flags:
+<span class="go">Flags:</span>
 
-  === Zone options ===
+<span class="go">  === Zone options ===</span>
 
-      --zone string   (*required) 
+<span class="go">      --zone string   (*required) </span>
 
-  === Input options ===
+<span class="go">  === Input options ===</span>
 
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
 
-  === Parameter example ===
+<span class="go">  === Parameter example ===</span>
 
-      --example   Output example parameters with JSON format
-</code></pre>
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
               
             </div>
           </div>
