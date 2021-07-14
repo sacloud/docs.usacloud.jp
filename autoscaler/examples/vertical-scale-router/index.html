@@ -13,14 +13,14 @@
         <meta name="author" content="@yamamoto-febc">
       
       
-        <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/inputs/grafana/">
+        <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/examples/vertical-scale-router/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
     
     
       
-        <title>Grafana - sacloud/autoscaler</title>
+        <title>ルータ - sacloud/autoscaler</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grafana-inputs" class="md-skip">
+        <a href="#examples" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Grafana
+              ルータ
             
           </span>
         </div>
@@ -189,15 +189,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../cli/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../cli/" class="md-tabs__link">
         リファレンス
       </a>
     </li>
@@ -207,6 +205,8 @@
         
   
   
+    
+  
 
 
   
@@ -223,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../examples/horizontal-scale-server-and-elb/" class="md-tabs__link">
+      <a href="../horizontal-scale-server-and-elb/" class="md-tabs__link md-tabs__link--active">
         Examples
       </a>
     </li>
@@ -301,14 +301,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         リファレンス
@@ -336,14 +334,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
       
       <label class="md-nav__link" for="__nav_3_2">
         Inputs
@@ -361,7 +357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../inputs/" class="md-nav__link">
         概要
       </a>
     </li>
@@ -373,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
+      <a href="../../inputs/config/" class="md-nav__link">
         共通設定
       </a>
     </li>
@@ -383,14 +379,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_3" type="checkbox" id="__nav_3_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_3" type="checkbox" id="__nav_3_2_3" >
       
       <label class="md-nav__link" for="__nav_3_2_3">
         サポートされているInputs
@@ -408,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alertmanager/" class="md-nav__link">
+      <a href="../../inputs/alertmanager/" class="md-nav__link">
         AlertManager
       </a>
     </li>
@@ -418,105 +412,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Grafana
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../inputs/grafana/" class="md-nav__link">
         Grafana
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    前提条件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafana" class="md-nav__link">
-    Grafanaの設定
-  </a>
-  
-    <nav class="md-nav" aria-label="Grafanaの設定">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#notification-channel" class="md-nav__link">
-    Notification Channelの設定
-  </a>
-  
-    <nav class="md-nav" aria-label="Notification Channelの設定">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#config-file" class="md-nav__link">
-    Config Fileによるプロビジョニングを行う場合の例
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    APIで登録する場合の例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafanaalert" class="md-nav__link">
-    GrafanaでのAlert設定
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tls" class="md-nav__link">
-    TLS関連設定
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -526,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../webhook/" class="md-nav__link">
+      <a href="../../inputs/webhook/" class="md-nav__link">
         Webhook
       </a>
     </li>
@@ -538,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zabbix/" class="md-nav__link">
+      <a href="../../inputs/zabbix/" class="md-nav__link">
         Zabbix
       </a>
     </li>
@@ -550,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../direct/" class="md-nav__link">
+      <a href="../../inputs/direct/" class="md-nav__link">
         Direct
       </a>
     </li>
@@ -605,12 +505,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Examples
@@ -626,12 +528,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
       
       <label class="md-nav__link" for="__nav_4_1">
         Coreの設定例
@@ -670,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/horizontal-scale-server-and-elb/" class="md-nav__link">
+      <a href="../horizontal-scale-server-and-elb/" class="md-nav__link">
         ELB+サーバ
       </a>
     </li>
@@ -682,7 +586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/horizontal-scale-server-and-lb/" class="md-nav__link">
+      <a href="../horizontal-scale-server-and-lb/" class="md-nav__link">
         LB+ロードバランサ
       </a>
     </li>
@@ -698,12 +602,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_2" type="checkbox" id="__nav_4_1_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_2" type="checkbox" id="__nav_4_1_2" checked>
       
       <label class="md-nav__link" for="__nav_4_1_2">
         垂直スケール
@@ -721,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/vertical-scale-server/" class="md-nav__link">
+      <a href="../vertical-scale-server/" class="md-nav__link">
         サーバ
       </a>
     </li>
@@ -733,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/vertical-scale-server-and-elb/" class="md-nav__link">
+      <a href="../vertical-scale-server-and-elb/" class="md-nav__link">
         ELB+サーバ
       </a>
     </li>
@@ -745,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/vertical-scale-server-and-lb/" class="md-nav__link">
+      <a href="../vertical-scale-server-and-lb/" class="md-nav__link">
         LB+サーバ
       </a>
     </li>
@@ -757,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/vertical-scale-server-and-gslb/" class="md-nav__link">
+      <a href="../vertical-scale-server-and-gslb/" class="md-nav__link">
         GSLB+サーバ
       </a>
     </li>
@@ -767,11 +673,58 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../examples/vertical-scale-router/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ルータ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ルータ
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    構成例
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -781,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/vertical-scale-elb/" class="md-nav__link">
+      <a href="../vertical-scale-elb/" class="md-nav__link">
         エンハンスドロードバランサ
       </a>
     </li>
@@ -833,61 +786,14 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    前提条件
+    概要
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#grafana" class="md-nav__link">
-    Grafanaの設定
-  </a>
-  
-    <nav class="md-nav" aria-label="Grafanaの設定">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#notification-channel" class="md-nav__link">
-    Notification Channelの設定
-  </a>
-  
-    <nav class="md-nav" aria-label="Notification Channelの設定">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#config-file" class="md-nav__link">
-    Config Fileによるプロビジョニングを行う場合の例
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    APIで登録する場合の例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafanaalert" class="md-nav__link">
-    GrafanaでのAlert設定
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tls" class="md-nav__link">
-    TLS関連設定
+  <a href="#_2" class="md-nav__link">
+    構成例
   </a>
   
 </li>
@@ -905,80 +811,58 @@
               
                 
                 
-                <h1 id="grafana-inputs">Grafana Inputs</h1>
-<p>Grafanaを利用する場合の設定について記載します。  </p>
-<h2 id="_1">前提条件</h2>
+                <h1 id="examples">Examples: ルータの垂直スケール</h1>
+<h2 id="_1">概要</h2>
+<p>ルータの垂直スケール(帯域幅変更)を行います。<br />
+あらかじめ定義した範囲の中で帯域幅を上下させます。  </p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+</div>
+<p>ルータのオートスケールは無停止/サービス中断なしで行えます。</p>
+<h2 id="_2">構成例</h2>
+<p>以下の条件で垂直スケールさせる例です。</p>
 <ul>
-<li>GrafanaからGrafana Inputsへのネットワーク疎通が可能なこと</li>
-<li>Grafana InputsからAutoScaler Coreへの疎通が可能なこと</li>
+<li>対象ルータ:<ul>
+<li>is1aゾーンのexample1</li>
 </ul>
-<h2 id="grafana">Grafanaの設定</h2>
-<p>Grafana Inputsを利用するにはGrafana側でNotification Channelを設定した上でAlertsを設定する必要があります。  </p>
-<h3 id="notification-channel">Notification Channelの設定</h3>
-<p>AutoScaler CoreへのUpまたはDownリクエストを送信するためのWebhookをNotification Channelに登録します。  </p>
-<p><img alt="notification_channel.png" src="images/notification_channel.png" /></p>
-<p>パラメータは以下のように入力します。  </p>
-<ul>
-<li>Name: 任意</li>
-<li>Type: webhook</li>
-<li>Url: </li>
-<li>スケールアップ/スケールアウト用のエンドポイント: <code>&lt;Grafana InputsのURL&gt;/up?[key=value]...</code></li>
-<li>スケールダウン/スケールイン用のエンドポイント: <code>&lt;Grafana InputsのURL&gt;/down?[key=value]...</code></li>
-<li>Http Method: <code>POST</code> | <code>PUT</code> (どちらでも可)</li>
+</li>
+<li>プランはデフォルトの範囲とする</li>
 </ul>
-<p>Urlには以下のパラメータが指定可能です。</p>
-<ul>
-<li><code>source</code>: リクエスト元を識別するための名称。任意の値を利用可能。デフォルト値:<code>default</code></li>
-<li><code>resource-name</code>: 操作対象のリソースの名前。Coreのコンフィギュレーションで定義したリソース名を指定する。デフォルト値:<code>default</code></li>
-<li><code>desired-state-name</code>: 希望する状態の名前。Coreのコンフィギュレーションで定義したプラン名を指定する。特定の時刻に特定のスペックにしたい場合などに利用する。デフォルト値:<code>""</code>  </li>
-</ul>
-<p>これらのパラメータを複数指定する場合は<code>&amp;</code>で繋げて記載します。  </p>
-<p>Urlの記載例: <code>http://example.com:8080/up?source=grafana&amp;resource-name=resource1</code></p>
-<h4 id="config-file">Config Fileによるプロビジョニングを行う場合の例</h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># /etc/grafana/provisioning/notifiers/example.yaml</span>
-<span class="nt">notifiers</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;AutoScaler:Up&quot;</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">webhook</span>
-    <span class="nt">org_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-    <span class="nt">uid</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-    <span class="nt">is_default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-    <span class="nt">send_reminder</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-    <span class="nt">frequency</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">30m</span>
-    <span class="nt">disable_resolve_message</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">settings</span><span class="p">:</span>
-      <span class="nt">autoResolve</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">httpMethod</span><span class="p">:</span> <span class="s">&quot;POST&quot;</span>
-      <span class="nt">uploadImage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-      <span class="nt">url</span><span class="p">:</span> <span class="s">&quot;http://example.com:8080/up?source=grafana&amp;resource-name=resource1&quot;</span>
-</code></pre></div>
-<h4 id="api">APIで登録する場合の例</h4>
-<p>GrafanaのAPI(<code>POST /api/alert-notifications</code>)を利用してNotification Channelを登録する例:</p>
-<div class="highlight"><pre><span></span><code><span class="go">POST /api/alert-notifications HTTP/1.1</span>
-<span class="go">Accept: application/json</span>
-<span class="go">Content-Type: application/json</span>
-<span class="go">Authorization: Bearer eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk</span>
+<div class="highlight"><pre><span></span><code><span class="nt">resources</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Router</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;router&quot;</span>
+    <span class="nt">selector</span><span class="p">:</span>
+      <span class="nt">names</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;example1&quot;</span><span class="p p-Indicator">]</span>
+      <span class="nt">zones</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;is1a&quot;</span><span class="p p-Indicator">]</span>
 
-<span class="go">{</span>
-<span class="go">  &quot;name&quot;: &quot;AutoScaler: Up&quot;,</span>
-<span class="go">  &quot;type&quot;: &quot;webhook&quot;,</span>
-<span class="go">  &quot;isDefault&quot;: false,</span>
-<span class="go">  &quot;sendReminder&quot;: false,</span>
-<span class="go">  &quot;disableResolveMessage&quot;: true,</span>
-<span class="go">  &quot;frequency&quot;: &quot;&quot;,</span>
-<span class="go">  &quot;settings&quot;: {</span>
-<span class="go">    &quot;autoResolve&quot;: true,</span>
-<span class="go">    &quot;httpMethod&quot;: &quot;POST&quot;,</span>
-<span class="go">    &quot;uploadImage&quot;: false,</span>
-<span class="go">    &quot;url&quot;: &quot;http://example.com:8080/up?source=grafana&amp;resource-name=resource1&quot;</span>
-<span class="go">  }</span>
-<span class="go">}</span>
+<span class="c1"># デフォルトのプラン </span>
+<span class="c1">#    plans:</span>
+<span class="c1">#      - band_width: 100</span>
+<span class="c1">#      - band_width: 250</span>
+<span class="c1">#      - band_width: 500</span>
+<span class="c1">#      - band_width: 1000</span>
+<span class="c1">#      - band_width: 1500</span>
+<span class="c1">#      - band_width: 2000</span>
+<span class="c1">#      - band_width: 2500</span>
+<span class="c1">#      - band_width: 3000</span>
+<span class="c1">#      - band_width: 3500</span>
+<span class="c1">#      - band_width: 4000</span>
+<span class="c1">#      - band_width: 4500</span>
+<span class="c1">#      - band_width: 5000</span>
 </code></pre></div>
-<h2 id="grafanaalert">GrafanaでのAlert設定</h2>
-<p>Note: AutoScalerによる操作でアラート状態が解消できるようなルールを設定してください。<br />
-AutoScaler Coreは同一の<code>resource-group-name</code>へのリクエストを冷却期間の間は無視しますが、冷却期間がすぎると再度リクエストを受け付けるようになります。<br />
-このためアラートの条件設定次第ではスケール動作を繰り返してしまいます。  </p>
-<h2 id="tls">TLS関連設定</h2>
-<p><a href="../config/">Inputs共通設定</a>を参照ください。  </p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>東京第2ゾーンでは5,500Mbps〜10,000Mbpsプランも利用可能です。<br />
+利用したい場合は<code>plans</code>を指定してください。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+</div>
+<p>リソース定義が1つだけなため、Inputsからのリクエスト時に<code>resource-name</code>パラメータを省略可能です。</p>
+<div class="highlight"><pre><span></span><code>例:  
+Webhook系のリクエストURL例: `http://&lt;your-host&gt;/up`  
+Direct Inputsの実行例: `autoscaler inputs direct up`
+</code></pre></div>
                 
               
               
@@ -998,7 +882,7 @@ AutoScaler Coreは同一の<code>resource-group-name</code>へのリクエスト
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
         
-        <a href="../alertmanager/" class="md-footer__link md-footer__link--prev" aria-label="前: AlertManager" rel="prev">
+        <a href="../vertical-scale-server-and-gslb/" class="md-footer__link md-footer__link--prev" aria-label="前: GSLB+サーバ" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1007,20 +891,20 @@ AutoScaler Coreは同一の<code>resource-group-name</code>へのリクエスト
               <span class="md-footer__direction">
                 前
               </span>
-              AlertManager
+              GSLB+サーバ
             </div>
           </div>
         </a>
       
       
         
-        <a href="../webhook/" class="md-footer__link md-footer__link--next" aria-label="次: Webhook" rel="next">
+        <a href="../vertical-scale-elb/" class="md-footer__link md-footer__link--next" aria-label="次: エンハンスドロードバランサ" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              Webhook
+              エンハンスドロードバランサ
             </div>
           </div>
           <div class="md-footer__button md-icon">
