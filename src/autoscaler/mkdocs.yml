@@ -35,3 +35,15 @@ nav:
         - Direct: inputs/direct/index.md
     - Core Configuration: configuration.md
     - Exporter: exporter.md
+  - Examples:
+    - Coreの設定例:
+      - 水平スケール:
+        - ELB+サーバ: examples/horizontal-scale-server-and-elb.md
+        - LB+ロードバランサ: examples/horizontal-scale-server-and-lb.md
+      - 垂直スケール:
+        - サーバ: examples/vertical-scale-server.md
+        - ELB+サーバ: examples/vertical-scale-server-and-elb.md
+        - LB+サーバ: examples/vertical-scale-server-and-lb.md
+        - GSLB+サーバ: examples/vertical-scale-server-and-gslb.md
+        - ルータ: examples/vertical-scale-router.md
+        - エンハンスドロードバランサ: examples/vertical-scale-elb.md
