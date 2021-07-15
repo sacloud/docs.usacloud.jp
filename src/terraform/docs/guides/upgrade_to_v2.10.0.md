@@ -7,13 +7,13 @@
 - [エンハンスドロードバランサでのSyslogサーバ設定](#diff3)
 - [エンハンスドロードバランサでのSSLポリシー設定](#diff4)
   
-### エンハンスドデータベースのサポート(#diff1)
+### エンハンスドデータベースのサポート {: #diff1 }
 
 Labプロダクトのエンハンスドデータベース(TiDB)がサポートされました。
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_enhanced_db" "foobar" {
   name            = "example"
 
@@ -27,17 +27,17 @@ resource "sakuracloud_enhanced_db" "foobar" {
 
 Note: Labプロダクトについては[https://manual.sakura.ad.jp/cloud/lab/about.html](https://manual.sakura.ad.jp/cloud/lab/about.html)を参照の上でご利用ください。  
 
-### シンプル監視でのタイムアウト設定(#diff2)
+### シンプル監視でのタイムアウト設定 {: #diff2 }
 
 シンプル監視でタイムアウト設定が行えるようになりました。
 
-### エンハンスドロードバランサでのSyslogサーバ設定(#diff3)
+### エンハンスドロードバランサでのSyslogサーバ設定 {: #diff3 }
 
 エンハンスドロードバランサでログ出力先となるSyslogサーバの設定を行えるようになりました。  
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_proxylb" "foobar" {
   # 中略
 
@@ -48,7 +48,7 @@ resource "sakuracloud_proxylb" "foobar" {
 }
 ```
 
-### エンハンスドロードバランサでのSSLポリシー設定(#diff4)
+### エンハンスドロードバランサでのSSLポリシー設定 {: #diff4 }
 
 エンハンスドロードバランサでSSLポリシーの設定が行えるようになりました。
 

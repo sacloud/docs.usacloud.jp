@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 # from archive/disk
 resource "sakuracloud_archive" "from-archive-or-disk" {
   name         = "foobar"
@@ -36,7 +36,7 @@ resource "sakuracloud_archive" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/archive" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/archive"></iframe>
 

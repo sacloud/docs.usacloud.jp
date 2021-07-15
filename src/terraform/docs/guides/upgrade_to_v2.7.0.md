@@ -6,13 +6,13 @@
 - [データベースアプライアンスでのパラメータ指定](#diffB)
     
 
-### VPCルータのバージョン指定(#diffA)
+### VPCルータのバージョン指定 {: #diffA }
 
 VPCルータでバージョン指定が可能になりました。
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_vpc_router" "standard" {
   name      = "standard"
   
@@ -20,13 +20,13 @@ resource "sakuracloud_vpc_router" "standard" {
 }
 ```
 
-### データベースアプライアンスでのパラメータ指定(#diffB)
+### データベースアプライアンスでのパラメータ指定 {: #diffB }
 
 データベースアプライアンスでRDBMS固有のパラメータを指定可能になりました。  
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_database" "foobar" {
   # 中略...
   

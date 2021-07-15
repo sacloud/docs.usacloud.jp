@@ -10,19 +10,19 @@
 - [エンハンスドロードバランサでのgzipの利用](#diff6)
 - [エンハンスドロードバランサのLet's Encrypt設定 - SANs指定機能](#diff7)
 
-### Terraform Plugin SDK v2対応(#diff1)
+### Terraform Plugin SDK v2対応 {: #diff1 }
 
 このバージョンからTerraform Plugin SDK v2に対応しました。  
 これに伴いTerraform v0.11以前ではこのプロバイダーを利用できなくなりました。  
 Terraform v0.12以降をご利用ください。
 
-### サーバのディスクの修正時に公開鍵を文字列で指定(#diff2)
+### サーバのディスクの修正時に公開鍵を文字列で指定 {: #diff2 }
 
 サーバのディスクの修正パラメータを指定する際、公開鍵をIDだけでなく文字列でも指定可能になりました。
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_server" "example" {
   name        = "example"
 
@@ -37,17 +37,17 @@ resource "sakuracloud_server" "example" {
 }
 ```
 
-### SIMのパスコードを`Sensitive:true`に変更(#diff3)
+### SIMのパスコードを`Sensitive:true`に変更 {: #diff3 }
 
 tfファイル上の変更は不要です。
 
-### シンプル監視でのHTTP/2の利用(#diff4)
+### シンプル監視でのHTTP/2の利用 {: #diff4 }
 
 シンプル監視のHTTP監視時にHTTP/2が利用可能になりました。(v2.8.2で対応)
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_simple_monitor" "foobar" {
   target = "www.example.com"
 
@@ -66,13 +66,13 @@ resource "sakuracloud_simple_monitor" "foobar" {
 }
 ```
 
-### シンプル監視でのコンテンツボディ監視(#diff5)
+### シンプル監視でのコンテンツボディ監視 {: #diff5 }
 
 シンプル監視でのHTTP監視時にコンテンツボディのチェックが利用可能になりました。  
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_simple_monitor" "foobar" {
   target = "www.example.com"
 
@@ -91,26 +91,26 @@ resource "sakuracloud_simple_monitor" "foobar" {
 }
 ```
 
-### エンハンスドロードバランサでのgzipの利用(#diff6)
+### エンハンスドロードバランサでのgzipの利用 {: #diff6 }
 
 エンハンスドロードバランサでコンテンツのgzip圧縮を有効化できるようになりました。
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_proxylb" "foobar" {
   # 中略
   gzip = true
 }
 ```
 
-### エンハンスドロードバランサのLet's Encrypt設定 - SANs指定機能(#diff7)
+### エンハンスドロードバランサのLet's Encrypt設定 - SANs指定機能 {: #diff7 }
 
 エンハンスドロードバランサでLet's Encryptを用いて証明書を発行する際のパラメータとしてSANs(Subject Alternate Names)を指定可能になりました。  
 
 利用例:
 
-```hcl
+```tf
 resource sakuracloud_proxylb_acme "foobar" {
   proxylb_id        = sakuracloud_proxylb.foobar.id
   accept_tos        = true

@@ -4,7 +4,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 data "sakuracloud_database" "foobar" {
   filter {
     names = ["foobar"]
@@ -14,7 +14,7 @@ data "sakuracloud_database" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#data/database" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#data/database"></iframe>
 

@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_archive" "source" {
   name         = "foobar"
   size         = 20
@@ -16,7 +16,7 @@ resource "sakuracloud_archive_share" "share_info" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/archive_share" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/archive_share"></iframe>
 

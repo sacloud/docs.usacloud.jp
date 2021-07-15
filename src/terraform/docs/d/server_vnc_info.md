@@ -4,7 +4,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 data "sakuracloud_server_vnc_info" "foobar" {
   server_id = sakuracloud_server.foobar.id
 }
@@ -12,7 +12,7 @@ data "sakuracloud_server_vnc_info" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#data/server_vnc_info" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#data/server_vnc_info"></iframe>
 

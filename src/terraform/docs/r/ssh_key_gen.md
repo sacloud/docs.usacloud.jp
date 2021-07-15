@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_ssh_key_gen" "foobar" {
   name = "foobar"
   #pass_phrase = "your-pass-phrase"
@@ -12,7 +12,7 @@ resource "sakuracloud_ssh_key_gen" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/ssh_key_gen" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/ssh_key_gen"></iframe>
 

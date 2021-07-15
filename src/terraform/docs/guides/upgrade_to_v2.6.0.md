@@ -5,13 +5,13 @@
 - [ウェブアクセラレータのサポート](#diffA)
     
 
-### ウェブアクセラレータのサポート(#diffA)
+### ウェブアクセラレータのサポート {: #diffA }
 
 ウェブアクセラレータ向けのリソース/データソースが追加されました。
 
 利用例:
 
-```hcl
+```tf
 data sakuracloud_webaccel "site" {
   name = "your-site-name"
   # or

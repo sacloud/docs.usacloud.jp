@@ -19,119 +19,65 @@
       
     [https://github.com/sacloud/terraform-provider-sakuracloud/](https://github.com/sacloud/terraform-provider-sakuracloud/)
 
-## 目次
+## 利用例
 
-#### アップグレードガイド:
+```tf
+# Configure the SakuraCloud Provider
+terraform {
+  required_providers {
+    sakuracloud = {
+      source = "sacloud/sakuracloud"
 
-- [v2.0での変更点](guides/upgrade_to_v2.0.0)
-- [v2.1での変更点](guides/upgrade_to_v2.1.0)
-- [v2.2での変更点](guides/upgrade_to_v2.2.0)
-- [v2.3での変更点](guides/upgrade_to_v2.3.0)
-- [v2.4での変更点](guides/upgrade_to_v2.4.0)
-- [v2.5での変更点](guides/upgrade_to_v2.5.0)
-- [v2.6での変更点](guides/upgrade_to_v2.6.0)
-- [v2.7での変更点](guides/upgrade_to_v2.7.0)
-- [v2.8での変更点](guides/upgrade_to_v2.8.0)
-- [v2.9での変更点](guides/upgrade_to_v2.9.0)
-- [v2.10での変更点](guides/upgrade_to_v2.10.0)
+      # We recommend pinning to the specific version of the SakuraCloud Provider you're using
+      # since new versions are released frequently
+      version = "2.10.0"
+      #version = "~> 2"
+    }
+  }
+}
+provider "sakuracloud" {
+  # More information on the authentication methods supported by
+  # the SakuraCloud Provider can be found here:
+  # https://docs.usacloud.jp/terraform/provider/
 
-#### その他ガイド
+  # profile = "..."
+}
 
-- [オブジェクトストレージの扱いについて](guides/object_storage)
+variable password {}
 
-#### 設定リファレンス:
-- [プロバイダ設定](provider/)
-- プロバイダデータソース
-    - [ゾーン](d/zone)
-- コンピュート
-    - データソース
-        - [専有ホスト](d/private_host)
-        - [サーバ](d/server)
-        - [VNC接続情報](d/server_vnc_info)
-    - リソース
-        - [専有ホスト](r/private_host)
-        - [サーバ](r/server)
-- ストレージ
-    - データソース
-        - [アーカイブ](d/archive)
-        - [CD-ROM](d/cdrom)
-        - [ディスク](d/disk)
-    - リソース
-        - [アーカイブ](r/archive)
-        - [アーカイブ共有](r/archive_share)
-        - [CD-ROM](r/cdrom)
-        - [ディスク](r/disk)
-- ネットワーク
-    - データソース
-        - [ブリッジ](d/bridge)
-        - [スイッチ+ルータ](d/internet)
-        - [ローカルルータ](d/local_router)
-        - [パケットフィルタ](d/packet_filter)
-        - [サブネット](d/subnet)
-        - [スイッチ](d/switch)
-    - リソース
-        - [ブリッジ](r/bridge)
-        - [スイッチ+ルータ](r/internet)
-        - [IPv4逆引き](r/ipv4_ptr)
-        - [ローカルルータ](r/local_router)
-        - [パケットフィルタ](r/packet_filter)
-        - [パケットフィルタ(ルール)](r/packet_filter_rules)
-        - [サブネット](r/subnet)
-        - [スイッチ](r/switch)
-- アプライアンス
-    - データソース
-        - [データベース](d/database)
-        - [ロードバランサ](d/load_balancer)
-        - [NFS](d/nfs)
-        - [VPCルータ](d/vpc_router)
-    - リソース
-        - [自動バックアップ](r/auto_backup)
-        - [データベース](r/database)
-        - [データベース(リードレプリカ)](r/database_read_replica)
-        - [ロードバランサ](r/load_balancer)
-        - [NFS](r/nfs)
-        - [VPCルータ](r/vpc_router)
-- グローバル
-    - データソース
-        - [DNS](d/dns)
-        - [GSLB](d/gslb)
-        - [エンハンスドロードバランサ](d/proxylb)
-        - [シンプル監視](d/simple_monitor)
-    - リソース
-        - [DNS](r/dns)
-        - [DNSレコード](r/dns_record)
-        - [GSLB](r/gslb)
-        - [エンハンスドロードバランサ](r/proxylb)
-        - [エンハンスドロードバランサ(ACME設定)](r/proxylb_acme)
-        - [シンプル監視](r/simple_monitor)
-- セキュアモバイル
-    - リソース
-        - [モバイルゲートウェイ ](r/mobile_gateway)
-        - [SIM](r/sim)
-- SMS
-    - データソース
-        - [2要素認証SMS](d/esme)
-    - リソース
-        - [2要素認証SMS](r/esme)
-- Lab
-    - データソース
-        - [コンテナレジストリ](d/container_registry)
-        - [エンハンスドデータベース(TiDB)](d/enhanced_db)
-    - リソース
-        - [コンテナレジストリ](r/container_registry)
-        - [エンハンスドデータベース(TiDB)](r/enhanced_db)
-- ウェブアクセラレータ
-    - データソース
-        - [サイト情報](d/webaccel)
-    - リソース
-        - [証明書](r/webaccel_certificate)
-- その他
-    - データソース
-        - [アイコン](d/icon)
-        - [スタートアップスクリプト](d/note)
-        - [SSH公開鍵](d/ssh_key)
-    - リソース
-        - [アイコン](r/icon)
-        - [スタートアップスクリプト](r/note)
-        - [SSH公開鍵](r/ssh_key)
-        - [SSH公開鍵生成](r/ssh_key_gen)
+data "sakuracloud_archive" "ubuntu" {
+  os_type = "ubuntu2004"
+}
+
+resource "sakuracloud_disk" "example" {
+  name              = "example"
+  source_archive_id = data.sakuracloud_archive.ubuntu.id
+
+  # If you want to prevent re-creation of the disk
+  # when archive id is changed, please uncomment this.
+  # lifecycle {
+  #   ignore_changes = [
+  #     source_archive_id,
+  #   ]
+  # }
+}
+
+resource "sakuracloud_server" "example" {
+  name        = "example"
+  disks       = [sakuracloud_disk.example.id]
+  core        = 1
+  memory      = 2
+  description = "description"
+  tags        = ["app=web", "stage=staging"]
+
+  network_interface {
+    upstream = "shared"
+  }
+
+  disk_edit_parameter {
+    hostname        = "example"
+    password        = var.password
+  }
+}
+```
+

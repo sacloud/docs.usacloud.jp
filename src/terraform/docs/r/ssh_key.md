@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_ssh_key" "foobar" {
   name       = "foobar"
   public_key = file("~/.ssh/id_rsa.pub")
@@ -11,7 +11,7 @@ resource "sakuracloud_ssh_key" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/ssh_key" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/ssh_key"></iframe>
 

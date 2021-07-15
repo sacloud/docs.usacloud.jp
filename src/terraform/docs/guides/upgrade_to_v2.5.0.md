@@ -6,13 +6,13 @@
 - [アーカイブデータソースでのUbuntu 20.04対応](#diffB)
     
 
-### 2要素認証SMS(ESME)の追加(#diffA)
+### 2要素認証SMS(ESME)の追加 {: #diffA }
 
 2要素認証SMS(ESME)リソース/データソースが追加されました。
 
 リソース利用例:
 
-```hcl
+```tf
 resource "sakuracloud_esme" "foobar" {
   name        = "foobar"
   description = "description"
@@ -22,7 +22,7 @@ resource "sakuracloud_esme" "foobar" {
 
 データソース利用例:
 
-```hcl
+```tf
 data "sakuracloud_esme" "foobar" {
   filter {
     names = ["foobar"]
@@ -30,11 +30,11 @@ data "sakuracloud_esme" "foobar" {
 }
 ```
 
-### アーカイブデータソースでのUbuntu 20.04対応(#diffB)
+### アーカイブデータソースでのUbuntu 20.04対応 {: #diffB }
 
 アーカイブデータソース(`sakuracloud_archive`)の`os_type`パラメータでUbuntu 20.04を指定可能になりました。
 
-```hcl
+```tf
 data "sakuracloud_archive" "foobar" {
   os_type = "ubuntu2004"
 }

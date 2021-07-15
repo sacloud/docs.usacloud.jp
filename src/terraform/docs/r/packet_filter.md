@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_packet_filter" "foobar" {
   name        = "foobar"
   description = "description"
@@ -60,7 +60,7 @@ resource "sakuracloud_packet_filter" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/packet_filter" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/packet_filter"></iframe>
 

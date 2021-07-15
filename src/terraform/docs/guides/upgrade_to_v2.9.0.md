@@ -6,17 +6,17 @@
 - [VPCルータでのWireGuardサーバ機能](#diff2)
 - [エンハンスドロードバランサでのルールベールバランシング機能の拡張](#diff3)
 
-### ロードバランサのVIP上限数が20へ(#diff1)
+### ロードバランサのVIP上限数が20へ {: #diff1 }
 
 ロードバランサでのVIP上限数が20に拡張されました。
 
-### VPCルータでのWireGuardサーバ機能(#diff2)
+### VPCルータでのWireGuardサーバ機能 {: #diff2 }
 
 VPCルータでWireGuardサーバ機能が利用可能になりました。
 
 利用例:
 
-```hcl
+```tf
 resource sakuracloud_vpc_router "example" {
   # ...
 
@@ -31,13 +31,13 @@ resource sakuracloud_vpc_router "example" {
 }
 ```
 
-### エンハンスドロードバランサでのルールベールバランシング機能の拡張(#diff3)
+### エンハンスドロードバランサでのルールベールバランシング機能の拡張 {: #diff3 }
 
 エンハンスドロードバランサでのルールベールバランシングでリダイレクト/固定応答に対応しました。
 
 利用例:
 
-```hcl
+```tf
   # リダイレクト
   rule {
     action               = "redirect"

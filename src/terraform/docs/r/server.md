@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_server" "foobar" {
   name        = "foobar"
   disks       = [sakuracloud_disk.foobar.id]
@@ -48,7 +48,7 @@ resource "sakuracloud_disk" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/server" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/server"></iframe>
 
