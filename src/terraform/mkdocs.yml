@@ -2,6 +2,8 @@ site_name: Terraform for さくらのクラウド(v2)
 site_url: https://docs.usacloud.jp/terraform
 site_description: Terrform for さくらのクラウド(v2)
 site_author: '@yamamoto-febc'
+repo_url: https://github.com/sacloud/terraform-provider-sakuracloud
+repo_name: terraform-provider-sakuracloud
 copyright: Copyright (C) 2016-2021 terraform-provider-sakuracloud authors
 theme:
   name: material

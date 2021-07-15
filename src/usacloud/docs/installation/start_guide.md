@@ -2,12 +2,6 @@
 
 ---
 
-### usacloudとは {: #about }
-
-`usacloud`とは、さくらのクラウド用のCLIクライアントです。  
-
----
-
 ### インストール {: #install }
 
 #### macOS/Linux
