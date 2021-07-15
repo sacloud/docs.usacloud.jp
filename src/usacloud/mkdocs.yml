@@ -2,21 +2,25 @@ site_name: Usacloudドキュメント
 site_url: https://sacloud.github.io/usacloud/
 site_description: Usacloud日本語ドキュメント
 site_author: '@sacloud-authors'
-repo_url: https://docs.usacloud.jp/usacloud
+repo_url: https://github.com/sacloud/usacloud
 repo_name: usacloud
-copyright: Copyright (C) 2017-2020 The Usacloud Authors.
-google_analytics: ['UA-63739336-5','auto']
+copyright: Copyright (C) 2017-2021 The Usacloud Authors.
 theme:
-  name: readthedocs
-  navigation_depth: 4
-  collapse_navigation: true
-  titles_only: false
+    name: material
+    language: ja
+    features:
+        - navigation.tabs
+extra:
+    analytics:
+        provider: google
+        property: UA-63739336-5
 extra_css:
   - css/extra.css
 markdown_extensions:
-  - admonition
-  - attr_list
-  - codehilite
+    - admonition
+    - attr_list
+    - pymdownx.highlight
+    - pymdownx.superfences
 nav:
   - ホーム: index.md
   - 利用方法/ガイド:

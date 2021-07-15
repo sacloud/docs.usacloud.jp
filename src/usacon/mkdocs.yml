@@ -4,18 +4,22 @@ site_description: Usacon日本語ドキュメント
 site_author: '@sacloud-authors'
 repo_url: https://github.com/sacloud/usacon
 repo_name: usacon
-copyright: Copyright (C) 2017-2020 The Usacon Authors.
-google_analytics: ['UA-63739336-5','auto']
+copyright: Copyright (C) 2017-2021 The Usacon Authors.
 theme:
-  name: readthedocs
-  navigation_depth: 4
-  collapse_navigation: true
-  titles_only: false
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+extra:
+  analytics:
+    provider: google
+    property: UA-63739336-5
 extra_css:
   - css/extra.css
 markdown_extensions:
   - admonition
   - attr_list
-  - codehilite
+  - pymdownx.highlight
+  - pymdownx.superfences
 nav:
   - Usaconドキュメント: index.md
