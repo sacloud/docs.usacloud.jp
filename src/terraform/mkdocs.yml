@@ -23,17 +23,17 @@ nav:
   - ホーム: index.md
   - ガイド:
     - アップグレードガイド:
-      - v2.0での変更点: guides/upgrade_to_v2.0.0.md
-      - v2.1での変更点: guides/upgrade_to_v2.1.0.md
-      - v2.2での変更点: guides/upgrade_to_v2.2.0.md
-      - v2.3での変更点: guides/upgrade_to_v2.3.0.md
-      - v2.4での変更点: guides/upgrade_to_v2.4.0.md
-      - v2.5での変更点: guides/upgrade_to_v2.5.0.md
-      - v2.6での変更点: guides/upgrade_to_v2.6.0.md
-      - v2.7での変更点: guides/upgrade_to_v2.7.0.md
-      - v2.8での変更点: guides/upgrade_to_v2.8.0.md
-      - v2.9での変更点: guides/upgrade_to_v2.9.0.md
       - v2.10での変更点: guides/upgrade_to_v2.10.0.md
+      - v2.9での変更点: guides/upgrade_to_v2.9.0.md
+      - v2.8での変更点: guides/upgrade_to_v2.8.0.md
+      - v2.7での変更点: guides/upgrade_to_v2.7.0.md
+      - v2.6での変更点: guides/upgrade_to_v2.6.0.md
+      - v2.5での変更点: guides/upgrade_to_v2.5.0.md
+      - v2.4での変更点: guides/upgrade_to_v2.4.0.md
+      - v2.3での変更点: guides/upgrade_to_v2.3.0.md
+      - v2.2での変更点: guides/upgrade_to_v2.2.0.md
+      - v2.1での変更点: guides/upgrade_to_v2.1.0.md
+      - v2.0での変更点: guides/upgrade_to_v2.0.0.md
     - その他ガイド:
         - オブジェクトストレージ: guides/object_storage.md
   - 設定リファレンス:
