@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_icon" "foobar" {
   name = "foobar"
   tags = ["tag1", "tag2"]
@@ -13,7 +13,7 @@ resource "sakuracloud_icon" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/icon" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/icon"></iframe>
 

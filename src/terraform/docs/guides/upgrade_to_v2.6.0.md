@@ -11,7 +11,7 @@
 
 利用例:
 
-```hcl
+```tf
 data sakuracloud_webaccel "site" {
   name = "your-site-name"
   # or

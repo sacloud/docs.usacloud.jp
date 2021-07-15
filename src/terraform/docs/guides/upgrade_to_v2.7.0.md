@@ -12,7 +12,7 @@ VPCルータでバージョン指定が可能になりました。
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_vpc_router" "standard" {
   name      = "standard"
   
@@ -26,7 +26,7 @@ resource "sakuracloud_vpc_router" "standard" {
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_database" "foobar" {
   # 中略...
   

@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource sakuracloud_proxylb_acme "foobar" {
   proxylb_id        = sakuracloud_proxylb.foobar.id
   accept_tos        = true
@@ -24,7 +24,7 @@ data "sakuracloud_proxylb" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/proxylb_acme" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/proxylb_acme"></iframe>
 

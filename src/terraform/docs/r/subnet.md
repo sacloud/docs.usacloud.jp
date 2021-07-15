@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource sakuracloud_internet "foobar" {
   name = "foobar"
 }

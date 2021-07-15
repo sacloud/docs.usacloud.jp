@@ -4,7 +4,7 @@
 
 ## Example
 
-```hcl
+```tf
 # Configure the SakuraCloud Provider
 terraform {
   required_providers {
@@ -48,7 +48,7 @@ tfファイル上の`sakuracloud`プロバイダーブロック内にインラ�
 
 使用例:
 
-```hcl
+```tf
 provider "sakuracloud" {
   token  = "my-access-token"
   secret = "my-access-secret"
@@ -60,7 +60,7 @@ provider "sakuracloud" {
 
 環境変数`SAKURACLOUD_ACCESS_TOKEN`と`SAKURACLOUD_ACCESS_TOKEN_SECRET`を指定することでAPIキーを指定可能です。
 
-```hcl
+```tf
 provider "sakuracloud" {}
 ```
 

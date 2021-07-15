@@ -4,7 +4,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 # カレントゾーンの情報を参照
 data "sakuracloud_zone" "current" {}
 
@@ -16,7 +16,7 @@ data "sakuracloud_zone" "is1a" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#data/zone" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#data/zone"></iframe>
 

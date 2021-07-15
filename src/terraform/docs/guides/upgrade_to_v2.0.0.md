@@ -88,7 +88,7 @@ v2では`filter`配下に記載する形へ変更されました。
 
 #### v1でのデータソース:
 
-```hcl
+```tf
 # v1でのデータソース
 data "sakuracloud_archive" "foobar" {
   name_selectors = ["Ubuntu", "Server", "18"]
@@ -97,7 +97,7 @@ data "sakuracloud_archive" "foobar" {
 
 #### v2でのデータソース:
 
-```hcl
+```tf
 # v1でのデータソース
 data "sakuracloud_archive" "foobar" {
   filter {
@@ -109,7 +109,7 @@ data "sakuracloud_archive" "foobar" {
 また、v2ではIDを検索条件として指定可能になりました。
 
 
-```hcl
+```tf
 # v1でのデータソース
 data "sakuracloud_archive" "foobar" {
   filter {
@@ -638,7 +638,7 @@ v2ではルール全体を表す`sakuracloud_packet_filter_rules`に変更され
 
 ##### v2でのnetwork_interfaceの設定例:
 
-```hcl
+```tf
 resource "sakuracloud_server" "example" {
   name        = "foobar"
   disks       = [sakuracloud_disk.foobar.id]

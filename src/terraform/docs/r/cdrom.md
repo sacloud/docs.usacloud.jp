@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_cdrom" "foobar" {
   name           = "foobar"
   size           = 5
@@ -14,7 +14,7 @@ resource "sakuracloud_cdrom" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/cdrom" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/cdrom"></iframe>
 

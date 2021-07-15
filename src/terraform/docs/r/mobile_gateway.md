@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_mobile_gateway" "foobar" {
   name                = "foobar"
   internet_connection = true
@@ -49,7 +49,7 @@ resource "sakuracloud_switch" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/mobile_gateway" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/mobile_gateway"></iframe>
 

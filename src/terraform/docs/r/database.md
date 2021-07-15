@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 variable username {}
 variable password {}
 variable replica_password {}
@@ -46,7 +46,7 @@ resource "sakuracloud_switch" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/database" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/database"></iframe>
 

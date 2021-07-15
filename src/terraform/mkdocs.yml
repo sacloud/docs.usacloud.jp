@@ -2,17 +2,26 @@ site_name: Terraform for さくらのクラウド(v2)
 site_url: https://docs.usacloud.jp/terraform
 site_description: Terrform for さくらのクラウド(v2)
 site_author: '@yamamoto-febc'
-copyright: Copyright (C) 2016-2020 terraform-provider-sakuracloud authors
-google_analytics: ['UA-63739336-5','auto']
-theme: readthedocs
+copyright: Copyright (C) 2016-2021 terraform-provider-sakuracloud authors
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+extra:
+  analytics:
+    provider: google
+    property: UA-63739336-5
 extra_css:
   - css/extra.css
 markdown_extensions:
   - admonition
   - attr_list
-pages:
+  - pymdownx.highlight
+  - pymdownx.superfences
+nav:
   - ホーム: index.md
-  - ドキュメント:
+  - ガイド:
     - アップグレードガイド:
       - v2.0での変更点: guides/upgrade_to_v2.0.0.md
       - v2.1での変更点: guides/upgrade_to_v2.1.0.md

@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_internet" "foobar" {
   name = "foobar"
 
@@ -17,7 +17,7 @@ resource "sakuracloud_internet" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/internet" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/internet"></iframe>
 

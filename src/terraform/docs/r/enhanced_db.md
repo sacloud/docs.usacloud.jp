@@ -4,7 +4,7 @@ Manages a SakuraCloud sakuracloud_enhanced_db.
 
 ## Example Usage
 
-```hcl
+```tf
 resource "sakuracloud_enhanced_db" "foobar" {
   name            = "example"
   database_name   = "example"
@@ -17,7 +17,7 @@ resource "sakuracloud_enhanced_db" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#resource/enhanced_db" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#resource/enhanced_db"></iframe>
 

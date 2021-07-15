@@ -13,7 +13,7 @@ Labプロダクトのエンハンスドデータベース(TiDB)がサポート�
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_enhanced_db" "foobar" {
   name            = "example"
 
@@ -37,7 +37,7 @@ Note: Labプロダクトについては[https://manual.sakura.ad.jp/cloud/lab/ab
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_proxylb" "foobar" {
   # 中略
 

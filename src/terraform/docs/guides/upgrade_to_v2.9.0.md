@@ -16,7 +16,7 @@ VPCルータでWireGuardサーバ機能が利用可能になりました。
 
 利用例:
 
-```hcl
+```tf
 resource sakuracloud_vpc_router "example" {
   # ...
 
@@ -37,7 +37,7 @@ resource sakuracloud_vpc_router "example" {
 
 利用例:
 
-```hcl
+```tf
   # リダイレクト
   rule {
     action               = "redirect"

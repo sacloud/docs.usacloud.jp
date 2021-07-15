@@ -4,7 +4,7 @@ NFSの情報を参照するためのデータソース
 
 ## Example Usage
 
-```hcl
+```tf
 data "sakuracloud_nfs" "foobar" {
   filter {
     names = ["foobar"]
@@ -14,7 +14,7 @@ data "sakuracloud_nfs" "foobar" {
 
 <div class="editor">
 
-<h2>Code Editor</h2>
+<h2><a href="https://zouen-alpha.usacloud.jp/#data/nfs" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
 
 <iframe src="https://zouen-alpha.usacloud.jp/#data/nfs"></iframe>
 

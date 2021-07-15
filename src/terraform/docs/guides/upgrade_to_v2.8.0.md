@@ -22,7 +22,7 @@ Terraform v0.12以降をご利用ください。
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_server" "example" {
   name        = "example"
 
@@ -47,7 +47,7 @@ tfファイル上の変更は不要です。
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_simple_monitor" "foobar" {
   target = "www.example.com"
 
@@ -72,7 +72,7 @@ resource "sakuracloud_simple_monitor" "foobar" {
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_simple_monitor" "foobar" {
   target = "www.example.com"
 
@@ -97,7 +97,7 @@ resource "sakuracloud_simple_monitor" "foobar" {
 
 利用例:
 
-```hcl
+```tf
 resource "sakuracloud_proxylb" "foobar" {
   # 中略
   gzip = true
@@ -110,7 +110,7 @@ resource "sakuracloud_proxylb" "foobar" {
 
 利用例:
 
-```hcl
+```tf
 resource sakuracloud_proxylb_acme "foobar" {
   proxylb_id        = sakuracloud_proxylb.foobar.id
   accept_tos        = true

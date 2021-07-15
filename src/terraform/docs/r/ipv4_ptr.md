@@ -2,7 +2,7 @@
 
 ## Example Usage
 
-```hcl
+```tf
 resource sakuracloud_server "server" {
   name = "foobar"
   network_interface {
