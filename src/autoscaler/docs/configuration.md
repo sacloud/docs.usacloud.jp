@@ -425,6 +425,13 @@ endpoint: <string> #gRPCのエンドポイントアドレス(例: unix:/var/run/
 ```yaml
 cooldown: <number | default = 600> # 同一ジョブの連続実行を抑制するためのクールダウン期間、秒単位で指定
 
+# ビルトインハンドラの設定
+handlers_config:
+  disabled: <bool> # すべてのビルトインハンドラの無効化(handlersでの指定より優先される)
+  handlers:        # ビルトインハンドラごとの設定、ハンドラ名をキーにもつmap
+    <string>:          # ビルトインハンドラ名
+      disabled: <bool> # このハンドラを無効化するか
+
 # CoreのgRPCエンドポイントのTLS関連設定
 server_tls_config:
   cert_file: <string> # 証明書のファイルパス
