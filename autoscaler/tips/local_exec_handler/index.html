@@ -1,0 +1,1362 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="sacloud/autoscaler">
+      
+      
+      
+        <meta name="author" content="@yamamoto-febc">
+      
+      
+        <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/tips/local_exec_handler/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+    
+    
+      
+        <title>local-execハンドラ - sacloud/autoscaler</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+      
+
+  
+
+
+  
+
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63739336-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#local-exec" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="sacloud/autoscaler" class="md-header__button md-logo" aria-label="sacloud/autoscaler" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sacloud/autoscaler
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              local-execハンドラ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/sacloud/autoscaler/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sacloud/autoscaler
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      ホーム
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../getting_started/" class="md-tabs__link">
+      Getting Started
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cli/" class="md-tabs__link">
+        リファレンス
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../examples/horizontal-scale-server-and-elb/" class="md-tabs__link">
+        Examples
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../terraform/" class="md-tabs__link md-tabs__link--active">
+        Tips
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="sacloud/autoscaler" class="md-nav__button md-logo" aria-label="sacloud/autoscaler" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    sacloud/autoscaler
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/sacloud/autoscaler/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sacloud/autoscaler
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        ホーム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        リファレンス
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="リファレンス" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          リファレンス
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Inputs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Inputs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Inputs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/" class="md-nav__link">
+        概要
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/config/" class="md-nav__link">
+        共通設定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_3" type="checkbox" id="__nav_3_2_3" >
+      
+      <label class="md-nav__link" for="__nav_3_2_3">
+        サポートされているInputs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="サポートされているInputs" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          サポートされているInputs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/alertmanager/" class="md-nav__link">
+        AlertManager
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/webhook/" class="md-nav__link">
+        Webhook
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/zabbix/" class="md-nav__link">
+        Zabbix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/direct/" class="md-nav__link">
+        Direct
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/" class="md-nav__link">
+        Core Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exporter/" class="md-nav__link">
+        Exporter
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Coreの設定例
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Coreの設定例" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Coreの設定例
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_1" type="checkbox" id="__nav_4_1_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1_1">
+        水平スケール
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="水平スケール" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          水平スケール
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/horizontal-scale-server-and-elb/" class="md-nav__link">
+        ELB+サーバ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/horizontal-scale-server-and-lb/" class="md-nav__link">
+        LB+ロードバランサ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_2" type="checkbox" id="__nav_4_1_2" >
+      
+      <label class="md-nav__link" for="__nav_4_1_2">
+        垂直スケール
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="垂直スケール" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          垂直スケール
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/vertical-scale-server/" class="md-nav__link">
+        サーバ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/vertical-scale-server-and-elb/" class="md-nav__link">
+        ELB+サーバ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/vertical-scale-server-and-lb/" class="md-nav__link">
+        LB+サーバ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/vertical-scale-server-and-gslb/" class="md-nav__link">
+        GSLB+サーバ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/vertical-scale-router/" class="md-nav__link">
+        ルータ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/vertical-scale-elb/" class="md-nav__link">
+        エンハンスドロードバランサ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Tips
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tips" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        Terraformとの併用
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../named_plan/" class="md-nav__link">
+        名前付きプラン
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          local-execハンドラ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        local-execハンドラ
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-exec_1" class="md-nav__link">
+    local-execハンドラ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    利用方法
+  </a>
+  
+    <nav class="md-nav" aria-label="利用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-exec_2" class="md-nav__link">
+    local-execハンドラの起動
+  </a>
+  
+    <nav class="md-nav" aria-label="local-execハンドラの起動">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    実行可能ファイルの例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-exec_3" class="md-nav__link">
+    local-execハンドラの起動例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    カスタムハンドラを定義
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    仕様
+  </a>
+  
+    <nav class="md-nav" aria-label="仕様">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    実行可能ファイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-execcli" class="md-nav__link">
+    local-execハンドラCLI
+  </a>
+  
+    <nav class="md-nav" aria-label="local-execハンドラCLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-handler-type" class="md-nav__link">
+    --handler-typeパラメータについて
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    入出力
+  </a>
+  
+    <nav class="md-nav" aria-label="入出力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    入力
+  </a>
+  
+    <nav class="md-nav" aria-label="入力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    標準入力経由で渡されるパラメータの例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    出力
+  </a>
+  
+    <nav class="md-nav" aria-label="出力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    標準入力経由でパラメータを読み取る例:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-exec_1" class="md-nav__link">
+    local-execハンドラ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    利用方法
+  </a>
+  
+    <nav class="md-nav" aria-label="利用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-exec_2" class="md-nav__link">
+    local-execハンドラの起動
+  </a>
+  
+    <nav class="md-nav" aria-label="local-execハンドラの起動">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    実行可能ファイルの例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-exec_3" class="md-nav__link">
+    local-execハンドラの起動例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    カスタムハンドラを定義
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    仕様
+  </a>
+  
+    <nav class="md-nav" aria-label="仕様">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    実行可能ファイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-execcli" class="md-nav__link">
+    local-execハンドラCLI
+  </a>
+  
+    <nav class="md-nav" aria-label="local-execハンドラCLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-handler-type" class="md-nav__link">
+    --handler-typeパラメータについて
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    入出力
+  </a>
+  
+    <nav class="md-nav" aria-label="入出力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    入力
+  </a>
+  
+    <nav class="md-nav" aria-label="入力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    標準入力経由で渡されるパラメータの例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    出力
+  </a>
+  
+    <nav class="md-nav" aria-label="出力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    標準入力経由でパラメータを読み取る例:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/sacloud/autoscaler/edit/master/docs/tips/local_exec_handler.md" title="編集" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="local-exec">local-execハンドラの使用</h1>
+<h2 id="local-exec_1">local-execハンドラ</h2>
+<p>オートスケール時に任意のシェルスクリプトなどの実行可能ファイルでプロビジョニングを行うためのカスタムハンドラです。  </p>
+<p>通常、水平スケール時にはPackerなどを用いてソースアーカイブをあらかじめ作成しておく方法、
+またはスタートアップスクリプトを利用するといった方法でサーバのプロビジョニングを行います。<br />
+local-execハンドラはこれらの方法に加え、任意のスクリプトを用いてさまざまなリソースのプロビジョニングを行うための手段を提供します。  </p>
+<h2 id="_1">利用方法</h2>
+<h3 id="local-exec_2">local-execハンドラの起動</h3>
+<p>Coreを起動する前に、任意の実行可能ファイルを指定してlocal-execハンドラを起動しておく必要があります。  </p>
+<h4 id="_2">実行可能ファイルの例</h4>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># 標準入力経由で渡されるパラメータをそのまま標準出力に書き込む</span>
+cat
+</code></pre></div>
+<h4 id="local-exec_3">local-execハンドラの起動例</h4>
+<div class="highlight"><pre><span></span><code>$ autoscaler handlers local-exec --executable-path handler.sh --handler-type post-handle
+</code></pre></div>
+<h3 id="_3">カスタムハンドラを定義</h3>
+<p>Coreのコンフィギュレーションファイルでカスタムハンドラを定義しておく必要があります。  </p>
+<div class="highlight"><pre><span></span><code><span class="nt">handlers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;local-exec&quot;</span> <span class="c1"># 任意の名称</span>
+    <span class="nt">endpoint</span><span class="p">:</span> <span class="s">&quot;unix:autoscaler-handlers-local-exec.sock&quot;</span>
+</code></pre></div>
+<p>定義後は通常通りCoreを起動することでカスタムハンドラが利用可能になっています。</p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>カスタムハンドラを定義した場合、Coreの起動時にカスタムハンドラとの疎通確認が行われます。<br />
+このため、Coreを起動するより前にカスタムハンドラを起動しておく必要があります。</p>
+</div>
+<h2 id="_4">仕様</h2>
+<h3 id="_5">実行可能ファイル</h3>
+<p>local-execハンドラの子プロセスとして実行されます。<br />
+実行可能ファイルにはlocal-execハンドラの実行ユーザーが実行可能なように適切なパーミッションを設定しておく必要があります。</p>
+<p>例:
+<div class="highlight"><pre><span></span><code>$ chmod +x handler.sh
+</code></pre></div></p>
+<h3 id="local-execcli">local-execハンドラCLI</h3>
+<p>AutoScalerのCLIにビルトインされています。  </p>
+<div class="highlight"><pre><span></span><code>$ autoscaler handlers local-exec -h
+
+Handler <span class="k">for</span> executing a shell script
+
+Usage:
+  autoscaler handlers local-exec <span class="o">[</span>flags<span class="o">]</span>... <span class="o">{</span>path/to/your/executable<span class="o">}</span>
+
+Flags:
+      --addr string              the address <span class="k">for</span> the server to listen on <span class="o">(</span>default <span class="s2">&quot;unix:autoscaler-handlers-local-exec.sock&quot;</span><span class="o">)</span>
+      --config string            Filepath to Handlers additional configuration file
+      --executable-path string   Path to the executable
+      --handler-type string      Handler <span class="nb">type</span> name
+  -h, --help                     <span class="nb">help</span> <span class="k">for</span> local-exec
+
+Global Flags:
+      --log-format string   Format of logging to be output. options: <span class="o">[</span> logfmt <span class="p">|</span> json <span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;logfmt&quot;</span><span class="o">)</span>
+      --log-level string    Level of logging to be output. options: <span class="o">[</span> error <span class="p">|</span> warn <span class="p">|</span> info <span class="p">|</span> debug <span class="o">]</span> <span class="o">(</span>default <span class="s2">&quot;info&quot;</span><span class="o">)</span>
+</code></pre></div>
+<h4 id="-handler-type"><code>--handler-type</code>パラメータについて</h4>
+<p>どのタイミングで実行するのかを制御するためのものです。以下の値が指定可能です。</p>
+<ul>
+<li><code>pre-handle</code>: リソース操作前に実行される。パラメータとしてHandleRequestが渡される。</li>
+<li><code>handle</code>: リソース操作時に実行される。パラメータとしてHandleRequestが渡される。</li>
+<li><code>post-handle</code>: リソースの操作後に実行される。パラメータとしてPostHandleRequestが渡される。</li>
+</ul>
+<h3 id="_6">入出力</h3>
+<h4 id="_7">入力</h4>
+<p>実行時には標準入力経由で処理対象のリソースについてのパラメータが渡されます。  </p>
+<h5 id="_8">標準入力経由で渡されるパラメータの例</h5>
+<div class="highlight"><pre><span></span><code><span class="err">#</span> <span class="err">Pos</span><span class="kc">t</span><span class="err">Ha</span><span class="kc">n</span><span class="err">dleReques</span><span class="kc">t</span><span class="err">の例</span>
+<span class="p">{</span>
+  <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;example&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;resource_name&quot;</span><span class="p">:</span> <span class="s2">&quot;example&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;scaling_job_id&quot;</span><span class="p">:</span> <span class="s2">&quot;example&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+  <span class="nt">&quot;current&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="err">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>パラメータの書式はハンドラ向けのprotoファイルで定義されている<code>HandleRequest</code>、または<code>PostHandleRequest</code>をJSONに変換したものです。</p>
+<ul>
+<li>protoファイル: <a href="https://github.com/sacloud/autoscaler/blob/main/protos/handler.proto">https://github.com/sacloud/autoscaler/blob/main/protos/handler.proto</a></li>
+<li>HandleRequest/PostHandleRequestの定義(go): <a href="https://github.com/sacloud/autoscaler/blob/main/handler/handler.pb.go">https://github.com/sacloud/autoscaler/blob/main/handler/handler.pb.go</a></li>
+</ul>
+<h4 id="_9">出力</h4>
+<p>標準出力に書き込むとCoreとlocal-execハンドラのログに出力されます。<br />
+標準エラーへの書き込みは無視されます。  </p>
+<h5 id="_10">標準入力経由でパラメータを読み取る例:</h5>
+<p>以下の例はPostHandleのタイミングでTerraformのステートファイルを更新するものです。<br />
+入力されるJSONの<code>.result</code>フィールドが<code>1</code>(CREATED) or <code>2</code>(UPDATED) or <code>3</code>(DELETED)のいずれかであるかをjqコマンドを用いて判定します。  </p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># CREATED/UPDATED/DELETEDの場合はterraformのステートをリフレッシュする</span>
+<span class="nv">SHOULD_HANDLE</span><span class="o">=</span><span class="k">$(</span>jq <span class="s1">&#39;[.] | any(.result == 1 or .result == 2 or .result == 3)&#39;</span><span class="k">)</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$SHOULD_HANDLE</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;true&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nv">WORKING_DIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span> <span class="k">$(</span>dirname <span class="nv">$0</span><span class="k">)</span><span class="p">;</span> <span class="nb">pwd</span><span class="k">)</span>
+  terraform -chdir<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$WORKING_DIR</span><span class="s2">&quot;</span> apply -refresh-only -auto-approve <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="m">1</span>&gt; /dev/null
+  <span class="nb">exit</span> <span class="nv">$?</span>
+<span class="k">else</span>
+  <span class="nb">echo</span> <span class="s2">&quot;ignored&quot;</span>
+  <span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../named_plan/" class="md-footer__link md-footer__link--prev" aria-label="前: 名前付きプラン" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              名前付きプラン
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (C) 2021 saclodu/autoscaler authors
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+    
+  </body>
+</html>
