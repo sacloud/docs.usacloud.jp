@@ -1,0 +1,1496 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="sakuracloud_exporter">
+      
+      
+      
+        <meta name="author" content="@yamamoto-febc">
+      
+      
+        <link rel="canonical" href="https://docs.usacloud.jp/prometheus/metrics/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+    
+    
+      
+        <title>メトリクス - sakuracloud_exporter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+
+  
+
+
+  
+
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63739336-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#metrics" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="sakuracloud_exporter" class="md-header__button md-logo" aria-label="sakuracloud_exporter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sakuracloud_exporter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              メトリクス
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/sacloud/sakuracloud_exporter/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sakuracloud_exporter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      ホーム
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../install/" class="md-tabs__link">
+      インストール
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../flags/" class="md-tabs__link">
+      オプション
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      メトリクス
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="sakuracloud_exporter" class="md-nav__button md-logo" aria-label="sakuracloud_exporter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    sakuracloud_exporter
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/sacloud/sakuracloud_exporter/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sakuracloud_exporter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        ホーム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        インストール
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flags/" class="md-nav__link">
+        オプション
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          メトリクス
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        メトリクス
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-resource-types" class="md-nav__link">
+    Supported Resource Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autobackup" class="md-nav__link">
+    AutoBackup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coupon" class="md-nav__link">
+    Coupon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esme" class="md-nav__link">
+    ESME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switchrouter" class="md-nav__link">
+    Switch+Router
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadbalancer" class="md-nav__link">
+    LoadBalancer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localrouter" class="md-nav__link">
+    LocalRouter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobilegateway" class="md-nav__link">
+    MobileGateway
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfs" class="md-nav__link">
+    NFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxylb" class="md-nav__link">
+    ProxyLB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sim" class="md-nav__link">
+    SIM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpcrouter" class="md-nav__link">
+    VPCRouter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zone" class="md-nav__link">
+    Zone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exporter" class="md-nav__link">
+    Exporter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-resource-types" class="md-nav__link">
+    Supported Resource Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autobackup" class="md-nav__link">
+    AutoBackup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coupon" class="md-nav__link">
+    Coupon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esme" class="md-nav__link">
+    ESME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switchrouter" class="md-nav__link">
+    Switch+Router
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadbalancer" class="md-nav__link">
+    LoadBalancer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localrouter" class="md-nav__link">
+    LocalRouter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobilegateway" class="md-nav__link">
+    MobileGateway
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfs" class="md-nav__link">
+    NFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxylb" class="md-nav__link">
+    ProxyLB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sim" class="md-nav__link">
+    SIM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpcrouter" class="md-nav__link">
+    VPCRouter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zone" class="md-nav__link">
+    Zone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exporter" class="md-nav__link">
+    Exporter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/sacloud/sakuracloud_exporter/edit/master/docs/metrics.md" title="編集" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>メトリクス</h1>
+                
+                <h2 id="metrics">Metrics</h2>
+<h3 id="supported-resource-types">Supported Resource Types</h3>
+<p>The exporter returns the following metrics:</p>
+<table>
+<thead>
+<tr>
+<th>Resource Type</th>
+<th>Metric Name Prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#autobackup">AutoBackup</a></td>
+<td>sakuracloud_auto_backup_*</td>
+</tr>
+<tr>
+<td><a href="#coupon">Coupon</a></td>
+<td>sakuracloud_coupon_*</td>
+</tr>
+<tr>
+<td><a href="#database">Database</a></td>
+<td>sakuracloud_database_*</td>
+</tr>
+<tr>
+<td><a href="#esme">ESME</a></td>
+<td>sakuracloud_esme_*</td>
+</tr>
+<tr>
+<td><a href="#switchrouter">Switch+Router</a></td>
+<td>sakuracloud_internet_*</td>
+</tr>
+<tr>
+<td><a href="#loadbalancer">LoadBalancer</a></td>
+<td>sakuracloud_loadbalancer_*</td>
+</tr>
+<tr>
+<td><a href="#localrouter">LocalRouter</a></td>
+<td>sakuracloud_local_router_*</td>
+</tr>
+<tr>
+<td><a href="#mobilegateway">MobileGateway</a></td>
+<td>sakuracloud_mobile_gateway_*</td>
+</tr>
+<tr>
+<td><a href="#nfs">NFS</a></td>
+<td>sakuracloud_nfs_*</td>
+</tr>
+<tr>
+<td><a href="#proxylb">ProxyLB</a></td>
+<td>sakuracloud_proxylb_*</td>
+</tr>
+<tr>
+<td><a href="#server">Server</a></td>
+<td>sakuracloud_server_*</td>
+</tr>
+<tr>
+<td><a href="#sim">SIM</a></td>
+<td>sakuracloud_sim_*</td>
+</tr>
+<tr>
+<td><a href="#vpcrouter">VPCRouter</a></td>
+<td>sakuracloud_vpc_router_*</td>
+</tr>
+<tr>
+<td><a href="#zone">Zone</a></td>
+<td>sakuracloud_zone_*</td>
+</tr>
+<tr>
+<td><a href="#exporter">Exporter</a></td>
+<td>sakuracloud_exporter_*</td>
+</tr>
+</tbody>
+</table>
+<h3 id="autobackup">AutoBackup</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_auto_backup_info</td>
+<td>A metric with a constant '1' value labeled by auto_backup information</td>
+<td><code>id</code>, <code>name</code>, <code>disk_id</code>, <code>max_backup_num</code>, <code>weekdays</code>, <code>tags</code>, <code>descriptions</code></td>
+</tr>
+<tr>
+<td>sakuracloud_auto_backup_count</td>
+<td>A count of archives created by AutoBackup</td>
+<td><code>id</code>, <code>name</code>, <code>disk_id</code></td>
+</tr>
+<tr>
+<td>sakuracloud_auto_backup_last_time</td>
+<td>Last backup time in seconds since epoch (1970)</td>
+<td><code>id</code>, <code>name</code>, <code>disk_id</code></td>
+</tr>
+<tr>
+<td>sakuracloud_auto_backup_archive_info</td>
+<td>A metric with a constant '1' value labeled by backuped archive information</td>
+<td><code>id</code>, <code>name</code>, <code>disk_id</code>, <code>archive_id</code>, <code>archive_name</code>, <code>archive_tags</code>, <code>archive_description</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="coupon">Coupon</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_coupon_discount</td>
+<td>The balance of coupon</td>
+<td><code>id</code>, <code>member_id</code>, <code>contract_id</code></td>
+</tr>
+<tr>
+<td>sakuracloud_coupon_remaining_days</td>
+<td>The count of coupon's remaining days</td>
+<td><code>id</code>, <code>member_id</code>, <code>contract_id</code></td>
+</tr>
+<tr>
+<td>sakuracloud_coupon_exp_date</td>
+<td>Coupon expiration date in seconds since epoch (1970)</td>
+<td><code>id</code>, <code>member_id</code>, <code>contract_id</code></td>
+</tr>
+<tr>
+<td>sakuracloud_coupon_usable</td>
+<td>1 if coupon is usable</td>
+<td><code>id</code>, <code>member_id</code>, <code>contract_id</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="database">Database</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_database_info</td>
+<td>A metric with a constant '1' value labeled by database information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>plan</code>, <code>host</code>, <code>database_type</code>, <code>database_revision</code>, <code>database_version</code>, <code>web_ui</code>, <code>replication_enabled</code>, <code>replication_role</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_up</td>
+<td>If 1 the database is up and running, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_cpu_time</td>
+<td>Database's CPU time(unit:ms)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_memory_used</td>
+<td>Database's used memory size(unit:GB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_memory_total</td>
+<td>Database's total memory size(unit:GB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_nic_info</td>
+<td>A metric with a constant '1' value labeled by nic information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>upstream_type</code>, <code>upstream_id</code>, <code>upstream_name</code>, <code>ipaddress</code>, <code>nw_mask_len</code>, <code>gateway</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_nic_receive</td>
+<td>NIC's receive bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_nic_send</td>
+<td>NIC's send bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_disk_system_used</td>
+<td>Database's used system-disk size(unit:GB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_disk_system_total</td>
+<td>Database's total system-disk size(unit:GB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_disk_backup_used</td>
+<td>Database's used backup-disk size(unit:GB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_disk_backup_total</td>
+<td>Database's total backup-disk size(unit:GB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_binlog_used</td>
+<td>Database's used binlog size(unit:GB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_disk_read</td>
+<td>Disk's read bytes(unit: KBps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_disk_write</td>
+<td>Disk's write bytes(unit: KBps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_database_replication_delay</td>
+<td>Replication delay time(unit:second)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="esme">ESME</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_esme_info</td>
+<td>A metric with a constant '1' value labeled by ESME information</td>
+<td><code>id</code>, <code>name</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_esme_message_count</td>
+<td>A count of messages handled by ESME</td>
+<td><code>id</code>, <code>name</code>, <code>status</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="switchrouter">Switch+Router</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_internet_info</td>
+<td>A metric with a constant '1' value labeled by internet information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>switch_id</code>, <code>bandwidth</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_internet_receive</td>
+<td>Total receive bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>switch_id</code></td>
+</tr>
+<tr>
+<td>sakuracloud_internet_send</td>
+<td>Total send bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>switch_id</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="loadbalancer">LoadBalancer</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_loadbalancer_info</td>
+<td>A metric with a constant '1' value labeled by loadbalancer information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>plan</code>, <code>ha</code>, <code>vrid</code>, <code>ipaddress1</code>, <code>ipaddress2</code>, <code>gateway</code>, <code>nw_mask_len</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_loadbalancer_up</td>
+<td>If 1 the loadbalancer is up and running, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_loadbalancer_receive</td>
+<td>Loadbalancer's receive bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_loadbalancer_send</td>
+<td>Loadbalancer's receive bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_loadbalancer_vip_info</td>
+<td>A metric with a constant '1' value labeld by vip information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>vip_index</code>, <code>vip</code>, <code>port</code>, <code>interval</code>, <code>sorry_server</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_loadbalancer_vip_cps</td>
+<td>Connection count per second</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>vip_index</code>, <code>vip</code></td>
+</tr>
+<tr>
+<td>sakuracloud_loadbalancer_server_info</td>
+<td>A metric with a constant '1' value labeld by real-server information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>vip_index</code>, <code>vip</code>, <code>server_index</code>, <code>ipaddress</code> ,<code>monitor</code>, <code>path</code>, <code>response_code</code></td>
+</tr>
+<tr>
+<td>sakuracloud_loadbalancer_server_up</td>
+<td>If 1 the server is up and running, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>vip_index</code>, <code>vip</code>, <code>server_index</code>, <code>ipaddress</code></td>
+</tr>
+<tr>
+<td>sakuracloud_loadbalancer_server_connection</td>
+<td>Current connection count</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>vip_index</code>, <code>vip</code>, <code>server_index</code>, <code>ipaddress</code></td>
+</tr>
+<tr>
+<td>sakuracloud_loadbalancer_server_cps</td>
+<td>Connection count per second</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>vip_index</code>, <code>vip</code>, <code>server_index</code>, <code>ipaddress</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="localrouter">LocalRouter</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_local_router_info</td>
+<td>A metric with a constant '1' value labeled by localRouter information</td>
+<td><code>id</code>, <code>name</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_local_router_up</td>
+<td>If 1 the localRouter is up and running, 0 otherwise</td>
+<td><code>id</code>, <code>name</code></td>
+</tr>
+<tr>
+<td>sakuracloud_local_router_switch_info</td>
+<td>A metric with a constant '1' value labeled by localRouter connected switch information</td>
+<td><code>id</code>, <code>name</code>, <code>category</code>, <code>code</code>, <code>zone_id</code></td>
+</tr>
+<tr>
+<td>sakuracloud_local_router_network_info</td>
+<td>A metric with a constant '1' value labeled by network information of the localRouter</td>
+<td><code>id</code>, <code>name</code>, <code>vip</code>, <code>ipaddress1</code>, <code>ipaddress2</code>, <code>nw_mask_len</code>, <code>vrid</code></td>
+</tr>
+<tr>
+<td>sakuracloud_local_router_static_route_info</td>
+<td>A metric with a constant '1' value labeled by static route information</td>
+<td><code>id</code>, <code>name</code>, <code>route_index</code>, <code>prefix</code>, <code>next_hop</code></td>
+</tr>
+<tr>
+<td>sakuracloud_local_router_peer_info</td>
+<td>A metric with a constant '1' value labeled by peer information</td>
+<td><code>id</code>, <code>name</code>, <code>peer_index</code>, <code>peer_id</code>, <code>enabled</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_local_router_peer_up</td>
+<td>If 1 the Peer is available, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>peer_index</code>, <code>peer_id</code></td>
+</tr>
+<tr>
+<td>sakuracloud_local_router_receive_per_sec</td>
+<td>Receive bytes per seconds</td>
+<td><code>id</code>, <code>name</code></td>
+</tr>
+<tr>
+<td>sakuracloud_local_router_send_per_sec</td>
+<td>Send bytes per seconds</td>
+<td><code>id</code>, <code>name</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mobilegateway">MobileGateway</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_mobile_gateway_info</td>
+<td>A metric with a constant '1' value labeled by mobile_gateway information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>internet_connection</code>, <code>inter_device_communication</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_mobile_gateway_up</td>
+<td>If 1 the mobile_gateway is up and running, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_mobile_gateway_nic_receive</td>
+<td>MobileGateway's receive bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>nic_index</code>, <code>ipaddress</code>, <code>nw_mask_len</code></td>
+</tr>
+<tr>
+<td>sakuracloud_mobile_gateway_nic_send</td>
+<td>MobileGateway's send bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>nic_index</code>, <code>ipaddress</code>, <code>nw_mask_len</code></td>
+</tr>
+<tr>
+<td>sakuracloud_mobile_gateway_traffic_control_info</td>
+<td>A metric with a constant '1' value labeled by traffic-control information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code> , <code>traffic_quota_in_mb</code>, <code>bandwidth_limit_in_kbps</code>, <code>enable_email</code>, <code>enable_slack</code>, <code>slack_url</code>, <code>auto_traffic_shaping</code></td>
+</tr>
+<tr>
+<td>sakuracloud_mobile_gateway_traffic_uplink</td>
+<td>MobileGateway's uplink bytes(unit: KB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_mobile_gateway_traffic_downlink</td>
+<td>MobileGateway's downlink bytes(unit: KB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_mobile_gateway_traffic_shaping</td>
+<td>If 1 the traffic is shaped, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="nfs">NFS</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_nfs_info</td>
+<td>A metric with a constant '1' value labeled by nfs information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>plan</code>, <code>size</code>, <code>host</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_nfs_up</td>
+<td>If 1 the nfs is up and running, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_nfs_free_disk_size</td>
+<td>NFS's Free Disk Size(unit: GB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_nfs_nic_info</td>
+<td>A metric with a constant '1' value labeled by nic information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>upstream_id</code>, <code>upstream_name</code>, <code>ipaddress</code>, <code>nw_mask_len</code>, <code>gateway</code></td>
+</tr>
+<tr>
+<td>sakuracloud_nfs_receive</td>
+<td>NIC's receive bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_nfs_send</td>
+<td>NIC's send bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="server">Server</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_server_info</td>
+<td>A metric with a constant '1' value labeled by server information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>cpus</code>, <code>disks</code>, <code>nics</code>, <code>memories</code>, <code>host</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_up</td>
+<td>If 1 the server is up and running, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_cpus</td>
+<td>Number of server's vCPU cores</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_cpu_time</td>
+<td>Server's CPU time(unit: ms)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_memories</td>
+<td>Size of server's memories(unit: GB)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_disk_info</td>
+<td>A metric with a constant '1' value labeled by disk information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>disk_id</code>, <code>disk_name</code>, <code>index</code>, <code>plan</code>, <code>interface</code>, <code>size</code>, <code>tags</code>, <code>description</code>, <code>storage_id</code>, <code>storage_class</code>, <code>storage_generation</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_disk_read</td>
+<td>Disk's read bytes(unit: KBps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>disk_id</code>, <code>disk_name</code>, <code>index</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_disk_write</td>
+<td>Disk's write bytes(unit: KBps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>disk_id</code>, <code>disk_name</code>, <code>index</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_nic_info</td>
+<td>A metric with a constant '1' value labeled by nic information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>interface_id</code>, <code>index</code>, <code>upstream_type</code>, <code>upstream_id</code>, <code>upstream_name</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_nic_bandwidth</td>
+<td>NIC's Bandwidth(unit: Mbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>interface_id</code>, <code>index</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_nic_receive</td>
+<td>NIC's receive bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>interface_id</code>, <code>index</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_nic_send</td>
+<td>NIC's send bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>interface_id</code>, <code>index</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_maintenance_info</td>
+<td>A metric with a constant '1' value labeled by maintenance information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>info_url</code>, <code>info_title</code>, <code>description</code>, <code>start_date</code>, <code>end_date</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_maintenance_scheduled</td>
+<td>If 1 the server has scheduled maintenance info, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_maintenance_start</td>
+<td>Scheduled maintenance start time in seconds since epoch (1970)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_server_maintenance_end</td>
+<td>Scheduled maintenance end time in seconds since epoch (1970)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="proxylb">ProxyLB</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_proxylb_info</td>
+<td>A metric with a constant '1' value labeled by proxyLB information</td>
+<td><code>plan</code>, <code>vip</code>, <code>fqdn</code>, <code>proxy_networks</code>, <code>sorry_server_ipaddress</code>, <code>sorry_server_port</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_proxylb_up</td>
+<td>If 1 the ProxyLB is available, 0 otherwise</td>
+<td><code>id</code>, <code>name</code></td>
+</tr>
+<tr>
+<td>sakuracloud_proxylb_bind_port_info</td>
+<td>A metric with a constant '1' value labeled by BindPort information</td>
+<td><code>id</code>, <code>name</code>, <code>bind_port_index</code>, <code>proxy_mode</code>, <code>port</code></td>
+</tr>
+<tr>
+<td>sakuracloud_proxylb_server_info</td>
+<td>A metric with a constant '1' value labeled by real-server information</td>
+<td><code>id</code>, <code>name</code>, <code>server_index</code>, <code>ipaddress</code>, <code>port</code>, <code>enabled</code></td>
+</tr>
+<tr>
+<td>sakuracloud_proxylb_cert_info</td>
+<td>A metric with a constant '1' value labeled by certificate information</td>
+<td><code>id</code>, <code>name</code>, <code>cert_index</code>, <code>common_name</code>, <code>issuer_name</code></td>
+</tr>
+<tr>
+<td>sakuracloud_proxylb_cert_expire</td>
+<td>Certificate expiration date in seconds since epoch (1970)</td>
+<td><code>id</code>, <code>name</code>, <code>cert_index</code></td>
+</tr>
+<tr>
+<td>sakuracloud_proxylb_active_connections</td>
+<td>Active connection count</td>
+<td><code>id</code>, <code>name</code></td>
+</tr>
+<tr>
+<td>sakuracloud_proxylb_connection_per_sec</td>
+<td>Connection count per second</td>
+<td><code>id</code>, <code>name</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sim">SIM</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_sim_info</td>
+<td>A metric with a constant '1' value labeled by sim information</td>
+<td><code>id</code>, <code>name</code>, <code>imei_lock</code>, <code>registered_date</code>, <code>activated_date</code>, <code>deactivated_date</code>, <code>ipaddress</code>, <code>simgroup_id</code>, <code>carriers</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_sim_session_up</td>
+<td>If 1 the session is up and running, 0 otherwise</td>
+<td><code>id</code>, <code>name</code></td>
+</tr>
+<tr>
+<td>sakuracloud_sim_uplink</td>
+<td>Uplink traffic (unit: Kbps)</td>
+<td><code>id</code>, <code>name</code></td>
+</tr>
+<tr>
+<td>sakuracloud_sim_downlink</td>
+<td>Downlink traffic (unit: Kbps)</td>
+<td><code>id</code>, <code>name</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="vpcrouter">VPCRouter</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_vpc_router_info</td>
+<td>A metric with a constant '1' value labeled by vpc_router information</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>plan</code>, <code>ha</code>, <code>vrid</code>, <code>vip</code>, <code>ipaddress1</code>, <code>ipaddress2</code>, <code>nw_mask_len</code>, <code>internet_connection</code>, <code>tags</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>sakuracloud_vpc_router_up</td>
+<td>If 1 the vpc_router is up and running, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_vpc_router_session</td>
+<td>Current session count</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_vpc_router_dhcp_lease</td>
+<td>Current DHCPServer lease count</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_vpc_router_l2tp_session</td>
+<td>Current L2TP-IPsec session count</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_vpc_router_pptp_session</td>
+<td>Current PPTP session count</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code></td>
+</tr>
+<tr>
+<td>sakuracloud_vpc_router_s2s_peer_up</td>
+<td>If 1 the vpc_router's site to site peer is up, 0 otherwise</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>peer_address</code>, <code>peer_index</code></td>
+</tr>
+<tr>
+<td>sakuracloud_vpc_router_session_analysis</td>
+<td>Session statistics for VPC routers</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>type</code>, <code>label</code></td>
+</tr>
+<tr>
+<td>sakuracloud_vpc_router_receive</td>
+<td>VPCRouter's receive bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>nic_index</code>, <code>vip</code>, <code>ipaddress1</code>, <code>ipaddress2</code>, <code>nw_mask_len</code></td>
+</tr>
+<tr>
+<td>sakuracloud_vpc_router_send</td>
+<td>VPCRouter's receive bytes(unit: Kbps)</td>
+<td><code>id</code>, <code>name</code>, <code>zone</code>, <code>nic_index</code>, <code>vip</code>, <code>ipaddress1</code>, <code>ipaddress2</code>, <code>nw_mask_len</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="zone">Zone</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_zone_info</td>
+<td>A metric with a constant '1' value labeled by zone information</td>
+<td><code>id</code>, <code>name</code>, <code>description</code>, <code>region_id</code>, <code>region_name</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="exporter">Exporter</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sakuracloud_exporter_start_time</td>
+<td>Unix timestamp of the start time</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sakuracloud_exporter_build_info</td>
+<td>A metric with a constant '1' value labeled by exporter's build information</td>
+<td><code>version</code>, <code>revision</code>, <code>goversion</code></td>
+</tr>
+<tr>
+<td>sakuracloud_exporter_errors_total</td>
+<td>The total number of errors per collector</td>
+<td><code>collector</code></td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../flags/" class="md-footer__link md-footer__link--prev" aria-label="前: オプション" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              オプション
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (C) 2021 saclodu/sakuracloud_exporter authors
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
+      
+    
+  </body>
+</html>
