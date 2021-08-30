@@ -44,9 +44,9 @@ Vagrantのさくらのクラウド向けProviderプラグイン
 
 さくらのクラウド上のリソースのオートスケールを実現するためのツール
 
-#### [Prometheus](https://github.com/sacloud/sakuracloud_exporter)
+#### [Prometheus](./prometheus/)
 
-Prometheusへさくらのクラウド上のリソースの情報を扱うためのExporter
+Prometheusでさくらのクラウド上のリソースの情報を扱うためのExporter
 
 #### [Tips](https://github.com/sacloud/tips)
 

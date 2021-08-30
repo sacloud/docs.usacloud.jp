@@ -44,6 +44,11 @@ jobs:
         with:
           working-directory: './src/autoscaler'
 
+      - name: Build a document with mkdocs - src/prometheus
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/prometheus'
+
       - run: |
           mkdir ./public; cp -r ./src/top/site/* public/
           mkdir ./public/terraform; cp -r ./src/terraform/site/* ./public/terraform
@@ -51,6 +56,7 @@ jobs:
           mkdir ./public/usacloud; cp -r ./src/usacloud/site/* ./public/usacloud
           mkdir ./public/usacon; cp -r ./src/usacon/site/* ./public/usacon
           mkdir ./public/autoscaler; cp -r ./src/autoscaler/site/* ./public/autoscaler
+          mkdir ./public/prometheus; cp -r ./src/prometheus/site/* ./public/prometheus
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

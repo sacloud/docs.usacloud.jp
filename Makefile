@@ -6,6 +6,7 @@ USACON_DIR := src/usacon
 TERRAFORM_V1_DIR := src/terraform-v1
 TERRAFORM_V2_DIR := src/terraform
 AUTOSCALER_DIR := src/autoscaler
+PROMETHEUS_DIR := src/prometheus
 
 .PHONY: build lint
 
@@ -28,6 +29,8 @@ lint: build-textlint
 	@(cd $(USACON_DIR); make lint)
 	@echo "running textlint in $(AUTOSCALER_DIR)..."
 	@(cd $(AUTOSCALER_DIR); make lint)
+	@echo "running textlint in $(PROMETHEUS_DIR)..."
+	@(cd $(PROMETHEUS_DIR); make lint)
 
 .PHONY: preview-top
 preview-top:
@@ -53,6 +56,10 @@ preview-usacon:
 preview-autoscaler:
 	@(cd $(AUTOSCALER_DIR); make preview)
 
+.PHONY: preview-prometheus
+preview-prometheus:
+	@(cd $(PROMETHEUS_DIR); make preview)
+
 
 clean:
 	@echo "cleaning in $(TOP_DIR)..."
@@ -67,3 +74,5 @@ clean:
 	@(cd $(USACON_DIR); make clean)
 	@echo "cleaning in $(AUTOSCALER_DIR)..."
 	@(cd $(AUTOSCALER_DIR); make clean)
+	@echo "cleaning in $(PROMETHEUS_DIR)..."
+	@(cd $(PROMETHEUS_DIR); make clean)
