@@ -1,0 +1,28 @@
+site_name: sakuracloud_exporter
+site_url: https://docs.usacloud.jp/prometheus
+site_description: sakuracloud_exporter
+site_author: '@yamamoto-febc'
+repo_url: https://github.com/sacloud/sakuracloud_exporter
+repo_name: sakuracloud_exporter
+copyright: Copyright (C) 2021 saclodu/sakuracloud_exporter authors
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+extra:
+  analytics:
+    provider: google
+    property: UA-63739336-5
+extra_css:
+  - css/extra.css
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+nav:
+  - ホーム: index.md
+  - インストール: install.md
+  - オプション: flags.md
+  - メトリクス: metrics.md
