@@ -85,7 +85,7 @@ Flags:
 
   === Internet-specific options ===
 
-      --band-width int        (*required) options: [100/250/500/1000/1500/2000/2500/3000/3500/4000/4500/5000] (aliases: --band-width-mbps) (default 100)
+      --band-width int        (*required) options: [100/250/500/1000/1500/2000/2500/3000/3500/4000/4500/5000/5500/6000/6500/7000/7500/8000/8500/9000/9500/10000] (aliases: --band-width-mbps) (default 100)
       --enable-ipv6           
       --netmask int           (*required) options: [28/27/26] (aliases: --network-mask-len) (default 28)
       --not-found-retry int    (default 10)
@@ -192,7 +192,7 @@ Flags:
 
   === Internet-specific options ===
 
-      --band-width int   options: [100/250/500/1000/1500/2000/2500/3000/3500/4000/4500/5000] (aliases: --band-width-mbps)
+      --band-width int   options: [100/250/500/1000/1500/2000/2500/3000/3500/4000/4500/5000/5500/6000/6500/7000/7500/8000/8500/9000/9500/10000] (aliases: --band-width-mbps)
       --enable-ipv6      
 
   === Zone options ===

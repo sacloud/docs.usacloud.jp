@@ -16,6 +16,7 @@
     - [boot](#boot)
     - [shutdown](#shutdown)
     - [reset](#reset)
+    - [send-nmi](#send-nmi)
 - Monitoring Commands
     - [monitor-cpu](#monitor-cpu)
 - Other Commands
@@ -214,7 +215,7 @@ Flags:
             "DistantFrom": [
                 123456789012
             ],
-            "OSType": "centos | centos8stream | centos8 | centos7 | ubuntu | ubuntu2004 | ubuntu1804 | ubuntu1604 | debian | debian10 | debian9 | coreos | rancheros | k3os | kusanagi | freebsd | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all",
+            "OSType": "centos | centos8stream | centos8 | centos7 | almalinux | rockylinux | ubuntu | ubuntu2004 | ubuntu1804 | debian | debian10 | coreos | rancheros | k3os | kusanagi | freebsd | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all",
             "EditDisk": {
                 "HostName": "hostname",
                 "Password": "password",
@@ -397,7 +398,7 @@ Flags:
             "DistantFrom": [
                 123456789012
             ],
-            "OSType": "centos | centos8stream | centos8 | centos7 | ubuntu | ubuntu2004 | ubuntu1804 | ubuntu1604 | debian | debian10 | debian9 | coreos | rancheros | k3os | kusanagi | freebsd | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all",
+            "OSType": "centos | centos8stream | centos8 | centos7 | almalinux | rockylinux | ubuntu | ubuntu2004 | ubuntu1804 | debian | debian10 | coreos | rancheros | k3os | kusanagi | freebsd | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all",
             "EditDisk": {
                 "HostName": "hostname",
                 "Password": "password",
@@ -590,6 +591,10 @@ Aliases:
 
 Flags:
 
+  === Server-specific options ===
+
+      --user-data string   
+
   === Zone options ===
 
       --zone string   (*required) 
@@ -654,6 +659,32 @@ Flags:
 ```console
 Usage:
   reset { ID | NAME | TAG }... [flags]
+
+Flags:
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
+
+```
+
+
+## send-nmi {: #send-nmi }
+
+##### Usage
+```console
+Usage:
+  send-nmi { ID | NAME | TAG }... [flags]
 
 Flags:
 

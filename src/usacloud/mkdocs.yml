@@ -81,6 +81,7 @@ nav:
               - bill: references/bill.md
               - coupon: references/coupon.md
           - Lab / Labプロダクト:
+              - enhanced-db: references/enhanced-db.md
               - container-registry: references/container-registry.md
               - esme: references/esme.md
           - WebAccelerator / ウェブアクセラレータ:
