@@ -40,19 +40,19 @@ nav:
           - プロファイル: references/profile.md
           - 環境変数: references/env.md
       - コマンド:
-          - Configuration / プロファイル/コンフィグ:
+          - プロファイル/コンフィグ:
               - config: references/config.md
-          - Authentication / 認証情報:
+          - 認証情報:
               - auth-status: references/auth-status.md
-          - Computing / コンピューティング:
+          - コンピューティング:
               - private-host: references/private-host.md
               - server: references/server.md
-          - Storage / ストレージ:
+          - ストレージ:
               - archive: references/archive.md
               - auto-backup: references/auto-backup.md
               - cdrom: references/cdrom.md
               - disk: references/disk.md
-          - Networking / ネットワーキング:
+          - ネットワーキング:
               - bridge: references/bridge.md
               - internet: references/internet.md
               - local-router: references/local-router.md
@@ -64,43 +64,44 @@ nav:
               - ipv6addr: references/ipv6addr.md
               - ipv6net: references/ipv6net.md
               - subnet: references/subnet.md
-          - Appliance / アプライアンス:
+          - アプライアンス:
               - database: references/database.md
               - load-balancer: references/load-balancer.md
               - nfs: references/nfs.md
               - vpc-router: references/vpc-router.md
-          - Secure Mobile / セキュアモバイル:
+          - セキュアモバイル:
                 - mobile-gateway: references/mobile-gateway.md
                 - sim: references/sim.md
-          - Common service items / 共通サービスアイテム:
+          - 共通サービスアイテム:
               - dns: references/dns.md
               - gslb: references/gslb.md
               - proxy-lb: references/proxy-lb.md
               - simple-monitor: references/simple-monitor.md
-          - Billing / 請求関連:
+          - 請求関連:
               - bill: references/bill.md
               - coupon: references/coupon.md
-          - Lab / Labプロダクト:
+          - Labプロダクト:
+              - enhanced-db: references/enhanced-db.md
               - container-registry: references/container-registry.md
               - esme: references/esme.md
-          - WebAccelerator / ウェブアクセラレータ:
+          - ウェブアクセラレータ:
               - web-accelerator: references/web-accelerator.md
-          - Other services / その他サービス:
+          - その他サービス:
               - icon: references/icon.md
               - license: references/license.md
               - note: references/note.md
               - ssh-key: references/ssh-key.md
-          - Region/Zone information / リージョン/ゾーン情報参照:
+          - リージョン/ゾーン情報参照:
               - region: references/region.md
               - zone: references/zone.md
-          - Service/Product information / サービス/プロダクト情報参照:
+          - サービス/プロダクト情報参照:
               - disk-plan: references/disk-plan.md
               - internet-plan: references/internet-plan.md
               - license-info: references/license-info.md
               - private-host-plan: references/private-host-plan.md
               - server-plan: references/server-plan.md
               - service-class: references/service-class.md
-          - Other references / その他:
+          - その他:
               - completion: references/completion.md
               - rest: references/rest.md
               - self: references/self.md

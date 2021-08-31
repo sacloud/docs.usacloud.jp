@@ -75,24 +75,28 @@ Flags:
 
   === Proxy-Lb-specific options ===
 
-      --bind-ports string                 
-      --health-check-delay-loop int       (*required)  (default 10)
-      --health-check-host string          
-      --health-check-path string           (default "/")
-      --health-check-protocol string      (*required)  (default "http")
-      --inactive-sec int                   (default 10)
-      --lets-encrypt-accept-tos           The flag to accept the current Let's Encrypt terms of service(see: https://letsencrypt.org/repository/)
-      --lets-encrypt-common-name string   
-      --lets-encrypt-enabled              
-      --plan string                       (*required) options: [100/500/1000/5000/10000/50000/100000] (default "100")
-      --region string                     (*required) options: [tk1/is1/anycast] (default "is1")
-      --rules string                      
-      --servers string                    
-      --sorry-server-ip-address string    (aliases: --ipaddress)
-      --sorry-server-port int             
-      --sticky-session-enabled            
-      --sticky-session-method string      
-      --vip-fail-over                     
+      --bind-ports string                        
+      --gzip-enabled                             
+      --health-check-delay-loop int              (*required)  (default 10)
+      --health-check-host string                 
+      --health-check-path string                  (default "/")
+      --health-check-protocol string             (*required)  (default "http")
+      --inactive-sec int                          (default 10)
+      --lets-encrypt-accept-tos                  The flag to accept the current Let's Encrypt terms of service(see: https://letsencrypt.org/repository/)
+      --lets-encrypt-common-name string          
+      --lets-encrypt-enabled                     
+      --lets-encrypt-subject-alt-names strings   
+      --plan string                              (*required) options: [100/500/1000/5000/10000/50000/100000/400000] (default "100")
+      --region string                            (*required) options: [tk1/is1/anycast] (default "is1")
+      --rules string                             
+      --servers string                           
+      --sorry-server-ip-address string           (aliases: --ipaddress)
+      --sorry-server-port int                    
+      --sticky-session-enabled                   
+      --sticky-session-method string             
+      --syslog-port int                          
+      --syslog-server string                     
+      --vip-fail-over                            
 
   === Input options ===
 
@@ -124,7 +128,7 @@ Flags:
         "tag2=example2"
     ],
     "IconID": 123456789012,
-    "Plan": "100 | 500 | 1000 | 5000 | 10000 | 50000 | 100000",
+    "Plan": "100 | 500 | 1000 | 5000 | 10000 | 50000 | 100000 | 400000",
     "HealthCheck": {
         "Protocol": "http | tcp",
         "Path": "/healthz",
@@ -138,11 +142,21 @@ Flags:
     "LetsEncrypt": {
         "CommonName": "www.example.com",
         "Enabled": true,
+        "SubjectAltNames": [
+            "www1.example.com"
+        ],
         "AcceptTOS": false
     },
     "StickySession": {
         "Method": "cookie",
         "Enabled": true
+    },
+    "Gzip": {
+        "Enabled": true
+    },
+    "Syslog": {
+        "Server": "192.0.2.11",
+        "Port": 514
     },
     "Timeout": {
         "InactiveSec": 10
@@ -160,7 +174,8 @@ Flags:
                     "Header": "Cache-Control",
                     "Value": "public, max-age=900"
                 }
-            ]
+            ],
+            "SSLPolicy": "TLS-1-2-2019-04 | TLS-1-2-2021-06 | TLS-1-3-2021-06"
         }
     ],
     "Servers": [
@@ -174,8 +189,38 @@ Flags:
     "Rules": [
         {
             "Host": "www2.example.com",
-            "Path": "/foo",
-            "ServerGroup": "group1"
+            "Path": "/foo1",
+            "RequestHeaderName": "",
+            "RequestHeaderValue": "",
+            "RequestHeaderValueIgnoreCase": false,
+            "RequestHeaderValueNotMatch": false,
+            "ServerGroup": "group1",
+            "Action": "forward"
+        },
+        {
+            "Host": "www2.example.com",
+            "Path": "/foo2",
+            "RequestHeaderName": "",
+            "RequestHeaderValue": "",
+            "RequestHeaderValueIgnoreCase": false,
+            "RequestHeaderValueNotMatch": false,
+            "ServerGroup": "group1",
+            "Action": "redirect",
+            "RedirectLocation": "/redirect",
+            "RedirectStatusCode": 301
+        },
+        {
+            "Host": "www2.example.com",
+            "Path": "/foo3",
+            "RequestHeaderName": "",
+            "RequestHeaderValue": "",
+            "RequestHeaderValueIgnoreCase": false,
+            "RequestHeaderValueNotMatch": false,
+            "ServerGroup": "group1",
+            "Action": "fixed",
+            "FixedStatusCode": 200,
+            "FixedContentType": "text/plain",
+            "FixedMessageBody": "your-content"
         }
     ]
 }
@@ -232,22 +277,26 @@ Flags:
 
   === Proxy-Lb-specific options ===
 
-      --bind-ports string                 
-      --health-check-delay-loop int       
-      --health-check-host string          
-      --health-check-path string          
-      --health-check-protocol string      
-      --inactive-sec int                  
-      --lets-encrypt-accept-tos           The flag to accept the current Let's Encrypt terms of service(see: https://letsencrypt.org/repository/)
-      --lets-encrypt-common-name string   
-      --lets-encrypt-enabled              
-      --plan string                       options: [100/500/1000/5000/10000/50000/100000]
-      --rules string                      
-      --servers string                    
-      --sorry-server-ip-address string    (aliases: --ipaddress)
-      --sorry-server-port int             
-      --sticky-session-enabled            
-      --sticky-session-method string      
+      --bind-ports string                        
+      --gzip-enabled                             
+      --health-check-delay-loop int              
+      --health-check-host string                 
+      --health-check-path string                 
+      --health-check-protocol string             
+      --inactive-sec int                         
+      --lets-encrypt-accept-tos                  The flag to accept the current Let's Encrypt terms of service(see: https://letsencrypt.org/repository/)
+      --lets-encrypt-common-name string          
+      --lets-encrypt-enabled                     
+      --lets-encrypt-subject-alt-names strings   
+      --plan string                              options: [100/500/1000/5000/10000/50000/100000/400000]
+      --rules string                             
+      --servers string                           
+      --sorry-server-ip-address string           (aliases: --ipaddress)
+      --sorry-server-port int                    
+      --sticky-session-enabled                   
+      --sticky-session-method string             
+      --syslog-port int                          
+      --syslog-server string                     
 
   === Input options ===
 
@@ -279,7 +328,7 @@ Flags:
         "tag2=example2"
     ],
     "IconID": 123456789012,
-    "Plan": "100 | 500 | 1000 | 5000 | 10000 | 50000 | 100000",
+    "Plan": "100 | 500 | 1000 | 5000 | 10000 | 50000 | 100000 | 400000",
     "HealthCheck": {
         "Protocol": "http | tcp",
         "Path": "/healthz",
@@ -292,12 +341,20 @@ Flags:
     },
     "LetsEncrypt": {
         "CommonName": "www.example.com",
+        "SubjectAltNames": null,
         "Enabled": true,
         "AcceptTOS": false
     },
     "StickySession": {
         "Method": "cookie",
         "Enabled": true
+    },
+    "Gzip": {
+        "Enabled": true
+    },
+    "Syslog": {
+        "Server": "192.0.2.11",
+        "Port": 514
     },
     "Timeout": {
         "InactiveSec": 10
@@ -314,7 +371,8 @@ Flags:
                     "Header": "Cache-Control",
                     "Value": "public, max-age=900"
                 }
-            ]
+            ],
+            "SSLPolicy": "TLS-1-2-2019-04 | TLS-1-2-2021-06 | TLS-1-3-2021-06"
         }
     ],
     "ServersData": null,
@@ -330,8 +388,38 @@ Flags:
     "Rules": [
         {
             "Host": "www2.example.com",
-            "Path": "/foo",
-            "ServerGroup": "group1"
+            "Path": "/foo1",
+            "RequestHeaderName": "",
+            "RequestHeaderValue": "",
+            "RequestHeaderValueIgnoreCase": false,
+            "RequestHeaderValueNotMatch": false,
+            "ServerGroup": "group1",
+            "Action": "forward"
+        },
+        {
+            "Host": "www2.example.com",
+            "Path": "/foo2",
+            "RequestHeaderName": "",
+            "RequestHeaderValue": "",
+            "RequestHeaderValueIgnoreCase": false,
+            "RequestHeaderValueNotMatch": false,
+            "ServerGroup": "group1",
+            "Action": "redirect",
+            "RedirectLocation": "/redirect",
+            "RedirectStatusCode": 301
+        },
+        {
+            "Host": "www2.example.com",
+            "Path": "/foo3",
+            "RequestHeaderName": "",
+            "RequestHeaderValue": "",
+            "RequestHeaderValueIgnoreCase": false,
+            "RequestHeaderValueNotMatch": false,
+            "ServerGroup": "group1",
+            "Action": "fixed",
+            "FixedStatusCode": 200,
+            "FixedContentType": "text/plain",
+            "FixedMessageBody": "your-content"
         }
     ]
 }

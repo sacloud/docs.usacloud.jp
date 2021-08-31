@@ -89,24 +89,22 @@ Flags:
 
   === Vpc-Router-specific options ===
 
-      --boot-after-create               
-      --dhcp-server string              
-      --dhcp-static-mapping string      
-      --firewall string                 
-      --internet-connection-enabled     
-      --l2tp-pre-shared-secret string   
-      --l2tp-range-start string         
-      --l2tp-range-stop string          
-      --port-forwarding string          
-      --pptp-range-start string         
-      --pptp-range-stop string          
-      --site-to-site-vpn string         
-      --static-nat string               
-      --static-route string             
-      --syslog-host string              
-      --users string                    
-      --version int                     (*required)  (default 2)
-      --vrid int                        
+      --boot-after-create             
+      --dhcp-server string            
+      --dhcp-static-mapping string    
+      --firewall string               
+      --internet-connection-enabled   
+      --l2tp string                   
+      --port-forwarding string        
+      --pptp string                   
+      --site-to-site-vpn string       
+      --static-nat string             
+      --static-route string           
+      --syslog-host string            
+      --users string                  
+      --version int                   (*required)  (default 2)
+      --vrid int                      
+      --wireguard string              
 
   === Network options ===
 
@@ -260,6 +258,16 @@ Flags:
                 "Password": "password"
             }
         ],
+        "WireGuard": {
+            "IPAddress": "192.168.0.240/28",
+            "Peers": [
+                {
+                    "Name": "client1",
+                    "IPAddress": "192.168.0.242",
+                    "PublicKey": "your-key"
+                }
+            ]
+        },
         "SiteToSiteIPsecVPN": [
             {
                 "Peer": "192.0.2.1",
@@ -310,12 +318,9 @@ Flags:
       --dhcp-static-mapping string          
       --firewall string                     
       --internet-connection-enabled         
-      --l2tp-pre-shared-secret string       
-      --l2tp-range-start string             
-      --l2tp-range-stop string              
+      --l2tp string                         
       --port-forwarding string              
-      --pptp-range-start string             
-      --pptp-range-stop string              
+      --pptp string                         
       --private-network-interfaces string   
       --site-to-site-vpn string             
       --static-nat string                   
@@ -324,6 +329,7 @@ Flags:
       --users string                        
       --version int                         (*required)  (default 2)
       --vrid int                            
+      --wireguard string                    
 
   === Zone options ===
 
@@ -446,6 +452,16 @@ Flags:
                 "Password": "password"
             }
         ],
+        "WireGuard": {
+            "IPAddress": "192.168.0.240/28",
+            "Peers": [
+                {
+                    "Name": "client1",
+                    "IPAddress": "192.168.0.242",
+                    "PublicKey": "your-key"
+                }
+            ]
+        },
         "SiteToSiteIPsecVPN": [
             {
                 "Peer": "192.0.2.1",
@@ -527,21 +543,19 @@ Flags:
 
   === Vpc-Router-specific options ===
 
-      --dhcp-server string              
-      --dhcp-static-mapping string      
-      --firewall string                 
-      --internet-connection-enabled     
-      --l2tp-pre-shared-secret string   
-      --l2tp-range-start string         
-      --l2tp-range-stop string          
-      --port-forwarding string          
-      --pptp-range-start string         
-      --pptp-range-stop string          
-      --site-to-site-vpn string         
-      --static-nat string               
-      --static-route string             
-      --syslog-host string              
-      --users string                    
+      --dhcp-server string            
+      --dhcp-static-mapping string    
+      --firewall string               
+      --internet-connection-enabled   
+      --l2tp string                   
+      --port-forwarding string        
+      --pptp string                   
+      --site-to-site-vpn string       
+      --static-nat string             
+      --static-route string           
+      --syslog-host string            
+      --users string                  
+      --wireguard string              
 
   === Network options ===
 
@@ -680,14 +694,27 @@ Flags:
                 "IPAddress": "192.168.0.245"
             }
         ],
+        "PPTPServerData": "",
         "PPTPServer": {
             "RangeStart": "192.168.0.246",
             "RangeStop": "192.168.0.249"
         },
+        "L2TPIPsecServerData": "",
         "L2TPIPsecServer": {
             "RangeStart": "192.168.0.250",
             "RangeStop": "192.168.0.254",
             "PreSharedSecret": "presharedsecret"
+        },
+        "WireGuardData": "",
+        "WireGuard": {
+            "IPAddress": "192.168.0.240/28",
+            "Peers": [
+                {
+                    "Name": "client1",
+                    "IPAddress": "192.168.0.242",
+                    "PublicKey": "your-key"
+                }
+            ]
         },
         "RemoteAccessUsersData": "",
         "RemoteAccessUsers": [
@@ -746,18 +773,16 @@ Flags:
       --dhcp-static-mapping string          
       --firewall string                     
       --internet-connection-enabled         
-      --l2tp-pre-shared-secret string       
-      --l2tp-range-start string             
-      --l2tp-range-stop string              
+      --l2tp string                         
       --port-forwarding string              
-      --pptp-range-start string             
-      --pptp-range-stop string              
+      --pptp string                         
       --private-network-interfaces string   
       --site-to-site-vpn string             
       --static-nat string                   
       --static-route string                 
       --syslog-host string                  
       --users string                        
+      --wireguard string                    
 
   === Zone options ===
 
@@ -869,14 +894,27 @@ Flags:
                 "IPAddress": "192.168.0.245"
             }
         ],
+        "PPTPServerData": "",
         "PPTPServer": {
             "RangeStart": "192.168.0.246",
             "RangeStop": "192.168.0.249"
         },
+        "L2TPIPsecServerData": "",
         "L2TPIPsecServer": {
             "RangeStart": "192.168.0.250",
             "RangeStop": "192.168.0.254",
             "PreSharedSecret": "presharedsecret"
+        },
+        "WireGuardData": "",
+        "WireGuard": {
+            "IPAddress": "192.168.0.240/28",
+            "Peers": [
+                {
+                    "Name": "client1",
+                    "IPAddress": "192.168.0.242",
+                    "PublicKey": "your-key"
+                }
+            ]
         },
         "RemoteAccessUsersData": "",
         "RemoteAccessUsers": [

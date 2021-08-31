@@ -77,8 +77,10 @@ Flags:
       --health-check-basic-auth-password string   
       --health-check-basic-auth-username string   
       --health-check-community string             
+      --health-check-contains-string string       
       --health-check-expected-data string         
       --health-check-host string                  
+      --health-check-http2                        
       --health-check-oid string                   
       --health-check-path string                  
       --health-check-port int                     
@@ -94,6 +96,7 @@ Flags:
       --notify-slack-enabled                      
       --slack-webhooks-url string                 
       --target string                             (*required) 
+      --timeout int                               
 
   === Input options ===
 
@@ -126,16 +129,19 @@ Flags:
     ],
     "IconID": 123456789012,
     "DelayLoop": 60,
+    "Timeout": 10,
     "Enabled": true,
     "HealthCheck": {
         "Protocol": "http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate",
         "Port": 80,
         "Path": "/healthz",
         "Status": 200,
+        "ContainsString": "ok",
         "SNI": true,
         "Host": "www2.example.com",
         "BasicAuthUsername": "username",
-        "BasicAuthPassword": "password"
+        "BasicAuthPassword": "password",
+        "HTTP2": true
     },
     "NotifyEmailEnabled": true,
     "NotifyEmailHTML": true,
@@ -200,8 +206,10 @@ Flags:
       --health-check-basic-auth-password string   
       --health-check-basic-auth-username string   
       --health-check-community string             
+      --health-check-contains-string string       
       --health-check-expected-data string         
       --health-check-host string                  
+      --health-check-http2                        
       --health-check-oid string                   
       --health-check-path string                  
       --health-check-port int                     
@@ -216,6 +224,7 @@ Flags:
       --notify-interval int                       
       --notify-slack-enabled                      
       --slack-webhooks-url string                 
+      --timeout int                               
 
   === Input options ===
 
@@ -247,16 +256,19 @@ Flags:
     ],
     "IconID": 123456789012,
     "DelayLoop": 60,
+    "Timeout": 10,
     "Enabled": true,
     "HealthCheck": {
         "Protocol": "http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate",
         "Port": 80,
         "Path": "/healthz",
         "Status": 200,
+        "ContainsString": "ok",
         "SNI": true,
         "Host": "www2.example.com",
         "BasicAuthUsername": "username",
-        "BasicAuthPassword": "password"
+        "BasicAuthPassword": "password",
+        "HTTP2": true
     },
     "NotifyEmailEnabled": true,
     "NotifyEmailHTML": true,

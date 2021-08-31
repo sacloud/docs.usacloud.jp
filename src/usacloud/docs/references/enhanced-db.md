@@ -1,4 +1,4 @@
-# リファレンス / esme
+# リファレンス / enhanced-db
 
 ## コマンド一覧
 
@@ -8,9 +8,6 @@
     - [read](#read)
     - [update](#update)
     - [delete](#delete)
-- Operation Commands
-    - [logs](#logs)
-    - [send-message](#send-message)
 
 
 ## list {: #list }
@@ -71,6 +68,11 @@ Flags:
       --tags strings         
       --icon-id int          
 
+  === Enhanced-Db-specific options ===
+
+      --database-name string   (*required) 
+      --password string        (*required) 
+
   === Input options ===
 
   -y, --assumeyes           Assume that the answer to any question which would be asked is yes
@@ -100,7 +102,9 @@ Flags:
         "tag1=example1",
         "tag2=example2"
     ],
-    "IconID": 123456789012
+    "IconID": 123456789012,
+    "DatabaseName": "example",
+    "Password": "your-password"
 }
 ```
 
@@ -153,6 +157,10 @@ Flags:
       --tags strings         
       --icon-id int          
 
+  === Enhanced-Db-specific options ===
+
+      --password string   
+
   === Input options ===
 
   -y, --assumeyes           Assume that the answer to any question which would be asked is yes
@@ -182,7 +190,8 @@ Flags:
         "tag1=example1",
         "tag2=example2"
     ],
-    "IconID": 123456789012
+    "IconID": 123456789012,
+    "Password": "your-password"
 }
 ```
 
@@ -221,85 +230,6 @@ Flags:
 
       --example   Output example parameters with JSON format
 
-```
-
-
-## logs {: #logs }
-
-##### Usage
-```console
-Usage:
-  logs { ID | NAME | TAG }... [flags]
-
-Flags:
-
-  === Input options ===
-
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
-
-  === Output options ===
-
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
-
-  === Parameter example ===
-
-      --example   Output example parameters with JSON format
-
-```
-
-
-## send-message {: #send-message }
-
-##### Usage
-```console
-Usage:
-  send-message { ID | NAME | TAG } [flags]
-
-Aliases:
-  send-message, send
-
-Flags:
-
-  === Esme-specific options ===
-
-      --destination string   (*required) (aliases: --dest)
-      --domain-name string   
-      --otp string           
-      --sender string        (*required) 
-
-  === Input options ===
-
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
-
-  === Output options ===
-
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
-
-  === Parameter example ===
-
-      --example   Output example parameters with JSON format
-
-```
-
-##### Parameter Examples
-```console
-{
-    "Destination": "81zzzzzzzzzz",
-    "Sender": "example-sender",
-    "DomainName": "www.example.com",
-    "OTP": "your-otp"
-}
 ```
 
 
