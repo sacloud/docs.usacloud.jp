@@ -50,6 +50,7 @@ data "sakuracloud_server" "foobar" {
 * `disks` - サーバに接続されているディスクのIDのリスト
 * `dns_servers` - サーバが属するゾーンのDNSサーバのIPアドレスのリスト
 * `gateway` - ゲートウェイIPアドレス
+* `gpu` - GPU数
 * `hostname` - ホスト名
 * `icon_id` - アイコンID
 * `interface_driver` - NICのドライバー。次のいずれかとなる［`virtio`/`e1000`]
