@@ -12,4 +12,4 @@
 - [sacloud/usacloud](https://github.com/sacloud/usacloud): v1.3+
 - [sacloud/autoscaler](https://github.com/sacloud/autoscaler): v0.2+
 
-これらのツールで対象リソースのプラン変更を行った場合、`terraform apply -refresh-only`などを実行することでプラン変更に伴ってIDが変更されたリソースを追跡可能です。  
+これらのツールで対象リソースのプランを変更した場合、`terraform apply -refresh-only`などを実行することでプラン変更に伴ってIDが変更されたリソースを追跡可能です。  
