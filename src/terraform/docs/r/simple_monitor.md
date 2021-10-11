@@ -51,7 +51,7 @@ resource "sakuracloud_simple_monitor" "foobar" {
 
 ##### health_checkブロック
 
-* `protocol` - (Required) プロトコル / 次のいずれかを指定［`http`/`https`/`ping`/`tcp`/`dns`/`ssh`/`smtp`/`pop3`/`snmp`/`sslcertificate`]
+* `protocol` - (Required) プロトコル / 次のいずれかを指定［`http`/`https`/`ping`/`tcp`/`dns`/`ssh`/`smtp`/`pop3`/`snmp`/`sslcertificate`/`ftp`]
 * `port` - (Optional) ポート番号
 
 ###### DNSチェック関連
@@ -73,6 +73,10 @@ resource "sakuracloud_simple_monitor" "foobar" {
 ###### 証明書チェック関連
 
 * `remaining_days` - (Optional) 証明書チェックでの有効期限残日数の閾値 / `1`-`9999`の範囲で指定
+
+##### FTP関連
+
+* `ftps` - (Optional) FTPS接続モード、次のいずれかを指定［``/`implicit`/`explicit`]
 
 ###### SNMP関連
 

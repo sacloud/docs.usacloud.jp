@@ -59,6 +59,7 @@ data "sakuracloud_simple_monitor" "foobar" {
 
 * `community` - SNMPチェック時に利用されるSNMPコミュニティ名
 * `excepcted_data` - DNSチェック時の期待値
+* `ftps` - FTPS接続モード。次のいずれかとなる［``/`implicit`/`explicit`]
 * `host_header` - HTTP/HTTPSチェック時のリクエストのHostヘッダの値
 * `oid` - SNMPチェック時に利用されるOID
 * `password` - HTTP/HTTPSチェック時のBASIC認証で利用されるパスワード
