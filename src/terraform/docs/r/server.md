@@ -93,8 +93,9 @@ ACPIが利用できないサーバの場合`true`に設定する
 
 #### ディスク関連
 
-* `disk_edit_parameter` - (Optional) ディスクの修正APIへのパラメータ。詳細は[disk_edit_parameterブロック](#disk_edit_parameter)を参照
 * `disks` - (Optional) サーバに接続するディスクのIDのリスト
+* `disk_edit_parameter` - (Optional) ディスクの修正APIへのパラメータ。詳細は[disk_edit_parameterブロック](#disk_edit_parameter)を参照。`user_data`と同時に指定できません
+* `user_data` - (Optional) cloud-initでのUserData。 `disk_edit_parameter`と同時に指定できません
 
 ##### disk_edit_parameterブロック
 
