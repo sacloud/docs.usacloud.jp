@@ -118,9 +118,11 @@ nav:
         - 2要素認証SMS: r/esme.md
     - Lab:
       - データソース:
+        - マネージドPKI: d/certificate_authority.md
         - コンテナレジストリ: d/container_registry.md
         - エンハンスドデータベース: d/enhanced_db.md
       - リソース:
+        - マネージドPKI: r/certificate_authority.md
         - コンテナレジストリ: r/container_registry.md
         - エンハンスドデータベース: r/enhanced_db.md
     - ウェブアクセラレータ:
