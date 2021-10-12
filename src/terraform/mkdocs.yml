@@ -25,6 +25,10 @@ nav:
   - ホーム: index.md
   - ガイド:
     - アップグレードガイド:
+      - v2.14での変更点: guides/upgrade_to_v2.14.0.md
+      - v2.13での変更点: guides/upgrade_to_v2.13.0.md
+      - v2.12での変更点: guides/upgrade_to_v2.12.0.md
+      - v2.11での変更点: guides/upgrade_to_v2.11.0.md
       - v2.10での変更点: guides/upgrade_to_v2.10.0.md
       - v2.9での変更点: guides/upgrade_to_v2.9.0.md
       - v2.8での変更点: guides/upgrade_to_v2.8.0.md
@@ -114,9 +118,11 @@ nav:
         - 2要素認証SMS: r/esme.md
     - Lab:
       - データソース:
+        - マネージドPKI: d/certificate_authority.md
         - コンテナレジストリ: d/container_registry.md
         - エンハンスドデータベース: d/enhanced_db.md
       - リソース:
+        - マネージドPKI: r/certificate_authority.md
         - コンテナレジストリ: r/container_registry.md
         - エンハンスドデータベース: r/enhanced_db.md
     - ウェブアクセラレータ:
