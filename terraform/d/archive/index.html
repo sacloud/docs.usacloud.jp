@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.usacloud.jp/terraform/d/archive/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
     
     
       
@@ -2763,14 +2763,15 @@
 <h2 id="argument-reference">Argument Reference</h2>
 <ul>
 <li><code>filter</code> - (Optional) 参照対象をフィルタリングするための条件。詳細は<a href="#filter">filterブロック</a>を参照  </li>
-<li><code>os_type</code> - (Optional) 最新安定板のパブリックアーカイブを参照する。    <ul>
-<li><strong>CentOS</strong>:[<code>centos</code>/<code>centos8</code>/<code>centos8stream</code>/<code>centos7</code>/<code>centos6</code>]  </li>
-<li><strong>Ubuntu</strong>:[<code>ubuntu</code>/<code>ubuntu2004</code>/<code>ubuntu1804</code>/<code>ubuntu1604</code>]  </li>
-<li><strong>Debian</strong>:[<code>debian</code>/<code>debian10</code>/<code>debian9</code>]</li>
-<li><strong>CoreOS/ContainerLinux</strong>: <code>coreos</code>  </li>
-<li><strong>RancherOS</strong>: <code>rancheros</code>  </li>
-<li><strong>k3OS</strong>: <code>k3os</code>  </li>
-<li><strong>FreeBSD</strong>: <code>freebsd</code>  </li>
+<li><code>os_type</code> - (Optional) 最新安定板のパブリックアーカイブを参照する。    </li>
+<li><strong>CentOS</strong>:[<code>centos</code>/<code>centos8</code>/<code>centos8stream</code>/<code>centos7</code>]</li>
+<li><strong>Alt RHEL/CentOS</strong>:[<code>almalinux</code>/<code>rockylinux</code>/<code>miracle</code>/<code>miraclelinux</code>]</li>
+<li><strong>Ubuntu</strong>:[<code>ubuntu</code>/<code>ubuntu2004</code>/<code>ubuntu1804</code>]</li>
+<li><strong>Debian</strong>:[<code>debian</code>/<code>debian10</code>/<code>debian11</code>]</li>
+<li><strong>CoreOS/ContainerLinux</strong>: <code>coreos</code></li>
+<li><strong>RancherOS</strong>: <code>rancheros</code></li>
+<li><strong>k3OS</strong>: <code>k3os</code></li>
+<li><strong>FreeBSD</strong>: <code>freebsd</code></li>
 <li><strong>Kusanagi</strong>: <code>kusanagi</code></li>
 <li><strong>Windows2016</strong>:[<code>windows2016</code>/<code>windows2016-rds</code>/<code>windows2016-rds-office</code>]</li>
 <li><strong>Windows2016+SQLServer</strong>:[<code>windows2016-sql-web</code>/<code>windows2016-sql-standard</code>/<code>windows2016-sql-standard-all</code>]</li>
@@ -2778,8 +2779,6 @@
 <li><strong>Windows2019</strong>:[<code>windows2019</code>/<code>windows2019-rds</code>/<code>windows2019-rds-office2016</code>/<code>windows2019-rds-office2019</code>]</li>
 <li><strong>Windows2019+SQLServer2017</strong>:[<code>windows2019-sql2017-web</code>/<code>windows2019-sql2017-standard</code>/<code>windows2019-sql2017-enterprise</code>/<code>windows2019-sql2017-standard-all</code>]</li>
 <li><strong>Windows2019+SQLServer2019</strong>:[<code>windows2019-sql2019-web</code>/<code>windows2019-sql2019-standard</code>/<code>windows2019-sql2019-enterprise</code>/<code>windows2019-sql2019-standard-all</code>]</li>
-</ul>
-</li>
 <li><code>zone</code> - (Optional) 対象ゾーンの名前 (例: <code>is1a</code>, <code>tk1a</code>)  </li>
 </ul>
 <h5 id="filter">filterブロック</h5>
