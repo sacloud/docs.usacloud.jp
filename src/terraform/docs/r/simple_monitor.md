@@ -42,6 +42,8 @@ resource "sakuracloud_simple_monitor" "foobar" {
 * `target` - (Required) 監視対象のIPアドレス、またはFQDN / この値を変更するとリソースの再作成が行われる
 * `health_check` - (Required) ヘルスチェック設定。詳細は[health_checkブロック](#health_check)を参照
 * `delay_loop` - (Optional) チェック間隔秒数 / `60`-`3600`の範囲で指定 / デフォルト:`60`
+* `max_check_attempts` - (Optional) 再試行回数 / `1`-`10`の範囲で指定
+* `retry_interval` - (Optional) 再試行の間隔秒数 / `10`-`3600`の範囲で指定
 * `timeout` - (Optional) タイムアウト秒数 / `10`-`30`の範囲で指定 
 * `enabled` - (Optional) 有効フラグ / デフォルト:`true`
 

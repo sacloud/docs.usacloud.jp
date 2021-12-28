@@ -46,11 +46,13 @@ data "sakuracloud_simple_monitor" "foobar" {
 * `enabled` - 有効フラグ
 * `health_check` - ヘルスチェック。詳細は[health_checkブロック](#health_check)を参照
 * `icon_id` - アイコンID
+* `max_check_attempts` - 再試行回数 / `1`-`10`の範囲で指定
 * `notify_email_enabled` - e-mailでの通知の有効フラグ
 * `notify_email_html` - e-mail通知でのHTMLメール有効フラグ
 * `notify_interval` - 再通知間隔秒数
 * `notify_slack_enabled` - slackでの通知の有効フラグ
 * `notify_slack_webhook` - slack/discordでの通知を利用する場合のwebhookのURL
+* `retry_interval` - 再試行の間隔秒数 / `10`-`3600`の範囲で指定
 * `tags` - タグ
 * `target` - 監視対象のIPアドレス、またはFQDN
 * `timeout` - タイムアウト秒数

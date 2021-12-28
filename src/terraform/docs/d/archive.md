@@ -22,7 +22,7 @@ data "sakuracloud_archive" "foobar" {
 
 * `filter` - (Optional) 参照対象をフィルタリングするための条件。詳細は[filterブロック](#filter)を参照  
 * `os_type` - (Optional) 最新安定板のパブリックアーカイブを参照する。    
-  - **CentOS**:[`centos`/`centos8`/`centos8stream`/`centos7`]
+  - **CentOS**:[`centos`/`centos8stream`/`centos7`]
   - **Alt RHEL/CentOS**:[`almalinux`/`rockylinux`/`miracle`/`miraclelinux`]
   - **Ubuntu**:[`ubuntu`/`ubuntu2004`/`ubuntu1804`]
   - **Debian**:[`debian`/`debian10`/`debian11`]

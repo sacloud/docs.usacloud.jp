@@ -47,6 +47,11 @@ resource "sakuracloud_vpc_router" "premium" {
     mac_address = "aa:bb:cc:aa:bb:cc"
   }
 
+  dns_forwarding {
+    interface_index = 1
+    dns_servers = ["133.242.0.3", "133.242.0.4"]
+  }
+
   firewall {
     interface_index = 1
 
@@ -216,6 +221,7 @@ resource sakuracloud_switch "foobar" {
 * `dhcp_static_mapping` - (Optional) DHCPスタティックマッピング設定のリスト。詳細は[dhcp_static_mappingブロック](#dhcp_static_mapping)を参照
 * `port_forwarding` - (Optional) ポートフォワーディング設定のリスト。詳細は[port_forwardingブロック](#port_forwarding)を参照
 * `static_nat` - (Optional) スタティックNAT設定のリスト。詳細は[static_natブロック](#static_nat)を参照
+* `dns_forwarding` - (Optional) DNSフォワーディング設定。詳細は[dns_forwardingブロック](#dns_forwarding)を参照
 
 ##### dhcp_serverブロック
 
@@ -242,6 +248,12 @@ resource sakuracloud_switch "foobar" {
 * `private_ip` - (Required) プライベート側IPアドレス
 * `public_ip` - (Required) パブリック側IPアドレス
 * `description` - (Optional) 説明 / `0`-`512`文字で指定
+
+##### dns_forwardingブロック
+
+* `interface_index` - (Required) DNSフォワーディングを有効にするNICのインデックス / `1`-`7`の範囲で指定
+* `dns_servers` - (Optional) フォワード先DNSサーバのIPアドレスのリスト
+
 
 #### リモートアクセス関連
 

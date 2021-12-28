@@ -44,6 +44,7 @@ data "sakuracloud_vpc_router" "foobar" {
 * `description` - 説明
 * `dhcp_server` - DHCPサーバ設定のリスト。詳細は[dhcp_serverブロック](#dhcp_server)を参照
 * `dhcp_static_mapping` - DHCPスタティックマッピング設定のリスト。詳細は[dhcp_static_mappingブロック](#dhcp_static_mapping)を参照
+* `dns_forwarding` - DNSフォワーディング設定。詳細は[dns_forwardingブロック](#dns_forwarding)を参照
 * `firewall` - ファイアウォール設定のリスト。詳細は[firewallブロック](#firewall)を参照
 * `icon_id` - アイコンID
 * `internet_connection` - インターネット接続の有効フラグ
@@ -75,6 +76,11 @@ data "sakuracloud_vpc_router" "foobar" {
 
 * `ip_address` - DHCPクライアントに割り当てるIPアドレス
 * `mac_address` - DHCPクライアントのMACアドレス
+
+##### dns_forwardingブロック
+
+* `interface_index` - DNSフォワーディングを有効にするNICのインデックス / `1`-`7`の範囲で指定
+* `dns_servers` - フォワード先DNSサーバのIPアドレスのリスト
 
 ##### firewallブロック
 
