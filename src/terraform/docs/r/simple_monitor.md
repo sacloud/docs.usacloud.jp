@@ -73,6 +73,7 @@ resource "sakuracloud_simple_monitor" "foobar" {
 ###### 証明書チェック関連
 
 * `remaining_days` - (Optional) 証明書チェックでの有効期限残日数の閾値 / `1`-`9999`の範囲で指定
+* `verify_sni` - (Optional) ホスト名の検証
 
 ##### FTP関連
 

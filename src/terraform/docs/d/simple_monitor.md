@@ -68,11 +68,11 @@ data "sakuracloud_simple_monitor" "foobar" {
 * `protocol` - プロトコル。次のいずれかとなる［`http`/`https`/`ping`/`tcp`/`dns`/`ssh`/`smtp`/`pop3`/`snmp`/`sslcertificate`]
 * `qname` - DNSチェック時のクエリの値
 * `remaining_days` - SSL証明書チェック時の証明書有効日数の閾値
+* `verify_sni` - ホスト名の検証
 * `sni` - HTTP/HTTPSチェック時のSNI有効フラグ
 * `https` - HTTP/HTTPSチェック時のHTTP/2有効フラグ
 * `snmp_version` - SNMPチェック時のSNMPバージョン
 * `status` - HTTP/HTTPSチェック時のレスポンスコード
 * `contains_string` - HTTP/HTTPSチェック時の期待するレスポンスボディ
 * `username` - HTTP/HTTPSチェック時のBASIC認証で利用されるユーザー名
-
 
