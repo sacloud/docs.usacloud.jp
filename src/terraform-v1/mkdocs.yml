@@ -2,7 +2,7 @@ site_name: Terraform for さくらのクラウド(v1)
 site_url: https://docs.usacloud.jp/terraform-v1
 site_description: Terrform for さくらのクラウド(v1)
 site_author: '@yamamoto-febc'
-copyright: Copyright (C) 2016-2020 terraform-provider-sakuracloud authors
+copyright: Copyright (C) 2016-2022 terraform-provider-sakuracloud authors
 google_analytics: ['UA-63739336-5','auto']
 theme: readthedocs
 extra_css:

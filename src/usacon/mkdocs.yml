@@ -4,7 +4,7 @@ site_description: Usacon日本語ドキュメント
 site_author: '@sacloud-authors'
 repo_url: https://github.com/sacloud/usacon
 repo_name: usacon
-copyright: Copyright (C) 2017-2021 The Usacon Authors.
+copyright: Copyright (C) 2017-2022 The Usacon Authors.
 theme:
   name: material
   language: ja
