@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/inputs/alertmanager/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -1091,30 +1091,30 @@
 <p>AlertManager Inputsを利用するにはAlertManagerでWebhookの設定が必要です。  </p>
 <h3 id="alertmanagerwebhook">AlertManagerのWebhook設定</h3>
 <p>AlertManagerのConfigで以下のように設定します。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">route</span><span class="p">:</span>
-  <span class="nt">receiver</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span> <span class="c1">#任意のデフォルトレシーバー</span>
-  <span class="nt">routes</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">receiver</span><span class="p">:</span> <span class="s">&#39;autoscaler-up&#39;</span>
-      <span class="nt">matchers</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">autoscaler = up</span> <span class="c1"># 任意、Prometheus側のアラート設定と揃える</span>
+<div class="highlight"><pre><span></span><code><span class="nt">route</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"> </span><span class="c1">#任意のデフォルトレシーバー</span><span class="w"></span>
+<span class="w">  </span><span class="nt">routes</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;autoscaler-up&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">matchers</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoscaler = up</span><span class="w"> </span><span class="c1"># 任意、Prometheus側のアラート設定と揃える</span><span class="w"></span>
 
-    <span class="p p-Indicator">-</span> <span class="nt">receiver</span><span class="p">:</span> <span class="s">&#39;autoscaler-down&#39;</span>
-      <span class="nt">matchers</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">autoscaler = down</span> <span class="c1"># 任意、Prometheus側のアラート設定と揃える</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;autoscaler-down&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">matchers</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoscaler = down</span><span class="w"> </span><span class="c1"># 任意、Prometheus側のアラート設定と揃える</span><span class="w"></span>
 
-<span class="nt">receivers</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;default&#39;</span>
-    <span class="c1"># ... 任意のデフォルトレシーバー</span>
+<span class="nt">receivers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;default&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># ... 任意のデフォルトレシーバー</span><span class="w"></span>
 
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;autoscaler-up&#39;</span>
-    <span class="nt">webhook_configs</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">url</span><span class="p">:</span> <span class="s">&quot;AlertManager</span><span class="nv"> </span><span class="s">InputsのURL&gt;/up?[key=value]...&quot;</span> <span class="c1">#詳細は下記を参照</span>
-        <span class="nt">send_resolved</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;autoscaler-up&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">webhook_configs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AlertManager</span><span class="nv"> </span><span class="s">InputsのURL&gt;/up?[key=value]...&quot;</span><span class="w"> </span><span class="c1">#詳細は下記を参照</span><span class="w"></span>
+<span class="w">        </span><span class="nt">send_resolved</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;AlertManager</span><span class="nv"> </span><span class="s">InputsのURL&gt;/down?[key=value]...&quot;</span> <span class="c1">#詳細は下記を参照</span>
-    <span class="nt">webhook_configs</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">http://autoscaler-inputs:8080/down</span>
-        <span class="nt">send_resolved</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AlertManager</span><span class="nv"> </span><span class="s">InputsのURL&gt;/down?[key=value]...&quot;</span><span class="w"> </span><span class="c1">#詳細は下記を参照</span><span class="w"></span>
+<span class="w">    </span><span class="nt">webhook_configs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://autoscaler-inputs:8080/down</span><span class="w"></span>
+<span class="w">        </span><span class="nt">send_resolved</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li><code>webhook_configs.url</code> : <code>&lt;AlertManager InputsのURL&gt;/up?[key=value]...</code></li>
@@ -1130,17 +1130,17 @@
 <h2 id="prometheusalert">PrometheusのAlert設定</h2>
 <p>AlertManagerの<code>routes</code>で指定したmatchersに合致するようにAlertを設定します。</p>
 <p>設定例:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">groups</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example</span>
-  <span class="nt">rules</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">alert</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scale_up</span>
-    <span class="nt">expr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">avg_over_time(sakuracloud_server_cpu_time{zone=&quot;tk1a&quot;}[1h]) &gt; 80</span> <span class="c1"># tk1aゾーンのサーバのCPU-TIMEの直近一時間の平均</span>
-    <span class="nt">for</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5m</span>
-    <span class="nt">labels</span><span class="p">:</span>
-      <span class="nt">autoscaler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">up</span> <span class="c1"># AlertManager側のmatchersと揃える</span>
-    <span class="nt">annotations</span><span class="p">:</span>
-      <span class="nt">summary</span><span class="p">:</span> <span class="s">&quot;Servers</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">tk1a</span><span class="nv"> </span><span class="s">zone</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">keeping</span><span class="nv"> </span><span class="s">high</span><span class="nv"> </span><span class="s">workloads,</span><span class="nv"> </span><span class="s">scaling</span><span class="nv"> </span><span class="s">up...&quot;</span>
-      <span class="nt">description</span><span class="p">:</span> <span class="s">&quot;Servers</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">tk1a</span><span class="nv"> </span><span class="s">zone</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">keeping</span><span class="nv"> </span><span class="s">high</span><span class="nv"> </span><span class="s">workloads,</span><span class="nv"> </span><span class="s">scaling</span><span class="nv"> </span><span class="s">up...&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">groups</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scale_up</span><span class="w"></span>
+<span class="w">    </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">avg_over_time(sakuracloud_server_cpu_time{zone=&quot;tk1a&quot;}[1h]) &gt; 80</span><span class="w"> </span><span class="c1"># tk1aゾーンのサーバのCPU-TIMEの直近一時間の平均</span><span class="w"></span>
+<span class="w">    </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span><span class="w"></span>
+<span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">autoscaler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">up</span><span class="w"> </span><span class="c1"># AlertManager側のmatchersと揃える</span><span class="w"></span>
+<span class="w">    </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Servers</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">tk1a</span><span class="nv"> </span><span class="s">zone</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">keeping</span><span class="nv"> </span><span class="s">high</span><span class="nv"> </span><span class="s">workloads,</span><span class="nv"> </span><span class="s">scaling</span><span class="nv"> </span><span class="s">up...&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Servers</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">tk1a</span><span class="nv"> </span><span class="s">zone</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">keeping</span><span class="nv"> </span><span class="s">high</span><span class="nv"> </span><span class="s">workloads,</span><span class="nv"> </span><span class="s">scaling</span><span class="nv"> </span><span class="s">up...&quot;</span><span class="w"></span>
 </code></pre></div>
 <p>Note: AutoScalerによる操作でアラート状態が解消できるようなルールを設定してください。<br />
 AutoScaler Coreは同一の<code>resource-name</code>へのリクエストを冷却期間の間は無視しますが、冷却期間がすぎると再度リクエストを受け付けるようになります。<br />
@@ -1197,7 +1197,7 @@ AutoScaler Coreは同一の<code>resource-name</code>へのリクエストを冷
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright (C) 2021 saclodu/autoscaler authors
+      Copyright (C) 2021-2022 sacloud/autoscaler authors
     </div>
   
   
@@ -1216,10 +1216,10 @@ AutoScaler Coreは同一の<code>resource-name</code>へのリクエストを冷
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

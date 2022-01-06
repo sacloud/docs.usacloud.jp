@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/configuration/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -1217,36 +1217,36 @@
 <h1 id="configuration-reference">Configuration Reference</h1>
 <p>sacloud/autoscalerのコンフィギュレーションファイルはYAML形式で書かれた、操作対象のリソース定義や動作を調整するためのものです。  </p>
 <h2 id="_1">コンフィギュレーションファイルの例:</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># 操作対象のリソースの定義</span>
-<span class="c1"># スケールさせたいリソース群をここで定義する</span>
-<span class="nt">resources</span><span class="p">:</span>
-  <span class="c1"># GSLB(配下のサーバが垂直スケールする際にサーバのデタッチ&amp;アタッチが行われる)</span>
-  <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">GSLB</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;gslb&quot;</span>
-    <span class="nt">selector</span><span class="p">:</span>
-      <span class="nt">names</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;example-gslb&quot;</span><span class="p p-Indicator">]</span>
-    <span class="nt">resources</span><span class="p">:</span>
-      <span class="c1"># サーバ(垂直スケール)</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Server</span>
-        <span class="nt">naem</span><span class="p">:</span> <span class="s">&quot;server&quot;</span>
-        <span class="nt">selector</span><span class="p">:</span>
-          <span class="nt">names</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span>
-          <span class="nt">zones</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;is1a&quot;</span><span class="p p-Indicator">]</span>
-        <span class="nt">shutdown_force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 操作対象のリソースの定義</span><span class="w"></span>
+<span class="c1"># スケールさせたいリソース群をここで定義する</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># GSLB(配下のサーバが垂直スケールする際にサーバのデタッチ&amp;アタッチが行われる)</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GSLB</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;gslb&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">selector</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;example-gslb&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># サーバ(垂直スケール)</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server</span><span class="w"></span>
+<span class="w">        </span><span class="nt">naem</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;server&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">selector</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">          </span><span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;is1a&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">        </span><span class="nt">shutdown_force</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="c1"># カスタムハンドラーの定義</span>
-<span class="c1"># handlers:</span>
-<span class="c1">#   - name: &quot;fake&quot;</span>
-<span class="c1">#     endpoint: &quot;unix:autoscaler-handlers-fake.sock&quot;</span>
+<span class="c1"># カスタムハンドラーの定義</span><span class="w"></span>
+<span class="c1"># handlers:</span><span class="w"></span>
+<span class="c1">#   - name: &quot;fake&quot;</span><span class="w"></span>
+<span class="c1">#     endpoint: &quot;unix:autoscaler-handlers-fake.sock&quot;</span><span class="w"></span>
 
-<span class="c1"># オートスケーラーの動作設定</span>
-<span class="nt">autoscaler</span><span class="p">:</span>
-  <span class="nt">cooldown</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">600</span> 
+<span class="c1"># オートスケーラーの動作設定</span><span class="w"></span>
+<span class="nt">autoscaler</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cooldown</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">600</span><span class="w"> </span>
 
-<span class="c1"># さくらのクラウド API関連</span>
-<span class="c1"># sakuracloud:</span>
-<span class="c1">#   token: &quot;&lt;your-token&gt;&quot;</span>
-<span class="c1">#   secret: &quot;&lt;your-secret&gt;&quot;</span>
+<span class="c1"># さくらのクラウド API関連</span><span class="w"></span>
+<span class="c1"># sakuracloud:</span><span class="w"></span>
+<span class="c1">#   token: &quot;&lt;your-token&gt;&quot;</span><span class="w"></span>
+<span class="c1">#   secret: &quot;&lt;your-secret&gt;&quot;</span><span class="w"></span>
 </code></pre></div>
 <h2 id="_2">スキーマ</h2>
 <ul>
@@ -1265,355 +1265,355 @@
 <li><a href="#autoscaler_config">&lt;autoscaler_config&gt;</a></li>
 </ul>
 <h3 id="top_level">&lt;top_level&gt;</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># オートスケール対象リソースの定義</span>
-<span class="nt">resources</span><span class="p">:</span>
-        <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># オートスケール対象リソースの定義</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;resource_definition&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># カスタムハンドラーのリスト(省略可能)</span>
-<span class="nt">handlers</span><span class="p">:</span>
-        <span class="p p-Indicator">[</span> <span class="nv">- &lt;handler&gt;</span> <span class="p p-Indicator">]</span>
+<span class="c1"># カスタムハンドラーのリスト(省略可能)</span><span class="w"></span>
+<span class="nt">handlers</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;handler&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># オートスケーラーの動作設定(省略可能)</span>
-<span class="nt">autoscaler</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">&lt;autoscaler_config&gt;</span>
+<span class="c1"># オートスケーラーの動作設定(省略可能)</span><span class="w"></span>
+<span class="nt">autoscaler</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">&lt;autoscaler_config&gt;</span><span class="w"></span>
 
-<span class="c1"># さくらのクラウドAPI関連設定(省略可能)</span>
-<span class="c1"># Note: APIキーにはアクセスレベル`作成・削除`または`設定編集`が必要です</span>
-<span class="nt">sakuracloud</span><span class="p">:</span>
-  <span class="c1"># APIトークン、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKENを参照します</span>
-  <span class="nt">token</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-  <span class="c1"># APIシークレット、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKEN_SECRETを参照します</span>
-  <span class="nt">secret</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="c1"># さくらのクラウドAPI関連設定(省略可能)</span><span class="w"></span>
+<span class="c1"># Note: APIキーにはアクセスレベル`作成・削除`または`設定編集`が必要です</span><span class="w"></span>
+<span class="nt">sakuracloud</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># APIトークン、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKENを参照します</span><span class="w"></span>
+<span class="w">  </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># APIシークレット、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKEN_SECRETを参照します</span><span class="w"></span>
+<span class="w">  </span><span class="nt">secret</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="resource_definition">&lt;resource_definition&gt;</h3>
 <p>操作対象となるさくらのクラウド上のリソースの定義
 resource_def_xxxのいずれかを指定します。</p>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">&lt;resource_def_dns&gt; | &lt;resource_def_elb&gt; | &lt;resource_def_gslb&gt; | &lt;resource_def_load_balancer&gt; | &lt;resource_def_router&gt; | &lt;resource_def_server&gt; | &lt;resource_def_server_group&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">&lt;resource_def_dns&gt; | &lt;resource_def_elb&gt; | &lt;resource_def_gslb&gt; | &lt;resource_def_load_balancer&gt; | &lt;resource_def_router&gt; | &lt;resource_def_server&gt; | &lt;resource_def_server_group&gt;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="resource_def_dns">&lt;resource_def_dns&gt;</h3>
 <p>DNSリソースの定義</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;DNS&quot;</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-<span class="nt">selector</span><span class="p">:</span>
-  <span class="c1"># idかnamesのどちらかを指定、必須</span>
-  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
-  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
-  <span class="nt">names</span><span class="p">:</span> 
-    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;DNS&quot;</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># idかnamesのどちらかを指定、必須</span><span class="w"></span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 部分一致、複数指定した場合はAND結合</span><span class="w"></span>
+<span class="w">  </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># 子リソースの定義(省略可能)</span>
-<span class="nt">resources</span><span class="p">:</span>
-  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+<span class="c1"># 子リソースの定義(省略可能)</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;resource_definition&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <h3 id="resource_def_elb">&lt;resource_def_elb&gt;</h3>
 <p>エンハンスドロードバランサの定義。<br />
 ここで定義したリソースは垂直スケール可能になります(ハンドラ<code>elb-vertical-scaler</code>)。<br />
 また、<code>resources</code>配下に&lt;resource_def_server&gt;を定義し、かつELBの配信先サーバとIPアドレスが一致するサーバについては
 水平スケールする前にELBからのデタッチ/アタッチが行われます(ハンドラ:<code>elb-servers-handler</code>)。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;ELB&quot;</span> <span class="c1"># or EnhancedLoadBalancer</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-<span class="nt">selector</span><span class="p">:</span>
-  <span class="c1"># idかnamesのどちらかを指定、必須</span>
-  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
-  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
-  <span class="nt">names</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
-  <span class="c1"># 垂直スケールさせる範囲(省略可能)</span>
-  <span class="nt">plans</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- name</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># プラン名、省略可能 </span>
-        <span class="nv">cps</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="p p-Indicator">]</span>
-<span class="c1"># 子リソースの定義(省略可能)</span>
-<span class="nt">resources</span><span class="p">:</span>
-  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ELB&quot;</span><span class="w"> </span><span class="c1"># or EnhancedLoadBalancer</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># idかnamesのどちらかを指定、必須</span><span class="w"></span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 部分一致、複数指定した場合はAND結合</span><span class="w"></span>
+<span class="w">  </span><span class="nt">names</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 垂直スケールさせる範囲(省略可能)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">plans</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"> </span><span class="c1"># プラン名、省略可能 </span><span class="w"></span>
+<span class="w">        </span><span class="nv">cps</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;number&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="c1"># 子リソースの定義(省略可能)</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;resource_definition&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <p><code>plans</code>を省略した場合のデフォルト値は以下の通りです。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># ELBのデフォルトの垂直スケール範囲</span>
-<span class="nt">plans</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
-  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
-  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
-  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5000</span>
-  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10000</span>
-  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">50000</span>
-  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100000</span>
-  <span class="p p-Indicator">-</span> <span class="nt">cps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">400000</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># ELBのデフォルトの垂直スケール範囲</span><span class="w"></span>
+<span class="nt">plans</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5000</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50000</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">400000</span><span class="w"></span>
 </code></pre></div>
 <h3 id="resource_def_gslb">&lt;resource_def_gslb&gt;</h3>
 <p>GSLBの定義。
 <code>resources</code>配下に&lt;resource_def_server&gt;を定義し、かつGSLBの宛先サーバとIPアドレスが一致するサーバについては
 水平スケールする前にGSLBからのデタッチ/アタッチが行われます(ハンドラ:<code>gslb-servers-handler</code>)。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;GSLB&quot;</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-<span class="nt">selector</span><span class="p">:</span>
-  <span class="c1"># idかnamesのどちらかを指定、必須</span>
-  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
-  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
-  <span class="nt">names</span><span class="p">:</span> 
-    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;GSLB&quot;</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># idかnamesのどちらかを指定、必須</span><span class="w"></span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 部分一致、複数指定した場合はAND結合</span><span class="w"></span>
+<span class="w">  </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># 子リソースの定義(省略可能)</span>
-<span class="nt">resources</span><span class="p">:</span>
-  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+<span class="c1"># 子リソースの定義(省略可能)</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;resource_definition&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <h3 id="resource_def_load_balancer">&lt;resource_def_load_balancer&gt;</h3>
 <p>ロードバランサの定義。
 <code>resources</code>配下に&lt;resource_def_server&gt;を定義し、かつLBの宛先サーバとIPアドレスが一致するサーバについては
 水平スケールする前にLBからのデタッチ/アタッチが行われます(ハンドラ:<code>load-balancer-servers-handler</code>)。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;LoadBalancer&quot;</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-<span class="nt">selector</span><span class="p">:</span>
-  <span class="c1"># idかnamesのどちらかを指定、必須</span>
-  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
-  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
-  <span class="nt">names</span><span class="p">:</span> 
-    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
-  <span class="nt">zones</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;LoadBalancer&quot;</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># idかnamesのどちらかを指定、必須</span><span class="w"></span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 部分一致、複数指定した場合はAND結合</span><span class="w"></span>
+<span class="w">  </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">zones</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># 子リソースの定義(省略可能)</span>
-<span class="nt">resources</span><span class="p">:</span>
-  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+<span class="c1"># 子リソースの定義(省略可能)</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;resource_definition&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <h3 id="resource_def_router">&lt;resource_def_router&gt;</h3>
 <p>ルータの定義。<br />
 ここで定義したリソースは垂直スケール可能になります(ハンドラ<code>router-vertical-scaler</code>)。  </p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;Router&quot;</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-<span class="nt">selector</span><span class="p">:</span>
-  <span class="c1"># idかnamesのどちらかを指定、必須</span>
-  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
-  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
-  <span class="nt">names</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
-  <span class="nt">zones</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span> <span class="p p-Indicator">]</span>
-  <span class="c1"># 垂直スケールさせる範囲(省略可能)</span>
-  <span class="nt">plans</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- name</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># プラン名、省略可能 </span>
-        <span class="nv">band_width</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="p p-Indicator">]</span>
-<span class="c1"># 子リソースの定義(省略可能)</span>
-<span class="nt">resources</span><span class="p">:</span>
-  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Router&quot;</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># idかnamesのどちらかを指定、必須</span><span class="w"></span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 部分一致、複数指定した場合はAND結合</span><span class="w"></span>
+<span class="w">  </span><span class="nt">names</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">zones</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 垂直スケールさせる範囲(省略可能)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">plans</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"> </span><span class="c1"># プラン名、省略可能 </span><span class="w"></span>
+<span class="w">        </span><span class="nv">band_width</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;number&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="c1"># 子リソースの定義(省略可能)</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;resource_definition&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <p><code>plans</code>を省略した場合のデフォルト値は以下の通りです。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># ルータのデフォルトの垂直スケール範囲</span>
-<span class="nt">plans</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">250</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1500</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2000</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2500</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3000</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3500</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4000</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4500</span>
-  <span class="p p-Indicator">-</span> <span class="nt">band_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5000</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># ルータのデフォルトの垂直スケール範囲</span><span class="w"></span>
+<span class="nt">plans</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">250</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1500</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2500</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3500</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4000</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4500</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">band_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5000</span><span class="w"></span>
 </code></pre></div>
 <h3 id="resource_def_server">&lt;resource_def_server&gt;</h3>
 <p>サーバの定義。<br />
 ここで定義したリソースは垂直スケール可能になります(ハンドラ<code>server-vertical-scaler</code>)。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;Server&quot;</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-<span class="nt">selector</span><span class="p">:</span>
-  <span class="c1"># idかnamesのどちらかを指定、必須</span>
-  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span>
-  <span class="c1"># 部分一致、複数指定した場合はAND結合</span>
-  <span class="nt">names</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
-  <span class="nt">zones</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Server&quot;</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># idかnamesのどちらかを指定、必須</span><span class="w"></span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | number&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 部分一致、複数指定した場合はAND結合</span><span class="w"></span>
+<span class="w">  </span><span class="nt">names</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">zones</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-  <span class="c1"># コア専有プランを利用するか</span>
-  <span class="nt">dedicated_cpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
+<span class="w">  </span><span class="c1"># コア専有プランを利用するか</span><span class="w"></span>
+<span class="w">  </span><span class="nt">dedicated_cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
 
-  <span class="c1"># 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)</span>
-  <span class="nt">shutdown_force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span> 
+<span class="w">  </span><span class="c1"># 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">shutdown_force</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"> </span>
 
-  <span class="c1"># 垂直スケールさせる範囲(省略可能)</span>
-  <span class="nt">plans</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- name</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># プラン名、省略可能 </span>
-        <span class="nv">core</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="c1"># コア数</span>
-        <span class="nv">memory</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="c1">#メモリサイズ、GB単位 </span>
-    <span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="c1"># 垂直スケールさせる範囲(省略可能)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">plans</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"> </span><span class="c1"># プラン名、省略可能 </span><span class="w"></span>
+<span class="w">        </span><span class="nv">core</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;number&gt;</span><span class="w"> </span><span class="c1"># コア数</span><span class="w"></span>
+<span class="w">        </span><span class="nv">memory</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;number&gt;</span><span class="w"> </span><span class="c1">#メモリサイズ、GB単位 </span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># 子リソースの定義(省略可能)</span>
-<span class="nt">resources</span><span class="p">:</span>
-  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+<span class="c1"># 子リソースの定義(省略可能)</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;resource_definition&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <p><code>plans</code>を省略した場合のデフォルト値は以下の通りです。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># サーバのデフォルトの垂直スケール範囲</span>
-<span class="nt">plans</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
-    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
-  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
-    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
-  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
-    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>
-  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
-    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>
-  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
-    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">24</span>
-  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
-    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">32</span>
-  <span class="p p-Indicator">-</span> <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
-    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">48</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># サーバのデフォルトの垂直スケール範囲</span><span class="w"></span>
+<span class="nt">plans</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span><span class="w"></span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">48</span><span class="w"></span>
 </code></pre></div>
 <h3 id="resource_def_server_group">&lt;resource_def_server_group&gt;</h3>
 <p>サーバグループの定義。<br />
 ここで定義したリソースは水平スケール可能になります(ハンドラ<code>server-horizontal-scaler</code>)。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&quot;ServerGroup&quot;</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1">#グループ内の各サーバ名のプレフィックスとなる</span>
-<span class="nt">zone</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ServerGroup&quot;</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1">#グループ内の各サーバ名のプレフィックスとなる</span><span class="w"></span>
+<span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span><span class="w"></span>
 
-<span class="c1"># 最小/最大サーバ数</span>
-<span class="nt">min_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
-<span class="nt">max_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
+<span class="c1"># 最小/最大サーバ数</span><span class="w"></span>
+<span class="nt">min_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w"></span>
+<span class="nt">max_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w"></span>
 
-<span class="c1"># 名前付きプラン(サーバグループの場合はサーバ数をプランとして表す)</span>
-<span class="nt">plans</span><span class="p">:</span>
-  <span class="p p-Indicator">[</span> <span class="nv">- name</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># プラン名、省略可能 </span>
-      <span class="nv">size</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span> <span class="c1"># サーバ数</span>
-  <span class="p p-Indicator">]</span>
+<span class="c1"># 名前付きプラン(サーバグループの場合はサーバ数をプランとして表す)</span><span class="w"></span>
+<span class="nt">plans</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"> </span><span class="c1"># プラン名、省略可能 </span><span class="w"></span>
+<span class="w">      </span><span class="nv">size</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;number&gt;</span><span class="w"> </span><span class="c1"># サーバ数</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)</span>
-<span class="nt">shutdown_force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
+<span class="c1"># 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)</span><span class="w"></span>
+<span class="nt">shutdown_force</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
 
-<span class="c1"># グループ内のサーバのテンプレート</span>
-<span class="nt">template</span><span class="p">:</span>
-  <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span> 
-  <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="c1"># グループ内のサーバのテンプレート</span><span class="w"></span>
+<span class="nt">template</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 
-  <span class="nt">icon_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-  <span class="nt">cdrom_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-  <span class="nt">private_host_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="w">  </span><span class="nt">icon_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cdrom_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">private_host_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 
-  <span class="nt">interface_driver</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;virtio&quot; | &quot;e1000&quot; | default=&quot;virtio&quot;&gt;</span>
+<span class="w">  </span><span class="nt">interface_driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;virtio&quot; | &quot;e1000&quot; | default=&quot;virtio&quot;&gt;</span><span class="w"></span>
 
-  <span class="nt">plan</span><span class="p">:</span>
-    <span class="nt">core</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>           <span class="c1"># コア数</span>
-    <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>         <span class="c1"># メモリサイズ、GB単位 </span>
-    <span class="nt">dedicated_cpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span> <span class="c1"># コア専有の場合true</span>
+<span class="w">  </span><span class="nt">plan</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w">           </span><span class="c1"># コア数</span><span class="w"></span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w">         </span><span class="c1"># メモリサイズ、GB単位 </span><span class="w"></span>
+<span class="w">    </span><span class="nt">dedicated_cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"> </span><span class="c1"># コア専有の場合true</span><span class="w"></span>
 
-  <span class="c1"># 接続するディスクをリストで指定  </span>
-  <span class="nt">disks</span><span class="p">:</span>
-    <span class="p p-Indicator">[</span> <span class="nv">- name_prefix</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span> <span class="c1"># ディスク名のプレフィックス(省略可能)</span>
-        <span class="nv">tags</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
-        <span class="nv">description</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span>
+<span class="w">  </span><span class="c1"># 接続するディスクをリストで指定  </span><span class="w"></span>
+<span class="w">  </span><span class="nt">disks</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name_prefix</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"> </span><span class="c1"># ディスク名のプレフィックス(省略可能)</span><span class="w"></span>
+<span class="w">        </span><span class="nv">tags</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">        </span><span class="nv">description</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"></span>
 
-        <span class="nv">icon_id</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span>
+<span class="w">        </span><span class="nv">icon_id</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"></span>
 
-        <span class="nv">source_archive</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt; | &lt;resource_selector&gt;</span>
-        <span class="nv">source_disk</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt; | &lt;resource_selector&gt;</span>
-        <span class="nv">os_type</span><span class="p p-Indicator">:</span> <span class="nv">&lt;string&gt;</span>
+<span class="w">        </span><span class="nv">source_archive</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt; | &lt;resource_selector&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nv">source_disk</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt; | &lt;resource_selector&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nv">os_type</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"></span>
 
-        <span class="nv">plan</span><span class="p p-Indicator">:</span> <span class="nv">&lt;&quot;ssd&quot; | &quot;hdd&quot;&gt;</span>
-        <span class="nv">connection</span><span class="p p-Indicator">:</span> <span class="nv">&lt;&quot;virtio&quot; | &quot;ide&quot;&gt;</span>
-        <span class="nv">size</span><span class="p p-Indicator">:</span> <span class="nv">&lt;number&gt;</span>
-    <span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nv">plan</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;&quot;ssd&quot; | &quot;hdd&quot;&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nv">connection</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;&quot;virtio&quot; | &quot;ide&quot;&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nv">size</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;number&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-  <span class="nt">edit_parameter</span><span class="p">:</span>
-    <span class="nt">disabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>        <span class="c1"># ディスクの修正を行わない場合true</span>
-    <span class="nt">host_name_prefix</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># ホスト名のプレフィックス(省略可能)</span>
-    <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-    <span class="nt">disable_pw_auth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
-    <span class="nt">enable_dhcp</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
-    <span class="nt">change_partition_uuid</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
-    <span class="nt">startup_scripts</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt; | &lt;filepath&gt;</span> <span class="p p-Indicator">]</span>
-    <span class="nt">ssh_keys</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt; | &lt;filepath&gt;</span> <span class="p p-Indicator">]</span>
-    <span class="nt">ssh_key_ids</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">edit_parameter</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w">        </span><span class="c1"># ディスクの修正を行わない場合true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">host_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># ホスト名のプレフィックス(省略可能)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">disable_pw_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enable_dhcp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">change_partition_uuid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">startup_scripts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt; | &lt;filepath&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ssh_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt; | &lt;filepath&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ssh_key_ids</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-  <span class="nt">network_interfaces</span><span class="p">:</span>
-    <span class="c1"># 上流ネットワーク</span>
-    <span class="nt">upstream</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;shared&quot;&gt; | &lt;resource_selector&gt;</span>
+<span class="w">  </span><span class="nt">network_interfaces</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># 上流ネットワーク</span><span class="w"></span>
+<span class="w">    </span><span class="nt">upstream</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;shared&quot;&gt; | &lt;resource_selector&gt;</span><span class="w"></span>
 
-    <span class="c1"># 以下はupstreamがsharedの場合のみ指定可能</span>
-    <span class="nt">assign_cidr_block</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-    <span class="nt">assign_netmask_len</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span>
-    <span class="nt">default_route</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-    <span class="nt">packet_filter_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="w">    </span><span class="c1"># 以下はupstreamがsharedの場合のみ指定可能</span><span class="w"></span>
+<span class="w">    </span><span class="nt">assign_cidr_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">assign_netmask_len</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">default_route</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">packet_filter_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 
-    <span class="c1"># 上流リソースの操作のためのメタデータ</span>
-    <span class="c1"># サーバグループの上流にELB/GSLB/LB/DNSを定義している場合のみ指定可能</span>
-    <span class="nt">expose</span><span class="p">:</span>
-      <span class="c1"># 公開するポート番号のリスト</span>
-      <span class="nt">ports</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;number&gt;</span> <span class="p p-Indicator">]</span> 
+<span class="w">    </span><span class="c1"># 上流リソースの操作のためのメタデータ</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># サーバグループの上流にELB/GSLB/LB/DNSを定義している場合のみ指定可能</span><span class="w"></span>
+<span class="w">    </span><span class="nt">expose</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># 公開するポート番号のリスト</span><span class="w"></span>
+<span class="w">      </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;number&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span>
 
-      <span class="c1"># ELB向け: 実サーバ登録時のサーバグループ名</span>
-      <span class="nt">server_group_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="w">      </span><span class="c1"># ELB向け: 実サーバ登録時のサーバグループ名</span><span class="w"></span>
+<span class="w">      </span><span class="nt">server_group_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 
-      <span class="c1"># GSLB向け: 実サーバ登録時の重み値</span>
-      <span class="nt">weight</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
+<span class="w">      </span><span class="c1"># GSLB向け: 実サーバ登録時の重み値</span><span class="w"></span>
+<span class="w">      </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w"></span>
 
-      <span class="c1"># LB向け: 対象VIPのリスト</span>
-      <span class="c1"># 省略した場合、このNICと同じネットワーク内に存在するVIP全てが対象となる</span>
-      <span class="nt">vips</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="c1"># LB向け: 対象VIPのリスト</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># 省略した場合、このNICと同じネットワーク内に存在するVIP全てが対象となる</span><span class="w"></span>
+<span class="w">      </span><span class="nt">vips</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-      <span class="c1"># LB向け: 実サーバ登録時のヘルスチェック</span>
-      <span class="nt">health_check</span><span class="p">:</span>
-        <span class="c1"># ヘルスチェックで用いるプロトコル</span>
-        <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt; &quot;http&quot; | &quot;https&quot; | &quot;ping&quot; | &quot;tcp&quot; &gt;</span>
+<span class="w">      </span><span class="c1"># LB向け: 実サーバ登録時のヘルスチェック</span><span class="w"></span>
+<span class="w">      </span><span class="nt">health_check</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># ヘルスチェックで用いるプロトコル</span><span class="w"></span>
+<span class="w">        </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt; &quot;http&quot; | &quot;https&quot; | &quot;ping&quot; | &quot;tcp&quot; &gt;</span><span class="w"></span>
 
-        <span class="c1"># プロトコルがhttp/httpsの場合のリクエスト先パス 例:/index.html</span>
-        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-        <span class="c1"># プロトコルがhttp/httpsの場合の期待するレスポンスステータスコード</span>
-        <span class="nt">status_code</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
+<span class="w">        </span><span class="c1"># プロトコルがhttp/httpsの場合のリクエスト先パス 例:/index.html</span><span class="w"></span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># プロトコルがhttp/httpsの場合の期待するレスポンスステータスコード</span><span class="w"></span>
+<span class="w">        </span><span class="nt">status_code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w"></span>
 
-      <span class="c1"># DNS向け: レコード登録時のレコード名 例:www</span>
-      <span class="nt">record_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-      <span class="c1"># DNS向け: レコード登録時のTTL</span>
-      <span class="nt">record_ttl</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
+<span class="w">      </span><span class="c1"># DNS向け: レコード登録時のレコード名 例:www</span><span class="w"></span>
+<span class="w">      </span><span class="nt">record_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># DNS向け: レコード登録時のTTL</span><span class="w"></span>
+<span class="w">      </span><span class="nt">record_ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w"></span>
 
-<span class="c1"># 子リソースの定義(省略可能)</span>
-<span class="nt">resources</span><span class="p">:</span>
-  <span class="p p-Indicator">[</span> <span class="nv">- &lt;resource_definition&gt;</span> <span class="p p-Indicator">]</span>
+<span class="c1"># 子リソースの定義(省略可能)</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;resource_definition&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <p><code>plans</code>を省略した場合、<code>size</code>に<code>min_size</code>から<code>max_size</code>までの値を持つプランが存在するとみなします。</p>
 <h4 id="_3"><resource_selector></h4>
-<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-<span class="nt">names</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">- &lt;string&gt;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <h3 id="handler">&lt;handler&gt;</h3>
 <p>カスタムハンドラーの定義。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1">#ハンドラ名</span>
-<span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1">#gRPCのエンドポイントアドレス(例: unix:/var/run/your-custom-handler.sock)</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1">#ハンドラ名</span><span class="w"></span>
+<span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1">#gRPCのエンドポイントアドレス(例: unix:/var/run/your-custom-handler.sock)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="autoscaler_config">&lt;autoscaler_config&gt;</h3>
 <p>オートスケーラーの動作設定</p>
-<div class="highlight"><pre><span></span><code><span class="nt">cooldown</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;number | default = 600&gt;</span> <span class="c1"># 同一ジョブの連続実行を抑制するためのクールダウン期間、秒単位で指定</span>
+<div class="highlight"><pre><span></span><code><span class="nt">cooldown</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number | default = 600&gt;</span><span class="w"> </span><span class="c1"># 同一ジョブの連続実行を抑制するためのクールダウン期間、秒単位で指定</span><span class="w"></span>
 
-<span class="c1"># ビルトインハンドラの設定</span>
-<span class="nt">handlers_config</span><span class="p">:</span>
-  <span class="nt">disabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span> <span class="c1"># すべてのビルトインハンドラの無効化(handlersでの指定より優先される)</span>
-  <span class="nt">handlers</span><span class="p">:</span>        <span class="c1"># ビルトインハンドラごとの設定、ハンドラ名をキーにもつmap</span>
-    <span class="nt">&lt;string&gt;</span><span class="p">:</span>          <span class="c1"># ビルトインハンドラ名</span>
-      <span class="nt">disabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span> <span class="c1"># このハンドラを無効化するか</span>
+<span class="c1"># ビルトインハンドラの設定</span><span class="w"></span>
+<span class="nt">handlers_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"> </span><span class="c1"># すべてのビルトインハンドラの無効化(handlersでの指定より優先される)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">handlers</span><span class="p">:</span><span class="w">        </span><span class="c1"># ビルトインハンドラごとの設定、ハンドラ名をキーにもつmap</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&lt;string&gt;</span><span class="p">:</span><span class="w">          </span><span class="c1"># ビルトインハンドラ名</span><span class="w"></span>
+<span class="w">      </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"> </span><span class="c1"># このハンドラを無効化するか</span><span class="w"></span>
 
-<span class="c1"># CoreのgRPCエンドポイントのTLS関連設定</span>
-<span class="nt">server_tls_config</span><span class="p">:</span>
-  <span class="nt">cert_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 証明書のファイルパス</span>
-  <span class="nt">key_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 秘密鍵のファイルパス</span>
-  <span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span>
-  <span class="nt">client_auth_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span>
-  <span class="nt">client_ca_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span>
+<span class="c1"># CoreのgRPCエンドポイントのTLS関連設定</span><span class="w"></span>
+<span class="nt">server_tls_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cert_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 証明書のファイルパス</span><span class="w"></span>
+<span class="w">  </span><span class="nt">key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 秘密鍵のファイルパス</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span><span class="w"></span>
+<span class="w">  </span><span class="nt">client_auth_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">client_ca_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span><span class="w"></span>
 
-<span class="c1"># HandlersへのgRPCリクエスト時のTLS関連設定</span>
-<span class="nt">handler_tls_config</span><span class="p">:</span>
-  <span class="nt">cert_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 証明書のファイルパス</span>
-  <span class="nt">key_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 秘密鍵のファイルパス </span>
-  <span class="nt">root_ca_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># ルート証明書(チェイン)のファイルパス</span>
+<span class="c1"># HandlersへのgRPCリクエスト時のTLS関連設定</span><span class="w"></span>
+<span class="nt">handler_tls_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cert_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 証明書のファイルパス</span><span class="w"></span>
+<span class="w">  </span><span class="nt">key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 秘密鍵のファイルパス </span><span class="w"></span>
+<span class="w">  </span><span class="nt">root_ca_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># ルート証明書(チェイン)のファイルパス</span><span class="w"></span>
 
-<span class="c1"># Exporterの設定</span>
-<span class="nt">exporter_config</span><span class="p">:</span>
-  <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
-  <span class="nt">address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | default=&quot;:8081&quot;&gt;</span>
-  <span class="nt">tls_config</span><span class="p">:</span>
-    <span class="nt">cert_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 証明書のファイルパス</span>
-    <span class="nt">key_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># 秘密鍵のファイルパス</span>
-    <span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span>
-    <span class="nt">client_auth_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span>
-    <span class="nt">client_ca_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span> <span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span>
+<span class="c1"># Exporterの設定</span><span class="w"></span>
+<span class="nt">exporter_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=&quot;:8081&quot;&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tls_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cert_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 証明書のファイルパス</span><span class="w"></span>
+<span class="w">    </span><span class="nt">key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 秘密鍵のファイルパス</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span><span class="w"></span>
+<span class="w">    </span><span class="nt">client_auth_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">client_ca_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span><span class="w"></span>
 </code></pre></div>
 
               
@@ -1665,7 +1665,7 @@ resource_def_xxxのいずれかを指定します。</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright (C) 2021 saclodu/autoscaler authors
+      Copyright (C) 2021-2022 sacloud/autoscaler authors
     </div>
   
   
@@ -1684,10 +1684,10 @@ resource_def_xxxのいずれかを指定します。</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

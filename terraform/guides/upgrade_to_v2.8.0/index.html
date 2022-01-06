@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.usacloud.jp/terraform/guides/upgrade_to_v2.8.0/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2827,80 +2827,80 @@ Terraform v0.12以降をご利用ください。</p>
 <h3 id="diff2">サーバのディスクの修正時に公開鍵を文字列で指定</h3>
 <p>サーバのディスクの修正パラメータを指定する際、公開鍵をIDだけでなく文字列でも指定可能になりました。</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span> <span class="nc">&quot;sakuracloud_server&quot;</span> <span class="nv">&quot;example&quot;</span> <span class="p">{</span>
-  <span class="na">name</span>        <span class="o">=</span> <span class="s2">&quot;example&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="w"></span>
 
-  <span class="nb">network_interface</span> <span class="p">{</span>
-    <span class="na">upstream</span> <span class="o">=</span> <span class="s2">&quot;shared&quot;</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="nb">disk_edit_parameter</span> <span class="p">{</span>
-    <span class="na">ssh_keys</span> <span class="o">=</span> <span class="p">[</span><span class="nf">file</span><span class="p">(</span><span class="s2">&quot;~/.ssh/gitlab.pub&quot;</span><span class="p">)]</span><span class="c1"> # 公開鍵を文字列で指定</span>
-    <span class="na">ssh_key_ids</span> <span class="o">=</span> <span class="p">[</span><span class="nv">sakuracloud_ssh_key.foobar.id</span><span class="p">]</span><span class="c1"> # 公開鍵をリソースIDで指定</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">ssh_keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nf">file</span><span class="p">(</span><span class="s2">&quot;~/.ssh/gitlab.pub&quot;</span><span class="p">)]</span><span class="c1"> # 公開鍵を文字列で指定</span>
+<span class="w">    </span><span class="na">ssh_key_ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_ssh_key.foobar.id</span><span class="p">]</span><span class="c1"> # 公開鍵をリソースIDで指定</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="diff3">SIMのパスコードを<code>Sensitive:true</code>に変更</h3>
 <p>tfファイル上の変更は不要です。</p>
 <h3 id="diff4">シンプル監視でのHTTP/2の利用</h3>
 <p>シンプル監視のHTTP監視時にHTTP/2が利用可能になりました。(v2.8.2で対応)</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span> <span class="nc">&quot;sakuracloud_simple_monitor&quot;</span> <span class="nv">&quot;foobar&quot;</span> <span class="p">{</span>
-  <span class="na">target</span> <span class="o">=</span> <span class="s2">&quot;www.example.com&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_simple_monitor&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www.example.com&quot;</span><span class="w"></span>
 
-  <span class="na">delay_loop</span> <span class="o">=</span> <span class="m">60</span>
-  <span class="nb">health_check</span> <span class="p">{</span>
-    <span class="na">protocol</span>    <span class="o">=</span> <span class="s2">&quot;https&quot;</span>
-    <span class="na">port</span>        <span class="o">=</span> <span class="m">443</span>
-    <span class="na">path</span>        <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
-    <span class="na">status</span>      <span class="o">=</span> <span class="s2">&quot;200&quot;</span>
-    <span class="na">host_header</span> <span class="o">=</span> <span class="s2">&quot;example.com&quot;</span>
-    <span class="na">sni</span>         <span class="o">=</span> <span class="no">true</span>
+<span class="w">  </span><span class="na">delay_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">60</span><span class="w"></span>
+<span class="w">  </span><span class="nb">health_check</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="na">port</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="m">443</span><span class="w"></span>
+<span class="w">    </span><span class="na">path</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="na">status</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="na">host_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.com&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="na">sni</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
 
-    <span class="na">http2</span>       <span class="o">=</span> <span class="no">true</span><span class="c1"> # 追加</span>
-  <span class="p">}</span>
-  <span class="na">notify_email_enabled</span> <span class="o">=</span> <span class="no">true</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="na">http2</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="c1"> # 追加</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="na">notify_email_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="diff5">シンプル監視でのコンテンツボディ監視</h3>
 <p>シンプル監視でのHTTP監視時にコンテンツボディのチェックが利用可能になりました。  </p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span> <span class="nc">&quot;sakuracloud_simple_monitor&quot;</span> <span class="nv">&quot;foobar&quot;</span> <span class="p">{</span>
-  <span class="na">target</span> <span class="o">=</span> <span class="s2">&quot;www.example.com&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_simple_monitor&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www.example.com&quot;</span><span class="w"></span>
 
-  <span class="na">delay_loop</span> <span class="o">=</span> <span class="m">60</span>
-  <span class="nb">health_check</span> <span class="p">{</span>
-    <span class="na">protocol</span>    <span class="o">=</span> <span class="s2">&quot;https&quot;</span>
-    <span class="na">port</span>        <span class="o">=</span> <span class="m">443</span>
-    <span class="na">path</span>        <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
-    <span class="na">status</span>      <span class="o">=</span> <span class="s2">&quot;200&quot;</span>
-    <span class="na">host_header</span> <span class="o">=</span> <span class="s2">&quot;example.com&quot;</span>
-    <span class="na">sni</span>         <span class="o">=</span> <span class="no">true</span>
+<span class="w">  </span><span class="na">delay_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">60</span><span class="w"></span>
+<span class="w">  </span><span class="nb">health_check</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="na">port</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="m">443</span><span class="w"></span>
+<span class="w">    </span><span class="na">path</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="na">status</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="na">host_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.com&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="na">sni</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
 
-    <span class="na">contains_string</span> <span class="o">=</span> <span class="s2">&quot;ok&quot;</span><span class="c1"> #追加</span>
-  <span class="p">}</span>
-  <span class="na">notify_email_enabled</span> <span class="o">=</span> <span class="no">true</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="na">contains_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ok&quot;</span><span class="c1"> #追加</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="na">notify_email_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="diff6">エンハンスドロードバランサでのgzipの利用</h3>
 <p>エンハンスドロードバランサでコンテンツのgzip圧縮を有効化できるようになりました。</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span> <span class="nc">&quot;sakuracloud_proxylb&quot;</span> <span class="nv">&quot;foobar&quot;</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_proxylb&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">  # 中略</span>
-  <span class="na">gzip</span> <span class="o">=</span> <span class="no">true</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="na">gzip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="diff7">エンハンスドロードバランサのLet's Encrypt設定 - SANs指定機能</h3>
 <p>エンハンスドロードバランサでLet's Encryptを用いて証明書を発行する際のパラメータとしてSANs(Subject Alternate Names)を指定可能になりました。  </p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span> <span class="err">sakuracloud_proxylb_acme</span> <span class="nv">&quot;foobar&quot;</span> <span class="p">{</span>
-  <span class="na">proxylb_id</span>        <span class="o">=</span> <span class="nv">sakuracloud_proxylb.foobar.id</span>
-  <span class="na">accept_tos</span>        <span class="o">=</span> <span class="no">true</span>
-  <span class="na">common_name</span>       <span class="o">=</span> <span class="s2">&quot;www.example.com&quot;</span>
-  <span class="na">subject_alt_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;www1.example.com&quot;</span><span class="p">]</span><span class="c1"> #追加</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="err">sakuracloud_proxylb_acme</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">proxylb_id</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_proxylb.foobar.id</span><span class="w"></span>
+<span class="w">  </span><span class="na">accept_tos</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
+<span class="w">  </span><span class="na">common_name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www.example.com&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="na">subject_alt_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;www1.example.com&quot;</span><span class="p">]</span><span class="c1"> #追加</span>
 
-  <span class="na">update_delay_sec</span> <span class="o">=</span> <span class="m">120</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="na">update_delay_sec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">120</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
               
@@ -2952,7 +2952,7 @@ Terraform v0.12以降をご利用ください。</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright (C) 2016-2021 terraform-provider-sakuracloud authors
+      Copyright (C) 2016-2022 terraform-provider-sakuracloud authors
     </div>
   
   
@@ -2971,10 +2971,10 @@ Terraform v0.12以降をご利用ください。</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

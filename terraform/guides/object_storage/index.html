@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.usacloud.jp/terraform/guides/object_storage/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2658,60 +2658,60 @@
 代わりにAWSプロバイダーなどを利用することで新オブジェクトストレージの一部機能をTerraformから利用可能です。</p>
 <p>以下はAWSプロバイダーを用いてオブジェクトを作成する例です。<br />
 なおAPIキーやバケットはあらかじめコントロールパネルから作成しておく必要があります。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">terraform</span> <span class="p">{</span>
-  <span class="nb">required_providers</span> <span class="p">{</span>
-    <span class="nb">aws</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">source</span>  <span class="o">=</span> <span class="s2">&quot;hashicorp/aws&quot;</span>
-      <span class="na">version</span> <span class="o">=</span> <span class="s2">&quot;~&gt; 3.0&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nb">required_providers</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nb">aws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hashicorp/aws&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~&gt; 3.0&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kr">provider</span> <span class="nv">&quot;aws&quot;</span> <span class="p">{</span>
-  <span class="na">alias</span>      <span class="o">=</span> <span class="s2">&quot;sacloud&quot;</span>
-  <span class="na">region</span>     <span class="o">=</span> <span class="nv">var.s3_region</span>
-  <span class="na">access_key</span> <span class="o">=</span> <span class="nv">var.s3_access_key</span>
-  <span class="na">secret_key</span> <span class="o">=</span> <span class="nv">var.s3_secret_key</span>
-  <span class="nb">endpoints</span> <span class="p">{</span>
-    <span class="na">s3</span> <span class="o">=</span> <span class="nv">var.s3_endpoint</span>
-  <span class="p">}</span>
+<span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;aws&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">alias</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sacloud&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="na">region</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nv">var.s3_region</span><span class="w"></span>
+<span class="w">  </span><span class="na">access_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.s3_access_key</span><span class="w"></span>
+<span class="w">  </span><span class="na">secret_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.s3_secret_key</span><span class="w"></span>
+<span class="w">  </span><span class="nb">endpoints</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.s3_endpoint</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="na">skip_credentials_validation</span> <span class="o">=</span> <span class="no">true</span>
-  <span class="na">skip_region_validation</span>      <span class="o">=</span> <span class="no">true</span>
-  <span class="na">skip_requesting_account_id</span>  <span class="o">=</span> <span class="no">true</span>
-  <span class="na">skip_metadata_api_check</span>     <span class="o">=</span> <span class="no">true</span>
+<span class="w">  </span><span class="na">skip_credentials_validation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
+<span class="w">  </span><span class="na">skip_region_validation</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
+<span class="w">  </span><span class="na">skip_requesting_account_id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
+<span class="w">  </span><span class="na">skip_metadata_api_check</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
 <span class="p">}</span><span class="c1"></span>
 
 <span class="c1">#================================================</span>
 
-<span class="kr">variable</span> <span class="nv">&quot;s3_access_key&quot;</span> <span class="p">{</span><span class="err">}</span>
-<span class="kr">variable</span> <span class="nv">&quot;s3_secret_key&quot;</span> <span class="p">{</span><span class="err">}</span>
+<span class="kr">variable</span><span class="w"> </span><span class="nv">&quot;s3_access_key&quot;</span><span class="w"> </span><span class="p">{</span><span class="err">}</span>
+<span class="kr">variable</span><span class="w"> </span><span class="nv">&quot;s3_secret_key&quot;</span><span class="w"> </span><span class="p">{</span><span class="err">}</span>
 
-<span class="kr">variable</span> <span class="nv">&quot;s3_region&quot;</span> <span class="p">{</span>
-  <span class="na">default</span> <span class="o">=</span> <span class="s2">&quot;jp-north-1&quot;</span>
-<span class="p">}</span>
+<span class="kr">variable</span><span class="w"> </span><span class="nv">&quot;s3_region&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;jp-north-1&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kr">variable</span> <span class="nv">&quot;s3_endpoint&quot;</span> <span class="p">{</span>
-  <span class="na">default</span> <span class="o">=</span> <span class="s2">&quot;https://s3.isk01.sakurastorage.jp&quot;</span>
+<span class="kr">variable</span><span class="w"> </span><span class="nv">&quot;s3_endpoint&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://s3.isk01.sakurastorage.jp&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="c1"></span>
 
 <span class="c1">#================================================</span>
 
-<span class="kr">data</span> <span class="nc">&quot;aws_s3_bucket&quot;</span> <span class="nv">&quot;example&quot;</span> <span class="p">{</span>
-  <span class="na">provider</span> <span class="o">=</span> <span class="nv">aws.sacloud</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;aws_s3_bucket&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">aws.sacloud</span><span class="w"></span>
 
-  <span class="na">bucket</span>   <span class="o">=</span> <span class="s2">&quot;your-bucket-name&quot;</span><span class="c1"> # set your bucket name</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="na">bucket</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-bucket-name&quot;</span><span class="c1"> # set your bucket name</span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kr">resource</span> <span class="nc">&quot;aws_s3_bucket_object&quot;</span> <span class="nv">&quot;object&quot;</span> <span class="p">{</span>
-  <span class="na">provider</span> <span class="o">=</span> <span class="nv">aws.sacloud</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_s3_bucket_object&quot;</span><span class="w"> </span><span class="nv">&quot;object&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">aws.sacloud</span><span class="w"></span>
 
-  <span class="na">bucket</span> <span class="o">=</span> <span class="nv">data.aws_s3_bucket.example.id</span>
-  <span class="na">key</span>    <span class="o">=</span> <span class="s2">&quot;example.txt&quot;</span>
-  <span class="na">source</span> <span class="o">=</span> <span class="s2">&quot;example.txt&quot;</span>
-  <span class="na">etag</span>   <span class="o">=</span> <span class="nf">filemd5</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">)</span>
-  <span class="na">acl</span>    <span class="o">=</span> <span class="s2">&quot;public-read&quot;</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="na">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.aws_s3_bucket.example.id</span><span class="w"></span>
+<span class="w">  </span><span class="na">key</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.txt&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.txt&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="na">etag</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">filemd5</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="na">acl</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public-read&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
               
@@ -2763,7 +2763,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright (C) 2016-2021 terraform-provider-sakuracloud authors
+      Copyright (C) 2016-2022 terraform-provider-sakuracloud authors
     </div>
   
   
@@ -2782,10 +2782,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>
