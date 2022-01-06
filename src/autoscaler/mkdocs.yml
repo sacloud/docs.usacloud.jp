@@ -4,7 +4,7 @@ site_description: sacloud/autoscaler
 site_author: '@yamamoto-febc'
 repo_url: https://github.com/sacloud/autoscaler
 repo_name: sacloud/autoscaler
-copyright: Copyright (C) 2021 saclodu/autoscaler authors
+copyright: Copyright (C) 2021-2022 sacloud/autoscaler authors
 theme:
   name: material
   language: ja
