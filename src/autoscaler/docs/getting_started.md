@@ -104,4 +104,4 @@ $ autoscaler inputs direct up
 ## 外部監視ツール側の設定
 
 Grafana、AlertManager、またはZabbixを利用する場合、各プロダクト側でアラートの設定、およびWebhookでの通知設定が必要です。  
-詳細は[Inputsドキュメント](./inputs)を参照してください。  
+詳細は[Inputsドキュメント](../inputs/)を参照してください。  
