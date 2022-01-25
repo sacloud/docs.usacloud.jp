@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/configuration/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.cd566b2a.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6e60f8b8.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -840,6 +840,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../examples/horizontal-scale-server-and-elb_cloud-init/" class="md-nav__link">
+        ELB+サーバ(cloud-init)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../examples/horizontal-scale-server-and-lb/" class="md-nav__link">
         LB+サーバ
       </a>
@@ -1245,6 +1259,10 @@
 
 <span class="c1"># さくらのクラウド API関連</span><span class="w"></span>
 <span class="c1"># sakuracloud:</span><span class="w"></span>
+<span class="c1">#   # Usacloud互換のプロファイル機能でAPIキーを指定</span><span class="w"></span>
+<span class="c1">#   profile: &quot;&lt;your-profile-name&gt;&quot;</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1">#   # APIキーの直接指定も可能</span><span class="w"></span>
 <span class="c1">#   token: &quot;&lt;your-token&gt;&quot;</span><span class="w"></span>
 <span class="c1">#   secret: &quot;&lt;your-secret&gt;&quot;</span><span class="w"></span>
 </code></pre></div>
@@ -1280,6 +1298,11 @@
 <span class="c1"># さくらのクラウドAPI関連設定(省略可能)</span><span class="w"></span>
 <span class="c1"># Note: APIキーにはアクセスレベル`作成・削除`または`設定編集`が必要です</span><span class="w"></span>
 <span class="nt">sakuracloud</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Usacloud互換のプロファイルの名称</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 環境変数SAKURACLOUD_PROFILEでの指定も可能</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># 省略した場合は~/.usacloud/currentの値を参照します</span><span class="w"></span>
+<span class="w">  </span><span class="nt">profile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+
 <span class="w">  </span><span class="c1"># APIトークン、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKENを参照します</span><span class="w"></span>
 <span class="w">  </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># APIシークレット、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKEN_SECRETを参照します</span><span class="w"></span>
@@ -1513,6 +1536,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="w">        </span><span class="nv">size</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;number&gt;</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">]</span><span class="w"></span>
 
+<span class="w">  </span><span class="c1"># ディスクの修正パラメータ、cloud_configとの併用は出来ない</span><span class="w"></span>
 <span class="w">  </span><span class="nt">edit_parameter</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w">        </span><span class="c1"># ディスクの修正を行わない場合true</span><span class="w"></span>
 <span class="w">    </span><span class="nt">host_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># ホスト名のプレフィックス(省略可能)</span><span class="w"></span>
@@ -1523,6 +1547,9 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="w">    </span><span class="nt">startup_scripts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt; | &lt;filepath&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">ssh_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt; | &lt;filepath&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">ssh_key_ids</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># cloud-init用のパラメータ、edit_parameterとの併用は出来ない  </span><span class="w"></span>
+<span class="w">  </span><span class="nt">cloud_config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w">  </span>
 
 <span class="w">  </span><span class="nt">network_interfaces</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># 上流ネットワーク</span><span class="w"></span>
@@ -1687,7 +1714,7 @@ resource_def_xxxのいずれかを指定します。</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
       
     
   </body>
