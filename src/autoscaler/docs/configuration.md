@@ -33,6 +33,10 @@ autoscaler:
 
 # さくらのクラウド API関連
 # sakuracloud:
+#   # Usacloud互換のプロファイル機能でAPIキーを指定
+#   profile: "<your-profile-name>"
+#
+#   # APIキーの直接指定も可能
 #   token: "<your-token>"
 #   secret: "<your-secret>"
 ```
@@ -69,6 +73,11 @@ autoscaler:
 # さくらのクラウドAPI関連設定(省略可能)
 # Note: APIキーにはアクセスレベル`作成・削除`または`設定編集`が必要です
 sakuracloud:
+  # Usacloud互換のプロファイルの名称
+  # 環境変数SAKURACLOUD_PROFILEでの指定も可能
+  # 省略した場合は~/.usacloud/currentの値を参照します
+  profile: <string>
+  
   # APIトークン、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKENを参照します
   token: <string>
   # APIシークレット、省略した場合は環境変数SAKURACLOUD_ACCESS_TOKEN_SECRETを参照します
@@ -343,6 +352,7 @@ template:
         size: <number>
     ]
   
+  # ディスクの修正パラメータ、cloud_configとの併用は出来ない
   edit_parameter:
     disabled: <boolean>        # ディスクの修正を行わない場合true
     host_name_prefix: <string> # ホスト名のプレフィックス(省略可能)
@@ -353,6 +363,9 @@ template:
     startup_scripts: [ - <string> | <filepath> ]
     ssh_keys: [ - <string> | <filepath> ]
     ssh_key_ids: [ - <string> ]
+    
+  # cloud-init用のパラメータ、edit_parameterとの併用は出来ない  
+  cloud_config: <string>  
     
   network_interfaces:
     # 上流ネットワーク
