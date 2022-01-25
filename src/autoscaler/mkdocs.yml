@@ -42,6 +42,7 @@ nav:
       - 水平スケール:
         - ELB+サーバ: examples/horizontal-scale-server-and-elb.md
         - ELB+サーバ(クローン): examples/horizontal-scale-clone-server-and-elb.md
+        - ELB+サーバ(cloud-init): examples/horizontal-scale-server-and-elb_cloud-init.md
         - LB+サーバ: examples/horizontal-scale-server-and-lb.md
       - 垂直スケール:
         - サーバ: examples/vertical-scale-server.md
