@@ -1,10 +1,11 @@
-# アップグレードガイド(v2.15)
+# アップグレードガイド(v2.16)
 
 ## 目次
 
 - [CentOS8パブリックアーカイブの除去](#diff1)
 - [VPCルータでのDNSフォワーディング](#diff2)
 - [シンプル監視でのリトライ関連項目](#diff3)
+- [`os_type`の更新](#diff4)(v2.16.1以降)
   
 ### CentOS8パブリックアーカイブの除去 {: #diff1 }
 
@@ -41,3 +42,10 @@ resource "sakuracloud_simple_monitor" "foobar" {
   # ...
 }
 ```
+
+### `os_type`の更新(v2.16.1以降) {: #diff4 }
+
+`data.sakuracloud_archive`の`os_type`から以下の値が除去されました。  
+
+- `coreos`
+- `freebsd`
