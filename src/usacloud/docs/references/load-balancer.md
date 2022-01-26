@@ -159,7 +159,9 @@ Flags:
                     "HealthCheck": {
                         "Protocol": "http | https | tcp | ping",
                         "Path": "/",
-                        "ResponseCode": "200"
+                        "ResponseCode": "200",
+                        "Retry": "",
+                        "ConnectTimeout": ""
                     }
                 }
             ]
@@ -280,7 +282,9 @@ Flags:
                     "HealthCheck": {
                         "Protocol": "http | https | tcp | ping",
                         "Path": "/",
-                        "ResponseCode": "200"
+                        "ResponseCode": "200",
+                        "Retry": "",
+                        "ConnectTimeout": ""
                     }
                 }
             ]

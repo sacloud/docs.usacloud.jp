@@ -15,6 +15,7 @@
     - [shutdown](#shutdown)
     - [reset](#reset)
 - Monitoring Commands
+    - [monitor-cpu](#monitor-cpu)
     - [monitor-interface](#monitor-interface)
 - Other Commands
     - [wait-until-ready](#wait-until-ready)
@@ -92,6 +93,7 @@ Flags:
       --boot-after-create             
       --dhcp-server string            
       --dhcp-static-mapping string    
+      --dns-forwarding string         
       --firewall string               
       --internet-connection-enabled   
       --l2tp string                   
@@ -243,6 +245,13 @@ Flags:
                 "IPAddress": "192.168.0.245"
             }
         ],
+        "DNSForwarding": {
+            "Interface": "eth1",
+            "DNSServers": [
+                "133.242.0.3",
+                "133.242.0.4"
+            ]
+        },
         "PPTPServer": {
             "RangeStart": "192.168.0.246",
             "RangeStop": "192.168.0.249"
@@ -316,6 +325,7 @@ Flags:
       --boot-after-create                   
       --dhcp-server string                  
       --dhcp-static-mapping string          
+      --dns-forwarding string               
       --firewall string                     
       --internet-connection-enabled         
       --l2tp string                         
@@ -437,6 +447,13 @@ Flags:
                 "IPAddress": "192.168.0.245"
             }
         ],
+        "DNSForwarding": {
+            "Interface": "eth1",
+            "DNSServers": [
+                "133.242.0.3",
+                "133.242.0.4"
+            ]
+        },
         "PPTPServer": {
             "RangeStart": "192.168.0.246",
             "RangeStop": "192.168.0.249"
@@ -545,6 +562,7 @@ Flags:
 
       --dhcp-server string            
       --dhcp-static-mapping string    
+      --dns-forwarding string         
       --firewall string               
       --internet-connection-enabled   
       --l2tp string                   
@@ -694,6 +712,14 @@ Flags:
                 "IPAddress": "192.168.0.245"
             }
         ],
+        "DNSForwardingData": "",
+        "DNSForwarding": {
+            "Interface": "eth1",
+            "DNSServers": [
+                "133.242.0.3",
+                "133.242.0.4"
+            ]
+        },
         "PPTPServerData": "",
         "PPTPServer": {
             "RangeStart": "192.168.0.246",
@@ -771,6 +797,7 @@ Flags:
 
       --dhcp-server string                  
       --dhcp-static-mapping string          
+      --dns-forwarding string               
       --firewall string                     
       --internet-connection-enabled         
       --l2tp string                         
@@ -894,6 +921,14 @@ Flags:
                 "IPAddress": "192.168.0.245"
             }
         ],
+        "DNSForwardingData": "",
+        "DNSForwarding": {
+            "Interface": "eth1",
+            "DNSServers": [
+                "133.242.0.3",
+                "133.242.0.4"
+            ]
+        },
         "PPTPServerData": "",
         "PPTPServer": {
             "RangeStart": "192.168.0.246",
@@ -1084,6 +1119,44 @@ Flags:
   -y, --assumeyes           Assume that the answer to any question which would be asked is yes
       --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
       --parameters string   Input parameters in JSON format
+
+  === Parameter example ===
+
+      --example   Output example parameters with JSON format
+
+```
+
+
+## monitor-cpu {: #monitor-cpu }
+
+##### Usage
+```console
+Usage:
+  monitor-cpu { ID | NAME | TAG }... [flags]
+
+Flags:
+
+  === Monitor options ===
+
+      --end string     
+      --start string   
+
+  === Zone options ===
+
+      --zone string   (*required) 
+
+  === Input options ===
+
+      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
+      --parameters string   Input parameters in JSON format
+
+  === Output options ===
+
+      --format string         Output format in Go templates (aliases: --fmt)
+  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
+      --query string          Query for JSON output
+      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
+  -q, --quiet                 Output IDs only
 
   === Parameter example ===
 
