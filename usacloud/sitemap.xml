@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://sacloud.github.io/usacloud/references/certificate-authority/</loc>
+         <lastmod>2022-01-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://sacloud.github.io/usacloud/references/completion/</loc>
          <lastmod>2022-01-26</lastmod>
          <changefreq>daily</changefreq>

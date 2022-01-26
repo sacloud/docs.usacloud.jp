@@ -1640,6 +1640,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../certificate-authority/" class="md-nav__link">
+        certificate-authority
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../enhanced-db/" class="md-nav__link">
         enhanced-db
       </a>
@@ -2379,21 +2393,25 @@
 <span class="go">      --health-check-community string             </span>
 <span class="go">      --health-check-contains-string string       </span>
 <span class="go">      --health-check-expected-data string         </span>
+<span class="go">      --health-check-ftps string                  options: [explicit/implicit]</span>
 <span class="go">      --health-check-host string                  </span>
 <span class="go">      --health-check-http2                        </span>
 <span class="go">      --health-check-oid string                   </span>
 <span class="go">      --health-check-path string                  </span>
 <span class="go">      --health-check-port int                     </span>
-<span class="go">      --health-check-protocol string              (*required) options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate]</span>
+<span class="go">      --health-check-protocol string              (*required) options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate/ftp]</span>
 <span class="go">      --health-check-q-name string                </span>
 <span class="go">      --health-check-remaining-days int           </span>
 <span class="go">      --health-check-sni                          </span>
 <span class="go">      --health-check-snmp-version string          </span>
 <span class="go">      --health-check-status int                   </span>
+<span class="go">      --health-check-verify-sni                   </span>
+<span class="go">      --max-check-attempts int                     (default 3)</span>
 <span class="go">      --notify-email-enabled                      </span>
 <span class="go">      --notify-email-html                         </span>
 <span class="go">      --notify-interval int                        (default 7200)</span>
 <span class="go">      --notify-slack-enabled                      </span>
+<span class="go">      --retry-interval int                         (default 10)</span>
 <span class="go">      --slack-webhooks-url string                 </span>
 <span class="go">      --target string                             (*required) </span>
 <span class="go">      --timeout int                               </span>
@@ -2426,10 +2444,12 @@
 <span class="go">    ],</span>
 <span class="go">    &quot;IconID&quot;: 123456789012,</span>
 <span class="go">    &quot;DelayLoop&quot;: 60,</span>
+<span class="go">    &quot;MaxCheckAttempts&quot;: 3,</span>
+<span class="go">    &quot;RetryInterval&quot;: 10,</span>
 <span class="go">    &quot;Timeout&quot;: 10,</span>
 <span class="go">    &quot;Enabled&quot;: true,</span>
 <span class="go">    &quot;HealthCheck&quot;: {</span>
-<span class="go">        &quot;Protocol&quot;: &quot;http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate&quot;,</span>
+<span class="go">        &quot;Protocol&quot;: &quot;http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate | ftp&quot;,</span>
 <span class="go">        &quot;Port&quot;: 80,</span>
 <span class="go">        &quot;Path&quot;: &quot;/healthz&quot;,</span>
 <span class="go">        &quot;Status&quot;: 200,</span>
@@ -2438,7 +2458,9 @@
 <span class="go">        &quot;Host&quot;: &quot;www2.example.com&quot;,</span>
 <span class="go">        &quot;BasicAuthUsername&quot;: &quot;username&quot;,</span>
 <span class="go">        &quot;BasicAuthPassword&quot;: &quot;password&quot;,</span>
-<span class="go">        &quot;HTTP2&quot;: true</span>
+<span class="go">        &quot;HTTP2&quot;: true,</span>
+<span class="go">        &quot;FTPS&quot;: &quot;explicit | implicit&quot;,</span>
+<span class="go">        &quot;VerifySNI&quot;: true</span>
 <span class="go">    },</span>
 <span class="go">    &quot;NotifyEmailEnabled&quot;: true,</span>
 <span class="go">    &quot;NotifyEmailHTML&quot;: true,</span>
@@ -2496,21 +2518,25 @@
 <span class="go">      --health-check-community string             </span>
 <span class="go">      --health-check-contains-string string       </span>
 <span class="go">      --health-check-expected-data string         </span>
+<span class="go">      --health-check-ftps string                  options: [explicit/implicit]</span>
 <span class="go">      --health-check-host string                  </span>
 <span class="go">      --health-check-http2                        </span>
 <span class="go">      --health-check-oid string                   </span>
 <span class="go">      --health-check-path string                  </span>
 <span class="go">      --health-check-port int                     </span>
-<span class="go">      --health-check-protocol string              options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate]</span>
+<span class="go">      --health-check-protocol string              options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate/ftp]</span>
 <span class="go">      --health-check-q-name string                </span>
 <span class="go">      --health-check-remaining-days int           </span>
 <span class="go">      --health-check-sni                          </span>
 <span class="go">      --health-check-snmp-version string          </span>
 <span class="go">      --health-check-status int                   </span>
+<span class="go">      --health-check-verify-sni                   </span>
+<span class="go">      --max-check-attempts int                    </span>
 <span class="go">      --notify-email-enabled                      </span>
 <span class="go">      --notify-email-html                         </span>
 <span class="go">      --notify-interval int                       </span>
 <span class="go">      --notify-slack-enabled                      </span>
+<span class="go">      --retry-interval int                        </span>
 <span class="go">      --slack-webhooks-url string                 </span>
 <span class="go">      --timeout int                               </span>
 
@@ -2541,10 +2567,12 @@
 <span class="go">    ],</span>
 <span class="go">    &quot;IconID&quot;: 123456789012,</span>
 <span class="go">    &quot;DelayLoop&quot;: 60,</span>
+<span class="go">    &quot;MaxCheckAttempts&quot;: 3,</span>
+<span class="go">    &quot;RetryInterval&quot;: 10,</span>
 <span class="go">    &quot;Timeout&quot;: 10,</span>
 <span class="go">    &quot;Enabled&quot;: true,</span>
 <span class="go">    &quot;HealthCheck&quot;: {</span>
-<span class="go">        &quot;Protocol&quot;: &quot;http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate&quot;,</span>
+<span class="go">        &quot;Protocol&quot;: &quot;http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate | ftp&quot;,</span>
 <span class="go">        &quot;Port&quot;: 80,</span>
 <span class="go">        &quot;Path&quot;: &quot;/healthz&quot;,</span>
 <span class="go">        &quot;Status&quot;: 200,</span>
@@ -2553,7 +2581,9 @@
 <span class="go">        &quot;Host&quot;: &quot;www2.example.com&quot;,</span>
 <span class="go">        &quot;BasicAuthUsername&quot;: &quot;username&quot;,</span>
 <span class="go">        &quot;BasicAuthPassword&quot;: &quot;password&quot;,</span>
-<span class="go">        &quot;HTTP2&quot;: true</span>
+<span class="go">        &quot;HTTP2&quot;: true,</span>
+<span class="go">        &quot;FTPS&quot;: &quot;explicit | implicit&quot;,</span>
+<span class="go">        &quot;VerifySNI&quot;: true</span>
 <span class="go">    },</span>
 <span class="go">    &quot;NotifyEmailEnabled&quot;: true,</span>
 <span class="go">    &quot;NotifyEmailHTML&quot;: true,</span>

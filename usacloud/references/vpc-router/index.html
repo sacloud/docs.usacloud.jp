@@ -1456,6 +1456,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#monitor-cpu" class="md-nav__link">
+    monitor-cpu
+  </a>
+  
+    <nav class="md-nav" aria-label="monitor-cpu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_10" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#monitor-interface" class="md-nav__link">
     monitor-interface
   </a>
@@ -1464,7 +1484,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_10" class="md-nav__link">
+  <a href="#usage_11" class="md-nav__link">
     Usage
   </a>
   
@@ -1484,7 +1504,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_11" class="md-nav__link">
+  <a href="#usage_12" class="md-nav__link">
     Usage
   </a>
   
@@ -1504,7 +1524,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_12" class="md-nav__link">
+  <a href="#usage_13" class="md-nav__link">
     Usage
   </a>
   
@@ -1767,6 +1787,20 @@
           Labプロダクト
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-authority/" class="md-nav__link">
+        certificate-authority
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -2495,6 +2529,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#monitor-cpu" class="md-nav__link">
+    monitor-cpu
+  </a>
+  
+    <nav class="md-nav" aria-label="monitor-cpu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_10" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#monitor-interface" class="md-nav__link">
     monitor-interface
   </a>
@@ -2503,7 +2557,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_10" class="md-nav__link">
+  <a href="#usage_11" class="md-nav__link">
     Usage
   </a>
   
@@ -2523,7 +2577,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_11" class="md-nav__link">
+  <a href="#usage_12" class="md-nav__link">
     Usage
   </a>
   
@@ -2543,7 +2597,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_12" class="md-nav__link">
+  <a href="#usage_13" class="md-nav__link">
     Usage
   </a>
   
@@ -2591,6 +2645,7 @@
 </ul>
 </li>
 <li>Monitoring Commands<ul>
+<li><a href="#monitor-cpu">monitor-cpu</a></li>
 <li><a href="#monitor-interface">monitor-interface</a></li>
 </ul>
 </li>
@@ -2664,6 +2719,7 @@
 <span class="go">      --boot-after-create             </span>
 <span class="go">      --dhcp-server string            </span>
 <span class="go">      --dhcp-static-mapping string    </span>
+<span class="go">      --dns-forwarding string         </span>
 <span class="go">      --firewall string               </span>
 <span class="go">      --internet-connection-enabled   </span>
 <span class="go">      --l2tp string                   </span>
@@ -2812,6 +2868,13 @@
 <span class="go">                &quot;IPAddress&quot;: &quot;192.168.0.245&quot;</span>
 <span class="go">            }</span>
 <span class="go">        ],</span>
+<span class="go">        &quot;DNSForwarding&quot;: {</span>
+<span class="go">            &quot;Interface&quot;: &quot;eth1&quot;,</span>
+<span class="go">            &quot;DNSServers&quot;: [</span>
+<span class="go">                &quot;133.242.0.3&quot;,</span>
+<span class="go">                &quot;133.242.0.4&quot;</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
 <span class="go">        &quot;PPTPServer&quot;: {</span>
 <span class="go">            &quot;RangeStart&quot;: &quot;192.168.0.246&quot;,</span>
 <span class="go">            &quot;RangeStop&quot;: &quot;192.168.0.249&quot;</span>
@@ -2881,6 +2944,7 @@
 <span class="go">      --boot-after-create                   </span>
 <span class="go">      --dhcp-server string                  </span>
 <span class="go">      --dhcp-static-mapping string          </span>
+<span class="go">      --dns-forwarding string               </span>
 <span class="go">      --firewall string                     </span>
 <span class="go">      --internet-connection-enabled         </span>
 <span class="go">      --l2tp string                         </span>
@@ -2999,6 +3063,13 @@
 <span class="go">                &quot;IPAddress&quot;: &quot;192.168.0.245&quot;</span>
 <span class="go">            }</span>
 <span class="go">        ],</span>
+<span class="go">        &quot;DNSForwarding&quot;: {</span>
+<span class="go">            &quot;Interface&quot;: &quot;eth1&quot;,</span>
+<span class="go">            &quot;DNSServers&quot;: [</span>
+<span class="go">                &quot;133.242.0.3&quot;,</span>
+<span class="go">                &quot;133.242.0.4&quot;</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
 <span class="go">        &quot;PPTPServer&quot;: {</span>
 <span class="go">            &quot;RangeStart&quot;: &quot;192.168.0.246&quot;,</span>
 <span class="go">            &quot;RangeStop&quot;: &quot;192.168.0.249&quot;</span>
@@ -3098,6 +3169,7 @@
 
 <span class="go">      --dhcp-server string            </span>
 <span class="go">      --dhcp-static-mapping string    </span>
+<span class="go">      --dns-forwarding string         </span>
 <span class="go">      --firewall string               </span>
 <span class="go">      --internet-connection-enabled   </span>
 <span class="go">      --l2tp string                   </span>
@@ -3244,6 +3316,14 @@
 <span class="go">                &quot;IPAddress&quot;: &quot;192.168.0.245&quot;</span>
 <span class="go">            }</span>
 <span class="go">        ],</span>
+<span class="go">        &quot;DNSForwardingData&quot;: &quot;&quot;,</span>
+<span class="go">        &quot;DNSForwarding&quot;: {</span>
+<span class="go">            &quot;Interface&quot;: &quot;eth1&quot;,</span>
+<span class="go">            &quot;DNSServers&quot;: [</span>
+<span class="go">                &quot;133.242.0.3&quot;,</span>
+<span class="go">                &quot;133.242.0.4&quot;</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
 <span class="go">        &quot;PPTPServerData&quot;: &quot;&quot;,</span>
 <span class="go">        &quot;PPTPServer&quot;: {</span>
 <span class="go">            &quot;RangeStart&quot;: &quot;192.168.0.246&quot;,</span>
@@ -3317,6 +3397,7 @@
 
 <span class="go">      --dhcp-server string                  </span>
 <span class="go">      --dhcp-static-mapping string          </span>
+<span class="go">      --dns-forwarding string               </span>
 <span class="go">      --firewall string                     </span>
 <span class="go">      --internet-connection-enabled         </span>
 <span class="go">      --l2tp string                         </span>
@@ -3437,6 +3518,14 @@
 <span class="go">                &quot;IPAddress&quot;: &quot;192.168.0.245&quot;</span>
 <span class="go">            }</span>
 <span class="go">        ],</span>
+<span class="go">        &quot;DNSForwardingData&quot;: &quot;&quot;,</span>
+<span class="go">        &quot;DNSForwarding&quot;: {</span>
+<span class="go">            &quot;Interface&quot;: &quot;eth1&quot;,</span>
+<span class="go">            &quot;DNSServers&quot;: [</span>
+<span class="go">                &quot;133.242.0.3&quot;,</span>
+<span class="go">                &quot;133.242.0.4&quot;</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
 <span class="go">        &quot;PPTPServerData&quot;: &quot;&quot;,</span>
 <span class="go">        &quot;PPTPServer&quot;: {</span>
 <span class="go">            &quot;RangeStart&quot;: &quot;192.168.0.246&quot;,</span>
@@ -3613,8 +3702,41 @@
 
 <span class="go">      --example   Output example parameters with JSON format</span>
 </code></pre></div>
-<h2 id="monitor-interface">monitor-interface</h2>
+<h2 id="monitor-cpu">monitor-cpu</h2>
 <h5 id="usage_10">Usage</h5>
+<div class="highlight"><pre><span></span><code><span class="go">Usage:</span>
+<span class="go">  monitor-cpu { ID | NAME | TAG }... [flags]</span>
+
+<span class="go">Flags:</span>
+
+<span class="go">  === Monitor options ===</span>
+
+<span class="go">      --end string     </span>
+<span class="go">      --start string   </span>
+
+<span class="go">  === Zone options ===</span>
+
+<span class="go">      --zone string   (*required) </span>
+
+<span class="go">  === Input options ===</span>
+
+<span class="go">      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)</span>
+<span class="go">      --parameters string   Input parameters in JSON format</span>
+
+<span class="go">  === Output options ===</span>
+
+<span class="go">      --format string         Output format in Go templates (aliases: --fmt)</span>
+<span class="go">  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)</span>
+<span class="go">      --query string          Query for JSON output</span>
+<span class="go">      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]</span>
+<span class="go">  -q, --quiet                 Output IDs only</span>
+
+<span class="go">  === Parameter example ===</span>
+
+<span class="go">      --example   Output example parameters with JSON format</span>
+</code></pre></div>
+<h2 id="monitor-interface">monitor-interface</h2>
+<h5 id="usage_11">Usage</h5>
 <div class="highlight"><pre><span></span><code><span class="go">Usage:</span>
 <span class="go">  monitor-interface { ID | NAME | TAG }... [flags]</span>
 
@@ -3654,7 +3776,7 @@
 <span class="go">      --example   Output example parameters with JSON format</span>
 </code></pre></div>
 <h2 id="wait-until-ready">wait-until-ready</h2>
-<h5 id="usage_11">Usage</h5>
+<h5 id="usage_12">Usage</h5>
 <div class="highlight"><pre><span></span><code><span class="go">Usage:</span>
 <span class="go">  wait-until-ready { ID | NAME | TAG }... [flags]</span>
 
@@ -3677,7 +3799,7 @@
 <span class="go">      --example   Output example parameters with JSON format</span>
 </code></pre></div>
 <h2 id="wait-until-shutdown">wait-until-shutdown</h2>
-<h5 id="usage_12">Usage</h5>
+<h5 id="usage_13">Usage</h5>
 <div class="highlight"><pre><span></span><code><span class="go">Usage:</span>
 <span class="go">  wait-until-shutdown { ID | NAME | TAG }... [flags]</span>
 
