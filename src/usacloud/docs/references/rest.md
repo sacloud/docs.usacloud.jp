@@ -18,7 +18,7 @@ Flags:
   === Rest-specific options ===
 
   -d, --data string     
-  -X, --method string   (*required) options: [get/post/put/delete/GET/POST/PUT/DELETE] (default "get")
+  -X, --method string   (*required) options: [get/post/patch/put/delete/GET/POST/PATCH/PUT/DELETE] (default "get")
       --zone string     
 
   === Output options ===

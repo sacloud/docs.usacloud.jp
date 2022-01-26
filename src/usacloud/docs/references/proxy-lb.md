@@ -87,6 +87,7 @@ Flags:
       --lets-encrypt-enabled                     
       --lets-encrypt-subject-alt-names strings   
       --plan string                              (*required) options: [100/500/1000/5000/10000/50000/100000/400000] (default "100")
+      --proxy-protocol-enabled                   
       --region string                            (*required) options: [tk1/is1/anycast] (default "is1")
       --rules string                             
       --servers string                           
@@ -152,6 +153,9 @@ Flags:
         "Enabled": true
     },
     "Gzip": {
+        "Enabled": true
+    },
+    "ProxyProtocol": {
         "Enabled": true
     },
     "Syslog": {
@@ -289,6 +293,7 @@ Flags:
       --lets-encrypt-enabled                     
       --lets-encrypt-subject-alt-names strings   
       --plan string                              options: [100/500/1000/5000/10000/50000/100000/400000]
+      --proxy-protocol-enabled                   
       --rules string                             
       --servers string                           
       --sorry-server-ip-address string           (aliases: --ipaddress)
@@ -350,6 +355,9 @@ Flags:
         "Enabled": true
     },
     "Gzip": {
+        "Enabled": true
+    },
+    "ProxyProtocol": {
         "Enabled": true
     },
     "Syslog": {

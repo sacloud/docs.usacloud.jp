@@ -1,4 +1,4 @@
-# リファレンス / archive
+# リファレンス / certificate-authority
 
 ## コマンド一覧
 
@@ -8,13 +8,6 @@
     - [read](#read)
     - [update](#update)
     - [delete](#delete)
-- Operation Commands
-    - [upload](#upload)
-    - [download](#download)
-    - [ftp-open](#ftp-open)
-    - [ftp-close](#ftp-close)
-- Other Commands
-    - [wait-until-ready](#wait-until-ready)
 
 
 ## list {: #list }
@@ -31,19 +24,13 @@ Flags:
 
   === Filter options ===
 
-      --names strings    
-      --tags strings     
-      --scope string     options: [user/shared]
-      --os-type string   options: [almalinux/rockylinux/miraclelinux/centos8stream/ubuntu/debian/rancheros/k3os/...]
+      --names strings   
+      --tags strings    
 
   === Limit/Offset options ===
 
       --count int   (aliases: --max, --limit)
       --from int    (aliases: --offset)
-
-  === Zone options ===
-
-      --zone string   (*required) 
 
   === Input options ===
 
@@ -81,20 +68,15 @@ Flags:
       --tags strings         
       --icon-id int          
 
-  === Archive-specific options ===
+  === Certificate-Authority-specific options ===
 
-      --size int                (*required when --source-file is specified)
-      --source-archive-id int   
-      --source-disk-id int      
-      --source-file string      
-
-  === Zone options ===
-
-      --zone string   (*required) 
-
-  === Wait options ===
-
-      --no-wait   
+      --clients string              
+      --common-name string          (*required) 
+      --country string              (*required) 
+      --organization string         (*required) 
+      --organization-unit strings   
+      --servers string              
+      --validity-period-hours int   (*required) 
 
   === Input options ===
 
@@ -119,7 +101,6 @@ Flags:
 ##### Parameter Examples
 ```console
 {
-    "Zone": "tk1a | tk1b | is1a | is1b | tk1v",
     "Name": "example",
     "Description": "example",
     "Tags": [
@@ -127,11 +108,52 @@ Flags:
         "tag2=example2"
     ],
     "IconID": 123456789012,
-    "SizeGB": 20,
-    "SourceFile": "/path/to/raw/file",
-    "SourceDiskID": 123456789012,
-    "SourceArchiveID": 123456789012,
-    "NoWait": false
+    "Country": "JP",
+    "Organization": "usacloud",
+    "OrganizationUnit": [
+        "ou1",
+        "ou2"
+    ],
+    "CommonName": "example.usacloud.jp",
+    "ValidityPeriodHours": 8760,
+    "Clients": [
+        {
+            "ID": "",
+            "Country": "JP",
+            "Organization": "usacloud",
+            "OrganizationUnit": [
+                "ou1",
+                "ou2"
+            ],
+            "CommonName": "client.usacloud.jp",
+            "NotAfter": "2023-01-27T08:48:51.39852+09:00",
+            "IssuanceMethod": "url | email | csr | public_key",
+            "EMail": "example@example.com",
+            "CertificateSigningRequest": "-----BEGIN CERTIFICATE REQUEST-----\n...",
+            "PublicKey": "-----BEGIN PUBLIC KEY-----\n...",
+            "Hold": true
+        }
+    ],
+    "Servers": [
+        {
+            "ID": "",
+            "Country": "JP",
+            "Organization": "usacloud",
+            "OrganizationUnit": [
+                "ou1",
+                "ou2"
+            ],
+            "CommonName": "client.usacloud.jp",
+            "NotAfter": "2023-01-27T08:48:51.398521+09:00",
+            "SANs": [
+                "www1.usacloud.jp",
+                "www2.usacloud.jp"
+            ],
+            "CertificateSigningRequest": "-----BEGIN CERTIFICATE REQUEST-----\n...",
+            "PublicKey": "-----BEGIN PUBLIC KEY-----\n...",
+            "Hold": true
+        }
+    ]
 }
 ```
 
@@ -147,10 +169,6 @@ Aliases:
   read, show
 
 Flags:
-
-  === Zone options ===
-
-      --zone string   (*required) 
 
   === Input options ===
 
@@ -188,9 +206,10 @@ Flags:
       --tags strings         
       --icon-id int          
 
-  === Zone options ===
+  === Certificate-Authority-specific options ===
 
-      --zone string   (*required) 
+      --clients string   
+      --servers string   
 
   === Input options ===
 
@@ -215,14 +234,51 @@ Flags:
 ##### Parameter Examples
 ```console
 {
-    "Zone": "tk1a | tk1b | is1a | is1b | tk1v",
     "Name": "example",
     "Description": "example",
     "Tags": [
         "tag1=example1",
         "tag2=example2"
     ],
-    "IconID": 123456789012
+    "IconID": 123456789012,
+    "Clients": [
+        {
+            "ID": "",
+            "Country": "JP",
+            "Organization": "usacloud",
+            "OrganizationUnit": [
+                "ou1",
+                "ou2"
+            ],
+            "CommonName": "client.usacloud.jp",
+            "NotAfter": "2023-01-27T08:48:51.399064+09:00",
+            "IssuanceMethod": "url | email | csr | public_key",
+            "EMail": "example@example.com",
+            "CertificateSigningRequest": "-----BEGIN CERTIFICATE REQUEST-----\n...",
+            "PublicKey": "-----BEGIN PUBLIC KEY-----\n...",
+            "Hold": true
+        }
+    ],
+    "Servers": [
+        {
+            "ID": "",
+            "Country": "JP",
+            "Organization": "usacloud",
+            "OrganizationUnit": [
+                "ou1",
+                "ou2"
+            ],
+            "CommonName": "client.usacloud.jp",
+            "NotAfter": "2023-01-27T08:48:51.399065+09:00",
+            "SANs": [
+                "www1.usacloud.jp",
+                "www2.usacloud.jp"
+            ],
+            "CertificateSigningRequest": "-----BEGIN CERTIFICATE REQUEST-----\n...",
+            "PublicKey": "-----BEGIN PUBLIC KEY-----\n...",
+            "Hold": true
+        }
+    ]
 }
 ```
 
@@ -238,10 +294,6 @@ Aliases:
   delete, rm
 
 Flags:
-
-  === Zone options ===
-
-      --zone string   (*required) 
 
   === Error handling options ===
 
@@ -260,165 +312,6 @@ Flags:
       --query string          Query for JSON output
       --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
   -q, --quiet                 Output IDs only
-
-  === Parameter example ===
-
-      --example   Output example parameters with JSON format
-
-```
-
-
-## upload {: #upload }
-
-##### Usage
-```console
-Usage:
-  upload { ID | NAME | TAG }... [flags]
-
-Flags:
-
-  === Upload options ===
-
-      --source-file string   
-
-  === Zone options ===
-
-      --zone string   (*required) 
-
-  === Input options ===
-
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
-
-  === Parameter example ===
-
-      --example   Output example parameters with JSON format
-
-```
-
-
-## download {: #download }
-
-##### Usage
-```console
-Usage:
-  download { ID | NAME | TAG } [flags]
-
-Flags:
-
-  === Download options ===
-
-      --destination string   (aliases: --dest)
-  -f, --force                overwrite file when --destination file is already exist
-
-  === Zone options ===
-
-      --zone string   (*required) 
-
-  === Input options ===
-
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
-
-  === Parameter example ===
-
-      --example   Output example parameters with JSON format
-
-```
-
-
-## ftp-open {: #ftp-open }
-
-##### Usage
-```console
-Usage:
-  ftp-open { ID | NAME | TAG }... [flags]
-
-Aliases:
-  ftp-open, open-ftp
-
-Flags:
-
-  === FTP options ===
-
-      --change-password   
-
-  === Zone options ===
-
-      --zone string   (*required) 
-
-  === Input options ===
-
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
-
-  === Output options ===
-
-      --format string         Output format in Go templates (aliases: --fmt)
-  -o, --output-type string    Output format options: [table/json/yaml] (aliases: --out)
-      --query string          Query for JSON output
-      --query-driver string   Name of the driver that handles queries to JSON output options: [jmespath/jq]
-  -q, --quiet                 Output IDs only
-
-  === Parameter example ===
-
-      --example   Output example parameters with JSON format
-
-```
-
-
-## ftp-close {: #ftp-close }
-
-##### Usage
-```console
-Usage:
-  ftp-close { ID | NAME | TAG }... [flags]
-
-Aliases:
-  ftp-close, close-ftp
-
-Flags:
-
-  === Zone options ===
-
-      --zone string   (*required) 
-
-  === Input options ===
-
-  -y, --assumeyes           Assume that the answer to any question which would be asked is yes
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
-
-  === Parameter example ===
-
-      --example   Output example parameters with JSON format
-
-```
-
-
-## wait-until-ready {: #wait-until-ready }
-
-##### Usage
-```console
-Usage:
-  wait-until-ready { ID | NAME | TAG }... [flags]
-
-Aliases:
-  wait-until-ready, wait, wait-for-copy
-
-Flags:
-
-  === Zone options ===
-
-      --zone string   (*required) 
-
-  === Input options ===
-
-      --generate-skeleton   Output skeleton of parameters with JSON format (aliases: --skeleton)
-      --parameters string   Input parameters in JSON format
 
   === Parameter example ===
 

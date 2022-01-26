@@ -81,6 +81,7 @@ nav:
               - bill: references/bill.md
               - coupon: references/coupon.md
           - Labプロダクト:
+              - certificate-authority: references/certificate-authority.md
               - enhanced-db: references/enhanced-db.md
               - container-registry: references/container-registry.md
               - esme: references/esme.md

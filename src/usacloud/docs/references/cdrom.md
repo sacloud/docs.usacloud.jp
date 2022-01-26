@@ -29,7 +29,7 @@ Flags:
 
   === Filter options ===
 
-      --os-type string   options: [centos/centos8stream/centos8/ubuntu/ubuntu2004/debian/debian10/coreos/rancheros/k3os/freebsd/...]
+      --os-type string   options: [almalinux/rockylinux/miraclelinux/centos8stream/ubuntu/debian/rancheros/k3os/...]
       --names strings    
       --tags strings     
       --scope string     options: [user/shared]

@@ -79,21 +79,25 @@ Flags:
       --health-check-community string             
       --health-check-contains-string string       
       --health-check-expected-data string         
+      --health-check-ftps string                  options: [explicit/implicit]
       --health-check-host string                  
       --health-check-http2                        
       --health-check-oid string                   
       --health-check-path string                  
       --health-check-port int                     
-      --health-check-protocol string              (*required) options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate]
+      --health-check-protocol string              (*required) options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate/ftp]
       --health-check-q-name string                
       --health-check-remaining-days int           
       --health-check-sni                          
       --health-check-snmp-version string          
       --health-check-status int                   
+      --health-check-verify-sni                   
+      --max-check-attempts int                     (default 3)
       --notify-email-enabled                      
       --notify-email-html                         
       --notify-interval int                        (default 7200)
       --notify-slack-enabled                      
+      --retry-interval int                         (default 10)
       --slack-webhooks-url string                 
       --target string                             (*required) 
       --timeout int                               
@@ -129,10 +133,12 @@ Flags:
     ],
     "IconID": 123456789012,
     "DelayLoop": 60,
+    "MaxCheckAttempts": 3,
+    "RetryInterval": 10,
     "Timeout": 10,
     "Enabled": true,
     "HealthCheck": {
-        "Protocol": "http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate",
+        "Protocol": "http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate | ftp",
         "Port": 80,
         "Path": "/healthz",
         "Status": 200,
@@ -141,7 +147,9 @@ Flags:
         "Host": "www2.example.com",
         "BasicAuthUsername": "username",
         "BasicAuthPassword": "password",
-        "HTTP2": true
+        "HTTP2": true,
+        "FTPS": "explicit | implicit",
+        "VerifySNI": true
     },
     "NotifyEmailEnabled": true,
     "NotifyEmailHTML": true,
@@ -208,21 +216,25 @@ Flags:
       --health-check-community string             
       --health-check-contains-string string       
       --health-check-expected-data string         
+      --health-check-ftps string                  options: [explicit/implicit]
       --health-check-host string                  
       --health-check-http2                        
       --health-check-oid string                   
       --health-check-path string                  
       --health-check-port int                     
-      --health-check-protocol string              options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate]
+      --health-check-protocol string              options: [http/https/ping/tcp/dns/ssh/smtp/pop3/snmp/sslcertificate/ftp]
       --health-check-q-name string                
       --health-check-remaining-days int           
       --health-check-sni                          
       --health-check-snmp-version string          
       --health-check-status int                   
+      --health-check-verify-sni                   
+      --max-check-attempts int                    
       --notify-email-enabled                      
       --notify-email-html                         
       --notify-interval int                       
       --notify-slack-enabled                      
+      --retry-interval int                        
       --slack-webhooks-url string                 
       --timeout int                               
 
@@ -256,10 +268,12 @@ Flags:
     ],
     "IconID": 123456789012,
     "DelayLoop": 60,
+    "MaxCheckAttempts": 3,
+    "RetryInterval": 10,
     "Timeout": 10,
     "Enabled": true,
     "HealthCheck": {
-        "Protocol": "http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate",
+        "Protocol": "http | https | ping | tcp | dns | ssh | smtp | pop3 | snmp | sslcertificate | ftp",
         "Port": 80,
         "Path": "/healthz",
         "Status": 200,
@@ -268,7 +282,9 @@ Flags:
         "Host": "www2.example.com",
         "BasicAuthUsername": "username",
         "BasicAuthPassword": "password",
-        "HTTP2": true
+        "HTTP2": true,
+        "FTPS": "explicit | implicit",
+        "VerifySNI": true
     },
     "NotifyEmailEnabled": true,
     "NotifyEmailHTML": true,
