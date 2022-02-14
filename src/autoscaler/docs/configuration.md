@@ -55,6 +55,13 @@ autoscaler:
   - [&lt;handler&gt;](#handler)
   - [&lt;autoscaler_config&gt;](#autoscaler_config)
 
+### 基本データ型
+
+- <string>: 文字列
+- <bool>: 真偽値
+- <number>: 数値
+- <filepath>: ファイルパス。相対パスを指定した場合、AutoScaler Coreのカレントディレクトリが基準
+
 ### &lt;top_level&gt;
 
 ```yaml
@@ -102,7 +109,7 @@ type: "DNS"
 name: <string>
 selector:
   # idかnames or tagsのどちらかを指定、必須
-  id: <string | number>
+  id: <string> | <number>
   # 部分一致、複数指定した場合はAND結合
   names: 
     [ - <string> ]
@@ -126,7 +133,7 @@ type: "ELB" # or EnhancedLoadBalancer
 name: <string>
 selector:
   # idかnames or tagsのどちらかを指定、必須
-  id: <string | number>
+  id: <string> | <number>
   # 部分一致、複数指定した場合はAND結合
   names:
           [ - <string> ]
@@ -167,7 +174,7 @@ type: "GSLB"
 name: <string>
 selector:
   # idかnames or tagsのどちらかを指定、必須
-  id: <string | number>
+  id: <string> | <number>
   # 部分一致、複数指定した場合はAND結合
   names:
           [ - <string> ]
@@ -190,7 +197,7 @@ type: "LoadBalancer"
 name: <string>
 selector:
   # idかnames or tagsのどちらかを指定、必須
-  id: <string | number>
+  id: <string> | <number>
   # 部分一致、複数指定した場合はAND結合
   names:
           [ - <string> ]
@@ -215,7 +222,7 @@ type: "Router"
 name: <string>
 selector:
   # idかnames or tagsのどちらかを指定、必須
-  id: <string | number>
+  id: <string> | <number>
   # 部分一致、複数指定した場合はAND結合
   names:
           [ - <string> ]
@@ -262,7 +269,7 @@ type: "Server"
 name: <string>
 selector:
   # idかnames or tagsのどちらかを指定、必須
-  id: <string | number>
+  id: <string> | <number>
   # 部分一致、複数指定した場合はAND結合
   names:
           [ - <string> ]
@@ -273,10 +280,10 @@ selector:
           [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
   
   # コア専有プランを利用するか
-  dedicated_cpu: <boolean>
+  dedicated_cpu: <bool>
   
   # 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)
-  shutdown_force: <boolean> 
+  shutdown_force: <bool> 
   
   # 垂直スケールさせる範囲(省略可能)
   plans:
@@ -332,7 +339,7 @@ plans:
   ]
 
 # 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)
-shutdown_force: <boolean>
+shutdown_force: <bool>
 
 # グループ内のサーバのテンプレート
 template:
@@ -348,7 +355,7 @@ template:
   plan:
     core: <number>           # コア数
     memory: <number>         # メモリサイズ、GB単位 
-    dedicated_cpu: <boolean> # コア専有の場合true
+    dedicated_cpu: <bool> # コア専有の場合true
     
   # 接続するディスクをリストで指定  
   disks:
@@ -369,18 +376,18 @@ template:
   
   # ディスクの修正パラメータ、cloud_configとの併用は出来ない
   edit_parameter:
-    disabled: <boolean>        # ディスクの修正を行わない場合true
+    disabled: <bool>        # ディスクの修正を行わない場合true
     host_name_prefix: <string> # ホスト名のプレフィックス(省略可能)
     password: <string>
-    disable_pw_auth: <boolean>
-    enable_dhcp: <boolean>
-    change_partition_uuid: <boolean>
+    disable_pw_auth: <bool>
+    enable_dhcp: <bool>
+    change_partition_uuid: <bool>
     startup_scripts: [ - <string> | <filepath> ]
     ssh_keys: [ - <string> | <filepath> ]
     ssh_key_ids: [ - <string> ]
     
   # cloud-init用のパラメータ、edit_parameterとの併用は出来ない  
-  cloud_config: <string>  
+  cloud_config: <string> | <filepath>
     
   network_interfaces:
     # 上流ネットワーク
@@ -462,27 +469,27 @@ handlers_config:
 
 # CoreのgRPCエンドポイントのTLS関連設定
 server_tls_config:
-  cert_file: <string> # 証明書のファイルパス
-  key_file: <string> # 秘密鍵のファイルパス
+  cert_file: <string> | <filepath> # 証明書
+  key_file: <string> | <filepath> # 秘密鍵
   # クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照
   client_auth_type: <"NoClientCert" | "RequestClientCert" | "RequireAnyClientCert" | "VerifyClientCertIfGiven" | "RequireAndVerifyClientCert" >
-  client_ca_file: <string> # クライアント認証で利用するCA証明書(チェイン)のファイルパス
+  client_ca_file: <string> | <filepath> # クライアント認証で利用するCA証明書(チェイン)
 
 # HandlersへのgRPCリクエスト時のTLS関連設定
 handler_tls_config:
-  cert_file: <string> # 証明書のファイルパス
-  key_file: <string> # 秘密鍵のファイルパス 
-  root_ca_file: <string> # ルート証明書(チェイン)のファイルパス
+  cert_file: <string> | <filepath> # 証明書
+  key_file: <string> | <filepath> # 秘密鍵
+  root_ca_file: <string> | <filepath> # ルート証明書(チェイン)
 
 # Exporterの設定
 exporter_config:
   enabled: <bool>
   address: <string | default=":8081">
   tls_config:
-    cert_file: <string> # 証明書のファイルパス
-    key_file: <string> # 秘密鍵のファイルパス
+    cert_file: <string> | <filepath> # 証明書
+    key_file: <string> | <filepath> # 秘密鍵
     # クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照
     client_auth_type: <"NoClientCert" | "RequestClientCert" | "RequireAnyClientCert" | "VerifyClientCertIfGiven" | "RequireAndVerifyClientCert" >
-    client_ca_file: <string> # クライアント認証で利用するCA証明書(チェイン)のファイルパス
+    client_ca_file: <string> | <filepath> # クライアント認証で利用するCA証明書(チェイン)
 ```
 
