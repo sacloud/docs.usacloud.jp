@@ -101,10 +101,12 @@ DNSリソースの定義
 type: "DNS"
 name: <string>
 selector:
-  # idかnamesのどちらかを指定、必須
+  # idかnames or tagsのどちらかを指定、必須
   id: <string | number>
   # 部分一致、複数指定した場合はAND結合
   names: 
+    [ - <string> ]
+  tags:
     [ - <string> ]
 
 # 子リソースの定義(省略可能)
@@ -123,11 +125,13 @@ resources:
 type: "ELB" # or EnhancedLoadBalancer
 name: <string>
 selector:
-  # idかnamesのどちらかを指定、必須
+  # idかnames or tagsのどちらかを指定、必須
   id: <string | number>
   # 部分一致、複数指定した場合はAND結合
   names:
-    [ - <string> ]
+          [ - <string> ]
+  tags:
+          [ - <string> ]
   # 垂直スケールさせる範囲(省略可能)
   plans:
     [ - name: <string> # プラン名、省略可能 
@@ -162,11 +166,13 @@ GSLBの定義。
 type: "GSLB"
 name: <string>
 selector:
-  # idかnamesのどちらかを指定、必須
+  # idかnames or tagsのどちらかを指定、必須
   id: <string | number>
   # 部分一致、複数指定した場合はAND結合
-  names: 
-    [ - <string> ]
+  names:
+          [ - <string> ]
+  tags:
+          [ - <string> ]
 
 # 子リソースの定義(省略可能)
 resources:
@@ -183,11 +189,14 @@ resources:
 type: "LoadBalancer"
 name: <string>
 selector:
-  # idかnamesのどちらかを指定、必須
+  # idかnames or tagsのどちらかを指定、必須
   id: <string | number>
   # 部分一致、複数指定した場合はAND結合
-  names: 
-    [ - <string> ]
+  names:
+          [ - <string> ]
+  tags:
+          [ - <string> ]
+  # ゾーン(必須) 
   zones:
     [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
 
@@ -205,13 +214,16 @@ resources:
 type: "Router"
 name: <string>
 selector:
-  # idかnamesのどちらかを指定、必須
+  # idかnames or tagsのどちらかを指定、必須
   id: <string | number>
   # 部分一致、複数指定した場合はAND結合
   names:
-    [ - <string> ]
+          [ - <string> ]
+  tags:
+          [ - <string> ]
+  # ゾーン(必須) 
   zones:
-    [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
+          [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
   # 垂直スケールさせる範囲(省略可能)
   plans:
     [ - name: <string> # プラン名、省略可能 
@@ -249,13 +261,16 @@ plans:
 type: "Server"
 name: <string>
 selector:
-  # idかnamesのどちらかを指定、必須
+  # idかnames or tagsのどちらかを指定、必須
   id: <string | number>
   # 部分一致、複数指定した場合はAND結合
   names:
-    [ - <string> ]
+          [ - <string> ]
+  tags:
+          [ - <string> ]
+  # ゾーン(必須) 
   zones:
-    [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
+          [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
   
   # コア専有プランを利用するか
   dedicated_cpu: <boolean>
