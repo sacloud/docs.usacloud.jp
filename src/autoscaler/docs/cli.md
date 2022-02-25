@@ -6,7 +6,6 @@
 
 ```shell
 $ autoscaler -h
-
 autoscaler is a tool for managing the scale of resources on SAKURA cloud
 
 Usage:
@@ -14,9 +13,13 @@ Usage:
 
 Available Commands:
   completion  Generate completion script
-  core        A set of sub commands to manage autoscaler's core server
+  example     show configuration example
+  handlers    A set of sub commands to manage autoscaler's external handlers
   help        Help about any command
   inputs      A set of sub commands to manage autoscaler's inputs
+  resources   list target resources
+  start       start autoscaler's core server
+  validate    validate autoscaler's core configuration
   version     show version
 
 Flags:
