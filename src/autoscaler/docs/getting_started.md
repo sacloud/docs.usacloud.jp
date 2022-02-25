@@ -25,7 +25,7 @@ Dockerを利用する場合は以下のようにします。
 
 ```bash
 # Coreを起動する場合(Unixドメインソケットでリッスン)
-$ docker run -d -w /work -d /your/work/dir:/work ghcr.io/sacloud/autoscaler core start
+$ docker run -d -w /work -d /your/work/dir:/work ghcr.io/sacloud/autoscaler start
 
 # Grafana Inputsを起動する場合(CoreとはVolume経由でUnixドメインソケットを受け渡して通信する)
 $ docker run -d -w /work -d /your/work/dir:/work ghcr.io/sacloud/autoscaler inputs grafana --addr ":8080"
@@ -47,7 +47,7 @@ $ docker run -d -w /work -d /your/work/dir:/work ghcr.io/sacloud/autoscaler inpu
 
 sacloud/autoscalerを実行するにはYAML形式の設定ファイルで対象リソースの定義などを行う必要があります。  
 
-設定ファイルの雛形は`autoscaler core example`で出力できます。
+設定ファイルの雛形は`autoscaler example`で出力できます。
 設定ファイルの記載内容については[Configuration Reference](./configuration.md)を参照してください。
 
 ## Coreの起動
@@ -56,21 +56,24 @@ sacloud/autoscalerを実行するにはYAML形式の設定ファイルで対象�
 
 ```bash
 # デフォルト設定で起動
-$ autoscaler core start 
+$ autoscaler start 
 ```
 
 指定可能なオプションは以下の通りです。
 
 ```console
+$ autoscaler start -h
+
 start autoscaler's core server
 
 Usage:
-  autoscaler core start [flags]...
+  autoscaler start [flags]...
 
 Flags:
       --addr string     Address of the gRPC endpoint to listen to (default "unix:autoscaler.sock")
       --config string   File path of configuration of AutoScaler Core (default "autoscaler.yaml")
   -h, --help            help for start
+      --strict          Restricting external file loading, etc. in configuration
 
 Global Flags:
       --log-format string   Format of logging to be output. options: [ logfmt | json ] (default "logfmt")

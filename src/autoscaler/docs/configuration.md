@@ -8,19 +8,19 @@ sacloud/autoscalerのコンフィギュレーションファイルはYAML形式�
 # 操作対象のリソースの定義
 # スケールさせたいリソース群をここで定義する
 resources:
-  # GSLB(配下のサーバが垂直スケールする際にサーバのデタッチ&アタッチが行われる)
-  - type: GSLB
-    name: "gslb"
+  # サーバ(垂直スケール)
+  - type: Server
+    naem: "server"
     selector:
-      names: ["example-gslb"]
-    resources:
-      # サーバ(垂直スケール)
-      - type: Server
-        naem: "server"
-        selector:
-          names: ["example"]
-          zones: ["is1a"]
-        shutdown_force: true
+      names: ["example"]
+      zones: ["is1a"]
+    shutdown_force: true
+
+    # 親リソース(GSLB)
+    # GSLB配下のサーバが垂直スケールする際にサーバのデタッチ&アタッチが行われる
+    parent:
+      type: GSLB
+      selector: "example-gslb"
 
 # カスタムハンドラーの定義
 # handlers:
@@ -45,13 +45,13 @@ autoscaler:
 
 - [&lt;top_level&gt;](#top_level)
   - [&lt;resource_definition&gt;](#resource_definition) 
-    - [&lt;resource_def_dns&gt;](#resource_def_dns)
     - [&lt;resource_def_elb&gt;](#resource_def_elb)
-    - [&lt;resource_def_gslb&gt;](#resource_def_gslb)
-    - [&lt;resource_def_load_balancer&gt;](#resource_def_load_balancer)
     - [&lt;resource_def_router&gt;](#resource_def_router)
     - [&lt;resource_def_server&gt;](#resource_def_server)
     - [&lt;resource_def_server_group&gt;](#resource_def_server_group)
+  - [&lt;parent_definition&gt;](#parent_definition)
+  - [&lt;resource_selector&gt;](#resource_selector)
+  - [&lt;name_or_resource_selector&gt;](#name_or_resource_selector)
   - [&lt;handler&gt;](#handler)
   - [&lt;autoscaler_config&gt;](#autoscaler_config)
 
@@ -97,36 +97,13 @@ sakuracloud:
 resource_def_xxxのいずれかを指定します。
 
 ```yaml
-<resource_def_dns> | <resource_def_elb> | <resource_def_gslb> | <resource_def_load_balancer> | <resource_def_router> | <resource_def_server> | <resource_def_server_group>
-```
-
-### &lt;resource_def_dns&gt;
-
-DNSリソースの定義
-
-```yaml
-type: "DNS"
-name: <string>
-selector:
-  # idかnames or tagsのどちらかを指定、必須
-  id: <string> | <number>
-  # 部分一致、複数指定した場合はAND結合
-  names: 
-    [ - <string> ]
-  tags:
-    [ - <string> ]
-
-# 子リソースの定義(省略可能)
-resources:
-  [ - <resource_definition> ]
+<resource_def_elb> | <resource_def_router> | <resource_def_server> | <resource_def_server_group>
 ```
 
 ### &lt;resource_def_elb&gt;
 
 エンハンスドロードバランサの定義。  
 ここで定義したリソースは垂直スケール可能になります(ハンドラ`elb-vertical-scaler`)。  
-また、`resources`配下に&lt;resource_def_server&gt;を定義し、かつELBの配信先サーバとIPアドレスが一致するサーバについては
-水平スケールする前にELBからのデタッチ/アタッチが行われます(ハンドラ:`elb-servers-handler`)。
 
 ```yaml
 type: "ELB" # or EnhancedLoadBalancer
@@ -143,9 +120,6 @@ selector:
   plans:
     [ - name: <string> # プラン名、省略可能 
         cps: <number> ]
-# 子リソースの定義(省略可能)
-resources:
-  [ - <resource_definition> ]
 ```
 
 `plans`を省略した場合のデフォルト値は以下の通りです。
@@ -161,55 +135,6 @@ plans:
   - cps: 50000
   - cps: 100000
   - cps: 400000
-```
-
-### &lt;resource_def_gslb&gt;
-
-GSLBの定義。
-`resources`配下に&lt;resource_def_server&gt;を定義し、かつGSLBの宛先サーバとIPアドレスが一致するサーバについては
-水平スケールする前にGSLBからのデタッチ/アタッチが行われます(ハンドラ:`gslb-servers-handler`)。
-
-```yaml
-type: "GSLB"
-name: <string>
-selector:
-  # idかnames or tagsのどちらかを指定、必須
-  id: <string> | <number>
-  # 部分一致、複数指定した場合はAND結合
-  names:
-          [ - <string> ]
-  tags:
-          [ - <string> ]
-
-# 子リソースの定義(省略可能)
-resources:
-  [ - <resource_definition> ]
-```
-
-### &lt;resource_def_load_balancer&gt;
-
-ロードバランサの定義。
-`resources`配下に&lt;resource_def_server&gt;を定義し、かつLBの宛先サーバとIPアドレスが一致するサーバについては
-水平スケールする前にLBからのデタッチ/アタッチが行われます(ハンドラ:`load-balancer-servers-handler`)。
-
-```yaml
-type: "LoadBalancer"
-name: <string>
-selector:
-  # idかnames or tagsのどちらかを指定、必須
-  id: <string> | <number>
-  # 部分一致、複数指定した場合はAND結合
-  names:
-          [ - <string> ]
-  tags:
-          [ - <string> ]
-  # ゾーン(必須) 
-  zones:
-    [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
-
-# 子リソースの定義(省略可能)
-resources:
-  [ - <resource_definition> ]
 ```
 
 ### &lt;resource_def_router&gt;
@@ -235,9 +160,6 @@ selector:
   plans:
     [ - name: <string> # プラン名、省略可能 
         band_width: <number> ]
-# 子リソースの定義(省略可能)
-resources:
-  [ - <resource_definition> ]
 ```
 
 `plans`を省略した場合のデフォルト値は以下の通りです。
@@ -262,7 +184,8 @@ plans:
 ### &lt;resource_def_server&gt;
 
 サーバの定義。  
-ここで定義したリソースは垂直スケール可能になります(ハンドラ`server-vertical-scaler`)。
+ここで定義したリソースは垂直スケール可能になります(ハンドラ`server-vertical-scaler`)。  
+`parent`を定義した場合、サーバの垂直スケール前後に`parent`が示すリソースからのデタッチ/アタッチが行われます。
 
 ```yaml
 type: "Server"
@@ -279,22 +202,21 @@ selector:
   zones:
           [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
   
-  # コア専有プランを利用するか
-  dedicated_cpu: <bool>
+# コア専有プランを利用するか
+dedicated_cpu: <bool>
   
-  # 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)
-  shutdown_force: <bool> 
+# 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)
+shutdown_force: <bool> 
   
-  # 垂直スケールさせる範囲(省略可能)
-  plans:
-    [ - name: <string> # プラン名、省略可能 
-        core: <number> # コア数
-        memory: <number> #メモリサイズ、GB単位 
-    ]
+# 垂直スケールさせる範囲(省略可能)
+plans:
+  [ - name: <string> # プラン名、省略可能 
+      core: <number> # コア数
+      memory: <number> #メモリサイズ、GB単位 
+  ]
   
-# 子リソースの定義(省略可能)
-resources:
-  [ - <resource_definition> ]
+# 親リソースの定義(省略可能)
+parent: <parent_definition>
 ```
 
 `plans`を省略した場合のデフォルト値は以下の通りです。
@@ -322,6 +244,7 @@ plans:
 
 サーバグループの定義。  
 ここで定義したリソースは水平スケール可能になります(ハンドラ`server-horizontal-scaler`)。
+`parent`を定義した場合、サーバの垂直スケール前後に`parent`が示すリソースからのデタッチ/アタッチが行われます。
 
 ```yaml
 type: "ServerGroup"
@@ -365,8 +288,8 @@ template:
         
         icon_id: <string>
         
-        source_archive: <string> | <resource_selector>
-        source_disk: <string> | <resource_selector>
+        source_archive: <name_or_resource_selector>
+        source_disk: <name_or_resource_selector>
         os_type: <string>
         
         plan: <"ssd" | "hdd">
@@ -430,18 +353,42 @@ template:
       # DNS向け: レコード登録時のTTL
       record_ttl: <number>
 
-# 子リソースの定義(省略可能)
-resources:
-  [ - <resource_definition> ]
+# 親リソースの定義(省略可能)
+parent: <parent_definition>
 ```
 
 `plans`を省略した場合、`size`に`min_size`から`max_size`までの値を持つプランが存在するとみなします。
 
-#### <resource_selector>
+#### &lt;parent_definition&gt;
+
+```yaml
+type: < "DNS" | "EnhancedLoadBalancer" | "ELB" | "GSLB" | "LoadBalancer" >
+selector: <name_or_resource_selector>
+```
+
+#### &lt;resource_selector&gt;
 
 ```yaml
 id: <string>
 names: [ - <string> ]
+tags: [ - <string> ]
+```
+
+#### &lt;name_or_resource_selector&gt;
+
+```yaml
+<string> | <resource_selector>
+```
+
+文字列が指定された場合はnamesのみが指定されたresource_selectorと同等とみなします。  
+
+```yaml
+# 文字列を指定した場合
+selector: "name"
+
+# 以下と同等
+# selector:
+#   names: ["name"]
 ```
 
 ### &lt;handler&gt;

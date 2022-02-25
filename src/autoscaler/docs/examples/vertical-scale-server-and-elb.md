@@ -35,33 +35,29 @@ ELB配下に指定したサーバのIPアドレスがELBに実サーバとして
 
 ```yaml
 resources:
-  - type: ELB
-    name: "elb"
+  - type: Server
+    name: "servers"
     selector:
-      names: ["example"]
-    resources:
-      - type: Server
-        name: "servers"
-        selector:
-          names: ["example"] # 名前に'example'が含まれているリソースが操作対象となる
-          zones: ["is1a"]
-          
-        plans:
-          - core: 1
-            memory: 1
-          - core: 2
-            memory: 4
-          - core: 4
-            memory: 8
+      names: ["example"] # 名前に'example'が含まれているリソースが操作対象となる
+      zones: ["is1a"]
+      
+    parent:
+      type: ELB
+      selector: "example"
+      
+    plans:
+      - core: 1
+        memory: 1
+      - core: 2
+        memory: 4
+      - core: 4
+        memory: 8
 ```
 
-!!! Info
-    リソースが複数存在するため、Inputsからのリクエスト時に`resource-name`パラメータを指定する必要があります。  
-    
-    例:  
-    Webhook系のリクエストURL例: `http://<your-host>/up?resource-name=servers`  
-    Direct Inputsの実行例: `autoscaler inputs direct up --resource-name servers`  
+!!! info
+リソース定義が1つだけなため、Inputsからのリクエスト時に`resource-name`パラメータを省略可能です。
 
-!!! tips
-    ELBリソースをスケールアップ/ダウンしたい場合は以下のように`resource-name`パラメータを指定します。   
-    `autoscaler inputs direct up --resource-name elb`  
+    例:  
+    Webhook系のリクエストURL例: `http://<your-host>/up`  
+    Direct Inputsの実行例: `autoscaler inputs direct up`  
+

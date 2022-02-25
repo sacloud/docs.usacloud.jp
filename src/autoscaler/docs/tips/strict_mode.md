@@ -13,7 +13,7 @@
 Coreの起動時に`--strict`を指定することでstrictモードが有効になります。
 
 ```bash
-$ autoscaler core start --strict
+$ autoscaler start --strict
 ```
 
 ## strictモードで制限されるもの
