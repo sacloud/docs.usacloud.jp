@@ -24,67 +24,66 @@ LB配下に指定したサーバグループの台数の増減に合わせLBの�
 
 ```yaml
 resources:
-  - type: LoadBalancer
-    name: "lb"
-    selector:
-      names: ["example"]
-    resources:
-      - type: ServerGroup
-        name: "servers"
-        zone: "is1a"
+  - type: ServerGroup
+    name: "servers"
+    zone: "is1a"
     
-        min_size: 5   # 最小インスタンス数
-        max_size: 20  # 最大インスタンス数
-        
-        template: # 各サーバのテンプレート
-          plan:
-            core: 2
-            memory: 4
+    parent:
+      type: LoadBalancer
+      selector: "example"
+
+    min_size: 5   # 最小インスタンス数
+    max_size: 20  # 最大インスタンス数
     
-          # NICs
-          network_interfaces:
-            # eth0
-            - upstream: "shared"
-                
-            # eth1    
-            - upstream:
-                names: ["example"]
-              assign_cidr_block: "192.168.0.32/27" #.33から順に割り当てられる
-              assign_netmask_len: 24
-              expose:
-                ports: [ 80 ] # このNICで上流リソースに公開するポート番号
-           
-                # LB向け
-                vips: [ "192.168.0.1" ] 
-                health_check:
-                  protocol: http
-                  path: "/"
-                  status_code: 200
-           
-          # ディスク
-          disks:
-            - os_type: "ubuntu2004"
-              plan: "ssd"
-              connection: "virtio"
-              size: 40
-    
-          # 1番目のディスクの対するパラメータ(対応しているアーカイブの場合のみ指定可能)
-          edit_parameter:
-            disabled: false # ディスクの修正を行わない場合はtrue
-            password: "your-password"
-            disable_pw_auth: true
-            enable_dhcp: false
-            change_partition_uuid: true
-    
-            # SSH公開鍵の指定
-            ssh_keys:
-              # ファイルパス or 文字列で指定
-              - "~/.ssh/id_rsa.pub"
-    
-            # スタートアップスクリプト
-            # サーバのIPアドレス(共有セグメントの場合の自動割り当て)などを{{ .IPAddress}}のようなGoのテンプレートで利用可能
-            startup_scripts:
-              - "/my/path/provisioning.sh"
+    template: # 各サーバのテンプレート
+      plan:
+        core: 2
+        memory: 4
+
+      # NICs
+      network_interfaces:
+        # eth0
+        - upstream: "shared"
+            
+        # eth1    
+        - upstream:
+            names: ["example"]
+          assign_cidr_block: "192.168.0.32/27" #.33から順に割り当てられる
+          assign_netmask_len: 24
+          expose:
+            ports: [ 80 ] # このNICで上流リソースに公開するポート番号
+       
+            # LB向け
+            vips: [ "192.168.0.1" ] 
+            health_check:
+              protocol: http
+              path: "/"
+              status_code: 200
+       
+      # ディスク
+      disks:
+        - os_type: "ubuntu2004"
+          plan: "ssd"
+          connection: "virtio"
+          size: 40
+
+      # 1番目のディスクの対するパラメータ(対応しているアーカイブの場合のみ指定可能)
+      edit_parameter:
+        disabled: false # ディスクの修正を行わない場合はtrue
+        password: "your-password"
+        disable_pw_auth: true
+        enable_dhcp: false
+        change_partition_uuid: true
+
+        # SSH公開鍵の指定
+        ssh_keys:
+          # ファイルパス or 文字列で指定
+          - "~/.ssh/id_rsa.pub"
+
+        # スタートアップスクリプト
+        # サーバのIPアドレス(共有セグメントの場合の自動割り当て)などを{{ .IPAddress}}のようなGoのテンプレートで利用可能
+        startup_scripts:
+          - "/my/path/provisioning.sh"
 ```
 
 スタートアップスクリプトとして以下を指定しています。(`/my/path/provisioning.sh`)
@@ -125,9 +124,10 @@ netplan apply
 apt update; apt install -y nginx
 ```
 
-!!! Info
-    リソースが複数存在するため、Inputsからのリクエスト時に`resource-name`パラメータを指定する必要があります。  
-    
+!!! info
+リソース定義が1つだけなため、Inputsからのリクエスト時に`resource-name`パラメータを省略可能です。
+
     例:  
-    Webhook系のリクエストURL例: `http://<your-host>/up?resource-name=servers`  
-    Direct Inputsの実行例: `autoscaler inputs direct up --resource-name servers`  
+    Webhook系のリクエストURL例: `http://<your-host>/up`  
+    Direct Inputsの実行例: `autoscaler inputs direct up`  
+

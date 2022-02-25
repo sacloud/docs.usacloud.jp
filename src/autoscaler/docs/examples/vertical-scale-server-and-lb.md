@@ -35,34 +35,30 @@ LB配下に指定したサーバのIPアドレスがLBに実サーバとして�
 
 ```yaml
 resources:
-  - type: LoadBalancer
-    name: "lb"
+      
+  - type: Server
+    name: "servers"
     selector:
-      names: ["example"]
+      names: ["example"] 
       zones: ["is1a"]
-    resources:
-      - type: Server
-        name: "servers"
-        selector:
-          names: ["example"] 
-          zones: ["is1a"]
-          
-        plans:
-          - core: 1
-            memory: 1
-          - core: 2
-            memory: 4
-          - core: 4
-            memory: 8
+      
+    plans:
+      - core: 1
+        memory: 1
+      - core: 2
+        memory: 4
+      - core: 4
+        memory: 8
+        
+    parent:
+      type: LoadBalancer
+      selector: "example"
 ```
 
-!!! Info
-    リソースが複数存在するため、Inputsからのリクエスト時に`resource-name`パラメータを指定する必要があります。  
-    
-    例:  
-    Webhook系のリクエストURL例: `http://<your-host>/up?resource-name=servers`  
-    Direct Inputsの実行例: `autoscaler inputs direct up --resource-name servers`  
+!!! info
+リソース定義が1つだけなため、Inputsからのリクエスト時に`resource-name`パラメータを省略可能です。
 
-!!! warning
-    LBリソース自体はオートスケールに対応していません。このため、以下のようにLBリソースを`resourced-name`パラメータに指定しても無視されます。  
-    `autoscaler inputs direct up --resource-name lb`  
+    例:  
+    Webhook系のリクエストURL例: `http://<your-host>/up`  
+    Direct Inputsの実行例: `autoscaler inputs direct up`  
+

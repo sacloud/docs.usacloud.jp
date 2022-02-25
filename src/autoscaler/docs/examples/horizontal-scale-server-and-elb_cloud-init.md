@@ -23,60 +23,58 @@ ELB配下に指定したサーバグループの台数の増減に合わせELB�
 
 ```yaml
 resources:
-  - type: ELB
-    name: "elb"
-    selector:
-      names: ["example"]
-    resources:
-      - type: ServerGroup
-        name: "servers"
-        zone: "is1a"
+  - type: ServerGroup
+    name: "servers"
+    zone: "is1a"
     
-        min_size: 5   # 最小インスタンス数
-        max_size: 20  # 最大インスタンス数
+    parent:
+      type: ELB
+      selector: "example"
+
+    min_size: 5   # 最小インスタンス数
+    max_size: 20  # 最大インスタンス数
+    
+    template: # 各サーバのテンプレート
+      plan:
+        core: 2
+        memory: 4
+
+      # NICs
+      network_interfaces:
+        - upstream: "shared"
+          expose:
+            ports: [ 80 ] # このNICで上流リソースに公開するポート番号
+
+      # ディスク
+      disks:
+        - source_archive:
+            names: ["Ubuntu", "20.04", "cloudimg"]
+          plan: "ssd"
+          connection: "virtio"
+          size: 20
+
+      cloud_config: |
+        #cloud-config
+        chpasswd:
+          expire: false
+        hostname: example
+        locale: ja_JP.utf8
+        package_update: true
+        packages:
+          - nginx
+        ssh_authorized_keys:
+          - "ssh-rsa ..." #公開鍵
+        ssh_pwauth: false
+        timezone: "Asia/Tokyo"
         
-        template: # 各サーバのテンプレート
-          plan:
-            core: 2
-            memory: 4
     
-          # NICs
-          network_interfaces:
-            - upstream: "shared"
-              expose:
-                ports: [ 80 ] # このNICで上流リソースに公開するポート番号
-
-          # ディスク
-          disks:
-            - source_archive:
-                names: ["Ubuntu", "20.04", "cloudimg"]
-              plan: "ssd"
-              connection: "virtio"
-              size: 20
-
-          cloud_config: |
-            #cloud-config
-            chpasswd:
-              expire: false
-            hostname: example
-            locale: ja_JP.utf8
-            package_update: true
-            packages:
-              - nginx
-            ssh_authorized_keys:
-              - "ssh-rsa ..." #公開鍵
-            ssh_pwauth: false
-            timezone: "Asia/Tokyo"
     
 ```
 
-!!! Info
-    リソースが複数存在するため、Inputsからのリクエスト時に`resource-name`パラメータを指定する必要があります。  
-    
-    例:  
-    Webhook系のリクエストURL例: `http://<your-host>/up?resource-name=servers`  
-    Direct Inputsの実行例: `autoscaler inputs direct up --resource-name servers`  
+!!! info
+リソース定義が1つだけなため、Inputsからのリクエスト時に`resource-name`パラメータを省略可能です。
 
-!!! tips
-    ELBリソースをスケールアップ/ダウンしたい場合は以下のように`resource-name`パラメータを指定します。   
-    `autoscaler inputs direct up --resource-name elb`  
+    例:  
+    Webhook系のリクエストURL例: `http://<your-host>/up`  
+    Direct Inputsの実行例: `autoscaler inputs direct up`  
+
