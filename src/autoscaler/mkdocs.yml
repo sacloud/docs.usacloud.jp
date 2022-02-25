@@ -35,7 +35,7 @@ nav:
         - Webhook: inputs/webhook/index.md
         - Zabbix: inputs/zabbix/index.md
         - Direct: inputs/direct/index.md
-    - Core Configuration: configuration.md
+    - Configuration: configuration.md
     - Exporter: exporter.md
   - Examples:
     - Coreの設定例:
