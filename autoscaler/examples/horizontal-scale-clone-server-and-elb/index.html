@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/examples/horizontal-scale-clone-server-and-elb/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.50e68009.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e8d9bf0c.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -260,7 +260,7 @@
   
     <li class="md-tabs__item">
       <a href="../../tips/terraform/" class="md-tabs__link">
-        Tips
+        Tips/Guides
       </a>
     </li>
   
@@ -553,7 +553,7 @@
   
     <li class="md-nav__item">
       <a href="../../configuration/" class="md-nav__link">
-        Core Configuration
+        Configuration
       </a>
     </li>
   
@@ -924,14 +924,14 @@
       
       
         <label class="md-nav__link" for="__nav_5">
-          Tips
+          Tips/Guides
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tips" data-md-level="1">
+      <nav class="md-nav" aria-label="Tips/Guides" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Tips
+          Tips/Guides
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -986,6 +986,53 @@
       <a href="../../tips/strict_mode/" class="md-nav__link">
         共有サーバ上での実行(strictモード)
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          アップグレードガイド
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="アップグレードガイド" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          アップグレードガイド
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrade/v0.5/" class="md-nav__link">
+        v0.5以前からのアップグレード
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1054,6 +1101,7 @@
 </a>
 
 
+
 <h1 id="examples-elb">Examples: ELB + サーバの水平スケール(クローン)</h1>
 <h2 id="_1">概要</h2>
 <p>ELB配下のサーバの水平スケール(台数変更)を行います。<br />
@@ -1077,58 +1125,54 @@ ELB配下に指定したサーバグループの台数の増減に合わせELB�
 </ul>
 <p>サーバのプロビジョニングはクローン元のサーバに対してあらかじめ行っておく必要があります。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">resources</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ELB</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;elb&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">selector</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">    </span><span class="nt">resources</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServerGroup</span><span class="w"></span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;servers&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;is1a&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServerGroup</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;servers&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;is1a&quot;</span><span class="w"></span>
 
-<span class="w">        </span><span class="nt">min_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">   </span><span class="c1"># 最小インスタンス数</span><span class="w"></span>
-<span class="w">        </span><span class="nt">max_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w">  </span><span class="c1"># 最大インスタンス数</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># 親リソースの定義</span><span class="w"></span>
+<span class="w">    </span><span class="nt">parent</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ELB</span><span class="w"></span>
+<span class="w">      </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;example&quot;</span><span class="w"></span>
 
-<span class="w">        </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="c1"># 各サーバのテンプレート</span><span class="w"></span>
-<span class="w">          </span><span class="nt">plan</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-<span class="w">            </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
+<span class="w">    </span><span class="nt">min_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">   </span><span class="c1"># 最小インスタンス数</span><span class="w"></span>
+<span class="w">    </span><span class="nt">max_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w">  </span><span class="c1"># 最大インスタンス数</span><span class="w"></span>
 
-<span class="w">          </span><span class="c1"># NICs</span><span class="w"></span>
-<span class="w">          </span><span class="nt">network_interfaces</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">upstream</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;shared&quot;</span><span class="w"></span>
-<span class="w">              </span><span class="nt">expose</span><span class="p">:</span><span class="w"></span>
-<span class="w">                </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">80</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># このNICで上流リソースに公開するポート番号</span><span class="w"></span>
+<span class="w">    </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="c1"># 各サーバのテンプレート</span><span class="w"></span>
+<span class="w">      </span><span class="nt">plan</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
 
-<span class="w">          </span><span class="c1"># ディスク</span><span class="w"></span>
-<span class="w">          </span><span class="nt">disks</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;clone-source-disk&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1">#クローン元サーバのディスクの名前</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># NICs</span><span class="w"></span>
+<span class="w">      </span><span class="nt">network_interfaces</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">upstream</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;shared&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="nt">expose</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">80</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># このNICで上流リソースに公開するポート番号</span><span class="w"></span>
 
-<span class="w">          </span><span class="c1"># 1番目のディスクの対するパラメータ(対応しているアーカイブの場合のみ指定可能)</span><span class="w"></span>
-<span class="w">          </span><span class="nt">edit_parameter</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># ディスクの修正を行わない場合はtrue</span><span class="w"></span>
-<span class="w">            </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your-password&quot;</span><span class="w"></span>
-<span class="w">            </span><span class="nt">disable_pw_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">            </span><span class="nt">enable_dhcp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="w">            </span><span class="nt">change_partition_uuid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># ディスク</span><span class="w"></span>
+<span class="w">      </span><span class="nt">disks</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;clone-source-disk&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1">#クローン元サーバのディスクの名前</span><span class="w"></span>
 
-<span class="w">            </span><span class="c1"># SSH公開鍵の指定</span><span class="w"></span>
-<span class="w">            </span><span class="nt">ssh_keys</span><span class="p">:</span><span class="w"></span>
-<span class="w">              </span><span class="c1"># ファイルパス or 文字列で指定</span><span class="w"></span>
-<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;~/.ssh/id_rsa.pub&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># 1番目のディスクの対するパラメータ(対応しているアーカイブの場合のみ指定可能)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">edit_parameter</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># ディスクの修正を行わない場合はtrue</span><span class="w"></span>
+<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your-password&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">disable_pw_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">        </span><span class="nt">enable_dhcp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">        </span><span class="nt">change_partition_uuid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1"># SSH公開鍵の指定</span><span class="w"></span>
+<span class="w">        </span><span class="nt">ssh_keys</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="c1"># ファイルパス or 文字列で指定</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;~/.ssh/id_rsa.pub&quot;</span><span class="w"></span>
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>リソースが複数存在するため、Inputsからのリクエスト時に<code>resource-name</code>パラメータを指定する必要があります。  </p>
-<p>例:<br />
-Webhook系のリクエストURL例: <code>http://&lt;your-host&gt;/up?resource-name=servers</code><br />
-Direct Inputsの実行例: <code>autoscaler inputs direct up --resource-name servers</code>  </p>
 </div>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>ELBリソースをスケールアップ/ダウンしたい場合は以下のように<code>resource-name</code>パラメータを指定します。 <br />
-<code>autoscaler inputs direct up --resource-name elb</code>  </p>
-</div>
+<p>リソース定義が1つだけなため、Inputsからのリクエスト時に<code>resource-name</code>パラメータを省略可能です。</p>
+<div class="highlight"><pre><span></span><code>例:  
+Webhook系のリクエストURL例: `http://&lt;your-host&gt;/up`  
+Direct Inputsの実行例: `autoscaler inputs direct up`
+</code></pre></div>
 
               
             </article>
@@ -1198,10 +1242,10 @@ Direct Inputsの実行例: <code>autoscaler inputs direct up --resource-name ser
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8aa65030.min.js"></script>
       
     
   </body>

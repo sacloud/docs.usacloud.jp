@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/getting_started/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50e68009.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e8d9bf0c.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -260,7 +260,7 @@
   
     <li class="md-tabs__item">
       <a href="../tips/terraform/" class="md-tabs__link">
-        Tips
+        Tips/Guides
       </a>
     </li>
   
@@ -656,7 +656,7 @@
   
     <li class="md-nav__item">
       <a href="../configuration/" class="md-nav__link">
-        Core Configuration
+        Configuration
       </a>
     </li>
   
@@ -973,14 +973,14 @@
       
       
         <label class="md-nav__link" for="__nav_5">
-          Tips
+          Tips/Guides
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tips" data-md-level="1">
+      <nav class="md-nav" aria-label="Tips/Guides" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Tips
+          Tips/Guides
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1035,6 +1035,53 @@
       <a href="../tips/strict_mode/" class="md-nav__link">
         共有サーバ上での実行(strictモード)
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          アップグレードガイド
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="アップグレードガイド" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          アップグレードガイド
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade/v0.5/" class="md-nav__link">
+        v0.5以前からのアップグレード
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1158,6 +1205,7 @@
 </a>
 
 
+
 <h1 id="getting-started-guide">Getting Started Guide</h1>
 <h2 id="_1">利用までの流れ</h2>
 <ul>
@@ -1176,7 +1224,7 @@
 <p>GitHub Container RegistryでDockerイメージを配布しています。<br />
 Dockerを利用する場合は以下のようにします。  </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Coreを起動する場合(Unixドメインソケットでリッスン)</span>
-$ docker run -d -w /work -d /your/work/dir:/work ghcr.io/sacloud/autoscaler core start
+$ docker run -d -w /work -d /your/work/dir:/work ghcr.io/sacloud/autoscaler start
 
 <span class="c1"># Grafana Inputsを起動する場合(CoreとはVolume経由でUnixドメインソケットを受け渡して通信する)</span>
 $ docker run -d -w /work -d /your/work/dir:/work ghcr.io/sacloud/autoscaler inputs grafana --addr <span class="s2">&quot;:8080&quot;</span>
@@ -1191,23 +1239,26 @@ $ docker run -d -w /work -d /your/work/dir:/work ghcr.io/sacloud/autoscaler inpu
 <p><a href="https://github.com/sacloud/autoscaler/blob/master/examples/systemd/">examples/systemd</a>を参照してください。</p>
 <h2 id="coreautoscaleryaml">Coreの設定ファイル(autoscaler.yaml)の作成</h2>
 <p>sacloud/autoscalerを実行するにはYAML形式の設定ファイルで対象リソースの定義などを行う必要があります。  </p>
-<p>設定ファイルの雛形は<code>autoscaler core example</code>で出力できます。
+<p>設定ファイルの雛形は<code>autoscaler example</code>で出力できます。
 設定ファイルの記載内容については<a href="../configuration/">Configuration Reference</a>を参照してください。</p>
 <h2 id="core">Coreの起動</h2>
 <p>以下のコマンドでCoreを起動します。  </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># デフォルト設定で起動</span>
-$ autoscaler core start 
+$ autoscaler start 
 </code></pre></div>
 <p>指定可能なオプションは以下の通りです。</p>
-<div class="highlight"><pre><span></span><code><span class="go">start autoscaler&#39;s core server</span>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>autoscaler start -h
+
+<span class="go">start autoscaler&#39;s core server</span>
 
 <span class="go">Usage:</span>
-<span class="go">  autoscaler core start [flags]...</span>
+<span class="go">  autoscaler start [flags]...</span>
 
 <span class="go">Flags:</span>
 <span class="go">      --addr string     Address of the gRPC endpoint to listen to (default &quot;unix:autoscaler.sock&quot;)</span>
 <span class="go">      --config string   File path of configuration of AutoScaler Core (default &quot;autoscaler.yaml&quot;)</span>
 <span class="go">  -h, --help            help for start</span>
+<span class="go">      --strict          Restricting external file loading, etc. in configuration</span>
 
 <span class="go">Global Flags:</span>
 <span class="go">      --log-format string   Format of logging to be output. options: [ logfmt | json ] (default &quot;logfmt&quot;)</span>
@@ -1304,10 +1355,10 @@ $ autoscaler inputs direct up
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      <script src="../assets/javascripts/bundle.8aa65030.min.js"></script>
       
     
   </body>
