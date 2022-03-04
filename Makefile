@@ -10,15 +10,11 @@ PROMETHEUS_DIR := src/prometheus
 
 .PHONY: build lint
 
-build-textlint:
-	@echo "building sacloud/textlint:local"
-	@docker build -t sacloud/textlint:local .github/actions/textlint
-
 build-mkdocs:
 	@echo "building sacloud/mkdocs:local"
 	@docker build -t sacloud/mkdocs:local .github/actions/mkdocs
 
-lint: build-textlint
+lint:
 	@echo "running textlint in $(TOP_DIR)..."
 	@(cd $(TOP_DIR); make lint)
 	@echo "running textlint in $(TERRAFORM_V2_DIR)..."
