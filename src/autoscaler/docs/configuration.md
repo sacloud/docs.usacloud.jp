@@ -10,7 +10,7 @@ sacloud/autoscalerのコンフィギュレーションファイルはYAML形式�
 resources:
   # サーバ(垂直スケール)
   - type: Server
-    naem: "server"
+    name: "server"
     selector:
       names: ["example"]
       zones: ["is1a"]
