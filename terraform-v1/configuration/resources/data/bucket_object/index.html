@@ -1,71 +1,55 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta name="author" content="@yamamoto-febc">
-  <link rel="canonical" href="https://docs.usacloud.jp/terraform-v1/configuration/resources/data/bucket_object/">
-  <link rel="shortcut icon" href="../../../../img/favicon.ico">
-  <title>オブジェクトストレージ - Terraform for さくらのクラウド(v1)</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="../../../../css/theme.css" />
-  <link rel="stylesheet" href="../../../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-  <link href="../../../../css/extra.css" rel="stylesheet" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u30b9\u30c8\u30ec\u30fc\u30b8";
-    var mkdocs_page_input_path = "configuration/resources/data/bucket_object.md";
-    var mkdocs_page_url = "/terraform-v1/configuration/resources/data/bucket_object/";
-  </script>
-  
-  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-63739336-5', 'auto');
-      ga('send', 'pageview');
-  </script>
-  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="@yamamoto-febc" /><link rel="canonical" href="https://docs.usacloud.jp/terraform-v1/configuration/resources/data/bucket_object/" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>オブジェクトストレージ - Terraform for さくらのクラウド(v1)</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u30b9\u30c8\u30ec\u30fc\u30b8";
+        var mkdocs_page_input_path = "configuration/resources/data/bucket_object.md";
+        var mkdocs_page_url = "/terraform-v1/configuration/resources/data/bucket_object/";
+      </script>
+    
+    <script src="../../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="../../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)</a>
-        <div role="search">
+          <a href="../../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../..">ホーム</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">ドキュメント</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../../installation/">インストールガイド</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">アップグレードガイド</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">ホーム</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ドキュメント</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../installation/">インストールガイド</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">アップグレードガイド</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../upgrade_to_v012/">v0.12での変更点</a>
                 </li>
@@ -84,19 +68,19 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../../../upgrade_to_v1_15/">v1.15での変更点</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../../articles/">ブログ/記事/読み物</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">設定リファレンス</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="#">全体/共通項目</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../articles/">ブログ/記事/読み物</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">設定リファレンス</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">全体/共通項目</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../provider/">プロバイダ</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">リソース</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">リソース</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../server/">サーバ</a>
                 </li>
@@ -163,14 +147,14 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../bucket_object/">オブジェクトストレージ</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">特殊なリソース</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">特殊なリソース</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../server_connector/">サーバ コネクタ</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">データリソース</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">データリソース</a>
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../data_resource/">データリソースとは</a>
                 </li>
@@ -231,48 +215,32 @@
                 <li class="toctree-l2"><a class="reference internal" href="../zone/">ゾーン</a>
                 </li>
     </ul>
-                    </li>
-                </ul>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../../..">Terraform for さくらのクラウド(v1)</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Terraform for さくらのクラウド(v1)</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../..">Docs</a> &raquo;</li>
-    
-      
-        
+    <li><a href="../../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>設定リファレンス &raquo;</li>
-        
-      
-        
-          <li>データリソース &raquo;</li>
-        
-      
-    
-    <li>オブジェクトストレージ</li>
+          <li>データリソース &raquo;</li><li>オブジェクトストレージ</li>
     <li class="wy-breadcrumbs-aside">
-      
     </li>
   </ul>
-  
   <hr/>
 </div>
 
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
                 <h1 id="sakuracloud_bucket_object">オブジェクトストレージ(sakuracloud_bucket_object)</h1>
 <hr />
@@ -407,31 +375,22 @@
 </table>
               
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../simple_monitor/" class="btn btn-neutral float-left" title="シンプル監視"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../webaccel/" class="btn btn-neutral float-right" title="ウェブアクセラレータ(サイト)">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../simple_monitor/" class="btn btn-neutral" title="シンプル監視"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    
       <p>Copyright (C) 2016-2022 terraform-provider-sakuracloud authors</p>
-    
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+          
         </div>
       </div>
 
@@ -439,7 +398,7 @@
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
+  <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
