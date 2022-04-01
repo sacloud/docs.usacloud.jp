@@ -116,10 +116,13 @@ selector:
           [ - <string> ]
   tags:
           [ - <string> ]
-  # 垂直スケールさせる範囲(省略可能)
-  plans:
-    [ - name: <string> # プラン名、省略可能 
-        cps: <number> ]
+# 垂直スケールさせる範囲(省略可能)
+plans:
+  [ - name: <string> # プラン名、省略可能 
+      cps: <number> ]
+
+# スケール後のセットアップ猶予時間(省略時は0秒)
+setup_grace_period: <number>
 ```
 
 `plans`を省略した場合のデフォルト値は以下の通りです。
@@ -156,10 +159,13 @@ selector:
   # ゾーン(必須) 
   zones:
           [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
-  # 垂直スケールさせる範囲(省略可能)
-  plans:
-    [ - name: <string> # プラン名、省略可能 
-        band_width: <number> ]
+# 垂直スケールさせる範囲(省略可能)
+plans:
+  [ - name: <string> # プラン名、省略可能 
+      band_width: <number> ]
+
+# スケール後のセットアップ猶予時間(省略時は0秒)
+setup_grace_period: <number>
 ```
 
 `plans`を省略した場合のデフォルト値は以下の通りです。
@@ -214,6 +220,9 @@ plans:
       core: <number> # コア数
       memory: <number> #メモリサイズ、GB単位 
   ]
+
+# スケール後のセットアップ猶予時間(省略時は60秒)
+setup_grace_period: <number>
   
 # 親リソースの定義(省略可能)
 parent: <parent_definition>
@@ -260,6 +269,9 @@ plans:
   [ - name: <string> # プラン名、省略可能 
       size: <number> # サーバ数
   ]
+
+# スケール後のセットアップ猶予時間(省略時は0秒)
+setup_grace_period: <number>
 
 # 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)
 shutdown_force: <bool>
