@@ -6,7 +6,7 @@ copyright: Copyright (C) 2016-2022 terraform-provider-sakuracloud authors
 extra:
   analytics:
     provider: google
-    property: UA-63739336-5
+    property: G-9JFNZ70H7B
 theme: readthedocs
 extra_css:
   - css/extra.css
