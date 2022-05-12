@@ -1601,11 +1601,11 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="w">    </span><span class="c1"># 上流ネットワーク</span><span class="w"></span>
 <span class="w">    </span><span class="nt">upstream</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;shared&quot;&gt; | &lt;resource_selector&gt;</span><span class="w"></span>
 
-<span class="w">    </span><span class="c1"># 以下はupstreamがsharedの場合のみ指定可能</span><span class="w"></span>
+<span class="w">    </span><span class="nt">packet_filter_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># 以下はupstreamがshared以外の場合のみ指定可能</span><span class="w"></span>
 <span class="w">    </span><span class="nt">assign_cidr_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">assign_netmask_len</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">default_route</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">packet_filter_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1"># 上流リソースの操作のためのメタデータ</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># サーバグループの上流にELB/GSLB/LB/DNSを定義している場合のみ指定可能</span><span class="w"></span>

@@ -1207,6 +1207,8 @@ LB配下に指定したサーバグループの台数の増減に合わせLBの�
 <p>スタートアップスクリプトとして以下を指定しています。(<code>/my/path/provisioning.sh</code>)
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
+<span class="c1"># @sacloud-once</span>
+
 <span class="c1"># eth1へのIPアドレス設定</span>
 cat <span class="s">&lt;&lt;EOL &gt;&gt; /etc/netplan/99-eth1-netcfg.yaml</span>
 <span class="s">network:</span>
