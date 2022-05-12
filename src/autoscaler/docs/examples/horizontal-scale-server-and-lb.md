@@ -90,6 +90,8 @@ resources:
 ```bash
 #!/bin/bash
 
+# @sacloud-once
+
 # eth1へのIPアドレス設定
 cat <<EOL >> /etc/netplan/99-eth1-netcfg.yaml
 network:
