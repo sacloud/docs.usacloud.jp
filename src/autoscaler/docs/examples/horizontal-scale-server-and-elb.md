@@ -71,6 +71,7 @@ resources:
           - |
             #!/bin/bash
 
+            # @sacloud-once
             apt update; apt install -y nginx
             
 ```

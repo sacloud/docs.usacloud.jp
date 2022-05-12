@@ -328,11 +328,11 @@ template:
     # 上流ネットワーク
     upstream: <"shared"> | <resource_selector>
     
-    # 以下はupstreamがsharedの場合のみ指定可能
+    packet_filter_id: <string>
+    # 以下はupstreamがshared以外の場合のみ指定可能
     assign_cidr_block: <string>
     assign_netmask_len: <int>
     default_route: <string>
-    packet_filter_id: <string>
     
     # 上流リソースの操作のためのメタデータ
     # サーバグループの上流にELB/GSLB/LB/DNSを定義している場合のみ指定可能
