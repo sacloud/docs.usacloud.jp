@@ -12,21 +12,21 @@
         <meta name="author" content="@yamamoto-febc">
       
       
-        <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/examples/vertical-scale-server/">
+        <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/network/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.14">
     
     
       
-        <title>サーバ - sacloud/autoscaler</title>
+        <title>Network - sacloud/autoscaler</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.3de6f41f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3de6f41f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -41,9 +41,9 @@
       
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../css/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#examples" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href="../.." title="sacloud/autoscaler" class="md-header__button md-logo" aria-label="sacloud/autoscaler" data-md-component="logo">
+    <a href=".." title="sacloud/autoscaler" class="md-header__button md-logo" aria-label="sacloud/autoscaler" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              サーバ
+              Network
             
           </span>
         </div>
@@ -185,7 +185,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href=".." class="md-tabs__link">
       ホーム
     </a>
   </li>
@@ -197,7 +197,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../getting_started/" class="md-tabs__link">
+    <a href="../getting_started/" class="md-tabs__link">
       Getting Started
     </a>
   </li>
@@ -206,13 +206,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../cli/" class="md-tabs__link">
+      <a href="../cli/" class="md-tabs__link md-tabs__link--active">
         リファレンス
       </a>
     </li>
@@ -222,8 +224,6 @@
         
   
   
-    
-  
 
 
   
@@ -240,7 +240,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../horizontal-scale-server-and-elb/" class="md-tabs__link md-tabs__link--active">
+      <a href="../examples/horizontal-scale-server-and-elb/" class="md-tabs__link">
         Examples
       </a>
     </li>
@@ -260,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../tips/terraform/" class="md-tabs__link">
+      <a href="../tips/terraform/" class="md-tabs__link">
         Tips/Guides
       </a>
     </li>
@@ -288,7 +288,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="sacloud/autoscaler" class="md-nav__button md-logo" aria-label="sacloud/autoscaler" data-md-component="logo">
+    <a href=".." title="sacloud/autoscaler" class="md-nav__button md-logo" aria-label="sacloud/autoscaler" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -319,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         ホーム
       </a>
     </li>
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/" class="md-nav__link">
+      <a href="../getting_started/" class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -347,12 +347,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -375,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cli/" class="md-nav__link">
+      <a href="../cli/" class="md-nav__link">
         CLI
       </a>
     </li>
@@ -415,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../inputs/" class="md-nav__link">
+      <a href="../inputs/" class="md-nav__link">
         概要
       </a>
     </li>
@@ -429,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../inputs/config/" class="md-nav__link">
+      <a href="../inputs/config/" class="md-nav__link">
         共通設定
       </a>
     </li>
@@ -469,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../inputs/alertmanager/" class="md-nav__link">
+      <a href="../inputs/alertmanager/" class="md-nav__link">
         AlertManager
       </a>
     </li>
@@ -483,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../inputs/grafana/" class="md-nav__link">
+      <a href="../inputs/grafana/" class="md-nav__link">
         Grafana
       </a>
     </li>
@@ -497,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../inputs/webhook/" class="md-nav__link">
+      <a href="../inputs/webhook/" class="md-nav__link">
         Webhook
       </a>
     </li>
@@ -511,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../inputs/zabbix/" class="md-nav__link">
+      <a href="../inputs/zabbix/" class="md-nav__link">
         Zabbix
       </a>
     </li>
@@ -525,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../inputs/direct/" class="md-nav__link">
+      <a href="../inputs/direct/" class="md-nav__link">
         Direct
       </a>
     </li>
@@ -553,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -565,11 +567,85 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../network/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Network
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    水平スケール時のネットワーク設定の算出
+  </a>
+  
+    <nav class="md-nav" aria-label="水平スケール時のネットワーク設定の算出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    コンフィギュレーションでのネットワーク関連項目の指定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    割り当てられたネットワーク情報のサーバへの反映
+  </a>
+  
+    <nav class="md-nav" aria-label="割り当てられたネットワーク情報のサーバへの反映">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    スタートアップスクリプトでIPアドレスの設定を行う例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -581,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exporter/" class="md-nav__link">
+      <a href="../exporter/" class="md-nav__link">
         Exporter
       </a>
     </li>
@@ -601,14 +677,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -629,14 +703,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
       
       
       
@@ -685,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../horizontal-scale-server-and-elb/" class="md-nav__link">
+      <a href="../examples/horizontal-scale-server-and-elb/" class="md-nav__link">
         ELB+サーバ
       </a>
     </li>
@@ -699,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../horizontal-scale-clone-server-and-elb/" class="md-nav__link">
+      <a href="../examples/horizontal-scale-clone-server-and-elb/" class="md-nav__link">
         ELB+サーバ(クローン)
       </a>
     </li>
@@ -713,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../horizontal-scale-server-and-elb_cloud-init/" class="md-nav__link">
+      <a href="../examples/horizontal-scale-server-and-elb_cloud-init/" class="md-nav__link">
         ELB+サーバ(cloud-init)
       </a>
     </li>
@@ -727,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../horizontal-scale-server-and-lb/" class="md-nav__link">
+      <a href="../examples/horizontal-scale-server-and-lb/" class="md-nav__link">
         LB+サーバ
       </a>
     </li>
@@ -746,14 +818,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_2" type="checkbox" id="__nav_4_1_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_2" type="checkbox" id="__nav_4_1_2" >
       
       
       
@@ -774,59 +844,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          サーバ
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../examples/vertical-scale-server/" class="md-nav__link">
         サーバ
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    概要
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    構成例
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -838,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vertical-scale-server-and-elb/" class="md-nav__link">
+      <a href="../examples/vertical-scale-server-and-elb/" class="md-nav__link">
         ELB+サーバ
       </a>
     </li>
@@ -852,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vertical-scale-server-and-lb/" class="md-nav__link">
+      <a href="../examples/vertical-scale-server-and-lb/" class="md-nav__link">
         LB+サーバ
       </a>
     </li>
@@ -866,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vertical-scale-server-and-gslb/" class="md-nav__link">
+      <a href="../examples/vertical-scale-server-and-gslb/" class="md-nav__link">
         GSLB+サーバ
       </a>
     </li>
@@ -880,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vertical-scale-router/" class="md-nav__link">
+      <a href="../examples/vertical-scale-router/" class="md-nav__link">
         ルータ
       </a>
     </li>
@@ -894,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vertical-scale-elb/" class="md-nav__link">
+      <a href="../examples/vertical-scale-elb/" class="md-nav__link">
         エンハンスドロードバランサ
       </a>
     </li>
@@ -956,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tips/terraform/" class="md-nav__link">
+      <a href="../tips/terraform/" class="md-nav__link">
         Terraformとの併用
       </a>
     </li>
@@ -970,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tips/named_plan/" class="md-nav__link">
+      <a href="../tips/named_plan/" class="md-nav__link">
         名前付きプラン
       </a>
     </li>
@@ -984,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tips/local_exec_handler/" class="md-nav__link">
+      <a href="../tips/local_exec_handler/" class="md-nav__link">
         local-execハンドラ
       </a>
     </li>
@@ -998,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tips/strict_mode/" class="md-nav__link">
+      <a href="../tips/strict_mode/" class="md-nav__link">
         共有サーバ上での実行(strictモード)
       </a>
     </li>
@@ -1038,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../upgrade/v0.5/" class="md-nav__link">
+      <a href="../upgrade/v0.5/" class="md-nav__link">
         v0.5以前からのアップグレード
       </a>
     </li>
@@ -1086,16 +1108,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    概要
+  <a href="#_2" class="md-nav__link">
+    水平スケール時のネットワーク設定の算出
+  </a>
+  
+    <nav class="md-nav" aria-label="水平スケール時のネットワーク設定の算出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    コンフィギュレーションでのネットワーク関連項目の指定
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    構成例
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    割り当てられたネットワーク情報のサーバへの反映
   </a>
+  
+    <nav class="md-nav" aria-label="割り当てられたネットワーク情報のサーバへの反映">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    スタートアップスクリプトでIPアドレスの設定を行う例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1111,62 +1159,119 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/sacloud/autoscaler/edit/master/docs/examples/vertical-scale-server.md" title="編集" class="md-content__button md-icon">
+  <a href="https://github.com/sacloud/autoscaler/edit/master/docs/network.md" title="編集" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="examples">Examples: サーバの垂直スケール</h1>
-<h2 id="_1">概要</h2>
-<p>サーバの垂直スケール(プラン変更)を行います。<br />
-あらかじめ定義した範囲の中でCPU/メモリサイズの組み合わせを上下させます。  </p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>サーバのプラン変更時にはサーバの再起動が必要です。
-このため、インフラ構成によってはサービス停止が発生します。
-Webサーバのような外部からアクセスされるようなサービスを稼働させている場合はELBやLBとの組み合わせを検討してください。  </p>
-<p>参考:<br />
-  - <a href="../vertical-scale-server-and-elb/">垂直スケール: サーバ+エンハンスドロードバランサ</a><br />
-  - <a href="../vertical-scale-server-and-lb/">垂直スケール: サーバ+ロードバランサ</a>  </p>
-</div>
-<h2 id="_2">構成例</h2>
-<p>以下の条件でサーバを垂直スケールさせる例です。</p>
+<h1 id="_1">水平スケールでのネットワーク</h1>
+<p>AutoScalerは水平スケールの際、コンフィギュレーションに沿ってIPアドレス/サブネットマスク長/ゲートウェイを各サーバに割り当てます。  </p>
+<h2 id="_2">水平スケール時のネットワーク設定の算出</h2>
+<p>Coreはコンフィギュレーションと対象サーバのサーバグループ内でのインデックスを元にネットワーク設定を算出してHandlersに渡します。  </p>
+<h3 id="_3">コンフィギュレーションでのネットワーク関連項目の指定</h3>
+<p>まず、コンフィギュレーションではNICごとに以下の情報を指定する必要があります。</p>
+<p><code>template.network_interfaces</code>の要素として以下を指定:</p>
 <ul>
-<li>対象サーバ:<ul>
-<li>is1aゾーンのexample1とexample2</li>
+<li><code>upstream</code>: NICをどこに接続するか(共有セグメント or スイッチ)  </li>
+<li><code>assign_cidr_block</code>: 割り当てるIPアドレスブロック(CIDR表記)  </li>
+<li><code>assign_netmask_len</code>: 割り当てるサブネットマスク長  </li>
+<li><code>default_route</code>: 割り当てるデフォルトゲートウェイのIPアドレス  </li>
 </ul>
-</li>
-<li>プランは以下の範囲とする<ul>
-<li>Core:1 / メモリ:  1GB</li>
-<li>Core:2 / メモリ:  4GB</li>
-<li>Core:4 / メモリ:  8GB</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nt">resources</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;servers&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">selector</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># 名前に&#39;example&#39;が含まれているリソースが操作対象となる</span><span class="w"></span>
-<span class="w">      </span><span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;is1a&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
-
-<span class="w">    </span><span class="nt">plans</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
-<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span><span class="w"></span>
-</code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
+<p><code>upstream</code>が共有セグメント(<code>shared</code>)の場合、IPアドレスやサブネットマスク長、デフォルトゲートウェイはさくらのクラウド側で割り当てられるため指定できません。</p>
 </div>
-<p>リソース定義が1つだけなため、Inputsからのリクエスト時に<code>resource-name</code>パラメータを省略可能です。</p>
-<div class="highlight"><pre><span></span><code>例:  
-Webhook系のリクエストURL例: `http://&lt;your-host&gt;/up`  
-Direct Inputsの実行例: `autoscaler inputs direct up`
+<p>設定例:
+<div class="highlight"><pre><span></span><code><span class="c1"># 抜粋</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServerGroup</span><span class="w"></span>
+<span class="w">    </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;is1a&quot;</span><span class="w"></span>
+
+<span class="w">    </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">network_interfaces</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">upstream</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;shared&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">upstream</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">          </span><span class="nt">assign_cidr_block</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;192.168.0.32/28&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="nt">assign_netmask_len</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24</span><span class="w"></span>
+</code></pre></div></p>
+<p>この例は以下のような指定となっています。</p>
+<ul>
+<li>NICは2つ</li>
+<li>1番目のNICは共有セグメントに接続<ul>
+<li>IPアドレス/サブネットマスク長/デフォルトゲートウェイはさくらのクラウド側が割り当て</li>
+</ul>
+</li>
+<li>2番目のNICは<code>examples</code>というスイッチに接続<ul>
+<li>IPアドレスは<code>192.168.0.32/28</code>の範囲内から割り当て</li>
+<li>サブネットマスク長は<code>24</code></li>
+</ul>
+</li>
+</ul>
+<p>作成されるサーバのサーバグループ内でのインデックスに応じて<code>assign_cidr_block</code>から対応するIPアドレスが割り当てられます。<br />
+上記の例だと、インデックスが<code>0</code>の場合は<code>192.168.0.33</code>、<code>1</code>の場合は<code>192.168.0.34</code>が割り当てられます。</p>
+<h3 id="_4">割り当てられたネットワーク情報のサーバへの反映</h3>
+<p>上記で割り当てられるネットワーク情報はAutoScaler上での論理的な値となっており、最終的にサーバに反映させる必要があります。<br />
+1番目のNIC、かつ利用するアーカイブが<a href="https://manual.sakura.ad.jp/cloud/storage/modifydisk/about.html">ディスクの修正API</a>に対応している場合はHandlersが自動的にサーバに反映させます。</p>
+<p>2番目以降のNIC、またはディスクの修正APIに対応していない場合はスタートアップスクリプトやcloud-initを用いてサーバに反映させる必要があります。</p>
+<h4 id="ip">スタートアップスクリプトでIPアドレスの設定を行う例</h4>
+<p>AutoScalerでスタートアップスクリプトを指定する場合、<a href="https://pkg.go.dev/text/template">Goのテンプレート</a>を用いることでサーバに割り当てられたネットワーク情報をスクリプトに組み込み可能です。</p>
+<p>eth1の設定例:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># eth1向け設定ファイル作成</span>
+cat <span class="s">&lt;&lt;EOL &gt;&gt; /etc/netplan/99-eth1-netcfg.yaml</span>
+<span class="s">network:</span>
+<span class="s">  ethernets:</span>
+<span class="s">    eth1:</span>
+<span class="s">      addresses:</span>
+<span class="s">        # パラメータ中のNetworkInterfacesからインデックス1の要素を取り出し、N.N.N.N/N形式で出力する</span>
+<span class="s">        - {{ with index .NetworkInterfaces 1 }}{{ with .AssignedNetwork }}{{ .IpAddress }}/{{ .Netmask }}{{ end }}{{ end }}</span>
+<span class="s">      dhcp4: &#39;no&#39;</span>
+<span class="s">      dhcp6: &#39;no&#39;</span>
+<span class="s">EOL</span>
+
+<span class="c1"># 反映</span>
+netplan apply
 </code></pre></div>
+<p>Goのテンプレートでは以下のパラメータが利用可能です。<br />
+詳細: <a href="https://github.com/sacloud/autoscaler/blob/main/handler/handler.pb.go">github.com/sacloud/autoscaler - handler/handler.pb.go</a></p>
+<div class="highlight"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ServerGroupInstance</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Parent</span><span class="w"> </span><span class="o">*</span><span class="nx">Parent</span><span class="w"> </span><span class="s">`protobuf:&quot;bytes,1,opt,name=parent,proto3&quot; json:&quot;parent,omitempty&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Id</span><span class="w">     </span><span class="kt">string</span><span class="w">  </span><span class="s">`protobuf:&quot;bytes,11,opt,name=id,proto3&quot; json:&quot;id,omitempty&quot;`</span><span class="w"> </span><span class="c1">// 新規作成指示時は空</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Zone</span><span class="w">   </span><span class="kt">string</span><span class="w">  </span><span class="s">`protobuf:&quot;bytes,12,opt,name=zone,proto3&quot; json:&quot;zone,omitempty&quot;`</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// plan</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Core</span><span class="w">          </span><span class="kt">uint32</span><span class="w"> </span><span class="s">`protobuf:&quot;varint,13,opt,name=core,proto3&quot; json:&quot;core,omitempty&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Memory</span><span class="w">        </span><span class="kt">uint32</span><span class="w"> </span><span class="s">`protobuf:&quot;varint,14,opt,name=memory,proto3&quot; json:&quot;memory,omitempty&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">DedicatedCpu</span><span class="w">  </span><span class="kt">bool</span><span class="w">   </span><span class="s">`protobuf:&quot;varint,15,opt,name=dedicated_cpu,json=dedicatedCpu,proto3&quot; json:&quot;dedicated_cpu,omitempty&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">PrivateHostId</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`protobuf:&quot;bytes,16,opt,name=private_host_id,json=privateHostId,proto3&quot; json:&quot;private_host_id,omitempty&quot;`</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// disks</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Disks</span><span class="w"> </span><span class="p">[]</span><span class="o">*</span><span class="nx">ServerGroupInstance_Disk</span><span class="w"> </span><span class="s">`protobuf:&quot;bytes,17,rep,name=disks,proto3&quot; json:&quot;disks,omitempty&quot;`</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// ディスクの修正関連</span><span class="w"></span>
+<span class="w">    </span><span class="nx">EditParameter</span><span class="w"> </span><span class="o">*</span><span class="nx">ServerGroupInstance_EditParameter</span><span class="w"> </span><span class="s">`protobuf:&quot;bytes,18,opt,name=edit_parameter,json=editParameter,proto3&quot; json:&quot;edit_parameter,omitempty&quot;`</span><span class="w"> </span><span class="c1">// 1番目のディスクにのみ有効</span><span class="w"></span>
+<span class="w">    </span><span class="nx">CloudConfig</span><span class="w">   </span><span class="kt">string</span><span class="w">                             </span><span class="s">`protobuf:&quot;bytes,27,opt,name=cloud_config,json=cloudConfig,proto3&quot; json:&quot;cloud_config,omitempty&quot;`</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// networks</span><span class="w"></span>
+<span class="w">    </span><span class="nx">NetworkInterfaces</span><span class="w"> </span><span class="p">[]</span><span class="o">*</span><span class="nx">ServerGroupInstance_NIC</span><span class="w"> </span><span class="s">`protobuf:&quot;bytes,19,rep,name=network_interfaces,json=networkInterfaces,proto3&quot; json:&quot;network_interfaces,omitempty&quot;`</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// misc</span><span class="w"></span>
+<span class="w">    </span><span class="nx">CdRomId</span><span class="w">         </span><span class="kt">string</span><span class="w"> </span><span class="s">`protobuf:&quot;bytes,20,opt,name=cd_rom_id,json=cdRomId,proto3&quot; json:&quot;cd_rom_id,omitempty&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">InterfaceDriver</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`protobuf:&quot;bytes,21,opt,name=interface_driver,json=interfaceDriver,proto3&quot; json:&quot;interface_driver,omitempty&quot;`</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// common</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">          </span><span class="kt">string</span><span class="w">   </span><span class="s">`protobuf:&quot;bytes,22,opt,name=name,proto3&quot; json:&quot;name,omitempty&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Tags</span><span class="w">          </span><span class="p">[]</span><span class="kt">string</span><span class="w"> </span><span class="s">`protobuf:&quot;bytes,23,rep,name=tags,proto3&quot; json:&quot;tags,omitempty&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Description</span><span class="w">   </span><span class="kt">string</span><span class="w">   </span><span class="s">`protobuf:&quot;bytes,24,opt,name=description,proto3&quot; json:&quot;description,omitempty&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">IconId</span><span class="w">        </span><span class="kt">string</span><span class="w">   </span><span class="s">`protobuf:&quot;bytes,25,opt,name=icon_id,json=iconId,proto3&quot; json:&quot;icon_id,omitempty&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ShutdownForce</span><span class="w"> </span><span class="kt">bool</span><span class="w">     </span><span class="s">`protobuf:&quot;varint,26,opt,name=shutdown_force,json=shutdownForce,proto3&quot; json:&quot;shutdown_force,omitempty&quot;`</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>スタートアップスクリプトを用いるコンフィギュレーションの例は<a href="../examples/horizontal-scale-server-and-lb/">Examples: LB + サーバの水平スケール</a>を参照してください。</p>
 
               
             </article>
@@ -1180,7 +1285,7 @@ Direct Inputsの実行例: `autoscaler inputs direct up`
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
         
-        <a href="../horizontal-scale-server-and-lb/" class="md-footer__link md-footer__link--prev" aria-label="前: LB+サーバ" rel="prev">
+        <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="前: Configuration" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1189,20 +1294,20 @@ Direct Inputsの実行例: `autoscaler inputs direct up`
               <span class="md-footer__direction">
                 前
               </span>
-              LB+サーバ
+              Configuration
             </div>
           </div>
         </a>
       
       
         
-        <a href="../vertical-scale-server-and-elb/" class="md-footer__link md-footer__link--next" aria-label="次: ELB+サーバ" rel="next">
+        <a href="../exporter/" class="md-footer__link md-footer__link--next" aria-label="次: Exporter" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              ELB+サーバ
+              Exporter
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1236,10 +1341,10 @@ Direct Inputsの実行例: `autoscaler inputs direct up`
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c2e1ee47.min.js"></script>
+      <script src="../assets/javascripts/bundle.c2e1ee47.min.js"></script>
       
     
   </body>

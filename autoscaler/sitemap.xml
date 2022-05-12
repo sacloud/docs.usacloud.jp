@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.usacloud.jp/autoscaler/network/</loc>
+         <lastmod>2022-05-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.usacloud.jp/autoscaler/examples/horizontal-scale-clone-server-and-elb/</loc>
          <lastmod>2022-05-12</lastmod>
          <changefreq>daily</changefreq>
