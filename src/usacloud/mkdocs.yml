@@ -13,7 +13,7 @@ theme:
 extra:
     analytics:
         provider: google
-        property: UA-63739336-5
+        property: G-9JFNZ70H7B
 extra_css:
   - css/extra.css
 markdown_extensions:
