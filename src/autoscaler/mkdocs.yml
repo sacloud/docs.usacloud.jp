@@ -36,6 +36,7 @@ nav:
         - Zabbix: inputs/zabbix/index.md
         - Direct: inputs/direct/index.md
     - Configuration: configuration.md
+    - Network: network.md
     - Exporter: exporter.md
   - Examples:
     - Coreの設定例:
