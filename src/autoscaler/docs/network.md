@@ -25,6 +25,8 @@ Coreはコンフィギュレーションと対象サーバのサーバグルー�
 # 抜粋
 resources:
   - type: ServerGroup
+  
+    server_name_prefix: "servers"
     zone: "is1a"
     
     template: 

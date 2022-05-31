@@ -257,7 +257,10 @@ plans:
 
 ```yaml
 type: "ServerGroup"
-name: <string> #グループ内の各サーバ名のプレフィックスとなる
+name: <string> 
+
+# 対象サーバの指定
+server_name_prefix: <string> #グループ内の各サーバ名のプレフィックス、省略した場合はnameが利用される
 zone: <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v">
   
 # 最小/最大サーバ数
