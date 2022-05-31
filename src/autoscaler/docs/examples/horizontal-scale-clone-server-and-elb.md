@@ -25,6 +25,8 @@ ELB配下に指定したサーバグループの台数の増減に合わせELB�
 resources:
   - type: ServerGroup
     name: "servers"
+    
+    server_name_prefix: "servers"
     zone: "is1a"
 
     # 親リソースの定義
