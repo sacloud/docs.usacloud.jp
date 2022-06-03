@@ -25,6 +25,7 @@ nav:
   - ホーム: index.md
   - ガイド:
     - アップグレードガイド:
+      - v2.17での変更点: guides/upgrade_to_v2.17.0.md
       - v2.16での変更点: guides/upgrade_to_v2.16.0.md
       - v2.15での変更点: guides/upgrade_to_v2.15.0.md
       - v2.14での変更点: guides/upgrade_to_v2.14.0.md
@@ -50,10 +51,12 @@ nav:
       - ゾーン: d/zone.md
     - コンピュート:
       - データソース:
+        - オートスケール: d/auto_scale.md
         - 専有ホスト: d/private_host.md
         - サーバ: d/server.md
         - VNC接続情報: d/server_vnc_info.md
       - リソース:
+        - オートスケール: r/auto_scale.md
         - 専有ホスト: r/private_host.md
         - サーバ: r/server.md
     - ストレージ:
