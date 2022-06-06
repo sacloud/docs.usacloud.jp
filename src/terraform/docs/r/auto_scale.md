@@ -13,7 +13,7 @@ resource "sakuracloud_auto_scale" "foobar" {
   name  = "example"
   zones = [local.zone]
 
-  config = yamlencode({
+  config = jsonencode({
     resources : [{
       type : "Server",
       selector : {
