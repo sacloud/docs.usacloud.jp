@@ -17,7 +17,7 @@ preview:
            sacloud/mkdocs:local serve --dev-addr=0.0.0.0:8080
 
 lint:
-	@docker run -it --rm -v $$PWD:/work -w /work ghcr.io/sacloud/textlint-action:v0.0.1 .
+	@docker run -it --rm -v $$PWD:/work -w /work ghcr.io/sacloud/textlint-action:v0.0.3 .
 
 clean:
 	rm -rf site/*
