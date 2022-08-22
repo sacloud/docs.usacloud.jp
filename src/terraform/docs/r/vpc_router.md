@@ -115,6 +115,21 @@ resource "sakuracloud_vpc_router" "premium" {
     local_prefix      = ["192.168.21.0/24"]
   }
 
+  site_to_site_vpn_parameter {
+    ike {
+      lifetime = 28800
+      dpd {
+        interval = 15
+        timeout  = 30
+      }
+    }
+    esp {
+      lifetime = 1800
+    }
+    encryption_algo = "aes256"
+    hash_algo       = "sha256"
+  }
+
   static_nat {
     public_ip   = sakuracloud_internet.foobar.ip_addresses[3]
     private_ip  = "192.168.11.12"
@@ -129,6 +144,11 @@ resource "sakuracloud_vpc_router" "premium" {
   user {
     name     = "username"
     password = "password"
+  }
+
+  scheduled_maintenance {
+    day_of_week = "tue"
+    hour        = 1
   }
 }
 
@@ -184,6 +204,7 @@ resource sakuracloud_switch "foobar" {
 * `firewall` - (Optional) ファイアウォール設定のリスト。詳細は[firewallブロック](#firewall)を参照
 * `static_route` - (Optional) スタティックルート設定のリスト。詳細は[static_routeブロック](#static_route)を参照
 * `site_to_site_vpn` - (Optional) サイト間VPN設定のリスト。詳細は[site_to_site_vpnブロック](#site_to_site_vpn)を参照
+* `site_to_site_vpn_parameter` - (Optional) サイト間VPNパラメータのリスト。詳細は[site_to_site_vpn_parameterブロック](#site_to_site_vpn_parameter)を参照
 
 ##### firewallブロック
 
@@ -214,6 +235,27 @@ resource sakuracloud_switch "foobar" {
 * `pre_shared_secret` - (Required) 事前共有鍵 / `0`-`40`文字で指定
 * `remote_id` - (Required) リモートID
 * `routes` - (Required) 接続されたVPNのCIDRブロックのリスト
+
+##### `site_to_site_vpn_parameter`ブロック
+
+* `encryption_algo` - (Optional) 次のいずれかを指定［`aes128`/`aes256`]
+* `hash_algo` - (Optional) 次のいずれかを指定［`sha1`/`sha256`]
+* `ike` - (Optional) 詳細は[ikeブロック](#ike)を参照
+* `esp` - (Optional) 詳細は[espブロック](#esp)を参照
+
+##### `esp`ブロック
+
+* `lifetime` - (Optional) デフォルト: `1800`
+
+##### `ike`ブロック
+
+* `dpd` - (Optional) 詳細は[dpdブロック](#dpd)を参照
+* `lifetime` - (Optional) デフォルト: `28800`
+
+##### `dpd`ブロック
+
+* `interval` - (Optional) デフォルト: `15`
+* `timeout` - (Optional) デフォルト: `30`
 
 #### DHCP/NAT/Forwarding関連
 
@@ -288,6 +330,17 @@ resource sakuracloud_switch "foobar" {
 * `ip_address` - (Required) ピアのIPアドレス
 * `name` - (Required) ピアの名前
 * `public_key` - (Required) 公開鍵
+
+
+#### メンテナンス関連
+
+* `scheduled_maintenance` - (Optional) スケジュールメンテナンス設定。詳細は[scheduled_maintenanceブロック](#scheduled_maintenance)を参照
+* 
+##### `scheduled_maintenance`ブロック
+
+* `day_of_week` - 曜日。 次のいずれかとなる［`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`]
+* `hour` - 開始時間
+
 
 #### Common Arguments
 

@@ -57,7 +57,9 @@ data "sakuracloud_vpc_router" "foobar" {
 * `public_ip` - VPCルータに割り当てられたパブリックIPアドレス
 * `public_netmask` - VPCルータに割り当てられたサブネットマスク長
 * `public_network_interface` - パブリック側NIC設定。詳細は[public_network_interfaceブロック](#public_network_interface)を参照
+* `scheduled_maintenance` - スケジュールメンテナンス設定のリスト。詳細は[scheduled_maintenanceブロック](#scheduled_maintenance)を参照
 * `site_to_site_vpn` - サイト間VPN設定のリスト。詳細は[site_to_site_vpnブロック](#site_to_site_vpn)を参照
+* `site_to_site_vpn_parameter` - サイト間VPNパラメータのリスト。詳細は[site_to_site_vpn_parameterブロック](#site_to_site_vpn_parameter)を参照
 * `static_nat` - スタティックNAT設定のリスト。`plan`が`standard`以外の場合のみ参照可能。詳細は[static_natブロック](#static_nat)を参照
 * `static_route` - スタティックルート設定のリスト。詳細は[static_routeブロック](#static_route)を参照
 * `syslog_host` - VPCルータのログを送信するsyslogホストのIPアドレス
@@ -145,6 +147,11 @@ data "sakuracloud_vpc_router" "foobar" {
 * `vip` - 仮想IP
 * `vrid` - VRID
 
+##### `scheduled_maintenance`ブロック 
+
+* `day_of_week` - 曜日。 次のいずれかとなる［`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`] 
+* `hour` - 開始時間
+
 ##### site_to_site_vpnブロック
 
 * `local_prefix` - ローカルプレフィックス
@@ -152,6 +159,13 @@ data "sakuracloud_vpc_router" "foobar" {
 * `pre_shared_secret` - 事前共有鍵
 * `remote_id` - 対抗ID
 * `routes` - 接続されたVPNのCIDRブロックのリスト
+
+##### `site_to_site_vpn_parameter`ブロック
+
+* `encryption_algo` .
+* `hash_algo` - .
+* `ike` - .
+* `esp` - .
 
 ##### static_natブロック
 
