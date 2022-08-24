@@ -61,7 +61,3 @@ $ autoscaler inputs webhook --accept-http-methods "POST" --executable-path macke
 ## `--executable-path`に指定するスクリプトについて
 
 実行可能なファイルを指定します。スクリプトが終了コード0を返したらハンドルすべきWebhookと判断します。
-
-## TLS関連設定
-
-[Inputs共通設定](../config.md)を参照ください。  

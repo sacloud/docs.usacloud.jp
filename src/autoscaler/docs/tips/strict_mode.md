@@ -30,15 +30,6 @@ $ autoscaler start --strict
                 - `startup_scripts` 
                 - `ssh_keys`
             - `cloud_config`
-    - `autoscaler`
-        - `server_tls_config`
-            - `cert_file`
-            - `key_file`
-            - `client_ca_file`
-        - `handler_tls_config`
-            - `cert_file`
-            - `key_file`
-            - `root_ca_file`
 
 !!!info
   libsacloudのプロファイル機能が無効になるため、環境変数`SAKURACLOUD_PROFILE`や`USACLOUD_PROFILE`を指定しても無視されるようになります

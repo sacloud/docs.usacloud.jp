@@ -15,12 +15,6 @@ Inputsの起動時に`--config`で渡す設定ファイルにて設定します�
 exporter_config:
   enabled: <bool>
   address: <string | default=":8081">
-  tls_config:
-    cert_file: <string> # 証明書のファイルパス
-    key_file: <string> # 秘密鍵のファイルパス
-    # クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照
-    client_auth_type: <"NoClientCert" | "RequestClientCert" | "RequireAnyClientCert" | "VerifyClientCertIfGiven" | "RequireAndVerifyClientCert" >
-    client_ca_file: <string> # クライアント認証で利用するCA証明書(チェイン)のファイルパス
 ```
 
 詳細は[Inputsの共通設定](inputs/config.md)を参照してください。
@@ -35,12 +29,6 @@ autoscaler:
   exporter_config:
     enabled: <bool>
     address: <string | default=":8081">
-    tls_config:
-      cert_file: <string> # 証明書のファイルパス
-      key_file: <string> # 秘密鍵のファイルパス
-      # クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照
-      client_auth_type: <"NoClientCert" | "RequestClientCert" | "RequireAnyClientCert" | "VerifyClientCertIfGiven" | "RequireAndVerifyClientCert" >
-      client_ca_file: <string> # クライアント認証で利用するCA証明書(チェイン)のファイルパス
 ```
 
 詳細は[コンフィギュレーション リファレンス](configuration.md)を参照してください。
