@@ -36,7 +36,3 @@ Global Flags:
       --log-format string   Format of logging to be output. options: [ logfmt | json ] (default "logfmt")
       --log-level string    Level of logging to be output. options: [ error | warn | info | debug ] (default "info")
 ```
-
-## TLS関連設定
-
-[Inputs共通設定](../config.md)を参照ください。

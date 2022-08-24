@@ -429,29 +429,8 @@ handlers_config:
     <string>:          # ビルトインハンドラ名
       disabled: <bool> # このハンドラを無効化するか
 
-# CoreのgRPCエンドポイントのTLS関連設定
-server_tls_config:
-  cert_file: <string> | <filepath> # 証明書
-  key_file: <string> | <filepath> # 秘密鍵
-  # クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照
-  client_auth_type: <"NoClientCert" | "RequestClientCert" | "RequireAnyClientCert" | "VerifyClientCertIfGiven" | "RequireAndVerifyClientCert" >
-  client_ca_file: <string> | <filepath> # クライアント認証で利用するCA証明書(チェイン)
-
-# HandlersへのgRPCリクエスト時のTLS関連設定
-handler_tls_config:
-  cert_file: <string> | <filepath> # 証明書
-  key_file: <string> | <filepath> # 秘密鍵
-  root_ca_file: <string> | <filepath> # ルート証明書(チェイン)
-
 # Exporterの設定
 exporter_config:
   enabled: <bool>
   address: <string | default=":8081">
-  tls_config:
-    cert_file: <string> | <filepath> # 証明書
-    key_file: <string> | <filepath> # 秘密鍵
-    # クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照
-    client_auth_type: <"NoClientCert" | "RequestClientCert" | "RequireAnyClientCert" | "VerifyClientCertIfGiven" | "RequireAndVerifyClientCert" >
-    client_ca_file: <string> | <filepath> # クライアント認証で利用するCA証明書(チェイン)
 ```
-
