@@ -1094,6 +1094,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../upgrade/v0.8/" class="md-nav__link">
+        v0.8へのアップグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade/v0.7/" class="md-nav__link">
+        v0.7へのアップグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade/v0.6/" class="md-nav__link">
+        v0.6へのアップグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../upgrade/v0.5/" class="md-nav__link">
         v0.5以前からのアップグレード
       </a>
@@ -1244,12 +1286,6 @@
 <span class="nt">exporter_config</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=&quot;:8081&quot;&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">tls_config</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">cert_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 証明書のファイルパス</span><span class="w"></span>
-<span class="w">    </span><span class="nt">key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 秘密鍵のファイルパス</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span><span class="w"></span>
-<span class="w">    </span><span class="nt">client_auth_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">client_ca_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span><span class="w"></span>
 </code></pre></div>
 <p>詳細は<a href="../inputs/config/">Inputsの共通設定</a>を参照してください。</p>
 <h3 id="core">Core</h3>
@@ -1259,12 +1295,6 @@
 <span class="w">  </span><span class="nt">exporter_config</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=&quot;:8081&quot;&gt;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">tls_config</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">cert_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 証明書のファイルパス</span><span class="w"></span>
-<span class="w">      </span><span class="nt">key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 秘密鍵のファイルパス</span><span class="w"></span>
-<span class="w">      </span><span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span><span class="w"></span>
-<span class="w">      </span><span class="nt">client_auth_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span><span class="w"></span>
-<span class="w">      </span><span class="nt">client_ca_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span><span class="w"></span>
 </code></pre></div>
 <p>詳細は<a href="../configuration/">コンフィギュレーション リファレンス</a>を参照してください。</p>
 <h2 id="_1">メトリクス</h2>

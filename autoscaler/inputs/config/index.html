@@ -1028,6 +1028,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../upgrade/v0.8/" class="md-nav__link">
+        v0.8へのアップグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrade/v0.7/" class="md-nav__link">
+        v0.7へのアップグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrade/v0.6/" class="md-nav__link">
+        v0.6へのアップグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../upgrade/v0.5/" class="md-nav__link">
         v0.5以前からのアップグレード
       </a>
@@ -1101,35 +1143,15 @@
   <h1>共通設定</h1>
 
 <h2 id="inputs">Inputs共通設定</h2>
-<p>各Inputsは<code>--config</code>というパラメータでTLS関連やExporterなどの設定ファイルへのパスを指定可能です。</p>
+<p>各Inputsは<code>--config</code>というパラメータでExporterなどを設定を記述したファイルへのパスを指定可能です。</p>
 <p>利用例:</p>
 <div class="highlight"><pre><span></span><code>$ autoscaler inputs grafana --addr <span class="m">192</span>.0.2.1:443 --config your-config.yaml
 </code></pre></div>
 <p>設定ファイルの書式は以下の通りです。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># InputsのWebサーバのエンドポイント向けTLS設定</span><span class="w"></span>
-<span class="nt">server_tls_config</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">cert_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 証明書のファイルパス</span><span class="w"></span>
-<span class="w">  </span><span class="nt">key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 秘密鍵のファイルパス</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span><span class="w"></span>
-<span class="w">  </span><span class="nt">client_auth_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">client_ca_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span><span class="w"></span>
-
-<span class="c1"># CoreへのgRPCリクエスト時のTLS関連設定</span><span class="w"></span>
-<span class="nt">core_tls_config</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">cert_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 証明書のファイルパス</span><span class="w"></span>
-<span class="w">  </span><span class="nt">key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 秘密鍵のファイルパス </span><span class="w"></span>
-<span class="w">  </span><span class="nt">root_ca_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># ルート証明書(チェイン)のファイルパス</span><span class="w"></span>
-
-<span class="c1"># Exporterの設定</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Exporterの設定</span><span class="w"></span>
 <span class="nt">exporter_config</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=&quot;:8081&quot;&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">tls_config</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">cert_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 証明書のファイルパス</span><span class="w"></span>
-<span class="w">    </span><span class="nt">key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 秘密鍵のファイルパス</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># クライアント認証タイプ: 詳細は https://golang.org/pkg/crypto/tls/#ClientAuthType を参照</span><span class="w"></span>
-<span class="w">    </span><span class="nt">client_auth_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;NoClientCert&quot; | &quot;RequestClientCert&quot; | &quot;RequireAnyClientCert&quot; | &quot;VerifyClientCertIfGiven&quot; | &quot;RequireAndVerifyClientCert&quot; &gt;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">client_ca_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># クライアント認証で利用するCA証明書(チェイン)のファイルパス</span><span class="w"></span>
 </code></pre></div>
 
 
