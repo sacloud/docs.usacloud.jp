@@ -12,14 +12,14 @@
         <meta name="author" content="@yamamoto-febc">
       
       
-        <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/upgrade/v0.8/">
+        <link rel="canonical" href="https://docs.usacloud.jp/autoscaler/upgrade/v0.9/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
     
     
       
-        <title>v0.8へのアップグレード - sacloud/autoscaler</title>
+        <title>v0.9へのアップグレード - sacloud/autoscaler</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v08" class="md-skip">
+        <a href="#v09" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              v0.8へのアップグレード
+              v0.9へのアップグレード
             
           </span>
         </div>
@@ -263,7 +263,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../v0.9/" class="md-tabs__link md-tabs__link--active">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         アップグレードガイド
       </a>
     </li>
@@ -921,20 +921,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../v0.9/" class="md-nav__link">
-        v0.9へのアップグレード
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -947,12 +933,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          v0.8へのアップグレード
+          v0.9へのアップグレード
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        v0.8へのアップグレード
+        v0.9へのアップグレード
       </a>
       
         
@@ -978,8 +964,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tls" class="md-nav__link">
-    TLS関連設定の除去
+  <a href="#_2" class="md-nav__link">
+    水平スケールでの複数ゾーン対応
+  </a>
+  
+    <nav class="md-nav" aria-label="水平スケールでの複数ゾーン対応">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    コンフィギュレーションの変更点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    ゾーン分散の挙動
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    水平スケールのテンプレートでIDの代わりにセレクターを指定可能に
   </a>
   
 </li>
@@ -988,6 +1001,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v0.8/" class="md-nav__link">
+        v0.8へのアップグレード
+      </a>
     </li>
   
 
@@ -1165,8 +1192,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tls" class="md-nav__link">
-    TLS関連設定の除去
+  <a href="#_2" class="md-nav__link">
+    水平スケールでの複数ゾーン対応
+  </a>
+  
+    <nav class="md-nav" aria-label="水平スケールでの複数ゾーン対応">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    コンフィギュレーションの変更点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    ゾーン分散の挙動
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    水平スケールのテンプレートでIDの代わりにセレクターを指定可能に
   </a>
   
 </li>
@@ -1183,24 +1237,76 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/sacloud/autoscaler/edit/master/docs/upgrade/v0.8.md" title="編集" class="md-content__button md-icon">
+  <a href="https://github.com/sacloud/autoscaler/edit/master/docs/upgrade/v0.9.md" title="編集" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="v08">v0.8へのアップグレード</h1>
+<h1 id="v09">v0.9へのアップグレード</h1>
 <h2 id="_1">主な変更一覧</h2>
 <ul>
-<li><a href="#diff1">TLS関連設定の除去</a></li>
+<li><a href="#diff1">水平スケールでの複数ゾーン対応</a></li>
+<li><a href="#diff2">水平スケールのテンプレートでIDの代わりにセレクターを指定可能に</a></li>
 </ul>
-<h2 diff1="diff1" id="tls">TLS関連設定の除去</h2>
+<h2 diff1="diff1" id="_2">水平スケールでの複数ゾーン対応</h2>
 <p>Pull Request:  </p>
 <ul>
-<li><a href="https://github.com/sacloud/autoscaler/pull/388">https://github.com/sacloud/autoscaler/pull/388</a>  </li>
+<li><a href="https://github.com/sacloud/autoscaler/pull/404">https://github.com/sacloud/autoscaler/pull/404</a>  </li>
 </ul>
-<p>TLS関連機能が除去されました。<br />
-利用していた場合はコンフィギュレーションの修正が必要です。  </p>
+<p>水平スケールでサーバを複数のゾーンに分散して配置可能になりました。  </p>
+<p>利用例:
+<div class="highlight"><pre><span></span><code><span class="nt">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServerGroup</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;autoscaler-selector-test&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">server_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;autoscaler-selector-test&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;is1a&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;is1b&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;tk1a&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;tk1b&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># 4つのゾーンに分散配置する</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># ...(以下略)</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="_3">コンフィギュレーションの変更点</h3>
+<ul>
+<li><code>type: ServerGroup</code>なリソースで<code>zones</code>を指定可能に<ul>
+<li>従来の<code>zone</code>も引き続き利用可能</li>
+<li><code>zone</code>と<code>zones</code>の同時利用はできない(起動時などに行われるバリデーションでエラーにする)</li>
+<li><code>zones</code>に複数の要素を指定した場合、<code>parent</code>に指定可能な要素を制限する<ul>
+<li><code>parent</code>が<code>LoadBalancer</code>の場合はエラーとする(ロードバランサーのみ非グローバルリソースなため)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>注: <code>zone</code>については将来のバージョンで廃止予定です。</p>
+<h3 id="_4">ゾーン分散の挙動</h3>
+<ul>
+<li>サーバ作成時にサーバグループ内でのインデックス(順序)を算出(既存の処理)</li>
+<li>コンフィギュレーションで指定されたゾーン一覧とインデックスからどのゾーンに配置するかを決定<ul>
+<li><code>利用ゾーン = ゾーン一覧[インデックス % ゾーン一覧の要素数]</code></li>
+</ul>
+</li>
+</ul>
+<p>Note: ゾーン決定の際は既存のサーバの配置状況は考慮されません。
+このため、ゾーンごとのサーバ配置状況に偏りがあっても考慮されない点に注意が必要です。
+(単一ゾーンで運用していたものを後から複数ゾーンに拡張する場合などが該当します)</p>
+<p>例: <code>is1a</code>ゾーンのみで5〜10台で運用していたものを<code>is1a</code>+<code>tk1b</code>に分散させるように変更した場合
+この場合is1aの5台については再配置されないため手動での再配置(一度削除してからスケールアップさせるなど)が必要です。</p>
+<h2 diff1="diff1" id="id">水平スケールのテンプレートでIDの代わりにセレクターを指定可能に</h2>
+<p>Pull Request:</p>
+<ul>
+<li><a href="https://github.com/sacloud/autoscaler/pull/403">https://github.com/sacloud/autoscaler/pull/403</a>  </li>
+</ul>
+<p>水平スケールのテンプレートでIDを指定していた項目に対しセレクターを指定可能になりました。</p>
+<p>対象:
+- アイコン
+- CD-ROM(ISOイメージ)
+- 専有ホスト
+- パケットフィルタ</p>
+<p>利用例:
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">cdrom_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">netboot.xyz</span><span class="w"> </span><span class="c1"># CD-ROMとして&quot;netboot.xyz&quot;という名前を条件に指定</span><span class="w"></span>
+</code></pre></div></p>
+<p>従来通りIDも指定可能ですが将来のバージョンで廃止予定です。</p>
+<p>また、この変更に伴い、<code>edit_parameter.ssh_key_ids</code>が削除されました。</p>
 
 
   
@@ -1221,7 +1327,7 @@
     <nav class="md-footer__inner md-grid" aria-label="フッター" >
       
         
-        <a href="../v0.9/" class="md-footer__link md-footer__link--prev" aria-label="前: v0.9へのアップグレード" rel="prev">
+        <a href="../../examples/vertical-scale-elb/" class="md-footer__link md-footer__link--prev" aria-label="前: エンハンスドロードバランサ" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1230,20 +1336,20 @@
               <span class="md-footer__direction">
                 前
               </span>
-              v0.9へのアップグレード
+              エンハンスドロードバランサ
             </div>
           </div>
         </a>
       
       
         
-        <a href="../v0.7/" class="md-footer__link md-footer__link--next" aria-label="次: v0.7へのアップグレード" rel="next">
+        <a href="../v0.8/" class="md-footer__link md-footer__link--next" aria-label="次: v0.8へのアップグレード" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              v0.7へのアップグレード
+              v0.8へのアップグレード
             </div>
           </div>
           <div class="md-footer__button md-icon">
