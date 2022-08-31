@@ -52,6 +52,7 @@ autoscaler:
   - [&lt;parent_definition&gt;](#parent_definition)
   - [&lt;resource_selector&gt;](#resource_selector)
   - [&lt;name_or_resource_selector&gt;](#name_or_resource_selector)
+  - [&lt;id_or_name_or_resource_selector&gt;](#id_or_name_or_resource_selector)
   - [&lt;handler&gt;](#handler)
   - [&lt;autoscaler_config&gt;](#autoscaler_config)
 
@@ -284,9 +285,9 @@ template:
   tags: [ - <string> ] 
   description: <string>
   
-  icon_id: <string>
-  cdrom_id: <string>
-  private_host_id: <string>
+  icon: <id_or_name_or_selector>
+  cdrom: <id_or_name_or_selector>
+  private_host: <id_or_name_or_selector>
 
   interface_driver: <"virtio" | "e1000" | default="virtio">
   
@@ -301,7 +302,7 @@ template:
         tags: [ - <string> ]
         description: <string>
         
-        icon_id: <string>
+        icon: <id_or_name_or_selector>
         
         source_archive: <name_or_resource_selector>
         source_disk: <name_or_resource_selector>
@@ -322,7 +323,6 @@ template:
     change_partition_uuid: <bool>
     startup_scripts: [ - <string> | <filepath> ]
     ssh_keys: [ - <string> | <filepath> ]
-    ssh_key_ids: [ - <string> ]
     
   # cloud-init用のパラメータ、edit_parameterとの併用は出来ない  
   cloud_config: <string> | <filepath>
@@ -331,7 +331,7 @@ template:
     # 上流ネットワーク
     upstream: <"shared"> | <resource_selector>
     
-    packet_filter_id: <string>
+    packet_filter: <id_or_name_or_selector>
     # 以下はupstreamがshared以外の場合のみ指定可能
     assign_cidr_block: <string>
     assign_netmask_len: <int>
@@ -395,7 +395,7 @@ tags: [ - <string> ]
 <string> | <resource_selector>
 ```
 
-文字列が指定された場合はnamesのみが指定されたresource_selectorと同等とみなします。  
+文字列が指定された場合はnamesのみが指定されたresource_selectorと同等とみなします。
 
 ```yaml
 # 文字列を指定した場合
@@ -405,6 +405,15 @@ selector: "name"
 # selector:
 #   names: ["name"]
 ```
+
+#### &lt;id_or_name_or_resource_selector&gt;
+
+```yaml
+<string> | <name_or_resource_selector>
+```
+
+文字列が指定された場合、数値に変換できればIDとして、それ以外はname_or_resource_selectorとして扱われます。
+
 
 ### &lt;handler&gt;
 

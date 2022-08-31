@@ -52,13 +52,14 @@ nav:
         - GSLB+サーバ: examples/vertical-scale-server-and-gslb.md
         - ルータ: examples/vertical-scale-router.md
         - エンハンスドロードバランサ: examples/vertical-scale-elb.md
-  - Tips/Guides:
+  - アップグレードガイド:
+      - v0.9へのアップグレード: upgrade/v0.9.md
+      - v0.8へのアップグレード: upgrade/v0.8.md
+      - v0.7へのアップグレード: upgrade/v0.7.md
+      - v0.6へのアップグレード: upgrade/v0.6.md
+      - v0.5以前からのアップグレード: upgrade/v0.5.md
+  - Tips:
       - Terraformとの併用: tips/terraform.md
       - 名前付きプラン: tips/named_plan.md
       - local-execハンドラ: tips/local_exec_handler.md
       - 共有サーバ上での実行(strictモード): tips/strict_mode.md
-      - アップグレードガイド:
-          - v0.8へのアップグレード: upgrade/v0.8.md
-          - v0.7へのアップグレード: upgrade/v0.7.md
-          - v0.6へのアップグレード: upgrade/v0.6.md
-          - v0.5以前からのアップグレード: upgrade/v0.5.md
