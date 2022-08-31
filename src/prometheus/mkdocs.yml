@@ -2,8 +2,6 @@ site_name: sakuracloud_exporter
 site_url: https://docs.usacloud.jp/prometheus
 site_description: sakuracloud_exporter
 site_author: '@yamamoto-febc'
-repo_url: https://github.com/sacloud/sakuracloud_exporter
-repo_name: sakuracloud_exporter
 copyright: Copyright (C) 2021-2022 sacloud/sakuracloud_exporter authors
 theme:
   name: material
