@@ -2,8 +2,6 @@ site_name: Usaconドキュメント
 site_url: https://docs.usacloud.jp/usacon
 site_description: Usacon日本語ドキュメント
 site_author: '@sacloud-authors'
-repo_url: https://github.com/sacloud/usacon
-repo_name: usacon
 copyright: Copyright (C) 2017-2022 The Usacon Authors.
 theme:
   name: material

@@ -2,8 +2,6 @@ site_name: Sacloud ドキュメント
 site_url: https://docs.usacloud.jp
 site_description: Sacloudの提供するOSSツール群のドキュメント
 site_author: '@yamamoto-febc'
-repo_url: https://github.com/sacloud/
-repo_name: github.com/sacloud
 copyright: Copyright (C) 2016-2022 sacloud authors
 theme:
   name: material
