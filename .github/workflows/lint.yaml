@@ -24,3 +24,47 @@ jobs:
         uses: sacloud/textlint-action@v0.0.1
         with:
           working-directory: ${{ matrix.working-directory }}
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Unshallow
+        run: git fetch --prune --unshallow
+
+      - name: Build a document with mkdocs - src/terraform
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/terraform'
+
+      - name: Build a document with mkdocs - src/terraform-v1
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/terraform-v1'
+
+      - name: Build a document with mkdocs - src/top
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/top'
+
+      - name: Build a document with mkdocs - src/usacloud
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/usacloud'
+
+      - name: Build a document with mkdocs - src/usacon
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/usacon'
+
+      - name: Build a document with mkdocs - src/autoscaler
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/autoscaler'
+
+      - name: Build a document with mkdocs - src/prometheus
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/prometheus'

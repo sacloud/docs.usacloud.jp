@@ -14,6 +14,20 @@ build-mkdocs:
 	@echo "building sacloud/mkdocs:local"
 	@docker build -t sacloud/mkdocs:local .github/actions/mkdocs
 
+build-all:
+	@echo "running mkdocs in $(TOP_DIR)..."
+	@(cd $(TOP_DIR); make build)
+	@echo "running mkdocs in $(TERRAFORM_V2_DIR)..."
+	@(cd $(TERRAFORM_V2_DIR); make build)
+	@echo "running mkdocs in $(USACLOUD_DIR)..."
+	@(cd $(USACLOUD_DIR); make build)
+	@echo "running mkdocs in $(USACON_DIR)..."
+	@(cd $(USACON_DIR); make build)
+	@echo "running mkdocs in $(AUTOSCALER_DIR)..."
+	@(cd $(AUTOSCALER_DIR); make build)
+	@echo "running mkdocs in $(PROMETHEUS_DIR)..."
+	@(cd $(PROMETHEUS_DIR); make build)
+
 lint:
 	@echo "running textlint in $(TOP_DIR)..."
 	@(cd $(TOP_DIR); make lint)
@@ -27,6 +41,7 @@ lint:
 	@(cd $(AUTOSCALER_DIR); make lint)
 	@echo "running textlint in $(PROMETHEUS_DIR)..."
 	@(cd $(PROMETHEUS_DIR); make lint)
+
 
 .PHONY: preview-top
 preview-top:

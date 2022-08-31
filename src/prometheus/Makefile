@@ -4,8 +4,9 @@ default: lint
 build:
 	@docker run -it --rm \
            -v $$PWD:/workdir \
-           -p 8080:8080 \
-           sacloud/mkdocs:latest build --clean --quiet
+           -w /workdir \
+           --entrypoint mkdocs \
+           sacloud/mkdocs:local build --clean --strict
 
 preview:
 	@echo "servind docs on http://localhost:8080"
