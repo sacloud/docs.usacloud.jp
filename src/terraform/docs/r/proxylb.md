@@ -188,3 +188,11 @@ resource sakuracloud_server "foobar" {
 * `proxy_networks` - エンハンスドロードバランサが実サーバにアクセスする際のアクセス元CIDRブロックのリスト
 * `vip` - 現在の仮想IPアドレス
 
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_proxylb.example 123456789012
+```

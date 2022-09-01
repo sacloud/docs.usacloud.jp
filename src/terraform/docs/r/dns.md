@@ -69,3 +69,10 @@ resource "sakuracloud_dns" "foobar" {
 * `id` - ID
 * `dns_servers` - DNSサーバのIPアドレスのリスト
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_dns.example 123456789012
+```

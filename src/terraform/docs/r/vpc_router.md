@@ -363,3 +363,10 @@ resource sakuracloud_switch "foobar" {
 * `public_ip` - VPCルータのパブリックIP
 * `public_netmask` - VPCルータのパブリック側サブネットマスク長
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_vpc_router.example 123456789012
+```

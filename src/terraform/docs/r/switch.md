@@ -43,3 +43,11 @@ resource "sakuracloud_switch" "foobar" {
 * `id` - ID
 * `server_ids` - スイッチに接続されているサーバのIDのリスト
 
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_switch.example 123456789012
+```

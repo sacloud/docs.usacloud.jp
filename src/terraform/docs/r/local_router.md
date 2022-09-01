@@ -113,3 +113,10 @@ data "sakuracloud_local_router" "peer" {
 * `id` - ID
 * `secret_keys` - シークレットキーのリスト。他のローカルルータからピアリングする際に利用する
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_local_router.example 123456789012
+```

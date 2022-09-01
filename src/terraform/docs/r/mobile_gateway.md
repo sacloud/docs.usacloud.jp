@@ -119,3 +119,11 @@ resource "sakuracloud_switch" "foobar" {
 * `public_ip` - パブリック側NICのIPアドレス
 * `public_netmask` - パブリック側NICのサブネットマスク長
 
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_modile_gateway.example 123456789012
+```

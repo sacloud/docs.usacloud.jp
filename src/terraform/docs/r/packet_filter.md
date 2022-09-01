@@ -98,3 +98,10 @@ resource "sakuracloud_packet_filter" "foobar" {
 
 * `id` - ID
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_packet_filter.example 123456789012
+```

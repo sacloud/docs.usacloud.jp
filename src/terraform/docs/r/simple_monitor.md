@@ -113,3 +113,10 @@ resource "sakuracloud_simple_monitor" "foobar" {
 
 * `id` - ID
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_simple_monitor.example 123456789012
+```

@@ -69,3 +69,10 @@ resource "sakuracloud_disk" "foobar" {
 * `id` - ID
 * `server_id` - このディスクが接続されたサーバのID
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_disk.example 123456789012
+```

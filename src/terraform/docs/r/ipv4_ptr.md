@@ -50,3 +50,10 @@ resource "sakuracloud_ipv4_ptr" "foobar" {
 
 * `id` - ID
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_ipv4_ptr.example 192.0.2.1
+```

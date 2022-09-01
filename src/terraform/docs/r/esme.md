@@ -43,3 +43,10 @@ resource "sakuracloud_esme" "foobar" {
 * `send_message_with_generated_otp_api_url` - SMS送信(OTP自動生成)APIのURL
 * `send_message_with_inputted_otp_api_url` - SMS送信(OTP入力)APIのURL
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_esme.example 123456789012
+```

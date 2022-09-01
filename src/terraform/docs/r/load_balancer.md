@@ -111,3 +111,11 @@ resource "sakuracloud_switch" "foobar" {
 
 * `id` - ID
 
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_load_balancer.example 123456789012
+```

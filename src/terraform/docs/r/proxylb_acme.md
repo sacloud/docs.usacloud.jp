@@ -74,3 +74,11 @@ data "sakuracloud_proxylb" "foobar" {
 * `private_key` - 秘密鍵
 * `server_cert` - サーバ証明書
 
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_proxylb_acme.example 123456789012
+```
