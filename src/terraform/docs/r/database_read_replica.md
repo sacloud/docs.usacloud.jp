@@ -64,3 +64,11 @@ data sakuracloud_database "master" {
 ## Attribute Reference
 
 * `id` - ID
+ 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_database_read_replica.example 123456789012
+```

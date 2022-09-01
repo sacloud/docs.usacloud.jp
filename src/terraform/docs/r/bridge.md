@@ -52,3 +52,11 @@ resource "sakuracloud_bridge" "foobar" {
 ## Attribute Reference
 
 * `id` - ID
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_bridge.example 123456789012
+```

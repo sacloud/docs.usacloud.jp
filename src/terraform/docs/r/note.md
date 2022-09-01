@@ -42,3 +42,10 @@ resource "sakuracloud_note" "foobar" {
 * `id` - ID
 * `description` - 説明 / `content`内に設定した値から算出される
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_note.example 123456789012
+```

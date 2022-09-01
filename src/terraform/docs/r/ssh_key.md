@@ -40,3 +40,10 @@ resource "sakuracloud_ssh_key" "foobar" {
 * `id` - ID
 * `fingerprint` - 公開鍵のフィンガープリント
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_ssh_key.example 123456789012
+```

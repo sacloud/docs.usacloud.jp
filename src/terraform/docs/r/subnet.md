@@ -40,3 +40,10 @@ resource "sakuracloud_subnet" "foobar" {
 * `network_address` - ネットワークアドレス
 * `switch_id` - スイッチID
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_subnet.example 123456789012
+```

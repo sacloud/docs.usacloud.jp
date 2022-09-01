@@ -60,3 +60,12 @@ resource "sakuracloud_internet" "foobar" {
 * `network_address` - ネットワークアドレス
 * `server_ids` - スイッチ+ルータに接続しているサーバのIDのリスト
 * `switch_id` - スイッチID
+
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_internet.example 123456789012
+```

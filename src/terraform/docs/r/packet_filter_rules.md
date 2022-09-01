@@ -91,3 +91,11 @@ resource "sakuracloud_packet_filter_rules" "rules" {
 
 * `id` - パケットフィルタのID
 
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_packet_filter_rules.example 123456789012
+```

@@ -81,5 +81,10 @@ resource "sakuracloud_server" "foobar" {
 
 * `id` - ID
 
+## Import
 
+IDを指定する事でインポート可能です。
 
+```bash
+$ terraform import sakuracloud_auto_scale.example 123456789012
+```

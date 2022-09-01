@@ -84,3 +84,11 @@ resource "sakuracloud_gslb" "foobar" {
 * `id` - ID
 * `fqdn` - GSLBにアクセスするためのFQDN。この値は通常CNAMEレコードの値として利用します
 
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_gslb.example 123456789012
+```

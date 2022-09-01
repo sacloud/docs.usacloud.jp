@@ -61,3 +61,11 @@ resource "sakuracloud_sim" "foobar" {
 * `ip_address` - SIMに割り当てられたIPアドレス
 * `mobile_gateway_id` - モバイルゲートウェイのID
 
+
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_sim.example 123456789012
+```

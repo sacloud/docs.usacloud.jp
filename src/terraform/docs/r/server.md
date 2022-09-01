@@ -155,3 +155,10 @@ ACPIが利用できないサーバの場合`true`に設定する
 
 * `mac_address` - MACアドレス
 
+## Import
+
+IDを指定する事でインポート可能です。
+
+```bash
+$ terraform import sakuracloud_server.example 123456789012
+```

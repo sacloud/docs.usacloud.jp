@@ -51,5 +51,10 @@ resource "sakuracloud_auto_backup" "foobar" {
 
 * `id` - ID
 
+## Import
 
+IDを指定する事でインポート可能です。
 
+```bash
+$ terraform import sakuracloud_auto_backup.example 123456789012
+```
