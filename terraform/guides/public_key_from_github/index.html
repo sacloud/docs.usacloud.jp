@@ -12,14 +12,14 @@
         <meta name="author" content="@yamamoto-febc">
       
       
-        <link rel="canonical" href="https://docs.usacloud.jp/terraform/r/dns/">
+        <link rel="canonical" href="https://docs.usacloud.jp/terraform/guides/public_key_from_github/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
     
     
       
-        <title>DNS - Terraform for さくらのクラウド(v2)</title>
+        <title>GitHubからの公開鍵取得 - Terraform for さくらのクラウド(v2)</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dns-sakuracloud_dns" class="md-skip">
+        <a href="#githubssh" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DNS
+              GitHubからの公開鍵取得
             
           </span>
         </div>
@@ -185,6 +185,8 @@
         
   
   
+    
+  
 
 
   
@@ -196,7 +198,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../guides/upgrade_to_v2.18.0/" class="md-tabs__link">
+      <a href="../upgrade_to_v2.18.0/" class="md-tabs__link md-tabs__link--active">
         ガイド
       </a>
     </li>
@@ -208,15 +210,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../provider/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../provider/" class="md-tabs__link">
         設定リファレンス
       </a>
     </li>
@@ -276,12 +276,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -330,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.18.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.18.0/" class="md-nav__link">
         v2.18での変更点
       </a>
     </li>
@@ -344,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.17.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.17.0/" class="md-nav__link">
         v2.17での変更点
       </a>
     </li>
@@ -358,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.16.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.16.0/" class="md-nav__link">
         v2.16での変更点
       </a>
     </li>
@@ -372,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.15.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.15.0/" class="md-nav__link">
         v2.15での変更点
       </a>
     </li>
@@ -386,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.14.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.14.0/" class="md-nav__link">
         v2.14での変更点
       </a>
     </li>
@@ -400,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.13.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.13.0/" class="md-nav__link">
         v2.13での変更点
       </a>
     </li>
@@ -414,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.12.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.12.0/" class="md-nav__link">
         v2.12での変更点
       </a>
     </li>
@@ -428,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.11.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.11.0/" class="md-nav__link">
         v2.11での変更点
       </a>
     </li>
@@ -442,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.10.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.10.0/" class="md-nav__link">
         v2.10での変更点
       </a>
     </li>
@@ -456,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.9.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.9.0/" class="md-nav__link">
         v2.9での変更点
       </a>
     </li>
@@ -470,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.8.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.8.0/" class="md-nav__link">
         v2.8での変更点
       </a>
     </li>
@@ -484,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.7.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.7.0/" class="md-nav__link">
         v2.7での変更点
       </a>
     </li>
@@ -498,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.6.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.6.0/" class="md-nav__link">
         v2.6での変更点
       </a>
     </li>
@@ -512,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.5.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.5.0/" class="md-nav__link">
         v2.5での変更点
       </a>
     </li>
@@ -526,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.4.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.4.0/" class="md-nav__link">
         v2.4での変更点
       </a>
     </li>
@@ -540,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.3.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.3.0/" class="md-nav__link">
         v2.3での変更点
       </a>
     </li>
@@ -554,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.2.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.2.0/" class="md-nav__link">
         v2.2での変更点
       </a>
     </li>
@@ -568,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.1.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.1.0/" class="md-nav__link">
         v2.1での変更点
       </a>
     </li>
@@ -582,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/upgrade_to_v2.0.0/" class="md-nav__link">
+      <a href="../upgrade_to_v2.0.0/" class="md-nav__link">
         v2.0での変更点
       </a>
     </li>
@@ -601,12 +603,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -629,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/object_storage/" class="md-nav__link">
+      <a href="../object_storage/" class="md-nav__link">
         オブジェクトストレージ
       </a>
     </li>
@@ -641,11 +645,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../guides/public_key_from_github/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         GitHubからの公開鍵取得
       </a>
+      
     </li>
   
 
@@ -670,14 +684,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -902,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../auto_scale/" class="md-nav__link">
+      <a href="../../r/auto_scale/" class="md-nav__link">
         オートスケール
       </a>
     </li>
@@ -916,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../private_host/" class="md-nav__link">
+      <a href="../../r/private_host/" class="md-nav__link">
         専有ホスト
       </a>
     </li>
@@ -930,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server/" class="md-nav__link">
+      <a href="../../r/server/" class="md-nav__link">
         サーバ
       </a>
     </li>
@@ -1085,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archive/" class="md-nav__link">
+      <a href="../../r/archive/" class="md-nav__link">
         アーカイブ
       </a>
     </li>
@@ -1099,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archive_share/" class="md-nav__link">
+      <a href="../../r/archive_share/" class="md-nav__link">
         アーカイブ共有
       </a>
     </li>
@@ -1113,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cdrom/" class="md-nav__link">
+      <a href="../../r/cdrom/" class="md-nav__link">
         CD-ROM
       </a>
     </li>
@@ -1127,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../disk/" class="md-nav__link">
+      <a href="../../r/disk/" class="md-nav__link">
         ディスク
       </a>
     </li>
@@ -1324,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bridge/" class="md-nav__link">
+      <a href="../../r/bridge/" class="md-nav__link">
         ブリッジ
       </a>
     </li>
@@ -1338,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../internet/" class="md-nav__link">
+      <a href="../../r/internet/" class="md-nav__link">
         スイッチ+ルータ
       </a>
     </li>
@@ -1352,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ipv4_ptr/" class="md-nav__link">
+      <a href="../../r/ipv4_ptr/" class="md-nav__link">
         IPv4逆引き
       </a>
     </li>
@@ -1366,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../local_router/" class="md-nav__link">
+      <a href="../../r/local_router/" class="md-nav__link">
         ローカルルータ
       </a>
     </li>
@@ -1380,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../packet_filter/" class="md-nav__link">
+      <a href="../../r/packet_filter/" class="md-nav__link">
         パケットフィルタ
       </a>
     </li>
@@ -1394,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../packet_filter_rules/" class="md-nav__link">
+      <a href="../../r/packet_filter_rules/" class="md-nav__link">
         パケットフィルタ(ルール)
       </a>
     </li>
@@ -1408,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../subnet/" class="md-nav__link">
+      <a href="../../r/subnet/" class="md-nav__link">
         サブネット
       </a>
     </li>
@@ -1422,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../switch/" class="md-nav__link">
+      <a href="../../r/switch/" class="md-nav__link">
         スイッチ
       </a>
     </li>
@@ -1591,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../auto_backup/" class="md-nav__link">
+      <a href="../../r/auto_backup/" class="md-nav__link">
         自動バックアップ
       </a>
     </li>
@@ -1605,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database/" class="md-nav__link">
+      <a href="../../r/database/" class="md-nav__link">
         データベース
       </a>
     </li>
@@ -1619,7 +1631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database_read_replica/" class="md-nav__link">
+      <a href="../../r/database_read_replica/" class="md-nav__link">
         データベース(リードレプリカ)
       </a>
     </li>
@@ -1633,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../load_balancer/" class="md-nav__link">
+      <a href="../../r/load_balancer/" class="md-nav__link">
         ロードバランサ
       </a>
     </li>
@@ -1647,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nfs/" class="md-nav__link">
+      <a href="../../r/nfs/" class="md-nav__link">
         NFS
       </a>
     </li>
@@ -1661,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpc_router/" class="md-nav__link">
+      <a href="../../r/vpc_router/" class="md-nav__link">
         VPCルータ
       </a>
     </li>
@@ -1687,14 +1699,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
       
       
       
@@ -1804,14 +1814,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7_2" type="checkbox" id="__nav_3_7_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7_2" type="checkbox" id="__nav_3_7_2" >
       
       
       
@@ -1832,113 +1840,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          DNS
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../r/dns/" class="md-nav__link">
         DNS
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example-usage" class="md-nav__link">
-    Example Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#argument-reference" class="md-nav__link">
-    Argument Reference
-  </a>
-  
-    <nav class="md-nav" aria-label="Argument Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#record" class="md-nav__link">
-    recordブロック
-  </a>
-  
-    <nav class="md-nav" aria-label="recordブロック">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mxsrv" class="md-nav__link">
-    MX/SRVレコード関連
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#srv" class="md-nav__link">
-    SRVレコード関連
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-arguments" class="md-nav__link">
-    Common Arguments
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#timeouts" class="md-nav__link">
-    Timeouts
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#attribute-reference" class="md-nav__link">
-    Attribute Reference
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1950,7 +1856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dns_record/" class="md-nav__link">
+      <a href="../../r/dns_record/" class="md-nav__link">
         DNSレコード
       </a>
     </li>
@@ -1964,7 +1870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gslb/" class="md-nav__link">
+      <a href="../../r/gslb/" class="md-nav__link">
         GSLB
       </a>
     </li>
@@ -1978,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxylb/" class="md-nav__link">
+      <a href="../../r/proxylb/" class="md-nav__link">
         エンハンスドロードバランサ
       </a>
     </li>
@@ -1992,7 +1898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxylb_acme/" class="md-nav__link">
+      <a href="../../r/proxylb_acme/" class="md-nav__link">
         エンハンスドロードバランサ(ACME設定)
       </a>
     </li>
@@ -2006,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple_monitor/" class="md-nav__link">
+      <a href="../../r/simple_monitor/" class="md-nav__link">
         シンプル監視
       </a>
     </li>
@@ -2086,7 +1992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mobile_gateway/" class="md-nav__link">
+      <a href="../../r/mobile_gateway/" class="md-nav__link">
         モバイルゲートウェイ
       </a>
     </li>
@@ -2100,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sim/" class="md-nav__link">
+      <a href="../../r/sim/" class="md-nav__link">
         SIM
       </a>
     </li>
@@ -2227,7 +2133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../esme/" class="md-nav__link">
+      <a href="../../r/esme/" class="md-nav__link">
         2要素認証SMS
       </a>
     </li>
@@ -2382,7 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../certificate_authority/" class="md-nav__link">
+      <a href="../../r/certificate_authority/" class="md-nav__link">
         マネージドPKI
       </a>
     </li>
@@ -2396,7 +2302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../container_registry/" class="md-nav__link">
+      <a href="../../r/container_registry/" class="md-nav__link">
         コンテナレジストリ
       </a>
     </li>
@@ -2410,7 +2316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../enhanced_db/" class="md-nav__link">
+      <a href="../../r/enhanced_db/" class="md-nav__link">
         エンハンスドデータベース
       </a>
     </li>
@@ -2537,7 +2443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../webaccel_certificate/" class="md-nav__link">
+      <a href="../../r/webaccel_certificate/" class="md-nav__link">
         証明書
       </a>
     </li>
@@ -2692,7 +2598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../icon/" class="md-nav__link">
+      <a href="../../r/icon/" class="md-nav__link">
         アイコン
       </a>
     </li>
@@ -2706,7 +2612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../note/" class="md-nav__link">
+      <a href="../../r/note/" class="md-nav__link">
         スタートアップスクリプト
       </a>
     </li>
@@ -2720,7 +2626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh_key/" class="md-nav__link">
+      <a href="../../r/ssh_key/" class="md-nav__link">
         SSH公開鍵
       </a>
     </li>
@@ -2734,7 +2640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh_key_gen/" class="md-nav__link">
+      <a href="../../r/ssh_key_gen/" class="md-nav__link">
         SSH公開鍵生成
       </a>
     </li>
@@ -2782,82 +2688,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example-usage" class="md-nav__link">
-    Example Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#argument-reference" class="md-nav__link">
-    Argument Reference
-  </a>
-  
-    <nav class="md-nav" aria-label="Argument Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#record" class="md-nav__link">
-    recordブロック
-  </a>
-  
-    <nav class="md-nav" aria-label="recordブロック">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mxsrv" class="md-nav__link">
-    MX/SRVレコード関連
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#srv" class="md-nav__link">
-    SRVレコード関連
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-arguments" class="md-nav__link">
-    Common Arguments
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#timeouts" class="md-nav__link">
-    Timeouts
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#attribute-reference" class="md-nav__link">
-    Attribute Reference
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2870,71 +2700,55 @@
                 
 
 
-<h1 id="dns-sakuracloud_dns">DNS: sakuracloud_dns</h1>
-<h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_dns&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="na">zone</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.com&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="nb">record</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="na">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="na">type</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.11.1&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="nb">record</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="na">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="na">type</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.11.2&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<h1 id="githubssh">GitHubからのSSH用の公開鍵を取得</h1>
+<p>さくらのクラウドのコントロールパネルには、GitHub上のユーザー名を指定してSSH用の公開鍵を取得しサーバ作成時に利用する機能があります。<br />
+この機能をTerraformで実現するためにhttpプロバイダーが利用可能です。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub上の公開鍵を参照するためのデータソース</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;http&quot;</span><span class="w"> </span><span class="nv">&quot;key&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/&lt;GitHubのユーザ名&gt;.keys&quot;</span><span class="c1"> # 任意のユーザー名に置き換える</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<div class="editor">
+<p>GitHubから公開鍵を取得してサーバ作成に利用するコード例は以下の通りです。</p>
+<div class="highlight"><pre><span></span><code><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nb">required_providers</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nb">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hashicorp/http&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~&gt; 3&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nb">sakuracloud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sacloud/sakuracloud&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~&gt; 2&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/dns" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
+<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;ubuntu&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="na">os_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ubuntu2204&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/dns"></iframe>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_disk&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="na">name</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="na">source_archive_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_archive.ubuntu.id</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-</div>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="na">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="na">disks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_disk.example.id</span><span class="p">]</span><span class="w"></span>
 
-<h2 id="argument-reference">Argument Reference</h2>
-<ul>
-<li><code>zone</code> - (Required) 対象ゾーン(例: <code>example.com</code>) / この値を変更するとリソースの再作成が行われる</li>
-<li><code>record</code> - (Optional) レコードのリスト。詳細は<a href="#record">recordブロック</a>を参照</li>
-</ul>
-<h5 id="record">recordブロック</h5>
-<ul>
-<li><code>name</code> - (Required) レコード名 /  <code>1</code>-<code>64</code>文字で指定</li>
-<li><code>type</code> - (Required) レコード種別 / 次のいずれかを指定［<code>A</code>/<code>AAAA</code>/<code>ALIAS</code>/<code>CNAME</code>/<code>NS</code>/<code>MX</code>/<code>TXT</code>/<code>SRV</code>/<code>CAA</code>/<code>PTR</code>]</li>
-<li><code>value</code> - (Required) 値</li>
-<li><code>ttl</code> - (Optional) TTL</li>
-</ul>
-<h6 id="mxsrv">MX/SRVレコード関連</h6>
-<ul>
-<li><code>priority</code> - (Optional) 優先度 / <code>0</code>-<code>65535</code>の範囲で指定</li>
-</ul>
-<h6 id="srv">SRVレコード関連</h6>
-<ul>
-<li><code>port</code> - (Optional) ポート番号 / <code>1</code>-<code>65535</code>の範囲で指定</li>
-<li><code>weight</code> - (Optional) ウェイト / <code>0</code>-<code>65535</code>の範囲で指定</li>
-</ul>
-<h4 id="common-arguments">Common Arguments</h4>
-<ul>
-<li><code>description</code> - (Optional) 説明 / <code>1</code>-<code>512</code>文字で指定</li>
-<li><code>icon_id</code> - (Optional) アイコンID</li>
-<li><code>tags</code> - (Optional) タグ</li>
-</ul>
-<h4 id="timeouts">Timeouts</h4>
-<p><code>timeouts</code>ブロックで<a href="https://www.terraform.io/docs/configuration/resources.html#operation-timeouts">カスタムタイムアウト</a>が設定可能です。  </p>
-<ul>
-<li><code>create</code> - 作成 (デフォルト: 5分)</li>
-<li><code>update</code> - 更新 (デフォルト: 5分)</li>
-<li><code>delete</code> - 削除 (デフォルト: 5分)</li>
-</ul>
-<h2 id="attribute-reference">Attribute Reference</h2>
-<ul>
-<li><code>id</code> - ID</li>
-<li><code>dns_servers</code> - DNSサーバのIPアドレスのリスト</li>
-</ul>
+<span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">disable_pw_auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
+<span class="w">    </span><span class="na">ssh_keys</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">trimspace</span><span class="p">(</span><span class="nv">data.http.key.body</span><span class="p">))</span><span class="c1"> // Note: 複数の公開鍵が登録されている場合は改行で結合されている</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;http&quot;</span><span class="w"> </span><span class="nv">&quot;key&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/&lt;GitHubのユーザ名&gt;.keys&quot;</span><span class="c1"> # 任意のユーザー名に置き換える</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 
   
@@ -2955,7 +2769,7 @@
     <nav class="md-footer__inner md-grid" aria-label="フッター" >
       
         
-        <a href="../../d/simple_monitor/" class="md-footer__link md-footer__link--prev" aria-label="前: シンプル監視" rel="prev">
+        <a href="../object_storage/" class="md-footer__link md-footer__link--prev" aria-label="前: オブジェクトストレージ" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2964,20 +2778,20 @@
               <span class="md-footer__direction">
                 前
               </span>
-              シンプル監視
+              オブジェクトストレージ
             </div>
           </div>
         </a>
       
       
         
-        <a href="../dns_record/" class="md-footer__link md-footer__link--next" aria-label="次: DNSレコード" rel="next">
+        <a href="../../provider/" class="md-footer__link md-footer__link--next" aria-label="次: プロバイダ設定" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              DNSレコード
+              プロバイダ設定
             </div>
           </div>
           <div class="md-footer__button md-icon">
