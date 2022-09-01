@@ -44,6 +44,7 @@ nav:
       - v2.0での変更点: guides/upgrade_to_v2.0.0.md
     - その他ガイド:
         - オブジェクトストレージ: guides/object_storage.md
+        - GitHubからの公開鍵取得: guides/public_key_from_github.md
   - 設定リファレンス:
     - プロバイダ設定: provider.md
     - プロバイダデータソース:
