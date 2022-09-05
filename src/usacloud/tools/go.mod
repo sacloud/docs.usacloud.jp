@@ -1,6 +1,6 @@
 module github.com/sacloud/docs.usacloud.jp/src/usacloud/tools
 
-go 1.17
+go 1.18
 
 require (
 	github.com/sacloud/libsacloud/v2 v2.32.1
