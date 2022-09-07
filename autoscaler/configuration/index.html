@@ -1597,7 +1597,8 @@ resource_def_xxxのいずれかを指定します。</p>
 
 <span class="c1"># 対象サーバの指定</span><span class="w"></span>
 <span class="nt">server_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1">#グループ内の各サーバ名のプレフィックス、省略した場合はnameが利用される</span><span class="w"></span>
-<span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span><span class="w"></span>
+<span class="nt">server_name_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1">#グループ内の各サーバ名のフォーマット、省略した場合は&quot;%s-%03d&quot;が利用される</span><span class="w"></span>
+<span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
 <span class="c1"># 最小/最大サーバ数</span><span class="w"></span>
 <span class="nt">min_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w"></span>
@@ -1617,6 +1618,7 @@ resource_def_xxxのいずれかを指定します。</p>
 
 <span class="c1"># グループ内のサーバのテンプレート</span><span class="w"></span>
 <span class="nt">template</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">use_group_tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"> </span><span class="c1"># @groupタグによるホスト分散を行うか</span><span class="w"></span>
 <span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 
@@ -1633,7 +1635,7 @@ resource_def_xxxのいずれかを指定します。</p>
 
 <span class="w">  </span><span class="c1"># 接続するディスクをリストで指定  </span><span class="w"></span>
 <span class="w">  </span><span class="nt">disks</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name_prefix</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"> </span><span class="c1"># ディスク名のプレフィックス(省略可能)</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name_format</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;%s-disk%03d&quot;</span><span class="w"> </span><span class="c1"># 省略した場合は &#39;サーバ名+ディスク連番&#39; (例: server-group-001-disk001)</span><span class="w"></span>
 <span class="w">        </span><span class="nv">tags</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 <span class="w">        </span><span class="nv">description</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"></span>
 
@@ -1651,7 +1653,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="w">  </span><span class="c1"># ディスクの修正パラメータ、cloud_configとの併用は出来ない</span><span class="w"></span>
 <span class="w">  </span><span class="nt">edit_parameter</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w">        </span><span class="c1"># ディスクの修正を行わない場合true</span><span class="w"></span>
-<span class="w">    </span><span class="nt">host_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1"># ホスト名のプレフィックス(省略可能)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">host_name_format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;%s-%03d&quot;</span><span class="w"> </span><span class="c1"># ホスト名フォーマット、サーバ名とインデックスが利用可能(例: %s-%02d)。省略した場合はサーバ名が利用される</span><span class="w"></span>
 <span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">disable_pw_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enable_dhcp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
