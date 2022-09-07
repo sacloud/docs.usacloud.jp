@@ -262,7 +262,8 @@ name: <string>
 
 # 対象サーバの指定
 server_name_prefix: <string> #グループ内の各サーバ名のプレフィックス、省略した場合はnameが利用される
-zone: <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v">
+server_name_format: <string> #グループ内の各サーバ名のフォーマット、省略した場合は"%s-%03d"が利用される
+zones: [ - <"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"> ]
   
 # 最小/最大サーバ数
 min_size: <number>
@@ -282,6 +283,7 @@ shutdown_force: <bool>
 
 # グループ内のサーバのテンプレート
 template:
+  use_group_tag: <bool> # @groupタグによるホスト分散を行うか
   tags: [ - <string> ] 
   description: <string>
   
@@ -298,7 +300,7 @@ template:
     
   # 接続するディスクをリストで指定  
   disks:
-    [ - name_prefix: <string> # ディスク名のプレフィックス(省略可能)
+    [ - name_format: "%s-disk%03d" # 省略した場合は 'サーバ名+ディスク連番' (例: server-group-001-disk001)
         tags: [ - <string> ]
         description: <string>
         
@@ -316,7 +318,7 @@ template:
   # ディスクの修正パラメータ、cloud_configとの併用は出来ない
   edit_parameter:
     disabled: <bool>        # ディスクの修正を行わない場合true
-    host_name_prefix: <string> # ホスト名のプレフィックス(省略可能)
+    host_name_format: "%s-%03d" # ホスト名フォーマット、サーバ名とインデックスが利用可能(例: %s-%02d)。省略した場合はサーバ名が利用される
     password: <string>
     disable_pw_auth: <bool>
     enable_dhcp: <bool>
