@@ -1,5 +1,11 @@
 # usacon日本語ドキュメント
 
+!!! info "重要なお知らせ"
+    Usaconは開発を終了することとなりました。  
+    9/29以降Chromeウェブストアでの公開を停止します。  
+    これまでUsaconをご愛顧いただきありがとうございました。
+
+
 A browser extension for using SakuraCloud CLI in the control panel.
 
 `Usacon`は[さくらのクラウド](https://cloud.sakura.ad.jp)のコントロールパネル上でCLIである[Usacloud](https://github.com/sacloud/usacloud)を
