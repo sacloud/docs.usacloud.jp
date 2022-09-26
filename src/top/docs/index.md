@@ -20,10 +20,6 @@ Go言語向けのさくらのクラウドAPIライブラリ
 
 さくらのクラウド向けCLI
 
-#### [UsaCon](./usacon/)
-
-Usacloudをコントロールパネル上で利用可能にするChrome拡張
-
 ## HashiCorpプロダクト関連
 
 #### [Terraform](./terraform/)
