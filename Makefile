@@ -2,7 +2,6 @@ default: preview
 
 TOP_DIR := src/top
 USACLOUD_DIR := src/usacloud
-USACON_DIR := src/usacon
 TERRAFORM_V1_DIR := src/terraform-v1
 TERRAFORM_V2_DIR := src/terraform
 AUTOSCALER_DIR := src/autoscaler
@@ -21,8 +20,6 @@ build-all:
 	@(cd $(TERRAFORM_V2_DIR); make build)
 	@echo "running mkdocs in $(USACLOUD_DIR)..."
 	@(cd $(USACLOUD_DIR); make build)
-	@echo "running mkdocs in $(USACON_DIR)..."
-	@(cd $(USACON_DIR); make build)
 	@echo "running mkdocs in $(AUTOSCALER_DIR)..."
 	@(cd $(AUTOSCALER_DIR); make build)
 	@echo "running mkdocs in $(PROMETHEUS_DIR)..."
@@ -35,8 +32,6 @@ lint:
 	@(cd $(TERRAFORM_V2_DIR); make lint)
 	@echo "running textlint in $(USACLOUD_DIR)..."
 	@(cd $(USACLOUD_DIR); make lint)
-	@echo "running textlint in $(USACON_DIR)..."
-	@(cd $(USACON_DIR); make lint)
 	@echo "running textlint in $(AUTOSCALER_DIR)..."
 	@(cd $(AUTOSCALER_DIR); make lint)
 	@echo "running textlint in $(PROMETHEUS_DIR)..."
@@ -59,10 +54,6 @@ preview-terraform:
 preview-usacloud:
 	@(cd $(USACLOUD_DIR); make preview)
 
-.PHONY: preview-usacon
-preview-usacon:
-	@(cd $(USACON_DIR); make preview)
-
 .PHONY: preview-autoscaler
 preview-autoscaler:
 	@(cd $(AUTOSCALER_DIR); make preview)
@@ -81,8 +72,6 @@ clean:
 	@(cd $(TERRAFORM_V2_DIR); make clean)
 	@echo "cleaning in $(USACLOUD_DIR)..."
 	@(cd $(USACLOUD_DIR); make clean)
-	@echo "cleaning in $(USACON_DIR)..."
-	@(cd $(USACON_DIR); make clean)
 	@echo "cleaning in $(AUTOSCALER_DIR)..."
 	@(cd $(AUTOSCALER_DIR); make clean)
 	@echo "cleaning in $(PROMETHEUS_DIR)..."

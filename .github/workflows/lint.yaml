@@ -10,7 +10,6 @@ jobs:
           - './src/terraform'
           - './src/top'
           - './src/usacloud'
-          - './src/usacon'
           - './src/autoscaler'
           - './src/prometheus'
     steps:
@@ -53,11 +52,6 @@ jobs:
         uses: ./.github/actions/mkdocs
         with:
           working-directory: './src/usacloud'
-
-      - name: Build a document with mkdocs - src/usacon
-        uses: ./.github/actions/mkdocs
-        with:
-          working-directory: './src/usacon'
 
       - name: Build a document with mkdocs - src/autoscaler
         uses: ./.github/actions/mkdocs
