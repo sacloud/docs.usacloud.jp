@@ -2837,7 +2837,7 @@
 <p>アーカイブの情報を参照するためのデータソース</p>
 <h2 id="example-usage">Example Usage</h2>
 <div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="na">os_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;centos8&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="na">os_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;centos&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <div class="editor">
@@ -2851,15 +2851,17 @@
 <h2 id="argument-reference">Argument Reference</h2>
 <ul>
 <li><code>filter</code> - (Optional) 参照対象をフィルタリングするための条件。詳細は<a href="#filter">filterブロック</a>を参照  </li>
-<li><code>os_type</code> - (Optional) 最新安定板のパブリックアーカイブを参照する。    </li>
-<li><strong>CentOS</strong>:[<code>centos</code>/<code>centos8stream</code>/<code>centos7</code>]</li>
-<li><strong>Alt RHEL/CentOS</strong>:[<code>almalinux</code>/<code>rockylinux</code>/<code>miracle</code>/<code>miraclelinux</code>]</li>
+<li>
+<p><code>os_type</code> - (Optional) 最新安定板のパブリックアーカイブを参照する。    </p>
+<ul>
+<li><strong>CentOS</strong>:[<code>centos</code>/<code>centos7</code>]</li>
+<li><strong>AlmaLinux</strong>:[<code>almalinux</code>/<code>almalinux8</code>/<code>almalinux9</code>]</li>
+<li><strong>RockyLinux</strong>:[<code>rockylinux</code>/<code>rockylinux8</code>/<code>rockylinux9</code>]</li>
+<li><strong>MIRACLE LINUX</strong>:[<code>miracle</code>/<code>miraclelinux</code>/<code>miracle8</code>/<code>miraclelinux8</code>]</li>
 <li><strong>Ubuntu</strong>:[<code>ubuntu</code>/<code>ubuntu2204</code>/<code>ubuntu2004</code>/<code>ubuntu1804</code>]</li>
 <li><strong>Debian</strong>:[<code>debian</code>/<code>debian10</code>/<code>debian11</code>]</li>
-<li><strong>RancherOS</strong>: <code>rancheros</code></li>
-<li><strong>k3OS</strong>: <code>k3os</code></li>
-<li>
-<p><strong>Kusanagi</strong>: <code>kusanagi</code></p>
+<li><strong>Kusanagi</strong>: <code>kusanagi</code></li>
+</ul>
 </li>
 <li>
 <p><code>zone</code> - (Optional) 対象ゾーンの名前 (例: <code>is1a</code>, <code>tk1a</code>)  </p>
