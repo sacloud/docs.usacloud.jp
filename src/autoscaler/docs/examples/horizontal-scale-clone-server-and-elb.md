@@ -50,7 +50,7 @@ resources:
 
       # ディスク
       disks:
-        - names: ["clone-source-disk"] #クローン元サーバのディスクの名前
+        - source_disk: "clone-source-disk" #クローン元サーバのディスクの名前
           
       # 1番目のディスクの対するパラメータ(対応しているアーカイブの場合のみ指定可能)
       edit_parameter:
