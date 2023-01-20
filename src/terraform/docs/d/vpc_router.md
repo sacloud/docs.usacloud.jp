@@ -166,6 +166,7 @@ data "sakuracloud_vpc_router" "foobar" {
 * `hash_algo` - .
 * `ike` - .
 * `esp` - .
+* `dh_group` - .
 
 ##### static_natブロック
 

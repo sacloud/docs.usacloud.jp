@@ -42,7 +42,9 @@ data "sakuracloud_auto_scale" "foobar" {
 * `id` - ID
 * `api_key_id` - APIキーのID
 * `config` - sacloud/autoscalerの設定ファイル
-* `cpu_threshold_scaling` - スケール動作の閾値。詳細は[cpu_threshold_scalingブロック](#cpu_threshold_scaling)を参照
+* `trigger_type` - トリガータイプ、次のいずれかを指定
+* `cpu_threshold_scaling` - CPU-TIMEによるスケール動作の閾値。詳細は[cpu_threshold_scalingブロック](#cpu_threshold_scaling)を参照
+* `router_threshold_scaling` - トラフィック量によるスケール動作の閾値。詳細は[router_threshold_scalingブロック](#router_threshold_scaling)を参照
 * `description` - 説明
 * `icon_id` - アイコンID
 * `name` - 名称
@@ -55,3 +57,9 @@ data "sakuracloud_auto_scale" "foobar" {
 * `down` - 性能ダウンするCPU使用率
 * `server_prefix` - 監視対象のサーバ名のプリフィックス
 * `up` - 性能アップするCPU使用率
+
+#### `router_threshold_scaling`ブロック
+
+* `router_prefix` - (Required) 監視対象のルータ名のプリフィックス
+* `direction` - (Required) 監視するトラフィックの向き、次のいずれかを指定［`in`/`out`］
+* `mbps` - (Required) スケール動作する閾値、Mbps単位

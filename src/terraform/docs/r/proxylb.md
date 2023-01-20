@@ -142,6 +142,7 @@ resource sakuracloud_server "foobar" {
 
 * `action` - (Optional) マッチした場合のアクション / 次のいずれかを指定［`forward`(デフォルト)/`redirect`/`fixed`]
 * `group` - (Optional) 振り分け先グループ名 / `host`と`path`にマッチするリクエストを受信した場合に同じ`group`の値を持つ実サーバに振り分けられる / `1`-`10`文字で指定
+* `source_ips` - (Optional) 送信元IPアドレス or CIDRブロック、複数指定する場合は空白またはカンマ区切りで指定
 * `host` - (Optional) リクエストのHostヘッダ
 * `path` - (Optional) リクエストパス
 

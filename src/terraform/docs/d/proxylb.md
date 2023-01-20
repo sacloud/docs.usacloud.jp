@@ -106,6 +106,7 @@ data "sakuracloud_proxylb" "foobar" {
 
 * `action` - マッチした場合のアクション
 * `group` - 振り分け先グループ名。 `host`と`path`にマッチするリクエストを受信した場合に同じ`group`の値を持つ実サーバに振り分けられる
+* `source_ips` - 送信元IPアドレス or CIDRブロック
 * `host` - リクエストのHostヘッダ
 * `path` - リクエストパス
 
