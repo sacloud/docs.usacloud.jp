@@ -242,6 +242,7 @@ resource sakuracloud_switch "foobar" {
 * `hash_algo` - (Optional) 次のいずれかを指定［`sha1`/`sha256`]
 * `ike` - (Optional) 詳細は[ikeブロック](#ike)を参照
 * `esp` - (Optional) 詳細は[espブロック](#esp)を参照
+* `dh_group` - (Optional) 次のいずれかを指定［`modp1024`/`modp2048`/`modp3072`/`modp4096`]
 
 ##### `esp`ブロック
 

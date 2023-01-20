@@ -9,8 +9,10 @@ variable replica_password {}
 
 resource "sakuracloud_database" "foobar" {
   name          = "foobar"
-  database_type = "mariadb"
   plan          = "30g"
+  
+  database_type    = "mariadb"
+  # database_version = "13"
 
   username = var.username
   password = var.password
@@ -56,6 +58,7 @@ resource "sakuracloud_switch" "foobar" {
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
 * `database_type` - (Optional) データベースタイプ / 次のいずれかを指定［`mariadb`/`postgres`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`postgres`.
+* `database_version` - (Optional) RDBMSのバージョン
 * `plan` - (Optional) プラン / 次のいずれかを指定［`10g`/`30g`/`90g`/`240g`/`500g`/`1t`]/  この値を変更するとリソースの再作成が行われる / デフォルト:`10g`.
 
 #### ユーザー関連

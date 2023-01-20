@@ -44,6 +44,7 @@ data "sakuracloud_database" "foobar" {
 * `backup` - バックアップ設定。詳細は[backupブロック](#backup)を参照
 要素は次のいずれかとなる［`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`]
 * `database_type` - データベース種別。 次のいずれかとなる［`mariadb`/`postgres`]
+* `database_version` - RDBMSのバージョン
 * `description` - 説明
 * `icon_id` - アイコンID
 * `name` - 名前
