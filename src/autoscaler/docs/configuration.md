@@ -308,7 +308,7 @@ template:
         
         source_archive: <name_or_resource_selector>
         source_disk: <name_or_resource_selector>
-        os_type: <string>
+        os_type: <string> # 指定可能な値は https://github.com/sacloud/iaas-api-go/blob/7cfcd90757d27993640bbc412e7e32526ba9218b/ostype/archive_ostype.go#L97 を参照
         
         plan: <"ssd" | "hdd">
         connection: <"virtio" | "ide">
@@ -431,7 +431,9 @@ endpoint: <string> #gRPCのエンドポイントアドレス(例: unix:/var/run/
 オートスケーラーの動作設定
 
 ```yaml
-cooldown: <number | default = 600> # 同一ジョブの連続実行を抑制するためのクールダウン期間、秒単位で指定
+cooldown: # 同一ジョブの連続実行を抑制するためのクールダウン期間、秒単位で指定
+  up: <number | default = 600>
+  down: <number | default = 600>
 
 # ビルトインハンドラの設定
 handlers_config:
