@@ -42,9 +42,11 @@ data "sakuracloud_auto_scale" "foobar" {
 * `id` - ID
 * `api_key_id` - APIキーのID
 * `config` - sacloud/autoscalerの設定ファイル
-* `trigger_type` - トリガータイプ、次のいずれかを指定
+* `trigger_type` - トリガータイプ
+* `disabled` - 有効/停止の切り替え
 * `cpu_threshold_scaling` - CPU-TIMEによるスケール動作の閾値。詳細は[cpu_threshold_scalingブロック](#cpu_threshold_scaling)を参照
 * `router_threshold_scaling` - トラフィック量によるスケール動作の閾値。詳細は[router_threshold_scalingブロック](#router_threshold_scaling)を参照
+* `schedule_scaling` - スケジュールによるスケール動作設定。詳細は[schedule_scalingブロック](#schedule_scaling)を参照
 * `description` - 説明
 * `icon_id` - アイコンID
 * `name` - 名称
@@ -60,6 +62,15 @@ data "sakuracloud_auto_scale" "foobar" {
 
 #### `router_threshold_scaling`ブロック
 
-* `router_prefix` - (Required) 監視対象のルータ名のプリフィックス
-* `direction` - (Required) 監視するトラフィックの向き、次のいずれかを指定［`in`/`out`］
-* `mbps` - (Required) スケール動作する閾値、Mbps単位
+* `router_prefix` - 監視対象のルータ名のプリフィックス
+* `direction` - 監視するトラフィックの向き、次のいずれかを指定［`in`/`out`］
+* `mbps` - スケール動作する閾値、Mbps単位
+
+
+#### `schedule_scaling`ブロック
+
+* `action` - 実行するアクション、次のいずれかを指定［`up`/`down`］
+* `days_of_week` - 実行する曜日のリスト、要素は次の項目の中から指定［`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`］
+* `hour` - 実行する時刻(時)
+* `minute` - 実行する時刻(分)、次のいずれかを指定［`0`/`15`/`30`/`45`］
+

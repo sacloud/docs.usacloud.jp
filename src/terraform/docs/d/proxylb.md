@@ -41,6 +41,7 @@ data "sakuracloud_proxylb" "foobar" {
 ## Attribute Reference
 
 * `id` - ID
+* `backend_http_keep_alive` - 実サーバとのHTTP持続接続
 * `bind_port` - 待ち受けポートのリスト。詳細は[bind_portブロック](#bind_port)を参照
 * `certificate` - 証明書のリスト。詳細は[certificateブロック](#certificate)を参照
 * `description` - 説明
