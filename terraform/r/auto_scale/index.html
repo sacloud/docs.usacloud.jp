@@ -21,7 +21,7 @@
         <link rel="next" href="../private_host/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -1035,6 +1035,13 @@
           <li class="md-nav__item">
   <a href="#router_threshold_scaling" class="md-nav__link">
     router_threshold_scalingブロック
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule_scaling" class="md-nav__link">
+    schedule_scalingブロック
   </a>
   
 </li>
@@ -2909,6 +2916,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#schedule_scaling" class="md-nav__link">
+    schedule_scalingブロック
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#common-arguments" class="md-nav__link">
     Common Arguments
   </a>
@@ -3006,9 +3020,11 @@
 <li><code>name</code> -  (Required) 名前 / <code>1</code>-<code>64</code>文字で指定</li>
 <li><code>api_key_id</code> - (Required) APIキーのID / この値を変更するとリソースの再作成が行われる</li>
 <li><code>config</code> - (Required) sacloud/autoscalerの設定ファイル</li>
-<li><code>trigger_type</code> - (Optional) トリガータイプ、次のいずれかを指定［<code>cpu</code>/<code>router</code>］</li>
+<li><code>disabled</code> (Optional) 有効/停止の切り替え</li>
+<li><code>trigger_type</code> - (Optional) トリガータイプ、次のいずれかを指定［<code>cpu</code>/<code>router</code>/<code>schedule</code>］</li>
 <li><code>cpu_threshold_scaling</code> - (Optional) CPU-TIMEによるスケール動作の閾値。詳細は<a href="#cpu_threshold_scaling">cpu_threshold_scalingブロック</a>を参照</li>
 <li><code>router_threshold_scaling</code> - (Optional) トラフィック量によるスケール動作の閾値。詳細は<a href="#router_threshold_scaling">router_threshold_scalingブロック</a>を参照</li>
+<li><code>schedule_scaling</code> - (Optional) スケジュールによるスケール動作設定。詳細は<a href="#schedule_scaling">schedule_scalingブロック</a>を参照</li>
 <li><code>zones</code> - (Required) 監視対象が存在するゾーン名のリスト</li>
 <li><code>tags</code> - (Optional) Any tags to assign to the AutoScale.       </li>
 </ul>
@@ -3023,6 +3039,13 @@
 <li><code>router_prefix</code> - (Required) 監視対象のルータ名のプリフィックス</li>
 <li><code>direction</code> - (Required) 監視するトラフィックの向き、次のいずれかを指定［<code>in</code>/<code>out</code>］</li>
 <li><code>mbps</code> - (Required) スケール動作する閾値、Mbps単位</li>
+</ul>
+<h4 id="schedule_scaling"><code>schedule_scaling</code>ブロック</h4>
+<ul>
+<li><code>action</code> - (Required) 実行するアクション、次のいずれかを指定［<code>up</code>/<code>down</code>］</li>
+<li><code>days_of_week</code> - (Optional) 実行する曜日のリスト、要素は次の項目の中から指定［<code>sun</code>/<code>mon</code>/<code>tue</code>/<code>wed</code>/<code>thu</code>/<code>fri</code>/<code>sat</code>］</li>
+<li><code>hour</code> - (Required) 実行する時刻(時)</li>
+<li><code>minute</code> - (Required) 実行する時刻(分)、次のいずれかを指定［<code>0</code>/<code>15</code>/<code>30</code>/<code>45</code>］</li>
 </ul>
 <h4 id="common-arguments">Common Arguments</h4>
 <ul>
@@ -3091,7 +3114,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
       
     
   </body>
