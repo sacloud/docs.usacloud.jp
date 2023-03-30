@@ -110,6 +110,7 @@ resource sakuracloud_server "foobar" {
 #### バランシング動作
 
 * `bind_port` - (Required) 待ち受けポート設定のリスト。詳細は[bind_portブロック](#bind_port)を参照
+* `backend_http_keep_alive` - (Optional) 実サーバとのHTTP持続接続［`safe`(デフォルト)/`aggressive`]
 * `health_check` - (Required) ヘルスチェック設定。詳細は[health_checkブロック](#health_check)を参照
 * `rule` - (Optional) 振り分けルール設定のリスト。詳細は[ruleブロック](#rule)を参照
 * `server` - (Optional) 実サーバ設定のリスト。詳細は[serverブロック](#server)を参照

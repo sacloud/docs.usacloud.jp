@@ -53,9 +53,11 @@ resource "sakuracloud_server" "foobar" {
 * `name` -  (Required) 名前 / `1`-`64`文字で指定
 * `api_key_id` - (Required) APIキーのID / この値を変更するとリソースの再作成が行われる
 * `config` - (Required) sacloud/autoscalerの設定ファイル
-* `trigger_type` - (Optional) トリガータイプ、次のいずれかを指定［`cpu`/`router`］
+* `disabled` (Optional) 有効/停止の切り替え
+* `trigger_type` - (Optional) トリガータイプ、次のいずれかを指定［`cpu`/`router`/`schedule`］
 * `cpu_threshold_scaling` - (Optional) CPU-TIMEによるスケール動作の閾値。詳細は[cpu_threshold_scalingブロック](#cpu_threshold_scaling)を参照
 * `router_threshold_scaling` - (Optional) トラフィック量によるスケール動作の閾値。詳細は[router_threshold_scalingブロック](#router_threshold_scaling)を参照
+* `schedule_scaling` - (Optional) スケジュールによるスケール動作設定。詳細は[schedule_scalingブロック](#schedule_scaling)を参照
 * `zones` - (Required) 監視対象が存在するゾーン名のリスト
 * `tags` - (Optional) Any tags to assign to the AutoScale.		 
 
@@ -70,6 +72,13 @@ resource "sakuracloud_server" "foobar" {
 * `router_prefix` - (Required) 監視対象のルータ名のプリフィックス
 * `direction` - (Required) 監視するトラフィックの向き、次のいずれかを指定［`in`/`out`］
 * `mbps` - (Required) スケール動作する閾値、Mbps単位
+
+#### `schedule_scaling`ブロック
+
+* `action` - (Required) 実行するアクション、次のいずれかを指定［`up`/`down`］
+* `days_of_week` - (Optional) 実行する曜日のリスト、要素は次の項目の中から指定［`sun`/`mon`/`tue`/`wed`/`thu`/`fri`/`sat`］
+* `hour` - (Required) 実行する時刻(時)
+* `minute` - (Required) 実行する時刻(分)、次のいずれかを指定［`0`/`15`/`30`/`45`］
 
 #### Common Arguments
 
