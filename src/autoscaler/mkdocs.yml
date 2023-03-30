@@ -51,6 +51,7 @@ nav:
         - ルータ: examples/vertical-scale-router.md
         - エンハンスドロードバランサ: examples/vertical-scale-elb.md
   - アップグレードガイド:
+      - v0.15へのアップグレード: upgrade/v0.15.md
       - v0.14へのアップグレード: upgrade/v0.14.md
       - v0.13へのアップグレード: upgrade/v0.13.md
       - v0.12へのアップグレード: upgrade/v0.12.md
