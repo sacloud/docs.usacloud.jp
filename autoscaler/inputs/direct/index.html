@@ -258,7 +258,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../upgrade/v0.14/" class="md-tabs__link">
+      <a href="../../upgrade/v0.15/" class="md-tabs__link">
         アップグレードガイド
       </a>
     </li>
@@ -587,6 +587,40 @@
   <a href="#_2" class="md-nav__link">
     利用方法
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    非同期モード/同期モードについて
+  </a>
+  
+    <nav class="md-nav" aria-label="非同期モード/同期モードについて">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    非同期モード(デフォルト)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    同期モード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    同期モードでの終了コード
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -973,6 +1007,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../upgrade/v0.15/" class="md-nav__link">
+        v0.15へのアップグレード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../upgrade/v0.14/" class="md-nav__link">
         v0.14へのアップグレード
       </a>
@@ -1251,6 +1299,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    非同期モード/同期モードについて
+  </a>
+  
+    <nav class="md-nav" aria-label="非同期モード/同期モードについて">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    非同期モード(デフォルト)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    同期モード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    同期モードでの終了コード
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1286,17 +1368,35 @@ Usage:
 <span class="w">  </span>autoscaler<span class="w"> </span>inputs<span class="w"> </span>direct<span class="w"> </span><span class="o">{</span>up<span class="w"> </span><span class="p">|</span><span class="w"> </span>down<span class="o">}</span><span class="w"> </span><span class="o">[</span>flags<span class="o">]</span>...
 
 Flags:
-<span class="w">      </span>--desired-state-name<span class="w"> </span>string<span class="w">    </span>Name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>desired<span class="w"> </span>state<span class="w"> </span>defined<span class="w"> </span><span class="k">in</span><span class="w"> </span>Core<span class="err">&#39;</span>s<span class="w"> </span>configuration<span class="w"> </span>file
-<span class="w">      </span>--dest<span class="w"> </span>string<span class="w">                  </span>Address<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>gRPC<span class="w"> </span>endpoint<span class="w"> </span>of<span class="w"> </span>AutoScaler<span class="w"> </span>Core<span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;unix:autoscaler.sock&quot;</span><span class="o">)</span>
-<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">                         </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>direct
-<span class="w">      </span>--resource-name<span class="w"> </span>string<span class="w">         </span>Name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>resource<span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="o">)</span>
-<span class="w">      </span>--source<span class="w"> </span>string<span class="w">                </span>A<span class="w"> </span>string<span class="w"> </span>representing<span class="w"> </span>the<span class="w"> </span>request<span class="w"> </span>source,<span class="w"> </span>passed<span class="w"> </span>to<span class="w"> </span>AutoScaler<span class="w"> </span>Core<span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="o">)</span>
-<span class="w">      </span>--config<span class="w"> </span>string<span class="w">                </span>Filepath<span class="w"> </span>to<span class="w"> </span>Inputs<span class="w"> </span>additional<span class="w"> </span>configuration<span class="w"> </span>file
+<span class="w">      </span>--config<span class="w"> </span>string<span class="w">               </span>Filepath<span class="w"> </span>to<span class="w"> </span>Inputs<span class="w"> </span>additional<span class="w"> </span>configuration<span class="w"> </span>file
+<span class="w">      </span>--desired-state-name<span class="w"> </span>string<span class="w">   </span>Name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>desired<span class="w"> </span>state<span class="w"> </span>defined<span class="w"> </span><span class="k">in</span><span class="w"> </span>Core<span class="err">&#39;</span>s<span class="w"> </span>configuration<span class="w"> </span>file
+<span class="w">      </span>--dest<span class="w"> </span>string<span class="w">                 </span>Address<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>gRPC<span class="w"> </span>endpoint<span class="w"> </span>of<span class="w"> </span>AutoScaler<span class="w"> </span>Core.<span class="w"> </span>
+<span class="w">                                    </span>If<span class="w"> </span>no<span class="w"> </span>value<span class="w"> </span>is<span class="w"> </span>specified,<span class="w"> </span>it<span class="w"> </span>will<span class="w"> </span>search<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>valid<span class="w"> </span>value<span class="w"> </span>among<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>values<span class="w"> </span>and<span class="w"> </span>use<span class="w"> </span>it.
+<span class="w">                                    </span><span class="o">[</span>unix:autoscaler.sock,<span class="w"> </span>unix:/var/run/autoscaler.sock,<span class="w"> </span>unix:/var/run/autoscaler/autoscaler.sock<span class="o">]</span>
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">                        </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>direct
+<span class="w">      </span>--resource-name<span class="w"> </span>string<span class="w">        </span>Name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>resource<span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="o">)</span>
+<span class="w">      </span>--source<span class="w"> </span>string<span class="w">               </span>A<span class="w"> </span>string<span class="w"> </span>representing<span class="w"> </span>the<span class="w"> </span>request<span class="w"> </span>source,<span class="w"> </span>passed<span class="w"> </span>to<span class="w"> </span>AutoScaler<span class="w"> </span>Core<span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="o">)</span>
+<span class="w">      </span>--sync<span class="w">                        </span>Flag<span class="w"> </span><span class="k">for</span><span class="w"> </span>synchronous<span class="w"> </span>handling<span class="w">  </span>
 
 Global<span class="w"> </span>Flags:
 <span class="w">      </span>--log-format<span class="w"> </span>string<span class="w">   </span>Format<span class="w"> </span>of<span class="w"> </span>logging<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>output.<span class="w"> </span>options:<span class="w"> </span><span class="o">[</span><span class="w"> </span>logfmt<span class="w"> </span><span class="p">|</span><span class="w"> </span>json<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;logfmt&quot;</span><span class="o">)</span>
 <span class="w">      </span>--log-level<span class="w"> </span>string<span class="w">    </span>Level<span class="w"> </span>of<span class="w"> </span>logging<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>output.<span class="w"> </span>options:<span class="w"> </span><span class="o">[</span><span class="w"> </span>error<span class="w"> </span><span class="p">|</span><span class="w"> </span>warn<span class="w"> </span><span class="p">|</span><span class="w"> </span>info<span class="w"> </span><span class="p">|</span><span class="w"> </span>debug<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;info&quot;</span><span class="o">)</span>
 </code></pre></div>
+<h2 id="_3">非同期モード/同期モードについて</h2>
+<h3 id="_4">非同期モード(デフォルト)</h3>
+<p><code>autoscaler inputs direct</code>はデフォルトだと非同期モードで動作します。<br />
+非同期モードではCoreに対しUp or Downリクエストを投げた後、結果を待たずにコマンド実行を終了します。  </p>
+<h3 id="_5">同期モード</h3>
+<p><code>--sync</code>を指定することで同期モードとなります。<br />
+同期モードではCoreに対しUp or Downリクエストを投げると、結果が返ってくるまで待機します。</p>
+<h3 id="_6">同期モードでの終了コード</h3>
+<p>同期モードではコマンドの実行結果に応じて以下のいずれかの終了コードを返します。</p>
+<ul>
+<li><code>0</code>: 正常終了(JOB_DONE)の場合</li>
+<li><code>1</code>: 何らかのエラーが発生した場合</li>
+<li><code>129</code>: up/downリクエストを受け取ったが処理なし(JOB_DONE_NOOP)の場合</li>
+<li><code>130</code>: up/downリクエストが受け入れられない状態の場合(処理の実行中やcooldown期間中、シャットダウン中の場合など)</li>
+</ul>
 
 
   
