@@ -211,6 +211,11 @@ selector:
   
 # コア専有プランを利用するか
 dedicated_cpu: <bool>
+# GPU数
+gpu: <number>
+# CPUモデル(AMDプランなど)
+cpu_model: <string>
+
   
 # 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)
 shutdown_force: <bool> 
@@ -297,6 +302,8 @@ template:
     core: <number>           # コア数
     memory: <number>         # メモリサイズ、GB単位 
     dedicated_cpu: <bool> # コア専有の場合true
+    gpu: <number> # GPU数
+    cpu_model: <string> # CPUモデル(AMDプランなど)
     
   # 接続するディスクをリストで指定  
   disks:
