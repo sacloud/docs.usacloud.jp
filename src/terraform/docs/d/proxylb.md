@@ -112,8 +112,8 @@ data "sakuracloud_proxylb" "foobar" {
 * `path` - リクエストパス
 * `request_header_name` - リクエストヘッダ名
 * `request_header_value` - リクエストヘッダ値
-* `request_header_value_ignore_case` - リクエストヘッダ値 大/小文字
-* `request_header_value_not_match` - リクエストヘッダ値 条件
+* `request_header_value_ignore_case` - リクエストヘッダ値大/小文字
+* `request_header_value_not_match` - リクエストヘッダ値条件
 
 固定応答:
 * `fixed_content_type` - 固定応答で返すContent-Type
