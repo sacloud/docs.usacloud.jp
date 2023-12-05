@@ -146,6 +146,10 @@ resource sakuracloud_server "foobar" {
 * `source_ips` - (Optional) 送信元IPアドレス or CIDRブロック、複数指定する場合は空白またはカンマ区切りで指定
 * `host` - (Optional) リクエストのHostヘッダ
 * `path` - (Optional) リクエストパス
+* `request_header_name` - (Optional) リクエストヘッダ名
+* `request_header_value` - (Optional) リクエストヘッダ値
+* `request_header_value_ignore_case` - (Optional) リクエストヘッダ値大/小文字
+* `request_header_value_not_match` - (Optional) リクエストヘッダ値条件
 
 固定応答:
 * `fixed_content_type` - (Optional) 固定応答で返すContent-Type/次のいずれかを指定［`text/plain`/`text/html`/`application/javascript`/`application/json`]

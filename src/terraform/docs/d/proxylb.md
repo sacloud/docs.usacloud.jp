@@ -110,6 +110,10 @@ data "sakuracloud_proxylb" "foobar" {
 * `source_ips` - 送信元IPアドレス or CIDRブロック
 * `host` - リクエストのHostヘッダ
 * `path` - リクエストパス
+* `request_header_name` - リクエストヘッダ名
+* `request_header_value` - リクエストヘッダ値
+* `request_header_value_ignore_case` - リクエストヘッダ値大/小文字
+* `request_header_value_not_match` - リクエストヘッダ値条件
 
 固定応答:
 * `fixed_content_type` - 固定応答で返すContent-Type
