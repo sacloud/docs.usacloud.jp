@@ -8,7 +8,7 @@
     <title>VPCルータ(子リソース) - Terraform for さくらのクラウド(v1)</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/terraform-v1/configuration/resources/vpc_router_old/";
       </script>
     
-    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href="../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -322,10 +321,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>設定リファレンス &raquo;</li>
-          <li>リソース &raquo;</li>
-      <li>VPCルータ(子リソース)</li>
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">設定リファレンス</li>
+          <li class="breadcrumb-item">リソース</li>
+      <li class="breadcrumb-item active">VPCルータ(子リソース)</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -537,9 +536,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -547,121 +546,121 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>name</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ロードバランサ名</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>plan</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>プラン</td>
-<td align="center"><code>standard</code></td>
+<td style="text-align: center;"><code>standard</code></td>
 <td><code>standard</code><br /><code>premium</code><br /><code>highspec</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>switch_id</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>スイッチID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プランが<code>premium</code>、<code>highspec</code>の場合必須</td>
 </tr>
 <tr>
 <td><code>vip</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>IPアドレス1</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プランが<code>premium</code>、<code>highspec</code>の場合必須</td>
 </tr>
 <tr>
 <td><code>ipaddress1</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>IPアドレス1</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プランが<code>premium</code>、<code>highspec</code>の場合必須</td>
 </tr>
 <tr>
 <td><code>ipaddress2</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>IPアドレス2</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プランが<code>premium</code>、<code>highspec</code>の場合必須</td>
 </tr>
 <tr>
 <td><code>vrid</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>VRID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値</td>
 <td>プランが<code>premium</code>、<code>highspec</code>の場合必須</td>
 </tr>
 <tr>
 <td><code>aliases</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>IPエイリアス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>プランが<code>premium</code>、<code>highspec</code>の場合のみ有効</td>
 </tr>
 <tr>
 <td><code>syslog_host</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>syslog転送先ホスト</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>internet_connection</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>インターネット接続</td>
-<td align="center"><code>true</code></td>
+<td style="text-align: center;"><code>true</code></td>
 <td><code>true</code><br /><code>false</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>icon_id</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>アイコンID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>tags</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>タグ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>graceful_shutdown_timeout</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>シャットダウンまでの待ち時間</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値(秒数)</td>
 <td>シャットダウンが必要な場合の通常シャットダウンするまでの待ち時間(指定の時間まで待ってもシャットダウンしない場合は強制シャットダウンされる)</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -699,9 +698,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -709,57 +708,57 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>index</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>NIC番号</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値(1〜7)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vip</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>VIP</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プランが<code>premium</code>、<code>highspec</code>の場合必須</td>
 </tr>
 <tr>
 <td><code>ipaddress</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>プランが<code>standard</code>の場合は1つ、<code>premium</code>、<code>highspec</code>の場合は2つ指定する</td>
 </tr>
 <tr>
 <td><code>nw_mask_len</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プリフィックス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値(16〜28)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>graceful_shutdown_timeout</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>シャットダウンまでの待ち時間</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値(秒数)</td>
 <td>シャットダウンが必要な場合の通常シャットダウンするまでの待ち時間(指定の時間まで待ってもシャットダウンしない場合は強制シャットダウンされる)</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -791,9 +790,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -801,49 +800,49 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vpc_router_interface_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プライベートNIC ID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>global_address</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>グローバル側IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>VPCルータのIPエイリアスの中のいづれかの値を指定する</td>
 </tr>
 <tr>
 <td><code>private_address</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プライベート側IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -874,9 +873,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -884,65 +883,65 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vpc_router_interface_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プライベートNIC ID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>protocol</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プロトコル</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>tcp</code><br /><code>udp</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>global_port</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>グローバル側ポート番号</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値(1〜65535)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>private_address</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プライベート側IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>private_port</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プライベート側ポート番号</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値(1〜65535)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -973,9 +972,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -983,41 +982,41 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vpc_router_interface_index</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>対象インターフェースのインデックス</td>
-<td align="center">0</td>
+<td style="text-align: center;">0</td>
 <td>数値(<code>0</code>-<code>7</code>)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>direction</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>通信方向</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>send</code><br /><code>receive</code></td>
 <td>VPCルータ内から見た通信方向を指定する</td>
 </tr>
 <tr>
 <td><code>expressions</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>フィルタルール</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(マップ)</td>
 <td>詳細は<a href="#expressions"><code>expressions</code></a>を参照</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -1028,9 +1027,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -1038,65 +1037,65 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>protocol</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プロトコル</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>tcp</code><br /><code>udp</code><br /><code>icmp</code><br /><code>ip</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>source_nw</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>送信元ネットワーク</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>xxx.xxx.xxx.xxx</code>(IP)<br /><code>xxx.xxx.xxx.xxx/nn</code>(ネットワーク)<br /><code>xxx.xxx.xxx.xxx/yyy.yyy.yyy.yyy</code>(アドレス範囲)</td>
 <td>空欄の場合はANY</td>
 </tr>
 <tr>
 <td><code>source_port</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>送信元ポート</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>0</code>〜<code>65535</code>の整数<br /><code>xx-yy</code>(範囲指定)<br /><code>0xPPPP/0xMMMM</code>(16進範囲指定)</td>
 <td>空欄の場合はANY</td>
 </tr>
 <tr>
 <td><code>dest_nw</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>送信元ネットワーク</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>xxx.xxx.xxx.xxx</code>(IP)<br /><code>xxx.xxx.xxx.xxx/nn</code>(ネットワーク)<br /><code>xxx.xxx.xxx.xxx/yyy.yyy.yyy.yyy</code>(アドレス範囲)</td>
 <td>空欄の場合はANY</td>
 </tr>
 <tr>
 <td><code>dest_port</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>宛先ポート</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>0</code>〜<code>65535</code>の整数<br /><code>xx-yy</code>(範囲指定)<br /><code>0xPPPP/0xMMMM</code>(16進範囲指定)</td>
 <td>空欄の場合はANY</td>
 </tr>
 <tr>
 <td><code>allow</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>アクション</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>true</code><br /><code>false</code></td>
 <td><code>true</code>の場合ALLOW動作<br /><code>false</code>の場合DENY動作</td>
 </tr>
 <tr>
 <td><code>logging</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ログ出力</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>true</code><br /><code>false</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
@@ -1127,9 +1126,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -1137,49 +1136,49 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vpc_router_interface_index</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プライベートNIC 番号</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>range_start</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>動的割り当て範囲(開始)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>range_stop</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>動的割り当て範囲(終了)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>dns_servers</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>DNSサーバーIPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>省略した場合はゾーンごとのデフォルトDNSサーバが割り当てられる</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -1210,9 +1209,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -1220,41 +1219,41 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vpc_router_dhcp_server_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>DHCPサーバID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>ipaddress</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>macaddress</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>MACアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>英字は小文字で入力する</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -1285,9 +1284,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -1295,41 +1294,41 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vpc_router_interface_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プライベートNIC ID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>range_start</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>動的割り当て範囲(開始)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>range_stop</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>動的割り当て範囲(終了)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -1360,9 +1359,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -1370,49 +1369,49 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vpc_router_interface_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プライベートNIC ID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>pre_shared_secret</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>事前共有シークレット</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>range_start</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>動的割り当て範囲(開始)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>range_stop</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>動的割り当て範囲(終了)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -1444,9 +1443,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -1454,33 +1453,33 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>name</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ユーザー名</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>password</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>パスワード</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -1511,9 +1510,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -1521,57 +1520,57 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>peer</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>対向IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>remote_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>対向ID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>pre_shared_secret</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>事前共有シークレット</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>routes</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>対向Prefix</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>local_prefix</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ローカルPrefix</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -1687,9 +1686,9 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -1697,41 +1696,41 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
 <tbody>
 <tr>
 <td><code>vpc_router_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>VPCルータID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vpc_router_interface_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プライベートNIC ID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>prefix</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プリフィックス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>next_hop</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ネクストホップ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -1790,14 +1789,15 @@ resource &quot;sakuracloud_vpc_router_static_route&quot; &quot;route1&quot; {
     
   </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme_extra.js" defer></script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

@@ -8,7 +8,7 @@
     <title>GSLB - Terraform for さくらのクラウド(v1)</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/terraform-v1/configuration/resources/gslb/";
       </script>
     
-    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href="../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -246,10 +245,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>設定リファレンス &raquo;</li>
-          <li>リソース &raquo;</li>
-      <li>GSLB</li>
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">設定リファレンス</li>
+          <li class="breadcrumb-item">リソース</li>
+      <li class="breadcrumb-item active">GSLB</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -307,9 +306,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -317,57 +316,57 @@
 <tbody>
 <tr>
 <td><code>name</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>GSLB名</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>health_check</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ヘルスチェック</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>マップ</td>
 <td>詳細は<a href="#health_check"><code>health_check</code></a>を参照</td>
 </tr>
 <tr>
 <td><code>weighted</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>重み付け応答</td>
-<td align="center"><code>false</code></td>
+<td style="text-align: center;"><code>false</code></td>
 <td><code>true</code><br /><code>false</code></td>
 <td><code>true</code>:有効<br /><code>false</code>:無効</td>
 </tr>
 <tr>
 <td><code>sorry_server</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ソーリーサーバ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>icon_id</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>アイコンID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>tags</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>タグ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>-</td>
 </tr>
@@ -378,9 +377,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -388,49 +387,49 @@
 <tbody>
 <tr>
 <td><code>protocol</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プロトコル</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>http</code><br /><code>https</code><br /><code>ping</code><br /><code>tcp</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>delay_loop</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>チェック間隔(秒)</td>
-<td align="center"><code>10</code></td>
+<td style="text-align: center;"><code>10</code></td>
 <td>数値</td>
 <td><code>10</code>〜<code>60</code></td>
 </tr>
 <tr>
 <td><code>host_header</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>Hostヘッダ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プロトコルが<code>http</code>または<code>https</code>の場合のみ有効</td>
 </tr>
 <tr>
 <td><code>path</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>パス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プロトコルが<code>http</code>または<code>https</code>の場合のみ有効かつ必須</td>
 </tr>
 <tr>
 <td><code>status</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>レスポンスコード</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プロトコルが<code>http</code>または<code>https</code>の場合のみ有効かつ必須</td>
 </tr>
 <tr>
 <td><code>port</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>ポート番号</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値</td>
 <td>プロトコルが<code>tcp</code>の場合のみ有効かつ必須</td>
 </tr>
@@ -442,9 +441,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -452,25 +451,25 @@
 <tbody>
 <tr>
 <td><code>ipaddress</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>監視対象サーバのIPアドレス</td>
 </tr>
 <tr>
 <td><code>enabled</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>有効</td>
-<td align="center"><code>true</code></td>
+<td style="text-align: center;"><code>true</code></td>
 <td><code>true</code><br /><code>false</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>weight</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>重み</td>
-<td align="center"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
 <td>数値</td>
 <td>重み付け応答が有効な場合のみ有効。<code>1</code>〜<code>10000</code></td>
 </tr>
@@ -506,9 +505,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -516,33 +515,33 @@
 <tbody>
 <tr>
 <td><code>gslb_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>GSLB-ID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>対象GSLBのID</td>
 </tr>
 <tr>
 <td><code>ipaddress</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>監視対象サーバのIPアドレス</td>
 </tr>
 <tr>
 <td><code>enabled</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>有効</td>
-<td align="center"><code>true</code></td>
+<td style="text-align: center;"><code>true</code></td>
 <td><code>true</code><br /><code>false</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>weight</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>重み</td>
-<td align="center"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
 <td>数値</td>
 <td>重み付け応答が有効な場合のみ有効。<code>1</code>〜<code>10000</code></td>
 </tr>
@@ -601,14 +600,15 @@
     
   </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme_extra.js" defer></script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

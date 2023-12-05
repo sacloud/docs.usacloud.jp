@@ -8,7 +8,7 @@
     <title>ISOイメージ(CD-ROM) - Terraform for さくらのクラウド(v1)</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/terraform-v1/configuration/resources/cdrom/";
       </script>
     
-    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href="../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -234,10 +233,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>設定リファレンス &raquo;</li>
-          <li>リソース &raquo;</li>
-      <li>ISOイメージ(CD-ROM)</li>
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">設定リファレンス</li>
+          <li class="breadcrumb-item">リソース</li>
+      <li class="breadcrumb-item active">ISOイメージ(CD-ROM)</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -273,9 +272,9 @@ resource &quot;sakuracloud_cdrom&quot; &quot;cdrom&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -283,81 +282,81 @@ resource &quot;sakuracloud_cdrom&quot; &quot;cdrom&quot; {
 <tbody>
 <tr>
 <td><code>name</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ISOイメージ名</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>size</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ISOイメージサイズ(GB単位)</td>
-<td align="center">5</td>
+<td style="text-align: center;">5</td>
 <td><code>5</code><br /><code>10</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>iso_image_file</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ISOイメージファイルパス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>※注1</td>
 </tr>
 <tr>
 <td><code>hash</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ISOイメージファイルのMD5ハッシュ値</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td><code>iso-image-file</code>の変更検知用MD5ハッシュ</td>
 </tr>
 <tr>
 <td><code>content</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ISOイメージコンテント</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>※注1</td>
 </tr>
 <tr>
 <td><code>content_file_name</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>作成されるISOイメージ内のファイル名</td>
-<td align="center"><code>config</code></td>
+<td style="text-align: center;"><code>config</code></td>
 <td>文字列</td>
 <td>現バージョンではボリュームラベルとしてもこの値が利用される</td>
 </tr>
 <tr>
 <td><code>icon_id</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>アイコンID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>tags</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>タグ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -418,14 +417,15 @@ resource &quot;sakuracloud_cdrom&quot; &quot;cdrom&quot; {
     
   </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme_extra.js" defer></script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

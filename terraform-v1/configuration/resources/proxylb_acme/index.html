@@ -8,7 +8,7 @@
     <title>エンハンスドロードバランサ(Let's Encrypt設定) - Terraform for さくらのクラウド(v1)</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/terraform-v1/configuration/resources/proxylb_acme/";
       </script>
     
-    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href="../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -236,10 +235,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>設定リファレンス &raquo;</li>
-          <li>リソース &raquo;</li>
-      <li>エンハンスドロードバランサ(Let's Encrypt設定)</li>
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">設定リファレンス</li>
+          <li class="breadcrumb-item">リソース</li>
+      <li class="breadcrumb-item active">エンハンスドロードバランサ(Let's Encrypt設定)</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -290,9 +289,9 @@ resource &quot;sakuracloud_proxylb&quot; &quot;foobar&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -300,33 +299,33 @@ resource &quot;sakuracloud_proxylb&quot; &quot;foobar&quot; {
 <tbody>
 <tr>
 <td><code>proxylb_id</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>エンハンスドロードバランサID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>accept_tos</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>利用規約への同意</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>Let's Encryptの<a href="https://letsencrypt.org/repository/">利用規約</a>への同意</td>
 <td><code>true</code>の場合のみ証明書の発行を行う</td>
 </tr>
 <tr>
 <td><code>common_name</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>コモンネーム</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>-</td>
 <td>証明書発行対象となるFQDN</td>
 </tr>
 <tr>
 <td><code>update_delay_sec</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>更新待ち秒数</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>0</td>
 <td>エンハンスドロードバランサへのLet's Encrpt設定投入までの待ち時間 (<a href="#注1">注1</a>)</td>
 </tr>
@@ -365,7 +364,7 @@ resource &quot;sakuracloud_proxylb&quot; &quot;foobar&quot; {
 <tr>
 <th>パラメーター</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -374,28 +373,28 @@ resource &quot;sakuracloud_proxylb&quot; &quot;foobar&quot; {
 <tr>
 <td><code>server_cert</code></td>
 <td>サーバ証明書</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>intermediate_cert</code></td>
 <td>中間証明書</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>private_key</code></td>
 <td>秘密鍵</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>additional_certificates</code></td>
 <td>追加証明書</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト</td>
 <td>詳細は<a href="#certificate"><code>certificate</code></a>を参照</td>
 </tr>
@@ -437,14 +436,15 @@ resource &quot;sakuracloud_proxylb&quot; &quot;foobar&quot; {
     
   </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme_extra.js" defer></script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

@@ -8,7 +8,7 @@
     <title>エンハンスドロードバランサ - Terraform for さくらのクラウド(v1)</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/terraform-v1/configuration/resources/proxylb/";
       </script>
     
-    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href="../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -246,10 +245,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>設定リファレンス &raquo;</li>
-          <li>リソース &raquo;</li>
-      <li>エンハンスドロードバランサ</li>
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">設定リファレンス</li>
+          <li class="breadcrumb-item">リソース</li>
+      <li class="breadcrumb-item active">エンハンスドロードバランサ</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -330,9 +329,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -340,105 +339,105 @@
 <tbody>
 <tr>
 <td><code>name</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>エンハンスドロードバランサ名</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>plan</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>プラン</td>
-<td align="center"><code>1000</code></td>
+<td style="text-align: center;"><code>1000</code></td>
 <td><code>1000</code><br /><code>5000</code><br /><code>10000</code><br /><code>50000</code><br /><code>100000</code><br /><code>400000</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>vip_failover</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>VIPフェイルオーバ</td>
-<td align="center"><code>false</code></td>
+<td style="text-align: center;"><code>false</code></td>
 <td><code>true</code> or <code>false</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>sticky_session</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>セッション維持</td>
-<td align="center"><code>false</code></td>
+<td style="text-align: center;"><code>false</code></td>
 <td><code>true</code> or <code>false</code></td>
 <td>待ち受けポートのプロキシ方式が<code>tcp</code>の場合は利用不可</td>
 </tr>
 <tr>
 <td><code>timeout</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>実サーバ通信タイムアウト</td>
-<td align="center"><code>10</code></td>
+<td style="text-align: center;"><code>10</code></td>
 <td><code>10</code>から<code>600</code>までの数値</td>
 <td>登録済みの実サーバからの応答タイムアウト時間(秒数)</td>
 </tr>
 <tr>
 <td><code>bind_ports</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>待ち受けポート</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト</td>
 <td>詳細は<a href="#bind_ports"><code>bind_ports</code></a>を参照</td>
 </tr>
 <tr>
 <td><code>health_check</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ヘルスチェック</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>マップ</td>
 <td>詳細は<a href="#health_check"><code>health_check</code></a>を参照</td>
 </tr>
 <tr>
 <td><code>sorry_server</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ソーリーサーバ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>マップ</td>
 <td>詳細は<a href="#sorry_server"><code>sorry_server</code></a>を参照</td>
 </tr>
 <tr>
 <td><code>servers</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>実サーバ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト</td>
 <td>詳細は<a href="#servers"><code>servers</code></a>を参照</td>
 </tr>
 <tr>
 <td><code>certificate</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>SSL証明書</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>マップ</td>
 <td>詳細は<a href="#certificate"><code>certificate</code></a>を参照</td>
 </tr>
 <tr>
 <td><code>icon_id</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>アイコンID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>tags</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>タグ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>-</td>
 </tr>
@@ -450,9 +449,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -460,41 +459,41 @@
 <tbody>
 <tr>
 <td><code>proxy_mode</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プロキシ方式</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>http</code><br /><code>https</code><br /><code>tcp</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>port</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ポート番号</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>redirect_to_https</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>HTTPSへのリダイレクト</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>bool</td>
 <td><code>proxy_mode</code>が<code>http</code>の場合のみ有効</td>
 </tr>
 <tr>
 <td><code>support_http2</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>HTTP/2のサポート</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>bool</td>
 <td><code>proxy_mode</code>が<code>https</code>の場合のみ有効</td>
 </tr>
 <tr>
 <td><code>response_header</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>レスポンスヘッダ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト</td>
 <td><code>proxy_mode</code>が<code>http</code>または<code>https</code>の場合に有効。10個まで指定可能。詳細は<a href="#response_header"><code>response_header</code></a>を参照</td>
 </tr>
@@ -506,9 +505,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -516,17 +515,17 @@
 <tbody>
 <tr>
 <td><code>header</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ヘッダ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>-</td>
 <td>英字/数字/ハイフンで指定</td>
 </tr>
 <tr>
 <td><code>value</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>値</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>-</td>
 <td>英字/数字/半角スペース/一部記号で指定</td>
 </tr>
@@ -537,9 +536,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -547,33 +546,33 @@
 <tbody>
 <tr>
 <td><code>protocol</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プロトコル</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>http</code><br /><code>tcp</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>delay_loop</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>チェック間隔(秒)</td>
-<td align="center"><code>10</code></td>
+<td style="text-align: center;"><code>10</code></td>
 <td>数値</td>
 <td><code>10</code>〜<code>60</code></td>
 </tr>
 <tr>
 <td><code>host_header</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>Hostヘッダ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プロトコルが<code>http</code>の場合のみ有効</td>
 </tr>
 <tr>
 <td><code>path</code></td>
-<td align="center">△</td>
+<td style="text-align: center;">△</td>
 <td>パス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>プロトコルが<code>http</code>の場合のみ有効かつ必須</td>
 </tr>
@@ -584,9 +583,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -594,17 +593,17 @@
 <tbody>
 <tr>
 <td><code>ipaddress</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>port</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ポート番号</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値</td>
 <td>-</td>
 </tr>
@@ -616,9 +615,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -626,25 +625,25 @@
 <tbody>
 <tr>
 <td><code>ipaddress</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>IPアドレス</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>実サーバのIPアドレス</td>
 </tr>
 <tr>
 <td><code>port</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ポート番号</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>enabled</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>有効</td>
-<td align="center"><code>true</code></td>
+<td style="text-align: center;"><code>true</code></td>
 <td><code>true</code><br /><code>false</code></td>
 <td>-</td>
 </tr>
@@ -655,9 +654,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -665,33 +664,33 @@
 <tbody>
 <tr>
 <td><code>server_cert</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>サーバ証明書</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>intermediate_cert</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>中間証明書</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>private_key</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>秘密鍵</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>additional_certificates</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>追加証明書</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト</td>
 <td>詳細は<a href="#certificate"><code>certificate</code></a>を参照</td>
 </tr>
@@ -765,14 +764,15 @@
     
   </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme_extra.js" defer></script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

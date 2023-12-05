@@ -8,7 +8,7 @@
     <title>パケットフィルタ - Terraform for さくらのクラウド(v1)</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/terraform-v1/configuration/resources/packet_filter/";
       </script>
     
-    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href="../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -234,10 +233,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>設定リファレンス &raquo;</li>
-          <li>リソース &raquo;</li>
-      <li>パケットフィルタ</li>
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">設定リファレンス</li>
+          <li class="breadcrumb-item">リソース</li>
+      <li class="breadcrumb-item active">パケットフィルタ</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -275,9 +274,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -285,41 +284,41 @@
 <tbody>
 <tr>
 <td><code>name</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>スイッチ名</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>expressions</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>フィルタルール</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(マップ)</td>
 <td>詳細は<a href="#expressions"><code>expressions</code></a>を参照</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>tags</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>タグ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -332,9 +331,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -342,49 +341,49 @@
 <tbody>
 <tr>
 <td><code>protocol</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>プロトコル</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>tcp</code><br /><code>udp</code><br /><code>icmp</code><br /><code>fragment</code><br /><code>ip</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>source_nw</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>送信元ネットワーク</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>xxx.xxx.xxx.xxx</code>(IP)<br /><code>xxx.xxx.xxx.xxx/nn</code>(ネットワーク)<br /><code>xxx.xxx.xxx.xxx/yyy.yyy.yyy.yyy</code>(アドレス範囲)</td>
 <td>空欄の場合はANY</td>
 </tr>
 <tr>
 <td><code>source_port</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>送信元ポート</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>0</code>〜<code>65535</code>の整数<br /><code>xx-yy</code>(範囲指定)<br /><code>0xPPPP/0xMMMM</code>(16進範囲指定)</td>
 <td>空欄の場合はANY</td>
 </tr>
 <tr>
 <td><code>dest_port</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>宛先ポート</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>0</code>〜<code>65535</code>の整数<br /><code>xx-yy</code>(範囲指定)<br /><code>0xPPPP/0xMMMM</code>(16進範囲指定)</td>
 <td>空欄の場合はANY</td>
 </tr>
 <tr>
 <td><code>allow</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>アクション</td>
-<td align="center"><code>true</code></td>
+<td style="text-align: center;"><code>true</code></td>
 <td><code>true</code><br /><code>false</code></td>
 <td><code>true</code>の場合ALLOW動作<br /><code>false</code>の場合DENY動作</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
@@ -443,14 +442,15 @@
     
   </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme_extra.js" defer></script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

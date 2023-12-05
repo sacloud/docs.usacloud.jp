@@ -8,7 +8,7 @@
     <title>アーカイブ - Terraform for さくらのクラウド(v1)</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/terraform-v1/configuration/resources/data/archive/";
       </script>
     
-    <script src="../../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href="../../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -234,10 +233,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>設定リファレンス &raquo;</li>
-          <li>データリソース &raquo;</li>
-      <li>アーカイブ</li>
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">設定リファレンス</li>
+          <li class="breadcrumb-item">データリソース</li>
+      <li class="breadcrumb-item active">アーカイブ</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -265,9 +264,9 @@ data &quot;sakuracloud_archive&quot; &quot;ubuntu&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -275,41 +274,41 @@ data &quot;sakuracloud_archive&quot; &quot;ubuntu&quot; {
 <tbody>
 <tr>
 <td><code>os_type</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>OS種別</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>設定可能な値は<a href="#os_type">os_typeに指定可能な値</a>欄を参照 ※1</td>
 </tr>
 <tr>
 <td><code>name_selectors</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>検索条件(名称)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>複数指定した場合はAND条件 ※1</td>
 </tr>
 <tr>
 <td><code>tag_selectors</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>検索条件(タグ)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>複数指定した場合はAND条件 ※1</td>
 </tr>
 <tr>
 <td><code>filter</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>検索条件(その他)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>オブジェクト</td>
 <td>APIにそのまま渡されます。検索条件を指定してもAPI側が対応していない場合があります。</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -537,14 +536,15 @@ data &quot;sakuracloud_archive&quot; &quot;ubuntu&quot; {
     
   </span>
 </div>
-    <script>var base_url = '../../../..';</script>
-    <script src="../../../../js/theme_extra.js" defer></script>
-    <script src="../../../../js/theme.js" defer></script>
-      <script src="../../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

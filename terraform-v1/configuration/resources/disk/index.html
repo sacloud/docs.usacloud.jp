@@ -8,7 +8,7 @@
     <title>ディスク - Terraform for さくらのクラウド(v1)</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/terraform-v1/configuration/resources/disk/";
       </script>
     
-    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href="../../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -238,10 +237,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>設定リファレンス &raquo;</li>
-          <li>リソース &raquo;</li>
-      <li>ディスク</li>
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">設定リファレンス</li>
+          <li class="breadcrumb-item">リソース</li>
+      <li class="breadcrumb-item active">ディスク</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -289,9 +288,9 @@ data &quot;sakuracloud_archive&quot; &quot;centos&quot; {
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>補足</th>
 </tr>
@@ -299,137 +298,137 @@ data &quot;sakuracloud_archive&quot; &quot;centos&quot; {
 <tbody>
 <tr>
 <td><code>name</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>ディスク名</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>plan</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ディスクプラン</td>
-<td align="center"><code>ssd</code></td>
+<td style="text-align: center;"><code>ssd</code></td>
 <td><code>ssd</code><br /><code>hdd</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>connector</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ディスク接続</td>
-<td align="center"><code>virtio</code></td>
+<td style="text-align: center;"><code>virtio</code></td>
 <td><code>virtio</code><br /><code>ide</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>size</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ディスクサイズ(GB単位)</td>
-<td align="center">20</td>
+<td style="text-align: center;">20</td>
 <td>数値</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>distant_from</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ストレージ隔離対象ディスクID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>ストレージを隔離したいディスクのIDのリスト</td>
 </tr>
 <tr>
 <td><code>source_archive_id</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>コピー元アーカイブID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td><a href="#注1">注1</a></td>
 </tr>
 <tr>
 <td><code>source_disk_id</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>コピー元ディスクID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td><a href="#注1">注1</a></td>
 </tr>
 <tr>
 <td><code>hostname</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ホスト名</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>(v1.11.0で削除されました) ディスク修正機能で設定される、ホスト名 <a href="#注2">注2</a></td>
 </tr>
 <tr>
 <td><code>password</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>パスワード</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>(v1.11.0で削除されました) ディスク修正機能で設定される、OS管理者パスワード <a href="#注2">注2</a></td>
 </tr>
 <tr>
 <td><code>ssh_key_ids</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>SSH公開鍵ID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>(v1.11.0で削除されました) ディスク修正機能で設定される、SSH認証用の公開鍵ID <a href="#注2">注2</a></td>
 </tr>
 <tr>
 <td><code>disable_pw_auth</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>パスワードでの認証無効化</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>true</code><br /><code>false</code></td>
 <td>(v1.11.0で削除されました) ディスク修正機能で設定される、SSH接続でのパスワード/チャレンジレスポンス認証の無効化 <a href="#注2">注2</a></td>
 </tr>
 <tr>
 <td><code>note_ids</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>スタートアップスクリプトID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>(v1.11.0で削除されました) ディスク修正機能で設置される、スタートアップスクリプトのID <a href="#注2">注2</a></td>
 </tr>
 <tr>
 <td><code>icon_id</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>アイコンID</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>説明</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>tags</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>タグ</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リスト(文字列)</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>graceful_shutdown_timeout</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>シャットダウンまでの待ち時間</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>数値(秒数)</td>
 <td>シャットダウンが必要な場合の通常シャットダウンするまでの待ち時間(指定の時間まで待ってもシャットダウンしない場合は強制シャットダウンされる)</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>ゾーン</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1v</code></td>
 <td>-</td>
 </tr>
@@ -536,14 +535,15 @@ resource sakuracloud_disk &quot;disk&quot; {
     
   </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme_extra.js" defer></script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

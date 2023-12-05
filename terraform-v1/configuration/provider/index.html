@@ -8,7 +8,7 @@
     <title>プロバイダ - Terraform for さくらのクラウド(v1)</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/terraform-v1/configuration/provider/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href="../.." class="icon icon-home"> Terraform for さくらのクラウド(v1)
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -232,10 +231,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>設定リファレンス &raquo;</li>
-          <li>全体/共通項目 &raquo;</li>
-      <li>プロバイダ</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">設定リファレンス</li>
+          <li class="breadcrumb-item">全体/共通項目</li>
+      <li class="breadcrumb-item active">プロバイダ</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -268,9 +267,9 @@
 <thead>
 <tr>
 <th>パラメーター</th>
-<th align="center">必須</th>
+<th style="text-align: center;">必須</th>
 <th>名称</th>
-<th align="center">初期値</th>
+<th style="text-align: center;">初期値</th>
 <th>設定値</th>
 <th>説明</th>
 </tr>
@@ -278,81 +277,81 @@
 <tbody>
 <tr>
 <td><code>token</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>APIキー<br />(トークン)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>環境変数<code>SAKURACLOUD_ACCESS_TOKEN</code>での指定も可</td>
 </tr>
 <tr>
 <td><code>secret</code></td>
-<td align="center">◯</td>
+<td style="text-align: center;">◯</td>
 <td>APIキー<br />(シークレット)</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>環境変数<code>SAKURACLOUD_ACCESS_TOKEN_SECRET</code>での指定も可</td>
 </tr>
 <tr>
 <td><code>zone</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>対象ゾーン</td>
-<td align="center"><code>is1b</code></td>
+<td style="text-align: center;"><code>is1b</code></td>
 <td><code>is1a</code><br /><code>is1b</code><br /><code>tk1a</code><br /><code>tk1b</code><br /><code>tk1v</code></td>
 <td>環境変数<code>SAKURACLOUD_ZONE</code>での指定も可</td>
 </tr>
 <tr>
 <td><code>retry_max</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リトライ回数</td>
-<td align="center"><code>10</code></td>
+<td style="text-align: center;"><code>10</code></td>
 <td>数値</td>
 <td>環境変数<code>SAKURACLOUD_RETRY_MAX</code>での指定も可</td>
 </tr>
 <tr>
 <td><code>retry_interval</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>リトライ時待機時間</td>
-<td align="center"><code>5</code></td>
+<td style="text-align: center;"><code>5</code></td>
 <td>数値(秒)</td>
 <td>環境変数<code>SAKURACLOUD_RETRY_INTERVAL</code>での指定も可</td>
 </tr>
 <tr>
 <td><code>timeout</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>タイムアウト</td>
-<td align="center"><code>20</code></td>
+<td style="text-align: center;"><code>20</code></td>
 <td>数値(分)</td>
 <td>環境変数<code>SAKURACLOUD_TIMEOUT</code>での指定も可</td>
 </tr>
 <tr>
 <td><code>api_root_url</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>さくらのクラウドAPI ルートURL</td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>文字列</td>
 <td>テストなどのためにAPIのルートAPIを変更したい場合に設定する。<br />末尾にスラッシュを含めないでください。<br />指定しない場合のルートURLは<code>https://secure.sakura.ad.jp/cloud/zone</code><br />環境変数<code>SAKURACLOUD_API_ROOT_URL</code>での指定も可</td>
 </tr>
 <tr>
 <td><code>api_request_timeout</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>APIリクエストタイムアウト</td>
-<td align="center"><code>300</code></td>
+<td style="text-align: center;"><code>300</code></td>
 <td>数値(秒)</td>
 <td>環境変数<code>SAKURACLOUD_API_REQUEST_TIMEOUT</code>での指定も可</td>
 </tr>
 <tr>
 <td><code>api_request_rate_limit</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>APIリクエストレートリミット</td>
-<td align="center"><code>5</code></td>
+<td style="text-align: center;"><code>5</code></td>
 <td>数値(<code>1</code>〜<code>10</code>)</td>
 <td>秒あたりのさくらのクラウドAPIリクエスト最大数。環境変数<code>SAKURACLOUD_RATE_LIMIT</code>での指定も可</td>
 </tr>
 <tr>
 <td><code>trace</code></td>
-<td align="center">-</td>
+<td style="text-align: center;">-</td>
 <td>トレースフラグ</td>
-<td align="center"><code>false</code></td>
+<td style="text-align: center;"><code>false</code></td>
 <td><code>true</code><br /><code>false</code></td>
 <td>(開発者向け)詳細ログの出力ON/OFFを指定します。 <br />環境変数<code>SAKURACLOUD_TRACE_MODE</code>での指定も可</td>
 </tr>
@@ -400,14 +399,15 @@ $ export SAKURACLOUD_ACCESS_TOKEN_SECRET=&quot;取得したAPIシークレット
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
