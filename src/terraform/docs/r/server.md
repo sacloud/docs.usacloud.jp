@@ -69,6 +69,7 @@ ACPIが利用できないサーバの場合`true`に設定する
     - `dedicatedcpu`: コア専有
 * `core` - (Optional) vCPUの割り当て数 / デフォルト:`1`
 * `memory` - (Optional) メモリサイズ(GiB単位) / デフォルト:`1`
+* `cpu_model` - (Optional) The model of CPU.
 * `gpu` - (Optional) GPUの割り当て数 
 * `network_interface` - (Optional) NIC設定のリスト。詳細は[network_interfaceブロック](#network_interface)を参照
 * `interface_driver` - (Optional) NICのドライバー / 次のいずれかを指定［`virtio`/`e1000`]/ デフォルト:`virtio`
@@ -76,7 +77,7 @@ ACPIが利用できないサーバの場合`true`に設定する
 
 !!! Note
     `core`と`memory`、`gpu`に指定できる値の組み合わせはさくらのクラウドドキュメントなどを参照ください。  
-    `usacloud server-plan ls`コマンドでも確認できます。
+    `usacloud server-plan ls`コマンドでも確認できます(`cpu_model`に指定できる値もこちらでご確認いただけます)。
 
 !!! Note
     `network_interface`は省略可能ですが、省略した場合NICが接続されていない状態のサーバが作成されます。  

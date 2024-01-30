@@ -46,6 +46,7 @@ data "sakuracloud_server" "foobar" {
     - `standard`: 通常  
     - `dedicatedcpu`: コア専有  
 * `core` - vCPU数
+* `cpu_model` - CPUモデル
 * `description` - 説明
 * `disks` - サーバに接続されているディスクのIDのリスト
 * `dns_servers` - サーバが属するゾーンのDNSサーバのIPアドレスのリスト
