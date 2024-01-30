@@ -23,6 +23,9 @@ nav:
   - ホーム: index.md
   - ガイド:
     - アップグレードガイド:
+      - v2.25での変更点: guides/upgrade_to_v2.25.0.md
+      - v2.24での変更点: guides/upgrade_to_v2.24.0.md
+      - v2.23での変更点: guides/upgrade_to_v2.23.0.md
       - v2.22での変更点: guides/upgrade_to_v2.22.0.md
       - v2.21での変更点: guides/upgrade_to_v2.21.0.md
       - v2.20での変更点: guides/upgrade_to_v2.20.0.md

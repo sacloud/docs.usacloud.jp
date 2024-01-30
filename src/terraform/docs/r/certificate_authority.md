@@ -11,7 +11,7 @@ terraform {
     }
     sakuracloud = {
       source  = "sacloud/sakuracloud"
-      version = "2.14.0"
+      version = "2.25.0"
     }
   }
 }
