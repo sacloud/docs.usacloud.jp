@@ -65,5 +65,6 @@ nav:
   - Tips:
       - Terraformとの併用: tips/terraform.md
       - 名前付きプラン: tips/named_plan.md
+      - 水平スケール時のサーバープラン: tips/server_plans.md
       - local-execハンドラ: tips/local_exec_handler.md
       - 共有サーバ上での実行(strictモード): tips/strict_mode.md
