@@ -296,7 +296,9 @@ template:
   plan:
     core: <number>           # コア数
     memory: <number>         # メモリサイズ、GB単位 
-    dedicated_cpu: <bool> # コア専有の場合true
+    dedicated_cpu: <bool>    # コア専有の場合true
+    cpu_model: <"amd_epyc_7713p" | "" | default="">
+    gpu: <number>            # GPU
     
   # 接続するディスクをリストで指定  
   disks:
@@ -375,6 +377,8 @@ parent: <parent_definition>
 ```
 
 `plans`を省略した場合、`size`に`min_size`から`max_size`までの値を持つプランが存在するとみなします。
+
+`template.plan`の指定例は[Tips](../tips/server_plans)を参照してください。
 
 #### &lt;parent_definition&gt;
 
