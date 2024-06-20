@@ -2,7 +2,7 @@
 
 # usacloud日本語ドキュメント
 
-[`usacloud`](https://github.com/sacloud/usacloud)は[さくらのクラウド](http://cloud.sakura.ad.jp/index.html)用の公認CLIクライアントです。
+[`usacloud`](https://github.com/sacloud/usacloud)は[さくらのクラウド](http://cloud.sakura.ad.jp/index.html)用の公式CLIクライアントです。
 
 !!! note
     このドキュメントは[Usacloud](https://github.com/sacloud/usacloud) v1系向けです。
