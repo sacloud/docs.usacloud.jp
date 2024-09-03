@@ -3,7 +3,7 @@
 ---
 
 ## 概要
-`Terraform policy for さくらのクラウド` は、[Terraform for さくらのクラウド](https://docs.usacloud.jp/terraform/)を利用して記述されたTerraformコードを、セキュリティ・ガバナンスの観点で静的チェックするためのポリシーです。
+`Terraform policy for さくらのクラウド` は、[Terraform for さくらのクラウド](https://docs.usacloud.jp/terraform/)を用いて記述されたTerraformコードを、セキュリティおよびガバナンスの観点から静的にチェックするためのポリシーです。
 
 本ポリシーは[Rego](https://www.openpolicyagent.org/docs/latest/policy-language/)で記述されており、[OPA(Open Policy Agent)](https://www.openpolicyagent.org/)と[Conftest](https://www.conftest.dev/)に依存しています。
 
