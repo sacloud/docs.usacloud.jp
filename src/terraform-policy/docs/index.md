@@ -9,6 +9,11 @@
 
 ## 利用例
 
+本ポリシーを使用する前に、実行環境にOPAとConftestがインストールされていることが前提となります。
+
+- [https://www.openpolicyagent.org/docs/latest/#running-opa](https://www.openpolicyagent.org/docs/latest/#running-opa)
+- [https://www.conftest.dev/install/](https://www.openpolicyagent.org/docs/latest/#running-opa)
+
 ```sh
 # Run within the Terraform repository that uses the Terraform SakuraCloud provider
 $ cd terraform
