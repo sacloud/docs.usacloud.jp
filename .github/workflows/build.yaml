@@ -53,6 +53,7 @@ jobs:
           mkdir ./public; cp -r ./src/top/site/* public/
           mkdir ./public/terraform; cp -r ./src/terraform/site/* ./public/terraform
           mkdir ./public/terraform-v1; cp -r ./src/terraform-v1/site/* ./public/terraform-v1
+          mkdir ./public/terraform-policy; cp -r ./src/terraform-policy/site/* ./public/terraform-policy
           mkdir ./public/usacloud; cp -r ./src/usacloud/site/* ./public/usacloud
           mkdir ./public/autoscaler; cp -r ./src/autoscaler/site/* ./public/autoscaler
           mkdir ./public/prometheus; cp -r ./src/prometheus/site/* ./public/prometheus
