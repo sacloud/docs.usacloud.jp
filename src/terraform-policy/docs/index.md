@@ -19,7 +19,7 @@
 $ cd terraform
 
 # Download the policy
-$ conftest pull 'git@github.com:sacloud/terraform-provider-sakuracloud-policy.git//policy?ref=v1.0.0'
+$ conftest pull 'git::https://github.com/sacloud/terraform-provider-sakuracloud-policy.git//policy?ref=v1.0.0'
 
 # Run the tests
 $ conftest test . --ignore=".git/|.github/|.terraform/"
