@@ -8,6 +8,7 @@ jobs:
       matrix:
         working-directory:
           - './src/terraform'
+          - './src/terraform-policy'
           - './src/top'
           - './src/usacloud'
           - './src/autoscaler'
@@ -42,6 +43,11 @@ jobs:
         uses: ./.github/actions/mkdocs
         with:
           working-directory: './src/terraform-v1'
+
+      - name: Build a document with mkdocs - src/terraform-policy
+        uses: ./.github/actions/mkdocs
+        with:
+          working-directory: './src/terraform-policy'
 
       - name: Build a document with mkdocs - src/top
         uses: ./.github/actions/mkdocs

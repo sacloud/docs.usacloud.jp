@@ -4,6 +4,7 @@ TOP_DIR := src/top
 USACLOUD_DIR := src/usacloud
 TERRAFORM_V1_DIR := src/terraform-v1
 TERRAFORM_V2_DIR := src/terraform
+TERRAFORM_POLICY_DIR := src/terraform-policy
 AUTOSCALER_DIR := src/autoscaler
 PROMETHEUS_DIR := src/prometheus
 
@@ -18,6 +19,8 @@ build-all:
 	@(cd $(TOP_DIR); make build)
 	@echo "running mkdocs in $(TERRAFORM_V2_DIR)..."
 	@(cd $(TERRAFORM_V2_DIR); make build)
+	@echo "running mkdocs in $(TERRAFORM_POLICY_DIR)..."
+	@(cd $(TERRAFORM_POLICY_DIR); make build)
 	@echo "running mkdocs in $(USACLOUD_DIR)..."
 	@(cd $(USACLOUD_DIR); make build)
 	@echo "running mkdocs in $(AUTOSCALER_DIR)..."
@@ -30,6 +33,8 @@ lint:
 	@(cd $(TOP_DIR); make lint)
 	@echo "running textlint in $(TERRAFORM_V2_DIR)..."
 	@(cd $(TERRAFORM_V2_DIR); make lint)
+	@echo "running textlint in $(TERRAFORM_POLICY_DIR)..."
+	@(cd $(TERRAFORM_POLICY_DIR); make lint)
 	@echo "running textlint in $(USACLOUD_DIR)..."
 	@(cd $(USACLOUD_DIR); make lint)
 	@echo "running textlint in $(AUTOSCALER_DIR)..."
@@ -49,6 +54,10 @@ preview-terraform-v1:
 .PHONY: preview-terraform
 preview-terraform:
 	@(cd $(TERRAFORM_V2_DIR); make preview)
+
+.PHONY: preview-terraform-policy
+preview-terraform-policy:
+	@(cd $(TERRAFORM_POLICY_DIR); make preview)
 
 .PHONY: preview-usacloud
 preview-usacloud:
@@ -70,6 +79,8 @@ clean:
 	@(cd $(TERRAFORM_V1_DIR); make clean)
 	@echo "cleaning in $(TERRAFORM_V2_DIR)..."
 	@(cd $(TERRAFORM_V2_DIR); make clean)
+	@echo "cleaning in $(TERRAFORM_POLICY_DIR)..."
+	@(cd $(TERRAFORM_POLICY_DIR); make clean)
 	@echo "cleaning in $(USACLOUD_DIR)..."
 	@(cd $(USACLOUD_DIR); make clean)
 	@echo "cleaning in $(AUTOSCALER_DIR)..."

@@ -1,0 +1,38 @@
+site_name: Terraform policy for さくらのクラウド
+site_url: https://docs.usacloud.jp/terraform-policy
+site_description: Terraform policy for さくらのクラウド
+site_author: '@hekki'
+copyright: Copyright (C) 2024-2024 terraform-provider-sakuracloud-policy authors
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+extra:
+  analytics:
+    provider: google
+    property: G-9JFNZ70H7B
+extra_css:
+  - css/extra.css
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+nav:
+  - ホーム: index.md
+  - ポリシー:
+    - sakuracloud_load_balancer:
+      - http not enabled: rules/sakuracloud_load_balancer/http_not_enabled.md
+    - sakuracloud_vpc_router:
+      - internet connection without firewall: rules/sakuracloud_vpc_router/internet_connection_without_firewall.md
+      - unspecified syslog host: rules/sakuracloud_vpc_router/unspecified_syslog_host.md
+    - sakuracloud_server:
+      - SSH password auth enabled with password: rules/sakuracloud_server/pw_auth_enabled_with_password.md
+    - sakuracloud_proxylb:
+      - no https redirect: rules/sakuracloud_proxylb/no_https_redirect.md
+      - unspecified syslog host: rules/sakuracloud_proxylb/unspecified_syslog_host.md
+    - sakuracloud_enhanced_db:
+      - unrestricted source networks: rules/sakuracloud_enhanced_db/unrestricted_source_networks.md
+    - sakuracloud_disk:
+      - not encrypted: rules/sakuracloud_disk/not_encrypted.md
