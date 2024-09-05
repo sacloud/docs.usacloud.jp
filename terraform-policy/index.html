@@ -323,6 +323,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="利用例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ローカル環境での利用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actionsでの利用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -864,6 +888,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="利用例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ローカル環境での利用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actionsでの利用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -887,19 +935,54 @@
 <p><code>Terraform policy for さくらのクラウド</code> は、<a href="https://docs.usacloud.jp/terraform/">Terraform for さくらのクラウド</a>を用いて記述されたTerraformコードを、セキュリティおよびガバナンスの観点から静的にチェックするためのポリシーです。</p>
 <p>本ポリシーは<a href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego</a>で記述されており、<a href="https://www.openpolicyagent.org/">OPA(Open Policy Agent)</a>と<a href="https://www.conftest.dev/">Conftest</a>に依存しています。</p>
 <h2 id="_2">利用例</h2>
-<p>本ポリシーを使用する前に、実行環境にOPAとConftestがインストールされていることが前提となります。</p>
+<p>実行環境にOPAとConftestがインストールされていることが前提となります。</p>
 <ul>
 <li><a href="https://www.openpolicyagent.org/docs/latest/#running-opa">https://www.openpolicyagent.org/docs/latest/#running-opa</a></li>
 <li><a href="https://www.openpolicyagent.org/docs/latest/#running-opa">https://www.conftest.dev/install/</a></li>
 </ul>
+<h3 id="_3">ローカル環境での利用</h3>
+<p>Terraformコードの実装者がローカル環境で実行する方法です。
+前述のとおり、ローカル環境にOPAとConftestがインストールされていることが前提となります。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Run within the Terraform repository that uses the Terraform SakuraCloud provider</span>
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>terraform
 
 <span class="c1"># Download the policy</span>
-$<span class="w"> </span>conftest<span class="w"> </span>pull<span class="w"> </span><span class="s1">&#39;git::https://github.com/sacloud/terraform-provider-sakuracloud-policy.git//policy?ref=v1.0.0&#39;</span>
+$<span class="w"> </span>conftest<span class="w"> </span>pull<span class="w"> </span><span class="s1">&#39;git::https://github.com/sacloud/terraform-provider-sakuracloud-policy.git//policy?ref=v1.1.0&#39;</span>
 
 <span class="c1"># Run the tests</span>
 $<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</span><span class="w"> </span>.<span class="w"> </span>--ignore<span class="o">=</span><span class="s2">&quot;.git/|.github/|.terraform/&quot;</span>
+</code></pre></div>
+<h3 id="github-actions">GitHub Actionsでの利用</h3>
+<p><a href="https://docs.github.com/ja/actions">GitHub Actions</a> を用いて、CI（継続的インテグレーション）を行う方法です。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest terraform policy check</span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">CONFTEST_VERSION</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.55.0</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">policy check</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Conftest</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">mkdir -p $HOME/.local/bin</span>
+<span class="w">          </span><span class="no">echo &quot;$HOME/.local/bin&quot; &gt;&gt; $GITHUB_PATH</span>
+<span class="w">          </span><span class="no">wget -O - &#39;https://github.com/open-policy-agent/conftest/releases/download/v${{ env.CONFTEST_VERSION }}/conftest_${{ env.CONFTEST_VERSION }}_Linux_x86_64.tar.gz&#39; | tar zxvf - -C $HOME/.local/bin</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Conftest version</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest -v</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">download policy</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest pull &#39;git::https://github.com/sacloud/terraform-provider-sakuracloud-policy.git//policy?ref=v1.1.0&#39;</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run test</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest test . --ignore=&quot;.git/|.github/|.terraform/&quot; --data=&quot;exception.json&quot;</span>
 </code></pre></div>
 
 
