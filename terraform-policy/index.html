@@ -349,6 +349,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exception
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -914,6 +923,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exception
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -983,6 +1001,20 @@ $<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run test</span>
 <span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest test . --ignore=&quot;.git/|.github/|.terraform/&quot; --data=&quot;exception.json&quot;</span>
+</code></pre></div>
+<h2 id="exception">Exception</h2>
+<p>ConftestのException機能を利用することで、特定のルールを例外扱いにできます。</p>
+<p>Conftestの実行環境には、以下のようなYAML形式のファイルを追加します。このファイルには、例外扱いにしたいルールの名前を列挙します。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">exception</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sakuracloud_disk_not_encrypted</span>
+</code></pre></div>
+<p>そして、<code>conftest test</code> コマンドで <a href="https://www.conftest.dev/options/#-data">--data</a> オプションを利用し、上記のファイルを読み込みます。</p>
+<p>これにより、列挙されたルールが例外となり、<code>failures</code> ではなく <code>exception</code> としてカウントされます。</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</span><span class="w"> </span>disk.tf<span class="w"> </span>--ignore<span class="o">=</span><span class="s2">&quot;.git/|.github/|.terraform/&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;exception.yml&quot;</span>
+EXCP<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </span>-<span class="w"> </span>main<span class="w"> </span>-<span class="w"> </span>data.main.exception<span class="o">[</span>_<span class="o">][</span>_<span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;sakuracloud_disk_not_encrypted&quot;</span>
+
+<span class="m">8</span><span class="w"> </span>tests,<span class="w"> </span><span class="m">7</span><span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>warnings,<span class="w"> </span><span class="m">0</span><span class="w"> </span>failures,<span class="w"> </span><span class="m">1</span><span class="w"> </span>exception
 </code></pre></div>
 
 
