@@ -65,3 +65,25 @@ jobs:
       - name: run test
         run: conftest test . --ignore=".git/|.github/|.terraform/" --data="exception.json"
 ```
+
+## Exception
+ConftestのException機能を利用することで、特定のルールを例外扱いにできます。
+
+Conftestの実行環境には、以下のようなYAML形式のファイルを追加します。このファイルには、例外扱いにしたいルールの名前を列挙します。
+
+```yaml
+exception:
+  rule:
+    - sakuracloud_disk_not_encrypted
+```
+
+そして、`conftest test` コマンドで [--data](https://www.conftest.dev/options/#-data) オプションを利用し、上記のファイルを読み込みます。
+
+これにより、列挙されたルールが例外となり、`failures` ではなく `exception` としてカウントされます。
+
+```sh
+$ conftest test disk.tf --ignore=".git/|.github/|.terraform/" --data="exception.yml"
+EXCP - disk.tf - main - data.main.exception[_][_] == "sakuracloud_disk_not_encrypted"
+
+8 tests, 7 passed, 0 warnings, 0 failures, 1 exception
+```
