@@ -358,6 +358,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      カスタムポリシー
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="カスタムポリシー">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. カスタムポリシーの作成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-conftest" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. conftestコマンドでカスタムポリシーを実行
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -932,6 +965,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      カスタムポリシー
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="カスタムポリシー">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. カスタムポリシーの作成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-conftest" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. conftestコマンドでカスタムポリシーを実行
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1015,6 +1081,46 @@ $<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</
 EXCP<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </span>-<span class="w"> </span>main<span class="w"> </span>-<span class="w"> </span>data.main.exception<span class="o">[</span>_<span class="o">][</span>_<span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;sakuracloud_disk_not_encrypted&quot;</span>
 
 <span class="m">8</span><span class="w"> </span>tests,<span class="w"> </span><span class="m">7</span><span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>warnings,<span class="w"> </span><span class="m">0</span><span class="w"> </span>failures,<span class="w"> </span><span class="m">1</span><span class="w"> </span>exception
+</code></pre></div>
+<h2 id="_4">カスタムポリシー</h2>
+<p>デフォルトで提供されるポリシーに加えて、ユーザーは独自のポリシーを追加できます。</p>
+<p>例えば組織固有のルールを組み込むことで、組織独自のポリシーやガイドラインに準拠しているかチェックできます。</p>
+<h3 id="1">1. カスタムポリシーの作成</h3>
+<p>カスタムポリシーを記述した <code>.rego</code> ファイルを用意します。ファイルはTerraformコードと同じリポジトリ内で管理することを想定しています。</p>
+<p>以下は <code>/custom-policy/sakuracloud_disk_too_small.rego</code> というファイルを作成した例です。</p>
+<p>この例では、ディスクサイズが40GB未満の場合にエラーを返すカスタムポリシーを定義しています。</p>
+<div class="highlight"><pre><span></span><code>package main
+
+import data.helpers.has_field
+import rego.v1
+
+deny_sakuracloud_disk_too_small contains msg if {
+    resource := &quot;sakuracloud_disk&quot;
+    rule := &quot;sakuracloud_disk_too_small&quot;
+
+    some name
+    disk := input.resource[resource][name]
+    disk.size &lt; 40
+
+    msg := sprintf(
+        &quot;%s\nDisk is too small %s.%s\n&quot;,
+        [rule, resource, name],
+    )
+}
+</code></pre></div>
+<h3 id="2-conftest">2. conftestコマンドでカスタムポリシーを実行</h3>
+<p>以下のように <code>conftest test</code> コマンドの <a href="https://www.conftest.dev/options/#-policy">--policy</a> オプションを利用して、デフォルトのポリシーに加えてカスタムポリシーも適用します。</p>
+<p>このコマンドでは、<code>policy/</code> ディレクトリに配置されたデフォルトポリシーと、<code>custom-policy/</code> ディレクトリに配置されたカスタムポリシーの両方が適用されます。</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</span><span class="w"> </span>disk.tf<span class="w"> </span>--ignore<span class="o">=</span><span class="s2">&quot;.git/|.github/|.terraform/&quot;</span><span class="w"> </span>--policy<span class="o">=</span><span class="s2">&quot;policy/&quot;</span><span class="w"> </span>--policy<span class="o">=</span><span class="s2">&quot;custom-policy/&quot;</span>
+FAIL<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </span>-<span class="w"> </span>main<span class="w"> </span>-<span class="w"> </span>sakuracloud_disk_too_small
+Disk<span class="w"> </span>is<span class="w"> </span>too<span class="w"> </span>small<span class="w"> </span>sakuracloud_disk.fail_disk_1
+
+FAIL<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </span>-<span class="w"> </span>main<span class="w"> </span>-<span class="w"> </span>sakuracloud_disk_not_encrypted
+Disk<span class="w"> </span>encryption<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>enabled<span class="w"> </span><span class="k">in</span><span class="w"> </span>sakuracloud_disk.fail_disk_1
+More<span class="w"> </span>Info:<span class="w"> </span>https://docs.usacloud.jp/terraform-policy/rules/sakuracloud_disk/not_encrypted/
+
+
+<span class="m">9</span><span class="w"> </span>tests,<span class="w"> </span><span class="m">7</span><span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>warnings,<span class="w"> </span><span class="m">2</span><span class="w"> </span>failures,<span class="w"> </span><span class="m">0</span><span class="w"> </span>exceptions
 </code></pre></div>
 
 
