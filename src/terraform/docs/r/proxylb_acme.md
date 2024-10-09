@@ -64,9 +64,11 @@ data "sakuracloud_proxylb" "foobar" {
 ##### certificateブロック
 
 * `additional_certificate` - 追加証明書のリスト。詳細は[additional_certificateブロック](#additional_certificate)を参照
+* `common_name` - 証明書のコモンネーム
 * `intermediate_cert` - 中間証明書
 * `private_key` - 秘密鍵
 * `server_cert` - サーバ証明書
+* `subject_alt_names` - 証明書のサブジェクトの別名
 
 ##### additional_certificateブロック
 
