@@ -55,7 +55,7 @@ resource "sakuracloud_gslb" "foobar" {
 * `delay_loop` - (Optional) チェック間隔秒数 / `10`-`60`の範囲で指定
 * `host_header` - (Optional) HTTP/HTTPSチェック時に利用されるHostヘッダの値
 * `path` - (Optional) HTTP/HTTPSチェック時のリクエストパス
-* `port` - (Optional) TCPチェック時のポート番号
+* `port` - (Optional) TCP/HTTP/HTTPSチェック時のポート番号
 * `status` - (Optional) HTTP/HTTPSチェック時のレスポンスコード
 
 ##### serverブロック
