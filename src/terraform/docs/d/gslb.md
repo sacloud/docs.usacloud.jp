@@ -55,7 +55,7 @@ data "sakuracloud_gslb" "foobar" {
 * `delay_loop` - チェック間隔秒数
 * `host_header` - HTTP/HTTPSチェック時に利用されるHostヘッダの値
 * `path` - HTTP/HTTPSチェック時に利用されるリクエストパス
-* `port` - TCPチェック時に利用されるポート番号
+* `port` - TCP/HTTP/HTTPSチェック時に利用されるポート番号
 * `protocol` - プロトコル。次のいずれかとなる［`http`/`https`/`tcp`/`ping`]
 * `status` - HTTP/HTTPSチェック時に利用されるレスポンスコード
 
