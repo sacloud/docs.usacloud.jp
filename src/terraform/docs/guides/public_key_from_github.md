@@ -45,7 +45,7 @@ resource "sakuracloud_server" "example" {
 
   disk_edit_parameter {
     disable_pw_auth = true
-    ssh_keys        = split("\n", trimspace(data.http.key.body)) // Note: 複数の公開鍵が登録されている場合は改行で結合されている
+    ssh_keys        = split("\n", trimspace(data.http.key.response_body)) // Note: 複数の公開鍵が登録されている場合は改行で結合されている
   }
 }
 
