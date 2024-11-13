@@ -1,6 +1,6 @@
 # スイッチ: sakuracloud_switch
 
-ディスクの情報を参照するためのデータソース
+スイッチの情報を参照するためのデータソース
 
 ## Example Usage
 

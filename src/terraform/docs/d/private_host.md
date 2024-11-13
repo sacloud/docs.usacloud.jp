@@ -1,6 +1,6 @@
 # 専有ホスト: sakuracloud_private_host
 
-ディスクの情報を参照するためのデータソース
+専有ホストの情報を参照するためのデータソース
 
 ## Example Usage
 
