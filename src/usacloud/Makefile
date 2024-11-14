@@ -24,4 +24,4 @@ clean:
 	rm -rf site/*
 
 generate:
-	go run tools/*.go $(CURDIR)/scaffold
+	cd tools && go run *.go $(CURDIR)/scaffold
