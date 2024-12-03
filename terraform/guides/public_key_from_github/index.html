@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
     
     
       
@@ -3987,7 +3987,7 @@
 
 <span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">disable_pw_auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
-<span class="w">    </span><span class="na">ssh_keys</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">trimspace</span><span class="p">(</span><span class="nv">data.http.key.body</span><span class="p">))</span><span class="c1"> // Note: 複数の公開鍵が登録されている場合は改行で結合されている</span>
+<span class="w">    </span><span class="na">ssh_keys</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">trimspace</span><span class="p">(</span><span class="nv">data.http.key.response_body</span><span class="p">))</span><span class="c1"> // Note: 複数の公開鍵が登録されている場合は改行で結合されている</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
