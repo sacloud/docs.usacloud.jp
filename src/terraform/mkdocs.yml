@@ -50,8 +50,8 @@ nav:
       - v2.1での変更点: guides/upgrade_to_v2.1.0.md
       - v2.0での変更点: guides/upgrade_to_v2.0.0.md
     - その他ガイド:
-        - オブジェクトストレージ: guides/object_storage.md
-        - GitHubからの公開鍵取得: guides/public_key_from_github.md
+      - オブジェクトストレージ: guides/object_storage.md
+      - GitHubからの公開鍵取得: guides/public_key_from_github.md
   - 設定リファレンス:
     - プロバイダ設定: provider.md
     - プロバイダデータソース:
@@ -121,7 +121,7 @@ nav:
         - シンプル監視: r/simple_monitor.md
     - セキュアモバイル:
       - リソース:
-        - モバイルゲートウェイ : r/mobile_gateway.md
+        - モバイルゲートウェイ: r/mobile_gateway.md
         - SIM: r/sim.md
     - SMS:
       - データソース:
@@ -139,14 +139,14 @@ nav:
         - エンハンスドデータベース: r/enhanced_db.md
     - ウェブアクセラレータ:
         - データソース:
-            - サイト情報: d/webaccel.md
+          - サイト情報: d/webaccel.md
         - リソース:
-            - 証明書: r/webaccel_certificate.md
+          - 証明書: r/webaccel_certificate.md
     - AppRun:
         - データソース:
-            - アプリケーション: d/apprun_application.md
+          - アプリケーション: d/apprun_application.md
         - リソース:
-            - アプリケーション: r/apprun_application.md
+          - アプリケーション: r/apprun_application.md
     - その他:
       - データソース:
         - アイコン: d/icon.md
