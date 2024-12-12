@@ -142,6 +142,11 @@ nav:
             - サイト情報: d/webaccel.md
         - リソース:
             - 証明書: r/webaccel_certificate.md
+    - AppRun:
+        - データソース:
+            - アプリケーション: d/apprun_application.md
+        - リソース:
+            - アプリケーション: r/apprun_application.md
     - その他:
       - データソース:
         - アイコン: d/icon.md
