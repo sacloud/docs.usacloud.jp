@@ -42,6 +42,7 @@ data "sakuracloud_disk" "foobar" {
 * `id` - ID
 * `connector` - ディスク接続インターフェース。 次のいずれかとなる［`virtio`/`ide`]
 * `description` - 説明
+* `encryption_algorithm` - ディスク暗号化アルゴリズム。 次のいずれかとなる［`none`/`aes256_xts`]
 * `icon_id` - アイコンID
 * `name` - 名称
 * `plan` - プラン。 次のいずれかとなる［`ssd`/`hdd`]

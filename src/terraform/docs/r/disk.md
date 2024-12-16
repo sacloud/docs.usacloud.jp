@@ -14,6 +14,7 @@ resource "sakuracloud_disk" "foobar" {
   size              = 20
   source_archive_id = data.sakuracloud_archive.ubuntu.id
   #distant_from      = ["111111111111"]
+  encryption_algorithm = "aes256_xts"
 
   description = "description"
   tags        = ["tag1", "tag2"]
@@ -39,6 +40,7 @@ resource "sakuracloud_disk" "foobar" {
 * `plan` - (Optional) ディスクプラン / 次のいずれかを指定［`ssd`/`hdd`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`ssd`
 * `size` - (Optional) サイズ(GiB単位) / この値を変更するとリソースの再作成が行われる / デフォルト:`20`
 * `distant_from` - (Optional) 別のストレージに格納する対象となるディスクのIDのリスト / この値を変更するとリソースの再作成が行われる
+* `encryption_algorithm` - (Optional) ディスク暗号化アルゴリズム / 次のいずれかを指定［`none`/`aes256_xts`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`none`
 
 !!! Note
     1TB以上のサイズを指定する場合、`size`に1024の倍数を指定してください。  
