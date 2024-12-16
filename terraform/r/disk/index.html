@@ -4333,6 +4333,7 @@
 <span class="w">  </span><span class="na">size</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="m">20</span>
 <span class="w">  </span><span class="na">source_archive_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_archive.ubuntu.id</span>
 <span class="c1">  #distant_from      = [&quot;111111111111&quot;]</span>
+<span class="w">  </span><span class="na">encryption_algorithm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;aes256_xts&quot;</span>
 
 <span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
 <span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
@@ -4356,6 +4357,7 @@
 <li><code>plan</code> - (Optional) ディスクプラン / 次のいずれかを指定［<code>ssd</code>/<code>hdd</code>]/ この値を変更するとリソースの再作成が行われる / デフォルト:<code>ssd</code></li>
 <li><code>size</code> - (Optional) サイズ(GiB単位) / この値を変更するとリソースの再作成が行われる / デフォルト:<code>20</code></li>
 <li><code>distant_from</code> - (Optional) 別のストレージに格納する対象となるディスクのIDのリスト / この値を変更するとリソースの再作成が行われる</li>
+<li><code>encryption_algorithm</code> - (Optional) ディスク暗号化アルゴリズム / 次のいずれかを指定［<code>none</code>/<code>aes256_xts</code>]/ この値を変更するとリソースの再作成が行われる / デフォルト:<code>none</code></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
