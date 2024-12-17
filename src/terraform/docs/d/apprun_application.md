@@ -9,6 +9,15 @@ data "sakuracloud_apprun_application" "foobar" {
   name = "foobar"
 }
 ```
+
+<div class="editor">
+
+<h2><a href="https://zouen-alpha.usacloud.jp/#data/apprun_application" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
+
+<iframe src="https://zouen-alpha.usacloud.jp/#data/apprun_application"></iframe>
+
+</div>
+
 ## Argument Reference
 
 * `name` - (Required) アプリケーション名
