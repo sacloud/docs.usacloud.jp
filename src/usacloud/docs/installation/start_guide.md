@@ -142,7 +142,7 @@ $ export SAKURACLOUD_ACCESS_TOKEN_SECRET=アクセスシークレット
 $ export SAKURACLOUD_ZONE=ゾーン
 ```
 
-##### 環境変数での指定
+##### コマンドラインオプションでの指定
 
 コマンド実行時にコマンドラインオプションで指定することが出来ます。
 
