@@ -1089,24 +1089,24 @@ EXCP<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </s
 <p>カスタムポリシーを記述した <code>.rego</code> ファイルを用意します。ファイルはTerraformコードと同じリポジトリ内で管理することを想定しています。</p>
 <p>以下は <code>/custom-policy/sakuracloud_disk_too_small.rego</code> というファイルを作成した例です。</p>
 <p>この例では、ディスクサイズが40GB未満の場合にエラーを返すカスタムポリシーを定義しています。</p>
-<div class="highlight"><pre><span></span><code>package main
+<div class="highlight"><pre><span></span><code><span class="k">package</span><span class="w"> </span><span class="n">main</span>
 
-import data.helpers.has_field
-import rego.v1
+<span class="k">import</span><span class="w"> </span><span class="k">data</span><span class="p">.</span><span class="n">helpers</span><span class="p">.</span><span class="n">has_field</span>
+<span class="k">import</span><span class="w"> </span><span class="n">rego</span><span class="p">.</span><span class="n">v1</span>
 
-deny_sakuracloud_disk_too_small contains msg if {
-    resource := &quot;sakuracloud_disk&quot;
-    rule := &quot;sakuracloud_disk_too_small&quot;
+<span class="n">deny_sakuracloud_disk_too_small</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">resource</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s2">&quot;sakuracloud_disk&quot;</span>
+<span class="w">    </span><span class="n">rule</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s2">&quot;sakuracloud_disk_too_small&quot;</span>
 
-    some name
-    disk := input.resource[resource][name]
-    disk.size &lt; 40
+<span class="w">    </span><span class="k">some</span><span class="w"> </span><span class="n">name</span>
+<span class="w">    </span><span class="n">disk</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">resource</span><span class="p">[</span><span class="n">resource</span><span class="p">][</span><span class="n">name</span><span class="p">]</span>
+<span class="w">    </span><span class="n">disk</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">40</span>
 
-    msg := sprintf(
-        &quot;%s\nDisk is too small %s.%s\n&quot;,
-        [rule, resource, name],
-    )
-}
+<span class="w">    </span><span class="n">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">sprintf</span><span class="p">(</span>
+<span class="w">        </span><span class="s2">&quot;%s\nDisk is too small %s.%s\n&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="n">rule</span><span class="p">,</span><span class="w"> </span><span class="n">resource</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">],</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="2-conftest">2. conftestコマンドでカスタムポリシーを実行</h3>
 <p>以下のように <code>conftest test</code> コマンドの <a href="https://www.conftest.dev/options/#-policy">--policy</a> オプションを利用して、デフォルトのポリシーに加えてカスタムポリシーも適用します。</p>
