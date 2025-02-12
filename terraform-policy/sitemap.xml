@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.usacloud.jp/terraform-policy/</loc>
-         <lastmod>2025-01-09</lastmod>
+         <lastmod>2025-02-12</lastmod>
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform-policy/rules/sakuracloud_disk/not_encrypted/</loc>
-         <lastmod>2025-01-09</lastmod>
+         <lastmod>2025-02-12</lastmod>
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform-policy/rules/sakuracloud_enhanced_db/unrestricted_source_networks/</loc>
-         <lastmod>2025-01-09</lastmod>
+         <lastmod>2025-02-12</lastmod>
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform-policy/rules/sakuracloud_load_balancer/http_not_enabled/</loc>
-         <lastmod>2025-01-09</lastmod>
+         <lastmod>2025-02-12</lastmod>
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform-policy/rules/sakuracloud_proxylb/no_https_redirect/</loc>
-         <lastmod>2025-01-09</lastmod>
+         <lastmod>2025-02-12</lastmod>
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform-policy/rules/sakuracloud_proxylb/unspecified_syslog_host/</loc>
-         <lastmod>2025-01-09</lastmod>
+         <lastmod>2025-02-12</lastmod>
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform-policy/rules/sakuracloud_server/pw_auth_enabled_with_password/</loc>
-         <lastmod>2025-01-09</lastmod>
+         <lastmod>2025-02-12</lastmod>
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform-policy/rules/sakuracloud_vpc_router/internet_connection_without_firewall/</loc>
-         <lastmod>2025-01-09</lastmod>
+         <lastmod>2025-02-12</lastmod>
     </url>
     <url>
          <loc>https://docs.usacloud.jp/terraform-policy/rules/sakuracloud_vpc_router/unspecified_syslog_host/</loc>
-         <lastmod>2025-01-09</lastmod>
+         <lastmod>2025-02-12</lastmod>
     </url>
 </urlset>
