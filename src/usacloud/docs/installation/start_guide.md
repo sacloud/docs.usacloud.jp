@@ -67,7 +67,7 @@ docker run -it --rm \
 
     $ usacloud completion zsh > "${fpath[1]}/_usacloud"
 
-##### Fish:
+##### Fish
 
     $ usacloud completion fish > ~/.config/fish/completions/usacloud.fish
 
