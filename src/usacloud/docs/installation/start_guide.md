@@ -10,6 +10,12 @@
 curl -fsSL https://github.com/sacloud/usacloud/releases/latest/download/install.sh | bash
 ```
 
+#### macOS/Linux (Homebrew)
+
+```bash
+brew tap sacloud/usacloud; brew install usacloud
+```
+
 ---
 
 #### Windows(`chocolatey`)
