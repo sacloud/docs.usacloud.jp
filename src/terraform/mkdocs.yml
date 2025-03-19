@@ -143,6 +143,7 @@ nav:
           - サイト情報: d/webaccel.md
         - リソース:
           - 証明書: r/webaccel_certificate.md
+          - 'アクセス制御リスト(ACL)': r/webaccel_acl.md
     - AppRun:
         - データソース:
           - アプリケーション: d/apprun_application.md
