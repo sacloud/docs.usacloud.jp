@@ -132,7 +132,9 @@ timeoutsブロックで[カスタムタイムアウト](https://www.terraform.io
 ## Attribute Reference
 
 * `id` - AppRun アプリケーションのID
-
+* `public_url` - 公開URL
+* `status` - アプリケーションステータス
+ 
 ## Import
 
 IDを指定する事でインポート可能です。
