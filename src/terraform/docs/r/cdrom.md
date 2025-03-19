@@ -28,7 +28,7 @@ resource "sakuracloud_cdrom" "foobar" {
 * `content_file_name` - (Optional) `content`を指定した場合の作成するファイル名 /[`iso_image_file`]と同時に指定できません /  デフォルト:`config`
 * `iso_image_file` - (Optional) アップロードするファイルのパス /[`content`]と同時に指定できません
 * `hash` - (Optional) コンテンツをBASE64エンコードしたものから算出されたMD5チェックサム
-* `size` - (Optional) サイズ(GiB単位) / 次のいずれかを指定［`5`/`10`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`5`
+* `size` - (Optional) サイズ(GiB単位) / 次のいずれかを指定［`5`/`10`/`20`]/ この値を変更するとリソースの再作成が行われる / デフォルト:`5`
 
 #### Common Arguments
 
