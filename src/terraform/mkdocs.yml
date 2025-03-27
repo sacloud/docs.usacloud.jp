@@ -109,11 +109,13 @@ nav:
         - VPCルータ: r/vpc_router.md
     - グローバル:
       - データソース:
+        - コンテナレジストリ: d/container_registry.md
         - DNS: d/dns.md
         - GSLB: d/gslb.md
         - エンハンスドロードバランサ: d/proxylb.md
         - シンプル監視: d/simple_monitor.md
       - リソース:
+        - コンテナレジストリ: r/container_registry.md
         - DNS: r/dns.md
         - DNSレコード: r/dns_record.md
         - GSLB: r/gslb.md
@@ -132,17 +134,16 @@ nav:
     - Lab:
       - データソース:
         - マネージドPKI: d/certificate_authority.md
-        - コンテナレジストリ: d/container_registry.md
         - エンハンスドデータベース: d/enhanced_db.md
       - リソース:
         - マネージドPKI: r/certificate_authority.md
-        - コンテナレジストリ: r/container_registry.md
         - エンハンスドデータベース: r/enhanced_db.md
     - ウェブアクセラレータ:
         - データソース:
           - サイト情報: d/webaccel.md
         - リソース:
           - 証明書: r/webaccel_certificate.md
+          - 'アクセス制御リスト(ACL)': r/webaccel_acl.md
     - AppRun:
         - データソース:
           - アプリケーション: d/apprun_application.md
