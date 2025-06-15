@@ -142,6 +142,8 @@ nav:
         - データソース:
           - サイト情報: d/webaccel.md
         - リソース:
+          - サイト: r/webaccel.md
+          - サイトの有効化状態: r/webaccel_activation.md
           - 証明書: r/webaccel_certificate.md
           - 'アクセス制御リスト(ACL)': r/webaccel_acl.md
     - AppRun:
