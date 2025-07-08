@@ -18,7 +18,7 @@
         <link rel="prev" href="../../r/enhanced_db/">
       
       
-        <link rel="next" href="../../r/webaccel_certificate/">
+        <link rel="next" href="../../r/webaccel/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -4002,6 +4002,52 @@
   
   
     <li class="md-nav__item">
+      <a href="../../r/webaccel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    サイト
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../r/webaccel_activation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    サイトの有効化状態
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../r/webaccel_certificate/" class="md-nav__link">
         
   
@@ -4659,20 +4705,34 @@
 </ul>
 <h2 id="attribute-reference">Attribute Reference</h2>
 <ul>
-<li><code>id</code> - ID</li>
-<li><code>domain_type</code> </li>
-<li><code>has_certificate</code> </li>
-<li><code>host_header</code> </li>
-<li><code>origin</code> </li>
-<li><code>site_id</code></li>
-<li><code>status</code> </li>
-<li>
-<p><code>subdomain</code> </p>
-</li>
-<li>
-<p><code>cname_record_value</code></p>
-</li>
-<li><code>txt_record_value</code> </li>
+<li><code>id</code> - ウェブアクセラレーターのサイトID</li>
+<li><code>cname_record_value</code> - DNSに設定できるCNAMEレコードの値</li>
+<li><code>subdomain</code> - サイトのFQDN</li>
+<li><code>txt_record_value</code> - ドメインの所有権を確認するために利用できるTXTレコードの値</li>
+<li><code>request_protocol</code> - (Required) サイトに対するリクエストプロトコル </li>
+<li><code>vary_support</code> - Varyヘッダーの有効・無効を表すフラグ</li>
+<li><code>default_cache_ttl</code> - コンテンツキャッシュのデフォルトTTL秒数</li>
+<li><code>normalize_ae</code> - Accept-Encoding正規化の対象となる圧縮アルゴリズム</li>
+</ul>
+<hr />
+<p><code>origin_parameters</code>ブロックは以下の属性値をサポートする。</p>
+<ul>
+<li><code>type</code> - オリジン種別</li>
+<li><code>origin</code> - オリジンのホスト名もしくはIPv4アドレス</li>
+<li><code>protocol</code> - オリジン接続に用いるプロトコル</li>
+<li><code>host_header</code> - オリジン接続に用いるHTTPホストヘッダー</li>
+<li><code>s3_endpoint</code> - S3エンドポイントのホスト名</li>
+<li><code>s3_region</code> - S3リージョン</li>
+<li><code>s3_bucket_name</code> - オリジンバケット名</li>
+<li><code>s3_access_key_id</code> - バケットへの接続で利用するS3アクセスキーID</li>
+<li><code>s3_secret_access_key</code> - バケットへの接続で利用するS3シークレットアクセスキー</li>
+<li><code>s3_doc_index</code> - ドキュメントインデクスの有効・無効を表すフラグ</li>
+</ul>
+<hr />
+<p><code>logging</code>ブロックは以下の属性値をサポートする。</p>
+<ul>
+<li><code>s3_bucket_name</code> - ログ保管先のバケット名</li>
+<li><code>enabled</code> - アクセスログ取得の有効・無効を表すフラグ</li>
 </ul>
 
 
