@@ -110,7 +110,7 @@ ACPIが利用できないサーバの場合`true`に設定する
 * `netmask` - (Optional) サブネットマスク長
 * `note_ids` - (Optional/Deprecated) スタートアップスクリプトIDのリスト  
 * `note` - (Optional) スタートアップスクリプト。詳細は[noteブロック](#note)を参照
-* `password` - (Optional) 管理ユーザーのパスワード / `8`-`64`文字で指定
+* `password` - (Optional) 管理ユーザーのパスワード / `12`-`128`文字で指定
 * `ssh_key_ids` - (Optional) SSH公開鍵IDのリスト
 * `ssh_keys` - (Optional) SSH公開鍵IDのリスト
 
