@@ -28,9 +28,9 @@ resource "sakuracloud_webaccel_activation" "site_status" {
 ## Argument Reference
 
 * `site_id` - (Required) 対象のサイトID
-* `enabled` - (Required) サイトを有効化するかどうか
+* `enabled` - (Required) サイトを有効化するフラグ
 
 ## Attribute Reference
 
 * `site_id` - 対象のサイトID
-* `enabled` - サイトが有効であるかどうか
+* `enabled` - サイトの有効化状態を表すフラグ

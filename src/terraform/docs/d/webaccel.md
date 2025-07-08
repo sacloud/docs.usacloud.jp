@@ -34,7 +34,7 @@ data sakuracloud_webaccel "site" {
 * `subdomain` - サイトのFQDN
 * `txt_record_value` - ドメインの所有権を確認するために利用できるTXTレコードの値
 * `request_protocol` - (Required) サイトに対するリクエストプロトコル 
-* `vary_support` - サイトがVaryヘッダーをサポートするかどうか
+* `vary_support` - Varyヘッダーの有効・無効を表すフラグ
 * `default_cache_ttl` - コンテンツキャッシュのデフォルトTTL秒数
 * `normalize_ae` - Accept-Encoding正規化の対象となる圧縮アルゴリズム
 
@@ -51,7 +51,7 @@ data sakuracloud_webaccel "site" {
 * `s3_bucket_name` - オリジンバケット名
 * `s3_access_key_id` - バケットへの接続で利用するS3アクセスキーID
 * `s3_secret_access_key` - バケットへの接続で利用するS3シークレットアクセスキー
-* `s3_doc_index` - ドキュメントインデクスを有効化するかどうか
+* `s3_doc_index` - ドキュメントインデクスの有効・無効を表すフラグ
 
 
 ---
@@ -59,4 +59,4 @@ data sakuracloud_webaccel "site" {
 `logging`ブロックは以下の属性値をサポートする。
 
 * `s3_bucket_name` - ログ保管先のバケット名
-* `enabled` - アクセスログ取得が有効か否か
+* `enabled` - アクセスログ取得の有効・無効を表すフラグ

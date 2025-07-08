@@ -44,12 +44,12 @@ resource "sakuracloud_webaccel" "foobar" {
 ## Argument Reference
 
 * `name` - (Required) サイト名
-* `domain_type` - (Required) サイトのドメイン種別 / 次のいずれかを指定 [`own_domain`/`subdomain`]
-* `request_protocol` - (Required) サイトに対するリクエストプロトコル / 次のいずれかを指定 [`http+https`/`https`/`https-redirect`]
+* `domain_type` - (Required) サイトのドメイン種別 / 次のいずれかを指定［`own_domain`/`subdomain`］
+* `request_protocol` - (Required) サイトに対するリクエストプロトコル / 次のいずれかを指定［`http+https`/`https`/`https-redirect`］
 * `onetime_url_secrets` - (Optional) ワンタイムURLシークレットの一覧 / 3つ以上のシークレットは指定不可
-* `vary_support` - (Optional) サイトがVaryヘッダーをサポートするかどうか
+* `vary_support` - (Optional) サイトでVaryヘッダーを有効にするフラグ / デフォルト: `false`
 * `default_cache_ttl` - (Optional) コンテンツキャッシュのデフォルトTTL秒数
-* `normalize_ae` - Accept-Encoding正規化の対象となる圧縮アルゴリズム / 次のいずれかを指定 [`gzip`/`br+gzip`]
+* `normalize_ae` - Accept-Encoding正規化の対象となる圧縮アルゴリズム / 次のいずれかを指定［`gzip`/`br+gzip`］
 
 ---
 
@@ -57,12 +57,12 @@ resource "sakuracloud_webaccel" "foobar" {
 
 #### Core Origin Arguments
 
-* `type` - (Required) オリジン種別 / 次のいずれかを指定 [`web`/`bucket`]
+* `type` - (Required) オリジン種別 / 次のいずれかを指定［`web`/`bucket`］
 
 #### Web Origin Arguments (`web`オリジンでのみ指定可)
 
 * `origin` - (Required) オリジンのホスト名もしくはIPv4アドレス
-* `protocol` - (Required) オリジン接続に用いるプロトコル / 次のいずれかを指定 [`http`/`https`]
+* `protocol` - (Required) オリジン接続に用いるプロトコル / 次のいずれかを指定［`http`/`https`］
 * `host_header` - (Optional) オリジン接続に用いるHTTPホストヘッダー
 
 #### Bucket Origin Arguments (`bucket`オリジンでのみ指定可)
@@ -72,7 +72,7 @@ resource "sakuracloud_webaccel" "foobar" {
 * `s3_bucket_name` - オリジンバケット名 / バケットプレフィクスは指定できない
 * `s3_access_key_id` - バケットへの接続で利用するS3アクセスキーID
 * `s3_secret_access_key` - バケットへの接続で利用するS3シークレットアクセスキー
-* `s3_doc_index` - (Optional) ドキュメントインデクスを有効化するかどうか / デフォルト: `false`
+* `s3_doc_index` - (Optional) ドキュメントインデクスを有効化するフラグ / デフォルト: `false`
 
 ---
 
@@ -81,7 +81,7 @@ resource "sakuracloud_webaccel" "foobar" {
 * `s3_bucket_name` - ログ保管先のバケット名 / さくらのオブジェクトストレージのバケットを指定する必要がある
 * `s3_access_key_id` - バケットへの接続で利用するS3アクセスキーID
 * `s3_secret_access_key` - バケットへの接続で利用するS3シークレットアクセスキー
-* `enabled` - アクセスログを有効化するか否か / デフォルト: `false`
+* `enabled` - アクセスログを有効化するフラグ / デフォルト: `false`
 
 ## Attribute Reference
 
@@ -90,7 +90,7 @@ resource "sakuracloud_webaccel" "foobar" {
 * `subdomain` - サイトのFQDN
 * `txt_record_value` - ドメインの所有権を確認するために利用できるTXTレコードの値
 * `request_protocol` - (Required) サイトに対するリクエストプロトコル 
-* `vary_support` - サイトがVaryヘッダーをサポートするかどうか
+* `vary_support` - (Optional) Varyヘッダーの有効・無効を表すフラグ
 * `default_cache_ttl` - コンテンツキャッシュのデフォルトTTL秒数
 * `normalize_ae` - Accept-Encoding正規化の対象となる圧縮アルゴリズム
 
@@ -107,7 +107,7 @@ resource "sakuracloud_webaccel" "foobar" {
 * `s3_bucket_name` - オリジンバケット名
 * `s3_access_key_id` - バケットへの接続で利用するS3アクセスキーID
 * `s3_secret_access_key` - バケットへの接続で利用するS3シークレットアクセスキー
-* `s3_doc_index` - ドキュメントインデクスを有効化するかどうか
+* `s3_doc_index` - ドキュメントインデクスの有効・無効を表すフラグ
 
 
 ---
@@ -115,4 +115,4 @@ resource "sakuracloud_webaccel" "foobar" {
 `logging`ブロックは以下の属性値をサポートする。
 
 * `s3_bucket_name` - ログ保管先のバケット名
-* `enabled` - アクセスログ取得が有効か否か
+* `enabled` - アクセスログ取得の有効・無効を表すフラグ
