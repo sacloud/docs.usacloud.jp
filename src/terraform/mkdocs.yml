@@ -114,6 +114,7 @@ nav:
         - GSLB: d/gslb.md
         - エンハンスドロードバランサ: d/proxylb.md
         - シンプル監視: d/simple_monitor.md
+        - シンプルMQ: d/simple_mq.md
       - リソース:
         - コンテナレジストリ: r/container_registry.md
         - DNS: r/dns.md
@@ -122,6 +123,7 @@ nav:
         - エンハンスドロードバランサ: r/proxylb.md
         - エンハンスドロードバランサ(ACME設定): r/proxylb_acme.md
         - シンプル監視: r/simple_monitor.md
+        - シンプルMQ: r/simple_mq.md
     - セキュアモバイル:
       - リソース:
         - モバイルゲートウェイ: r/mobile_gateway.md
