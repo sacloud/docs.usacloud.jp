@@ -27,8 +27,9 @@ resource sakuracloud_webaccel_certificate "foobar" {
 ## Argument Reference
 
 * `site_id` - (Required) サイトのID
-* `private_key` - (Required) 秘密鍵
-* `certificate_chain` - (Required) 公開鍵
+* `private_key` - (Optional) 秘密鍵。`certificate_chain`と共に使用する。`lets_encrypt`と同時には指定できない。
+* `certificate_chain` - (Optional) サイトの証明書チェーン。`private_key`と共に使用する。`lets_encrypt`と同時には指定できない。
+* `lets_encrypt` - (Optional) Let's Encrypt証明書の自動更新を有効化するフラグ。`true`以外の値をサポートしない。`private_key`または`certificate_chain`とは同時に指定できない。
 
 ## Attribute Reference
 
