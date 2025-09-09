@@ -37,6 +37,9 @@ resources:
     min_size: 5   # 最小インスタンス数
     max_size: 20  # 最大インスタンス数
     
+    auto_healing:
+      enabled: true #台数維持機能の有効化
+      
     template: # 各サーバのテンプレート
       plan:
         core: 2
