@@ -281,6 +281,10 @@ setup_grace_period: <number>
 # 強制シャットダウンを行うか(ACPIが利用できないサーバの場合trueにする)
 shutdown_force: <bool>
 
+# 台数維持機能(省略時はenabled: false)
+auto_healing:
+  enabled: <bool>
+
 # グループ内のサーバのテンプレート
 template:
   use_group_tag: <bool> # @groupタグによるホスト分散を行うか

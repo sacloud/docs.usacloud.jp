@@ -19,10 +19,10 @@ cronでの実行や動作確認などで利用します。
 ```shell
 $ autoscaler inputs direct -h
 
-Send Up/Down request directly to Core server
+Send Up/Down/Keep request directly to Core server
 
 Usage:
-  autoscaler inputs direct {up | down} [flags]...
+  autoscaler inputs direct {up | down | keep} [flags]...
 
 Flags:
       --config string               Filepath to Inputs additional configuration file
