@@ -52,6 +52,14 @@ resource "sakuracloud_apprun_application" "foobar" {
     version_index = 0
     percent       = 100
   }
+  
+  packet_filter {
+	enabled = true
+	settings {
+	  from_ip               = "192.0.2.0"
+      from_ip_prefix_length = "24"
+	}
+  }  
 }
 ```
 
@@ -72,6 +80,7 @@ resource "sakuracloud_apprun_application" "foobar" {
 * `max_scale` - (Required) アプリケーション全体の最大スケール数
 * `components` - (Required) アプリケーションのコンポーネント情報
 * `traffics` - (Optional) アプリケーションのトラフィック情報
+* `packet_filter` - (Optional) パケットフィルタ
 
 #### `components` ブロック
 
@@ -120,6 +129,16 @@ resource "sakuracloud_apprun_application" "foobar" {
 
 * `version_index` - (Required) アプリケーションバージョンのインデックス
 * `percent` - (Required) トラフィック分散の割合
+
+#### `packet_filter` ブロック
+
+* `enabled` - (Required) パケットフィルタの有効/無効フラグ
+* `settings` - (Required) パケットフィルタのルールリスト
+
+#### `settings` ブロック
+
+* `from_ip` - (Required) 許可する送信元IPアドレス
+* `from_ip_prefix_length` - (Required) 許可する送信元IPアドレスのプレフィックス長
 
 ### Timeouts
 

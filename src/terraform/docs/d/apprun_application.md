@@ -32,6 +32,7 @@ data "sakuracloud_apprun_application" "foobar" {
 * `components` - アプリケーションのコンポーネント情報
 * `public_url` - 公開URL
 * `status` - アプリケーションステータス
+* `packet_filter` - パケットフィルタ
 
 #### `components` ブロック
 
@@ -71,3 +72,13 @@ data "sakuracloud_apprun_application" "foobar" {
 
 * `name` - ヘッダーフィールド名
 * `value` - ヘッダーフィールド値
+
+#### `packet_filter` ブロック
+
+* `enabled` - パケットフィルタの有効/無効フラグ
+* `settings` - パケットフィルタのルールリスト
+
+#### `settings` ブロック
+
+* `from_ip` - 許可する送信元IPアドレス
+* `from_ip_prefix_length` - 許可する送信元IPアドレスのプレフィックス長
