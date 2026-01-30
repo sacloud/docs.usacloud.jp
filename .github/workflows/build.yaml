@@ -19,11 +19,6 @@ jobs:
         with:
           working-directory: './src/terraform'
 
-      - name: Build a document with mkdocs - src/terraform-v1
-        uses: ./.github/actions/mkdocs
-        with:
-          working-directory: './src/terraform-v1'
-
       - name: Build a document with mkdocs - src/terraform-policy
         uses: ./.github/actions/mkdocs
         with:
@@ -52,7 +47,6 @@ jobs:
       - run: |
           mkdir ./public; cp -r ./src/top/site/* public/
           mkdir ./public/terraform; cp -r ./src/terraform/site/* ./public/terraform
-          mkdir ./public/terraform-v1; cp -r ./src/terraform-v1/site/* ./public/terraform-v1
           mkdir ./public/terraform-policy; cp -r ./src/terraform-policy/site/* ./public/terraform-policy
           mkdir ./public/usacloud; cp -r ./src/usacloud/site/* ./public/usacloud
           mkdir ./public/autoscaler; cp -r ./src/autoscaler/site/* ./public/autoscaler

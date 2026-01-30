@@ -2,7 +2,6 @@ default: preview
 
 TOP_DIR := src/top
 USACLOUD_DIR := src/usacloud
-TERRAFORM_V1_DIR := src/terraform-v1
 TERRAFORM_V2_DIR := src/terraform
 TERRAFORM_POLICY_DIR := src/terraform-policy
 AUTOSCALER_DIR := src/autoscaler
@@ -46,10 +45,6 @@ lint:
 .PHONY: preview-top
 preview-top:
 	@(cd $(TOP_DIR); make preview)
-
-.PHONY: preview-terraform-v1
-preview-terraform-v1:
-	@(cd $(TERRAFORM_V1_DIR); make preview)
 
 .PHONY: preview-terraform
 preview-terraform:
