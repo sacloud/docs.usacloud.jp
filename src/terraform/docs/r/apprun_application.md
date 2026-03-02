@@ -11,8 +11,8 @@ resource "sakuracloud_apprun_application" "foobar" {
   max_scale       = 1
   components {
     name       = "foobar"
-    max_cpu    = "0.1"
-    max_memory = "256Mi"
+    max_cpu    = "0.5"
+    max_memory = "1GiB"
     deploy_source {
       container_registry {
         image    = "foorbar.sakuracr.jp/foorbar:latest"
@@ -85,8 +85,8 @@ resource "sakuracloud_apprun_application" "foobar" {
 #### `components` ブロック
 
 * `name` - (Required) コンポーネント名
-* `max_cpu` - (Required) コンポーネントの最大CPU数 / 次のいずれかを指定［`0.1`/`0.2`/`0.3`/`0.4`/`0.5`/`0.6`/`0.7`/`0.8`/`0.9`/`1`］
-* `max_memory` - (Required) コンポーネントの最大メモリ / 次のいずれかを指定［`256Mi`/`512Mi`/`1Gi`/`2Gi`］
+* `max_cpu` - (Required) コンポーネントの最大CPU数 / 次のいずれかを指定［`0.5`/`1`/`2`］
+* `max_memory` - (Required) コンポーネントの最大メモリ / 次のいずれかを指定［`1GiB`/`2GiB`/`4GiB`］
 * `deploy_source` - (Required) コンポーネントを構成するソース
 * `env` - (Optional) コンポーネントに渡す環境変数
 * `probe` - (Optional) コンポーネントのプローブ設定
