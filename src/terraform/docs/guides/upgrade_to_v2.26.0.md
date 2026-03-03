@@ -63,7 +63,7 @@ resource "sakuracloud_apprun_application" "foobar" {
   components {
     name       = "foobar"
     max_cpu    = "0.5"
-    max_memory = "1GiB"
+    max_memory = "1Gi"
     deploy_source {
       container_registry {
         image    = "foorbar.sakuracr.jp/foorbar:latest"
