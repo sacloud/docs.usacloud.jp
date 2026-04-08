@@ -1,5 +1,3 @@
-![usacloud_logo.png](images/usacloud_logo_h.png)
-
 # usacloud日本語ドキュメント
 
 [`usacloud`](https://github.com/sacloud/usacloud)は[さくらのクラウド](http://cloud.sakura.ad.jp/index.html)用の公式CLIクライアントです。

@@ -2,8 +2,6 @@
 
 ## 概要
 
-![logo.png](images/logo.svg)
-
 `sacloud/autoscaler`(オートスケーラー)は、さくらのクラウド上のリソースのオートスケールを実現するためのツール群です。
 
 
@@ -13,8 +11,6 @@
     v1.0に達するまではコンフィギュレーションなどについて互換性のない形で変更される可能性があることにご注意ください。
 
 ## コンセプト/アーキテクチャ
-
-![architecture](images/architecture.png)
 
 sacloud/autoscalerはGrafanaやPrometheusといった監視ツールと連携し、さくらのクラウド上のリソースの水平スケールや垂直スケールを行います。   
   
