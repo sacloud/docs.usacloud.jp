@@ -2,17 +2,7 @@
 
 ---
 
-さくらのクラウド ユーザーコミュニティ[`sacloud`](https://github.com/sacloud)が提供するOSSプロダクトのドキュメント
-
-## API関連
-
-#### [libsacloud](https://github.com/sacloud/libsacloud)
-
-Go言語向けのさくらのクラウドAPIライブラリ
-
-#### [schema](https://github.com/sacloud/schema)
-
-さくらのクラウドAPI v1.1に対するOpen API v3での定義(開発中)
+さくらのクラウドが開発・メンテナンスしているオープンソースプロダクトのドキュメント
 
 ## CLI/関連ツール
 
@@ -22,7 +12,11 @@ Go言語向けのさくらのクラウドAPIライブラリ
 
 ## HashiCorpプロダクト関連
 
-#### [Terraform](./terraform/)
+#### [Terraform Provider for さくらのクラウド(v3)](https://github.com/sacloud/terraform-provider-sakura)
+
+Terraformのさくらのクラウド向けProviderプラグイン(v3)
+
+#### [Terraform Provider for さくらのクラウド(v2)](./terraform/)
 
 Terraformのさくらのクラウド向けProviderプラグイン(v2)
 
@@ -34,10 +28,6 @@ Terraformのさくらのクラウド向けProviderプラグインを利用して
 
 Packerのさくらのクラウド向けBuilderプラグイン
 
-#### [Vagrant](https://github.com/sacloud/vagrant-sakura)
-
-Vagrantのさくらのクラウド向けProviderプラグイン
-
 ## 監視/運用ツール
 
 #### [AutoScaler](./autoscaler/)
@@ -47,8 +37,3 @@ Vagrantのさくらのクラウド向けProviderプラグイン
 #### [Prometheus](./prometheus/)
 
 Prometheusでさくらのクラウド上のリソースの情報を扱うためのExporter
-
-#### [Tips](https://github.com/sacloud/tips)
-
-さくらのクラウドAPIを利用する際のTips集
-
