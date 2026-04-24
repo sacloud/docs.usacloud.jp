@@ -58,13 +58,6 @@ resource "sakuracloud_packet_filter" "foobar" {
     その場合はパケットフィルタルールリソース(`sakuracloud_packet_filter_rules`)をご利用ください。
 
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/packet_filter" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/packet_filter"></iframe>
-
-</div>
 
 
 ## Argument Reference

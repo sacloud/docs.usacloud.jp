@@ -139,13 +139,6 @@ resource "sakuracloud_certificate_authority" "foobar" {
 
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/certificate_authority" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/certificate_authority"></iframe>
-
-</div>
 
 
 ## Argument Reference

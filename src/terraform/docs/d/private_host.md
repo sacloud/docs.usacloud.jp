@@ -12,13 +12,6 @@ data "sakuracloud_private_host" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#data/private_host" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#data/private_host"></iframe>
-
-</div>
 
 
 ## Argument Reference

@@ -22,13 +22,6 @@ data "sakuracloud_proxylb" "foobar" {
     このリソースを利用する場合、エンハンスドロードバランサリソース(`sakuracloud_proxylb`)の`certificate`ブロックの値は上書きされます。  
     両者の同時指定はできません。
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/proxylb_acme" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/proxylb_acme"></iframe>
-
-</div>
 
 ## Argument Reference
 

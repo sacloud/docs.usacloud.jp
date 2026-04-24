@@ -46,13 +46,6 @@ resource "sakuracloud_disk" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/server" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/server"></iframe>
-
-</div>
 
 
 ## Argument Reference

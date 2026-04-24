@@ -49,13 +49,6 @@ data "sakuracloud_local_router" "peer" {
 
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/local_router" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/local_router"></iframe>
-
-</div>
 
 ## Argument Reference
 

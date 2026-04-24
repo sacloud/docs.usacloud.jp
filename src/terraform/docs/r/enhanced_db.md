@@ -18,13 +18,6 @@ resource "sakuracloud_enhanced_db" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/enhanced_db" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/enhanced_db"></iframe>
-
-</div>
 
 ## Argument Reference
 

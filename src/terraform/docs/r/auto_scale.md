@@ -39,13 +39,6 @@ resource "sakuracloud_server" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/auto_scale" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/auto_scale"></iframe>
-
-</div>
 
 
 ## Argument Reference

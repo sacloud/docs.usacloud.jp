@@ -12,13 +12,6 @@ data "sakuracloud_database" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#data/database" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#data/database"></iframe>
-
-</div>
 
 ## Argument Reference
 

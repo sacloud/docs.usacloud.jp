@@ -16,13 +16,6 @@ resource sakuracloud_webaccel_certificate "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/webaccel_certificate" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/webaccel_certificate"></iframe>
-
-</div>
 
 ## Argument Reference
 

@@ -14,13 +14,6 @@ data "sakuracloud_zone" "is1a" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#data/zone" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#data/zone"></iframe>
-
-</div>
 
 
 ## Argument Reference

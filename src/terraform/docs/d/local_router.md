@@ -12,13 +12,6 @@ data "sakuracloud_local_router" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#data/local_router" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#data/local_router"></iframe>
-
-</div>
 
 
 ## Argument Reference
