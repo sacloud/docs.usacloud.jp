@@ -12,13 +12,6 @@ data "sakuracloud_esme" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#data/esme" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#data/esme"></iframe>
-
-</div>
 
 ## Argument Reference
 

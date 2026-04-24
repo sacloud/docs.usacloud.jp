@@ -12,13 +12,6 @@ data "sakuracloud_load_balancer" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#data/load_balancer" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#data/load_balancer"></iframe>
-
-</div>
 
 
 ## Argument Reference

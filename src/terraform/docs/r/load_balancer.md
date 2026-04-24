@@ -45,13 +45,6 @@ resource "sakuracloud_switch" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/load_balancer" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/load_balancer"></iframe>
-
-</div>
 
 
 ## Argument Reference

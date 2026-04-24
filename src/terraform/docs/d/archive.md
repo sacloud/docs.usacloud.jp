@@ -10,13 +10,6 @@ data "sakuracloud_archive" "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#data/archive" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#data/archive"></iframe>
-
-</div>
 
 ## Argument Reference
 

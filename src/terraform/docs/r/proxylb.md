@@ -62,13 +62,6 @@ resource sakuracloud_server "foobar" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/proxylb" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/proxylb"></iframe>
-
-</div>
 
 
 ## Argument Reference

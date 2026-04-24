@@ -20,13 +20,6 @@ data sakuracloud_database "master" {
 }
 ```
 
-<div class="editor">
-
-<h2><a href="https://zouen-alpha.usacloud.jp/#resource/database_read_replica" target="_blank" rel="noopener noreferrer">Code Editor</a></h2>
-
-<iframe src="https://zouen-alpha.usacloud.jp/#resource/database_read_replica"></iframe>
-
-</div>
 
 
 ## Argument Reference
