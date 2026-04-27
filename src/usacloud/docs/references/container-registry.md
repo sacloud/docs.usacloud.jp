@@ -70,7 +70,7 @@ Flags:
 
   === Container-Registry-specific options ===
 
-      --access-level string      (*required) options: [readwrite/readonly/none]
+      --access-level string      (*required) options: [readonly/none]
       --subdomain-label string   (*required) 
       --users string             
       --virtual-domain string    
@@ -105,7 +105,7 @@ Flags:
         "tag2=example2"
     ],
     "IconID": 123456789012,
-    "AccessLevel": "readwrite | readonly | none",
+    "AccessLevel": "readonly | none",
     "SubDomainLabel": "your-sub-domain",
     "VirtualDomain": "your-domain.example.com",
     "Users": [
@@ -169,7 +169,7 @@ Flags:
 
   === Container-Registry-specific options ===
 
-      --access-level string      options: [readwrite/readonly/none]
+      --access-level string      options: [readonly/none]
       --subdomain-label string   
       --users string             
       --virtual-domain string    
@@ -204,7 +204,7 @@ Flags:
         "tag2=example2"
     ],
     "IconID": 123456789012,
-    "AccessLevel": "readwrite | readonly | none",
+    "AccessLevel": "readonly | none",
     "SubDomainLabel": "your-sub-domain",
     "VirtualDomain": "your-domain.example.com",
     "Users": [
