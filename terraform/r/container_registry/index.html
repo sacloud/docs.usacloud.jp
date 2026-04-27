@@ -5639,7 +5639,7 @@
 <span class="w">  </span><span class="na">name</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
 <span class="w">  </span><span class="na">virtual_domain</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-domain.example.com&quot;</span>
 <span class="w">  </span><span class="na">subdomain_label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-subdomain-label&quot;</span>
-<span class="w">  </span><span class="na">access_level</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;readwrite&quot; # this must be one of [&quot;readwrite&quot;/&quot;readonly&quot;/&quot;none&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">access_level</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;readonly&quot; # this must be one of [&quot;readonly&quot;/&quot;none&quot;</span><span class="p">]</span>
 
 <span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
 <span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
@@ -5657,7 +5657,7 @@
 <h2 id="argument-reference">Argument Reference</h2>
 <ul>
 <li><code>name</code> - (Required) 名前 / <code>1</code>-<code>64</code>文字で指定</li>
-<li><code>access_level</code> - (Required) アクセスレベル / この値は次のいずれかを指定［<code>readwrite</code>/<code>readonly</code>/<code>none</code>]</li>
+<li><code>access_level</code> - (Required) アクセスレベル / この値は次のいずれかを指定［<code>readonly</code>/<code>none</code>]</li>
 <li><code>subdomain_label</code> - (Required) サブドメインラベル /  <code>1</code>-<code>64</code>文字で指定 / この値を変更するとリソースの再作成が行われる</li>
 <li><code>user</code> - (Optional) ユーザー設定のリスト。詳細は<a href="#user">userブロック</a>を参照</li>
 <li><code>virtual_domain</code> - (Optional) 独自ドメイン(FQDN)</li>
