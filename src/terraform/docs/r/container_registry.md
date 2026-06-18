@@ -27,7 +27,6 @@ resource "sakuracloud_container_registry" "foobar" {
   name            = "foobar"
   virtual_domain  = "your-domain.example.com"
   subdomain_label = "your-subdomain-label"
-  access_level    = "readonly" # this must be one of ["readonly"/"none"]
 
   description = "description"
   tags        = ["tag1", "tag2"]
@@ -48,7 +47,8 @@ resource "sakuracloud_container_registry" "foobar" {
 ## Argument Reference
 
 * `name` - (Required) 名前 / `1`-`64`文字で指定
-* `access_level` - (Required) アクセスレベル / この値は次のいずれかを指定［`readonly`/`none`]
+* `access_level` - (Optional) アクセスレベル / この値は次のいずれかを指定［`readonly`/`none`]/ デフォルト: `none`
+  〜`Deprecated`: コンテナレジストリの公開設定(Pullのみ)は廃止予定となり、今後は`none`固定での運用となります。指定しない場合は`none`が適用されます。〜
 * `subdomain_label` - (Required) サブドメインラベル /  `1`-`64`文字で指定 / この値を変更するとリソースの再作成が行われる
 * `user` - (Optional) ユーザー設定のリスト。詳細は[userブロック](#user)を参照
 * `virtual_domain` - (Optional) 独自ドメイン(FQDN)
