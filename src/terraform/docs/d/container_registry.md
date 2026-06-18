@@ -35,7 +35,7 @@ data "sakuracloud_container_registry" "foobar" {
 * `id` - ID
 * `access_level` - アクセスレベル。ユーザーがコンテナレジストリにアクセスできる操作のレベルを表す  
   次のいずれかの値となる。[`readonly`/`none`]  
-  注: コンテナレジストリの公開設定(Pullのみ)は廃止予定となり、今後は`none`固定での運用となります
+  **Deprecated**: コンテナレジストリの公開設定(Pullのみ)は廃止予定となり、今後は`none`固定での運用となります
 * `description` - 説明
 * `fqdn` - コンテナレジストリにアクセスするためのFQDN
 * `icon_id` - アイコンID
