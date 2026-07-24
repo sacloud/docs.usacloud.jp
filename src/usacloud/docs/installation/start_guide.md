@@ -13,7 +13,9 @@ curl -fsSL https://github.com/sacloud/usacloud/releases/latest/download/install.
 #### macOS/Linux (Homebrew)
 
 ```bash
-brew tap sacloud/usacloud; brew install usacloud
+brew tap sacloud/usacloud
+brew trust sacloud/usacloud
+brew install --cask usacloud
 ```
 
 ---
