@@ -2350,7 +2350,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2576,7 +2576,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5621,27 +5621,27 @@
 作成したサイトを有効化するには<code>webaccel_activation</code>リソースを利用して下さい。</p>
 </div>
 <h2 id="_1">利用例</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_webaccel&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hoge&quot;</span>
-<span class="w">  </span><span class="na">domain_type</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;subdomain&quot;</span>
-<span class="w">  </span><span class="na">request_protocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https-redirect&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_webaccel"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="s2">"hoge"</span>
+<span class="w">  </span><span class="na">domain_type</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">"subdomain"</span>
+<span class="w">  </span><span class="na">request_protocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https-redirect"</span>
 <span class="w">  </span><span class="nb">origin_parameters</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">type</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;web&quot;</span>
-<span class="w">    </span><span class="na">origin</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;docs.usacloud.jp&quot;</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https&quot;</span>
+<span class="w">    </span><span class="na">type</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">"web"</span>
+<span class="w">    </span><span class="na">origin</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"docs.usacloud.jp"</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="nb">logging</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">s3_bucket_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example-bucket&quot;</span>
-<span class="w">    </span><span class="na">s3_access_key_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;xxxxxxxxxxxxxxx&quot;</span>
-<span class="w">    </span><span class="na">s3_secret_access_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxxxx&quot;</span>
+<span class="w">    </span><span class="na">s3_bucket_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"example-bucket"</span>
+<span class="w">    </span><span class="na">s3_access_key_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"xxxxxxxxxxxxxxx"</span>
+<span class="w">    </span><span class="na">s3_secret_access_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"xxxxxxxxxxxxxxxxxxxxxxx"</span>
 <span class="w">    </span><span class="na">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="na">onetime_url_secrets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;abc-0x123456&quot;</span>
+<span class="w">    </span><span class="s2">"abc-0x123456"</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="w">  </span><span class="na">vary_support</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="w">  </span><span class="na">default_cache_ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3600</span>
-<span class="w">  </span><span class="na">normalize_ae</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;gzip&quot;</span>
+<span class="w">  </span><span class="na">normalize_ae</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">"gzip"</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>

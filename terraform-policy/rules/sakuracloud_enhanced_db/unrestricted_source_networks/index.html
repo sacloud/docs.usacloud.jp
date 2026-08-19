@@ -1197,26 +1197,26 @@
 <p>送信元ネットワークを適切に制限することを推奨します</p>
 <h2 id="_5">例</h2>
 <h3 id="bad-case">Bad case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_enhanced_db&quot;</span><span class="w"> </span><span class="nv">&quot;bad_enhanced_db&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bad_enhanced_db&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_enhanced_db"</span><span class="w"> </span><span class="nv">"bad_enhanced_db"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">"bad_enhanced_db"</span>
 <span class="w">  </span><span class="na">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.password</span>
 
-<span class="w">  </span><span class="na">database_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bad_enhanced_db&quot;</span>
-<span class="w">  </span><span class="na">database_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tidb&quot;</span>
-<span class="w">  </span><span class="na">region</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;is1&quot;</span>
+<span class="w">  </span><span class="na">database_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"bad_enhanced_db"</span>
+<span class="w">  </span><span class="na">database_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tidb"</span>
+<span class="w">  </span><span class="na">region</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"is1"</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="good-case">Good case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_enhanced_db&quot;</span><span class="w"> </span><span class="nv">&quot;good_enhanced_db&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;good_enhanced_db&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_enhanced_db"</span><span class="w"> </span><span class="nv">"good_enhanced_db"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">"good_enhanced_db"</span>
 <span class="w">  </span><span class="na">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.password</span>
 
-<span class="w">  </span><span class="na">database_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;good_enhanced_db&quot;</span>
-<span class="w">  </span><span class="na">database_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tidb&quot;</span>
-<span class="w">  </span><span class="na">region</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;is1&quot;</span>
+<span class="w">  </span><span class="na">database_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"good_enhanced_db"</span>
+<span class="w">  </span><span class="na">database_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tidb"</span>
+<span class="w">  </span><span class="na">region</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"is1"</span>
 
 <span class="w">  </span><span class="na">allowed_networks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;192.0.2.0/24&quot;</span>
+<span class="w">    </span><span class="s2">"192.0.2.0/24"</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>

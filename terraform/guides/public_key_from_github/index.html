@@ -2364,7 +2364,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2590,7 +2590,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5428,49 +5428,49 @@
 <p>さくらのクラウドのコントロールパネルには、GitHub上のユーザー名を指定してSSH用の公開鍵を取得しサーバ作成時に利用する機能があります。<br />
 この機能をTerraformで実現するためにhttpプロバイダーが利用可能です。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># GitHub上の公開鍵を参照するためのデータソース</span>
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;http&quot;</span><span class="w"> </span><span class="nv">&quot;key&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/&lt;GitHubのユーザ名&gt;.keys&quot;</span><span class="c1"> # 任意のユーザー名に置き換える</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"http"</span><span class="w"> </span><span class="nv">"key"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/&lt;GitHubのユーザ名&gt;.keys"</span><span class="c1"> # 任意のユーザー名に置き換える</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>GitHubから公開鍵を取得してサーバ作成に利用するコード例は以下の通りです。</p>
 <div class="highlight"><pre><span></span><code><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">required_providers</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hashicorp/http&quot;</span>
-<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~&gt; 3&quot;</span>
+<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"hashicorp/http"</span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"~&gt; 3"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="nb">sakuracloud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sacloud/sakuracloud&quot;</span>
-<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~&gt; 2&quot;</span>
+<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"sacloud/sakuracloud"</span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"~&gt; 2"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;ubuntu&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">os_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ubuntu2204&quot;</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"ubuntu"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">os_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ubuntu2204"</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_disk&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_disk"</span><span class="w"> </span><span class="nv">"example"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">  </span><span class="na">source_archive_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_archive.ubuntu.id</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_server"</span><span class="w"> </span><span class="nv">"example"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">  </span><span class="na">disks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_disk.example.id</span><span class="p">]</span>
 
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared&quot;</span>
+<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"shared"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">disable_pw_auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
-<span class="w">    </span><span class="na">ssh_keys</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">trimspace</span><span class="p">(</span><span class="nv">data.http.key.response_body</span><span class="p">))</span><span class="c1"> // Note: 複数の公開鍵が登録されている場合は改行で結合されている</span>
+<span class="w">    </span><span class="na">ssh_keys</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">,</span><span class="w"> </span><span class="nf">trimspace</span><span class="p">(</span><span class="nv">data.http.key.response_body</span><span class="p">))</span><span class="c1"> // Note: 複数の公開鍵が登録されている場合は改行で結合されている</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;http&quot;</span><span class="w"> </span><span class="nv">&quot;key&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/&lt;GitHubのユーザ名&gt;.keys&quot;</span><span class="c1"> # 任意のユーザー名に置き換える</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"http"</span><span class="w"> </span><span class="nv">"key"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/&lt;GitHubのユーザ名&gt;.keys"</span><span class="c1"> # 任意のユーザー名に置き換える</span>
 <span class="p">}</span>
 </code></pre></div>
 

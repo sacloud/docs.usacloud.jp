@@ -4471,15 +4471,15 @@
 
 <span class="go">      --cpu int             (*required) (aliases: --core) (default 1)</span>
 <span class="go">      --memory int          (*required)  (default 1)</span>
-<span class="go">      --commitment string   (*required) options: [standard/dedicatedcpu] (default &quot;standard&quot;)</span>
+<span class="go">      --commitment string   (*required) options: [standard/dedicatedcpu] (default "standard")</span>
 <span class="go">      --gpu int             </span>
-<span class="go">      --generation string   (*required) options: [default/g100/g200] (default &quot;default&quot;)</span>
+<span class="go">      --generation string   (*required) options: [default/g100/g200] (default "default")</span>
 
 <span class="go">  === Server-specific options ===</span>
 
 <span class="go">      --boot-after-create         </span>
 <span class="go">      --cdrom-id int              (aliases: --iso-image-id)</span>
-<span class="go">      --interface-driver string   (*required) options: [virtio/e1000] (default &quot;virtio&quot;)</span>
+<span class="go">      --interface-driver string   (*required) options: [virtio/e1000] (default "virtio")</span>
 <span class="go">      --private-host-id int       </span>
 
 <span class="go">  === Disk options ===</span>
@@ -4548,88 +4548,88 @@
 </code></pre></div>
 <h5 id="parameter-examples">Parameter Examples</h5>
 <div class="highlight"><pre><span></span><code><span class="go">{</span>
-<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
-<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Tags&quot;: [</span>
-<span class="go">        &quot;tag1=example1&quot;,</span>
-<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    "Zone": "tk1a | tk1b | is1a | is1b | tk1v",</span>
+<span class="go">    "Name": "example",</span>
+<span class="go">    "Description": "example",</span>
+<span class="go">    "Tags": [</span>
+<span class="go">        "tag1=example1",</span>
+<span class="go">        "tag2=example2"</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;IconID&quot;: 123456789012,</span>
-<span class="go">    &quot;CPU&quot;: 1,</span>
-<span class="go">    &quot;Memory&quot;: 2,</span>
-<span class="go">    &quot;GPU&quot;: 0,</span>
-<span class="go">    &quot;Commitment&quot;: &quot;standard | dedicatedcpu&quot;,</span>
-<span class="go">    &quot;Generation&quot;: &quot;default | g100 | g200&quot;,</span>
-<span class="go">    &quot;InterfaceDriver&quot;: &quot;virtio | e1000&quot;,</span>
-<span class="go">    &quot;BootAfterCreate&quot;: true,</span>
-<span class="go">    &quot;CDROMID&quot;: 123456789012,</span>
-<span class="go">    &quot;PrivateHostID&quot;: 123456789012,</span>
-<span class="go">    &quot;NetworkInterfaces&quot;: [</span>
+<span class="go">    "IconID": 123456789012,</span>
+<span class="go">    "CPU": 1,</span>
+<span class="go">    "Memory": 2,</span>
+<span class="go">    "GPU": 0,</span>
+<span class="go">    "Commitment": "standard | dedicatedcpu",</span>
+<span class="go">    "Generation": "default | g100 | g200",</span>
+<span class="go">    "InterfaceDriver": "virtio | e1000",</span>
+<span class="go">    "BootAfterCreate": true,</span>
+<span class="go">    "CDROMID": 123456789012,</span>
+<span class="go">    "PrivateHostID": 123456789012,</span>
+<span class="go">    "NetworkInterfaces": [</span>
 <span class="go">        {</span>
-<span class="go">            &quot;Upstream&quot;: &quot;shared | disconnected | (switch-id)&quot;,</span>
-<span class="go">            &quot;PacketFilterID&quot;: 123456789012,</span>
-<span class="go">            &quot;UserIPAddress&quot;: &quot;192.0.2.11&quot;</span>
+<span class="go">            "Upstream": "shared | disconnected | (switch-id)",</span>
+<span class="go">            "PacketFilterID": 123456789012,</span>
+<span class="go">            "UserIPAddress": "192.0.2.11"</span>
 <span class="go">        }</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;Disks&quot;: [</span>
+<span class="go">    "Disks": [</span>
 <span class="go">        {</span>
-<span class="go">            &quot;Description&quot;: &quot;新規ディスクを作成する例&quot;,</span>
-<span class="go">            &quot;Tags&quot;: [</span>
-<span class="go">                &quot;tag1=example1&quot;,</span>
-<span class="go">                &quot;tag2=example2&quot;</span>
+<span class="go">            "Description": "新規ディスクを作成する例",</span>
+<span class="go">            "Tags": [</span>
+<span class="go">                "tag1=example1",</span>
+<span class="go">                "tag2=example2"</span>
 <span class="go">            ],</span>
-<span class="go">            &quot;IconID&quot;: 123456789012,</span>
-<span class="go">            &quot;DiskPlan&quot;: &quot;ssd | hdd&quot;,</span>
-<span class="go">            &quot;Connection&quot;: &quot;virtio | ide&quot;,</span>
-<span class="go">            &quot;SourceDiskID&quot;: 123456789012,</span>
-<span class="go">            &quot;SourceArchiveID&quot;: 123456789012,</span>
-<span class="go">            &quot;SizeGB&quot;: 20,</span>
-<span class="go">            &quot;DistantFrom&quot;: [</span>
+<span class="go">            "IconID": 123456789012,</span>
+<span class="go">            "DiskPlan": "ssd | hdd",</span>
+<span class="go">            "Connection": "virtio | ide",</span>
+<span class="go">            "SourceDiskID": 123456789012,</span>
+<span class="go">            "SourceArchiveID": 123456789012,</span>
+<span class="go">            "SizeGB": 20,</span>
+<span class="go">            "DistantFrom": [</span>
 <span class="go">                123456789012</span>
 <span class="go">            ],</span>
-<span class="go">            &quot;OSType&quot;: &quot;centos | centos8stream | centos7 | almalinux | rockylinux | miracle | miraclelinux | ubuntu | ubuntu2004 | ubuntu1804 | debian | debian10 | debian11 | rancheros | k3os | kusanagi | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all&quot;,</span>
-<span class="go">            &quot;EditDisk&quot;: {</span>
-<span class="go">                &quot;HostName&quot;: &quot;hostname&quot;,</span>
-<span class="go">                &quot;Password&quot;: &quot;password&quot;,</span>
-<span class="go">                &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
-<span class="go">                &quot;NetworkMaskLen&quot;: 24,</span>
-<span class="go">                &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,</span>
-<span class="go">                &quot;DisablePWAuth&quot;: true,</span>
-<span class="go">                &quot;EnableDHCP&quot;: true,</span>
-<span class="go">                &quot;ChangePartitionUUID&quot;: true,</span>
-<span class="go">                &quot;SSHKeys&quot;: [</span>
-<span class="go">                    &quot;/path/to/your/public/key&quot;,</span>
-<span class="go">                    &quot;ssh-rsa ...&quot;</span>
+<span class="go">            "OSType": "centos | centos8stream | centos7 | almalinux | rockylinux | miracle | miraclelinux | ubuntu | ubuntu2004 | ubuntu1804 | debian | debian10 | debian11 | rancheros | k3os | kusanagi | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all",</span>
+<span class="go">            "EditDisk": {</span>
+<span class="go">                "HostName": "hostname",</span>
+<span class="go">                "Password": "password",</span>
+<span class="go">                "IPAddress": "192.0.2.11",</span>
+<span class="go">                "NetworkMaskLen": 24,</span>
+<span class="go">                "DefaultRoute": "192.0.2.1",</span>
+<span class="go">                "DisablePWAuth": true,</span>
+<span class="go">                "EnableDHCP": true,</span>
+<span class="go">                "ChangePartitionUUID": true,</span>
+<span class="go">                "SSHKeys": [</span>
+<span class="go">                    "/path/to/your/public/key",</span>
+<span class="go">                    "ssh-rsa ..."</span>
 <span class="go">                ],</span>
-<span class="go">                &quot;SSHKeyIDs&quot;: [</span>
+<span class="go">                "SSHKeyIDs": [</span>
 <span class="go">                    123456789012</span>
 <span class="go">                ],</span>
-<span class="go">                &quot;IsSSHKeysEphemeral&quot;: true,</span>
-<span class="go">                &quot;NoteIDs&quot;: [</span>
+<span class="go">                "IsSSHKeysEphemeral": true,</span>
+<span class="go">                "NoteIDs": [</span>
 <span class="go">                    123456789012</span>
 <span class="go">                ],</span>
-<span class="go">                &quot;IsNotesEphemeral&quot;: true,</span>
-<span class="go">                &quot;Notes&quot;: [</span>
+<span class="go">                "IsNotesEphemeral": true,</span>
+<span class="go">                "Notes": [</span>
 <span class="go">                    {</span>
-<span class="go">                        &quot;ID&quot;: 123456789012,</span>
-<span class="go">                        &quot;Variables&quot;: {</span>
-<span class="go">                            &quot;variable1&quot;: &quot;foo&quot;,</span>
-<span class="go">                            &quot;variable2&quot;: &quot;bar&quot;</span>
+<span class="go">                        "ID": 123456789012,</span>
+<span class="go">                        "Variables": {</span>
+<span class="go">                            "variable1": "foo",</span>
+<span class="go">                            "variable2": "bar"</span>
 <span class="go">                        }</span>
 <span class="go">                    }</span>
 <span class="go">                ]</span>
 <span class="go">            },</span>
-<span class="go">            &quot;NoWait&quot;: true</span>
+<span class="go">            "NoWait": true</span>
 <span class="go">        },</span>
 <span class="go">        {</span>
-<span class="go">            &quot;ID&quot;: 123456789012,</span>
-<span class="go">            &quot;Description&quot;: &quot;既存のディスクを接続する例&quot;,</span>
-<span class="go">            &quot;EditDisk&quot;: {},</span>
-<span class="go">            &quot;NoWait&quot;: false</span>
+<span class="go">            "ID": 123456789012,</span>
+<span class="go">            "Description": "既存のディスクを接続する例",</span>
+<span class="go">            "EditDisk": {},</span>
+<span class="go">            "NoWait": false</span>
 <span class="go">        }</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">    "NoWait": false</span>
 <span class="go">}</span>
 </code></pre></div>
 <h2 id="read">read</h2>
@@ -4722,88 +4722,88 @@
 </code></pre></div>
 <h5 id="parameter-examples_1">Parameter Examples</h5>
 <div class="highlight"><pre><span></span><code><span class="go">{</span>
-<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
-<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Tags&quot;: [</span>
-<span class="go">        &quot;tag1=example1&quot;,</span>
-<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    "Zone": "tk1a | tk1b | is1a | is1b | tk1v",</span>
+<span class="go">    "Name": "example",</span>
+<span class="go">    "Description": "example",</span>
+<span class="go">    "Tags": [</span>
+<span class="go">        "tag1=example1",</span>
+<span class="go">        "tag2=example2"</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;IconID&quot;: 123456789012,</span>
-<span class="go">    &quot;CPU&quot;: 1,</span>
-<span class="go">    &quot;Memory&quot;: 2,</span>
-<span class="go">    &quot;GPU&quot;: null,</span>
-<span class="go">    &quot;Commitment&quot;: &quot;standard | dedicatedcpu&quot;,</span>
-<span class="go">    &quot;Generation&quot;: &quot;default | g100 | g200&quot;,</span>
-<span class="go">    &quot;InterfaceDriver&quot;: &quot;virtio | e1000&quot;,</span>
-<span class="go">    &quot;CDROMID&quot;: 123456789012,</span>
-<span class="go">    &quot;PrivateHostID&quot;: 123456789012,</span>
-<span class="go">    &quot;NetworkInterfaces&quot;: [</span>
+<span class="go">    "IconID": 123456789012,</span>
+<span class="go">    "CPU": 1,</span>
+<span class="go">    "Memory": 2,</span>
+<span class="go">    "GPU": null,</span>
+<span class="go">    "Commitment": "standard | dedicatedcpu",</span>
+<span class="go">    "Generation": "default | g100 | g200",</span>
+<span class="go">    "InterfaceDriver": "virtio | e1000",</span>
+<span class="go">    "CDROMID": 123456789012,</span>
+<span class="go">    "PrivateHostID": 123456789012,</span>
+<span class="go">    "NetworkInterfaces": [</span>
 <span class="go">        {</span>
-<span class="go">            &quot;Upstream&quot;: &quot;shared | disconnected | (switch-id)&quot;,</span>
-<span class="go">            &quot;PacketFilterID&quot;: 123456789012,</span>
-<span class="go">            &quot;UserIPAddress&quot;: &quot;192.0.2.11&quot;</span>
+<span class="go">            "Upstream": "shared | disconnected | (switch-id)",</span>
+<span class="go">            "PacketFilterID": 123456789012,</span>
+<span class="go">            "UserIPAddress": "192.0.2.11"</span>
 <span class="go">        }</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;Disks&quot;: [</span>
+<span class="go">    "Disks": [</span>
 <span class="go">        {</span>
-<span class="go">            &quot;Description&quot;: &quot;新規ディスクを作成する例&quot;,</span>
-<span class="go">            &quot;Tags&quot;: [</span>
-<span class="go">                &quot;tag1=example1&quot;,</span>
-<span class="go">                &quot;tag2=example2&quot;</span>
+<span class="go">            "Description": "新規ディスクを作成する例",</span>
+<span class="go">            "Tags": [</span>
+<span class="go">                "tag1=example1",</span>
+<span class="go">                "tag2=example2"</span>
 <span class="go">            ],</span>
-<span class="go">            &quot;IconID&quot;: 123456789012,</span>
-<span class="go">            &quot;DiskPlan&quot;: &quot;ssd | hdd&quot;,</span>
-<span class="go">            &quot;Connection&quot;: &quot;virtio | ide&quot;,</span>
-<span class="go">            &quot;SourceDiskID&quot;: 123456789012,</span>
-<span class="go">            &quot;SourceArchiveID&quot;: 123456789012,</span>
-<span class="go">            &quot;SizeGB&quot;: 20,</span>
-<span class="go">            &quot;DistantFrom&quot;: [</span>
+<span class="go">            "IconID": 123456789012,</span>
+<span class="go">            "DiskPlan": "ssd | hdd",</span>
+<span class="go">            "Connection": "virtio | ide",</span>
+<span class="go">            "SourceDiskID": 123456789012,</span>
+<span class="go">            "SourceArchiveID": 123456789012,</span>
+<span class="go">            "SizeGB": 20,</span>
+<span class="go">            "DistantFrom": [</span>
 <span class="go">                123456789012</span>
 <span class="go">            ],</span>
-<span class="go">            &quot;OSType&quot;: &quot;centos | centos8stream | centos7 | almalinux | rockylinux | miracle | miraclelinux | ubuntu | ubuntu2004 | ubuntu1804 | debian | debian10 | debian11 | rancheros | k3os | kusanagi | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all&quot;,</span>
-<span class="go">            &quot;EditDisk&quot;: {</span>
-<span class="go">                &quot;HostName&quot;: &quot;hostname&quot;,</span>
-<span class="go">                &quot;Password&quot;: &quot;password&quot;,</span>
-<span class="go">                &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
-<span class="go">                &quot;NetworkMaskLen&quot;: 24,</span>
-<span class="go">                &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,</span>
-<span class="go">                &quot;DisablePWAuth&quot;: true,</span>
-<span class="go">                &quot;EnableDHCP&quot;: true,</span>
-<span class="go">                &quot;ChangePartitionUUID&quot;: true,</span>
-<span class="go">                &quot;SSHKeys&quot;: [</span>
-<span class="go">                    &quot;/path/to/your/public/key&quot;,</span>
-<span class="go">                    &quot;ssh-rsa ...&quot;</span>
+<span class="go">            "OSType": "centos | centos8stream | centos7 | almalinux | rockylinux | miracle | miraclelinux | ubuntu | ubuntu2004 | ubuntu1804 | debian | debian10 | debian11 | rancheros | k3os | kusanagi | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all",</span>
+<span class="go">            "EditDisk": {</span>
+<span class="go">                "HostName": "hostname",</span>
+<span class="go">                "Password": "password",</span>
+<span class="go">                "IPAddress": "192.0.2.11",</span>
+<span class="go">                "NetworkMaskLen": 24,</span>
+<span class="go">                "DefaultRoute": "192.0.2.1",</span>
+<span class="go">                "DisablePWAuth": true,</span>
+<span class="go">                "EnableDHCP": true,</span>
+<span class="go">                "ChangePartitionUUID": true,</span>
+<span class="go">                "SSHKeys": [</span>
+<span class="go">                    "/path/to/your/public/key",</span>
+<span class="go">                    "ssh-rsa ..."</span>
 <span class="go">                ],</span>
-<span class="go">                &quot;SSHKeyIDs&quot;: [</span>
+<span class="go">                "SSHKeyIDs": [</span>
 <span class="go">                    123456789012</span>
 <span class="go">                ],</span>
-<span class="go">                &quot;IsSSHKeysEphemeral&quot;: true,</span>
-<span class="go">                &quot;NoteIDs&quot;: [</span>
+<span class="go">                "IsSSHKeysEphemeral": true,</span>
+<span class="go">                "NoteIDs": [</span>
 <span class="go">                    123456789012</span>
 <span class="go">                ],</span>
-<span class="go">                &quot;IsNotesEphemeral&quot;: true,</span>
-<span class="go">                &quot;Notes&quot;: [</span>
+<span class="go">                "IsNotesEphemeral": true,</span>
+<span class="go">                "Notes": [</span>
 <span class="go">                    {</span>
-<span class="go">                        &quot;ID&quot;: 123456789012,</span>
-<span class="go">                        &quot;Variables&quot;: {</span>
-<span class="go">                            &quot;variable1&quot;: &quot;foo&quot;,</span>
-<span class="go">                            &quot;variable2&quot;: &quot;bar&quot;</span>
+<span class="go">                        "ID": 123456789012,</span>
+<span class="go">                        "Variables": {</span>
+<span class="go">                            "variable1": "foo",</span>
+<span class="go">                            "variable2": "bar"</span>
 <span class="go">                        }</span>
 <span class="go">                    }</span>
 <span class="go">                ]</span>
 <span class="go">            },</span>
-<span class="go">            &quot;NoWait&quot;: true</span>
+<span class="go">            "NoWait": true</span>
 <span class="go">        },</span>
 <span class="go">        {</span>
-<span class="go">            &quot;ID&quot;: 123456789012,</span>
-<span class="go">            &quot;Description&quot;: &quot;既存のディスクを接続する例&quot;,</span>
-<span class="go">            &quot;EditDisk&quot;: {},</span>
-<span class="go">            &quot;NoWait&quot;: false</span>
+<span class="go">            "ID": 123456789012,</span>
+<span class="go">            "Description": "既存のディスクを接続する例",</span>
+<span class="go">            "EditDisk": {},</span>
+<span class="go">            "NoWait": false</span>
 <span class="go">        }</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;NoWait&quot;: false,</span>
-<span class="go">    &quot;ForceShutdown&quot;: false</span>
+<span class="go">    "NoWait": false,</span>
+<span class="go">    "ForceShutdown": false</span>
 <span class="go">}</span>
 </code></pre></div>
 <h2 id="delete">delete</h2>
@@ -4904,7 +4904,7 @@
 <span class="go">  === Server-specific options ===</span>
 
 <span class="go">      --port int            (default 3389)</span>
-<span class="go">      --user string         (default &quot;Administrator&quot;)</span>
+<span class="go">      --user string         (default "Administrator")</span>
 <span class="go">      --wait-until-ready   (aliases: --wait)</span>
 
 <span class="go">  === Zone options ===</span>

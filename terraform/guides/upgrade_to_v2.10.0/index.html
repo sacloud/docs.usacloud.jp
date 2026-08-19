@@ -2462,7 +2462,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2688,7 +2688,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5602,14 +5602,14 @@
 <h3 id="diff1">エンハンスドデータベースのサポート</h3>
 <p>Labプロダクトのエンハンスドデータベース(TiDB)がサポートされました。</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_enhanced_db&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_enhanced_db"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 
-<span class="w">  </span><span class="na">database_name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your_db_name&quot;</span>
-<span class="w">  </span><span class="na">password</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-password&quot;</span>
+<span class="w">  </span><span class="na">database_name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"your_db_name"</span>
+<span class="w">  </span><span class="na">password</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-password"</span>
 
-<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Note: Labプロダクトについては<a href="https://manual.sakura.ad.jp/cloud/lab/about.html">https://manual.sakura.ad.jp/cloud/lab/about.html</a>を参照の上でご利用ください。  </p>
@@ -5618,11 +5618,11 @@
 <h3 id="diff3">エンハンスドロードバランサでのSyslogサーバ設定</h3>
 <p>エンハンスドロードバランサでログ出力先となるSyslogサーバの設定を行えるようになりました。  </p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_proxylb&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_proxylb"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">  # 中略</span>
 
 <span class="w">  </span><span class="nb">syslog</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.1&quot;</span>
+<span class="w">    </span><span class="na">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.1"</span>
 <span class="w">    </span><span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">514</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>

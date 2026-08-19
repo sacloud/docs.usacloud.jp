@@ -2223,13 +2223,13 @@
 以下の内容で<code>mackerel.sh</code>ファイルを作成します。</p>
 <div class="highlight"><pre><span></span><code>#!/bin/sh
 
-jq -e &#39;select(.alert.status == &quot;warning&quot;)&#39;
+jq -e 'select(.alert.status == "warning")'
 </code></pre></div>
 <p>作成したら<code>chmod +x</code>などで適切な権限を付与しておいてください。</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>mackerel.sh
 </code></pre></div>
 <p>次にWebhook Inputsを起動します。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>autoscaler<span class="w"> </span>inputs<span class="w"> </span>webhook<span class="w"> </span>--accept-http-methods<span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="w"> </span>--executable-path<span class="w"> </span>mackerel.sh
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>autoscaler<span class="w"> </span>inputs<span class="w"> </span>webhook<span class="w"> </span>--accept-http-methods<span class="w"> </span><span class="s2">"POST"</span><span class="w"> </span>--executable-path<span class="w"> </span>mackerel.sh
 </code></pre></div>
 <h2 id="-executable-path"><code>--executable-path</code>に指定するスクリプトについて</h2>
 <p>実行可能なファイルを指定します。スクリプトが終了コード0を返したらハンドルすべきWebhookと判断します。</p>

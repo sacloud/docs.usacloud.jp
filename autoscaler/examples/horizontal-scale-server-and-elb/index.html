@@ -2164,14 +2164,14 @@ ELB配下に指定したサーバグループの台数の増減に合わせELB�
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServerGroup</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;servers&quot;</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"servers"</span>
 
-<span class="w">    </span><span class="nt">server_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;servers&quot;</span>
-<span class="w">    </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;is1a&quot;</span>
+<span class="w">    </span><span class="nt">server_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">"servers"</span>
+<span class="w">    </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="s">"is1a"</span>
 
 <span class="w">    </span><span class="nt">parent</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ELB</span>
-<span class="w">      </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;example&quot;</span>
+<span class="w">      </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">"example"</span>
 
 <span class="w">    </span><span class="nt">min_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">   </span><span class="c1"># 最小インスタンス数</span>
 <span class="w">    </span><span class="nt">max_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w">  </span><span class="c1"># 最大インスタンス数</span>
@@ -2186,21 +2186,21 @@ ELB配下に指定したサーバグループの台数の増減に合わせELB�
 
 <span class="w">      </span><span class="c1"># NICs</span>
 <span class="w">      </span><span class="nt">network_interfaces</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">upstream</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;shared&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">upstream</span><span class="p">:</span><span class="w"> </span><span class="s">"shared"</span>
 <span class="w">          </span><span class="nt">expose</span><span class="p">:</span>
 <span class="w">            </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">80</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># このNICで上流リソースに公開するポート番号</span>
 
 <span class="w">      </span><span class="c1"># ディスク</span>
 <span class="w">      </span><span class="nt">disks</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">os_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ubuntu2004&quot;</span>
-<span class="w">          </span><span class="nt">plan</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ssd&quot;</span>
-<span class="w">          </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;virtio&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">os_type</span><span class="p">:</span><span class="w"> </span><span class="s">"ubuntu2004"</span>
+<span class="w">          </span><span class="nt">plan</span><span class="p">:</span><span class="w"> </span><span class="s">"ssd"</span>
+<span class="w">          </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="s">"virtio"</span>
 <span class="w">          </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40</span>
 
 <span class="w">      </span><span class="c1"># 1番目のディスクの対するパラメータ(対応しているアーカイブの場合のみ指定可能)</span>
 <span class="w">      </span><span class="nt">edit_parameter</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># ディスクの修正を行わない場合はtrue</span>
-<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your-password&quot;</span>
+<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">"your-password"</span>
 <span class="w">        </span><span class="nt">disable_pw_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">        </span><span class="nt">enable_dhcp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">        </span><span class="nt">change_partition_uuid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -2208,7 +2208,7 @@ ELB配下に指定したサーバグループの台数の増減に合わせELB�
 <span class="w">        </span><span class="c1"># SSH公開鍵の指定</span>
 <span class="w">        </span><span class="nt">ssh_keys</span><span class="p">:</span>
 <span class="w">          </span><span class="c1"># ファイルパス or 文字列で指定</span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;~/.ssh/id_rsa.pub&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"~/.ssh/id_rsa.pub"</span>
 
 <span class="w">        </span><span class="c1"># スタートアップスクリプト</span>
 <span class="w">        </span><span class="c1"># サーバのIPアドレス(共有セグメントの場合の自動割り当て)などを{{ .IPAddress}}のようなGoのテンプレートで利用可能</span>

@@ -2224,9 +2224,9 @@
 <p>利用例:
 <div class="highlight"><pre><span></span><code><span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServerGroup</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;autoscaler-selector-test&quot;</span>
-<span class="w">    </span><span class="nt">server_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;autoscaler-selector-test&quot;</span>
-<span class="w">    </span><span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;is1a&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;is1b&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;tk1a&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;tk1b&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># 4つのゾーンに分散配置する</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"autoscaler-selector-test"</span>
+<span class="w">    </span><span class="nt">server_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">"autoscaler-selector-test"</span>
+<span class="w">    </span><span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"is1a"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"is1b"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"tk1a"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"tk1b"</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># 4つのゾーンに分散配置する</span>
 
 <span class="w">    </span><span class="c1"># ...(以下略)</span>
 </code></pre></div></p>
@@ -2269,7 +2269,7 @@
 - パケットフィルタ</p>
 <p>利用例:
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span>
-<span class="w">      </span><span class="nt">cdrom_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">netboot.xyz</span><span class="w"> </span><span class="c1"># CD-ROMとして&quot;netboot.xyz&quot;という名前を条件に指定</span>
+<span class="w">      </span><span class="nt">cdrom_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">netboot.xyz</span><span class="w"> </span><span class="c1"># CD-ROMとして"netboot.xyz"という名前を条件に指定</span>
 </code></pre></div></p>
 <p>従来通りIDも指定可能ですが将来のバージョンで廃止予定です。</p>
 <p>また、この変更に伴い、<code>edit_parameter.ssh_key_ids</code>が削除されました。</p>

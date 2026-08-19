@@ -2522,8 +2522,8 @@ cat
 <h3 id="_3">カスタムハンドラを定義</h3>
 <p>Coreのコンフィギュレーションファイルでカスタムハンドラを定義しておく必要があります。  </p>
 <div class="highlight"><pre><span></span><code><span class="nt">handlers</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;local-exec&quot;</span><span class="w"> </span><span class="c1"># 任意の名称</span>
-<span class="w">    </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;unix:autoscaler-handlers-local-exec.sock&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"local-exec"</span><span class="w"> </span><span class="c1"># 任意の名称</span>
+<span class="w">    </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="s">"unix:autoscaler-handlers-local-exec.sock"</span>
 </code></pre></div>
 <p>定義後は通常通りCoreを起動することでカスタムハンドラが利用可能になっています。</p>
 <div class="admonition tips">
@@ -2548,15 +2548,15 @@ Usage:
 <span class="w">  </span>autoscaler<span class="w"> </span>handlers<span class="w"> </span>local-exec<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span>...<span class="w"> </span><span class="o">{</span>path/to/your/executable<span class="o">}</span>
 
 Flags:
-<span class="w">      </span>--addr<span class="w"> </span>string<span class="w">              </span>the<span class="w"> </span>address<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>server<span class="w"> </span>to<span class="w"> </span>listen<span class="w"> </span>on<span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;unix:autoscaler-handlers-local-exec.sock&quot;</span><span class="o">)</span>
+<span class="w">      </span>--addr<span class="w"> </span>string<span class="w">              </span>the<span class="w"> </span>address<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>server<span class="w"> </span>to<span class="w"> </span>listen<span class="w"> </span>on<span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">"unix:autoscaler-handlers-local-exec.sock"</span><span class="o">)</span>
 <span class="w">      </span>--config<span class="w"> </span>string<span class="w">            </span>Filepath<span class="w"> </span>to<span class="w"> </span>Handlers<span class="w"> </span>additional<span class="w"> </span>configuration<span class="w"> </span>file
 <span class="w">      </span>--executable-path<span class="w"> </span>string<span class="w">   </span>Path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>executable
 <span class="w">      </span>--handler-type<span class="w"> </span>string<span class="w">      </span>Handler<span class="w"> </span><span class="nb">type</span><span class="w"> </span>name
 <span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">                     </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>local-exec
 
 Global<span class="w"> </span>Flags:
-<span class="w">      </span>--log-format<span class="w"> </span>string<span class="w">   </span>Format<span class="w"> </span>of<span class="w"> </span>logging<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>output.<span class="w"> </span>options:<span class="w"> </span><span class="o">[</span><span class="w"> </span>logfmt<span class="w"> </span><span class="p">|</span><span class="w"> </span>json<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;logfmt&quot;</span><span class="o">)</span>
-<span class="w">      </span>--log-level<span class="w"> </span>string<span class="w">    </span>Level<span class="w"> </span>of<span class="w"> </span>logging<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>output.<span class="w"> </span>options:<span class="w"> </span><span class="o">[</span><span class="w"> </span>error<span class="w"> </span><span class="p">|</span><span class="w"> </span>warn<span class="w"> </span><span class="p">|</span><span class="w"> </span>info<span class="w"> </span><span class="p">|</span><span class="w"> </span>debug<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">&quot;info&quot;</span><span class="o">)</span>
+<span class="w">      </span>--log-format<span class="w"> </span>string<span class="w">   </span>Format<span class="w"> </span>of<span class="w"> </span>logging<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>output.<span class="w"> </span>options:<span class="w"> </span><span class="o">[</span><span class="w"> </span>logfmt<span class="w"> </span><span class="p">|</span><span class="w"> </span>json<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">"logfmt"</span><span class="o">)</span>
+<span class="w">      </span>--log-level<span class="w"> </span>string<span class="w">    </span>Level<span class="w"> </span>of<span class="w"> </span>logging<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>output.<span class="w"> </span>options:<span class="w"> </span><span class="o">[</span><span class="w"> </span>error<span class="w"> </span><span class="p">|</span><span class="w"> </span>warn<span class="w"> </span><span class="p">|</span><span class="w"> </span>info<span class="w"> </span><span class="p">|</span><span class="w"> </span>debug<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default<span class="w"> </span><span class="s2">"info"</span><span class="o">)</span>
 </code></pre></div>
 <h4 id="-handler-type"><code>--handler-type</code>パラメータについて</h4>
 <p>どのタイミングで実行するのかを制御するためのものです。以下の値が指定可能です。</p>
@@ -2571,12 +2571,12 @@ Global<span class="w"> </span>Flags:
 <h5 id="_8">標準入力経由で渡されるパラメータの例</h5>
 <div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="err">Pos</span><span class="kc">t</span><span class="err">Ha</span><span class="kc">n</span><span class="err">dleReques</span><span class="kc">t</span><span class="err">の例</span>
 <span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;resource_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;scaling_job_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">...</span>
+<span class="w">  </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"resource_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"scaling_job_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">"current"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2594,14 +2594,14 @@ Global<span class="w"> </span>Flags:
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># CREATED/UPDATED/DELETEDの場合はterraformのステートをリフレッシュする</span>
-<span class="nv">SHOULD_HANDLE</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span><span class="s1">&#39;[.] | any(.result == 1 or .result == 2 or .result == 3)&#39;</span><span class="k">)</span>
+<span class="nv">SHOULD_HANDLE</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span><span class="s1">'[.] | any(.result == 1 or .result == 2 or .result == 3)'</span><span class="k">)</span>
 
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SHOULD_HANDLE</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$SHOULD_HANDLE</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"true"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">  </span><span class="nv">WORKING_DIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>dirname<span class="w"> </span><span class="nv">$0</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="nb">pwd</span><span class="k">)</span>
-<span class="w">  </span>terraform<span class="w"> </span>-chdir<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$WORKING_DIR</span><span class="s2">&quot;</span><span class="w"> </span>apply<span class="w"> </span>-refresh-only<span class="w"> </span>-auto-approve<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span>/dev/null
+<span class="w">  </span>terraform<span class="w"> </span>-chdir<span class="o">=</span><span class="s2">"</span><span class="nv">$WORKING_DIR</span><span class="s2">"</span><span class="w"> </span>apply<span class="w"> </span>-refresh-only<span class="w"> </span>-auto-approve<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span>/dev/null
 <span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="nv">$?</span>
 <span class="k">else</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ignored&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"ignored"</span>
 <span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
 <span class="k">fi</span>
 </code></pre></div>

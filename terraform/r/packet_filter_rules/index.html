@@ -2352,7 +2352,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2580,7 +2580,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5615,56 +5615,56 @@
 
 <h1 id="sakuracloud_packet_filter_rules">パケットフィルタ(ルール): sakuracloud_packet_filter_rules</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_packet_filter&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
-<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_packet_filter"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
+<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_packet_filter_rules&quot;</span><span class="w"> </span><span class="nv">&quot;rules&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_packet_filter_rules"</span><span class="w"> </span><span class="nv">"rules"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">packet_filter_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_packet_filter.foobar.id</span>
 
 <span class="w">  </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span>
-<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;22&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"tcp"</span>
+<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"22"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span>
-<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;80&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"tcp"</span>
+<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"80"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span>
-<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;443&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"tcp"</span>
+<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"443"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;icmp&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"icmp"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fragment&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"fragment"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;udp&quot;</span>
-<span class="w">    </span><span class="na">source_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;123&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"udp"</span>
+<span class="w">    </span><span class="na">source_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"123"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span>
-<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;32768-61000&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"tcp"</span>
+<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"32768-61000"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;udp&quot;</span>
-<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;32768-61000&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"udp"</span>
+<span class="w">    </span><span class="na">destination_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"32768-61000"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ip&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"ip"</span>
 <span class="w">    </span><span class="na">allow</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="no">false</span>
-<span class="w">    </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Deny ALL&quot;</span>
+<span class="w">    </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Deny ALL"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>

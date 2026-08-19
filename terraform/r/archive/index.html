@@ -2473,7 +2473,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2699,7 +2699,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5616,33 +5616,33 @@
 <h1 id="sakuracloud_archive">アーカイブ: sakuracloud_archive</h1>
 <h2 id="example-usage">Example Usage</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># from archive/disk</span>
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;from-archive-or-disk&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
-<span class="w">  </span><span class="na">description</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"from-archive-or-disk"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
+<span class="w">  </span><span class="na">description</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 
 <span class="w">  </span><span class="na">source_archive_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">123456789012</span>
-<span class="w">  </span><span class="na">source_archive_zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tk1a&quot;</span>
+<span class="w">  </span><span class="na">source_archive_zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tk1a"</span>
 <span class="c1">  # source_disk_id    = 123456789012</span>
 <span class="p">}</span>
 
 <span class="c1"># from shared archive</span>
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;from-shared-archive&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
-<span class="w">  </span><span class="na">description</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"from-shared-archive"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
+<span class="w">  </span><span class="na">description</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 
-<span class="w">  </span><span class="na">source_shared_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;is1a:123456789012:xxx&quot;</span>
+<span class="w">  </span><span class="na">source_shared_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"is1a:123456789012:xxx"</span>
 <span class="p">}</span>
 
 
 <span class="c1"># from local file</span>
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
-<span class="w">  </span><span class="na">description</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
+<span class="w">  </span><span class="na">description</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 <span class="w">  </span><span class="na">size</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="m">20</span>
-<span class="w">  </span><span class="na">archive_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;test/dummy.raw&quot;</span>
+<span class="w">  </span><span class="na">archive_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"test/dummy.raw"</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>

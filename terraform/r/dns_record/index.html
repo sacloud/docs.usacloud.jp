@@ -2350,7 +2350,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2576,7 +2576,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5615,22 +5615,22 @@
 
 <h1 id="dns-sakuracloud_dns_record">DNS(レコード): sakuracloud_dns_record</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_dns&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.com&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_dns"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"example.com"</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_dns_record&quot;</span><span class="w"> </span><span class="nv">&quot;record1&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_dns_record"</span><span class="w"> </span><span class="nv">"record1"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">dns_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_dns.foobar.id</span>
-<span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www&quot;</span>
-<span class="w">  </span><span class="na">type</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A&quot;</span>
-<span class="w">  </span><span class="na">value</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.0.1&quot;</span>
+<span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"www"</span>
+<span class="w">  </span><span class="na">type</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"A"</span>
+<span class="w">  </span><span class="na">value</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.0.1"</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_dns_record&quot;</span><span class="w"> </span><span class="nv">&quot;record2&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_dns_record"</span><span class="w"> </span><span class="nv">"record2"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">dns_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_dns.foobar.id</span>
-<span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www&quot;</span>
-<span class="w">  </span><span class="na">type</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A&quot;</span>
-<span class="w">  </span><span class="na">value</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.0.2&quot;</span>
+<span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"www"</span>
+<span class="w">  </span><span class="na">type</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"A"</span>
+<span class="w">  </span><span class="na">value</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.0.2"</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>

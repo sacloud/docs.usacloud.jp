@@ -2313,10 +2313,10 @@ Dockerを利用する場合は以下のようにします。  </p>
 $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-w<span class="w"> </span>/work<span class="w"> </span>-d<span class="w"> </span>/your/work/dir:/work<span class="w"> </span>ghcr.io/sacloud/autoscaler<span class="w"> </span>start
 
 <span class="c1"># Grafana Inputsを起動する場合(CoreとはVolume経由でUnixドメインソケットを受け渡して通信する)</span>
-$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-w<span class="w"> </span>/work<span class="w"> </span>-d<span class="w"> </span>/your/work/dir:/work<span class="w"> </span>ghcr.io/sacloud/autoscaler<span class="w"> </span>inputs<span class="w"> </span>grafana<span class="w"> </span>--addr<span class="w"> </span><span class="s2">&quot;:8080&quot;</span>
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-w<span class="w"> </span>/work<span class="w"> </span>-d<span class="w"> </span>/your/work/dir:/work<span class="w"> </span>ghcr.io/sacloud/autoscaler<span class="w"> </span>inputs<span class="w"> </span>grafana<span class="w"> </span>--addr<span class="w"> </span><span class="s2">":8080"</span>
 
 <span class="c1"># AlertManager Inputsを起動する場合(CoreとはVolume経由でUnixドメインソケットを受け渡して通信する)</span>
-$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-w<span class="w"> </span>/work<span class="w"> </span>-d<span class="w"> </span>/your/work/dir:/work<span class="w"> </span>ghcr.io/sacloud/autoscaler<span class="w"> </span>inputs<span class="w"> </span>alertmanager<span class="w"> </span>--addr<span class="w"> </span><span class="s2">&quot;:8080&quot;</span>
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-w<span class="w"> </span>/work<span class="w"> </span>-d<span class="w"> </span>/your/work/dir:/work<span class="w"> </span>ghcr.io/sacloud/autoscaler<span class="w"> </span>inputs<span class="w"> </span>alertmanager<span class="w"> </span>--addr<span class="w"> </span><span class="s2">":8080"</span>
 </code></pre></div>
 <h4 id="docker-compose">Docker Composeを利用する場合(開発環境向け)</h4>
 <p>開発環境での動作確認向けにDocker ComposeでPrometheus/Grafana/AutoScalerの動作確認を行うための例を提供しています。
@@ -2335,20 +2335,20 @@ $<span class="w"> </span>autoscaler<span class="w"> </span>start<span class="w">
 <p>指定可能なオプションは以下の通りです。</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>autoscaler<span class="w"> </span>start<span class="w"> </span>-h
 
-<span class="go">start autoscaler&#39;s core server</span>
+<span class="go">start autoscaler's core server</span>
 
 <span class="go">Usage:</span>
 <span class="go">  autoscaler start [flags]...</span>
 
 <span class="go">Flags:</span>
-<span class="go">      --addr string     Address of the gRPC endpoint to listen to (default &quot;unix:autoscaler.sock&quot;)</span>
-<span class="go">      --config string   File path of configuration of AutoScaler Core (default &quot;autoscaler.yaml&quot;)</span>
+<span class="go">      --addr string     Address of the gRPC endpoint to listen to (default "unix:autoscaler.sock")</span>
+<span class="go">      --config string   File path of configuration of AutoScaler Core (default "autoscaler.yaml")</span>
 <span class="go">  -h, --help            help for start</span>
 <span class="go">      --strict          Restricting external file loading, etc. in configuration</span>
 
 <span class="go">Global Flags:</span>
-<span class="go">      --log-format string   Format of logging to be output. options: [ logfmt | json ] (default &quot;logfmt&quot;)</span>
-<span class="go">      --log-level string    Level of logging to be output. options: [ error | warn | info | debug ] (default &quot;info&quot;)</span>
+<span class="go">      --log-format string   Format of logging to be output. options: [ logfmt | json ] (default "logfmt")</span>
+<span class="go">      --log-level string    Level of logging to be output. options: [ error | warn | info | debug ] (default "info")</span>
 </code></pre></div>
 <p>Note: Coreはデフォルトだと<code>unix:autoscaler.sock</code>でリッスンします。<br />
 Inputsを別のマシン上で動かす場合などは<code>--addr</code>フラグで<code>192.0.2.1:8080</code>や<code>your-host-name.com:8080</code>のようなアドレスを指定する必要があります。  </p>
@@ -2364,7 +2364,7 @@ $<span class="w"> </span>autoscaler<span class="w"> </span>inputs<span class="w"
 $<span class="w"> </span>autoscaler<span class="w"> </span>inputs<span class="w"> </span>zabbix
 
 <span class="c1"># 汎用Webhook Inputsの場合</span>
-$<span class="w"> </span>autoscaler<span class="w"> </span>inputs<span class="w"> </span>webhook<span class="w"> </span>--accept-http-methods<span class="w"> </span><span class="s2">&quot;POST,PUT&quot;</span><span class="w"> </span>--executable-path<span class="w"> </span>your-executable-path.sh
+$<span class="w"> </span>autoscaler<span class="w"> </span>inputs<span class="w"> </span>webhook<span class="w"> </span>--accept-http-methods<span class="w"> </span><span class="s2">"POST,PUT"</span><span class="w"> </span>--executable-path<span class="w"> </span>your-executable-path.sh
 
 <span class="c1"># Direct Inputsの場合</span>
 $<span class="w"> </span>autoscaler<span class="w"> </span>inputs<span class="w"> </span>direct<span class="w"> </span>up

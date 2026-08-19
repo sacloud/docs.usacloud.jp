@@ -2412,7 +2412,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2638,7 +2638,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5524,31 +5524,31 @@ v1をご利用の場合は以下のドキュメントを参照してください
 <span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">required_providers</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">sakuracloud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sacloud/sakuracloud&quot;</span>
+<span class="w">      </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"sacloud/sakuracloud"</span>
 
-<span class="c1">      # We recommend pinning to the specific version of the SakuraCloud Provider you&#39;re using</span>
+<span class="c1">      # We recommend pinning to the specific version of the SakuraCloud Provider you're using</span>
 <span class="c1">      # since new versions are released frequently</span>
-<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2.26.0&quot;</span>
-<span class="c1">      #version = &quot;~&gt; 2&quot;</span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2.26.0"</span>
+<span class="c1">      #version = "~&gt; 2"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
-<span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;sakuracloud&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">provider</span><span class="w"> </span><span class="nv">"sakuracloud"</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">  # More information on the authentication methods supported by</span>
 <span class="c1">  # the SakuraCloud Provider can be found here:</span>
 <span class="c1">  # https://docs.usacloud.jp/terraform/provider/</span>
 
-<span class="c1">  # profile = &quot;...&quot;</span>
+<span class="c1">  # profile = "..."</span>
 <span class="p">}</span>
 
 <span class="err">variable</span><span class="w"> </span><span class="nb">password</span><span class="w"> </span><span class="p">{}</span>
 
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;ubuntu&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">os_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ubuntu2004&quot;</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"ubuntu"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">os_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ubuntu2004"</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_disk&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_disk"</span><span class="w"> </span><span class="nv">"example"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">  </span><span class="na">source_archive_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_archive.ubuntu.id</span>
 
 <span class="c1">  # If you want to prevent re-creation of the disk</span>
@@ -5560,20 +5560,20 @@ v1をご利用の場合は以下のドキュメントを参照してください
 <span class="c1">  # }</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_server"</span><span class="w"> </span><span class="nv">"example"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">  </span><span class="na">disks</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_disk.example.id</span><span class="p">]</span>
 <span class="w">  </span><span class="na">core</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 <span class="w">  </span><span class="na">memory</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
-<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;app=web&quot;, &quot;stage=staging&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"app=web", "stage=staging"</span><span class="p">]</span>
 
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared&quot;</span>
+<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"shared"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">    </span><span class="na">password</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nv">var.password</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>

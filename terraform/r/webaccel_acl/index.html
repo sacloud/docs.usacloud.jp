@@ -2350,7 +2350,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2576,7 +2576,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5537,17 +5537,17 @@
 
 <h1 id="acl-sakuracloud_webaccel_acl">ウェブアクセラレータ アクセス制御リスト(ACL): sakuracloud_webaccel_acl</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="err">data</span><span class="w"> </span><span class="err">sakuracloud_webaccel</span><span class="w"> </span><span class="s2">&quot;site&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-site-name&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="err">data</span><span class="w"> </span><span class="err">sakuracloud_webaccel</span><span class="w"> </span><span class="s2">"site"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-site-name"</span>
 <span class="c1">   # or</span>
-<span class="c1">   # domain = &quot;your-domain&quot;</span>
+<span class="c1">   # domain = "your-domain"</span>
 <span class="w"> </span><span class="p">}</span>
-<span class="w"> </span><span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_webaccel_acl</span><span class="w"> </span><span class="s2">&quot;acl&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_webaccel_acl</span><span class="w"> </span><span class="s2">"acl"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="na">site_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_webaccel.site.id</span>
-<span class="w">   </span><span class="na">acl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
-<span class="w">     </span><span class="s2">&quot;deny 192.0.2.5/25&quot;</span><span class="p">,</span>
-<span class="w">     </span><span class="s2">&quot;deny 198.51.100.0&quot;</span><span class="p">,</span>
-<span class="w">     </span><span class="s2">&quot;allow all&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="na">acl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+<span class="w">     </span><span class="s2">"deny 192.0.2.5/25"</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">"deny 198.51.100.0"</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">"allow all"</span><span class="p">,</span>
 <span class="w">   </span><span class="p">])</span>
 <span class="w"> </span><span class="p">}</span>
 </code></pre></div>

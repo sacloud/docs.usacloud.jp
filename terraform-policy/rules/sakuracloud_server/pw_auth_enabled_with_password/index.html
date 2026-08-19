@@ -1197,14 +1197,14 @@
 <p>SSHでのパスワードログインを無効化し、公開鍵認証を有効化することを推奨します</p>
 <h2 id="_4">例</h2>
 <h3 id="bad-case">Bad case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;bad_server&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bad_server&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_server"</span><span class="w"> </span><span class="nv">"bad_server"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"bad_server"</span>
 <span class="w">  </span><span class="na">disks</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_disk.disk.id</span><span class="p">]</span>
 <span class="w">  </span><span class="na">core</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 <span class="w">  </span><span class="na">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 
 <span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bad_server&quot;</span>
+<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"bad_server"</span>
 <span class="w">    </span><span class="na">disable_pw_auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">false</span>
 
 <span class="w">    </span><span class="na">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.password</span>
@@ -1212,14 +1212,14 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="good-case">Good case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;good_server&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;good_server&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_server"</span><span class="w"> </span><span class="nv">"good_server"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"good_server"</span>
 <span class="w">  </span><span class="na">disks</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_disk.disk.id</span><span class="p">]</span>
 <span class="w">  </span><span class="na">core</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 <span class="w">  </span><span class="na">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 
 <span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;good_server&quot;</span>
+<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"good_server"</span>
 <span class="w">    </span><span class="na">disable_pw_auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 
 <span class="w">    </span><span class="na">ssh_key_ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">resource.sakuracloud_ssh_key.user_key.id</span><span class="p">]</span>

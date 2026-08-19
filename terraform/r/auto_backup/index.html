@@ -2350,7 +2350,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2576,7 +2576,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5615,16 +5615,16 @@
 
 <h1 id="sakuracloud_auto_backup">自動バックアップ: sakuracloud_auto_backup</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_disk&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_disk"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
 <span class="p">}</span>
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_auto_backup&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_auto_backup"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
 <span class="w">  </span><span class="na">disk_id</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_disk.foobar.id</span>
-<span class="w">  </span><span class="na">weekdays</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;mon&quot;, &quot;tue&quot;, &quot;wed&quot;, &quot;thu&quot;, &quot;fri&quot;, &quot;sat&quot;, &quot;sun&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">weekdays</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"mon", "tue", "wed", "thu", "fri", "sat", "sun"</span><span class="p">]</span>
 <span class="w">  </span><span class="na">max_backup_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
-<span class="w">  </span><span class="na">description</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">description</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>

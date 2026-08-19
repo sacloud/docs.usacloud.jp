@@ -2314,7 +2314,7 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># Exporterの設定</span>
 <span class="nt">exporter_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
-<span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=&quot;:8081&quot;&gt;</span>
+<span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=":8081"&gt;</span>
 </code></pre></div>
 <p>詳細は<a href="../inputs/config/">Inputsの共通設定</a>を参照してください。</p>
 <h3 id="core">Core</h3>
@@ -2323,7 +2323,7 @@
 <span class="w">  </span><span class="c1"># Exporterの設定</span>
 <span class="w">  </span><span class="nt">exporter_config</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
-<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=&quot;:8081&quot;&gt;</span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=":8081"&gt;</span>
 </code></pre></div>
 <p>詳細は<a href="../configuration/">コンフィギュレーション リファレンス</a>を参照してください。</p>
 <h2 id="_1">メトリクス</h2>
@@ -2343,31 +2343,31 @@
 <h3 id="inputs_1">Inputsでの出力例</h3>
 <div class="highlight"><pre><span></span><code># HELP sacloud_autoscaler_grpc_errors_total The total number of errors
 # TYPE sacloud_autoscaler_grpc_errors_total counter
-sacloud_autoscaler_grpc_errors_total{component=&quot;inputs_to_core&quot;} 0
+sacloud_autoscaler_grpc_errors_total{component="inputs_to_core"} 0
 
 # HELP sacloud_autoscaler_webhook_requests_down A counter for requests to the /down webhook
 # TYPE sacloud_autoscaler_webhook_requests_down counter
-sacloud_autoscaler_webhook_requests_down{code=&quot;200&quot;} 0
-sacloud_autoscaler_webhook_requests_down{code=&quot;400&quot;} 0
-sacloud_autoscaler_webhook_requests_down{code=&quot;500&quot;} 0
+sacloud_autoscaler_webhook_requests_down{code="200"} 0
+sacloud_autoscaler_webhook_requests_down{code="400"} 0
+sacloud_autoscaler_webhook_requests_down{code="500"} 0
 
 # HELP sacloud_autoscaler_webhook_requests_total A counter for requests to the webhooks
 # TYPE sacloud_autoscaler_webhook_requests_total counter
-sacloud_autoscaler_webhook_requests_total{code=&quot;200&quot;} 0
-sacloud_autoscaler_webhook_requests_total{code=&quot;400&quot;} 0
-sacloud_autoscaler_webhook_requests_total{code=&quot;500&quot;} 0
+sacloud_autoscaler_webhook_requests_total{code="200"} 0
+sacloud_autoscaler_webhook_requests_total{code="400"} 0
+sacloud_autoscaler_webhook_requests_total{code="500"} 0
 
 # HELP sacloud_autoscaler_webhook_requests_up A counter for requests to the /up webhook
 # TYPE sacloud_autoscaler_webhook_requests_up counter
-sacloud_autoscaler_webhook_requests_up{code=&quot;200&quot;} 0
-sacloud_autoscaler_webhook_requests_up{code=&quot;400&quot;} 0
-sacloud_autoscaler_webhook_requests_up{code=&quot;500&quot;} 0
+sacloud_autoscaler_webhook_requests_up{code="200"} 0
+sacloud_autoscaler_webhook_requests_up{code="400"} 0
+sacloud_autoscaler_webhook_requests_up{code="500"} 0
 </code></pre></div>
 <h3 id="core_1">Coreでの出力例</h3>
 <div class="highlight"><pre><span></span><code># HELP sacloud_autoscaler_grpc_errors_total The total number of errors
 # TYPE sacloud_autoscaler_grpc_errors_total counter
-sacloud_autoscaler_grpc_errors_total{component=&quot;core&quot;} 0
-sacloud_autoscaler_grpc_errors_total{component=&quot;core_to_handlers&quot;} 0
+sacloud_autoscaler_grpc_errors_total{component="core"} 0
+sacloud_autoscaler_grpc_errors_total{component="core_to_handlers"} 0
 </code></pre></div>
 
 

@@ -29,7 +29,7 @@
     
     
       
-        <title>スイッチ+ルータ - Terraform for さくらのクラウド(v2)</title>
+        <title>ルータ+スイッチ - Terraform for さくらのクラウド(v2)</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              スイッチ+ルータ
+              ルータ+スイッチ
             
           </span>
         </div>
@@ -2352,7 +2352,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2589,7 +2589,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2607,7 +2607,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5613,17 +5613,17 @@
 
 
 
-<h1 id="sakuracloud_internet">スイッチ+ルータ: sakuracloud_internet</h1>
+<h1 id="sakuracloud_internet">ルータ+スイッチ: sakuracloud_internet</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_internet&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_internet"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
 
 <span class="w">  </span><span class="na">netmask</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">28</span>
 <span class="w">  </span><span class="na">band_width</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">100</span>
 <span class="w">  </span><span class="na">enable_ipv6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">false</span>
 
-<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>
@@ -5652,14 +5652,14 @@
 <ul>
 <li><code>id</code> - ID</li>
 <li><code>gateway</code> - ゲートウェイIPアドレス</li>
-<li><code>ip_addresses</code> - スイッチ+ルータに割り当てられた、ユーザーが利用可能なIPアドレスのリスト</li>
+<li><code>ip_addresses</code> - ルータ+スイッチに割り当てられた、ユーザーが利用可能なIPアドレスのリスト</li>
 <li><code>ipv6_network_address</code> - IPv6ネットワークアドレス</li>
 <li><code>ipv6_prefix</code> - IPv6プレフィックス</li>
 <li><code>ipv6_prefix_len</code> - IPv6プレフィックス長</li>
-<li><code>max_ip_address</code> - スイッチ+ルータに割り当てられた、ユーザーが利用可能なIPアドレスの最大値</li>
-<li><code>min_ip_address</code> - スイッチ+ルータに割り当てられた、ユーザーが利用可能なIPアドレスの最小値</li>
+<li><code>max_ip_address</code> - ルータ+スイッチに割り当てられた、ユーザーが利用可能なIPアドレスの最大値</li>
+<li><code>min_ip_address</code> - ルータ+スイッチに割り当てられた、ユーザーが利用可能なIPアドレスの最小値</li>
 <li><code>network_address</code> - ネットワークアドレス</li>
-<li><code>server_ids</code> - スイッチ+ルータに接続しているサーバのIDのリスト</li>
+<li><code>server_ids</code> - ルータ+スイッチに接続しているサーバのIDのリスト</li>
 <li><code>switch_id</code> - スイッチID</li>
 </ul>
 <h2 id="import">Import</h2>

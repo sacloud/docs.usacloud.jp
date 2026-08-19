@@ -2429,7 +2429,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2655,7 +2655,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5533,26 +5533,26 @@
 <h3 id="diff1">cloud-init対応</h3>
 <p>サーバの起動時にcloud-init用のUserDataを指定可能になりました。  </p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_server"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">  </span><span class="na">disks</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">local.disk_id</span><span class="p">]</span>
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared&quot;</span>
+<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"shared"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="na">core</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
 <span class="w">  </span><span class="na">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
 
-<span class="w">  </span><span class="na">user_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;#cloud-config&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="na">user_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"#cloud-config"</span><span class="p">,</span>
 <span class="w">    </span><span class="nf">yamlencode</span><span class="p">({</span>
-<span class="w">      </span><span class="err">hostname</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="err">hostname</span><span class="p">:</span><span class="w"> </span><span class="s2">"example"</span><span class="p">,</span>
 <span class="w">      </span><span class="err">password</span><span class="p">:</span><span class="w"> </span><span class="nv">local.password</span><span class="p">,</span>
 <span class="w">      </span><span class="err">chpasswd</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="err">expire</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p">,</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">      </span><span class="err">ssh_pwauth</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p">,</span>
 <span class="w">      </span><span class="err">ssh_authorized_keys</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="nf">file</span><span class="p">(</span><span class="s2">&quot;~/.ssh/id_rsa.pub&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="nf">file</span><span class="p">(</span><span class="s2">"~/.ssh/id_rsa.pub"</span><span class="p">),</span>
 <span class="w">      </span><span class="p">],</span>
 <span class="w">    </span><span class="p">}),</span>
 <span class="w">  </span><span class="p">])</span>

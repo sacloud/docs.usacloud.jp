@@ -2350,7 +2350,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2576,7 +2576,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5537,16 +5537,16 @@
 
 <h1 id="sakuracloud_webaccel_certificate">ウェブアクセラレータ証明書: sakuracloud_webaccel_certificate</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="err">data</span><span class="w"> </span><span class="err">sakuracloud_webaccel</span><span class="w"> </span><span class="s2">&quot;site&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-site-name&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="err">data</span><span class="w"> </span><span class="err">sakuracloud_webaccel</span><span class="w"> </span><span class="s2">"site"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-site-name"</span>
 <span class="c1">  # or</span>
-<span class="c1">  # domain = &quot;your-domain&quot;</span>
+<span class="c1">  # domain = "your-domain"</span>
 <span class="p">}</span>
 
-<span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_webaccel_certificate</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_webaccel_certificate</span><span class="w"> </span><span class="s2">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">site_id</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_webaccel.site.id</span>
-<span class="w">  </span><span class="na">certificate_chain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">file</span><span class="p">(</span><span class="s2">&quot;path/to/your/certificate/chain&quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="na">private_key</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">file</span><span class="p">(</span><span class="s2">&quot;path/to/your/private/key&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="na">certificate_chain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">file</span><span class="p">(</span><span class="s2">"path/to/your/certificate/chain"</span><span class="p">)</span>
+<span class="w">  </span><span class="na">private_key</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">file</span><span class="p">(</span><span class="s2">"path/to/your/private/key"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>

@@ -2429,7 +2429,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2655,7 +2655,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5534,12 +5534,12 @@
 <p>シンプル監視でのSSL証明書の有効期限監視(<code>sslcertificate</code>)にて、
 取得したSSL証明書のホストネーム情報にリクエストしたホスト名(FQDN)が含まれるかを検証するためのオプション<code>verify_sni</code>が追加されました。</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_simple_monitor&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www.example.com&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_simple_monitor"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"www.example.com"</span>
 
 <span class="w">   </span><span class="na">delay_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">60</span>
 <span class="w">   </span><span class="nb">health_check</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sslcertificate&quot;</span>
+<span class="w">      </span><span class="na">protocol</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"sslcertificate"</span>
 <span class="w">      </span><span class="na">port</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="m">443</span>
 <span class="w">      </span><span class="na">verify_sni</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="w">      </span><span class="na">remaining_days</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span>

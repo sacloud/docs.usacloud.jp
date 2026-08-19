@@ -2469,7 +2469,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2695,7 +2695,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5616,21 +5616,21 @@
 <span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">required_providers</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">sakuracloud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sacloud/sakuracloud&quot;</span>
+<span class="w">      </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"sacloud/sakuracloud"</span>
 
-<span class="c1">      # We recommend pinning to the specific version of the SakuraCloud Provider you&#39;re using</span>
+<span class="c1">      # We recommend pinning to the specific version of the SakuraCloud Provider you're using</span>
 <span class="c1">      # since new versions are released frequently</span>
-<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2.26.0&quot;</span>
-<span class="c1">      #version = &quot;~&gt; 2&quot;</span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2.26.0"</span>
+<span class="c1">      #version = "~&gt; 2"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
-<span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;sakuracloud&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">provider</span><span class="w"> </span><span class="nv">"sakuracloud"</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">  # More information on the authentication methods supported by</span>
 <span class="c1">  # the SakuraCloud Provider can be found here:</span>
 <span class="c1">  # https://docs.usacloud.jp/terraform/provider/</span>
 
-<span class="c1">  # profile = &quot;...&quot;</span>
+<span class="c1">  # profile = "..."</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="api">APIの認証方法の設定</h2>
@@ -5650,20 +5650,20 @@
 </div>
 <p>tfファイル上の<code>sakuracloud</code>プロバイダーブロック内にインラインで<code>token</code>と<code>secret</code>を指定します。</p>
 <p>使用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;sakuracloud&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">token</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my-access-token&quot;</span>
-<span class="w">  </span><span class="na">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my-access-secret&quot;</span>
-<span class="w">  </span><span class="na">zone</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;is1a&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">provider</span><span class="w"> </span><span class="nv">"sakuracloud"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">token</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"my-access-token"</span>
+<span class="w">  </span><span class="na">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"my-access-secret"</span>
+<span class="w">  </span><span class="na">zone</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"is1a"</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="environment-variables">環境変数(Environment variables)</h3>
 <p>環境変数<code>SAKURACLOUD_ACCESS_TOKEN</code>と<code>SAKURACLOUD_ACCESS_TOKEN_SECRET</code>を指定することでAPIキーを指定可能です。</p>
-<div class="highlight"><pre><span></span><code><span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;sakuracloud&quot;</span><span class="w"> </span><span class="p">{}</span>
+<div class="highlight"><pre><span></span><code><span class="kr">provider</span><span class="w"> </span><span class="nv">"sakuracloud"</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div>
 <p>Usage:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SAKURACLOUD_ACCESS_TOKEN</span><span class="o">=</span><span class="s2">&quot;my-access-token&quot;</span>
-$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SAKURACLOUD_ACCESS_TOKEN_SECRET</span><span class="o">=</span><span class="s2">&quot;my-access-secret&quot;</span>
-$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SAKURACLOUD_ZONE</span><span class="o">=</span><span class="s2">&quot;is1a&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SAKURACLOUD_ACCESS_TOKEN</span><span class="o">=</span><span class="s2">"my-access-token"</span>
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SAKURACLOUD_ACCESS_TOKEN_SECRET</span><span class="o">=</span><span class="s2">"my-access-secret"</span>
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SAKURACLOUD_ZONE</span><span class="o">=</span><span class="s2">"is1a"</span>
 $<span class="w"> </span>terraform<span class="w"> </span>plan
 </code></pre></div>
 <h3 id="shared-credentials-file">プロファイル(Shared credentials file)</h3>
@@ -5677,9 +5677,9 @@ $<span class="w"> </span>terraform<span class="w"> </span>plan
 <p>プロファイルJSONの例:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span><span class="nv">$HOME</span>/.usacloud/default/config.json
 <span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;AccessToken&quot;</span>:<span class="w"> </span><span class="s2">&quot;my-access-token&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;AccessTokenSecret&quot;</span>:<span class="w"> </span><span class="s2">&quot;my-access-secret&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;Zone&quot;</span>:<span class="w"> </span><span class="s2">&quot;is1a&quot;</span>
+<span class="w">    </span><span class="s2">"AccessToken"</span>:<span class="w"> </span><span class="s2">"my-access-token"</span>,
+<span class="w">    </span><span class="s2">"AccessTokenSecret"</span>:<span class="w"> </span><span class="s2">"my-access-secret"</span>,
+<span class="w">    </span><span class="s2">"Zone"</span>:<span class="w"> </span><span class="s2">"is1a"</span>
 <span class="o">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>

@@ -2540,7 +2540,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2766,7 +2766,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5749,45 +5749,45 @@
 
 <h1 id="sakuracloud_server">サーバ: sakuracloud_server</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_server"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
 <span class="w">  </span><span class="na">disks</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_disk.foobar.id</span><span class="p">]</span>
-<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">upstream</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared&quot;</span>
+<span class="w">    </span><span class="na">upstream</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"shared"</span>
 <span class="w">    </span><span class="na">packet_filter_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_packet_filter.foobar.id</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hostname&quot;</span>
-<span class="w">    </span><span class="na">password</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;password&quot;</span>
+<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"hostname"</span>
+<span class="w">    </span><span class="na">password</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"password"</span>
 <span class="w">    </span><span class="na">disable_pw_auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 
-<span class="c1">    # ssh_key_ids     = [&quot;&lt;ID&gt;&quot;, &quot;&lt;ID&gt;&quot;]</span>
+<span class="c1">    # ssh_key_ids     = ["&lt;ID&gt;", "&lt;ID&gt;"]</span>
 <span class="c1">    # note {</span>
-<span class="c1">    #  id         = &quot;&lt;ID&gt;&quot;</span>
-<span class="c1">    #  api_key_id = &quot;&lt;ID&gt;&quot;</span>
+<span class="c1">    #  id         = "&lt;ID&gt;"</span>
+<span class="c1">    #  api_key_id = "&lt;ID&gt;"</span>
 <span class="c1">    #  variables = {</span>
-<span class="c1">    #    foo = &quot;bar&quot;</span>
+<span class="c1">    #    foo = "bar"</span>
 <span class="c1">    #  }</span>
 <span class="c1">    # }</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_packet_filter&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_packet_filter"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">filter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;foobar&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"foobar"</span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;ubuntu&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">os_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ubuntu&quot;</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"ubuntu"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">os_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ubuntu"</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_disk&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{{ .arg0 }}&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_disk"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">"{{ .arg0 }}"</span>
 <span class="w">  </span><span class="na">source_archive_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_archive.ubuntu.id</span>
 <span class="p">}</span>
 </code></pre></div>

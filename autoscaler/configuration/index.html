@@ -2449,22 +2449,22 @@
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># サーバ(垂直スケール)</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;server&quot;</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"server"</span>
 <span class="w">    </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">      </span><span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;is1a&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"example"</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"is1a"</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">shutdown_force</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
 <span class="w">    </span><span class="c1"># 親リソース(GSLB)</span>
 <span class="w">    </span><span class="c1"># GSLB配下のサーバが垂直スケールする際にサーバのデタッチ&amp;アタッチが行われる</span>
 <span class="w">    </span><span class="nt">parent</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GSLB</span>
-<span class="w">      </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;example-gslb&quot;</span>
+<span class="w">      </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">"example-gslb"</span>
 
 <span class="c1"># カスタムハンドラーの定義</span>
 <span class="c1"># handlers:</span>
-<span class="c1">#   - name: &quot;fake&quot;</span>
-<span class="c1">#     endpoint: &quot;unix:autoscaler-handlers-fake.sock&quot;</span>
+<span class="c1">#   - name: "fake"</span>
+<span class="c1">#     endpoint: "unix:autoscaler-handlers-fake.sock"</span>
 
 <span class="c1"># オートスケーラーの動作設定</span>
 <span class="nt">autoscaler</span><span class="p">:</span>
@@ -2473,11 +2473,11 @@
 <span class="c1"># さくらのクラウド API関連</span>
 <span class="c1"># sakuracloud:</span>
 <span class="c1">#   # Usacloud互換のプロファイル機能でAPIキーを指定</span>
-<span class="c1">#   profile: &quot;&lt;your-profile-name&gt;&quot;</span>
+<span class="c1">#   profile: "&lt;your-profile-name&gt;"</span>
 <span class="c1">#</span>
 <span class="c1">#   # APIキーの直接指定も可能</span>
-<span class="c1">#   token: &quot;&lt;your-token&gt;&quot;</span>
-<span class="c1">#   secret: &quot;&lt;your-secret&gt;&quot;</span>
+<span class="c1">#   token: "&lt;your-token&gt;"</span>
+<span class="c1">#   secret: "&lt;your-secret&gt;"</span>
 </code></pre></div>
 <h2 id="_2">スキーマ</h2>
 <ul>
@@ -2537,7 +2537,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <h3 id="resource_def_elb">&lt;resource_def_elb&gt;</h3>
 <p>エンハンスドロードバランサの定義。<br />
 ここで定義したリソースは垂直スケール可能になります(ハンドラ<code>elb-vertical-scaler</code>)。  </p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ELB&quot;</span><span class="w"> </span><span class="c1"># or EnhancedLoadBalancer</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"ELB"</span><span class="w"> </span><span class="c1"># or EnhancedLoadBalancer</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
 <span class="nt">selector</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># idかnames or tagsのどちらかを指定、必須</span>
@@ -2570,7 +2570,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <h3 id="resource_def_router">&lt;resource_def_router&gt;</h3>
 <p>ルータの定義。<br />
 ここで定義したリソースは垂直スケール可能になります(ハンドラ<code>router-vertical-scaler</code>)。  </p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Router&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"Router"</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
 <span class="nt">selector</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># idかnames or tagsのどちらかを指定、必須</span>
@@ -2582,7 +2582,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="w">          </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="c1"># ゾーン(必須) </span>
 <span class="w">  </span><span class="nt">zones</span><span class="p">:</span>
-<span class="w">          </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 <span class="c1"># 垂直スケールさせる範囲(省略可能)</span>
 <span class="nt">plans</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"> </span><span class="c1"># プラン名、省略可能 </span>
@@ -2611,7 +2611,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <p>サーバの定義。<br />
 ここで定義したリソースは垂直スケール可能になります(ハンドラ<code>server-vertical-scaler</code>)。<br />
 <code>parent</code>を定義した場合、サーバの垂直スケール前後に<code>parent</code>が示すリソースからのデタッチ/アタッチが行われます。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Server&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"Server"</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
 <span class="nt">selector</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># idかnames or tagsのどちらかを指定、必須</span>
@@ -2623,7 +2623,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="w">          </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="c1"># ゾーン(必須) </span>
 <span class="w">  </span><span class="nt">zones</span><span class="p">:</span>
-<span class="w">          </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 
 <span class="c1"># コア専有プランを利用するか</span>
 <span class="nt">dedicated_cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
@@ -2666,13 +2666,13 @@ resource_def_xxxのいずれかを指定します。</p>
 <p>サーバグループの定義。<br />
 ここで定義したリソースは水平スケール可能になります(ハンドラ<code>server-horizontal-scaler</code>)。
 <code>parent</code>を定義した場合、サーバの垂直スケール前後に<code>parent</code>が示すリソースからのデタッチ/アタッチが行われます。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ServerGroup&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"ServerGroup"</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span>
 
 <span class="c1"># 対象サーバの指定</span>
 <span class="nt">server_name_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1">#グループ内の各サーバ名のプレフィックス、省略した場合はnameが利用される</span>
-<span class="nt">server_name_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1">#グループ内の各サーバ名のフォーマット、省略した場合は&quot;%s-%03d&quot;が利用される</span>
-<span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;&quot;is1a&quot; | &quot;is1b&quot; | &quot;tk1a&quot; | &quot;tk1b&quot; | &quot;tk1v&quot;&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="nt">server_name_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"> </span><span class="c1">#グループ内の各サーバ名のフォーマット、省略した場合は"%s-%03d"が利用される</span>
+<span class="nt">zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;"is1a" | "is1b" | "tk1a" | "tk1b" | "tk1v"&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 
 <span class="c1"># 最小/最大サーバ数</span>
 <span class="nt">min_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span>
@@ -2704,18 +2704,18 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="w">  </span><span class="nt">cdrom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;id_or_name_or_selector&gt;</span>
 <span class="w">  </span><span class="nt">private_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;id_or_name_or_selector&gt;</span>
 
-<span class="w">  </span><span class="nt">interface_driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;virtio&quot; | &quot;e1000&quot; | default=&quot;virtio&quot;&gt;</span>
+<span class="w">  </span><span class="nt">interface_driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;"virtio" | "e1000" | default="virtio"&gt;</span>
 
 <span class="w">  </span><span class="nt">plan</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w">           </span><span class="c1"># コア数</span>
 <span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w">         </span><span class="c1"># メモリサイズ、GB単位 </span>
 <span class="w">    </span><span class="nt">dedicated_cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w">    </span><span class="c1"># コア専有の場合true</span>
-<span class="w">    </span><span class="nt">cpu_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;amd_epyc_7713p&quot; | &quot;&quot; | default=&quot;&quot;&gt;</span>
+<span class="w">    </span><span class="nt">cpu_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;"amd_epyc_7713p" | "" | default=""&gt;</span>
 <span class="w">    </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;number&gt;</span><span class="w">            </span><span class="c1"># GPU</span>
 
 <span class="w">  </span><span class="c1"># 接続するディスクをリストで指定  </span>
 <span class="w">  </span><span class="nt">disks</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name_format</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;%s-disk%03d&quot;</span><span class="w"> </span><span class="c1"># 省略した場合は &#39;サーバ名+ディスク連番&#39; (例: server-group-001-disk001)</span>
+<span class="w">    </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- name_format</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"%s-disk%03d"</span><span class="w"> </span><span class="c1"># 省略した場合は 'サーバ名+ディスク連番' (例: server-group-001-disk001)</span>
 <span class="w">        </span><span class="nv">tags</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">- &lt;string&gt;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="nv">description</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span>
 
@@ -2725,15 +2725,15 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="w">        </span><span class="nv">source_disk</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;name_or_resource_selector&gt;</span>
 <span class="w">        </span><span class="nv">os_type</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="w"> </span><span class="c1"># 指定可能な値は https://github.com/sacloud/iaas-api-go/blob/7cfcd90757d27993640bbc412e7e32526ba9218b/ostype/archive_ostype.go#L97 を参照</span>
 
-<span class="w">        </span><span class="nv">plan</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;&quot;ssd&quot; | &quot;hdd&quot;&gt;</span>
-<span class="w">        </span><span class="nv">connection</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;&quot;virtio&quot; | &quot;ide&quot;&gt;</span>
+<span class="w">        </span><span class="nv">plan</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;"ssd" | "hdd"&gt;</span>
+<span class="w">        </span><span class="nv">connection</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;"virtio" | "ide"&gt;</span>
 <span class="w">        </span><span class="nv">size</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">&lt;number&gt;</span>
 <span class="w">    </span><span class="p p-Indicator">]</span>
 
 <span class="w">  </span><span class="c1"># ディスクの修正パラメータ、cloud_configとの併用は出来ない</span>
 <span class="w">  </span><span class="nt">edit_parameter</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w">        </span><span class="c1"># ディスクの修正を行わない場合true</span>
-<span class="w">    </span><span class="nt">host_name_format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;%s-%03d&quot;</span><span class="w"> </span><span class="c1"># ホスト名フォーマット、サーバ名とインデックスが利用可能(例: %s-%02d)。省略した場合はサーバ名が利用される</span>
+<span class="w">    </span><span class="nt">host_name_format</span><span class="p">:</span><span class="w"> </span><span class="s">"%s-%03d"</span><span class="w"> </span><span class="c1"># ホスト名フォーマット、サーバ名とインデックスが利用可能(例: %s-%02d)。省略した場合はサーバ名が利用される</span>
 <span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
 <span class="w">    </span><span class="nt">disable_pw_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
 <span class="w">    </span><span class="nt">enable_dhcp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
@@ -2746,7 +2746,7 @@ resource_def_xxxのいずれかを指定します。</p>
 
 <span class="w">  </span><span class="nt">network_interfaces</span><span class="p">:</span>
 <span class="w">    </span><span class="c1"># 上流ネットワーク</span>
-<span class="w">    </span><span class="nt">upstream</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&quot;shared&quot;&gt; | &lt;resource_selector&gt;</span>
+<span class="w">    </span><span class="nt">upstream</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;"shared"&gt; | &lt;resource_selector&gt;</span>
 
 <span class="w">    </span><span class="nt">packet_filter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;id_or_name_or_selector&gt;</span>
 <span class="w">    </span><span class="c1"># 以下はupstreamがshared以外の場合のみ指定可能</span>
@@ -2773,7 +2773,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="w">      </span><span class="c1"># LB向け: 実サーバ登録時のヘルスチェック</span>
 <span class="w">      </span><span class="nt">health_check</span><span class="p">:</span>
 <span class="w">        </span><span class="c1"># ヘルスチェックで用いるプロトコル</span>
-<span class="w">        </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt; &quot;http&quot; | &quot;https&quot; | &quot;ping&quot; | &quot;tcp&quot; &gt;</span>
+<span class="w">        </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt; "http" | "https" | "ping" | "tcp" &gt;</span>
 
 <span class="w">        </span><span class="c1"># プロトコルがhttp/httpsの場合のリクエスト先パス 例:/index.html</span>
 <span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
@@ -2791,7 +2791,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <p><code>plans</code>を省略した場合、<code>size</code>に<code>min_size</code>から<code>max_size</code>までの値を持つプランが存在するとみなします。</p>
 <p><code>template.plan</code>の指定例は<a href="../tips/server_plans">Tips</a>を参照してください。</p>
 <h4 id="parent_definition">&lt;parent_definition&gt;</h4>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt; &quot;DNS&quot; | &quot;EnhancedLoadBalancer&quot; | &quot;ELB&quot; | &quot;GSLB&quot; | &quot;LoadBalancer&quot; &gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt; "DNS" | "EnhancedLoadBalancer" | "ELB" | "GSLB" | "LoadBalancer" &gt;</span>
 <span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;name_or_resource_selector&gt;</span>
 </code></pre></div>
 <h4 id="resource_selector">&lt;resource_selector&gt;</h4>
@@ -2804,11 +2804,11 @@ resource_def_xxxのいずれかを指定します。</p>
 </code></pre></div>
 <p>文字列が指定された場合はnamesのみが指定されたresource_selectorと同等とみなします。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 文字列を指定した場合</span>
-<span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;name&quot;</span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">"name"</span>
 
 <span class="c1"># 以下と同等</span>
 <span class="c1"># selector:</span>
-<span class="c1">#   names: [&quot;name&quot;]</span>
+<span class="c1">#   names: ["name"]</span>
 </code></pre></div>
 <h4 id="id_or_name_or_resource_selector">&lt;id_or_name_or_resource_selector&gt;</h4>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt; | &lt;name_or_resource_selector&gt;</span>
@@ -2835,7 +2835,7 @@ resource_def_xxxのいずれかを指定します。</p>
 <span class="c1"># Exporterの設定</span>
 <span class="nt">exporter_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
-<span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=&quot;:8081&quot;&gt;</span>
+<span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | default=":8081"&gt;</span>
 </code></pre></div>
 
 

@@ -4231,9 +4231,9 @@
 
 <span class="go">  === Plan options ===</span>
 
-<span class="go">      --disk-plan string   (*required) options: [ssd/hdd] (default &quot;ssd&quot;)</span>
+<span class="go">      --disk-plan string   (*required) options: [ssd/hdd] (default "ssd")</span>
 <span class="go">      --size int            (default 20)</span>
-<span class="go">      --connector string   (*required) options: [virtio/ide] (aliases: --connection) (default &quot;virtio&quot;)</span>
+<span class="go">      --connector string   (*required) options: [virtio/ide] (aliases: --connection) (default "virtio")</span>
 
 <span class="go">  === Disk-specific options ===</span>
 
@@ -4291,56 +4291,56 @@
 </code></pre></div>
 <h5 id="parameter-examples">Parameter Examples</h5>
 <div class="highlight"><pre><span></span><code><span class="go">{</span>
-<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
-<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Tags&quot;: [</span>
-<span class="go">        &quot;tag1=example1&quot;,</span>
-<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    "Zone": "tk1a | tk1b | is1a | is1b | tk1v",</span>
+<span class="go">    "Name": "example",</span>
+<span class="go">    "Description": "example",</span>
+<span class="go">    "Tags": [</span>
+<span class="go">        "tag1=example1",</span>
+<span class="go">        "tag2=example2"</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;IconID&quot;: 123456789012,</span>
-<span class="go">    &quot;DiskPlan&quot;: &quot;ssd | hdd&quot;,</span>
-<span class="go">    &quot;SizeGB&quot;: 20,</span>
-<span class="go">    &quot;Connection&quot;: &quot;virtio | ide&quot;,</span>
-<span class="go">    &quot;OSType&quot;: &quot;centos | centos8stream | centos7 | almalinux | rockylinux | miracle | miraclelinux | ubuntu | ubuntu2004 | ubuntu1804 | debian | debian10 | debian11 | rancheros | k3os | kusanagi | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all&quot;,</span>
-<span class="go">    &quot;SourceDiskID&quot;: 123456789012,</span>
-<span class="go">    &quot;SourceArchiveID&quot;: 123456789012,</span>
-<span class="go">    &quot;ServerID&quot;: 123456789012,</span>
-<span class="go">    &quot;DistantFrom&quot;: [</span>
+<span class="go">    "IconID": 123456789012,</span>
+<span class="go">    "DiskPlan": "ssd | hdd",</span>
+<span class="go">    "SizeGB": 20,</span>
+<span class="go">    "Connection": "virtio | ide",</span>
+<span class="go">    "OSType": "centos | centos8stream | centos7 | almalinux | rockylinux | miracle | miraclelinux | ubuntu | ubuntu2004 | ubuntu1804 | debian | debian10 | debian11 | rancheros | k3os | kusanagi | windows2016 | windows2016-rds | windows2016-rds-office | windows2016-sql-web | windows2016-sql-standard | windows2016-sql-standard-all | windows2016-sql2017-standard | windows2016-sql2017-enterprise | windows2016-sql2017-standard-all | windows2019 | windows2019-rds | windows2019-rds-office2019 | windows2019-sql2017-web | windows2019-sql2019-web | windows2019-sql2017-standard | windows2019-sql2019-standard | windows2019-sql2017-enterprise | windows2019-sql2019-enterprise | windows2019-sql2017-standard-all | windows2019-sql2019-standard-all",</span>
+<span class="go">    "SourceDiskID": 123456789012,</span>
+<span class="go">    "SourceArchiveID": 123456789012,</span>
+<span class="go">    "ServerID": 123456789012,</span>
+<span class="go">    "DistantFrom": [</span>
 <span class="go">        123456789012</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;EditDisk&quot;: {</span>
-<span class="go">        &quot;HostName&quot;: &quot;hostname&quot;,</span>
-<span class="go">        &quot;Password&quot;: &quot;password&quot;,</span>
-<span class="go">        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
-<span class="go">        &quot;NetworkMaskLen&quot;: 24,</span>
-<span class="go">        &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,</span>
-<span class="go">        &quot;DisablePWAuth&quot;: true,</span>
-<span class="go">        &quot;EnableDHCP&quot;: true,</span>
-<span class="go">        &quot;ChangePartitionUUID&quot;: true,</span>
-<span class="go">        &quot;SSHKeys&quot;: [</span>
-<span class="go">            &quot;/path/to/your/public/key&quot;,</span>
-<span class="go">            &quot;ssh-rsa ...&quot;</span>
+<span class="go">    "EditDisk": {</span>
+<span class="go">        "HostName": "hostname",</span>
+<span class="go">        "Password": "password",</span>
+<span class="go">        "IPAddress": "192.0.2.11",</span>
+<span class="go">        "NetworkMaskLen": 24,</span>
+<span class="go">        "DefaultRoute": "192.0.2.1",</span>
+<span class="go">        "DisablePWAuth": true,</span>
+<span class="go">        "EnableDHCP": true,</span>
+<span class="go">        "ChangePartitionUUID": true,</span>
+<span class="go">        "SSHKeys": [</span>
+<span class="go">            "/path/to/your/public/key",</span>
+<span class="go">            "ssh-rsa ..."</span>
 <span class="go">        ],</span>
-<span class="go">        &quot;SSHKeyIDs&quot;: [</span>
+<span class="go">        "SSHKeyIDs": [</span>
 <span class="go">            123456789012</span>
 <span class="go">        ],</span>
-<span class="go">        &quot;IsSSHKeysEphemeral&quot;: true,</span>
-<span class="go">        &quot;NoteIDs&quot;: [</span>
+<span class="go">        "IsSSHKeysEphemeral": true,</span>
+<span class="go">        "NoteIDs": [</span>
 <span class="go">            123456789012</span>
 <span class="go">        ],</span>
-<span class="go">        &quot;IsNotesEphemeral&quot;: true,</span>
-<span class="go">        &quot;Notes&quot;: [</span>
+<span class="go">        "IsNotesEphemeral": true,</span>
+<span class="go">        "Notes": [</span>
 <span class="go">            {</span>
-<span class="go">                &quot;ID&quot;: 123456789012,</span>
-<span class="go">                &quot;Variables&quot;: {</span>
-<span class="go">                    &quot;variable1&quot;: &quot;foo&quot;,</span>
-<span class="go">                    &quot;variable2&quot;: &quot;bar&quot;</span>
+<span class="go">                "ID": 123456789012,</span>
+<span class="go">                "Variables": {</span>
+<span class="go">                    "variable1": "foo",</span>
+<span class="go">                    "variable2": "bar"</span>
 <span class="go">                }</span>
 <span class="go">            }</span>
 <span class="go">        ]</span>
 <span class="go">    },</span>
-<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">    "NoWait": false</span>
 <span class="go">}</span>
 </code></pre></div>
 <h2 id="read">read</h2>
@@ -4437,47 +4437,47 @@
 </code></pre></div>
 <h5 id="parameter-examples_1">Parameter Examples</h5>
 <div class="highlight"><pre><span></span><code><span class="go">{</span>
-<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
-<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Tags&quot;: [</span>
-<span class="go">        &quot;tag1=example1&quot;,</span>
-<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    "Zone": "tk1a | tk1b | is1a | is1b | tk1v",</span>
+<span class="go">    "Name": "example",</span>
+<span class="go">    "Description": "example",</span>
+<span class="go">    "Tags": [</span>
+<span class="go">        "tag1=example1",</span>
+<span class="go">        "tag2=example2"</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;IconID&quot;: 123456789012,</span>
-<span class="go">    &quot;Connection&quot;: &quot;virtio | ide&quot;,</span>
-<span class="go">    &quot;EditDisk&quot;: {</span>
-<span class="go">        &quot;HostName&quot;: &quot;hostname&quot;,</span>
-<span class="go">        &quot;Password&quot;: &quot;password&quot;,</span>
-<span class="go">        &quot;IPAddress&quot;: &quot;192.0.2.11&quot;,</span>
-<span class="go">        &quot;NetworkMaskLen&quot;: 24,</span>
-<span class="go">        &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,</span>
-<span class="go">        &quot;DisablePWAuth&quot;: true,</span>
-<span class="go">        &quot;EnableDHCP&quot;: true,</span>
-<span class="go">        &quot;ChangePartitionUUID&quot;: true,</span>
-<span class="go">        &quot;SSHKeys&quot;: [</span>
-<span class="go">            &quot;/path/to/your/public/key&quot;,</span>
-<span class="go">            &quot;ssh-rsa ...&quot;</span>
+<span class="go">    "IconID": 123456789012,</span>
+<span class="go">    "Connection": "virtio | ide",</span>
+<span class="go">    "EditDisk": {</span>
+<span class="go">        "HostName": "hostname",</span>
+<span class="go">        "Password": "password",</span>
+<span class="go">        "IPAddress": "192.0.2.11",</span>
+<span class="go">        "NetworkMaskLen": 24,</span>
+<span class="go">        "DefaultRoute": "192.0.2.1",</span>
+<span class="go">        "DisablePWAuth": true,</span>
+<span class="go">        "EnableDHCP": true,</span>
+<span class="go">        "ChangePartitionUUID": true,</span>
+<span class="go">        "SSHKeys": [</span>
+<span class="go">            "/path/to/your/public/key",</span>
+<span class="go">            "ssh-rsa ..."</span>
 <span class="go">        ],</span>
-<span class="go">        &quot;SSHKeyIDs&quot;: [</span>
+<span class="go">        "SSHKeyIDs": [</span>
 <span class="go">            123456789012</span>
 <span class="go">        ],</span>
-<span class="go">        &quot;IsSSHKeysEphemeral&quot;: true,</span>
-<span class="go">        &quot;NoteIDs&quot;: [</span>
+<span class="go">        "IsSSHKeysEphemeral": true,</span>
+<span class="go">        "NoteIDs": [</span>
 <span class="go">            123456789012</span>
 <span class="go">        ],</span>
-<span class="go">        &quot;IsNotesEphemeral&quot;: true,</span>
-<span class="go">        &quot;Notes&quot;: [</span>
+<span class="go">        "IsNotesEphemeral": true,</span>
+<span class="go">        "Notes": [</span>
 <span class="go">            {</span>
-<span class="go">                &quot;ID&quot;: 123456789012,</span>
-<span class="go">                &quot;Variables&quot;: {</span>
-<span class="go">                    &quot;variable1&quot;: &quot;foo&quot;,</span>
-<span class="go">                    &quot;variable2&quot;: &quot;bar&quot;</span>
+<span class="go">                "ID": 123456789012,</span>
+<span class="go">                "Variables": {</span>
+<span class="go">                    "variable1": "foo",</span>
+<span class="go">                    "variable2": "bar"</span>
 <span class="go">                }</span>
 <span class="go">            }</span>
 <span class="go">        ]</span>
 <span class="go">    },</span>
-<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">    "NoWait": false</span>
 <span class="go">}</span>
 </code></pre></div>
 <h2 id="delete">delete</h2>

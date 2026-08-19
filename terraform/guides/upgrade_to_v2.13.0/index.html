@@ -2451,7 +2451,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2677,7 +2677,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5579,16 +5579,16 @@
 <h3 id="diff1">シンプル監視でのFTP/FTPS監視</h3>
 <p>シンプル監視において監視方法にFTPを指定可能になりました。</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_simple_monitor&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ftp.example.com&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_simple_monitor"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ftp.example.com"</span>
 
 <span class="w">  </span><span class="na">delay_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">60</span>
 <span class="w">  </span><span class="na">timeout</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
 
 <span class="w">  </span><span class="nb">health_check</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ftp&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"ftp"</span>
 <span class="w">    </span><span class="na">port</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="m">21</span>
-<span class="w">    </span><span class="na">ftps</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;explicit&quot;</span>
+<span class="w">    </span><span class="na">ftps</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"explicit"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="na">notify_email_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
@@ -5597,7 +5597,7 @@
 <h3 id="diff2">エンハンスドロードバランサでのProxyProtocol v2対応</h3>
 <p>エンハンスドロードバランサにおいてProxy Protocol v2に対応しました。</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_proxylb&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_proxylb"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">  # ...</span>
 
 <span class="c1">  # Proxy Protocolの有効化</span>
@@ -5610,65 +5610,65 @@
 <div class="highlight"><pre><span></span><code><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">required_providers</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">tls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hashicorp/tls&quot;</span>
-<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3.1.0&quot;</span>
+<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"hashicorp/tls"</span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"3.1.0"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="nb">sakuracloud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sacloud/sakuracloud&quot;</span>
-<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2.14.0&quot;</span>
+<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"sacloud/sakuracloud"</span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2.14.0"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;tls_private_key&quot;</span><span class="w"> </span><span class="nv">&quot;client_key&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">algorithm</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ECDSA&quot;</span>
-<span class="w">  </span><span class="na">ecdsa_curve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;P384&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"tls_private_key"</span><span class="w"> </span><span class="nv">"client_key"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">algorithm</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"ECDSA"</span>
+<span class="w">  </span><span class="na">ecdsa_curve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"P384"</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;tls_cert_request&quot;</span><span class="w"> </span><span class="nv">&quot;client_csr&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">key_algorithm</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ECDSA&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"tls_cert_request"</span><span class="w"> </span><span class="nv">"client_csr"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">key_algorithm</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"ECDSA"</span>
 <span class="w">  </span><span class="na">private_key_pem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tls_private_key.client_key.private_key_pem</span>
 
 <span class="w">  </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">common_name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;client-csr.usacloud.com&quot;</span>
-<span class="w">    </span><span class="na">organization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;usacloud&quot;</span>
+<span class="w">    </span><span class="na">common_name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"client-csr.usacloud.com"</span>
+<span class="w">    </span><span class="na">organization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"usacloud"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;tls_private_key&quot;</span><span class="w"> </span><span class="nv">&quot;server_key&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">algorithm</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ECDSA&quot;</span>
-<span class="w">  </span><span class="na">ecdsa_curve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;P384&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"tls_private_key"</span><span class="w"> </span><span class="nv">"server_key"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">algorithm</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"ECDSA"</span>
+<span class="w">  </span><span class="na">ecdsa_curve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"P384"</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;tls_cert_request&quot;</span><span class="w"> </span><span class="nv">&quot;server_csr&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">key_algorithm</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ECDSA&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"tls_cert_request"</span><span class="w"> </span><span class="nv">"server_csr"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">key_algorithm</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"ECDSA"</span>
 <span class="w">  </span><span class="na">private_key_pem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tls_private_key.server_key.private_key_pem</span>
 
 <span class="w">  </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">common_name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;server-csr.usacloud.com&quot;</span>
-<span class="w">    </span><span class="na">organization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;usacloud&quot;</span>
+<span class="w">    </span><span class="na">common_name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"server-csr.usacloud.com"</span>
+<span class="w">    </span><span class="na">organization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"usacloud"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_certificate_authority&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_certificate_authority"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
 
 <span class="w">  </span><span class="na">validity_period_hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="m">3650</span>
 
 <span class="w">  </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pki.usacloud.jp&quot;</span>
-<span class="w">    </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JP&quot;</span>
-<span class="w">    </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;usacloud&quot;</span>
-<span class="w">    </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ou1&quot;, &quot;ou2&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"pki.usacloud.jp"</span>
+<span class="w">    </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"JP"</span>
+<span class="w">    </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"usacloud"</span>
+<span class="w">    </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"ou1", "ou2"</span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="c1">  # by public_key</span>
 <span class="w">  </span><span class="nb">client</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;client1.usacloud.jp&quot;</span>
-<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JP&quot;</span>
-<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;usacloud&quot;</span>
-<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ou1&quot;, &quot;ou2&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"client1.usacloud.jp"</span>
+<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"JP"</span>
+<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"usacloud"</span>
+<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"ou1", "ou2"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="na">validity_period_hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="m">3650</span>
 <span class="w">    </span><span class="na">public_key</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nv">tls_private_key.client_key.public_key_pem</span>
@@ -5677,10 +5677,10 @@
 <span class="c1">  // by CSR</span>
 <span class="w">  </span><span class="nb">client</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;client2.usacloud.jp&quot;</span>
-<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JP&quot;</span>
-<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;usacloud&quot;</span>
-<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ou1&quot;, &quot;ou2&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"client2.usacloud.jp"</span>
+<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"JP"</span>
+<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"usacloud"</span>
+<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"ou1", "ou2"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="na">validity_period_hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="m">3650</span>
 <span class="w">    </span><span class="na">csr</span><span class="w">                   </span><span class="o">=</span><span class="w"> </span><span class="nv">tls_cert_request.client_csr.cert_request_pem</span>
@@ -5689,22 +5689,22 @@
 <span class="c1">  # by email</span>
 <span class="w">  </span><span class="nb">client</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;client3.usacloud.jp&quot;</span>
-<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JP&quot;</span>
-<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;usacloud&quot;</span>
-<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ou1&quot;, &quot;ou2&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"client3.usacloud.jp"</span>
+<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"JP"</span>
+<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"usacloud"</span>
+<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"ou1", "ou2"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="na">validity_period_hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="m">3650</span>
-<span class="w">    </span><span class="na">email</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example@example.com&quot;</span>
+<span class="w">    </span><span class="na">email</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">"example@example.com"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="c1">  # by URL</span>
 <span class="w">  </span><span class="nb">client</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;client4.usacloud.jp&quot;</span>
-<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JP&quot;</span>
-<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;usacloud&quot;</span>
-<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ou1&quot;, &quot;ou2&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"client4.usacloud.jp"</span>
+<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"JP"</span>
+<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"usacloud"</span>
+<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"ou1", "ou2"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="na">validity_period_hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="m">3650</span>
 <span class="w">  </span><span class="p">}</span>
@@ -5712,13 +5712,13 @@
 <span class="c1">  # by public key</span>
 <span class="w">  </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;server1.usacloud.jp&quot;</span>
-<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JP&quot;</span>
-<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;usacloud&quot;</span>
-<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ou1&quot;, &quot;ou2&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"server1.usacloud.jp"</span>
+<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"JP"</span>
+<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"usacloud"</span>
+<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"ou1", "ou2"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="na">subject_alternative_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;alt1.usacloud.jp&quot;, &quot;alt2.usacloud.jp&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">subject_alternative_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"alt1.usacloud.jp", "alt2.usacloud.jp"</span><span class="p">]</span>
 
 <span class="w">    </span><span class="na">validity_period_hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="m">3650</span>
 <span class="w">    </span><span class="na">public_key</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nv">tls_private_key.server_key.public_key_pem</span>
@@ -5727,13 +5727,13 @@
 <span class="c1">  # by CSR</span>
 <span class="w">  </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;server2.usacloud.jp&quot;</span>
-<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JP&quot;</span>
-<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;usacloud&quot;</span>
-<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ou1&quot;, &quot;ou2&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="na">common_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"server2.usacloud.jp"</span>
+<span class="w">      </span><span class="na">country</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"JP"</span>
+<span class="w">      </span><span class="na">organization</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"usacloud"</span>
+<span class="w">      </span><span class="na">organization_units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"ou1", "ou2"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="na">subject_alternative_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;alt1.usacloud.jp&quot;, &quot;alt2.usacloud.jp&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">subject_alternative_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"alt1.usacloud.jp", "alt2.usacloud.jp"</span><span class="p">]</span>
 
 <span class="w">    </span><span class="na">validity_period_hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="m">3650</span>
 <span class="w">    </span><span class="na">csr</span><span class="w">                   </span><span class="o">=</span><span class="w"> </span><span class="nv">tls_cert_request.server_csr.cert_request_pem</span>

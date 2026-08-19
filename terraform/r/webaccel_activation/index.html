@@ -2350,7 +2350,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2576,7 +2576,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5538,13 +5538,13 @@
 <h1 id="sakuracloud_webaccel_activation">sakuracloud_webaccel_activation</h1>
 <p>ウェブアクセラレーターのサイト有効化・無効化を制御するリソース。</p>
 <h2 id="_1">利用例</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_webaccel&quot;</span><span class="w"> </span><span class="nv">&quot;site&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-site-name&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_webaccel"</span><span class="w"> </span><span class="nv">"site"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-site-name"</span>
 <span class="c1">  # or</span>
-<span class="c1">  # domain = &quot;your-domain&quot;</span>
+<span class="c1">  # domain = "your-domain"</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_webaccel_activation&quot;</span><span class="w"> </span><span class="nv">&quot;site_status&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_webaccel_activation"</span><span class="w"> </span><span class="nv">"site_status"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">site_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_webaccel.site.id</span>
 <span class="w">  </span><span class="na">enabled</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="p">}</span>

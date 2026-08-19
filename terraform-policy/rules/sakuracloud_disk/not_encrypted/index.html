@@ -1195,23 +1195,23 @@
 <p>ディスク暗号化機能を有効化することを推奨します</p>
 <h2 id="_5">例</h2>
 <h3 id="bad-case">Bad case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_disk&quot;</span><span class="w"> </span><span class="nv">&quot;bad_disk&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bad_disk&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_disk"</span><span class="w"> </span><span class="nv">"bad_disk"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">"bad_disk"</span>
 <span class="w">  </span><span class="na">size</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="m">20</span>
-<span class="w">  </span><span class="na">plan</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ssd&quot;</span>
-<span class="w">  </span><span class="na">connector</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;virtio&quot;</span>
+<span class="w">  </span><span class="na">plan</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">"ssd"</span>
+<span class="w">  </span><span class="na">connector</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"virtio"</span>
 <span class="w">  </span><span class="na">source_archive_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_archive.ubuntu2204.id</span>
-<span class="w">  </span><span class="na">encryption_algorithm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;none&quot;</span>
+<span class="w">  </span><span class="na">encryption_algorithm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"none"</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="good-case">Good case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_disk&quot;</span><span class="w"> </span><span class="nv">&quot;good_disk&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;good_disk&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_disk"</span><span class="w"> </span><span class="nv">"good_disk"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">"good_disk"</span>
 <span class="w">  </span><span class="na">size</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="m">20</span>
-<span class="w">  </span><span class="na">plan</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ssd&quot;</span>
-<span class="w">  </span><span class="na">connector</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;virtio&quot;</span>
+<span class="w">  </span><span class="na">plan</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">"ssd"</span>
+<span class="w">  </span><span class="na">connector</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"virtio"</span>
 <span class="w">  </span><span class="na">source_archive_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_archive.ubuntu2204.id</span>
-<span class="w">  </span><span class="na">encryption_algorithm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;aes256_xts&quot;</span>
+<span class="w">  </span><span class="na">encryption_algorithm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"aes256_xts"</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="links">Links</h2>

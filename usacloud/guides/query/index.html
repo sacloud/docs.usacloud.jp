@@ -3556,7 +3556,7 @@
 <p><a href="https://jmespath.org">JMESPath</a>または<a href="https://stedolan.github.io/jq/">jq</a>で出力の加工が行えます。 </p>
 <h3 id="_2">クエリの使い方</h3>
 <p>以下の書式で実行します。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>usacloud<span class="w"> </span>&lt;リソース名&gt;<span class="w"> </span>&lt;コマンド&gt;<span class="w"> </span>--query<span class="o">=</span><span class="s2">&quot;&lt;query&gt;&quot;</span><span class="w"> </span><span class="o">[</span>--query-driver<span class="o">=</span>&lt;<span class="s2">&quot;jmespath&quot;</span><span class="p">|</span><span class="s2">&quot;jq&quot;</span>&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>ID<span class="w"> </span>or<span class="w"> </span>Name<span class="w"> </span>or<span class="w"> </span>Tags<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>usacloud<span class="w"> </span>&lt;リソース名&gt;<span class="w"> </span>&lt;コマンド&gt;<span class="w"> </span>--query<span class="o">=</span><span class="s2">"&lt;query&gt;"</span><span class="w"> </span><span class="o">[</span>--query-driver<span class="o">=</span>&lt;<span class="s2">"jmespath"</span><span class="p">|</span><span class="s2">"jq"</span>&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>ID<span class="w"> </span>or<span class="w"> </span>Name<span class="w"> </span>or<span class="w"> </span>Tags<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li><code>--query</code>: JMESPathまたはjqに渡すクエリ(expression)</li>
@@ -3569,10 +3569,10 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># 環境変数経由でデフォルトドライバーを切り替え</span>
 $<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SAKURACLOUD_DEFAULT_QUERY_DRIVER</span><span class="o">=</span>jq
 
-$<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> </span>list<span class="w"> </span>--query<span class="w"> </span><span class="s2">&quot;.[].Name&quot;</span>
-<span class="s2">&quot;server1&quot;</span>
-<span class="s2">&quot;server2&quot;</span>
-<span class="s2">&quot;server3&quot;</span>
+$<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> </span>list<span class="w"> </span>--query<span class="w"> </span><span class="s2">".[].Name"</span>
+<span class="s2">"server1"</span>
+<span class="s2">"server2"</span>
+<span class="s2">"server3"</span>
 </code></pre></div>
 <h3 id="-query"><code>--query</code>以外の出力関連オプションとの併用</h3>
 <ul>

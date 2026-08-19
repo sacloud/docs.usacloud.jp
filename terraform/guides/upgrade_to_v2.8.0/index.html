@@ -2495,7 +2495,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2721,7 +2721,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5675,15 +5675,15 @@ Terraform v0.12以降をご利用ください。</p>
 <h3 id="diff2">サーバのディスクの修正時に公開鍵を文字列で指定</h3>
 <p>サーバのディスクの修正パラメータを指定する際、公開鍵をIDだけでなく文字列でも指定可能になりました。</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_server"</span><span class="w"> </span><span class="nv">"example"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared&quot;</span>
+<span class="w">    </span><span class="na">upstream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"shared"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">ssh_keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nf">file</span><span class="p">(</span><span class="s2">&quot;~/.ssh/gitlab.pub&quot;</span><span class="p">)]</span><span class="c1"> # 公開鍵を文字列で指定</span>
+<span class="w">    </span><span class="na">ssh_keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nf">file</span><span class="p">(</span><span class="s2">"~/.ssh/gitlab.pub"</span><span class="p">)]</span><span class="c1"> # 公開鍵を文字列で指定</span>
 <span class="w">    </span><span class="na">ssh_key_ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_ssh_key.foobar.id</span><span class="p">]</span><span class="c1"> # 公開鍵をリソースIDで指定</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -5693,16 +5693,16 @@ Terraform v0.12以降をご利用ください。</p>
 <h3 id="diff4">シンプル監視でのHTTP/2の利用</h3>
 <p>シンプル監視のHTTP監視時にHTTP/2が利用可能になりました。(v2.8.2で対応)</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_simple_monitor&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www.example.com&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_simple_monitor"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"www.example.com"</span>
 
 <span class="w">  </span><span class="na">delay_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">60</span>
 <span class="w">  </span><span class="nb">health_check</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"https"</span>
 <span class="w">    </span><span class="na">port</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="m">443</span>
-<span class="w">    </span><span class="na">path</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span>
-<span class="w">    </span><span class="na">status</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;200&quot;</span>
-<span class="w">    </span><span class="na">host_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.com&quot;</span>
+<span class="w">    </span><span class="na">path</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"/"</span>
+<span class="w">    </span><span class="na">status</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">"200"</span>
+<span class="w">    </span><span class="na">host_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"example.com"</span>
 <span class="w">    </span><span class="na">sni</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 
 <span class="w">    </span><span class="na">http2</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="c1"> # 追加</span>
@@ -5713,19 +5713,19 @@ Terraform v0.12以降をご利用ください。</p>
 <h3 id="diff5">シンプル監視でのコンテンツボディ監視</h3>
 <p>シンプル監視でのHTTP監視時にコンテンツボディのチェックが利用可能になりました。  </p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_simple_monitor&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www.example.com&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_simple_monitor"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"www.example.com"</span>
 
 <span class="w">  </span><span class="na">delay_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">60</span>
 <span class="w">  </span><span class="nb">health_check</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"https"</span>
 <span class="w">    </span><span class="na">port</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="m">443</span>
-<span class="w">    </span><span class="na">path</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span>
-<span class="w">    </span><span class="na">status</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;200&quot;</span>
-<span class="w">    </span><span class="na">host_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.com&quot;</span>
+<span class="w">    </span><span class="na">path</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"/"</span>
+<span class="w">    </span><span class="na">status</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">"200"</span>
+<span class="w">    </span><span class="na">host_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"example.com"</span>
 <span class="w">    </span><span class="na">sni</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 
-<span class="w">    </span><span class="na">contains_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ok&quot;</span><span class="c1"> #追加</span>
+<span class="w">    </span><span class="na">contains_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ok"</span><span class="c1"> #追加</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="na">notify_email_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="p">}</span>
@@ -5733,7 +5733,7 @@ Terraform v0.12以降をご利用ください。</p>
 <h3 id="diff6">エンハンスドロードバランサでのgzipの利用</h3>
 <p>エンハンスドロードバランサでコンテンツのgzip圧縮を有効化できるようになりました。</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_proxylb&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_proxylb"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">  # 中略</span>
 <span class="w">  </span><span class="na">gzip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="p">}</span>
@@ -5741,11 +5741,11 @@ Terraform v0.12以降をご利用ください。</p>
 <h3 id="diff7">エンハンスドロードバランサのLet's Encrypt設定 - SANs指定機能</h3>
 <p>エンハンスドロードバランサでLet's Encryptを用いて証明書を発行する際のパラメータとしてSANs(Subject Alternate Names)を指定可能になりました。  </p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_proxylb_acme</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_proxylb_acme</span><span class="w"> </span><span class="s2">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">proxylb_id</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_proxylb.foobar.id</span>
 <span class="w">  </span><span class="na">accept_tos</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
-<span class="w">  </span><span class="na">common_name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www.example.com&quot;</span>
-<span class="w">  </span><span class="na">subject_alt_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;www1.example.com&quot;</span><span class="p">]</span><span class="c1"> #追加</span>
+<span class="w">  </span><span class="na">common_name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"www.example.com"</span>
+<span class="w">  </span><span class="na">subject_alt_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"www1.example.com"</span><span class="p">]</span><span class="c1"> #追加</span>
 
 <span class="w">  </span><span class="na">update_delay_sec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">120</span>
 <span class="p">}</span>

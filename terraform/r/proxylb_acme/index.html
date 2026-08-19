@@ -2350,7 +2350,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2576,7 +2576,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5649,17 +5649,17 @@
 
 <h1 id="acme-sakuracloud_proxylb_acme">エンハンスドロードバランサ(ACME設定): sakuracloud_proxylb_acme</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_proxylb_acme</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_proxylb_acme</span><span class="w"> </span><span class="s2">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">proxylb_id</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_proxylb.foobar.id</span>
 <span class="w">  </span><span class="na">accept_tos</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
-<span class="w">  </span><span class="na">common_name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www.example.com&quot;</span>
-<span class="w">  </span><span class="na">subject_alt_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;www1.example.com&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">common_name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"www.example.com"</span>
+<span class="w">  </span><span class="na">subject_alt_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"www1.example.com"</span><span class="p">]</span>
 <span class="w">  </span><span class="na">update_delay_sec</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">120</span>
 <span class="p">}</span>
 
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_proxylb&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_proxylb"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">filter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;foobar&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"foobar"</span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>

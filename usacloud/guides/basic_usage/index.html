@@ -4253,23 +4253,23 @@ usacloud<span class="w"> </span>server<span class="w"> </span>ls<span class="w">
 <hr />
 <h4 id="-format-or-fmt">フォーマット(<code>--format</code> or <code>--fmt</code>)</h4>
 <p>出力フォーマットをgo言語の<a href="https://golang.org/pkg/text/template/">text/template</a>形式で指定します。</p>
-<div class="highlight"><pre><span></span><code>usacloud<span class="w"> </span>server<span class="w"> </span>ls<span class="w"> </span>--format<span class="w"> </span><span class="s2">&quot;ID is {{.ID}}, Name is {{.Name}}&quot;</span>
+<div class="highlight"><pre><span></span><code>usacloud<span class="w"> </span>server<span class="w"> </span>ls<span class="w"> </span>--format<span class="w"> </span><span class="s2">"ID is {{.ID}}, Name is {{.Name}}"</span>
 </code></pre></div>
 <h4 id="-query-query-driver">クエリ(<code>--query</code> | <code>--query-driver</code>)</h4>
 <p><a href="https://jmespath.org">JMESPath</a>または<a href="https://stedolan.github.io/jq/">jq</a>で出力の加工が行えます。  </p>
 <h5 id="jmespath">利用例(JMESPath):</h5>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> </span>list<span class="w"> </span>--query<span class="w"> </span><span class="s2">&quot;[].Name&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> </span>list<span class="w"> </span>--query<span class="w"> </span><span class="s2">"[].Name"</span>
 <span class="o">[</span>
-<span class="w">    </span><span class="s2">&quot;server1&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;server2&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;server3&quot;</span>
+<span class="w">    </span><span class="s2">"server1"</span>,
+<span class="w">    </span><span class="s2">"server2"</span>,
+<span class="w">    </span><span class="s2">"server3"</span>
 <span class="o">]</span>
 </code></pre></div>
 <h5 id="jq">利用例(jq):</h5>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> </span>list<span class="w"> </span>--query-driver<span class="w"> </span>jq<span class="w"> </span>--query<span class="w"> </span><span class="s2">&quot;.[].Name&quot;</span>
-<span class="s2">&quot;server1&quot;</span>
-<span class="s2">&quot;server2&quot;</span>
-<span class="s2">&quot;server3&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> </span>list<span class="w"> </span>--query-driver<span class="w"> </span>jq<span class="w"> </span>--query<span class="w"> </span><span class="s2">".[].Name"</span>
+<span class="s2">"server1"</span>
+<span class="s2">"server2"</span>
+<span class="s2">"server3"</span>
 </code></pre></div>
 <p><code>--query</code>と<code>--query-driver</code>の詳細は<a href="../query">クエリ</a>を参照してください。</p>
 <hr />
@@ -4293,12 +4293,12 @@ $<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> 
 <h2 id="or-json-parameters">共通オプション: ファイル or JSONでのパラメータ指定(<code>--parameters</code>)</h2>
 <p>コマンドに渡すパラメータをJSONまたはJSONを記述したファイルパスで指定します。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 文字列で指定する例</span>
-$<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> </span>list<span class="w"> </span>--parameters<span class="w"> </span><span class="s1">&#39;{&quot;Names&quot;: [&quot;example&quot;]}&#39;</span>
+$<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> </span>list<span class="w"> </span>--parameters<span class="w"> </span><span class="s1">'{"Names": ["example"]}'</span>
 
 <span class="c1"># ファイルパスで指定する例</span>
 $<span class="w"> </span>cat<span class="w"> </span>example.json
 <span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;Names&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;example&quot;</span><span class="o">]</span>
+<span class="w">  </span><span class="s2">"Names"</span>:<span class="w"> </span><span class="o">[</span><span class="s2">"example"</span><span class="o">]</span>
 <span class="o">}</span>
 $<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> </span>list<span class="w"> </span>--parameters<span class="w"> </span>example.json
 </code></pre></div>
@@ -4313,14 +4313,14 @@ $<span class="w"> </span>usacloud<span class="w"> </span>server<span class="w"> 
 <p><code>--parameters</code>で指定するJSONファイルの例を出力します。</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>usacloud<span class="w"> </span>switch<span class="w"> </span>create<span class="w"> </span>--example
 <span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;Zone&quot;</span>:<span class="w"> </span><span class="s2">&quot;tk1a | tk1b | is1a | is1b | tk1v&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;Name&quot;</span>:<span class="w"> </span><span class="s2">&quot;example&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;Description&quot;</span>:<span class="w"> </span><span class="s2">&quot;example&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;Tags&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">        </span><span class="s2">&quot;tag1=example1&quot;</span>,
-<span class="w">        </span><span class="s2">&quot;tag2=example2&quot;</span>
+<span class="w">    </span><span class="s2">"Zone"</span>:<span class="w"> </span><span class="s2">"tk1a | tk1b | is1a | is1b | tk1v"</span>,
+<span class="w">    </span><span class="s2">"Name"</span>:<span class="w"> </span><span class="s2">"example"</span>,
+<span class="w">    </span><span class="s2">"Description"</span>:<span class="w"> </span><span class="s2">"example"</span>,
+<span class="w">    </span><span class="s2">"Tags"</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">        </span><span class="s2">"tag1=example1"</span>,
+<span class="w">        </span><span class="s2">"tag2=example2"</span>
 <span class="w">    </span><span class="o">]</span>,
-<span class="w">    </span><span class="s2">&quot;IconID&quot;</span>:<span class="w"> </span><span class="m">123456789012</span>
+<span class="w">    </span><span class="s2">"IconID"</span>:<span class="w"> </span><span class="m">123456789012</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>通常はファイルなどに保存した上で編集して利用します。</p>

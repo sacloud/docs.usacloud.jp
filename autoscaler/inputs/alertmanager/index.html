@@ -2205,24 +2205,24 @@
 <div class="highlight"><pre><span></span><code><span class="nt">route</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"> </span><span class="c1">#任意のデフォルトレシーバー</span>
 <span class="w">  </span><span class="nt">routes</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;autoscaler-up&#39;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s">'autoscaler-up'</span>
 <span class="w">      </span><span class="nt">matchers</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoscaler = up</span><span class="w"> </span><span class="c1"># 任意、Prometheus側のアラート設定と揃える</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;autoscaler-down&#39;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s">'autoscaler-down'</span>
 <span class="w">      </span><span class="nt">matchers</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoscaler = down</span><span class="w"> </span><span class="c1"># 任意、Prometheus側のアラート設定と揃える</span>
 
 <span class="nt">receivers</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;default&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">'default'</span>
 <span class="w">    </span><span class="c1"># ... 任意のデフォルトレシーバー</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;autoscaler-up&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">'autoscaler-up'</span>
 <span class="w">    </span><span class="nt">webhook_configs</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AlertManager</span><span class="nv"> </span><span class="s">InputsのURL&gt;/up?[key=value]...&quot;</span><span class="w"> </span><span class="c1">#詳細は下記を参照</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">"AlertManager</span><span class="nv"> </span><span class="s">InputsのURL&gt;/up?[key=value]..."</span><span class="w"> </span><span class="c1">#詳細は下記を参照</span>
 <span class="w">        </span><span class="nt">send_resolved</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AlertManager</span><span class="nv"> </span><span class="s">InputsのURL&gt;/down?[key=value]...&quot;</span><span class="w"> </span><span class="c1">#詳細は下記を参照</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"AlertManager</span><span class="nv"> </span><span class="s">InputsのURL&gt;/down?[key=value]..."</span><span class="w"> </span><span class="c1">#詳細は下記を参照</span>
 <span class="w">    </span><span class="nt">webhook_configs</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://autoscaler-inputs:8080/down</span>
 <span class="w">        </span><span class="nt">send_resolved</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
@@ -2245,13 +2245,13 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example</span>
 <span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scale_up</span>
-<span class="w">    </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">avg_over_time(sakuracloud_server_cpu_time{zone=&quot;tk1a&quot;}[1h]) &gt; 80</span><span class="w"> </span><span class="c1"># tk1aゾーンのサーバのCPU-TIMEの直近一時間の平均</span>
+<span class="w">    </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">avg_over_time(sakuracloud_server_cpu_time{zone="tk1a"}[1h]) &gt; 80</span><span class="w"> </span><span class="c1"># tk1aゾーンのサーバのCPU-TIMEの直近一時間の平均</span>
 <span class="w">    </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
 <span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">autoscaler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">up</span><span class="w"> </span><span class="c1"># AlertManager側のmatchersと揃える</span>
 <span class="w">    </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Servers</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">tk1a</span><span class="nv"> </span><span class="s">zone</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">keeping</span><span class="nv"> </span><span class="s">high</span><span class="nv"> </span><span class="s">workloads,</span><span class="nv"> </span><span class="s">scaling</span><span class="nv"> </span><span class="s">up...&quot;</span>
-<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Servers</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">tk1a</span><span class="nv"> </span><span class="s">zone</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">keeping</span><span class="nv"> </span><span class="s">high</span><span class="nv"> </span><span class="s">workloads,</span><span class="nv"> </span><span class="s">scaling</span><span class="nv"> </span><span class="s">up...&quot;</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Servers</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">tk1a</span><span class="nv"> </span><span class="s">zone</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">keeping</span><span class="nv"> </span><span class="s">high</span><span class="nv"> </span><span class="s">workloads,</span><span class="nv"> </span><span class="s">scaling</span><span class="nv"> </span><span class="s">up..."</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Servers</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">tk1a</span><span class="nv"> </span><span class="s">zone</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">keeping</span><span class="nv"> </span><span class="s">high</span><span class="nv"> </span><span class="s">workloads,</span><span class="nv"> </span><span class="s">scaling</span><span class="nv"> </span><span class="s">up..."</span>
 </code></pre></div>
 <p>Note: AutoScalerによる操作でアラート状態が解消できるようなルールを設定してください。<br />
 AutoScaler Coreは同一の<code>resource-name</code>へのリクエストを冷却期間の間は無視しますが、冷却期間がすぎると再度リクエストを受け付けるようになります。<br />

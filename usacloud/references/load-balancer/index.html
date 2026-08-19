@@ -4231,7 +4231,7 @@
 
 <span class="go">  === Plan options ===</span>
 
-<span class="go">      --plan string   (*required) options: [standard/highspec] (default &quot;standard&quot;)</span>
+<span class="go">      --plan string   (*required) options: [standard/highspec] (default "standard")</span>
 
 <span class="go">  === Network options ===</span>
 
@@ -4271,48 +4271,48 @@
 </code></pre></div>
 <h5 id="parameter-examples">Parameter Examples</h5>
 <div class="highlight"><pre><span></span><code><span class="go">{</span>
-<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
-<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Tags&quot;: [</span>
-<span class="go">        &quot;tag1=example1&quot;,</span>
-<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    "Zone": "tk1a | tk1b | is1a | is1b | tk1v",</span>
+<span class="go">    "Name": "example",</span>
+<span class="go">    "Description": "example",</span>
+<span class="go">    "Tags": [</span>
+<span class="go">        "tag1=example1",</span>
+<span class="go">        "tag2=example2"</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;IconID&quot;: 123456789012,</span>
-<span class="go">    &quot;PlanID&quot;: &quot;standard | highspec&quot;,</span>
-<span class="go">    &quot;VRID&quot;: 1,</span>
-<span class="go">    &quot;SwitchID&quot;: 123456789012,</span>
-<span class="go">    &quot;IPAddresses&quot;: [</span>
-<span class="go">        &quot;192.0.2.21&quot;,</span>
-<span class="go">        &quot;192.0.2.22&quot;</span>
+<span class="go">    "IconID": 123456789012,</span>
+<span class="go">    "PlanID": "standard | highspec",</span>
+<span class="go">    "VRID": 1,</span>
+<span class="go">    "SwitchID": 123456789012,</span>
+<span class="go">    "IPAddresses": [</span>
+<span class="go">        "192.0.2.21",</span>
+<span class="go">        "192.0.2.22"</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;NetworkMaskLen&quot;: 24,</span>
-<span class="go">    &quot;DefaultRoute&quot;: &quot;192.0.2.1&quot;,</span>
-<span class="go">    &quot;Port&quot;: 80,</span>
-<span class="go">    &quot;VirtualIPAddresses&quot;: [</span>
+<span class="go">    "NetworkMaskLen": 24,</span>
+<span class="go">    "DefaultRoute": "192.0.2.1",</span>
+<span class="go">    "Port": 80,</span>
+<span class="go">    "VirtualIPAddresses": [</span>
 <span class="go">        {</span>
-<span class="go">            &quot;VirtualIPAddress&quot;: &quot;192.0.2.101&quot;,</span>
-<span class="go">            &quot;Port&quot;: &quot;80&quot;,</span>
-<span class="go">            &quot;DelayLoop&quot;: &quot;10&quot;,</span>
-<span class="go">            &quot;SorryServer&quot;: &quot;192.0.2.1&quot;,</span>
-<span class="go">            &quot;Description&quot;: &quot;example&quot;,</span>
-<span class="go">            &quot;Servers&quot;: [</span>
+<span class="go">            "VirtualIPAddress": "192.0.2.101",</span>
+<span class="go">            "Port": "80",</span>
+<span class="go">            "DelayLoop": "10",</span>
+<span class="go">            "SorryServer": "192.0.2.1",</span>
+<span class="go">            "Description": "example",</span>
+<span class="go">            "Servers": [</span>
 <span class="go">                {</span>
-<span class="go">                    &quot;IPAddress&quot;: &quot;192.0.2.101&quot;,</span>
-<span class="go">                    &quot;Port&quot;: &quot;80&quot;,</span>
-<span class="go">                    &quot;Enabled&quot;: &quot;True&quot;,</span>
-<span class="go">                    &quot;HealthCheck&quot;: {</span>
-<span class="go">                        &quot;Protocol&quot;: &quot;http | https | tcp | ping&quot;,</span>
-<span class="go">                        &quot;Path&quot;: &quot;/&quot;,</span>
-<span class="go">                        &quot;ResponseCode&quot;: &quot;200&quot;,</span>
-<span class="go">                        &quot;Retry&quot;: &quot;&quot;,</span>
-<span class="go">                        &quot;ConnectTimeout&quot;: &quot;&quot;</span>
+<span class="go">                    "IPAddress": "192.0.2.101",</span>
+<span class="go">                    "Port": "80",</span>
+<span class="go">                    "Enabled": "True",</span>
+<span class="go">                    "HealthCheck": {</span>
+<span class="go">                        "Protocol": "http | https | tcp | ping",</span>
+<span class="go">                        "Path": "/",</span>
+<span class="go">                        "ResponseCode": "200",</span>
+<span class="go">                        "Retry": "",</span>
+<span class="go">                        "ConnectTimeout": ""</span>
 <span class="go">                    }</span>
 <span class="go">                }</span>
 <span class="go">            ]</span>
 <span class="go">        }</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">    "NoWait": false</span>
 <span class="go">}</span>
 </code></pre></div>
 <h2 id="read">read</h2>
@@ -4392,38 +4392,38 @@
 </code></pre></div>
 <h5 id="parameter-examples_1">Parameter Examples</h5>
 <div class="highlight"><pre><span></span><code><span class="go">{</span>
-<span class="go">    &quot;Zone&quot;: &quot;tk1a | tk1b | is1a | is1b | tk1v&quot;,</span>
-<span class="go">    &quot;Name&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Description&quot;: &quot;example&quot;,</span>
-<span class="go">    &quot;Tags&quot;: [</span>
-<span class="go">        &quot;tag1=example1&quot;,</span>
-<span class="go">        &quot;tag2=example2&quot;</span>
+<span class="go">    "Zone": "tk1a | tk1b | is1a | is1b | tk1v",</span>
+<span class="go">    "Name": "example",</span>
+<span class="go">    "Description": "example",</span>
+<span class="go">    "Tags": [</span>
+<span class="go">        "tag1=example1",</span>
+<span class="go">        "tag2=example2"</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;IconID&quot;: 123456789012,</span>
-<span class="go">    &quot;VirtualIPAddresses&quot;: [</span>
+<span class="go">    "IconID": 123456789012,</span>
+<span class="go">    "VirtualIPAddresses": [</span>
 <span class="go">        {</span>
-<span class="go">            &quot;VirtualIPAddress&quot;: &quot;192.0.2.101&quot;,</span>
-<span class="go">            &quot;Port&quot;: &quot;80&quot;,</span>
-<span class="go">            &quot;DelayLoop&quot;: &quot;10&quot;,</span>
-<span class="go">            &quot;SorryServer&quot;: &quot;192.0.2.1&quot;,</span>
-<span class="go">            &quot;Description&quot;: &quot;example&quot;,</span>
-<span class="go">            &quot;Servers&quot;: [</span>
+<span class="go">            "VirtualIPAddress": "192.0.2.101",</span>
+<span class="go">            "Port": "80",</span>
+<span class="go">            "DelayLoop": "10",</span>
+<span class="go">            "SorryServer": "192.0.2.1",</span>
+<span class="go">            "Description": "example",</span>
+<span class="go">            "Servers": [</span>
 <span class="go">                {</span>
-<span class="go">                    &quot;IPAddress&quot;: &quot;192.0.2.101&quot;,</span>
-<span class="go">                    &quot;Port&quot;: &quot;80&quot;,</span>
-<span class="go">                    &quot;Enabled&quot;: &quot;True&quot;,</span>
-<span class="go">                    &quot;HealthCheck&quot;: {</span>
-<span class="go">                        &quot;Protocol&quot;: &quot;http | https | tcp | ping&quot;,</span>
-<span class="go">                        &quot;Path&quot;: &quot;/&quot;,</span>
-<span class="go">                        &quot;ResponseCode&quot;: &quot;200&quot;,</span>
-<span class="go">                        &quot;Retry&quot;: &quot;&quot;,</span>
-<span class="go">                        &quot;ConnectTimeout&quot;: &quot;&quot;</span>
+<span class="go">                    "IPAddress": "192.0.2.101",</span>
+<span class="go">                    "Port": "80",</span>
+<span class="go">                    "Enabled": "True",</span>
+<span class="go">                    "HealthCheck": {</span>
+<span class="go">                        "Protocol": "http | https | tcp | ping",</span>
+<span class="go">                        "Path": "/",</span>
+<span class="go">                        "ResponseCode": "200",</span>
+<span class="go">                        "Retry": "",</span>
+<span class="go">                        "ConnectTimeout": ""</span>
 <span class="go">                    }</span>
 <span class="go">                }</span>
 <span class="go">            ]</span>
 <span class="go">        }</span>
 <span class="go">    ],</span>
-<span class="go">    &quot;NoWait&quot;: false</span>
+<span class="go">    "NoWait": false</span>
 <span class="go">}</span>
 </code></pre></div>
 <h2 id="delete">delete</h2>

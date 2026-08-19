@@ -2279,7 +2279,7 @@
 <h4 id="config-file">Config Fileによるプロビジョニングを行う場合の例</h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># /etc/grafana/provisioning/notifiers/example.yaml</span>
 <span class="nt">notifiers</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AutoScaler:Up&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"AutoScaler:Up"</span>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webhook</span>
 <span class="w">    </span><span class="nt">org_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="w">    </span><span class="nt">uid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
@@ -2289,9 +2289,9 @@
 <span class="w">    </span><span class="nt">disable_resolve_message</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">settings</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">autoResolve</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">      </span><span class="nt">httpMethod</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;POST&quot;</span>
+<span class="w">      </span><span class="nt">httpMethod</span><span class="p">:</span><span class="w"> </span><span class="s">"POST"</span>
 <span class="w">      </span><span class="nt">uploadImage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com:8080/up?source=grafana&amp;resource-name=resource1&quot;</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">"http://example.com:8080/up?source=grafana&amp;resource-name=resource1"</span>
 </code></pre></div>
 <h4 id="api">APIで登録する場合の例</h4>
 <p>GrafanaのAPI(<code>POST /api/alert-notifications</code>)を利用してNotification Channelを登録する例:</p>
@@ -2301,17 +2301,17 @@
 <span class="go">Authorization: Bearer eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk</span>
 
 <span class="go">{</span>
-<span class="go">  &quot;name&quot;: &quot;AutoScaler: Up&quot;,</span>
-<span class="go">  &quot;type&quot;: &quot;webhook&quot;,</span>
-<span class="go">  &quot;isDefault&quot;: false,</span>
-<span class="go">  &quot;sendReminder&quot;: false,</span>
-<span class="go">  &quot;disableResolveMessage&quot;: true,</span>
-<span class="go">  &quot;frequency&quot;: &quot;&quot;,</span>
-<span class="go">  &quot;settings&quot;: {</span>
-<span class="go">    &quot;autoResolve&quot;: true,</span>
-<span class="go">    &quot;httpMethod&quot;: &quot;POST&quot;,</span>
-<span class="go">    &quot;uploadImage&quot;: false,</span>
-<span class="go">    &quot;url&quot;: &quot;http://example.com:8080/up?source=grafana&amp;resource-name=resource1&quot;</span>
+<span class="go">  "name": "AutoScaler: Up",</span>
+<span class="go">  "type": "webhook",</span>
+<span class="go">  "isDefault": false,</span>
+<span class="go">  "sendReminder": false,</span>
+<span class="go">  "disableResolveMessage": true,</span>
+<span class="go">  "frequency": "",</span>
+<span class="go">  "settings": {</span>
+<span class="go">    "autoResolve": true,</span>
+<span class="go">    "httpMethod": "POST",</span>
+<span class="go">    "uploadImage": false,</span>
+<span class="go">    "url": "http://example.com:8080/up?source=grafana&amp;resource-name=resource1"</span>
 <span class="go">  }</span>
 <span class="go">}</span>
 </code></pre></div>

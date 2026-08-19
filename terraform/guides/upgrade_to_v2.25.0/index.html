@@ -2440,7 +2440,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2666,7 +2666,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5555,18 +5555,18 @@
 </ul>
 <h3 id="diff1">sakuracloud_proxylb: リクエストヘッダによる振り分けルール</h3>
 <p>ルールの指定時にリクエストヘッダ関連のパラメータを指定可能になりました。</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_proxylb&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_proxylb"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">  # ...中略...</span>
 
 <span class="w">  </span><span class="nb">rule</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">action</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fixed&quot;</span>
-<span class="w">    </span><span class="na">group</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;group1&quot;</span>
+<span class="w">    </span><span class="na">action</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="s2">"fixed"</span>
+<span class="w">    </span><span class="na">group</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">"group1"</span>
 
-<span class="w">    </span><span class="na">request_header_name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foo&quot;</span>
-<span class="w">    </span><span class="na">request_header_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">    </span><span class="na">request_header_name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"foo"</span>
+<span class="w">    </span><span class="na">request_header_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"1"</span>
 
-<span class="w">    </span><span class="na">request_header_value_ignore_case</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;true&quot;</span>
-<span class="w">    </span><span class="na">request_header_value_not_match</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;true&quot;</span>
+<span class="w">    </span><span class="na">request_header_value_ignore_case</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"true"</span>
+<span class="w">    </span><span class="na">request_header_value_not_match</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"true"</span>
 
 <span class="c1">    # ...</span>
 <span class="w">  </span><span class="p">}</span>
@@ -5574,12 +5574,12 @@
 </code></pre></div>
 <h3 id="diff2">sakuracloud_server: AMDプラン</h3>
 <p>AMDプランに対応しました。</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_server"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">  </span><span class="na">core</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
 <span class="w">  </span><span class="na">memory</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">120</span>
-<span class="w">  </span><span class="na">cpu_model</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;amd_epyc_7713p&quot;</span>
-<span class="w">  </span><span class="na">commitment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;dedicatedcpu&quot;</span>
+<span class="w">  </span><span class="na">cpu_model</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"amd_epyc_7713p"</span>
+<span class="w">  </span><span class="na">commitment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dedicatedcpu"</span>
 
 <span class="c1">  # ...</span>
 <span class="p">}</span>

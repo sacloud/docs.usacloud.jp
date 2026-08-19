@@ -1197,40 +1197,40 @@
 <p>グローバルインターフェースに対してファイアウォールを適切に設定することを推奨します</p>
 <h2 id="_5">例</h2>
 <h3 id="bad-case">Bad case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_vpc_router&quot;</span><span class="w"> </span><span class="nv">&quot;bad_vpc&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bad_vpc&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_vpc_router"</span><span class="w"> </span><span class="nv">"bad_vpc"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">"bad_vpc"</span>
 <span class="w">  </span><span class="na">internet_connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="good-case">Good case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_vpc_router&quot;</span><span class="w"> </span><span class="nv">&quot;good_vpc&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;good_vpc&quot;</span>
-<span class="w">  </span><span class="na">syslog_host</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.1&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_vpc_router"</span><span class="w"> </span><span class="nv">"good_vpc"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">"good_vpc"</span>
+<span class="w">  </span><span class="na">syslog_host</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.1"</span>
 <span class="w">  </span><span class="na">internet_connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="w">  </span><span class="nb">firewall</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">interface_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
-<span class="w">    </span><span class="na">direction</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;receive&quot;</span>
+<span class="w">    </span><span class="na">direction</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"receive"</span>
 
 <span class="w">    </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span>
-<span class="w">      </span><span class="na">source_network</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">      </span><span class="na">source_port</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;443&quot;</span>
-<span class="w">      </span><span class="na">destination_network</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">      </span><span class="na">destination_port</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="na">protocol</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"tcp"</span>
+<span class="w">      </span><span class="na">source_network</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span>
+<span class="w">      </span><span class="na">source_port</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"443"</span>
+<span class="w">      </span><span class="na">destination_network</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span>
+<span class="w">      </span><span class="na">destination_port</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">      </span><span class="na">allow</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="w">      </span><span class="na">logging</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
-<span class="w">      </span><span class="na">description</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;desc&quot;</span>
+<span class="w">      </span><span class="na">description</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"desc"</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nb">expression</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ip&quot;</span>
-<span class="w">      </span><span class="na">source_network</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">      </span><span class="na">source_port</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">      </span><span class="na">destination_network</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">      </span><span class="na">destination_port</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="na">protocol</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">"ip"</span>
+<span class="w">      </span><span class="na">source_network</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span>
+<span class="w">      </span><span class="na">source_port</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span>
+<span class="w">      </span><span class="na">destination_network</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span>
+<span class="w">      </span><span class="na">destination_port</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">      </span><span class="na">allow</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="no">false</span>
 <span class="w">      </span><span class="na">logging</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
-<span class="w">      </span><span class="na">description</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;desc&quot;</span>
+<span class="w">      </span><span class="na">description</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"desc"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>

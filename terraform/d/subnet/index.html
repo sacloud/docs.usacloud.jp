@@ -2354,7 +2354,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2660,7 +2660,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5539,15 +5539,15 @@
 <p>サブネットの情報を参照するためのデータソース</p>
 <h2 id="example-usage">Example Usage</h2>
 <div class="highlight"><pre><span></span><code><span class="err">variable</span><span class="w"> </span><span class="nb">internet_id</span><span class="w"> </span><span class="p">{}</span>
-<span class="err">data</span><span class="w"> </span><span class="err">sakuracloud_subnet</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="err">data</span><span class="w"> </span><span class="err">sakuracloud_subnet</span><span class="w"> </span><span class="s2">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">internet_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.internet_id</span>
 <span class="w">  </span><span class="na">index</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>
 <ul>
-<li><code>index</code> - (Required) スイッチ+ルータに割り当てられたサブネットのインデックス</li>
-<li><code>internet_id</code> - (Required) サブネットが割り当てられたスイッチ+ルータのID</li>
+<li><code>index</code> - (Required) ルータ+スイッチに割り当てられたサブネットのインデックス</li>
+<li><code>internet_id</code> - (Required) サブネットが割り当てられたルータ+スイッチのID</li>
 <li><code>zone</code> - (Optional) 対象ゾーンの名前 (例: <code>is1a</code>, <code>tk1a</code>) </li>
 </ul>
 <h2 id="attribute-reference">Attribute Reference</h2>

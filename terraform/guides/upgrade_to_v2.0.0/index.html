@@ -2412,7 +2412,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2638,7 +2638,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5530,7 +5530,7 @@
 <li><a href="#resourceDNS">DNS: <code>sakuracloud_dns</code></a></li>
 <li><a href="#resourceGSLB">GSLB: <code>sakuracloud_gslb</code></a></li>
 <li><a href="#resourceIcon">アイコン: <code>sakuracloud_icon</code></a></li>
-<li><a href="#resourceInternet">スイッチ+ルータ: <code>sakuracloud_internet</code></a></li>
+<li><a href="#resourceInternet">ルータ+スイッチ: <code>sakuracloud_internet</code></a></li>
 <li><a href="#resourceIPv4PTR">IPv4逆引きレコード: <code>sakuracloud_ipv4_ptr</code></a></li>
 <li><a href="#resourceLoadBalancer">ロードバランサ: <code>sakuracloud_loadbalancer</code></a></li>
 <li><a href="#resourceMobileGateway">モバイルゲートウェイ : <code>sakuracloud_mobile_gateway</code></a></li>
@@ -5609,23 +5609,23 @@
 v2では<code>filter</code>配下に記載する形へ変更されました。</p>
 <h4 id="v1">v1でのデータソース:</h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># v1でのデータソース</span>
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name_selectors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Ubuntu&quot;, &quot;Server&quot;, &quot;18&quot;</span><span class="p">]</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name_selectors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"Ubuntu", "Server", "18"</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="v2">v2でのデータソース:</h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># v1でのデータソース</span>
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">filter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Ubuntu&quot;, &quot;Server&quot;, &quot;18&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"Ubuntu", "Server", "18"</span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>また、v2ではIDを検索条件として指定可能になりました。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># v1でのデータソース</span>
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">filter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;123456789012&quot;</span>
+<span class="w">    </span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"123456789012"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -5907,7 +5907,7 @@ v2では代わりに各リソースで<a href="https://www.terraform.io/docs/con
 <li><code>body</code>(廃止) </li>
 </ul>
 <hr />
-<h3 id="dataSourceInternet"><a href="https://docs.usacloud.jp/terraform/d/internet">スイッチ+ルータ: <code>sakuracloud_internet</code></a></h3>
+<h3 id="dataSourceInternet"><a href="https://docs.usacloud.jp/terraform/d/internet">ルータ+スイッチ: <code>sakuracloud_internet</code></a></h3>
 <ul>
 <li><code>ipaddresses</code>(名称変更) =&gt; <code>ip_addresses</code></li>
 <li><code>ipv6_nw_address</code>(名称変更) =&gt; <code>ipv6_network_address</code></li>
@@ -6157,7 +6157,7 @@ v2では代わりに各リソースで<a href="https://www.terraform.io/docs/con
 <li><code>body</code>(廃止)</li>
 </ul>
 <hr />
-<h3 id="resourceInternet"><a href="https://docs.usacloud.jp/terraform/r/internet">スイッチ+ルータ: <code>sakuracloud_internet</code></a></h3>
+<h3 id="resourceInternet"><a href="https://docs.usacloud.jp/terraform/r/internet">ルータ+スイッチ: <code>sakuracloud_internet</code></a></h3>
 <ul>
 <li><code>graceful_shutdown_timeout</code>(廃止)</li>
 <li><code>ipaddresses</code>(名称変更) =&gt; <code>ip_addresses</code></li>
@@ -6299,26 +6299,26 @@ v2ではルール全体を表す<code>sakuracloud_packet_filter_rules</code>に�
 <p>v2でのNIC設定は明示的に<code>network_interface</code>を記載する必要があります。</p>
 </div>
 <h5 id="v2network_interface">v2でのnetwork_interfaceの設定例:</h5>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_server&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_server"</span><span class="w"> </span><span class="nv">"example"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
 <span class="w">  </span><span class="na">disks</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_disk.foobar.id</span><span class="p">]</span>
-<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 
 <span class="c1">  # eth0</span>
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">upstream</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared&quot;</span>
+<span class="w">    </span><span class="na">upstream</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"shared"</span>
 <span class="w">    </span><span class="na">packet_filter_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_packet_filter.foobar.id</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="c1">  # eth1</span>
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">upstream</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;123456789012&quot;</span><span class="c1"> # スイッチのID</span>
+<span class="w">    </span><span class="na">upstream</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"123456789012"</span><span class="c1"> # スイッチのID</span>
 <span class="w">    </span><span class="na">packet_filter_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sakuracloud_packet_filter.foobar.id</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">disk_edit_parameter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hostname&quot;</span>
-<span class="w">    </span><span class="na">password</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;password&quot;</span>
+<span class="w">    </span><span class="na">hostname</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"hostname"</span>
+<span class="w">    </span><span class="na">password</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"password"</span>
 <span class="w">    </span><span class="na">disable_pw_auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>

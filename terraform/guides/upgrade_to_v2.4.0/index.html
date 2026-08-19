@@ -2440,7 +2440,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2666,7 +2666,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5560,20 +5560,20 @@ tfファイルに以下のように記述することでプロバイダーのイ
 terraform {
   required_providers {
     sakuracloud = {
-      source = &quot;sacloud/sakuracloud&quot;
-      version = &quot;2.4.0&quot;
+      source = "sacloud/sakuracloud"
+      version = "2.4.0"
     }
   }
 }
-provider &quot;sakuracloud&quot; {
+provider "sakuracloud" {
   # ...
 }
 </code></pre></div>
 <h3 id="diffTk1b">東京第2ゾーン</h3>
 <p>東京第2ゾーンがデフォルトで利用可能となりました。
 v2.4以前をご利用の場合はtfファイルに以下のように記述することで利用可能です。</p>
-<div class="highlight"><pre><span></span><code>provider &quot;sakuracloud&quot; {
-  zones = [&quot;tk1a&quot;, &quot;tk1b&quot;, &quot;is1a&quot;, &quot;is1b&quot;, &quot;tk1v&quot;]
+<div class="highlight"><pre><span></span><code>provider "sakuracloud" {
+  zones = ["tk1a", "tk1b", "is1a", "is1b", "tk1v"]
 }
 </code></pre></div>
 

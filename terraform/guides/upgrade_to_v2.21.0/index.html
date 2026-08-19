@@ -2440,7 +2440,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2666,7 +2666,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5555,36 +5555,36 @@
 </ul>
 <h3 id="diff1">sakuracloud_auto_scale: トラフィック量トリガー</h3>
 <p>オートスケールでのトラフィック量トリガーが利用可能になりました。</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_auto_scale&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_auto_scale"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 
-<span class="w">  </span><span class="na">zones</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;is1b&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">zones</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"is1b"</span><span class="p">]</span>
 <span class="w">  </span><span class="na">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">yamlencode</span><span class="p">({</span>
 <span class="w">    </span><span class="err">resources</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">      </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Router&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">"Router"</span><span class="p">,</span>
 <span class="w">      </span><span class="err">selector</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="err">names</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_internet.foobar.name</span><span class="p">],</span>
-<span class="w">        </span><span class="err">zones</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;is1b&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="err">zones</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"is1b"</span><span class="p">],</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">    </span><span class="p">}],</span>
 <span class="w">  </span><span class="p">})</span>
-<span class="w">  </span><span class="na">api_key_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">  </span><span class="na">api_key_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"xxx"</span>
 
-<span class="w">  </span><span class="na">trigger_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;router&quot;</span>
+<span class="w">  </span><span class="na">trigger_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"router"</span>
 <span class="w">  </span><span class="nb">router_threshold_scaling</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">router_prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
-<span class="w">    </span><span class="na">direction</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;in&quot;</span>
+<span class="w">    </span><span class="na">router_prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
+<span class="w">    </span><span class="na">direction</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">"in"</span>
 <span class="w">    </span><span class="na">mbps</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="m">20</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="diff2">sakuracloud_vpc_router: DHグループ指定</h3>
 <p>VPCルータでDHグループの指定が可能になりました。</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_vpc_router&quot;</span><span class="w"> </span><span class="nv">&quot;premium&quot;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_vpc_router"</span><span class="w"> </span><span class="nv">"premium"</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">  # ...</span>
 
 <span class="w">  </span><span class="nb">site_to_site_vpn_parameter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">dh_group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;modp2048&quot;</span>
+<span class="w">    </span><span class="na">dh_group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"modp2048"</span>
 
 <span class="c1">    # ...</span>
 <span class="w">  </span><span class="p">}</span>

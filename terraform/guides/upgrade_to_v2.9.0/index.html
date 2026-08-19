@@ -2451,7 +2451,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2677,7 +2677,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5581,15 +5581,15 @@
 <h3 id="diff2">VPCルータでのWireGuardサーバ機能</h3>
 <p>VPCルータでWireGuardサーバ機能が利用可能になりました。</p>
 <p>利用例:</p>
-<div class="highlight"><pre><span></span><code><span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_vpc_router</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="err">resource</span><span class="w"> </span><span class="err">sakuracloud_vpc_router</span><span class="w"> </span><span class="s2">"example"</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">  # ...</span>
 
 <span class="w">  </span><span class="nb">wire_guard</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.31.1/24&quot;</span>
+<span class="w">    </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.31.1/24"</span>
 <span class="w">    </span><span class="nb">peer</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
-<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.31.11&quot;</span>
-<span class="w">      </span><span class="na">public_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;your-public-key&gt;&quot;</span>
+<span class="w">      </span><span class="na">name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
+<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.31.11"</span>
+<span class="w">      </span><span class="na">public_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&lt;your-public-key&gt;"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -5599,23 +5599,23 @@
 <p>利用例:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">  # リダイレクト</span>
 <span class="w">  </span><span class="nb">rule</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">action</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;redirect&quot;</span>
-<span class="w">    </span><span class="na">host</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www2.example.com&quot;</span>
-<span class="w">    </span><span class="na">path</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span>
-<span class="w">    </span><span class="na">group</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;group1&quot;</span>
-<span class="w">    </span><span class="na">redirect_location</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://redirect.example.com&quot;</span>
-<span class="w">    </span><span class="na">redirect_status_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;301&quot;</span>
+<span class="w">    </span><span class="na">action</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="s2">"redirect"</span>
+<span class="w">    </span><span class="na">host</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">"www2.example.com"</span>
+<span class="w">    </span><span class="na">path</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">"/"</span>
+<span class="w">    </span><span class="na">group</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">"group1"</span>
+<span class="w">    </span><span class="na">redirect_location</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://redirect.example.com"</span>
+<span class="w">    </span><span class="na">redirect_status_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"301"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="c1">  # 固定応答</span>
 <span class="w">  </span><span class="nb">rule</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">action</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fixed&quot;</span>
-<span class="w">    </span><span class="na">host</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;www3.example.com&quot;</span>
-<span class="w">    </span><span class="na">path</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span>
-<span class="w">    </span><span class="na">group</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;group1&quot;</span>
-<span class="w">    </span><span class="na">fixed_status_code</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;200&quot;</span>
-<span class="w">    </span><span class="na">fixed_content_type</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;text/plain&quot;</span>
-<span class="w">    </span><span class="na">fixed_message_body</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;body&quot;</span>
+<span class="w">    </span><span class="na">action</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="s2">"fixed"</span>
+<span class="w">    </span><span class="na">host</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">"www3.example.com"</span>
+<span class="w">    </span><span class="na">path</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">"/"</span>
+<span class="w">    </span><span class="na">group</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">"group1"</span>
+<span class="w">    </span><span class="na">fixed_status_code</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"200"</span>
+<span class="w">    </span><span class="na">fixed_content_type</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"text/plain"</span>
+<span class="w">    </span><span class="na">fixed_message_body</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"body"</span>
 <span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 

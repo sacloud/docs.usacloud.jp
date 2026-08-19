@@ -1197,46 +1197,46 @@
 <p>ログ記録を有効化することを推奨します</p>
 <h2 id="_5">例</h2>
 <h3 id="bad-case">Bad case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_proxylb&quot;</span><span class="w"> </span><span class="nv">&quot;bad_proxylb&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bad_proxylb&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_proxylb"</span><span class="w"> </span><span class="nv">"bad_proxylb"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"bad_proxylb"</span>
 <span class="w">  </span><span class="na">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span>
 
 <span class="w">  </span><span class="nb">health_check</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"http"</span>
 <span class="w">    </span><span class="na">delay_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
-<span class="w">    </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span>
+<span class="w">    </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"/"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">bind_port</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">proxy_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
+<span class="w">    </span><span class="na">proxy_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http"</span>
 <span class="w">    </span><span class="na">port</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="m">80</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="good-case">Good case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_proxylb&quot;</span><span class="w"> </span><span class="nv">&quot;good_proxylb&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;good_proxylb&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_proxylb"</span><span class="w"> </span><span class="nv">"good_proxylb"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"good_proxylb"</span>
 <span class="w">  </span><span class="na">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span>
 
 <span class="w">  </span><span class="nb">health_check</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"http"</span>
 <span class="w">    </span><span class="na">delay_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
-<span class="w">    </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span>
+<span class="w">    </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"/"</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">bind_port</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">proxy_mode</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
+<span class="w">    </span><span class="na">proxy_mode</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"http"</span>
 <span class="w">    </span><span class="na">port</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="m">80</span>
 <span class="w">    </span><span class="na">redirect_to_https</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">bind_port</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">proxy_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https&quot;</span>
+<span class="w">    </span><span class="na">proxy_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https"</span>
 <span class="w">    </span><span class="na">port</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="m">443</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nb">syslog</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.1&quot;</span>
+<span class="w">    </span><span class="na">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.1"</span>
 <span class="w">    </span><span class="na">port</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">514</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>

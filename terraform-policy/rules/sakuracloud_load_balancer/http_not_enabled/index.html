@@ -1197,62 +1197,62 @@
 <p>HTTPSを使用して通信内容を暗号化し、保護することを推奨します</p>
 <h2 id="_4">例</h2>
 <h3 id="bad-case">Bad case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_load_balancer&quot;</span><span class="w"> </span><span class="nv">&quot;bad_lb&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bad_lb&quot;</span>
-<span class="w">  </span><span class="na">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;standard&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_load_balancer"</span><span class="w"> </span><span class="nv">"bad_lb"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"bad_lb"</span>
+<span class="w">  </span><span class="na">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"standard"</span>
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">switch_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_switch.switch.id</span>
 <span class="w">    </span><span class="na">vrid</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
-<span class="w">    </span><span class="na">ip_addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;192.0.2.101&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">ip_addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"192.0.2.101"</span><span class="p">]</span>
 <span class="w">    </span><span class="na">netmask</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="m">24</span>
-<span class="w">    </span><span class="na">gateway</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.1&quot;</span>
+<span class="w">    </span><span class="na">gateway</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.1"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="nb">vip</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">vip</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.201&quot;</span>
+<span class="w">    </span><span class="na">vip</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.201"</span>
 <span class="w">    </span><span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">80</span>
 
 <span class="w">    </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.51&quot;</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
-<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/health&quot;</span>
+<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.51"</span>
+<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"http"</span>
+<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"/health"</span>
 <span class="w">      </span><span class="na">status</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">200</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.52&quot;</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
-<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/health&quot;</span>
+<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.52"</span>
+<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"http"</span>
+<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"/health"</span>
 <span class="w">      </span><span class="na">status</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">200</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="good-case">Good case</h3>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_load_balancer&quot;</span><span class="w"> </span><span class="nv">&quot;good_lb&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;good_lb&quot;</span>
-<span class="w">  </span><span class="na">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;standard&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_load_balancer"</span><span class="w"> </span><span class="nv">"good_lb"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"good_lb"</span>
+<span class="w">  </span><span class="na">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"standard"</span>
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">switch_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_switch.switch.id</span>
 <span class="w">    </span><span class="na">vrid</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
-<span class="w">    </span><span class="na">ip_addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;192.0.2.101&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">ip_addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"192.0.2.101"</span><span class="p">]</span>
 <span class="w">    </span><span class="na">netmask</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="m">24</span>
-<span class="w">    </span><span class="na">gateway</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.1&quot;</span>
+<span class="w">    </span><span class="na">gateway</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.1"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="nb">vip</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">vip</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.201&quot;</span>
+<span class="w">    </span><span class="na">vip</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.201"</span>
 <span class="w">    </span><span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">443</span>
 
 <span class="w">    </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.51&quot;</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https&quot;</span>
-<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/health&quot;</span>
+<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.51"</span>
+<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"https"</span>
+<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"/health"</span>
 <span class="w">      </span><span class="na">status</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">200</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.0.2.52&quot;</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https&quot;</span>
-<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/health&quot;</span>
+<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.0.2.52"</span>
+<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"https"</span>
+<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"/health"</span>
 <span class="w">      </span><span class="na">status</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">200</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>

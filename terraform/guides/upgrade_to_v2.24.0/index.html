@@ -2429,7 +2429,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2655,7 +2655,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5532,15 +5532,15 @@
 </ul>
 <h3 id="diff1">sakuracloud_enhanced_db: タイプ/リージョン/接続元ネットワーク指定</h3>
 <p>指定可能な項目が追加されました。</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_enhanced_db&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
-<span class="w">  </span><span class="na">database_name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
-<span class="w">  </span><span class="na">password</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;password&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_enhanced_db"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
+<span class="w">  </span><span class="na">database_name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
+<span class="w">  </span><span class="na">password</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"password"</span>
 
 <span class="c1">  # 以下3つが追加</span>
-<span class="w">  </span><span class="na">database_type</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tidb&quot;</span><span class="c1"> # or mariadb</span>
-<span class="w">  </span><span class="na">region</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;is1&quot;</span>
-<span class="w">  </span><span class="na">allowed_networks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;192.0.2.1/32&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">database_type</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"tidb"</span><span class="c1"> # or mariadb</span>
+<span class="w">  </span><span class="na">region</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">"is1"</span>
+<span class="w">  </span><span class="na">allowed_networks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"192.0.2.1/32"</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 

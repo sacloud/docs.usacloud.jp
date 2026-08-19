@@ -3580,10 +3580,10 @@ usacloud completion bash &gt; /usr/local/etc/bash_completion.d/usacloud
 </code></pre></div>
 <h2 id="zsh">zsh</h2>
 <p>If shell completion is not already enabled in your environment you will need  to enable it.  You can execute the following once:</p>
-<div class="highlight"><pre><span></span><code>echo &quot;autoload -U compinit; compinit&quot; &gt;&gt; ~/.zshrc
+<div class="highlight"><pre><span></span><code>echo "autoload -U compinit; compinit" &gt;&gt; ~/.zshrc
 </code></pre></div>
 <p>To load completions for each session, execute once:</p>
-<div class="highlight"><pre><span></span><code>usacloud completion zsh &gt; &quot;${fpath[1]}/_usacloud&quot;
+<div class="highlight"><pre><span></span><code>usacloud completion zsh &gt; "${fpath[1]}/_usacloud"
 </code></pre></div>
 <p>You will need to start a new shell for this setup to take effect.</p>
 <h2 id="fish">fish</h2>

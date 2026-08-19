@@ -2350,7 +2350,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2576,7 +2576,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5659,32 +5659,32 @@
 
 <h1 id="gslb-sakuracloud_gslb">GSLB: sakuracloud_gslb</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_gslb&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_gslb"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 
 <span class="w">  </span><span class="nb">health_check</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
+<span class="w">    </span><span class="na">protocol</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"http"</span>
 <span class="w">    </span><span class="na">delay_loop</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
-<span class="w">    </span><span class="na">host_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.com&quot;</span>
-<span class="w">    </span><span class="na">path</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span>
-<span class="w">    </span><span class="na">status</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;200&quot;</span>
+<span class="w">    </span><span class="na">host_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"example.com"</span>
+<span class="w">    </span><span class="na">path</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">"/"</span>
+<span class="w">    </span><span class="na">status</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">"200"</span>
 <span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="na">sorry_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.2.0.1&quot;</span>
+<span class="w">  </span><span class="na">sorry_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.2.0.1"</span>
 
 <span class="w">  </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.2.0.11&quot;</span>
+<span class="w">    </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.2.0.11"</span>
 <span class="w">    </span><span class="na">weight</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 <span class="w">    </span><span class="na">enabled</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.2.0.12&quot;</span>
+<span class="w">    </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.2.0.12"</span>
 <span class="w">    </span><span class="na">weight</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 <span class="w">    </span><span class="na">enabled</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>

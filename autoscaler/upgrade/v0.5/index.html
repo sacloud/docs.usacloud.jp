@@ -2251,12 +2251,12 @@ v0.5では<code>autoscaler</code>直下に各サブコマンドが配置され�
 <span class="go">Available Commands:</span>
 <span class="go">  completion  Generate completion script</span>
 <span class="go">  example     show configuration example</span>
-<span class="go">  handlers    A set of sub commands to manage autoscaler&#39;s external handlers</span>
+<span class="go">  handlers    A set of sub commands to manage autoscaler's external handlers</span>
 <span class="go">  help        Help about any command</span>
-<span class="go">  inputs      A set of sub commands to manage autoscaler&#39;s inputs</span>
+<span class="go">  inputs      A set of sub commands to manage autoscaler's inputs</span>
 <span class="go">  resources   list target resources</span>
-<span class="go">  start       start autoscaler&#39;s core server</span>
-<span class="go">  validate    validate autoscaler&#39;s core configuration</span>
+<span class="go">  start       start autoscaler's core server</span>
+<span class="go">  validate    validate autoscaler's core configuration</span>
 <span class="go">  version     show version</span>
 </code></pre></div>
 <p>従来の<code>core</code>サブコマンドは引き続き利用可能ですがv1.0リリース時に削除される予定です。</p>
@@ -2265,25 +2265,25 @@ v0.5では<code>autoscaler</code>直下に各サブコマンドが配置され�
 <h4 id="v05_1">v0.5以前</h4>
 <div class="highlight"><pre><span></span><code><span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ELB</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;elb&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"elb"</span><span class="w"> </span>
 <span class="w">    </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"example"</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServerGroup</span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;server-group&quot;</span><span class="w"> </span>
-<span class="w">      </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;is1a&quot;</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"server-group"</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="s">"is1a"</span>
 </code></pre></div>
 <h4 id="v05_2">v0.5〜</h4>
 <div class="highlight"><pre><span></span><code><span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServerGroup</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;server-group&quot;</span><span class="w"> </span>
-<span class="w">    </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;is1a&quot;</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"server-group"</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="s">"is1a"</span>
 
 <span class="w">    </span><span class="c1"># 親リソースの定義</span>
 <span class="w">    </span><span class="nt">parent</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ELB</span>
 <span class="w">      </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"example"</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <p>従来は親リソース側の<code>resources</code>フィールドで子リソースを定義していましたが、
 v0.5以降は子リソース側の<code>parent</code>フィールドで親リソースを定義するようになりました。</p>
@@ -2291,7 +2291,7 @@ v0.5以降は子リソース側の<code>parent</code>フィールドで親リソ
 <p>一部のセレクタにおいて省略記法に対応しました。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">parent</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ELB</span>
-<span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;example&quot;</span><span class="w"> </span><span class="c1">#省略記法</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">"example"</span><span class="w"> </span><span class="c1">#省略記法</span>
 </code></pre></div>
 <p><code>selector</code>に文字列を指定すると<code>names</code>に単一要素のリストを指定するのと同等の意味合いになります。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">parent</span><span class="p">:</span>
@@ -2299,7 +2299,7 @@ v0.5以降は子リソース側の<code>parent</code>フィールドで親リソ
 
 <span class="w">  </span><span class="c1"># 先ほどの例と同等の指定を省略せずに書いた場合</span>
 <span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;example&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">names</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"example"</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <p>この省略記法はコンフィギュレーションリファレンスで<code>name_or_resource_selector</code>型となっている項目で利用可能です。</p>
 

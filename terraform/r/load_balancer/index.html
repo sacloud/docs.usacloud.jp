@@ -2350,7 +2350,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2576,7 +2576,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5715,45 +5715,45 @@
 
 <h1 id="sakuracloud_load_balancer">ロードバランサ: sakuracloud_load_balancer</h1>
 <h2 id="example-usage">Example Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_load_balancer&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
-<span class="w">  </span><span class="na">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;standard&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_load_balancer"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
+<span class="w">  </span><span class="na">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"standard"</span>
 
 <span class="w">  </span><span class="nb">network_interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">switch_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nv">sakuracloud_switch.foobar.id</span>
 <span class="w">    </span><span class="na">vrid</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
-<span class="w">    </span><span class="na">ip_addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;192.168.11.101&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">ip_addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"192.168.11.101"</span><span class="p">]</span>
 <span class="w">    </span><span class="na">netmask</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="m">24</span>
-<span class="w">    </span><span class="na">gateway</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.11.1&quot;</span>
+<span class="w">    </span><span class="na">gateway</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.11.1"</span>
 <span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
-<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;, &quot;tag2&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"description"</span>
+<span class="w">  </span><span class="na">tags</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tag1", "tag2"</span><span class="p">]</span>
 
 <span class="w">  </span><span class="nb">vip</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">vip</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.11.201&quot;</span>
+<span class="w">    </span><span class="na">vip</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.11.201"</span>
 <span class="w">    </span><span class="na">port</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="m">80</span>
 <span class="w">    </span><span class="na">delay_loop</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
-<span class="w">    </span><span class="na">sorry_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.11.21&quot;</span>
+<span class="w">    </span><span class="na">sorry_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.11.21"</span>
 
 <span class="w">    </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.11.51&quot;</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
-<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/health&quot;</span>
+<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.11.51"</span>
+<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"http"</span>
+<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"/health"</span>
 <span class="w">      </span><span class="na">status</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">200</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nb">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;192.168.11.52&quot;</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
-<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/health&quot;</span>
+<span class="w">      </span><span class="na">ip_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.11.52"</span>
+<span class="w">      </span><span class="na">protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"http"</span>
+<span class="w">      </span><span class="na">path</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">"/health"</span>
 <span class="w">      </span><span class="na">status</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">200</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_switch&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_switch"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"foobar"</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="argument-reference">Argument Reference</h2>

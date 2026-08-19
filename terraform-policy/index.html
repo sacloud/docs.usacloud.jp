@@ -1229,10 +1229,10 @@
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>terraform
 
 <span class="c1"># Download the policy</span>
-$<span class="w"> </span>conftest<span class="w"> </span>pull<span class="w"> </span><span class="s1">&#39;git::https://github.com/sacloud/terraform-provider-sakuracloud-policy.git//policy?ref=v1.1.0&#39;</span>
+$<span class="w"> </span>conftest<span class="w"> </span>pull<span class="w"> </span><span class="s1">'git::https://github.com/sacloud/terraform-provider-sakuracloud-policy.git//policy?ref=v1.1.0'</span>
 
 <span class="c1"># Run the tests</span>
-$<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</span><span class="w"> </span>.<span class="w"> </span>--ignore<span class="o">=</span><span class="s2">&quot;.git/|.github/|.terraform/&quot;</span>
+$<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</span><span class="w"> </span>.<span class="w"> </span>--ignore<span class="o">=</span><span class="s2">".git/|.github/|.terraform/"</span>
 </code></pre></div>
 <h3 id="github-actions">GitHub Actionsでの利用</h3>
 <p><a href="https://docs.github.com/ja/actions">GitHub Actions</a> を用いて、CI（継続的インテグレーション）を行う方法です。</p>
@@ -1254,17 +1254,17 @@ $<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Conftest</span>
 <span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">          </span><span class="no">mkdir -p $HOME/.local/bin</span>
-<span class="w">          </span><span class="no">echo &quot;$HOME/.local/bin&quot; &gt;&gt; $GITHUB_PATH</span>
-<span class="w">          </span><span class="no">wget -O - &#39;https://github.com/open-policy-agent/conftest/releases/download/v${{ env.CONFTEST_VERSION }}/conftest_${{ env.CONFTEST_VERSION }}_Linux_x86_64.tar.gz&#39; | tar zxvf - -C $HOME/.local/bin</span>
+<span class="w">          </span><span class="no">echo "$HOME/.local/bin" &gt;&gt; $GITHUB_PATH</span>
+<span class="w">          </span><span class="no">wget -O - 'https://github.com/open-policy-agent/conftest/releases/download/v${{ env.CONFTEST_VERSION }}/conftest_${{ env.CONFTEST_VERSION }}_Linux_x86_64.tar.gz' | tar zxvf - -C $HOME/.local/bin</span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Conftest version</span>
 <span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest -v</span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">download policy</span>
-<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest pull &#39;git::https://github.com/sacloud/terraform-provider-sakuracloud-policy.git//policy?ref=v1.1.0&#39;</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest pull 'git::https://github.com/sacloud/terraform-provider-sakuracloud-policy.git//policy?ref=v1.1.0'</span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run test</span>
-<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest test . --ignore=&quot;.git/|.github/|.terraform/&quot; --data=&quot;exception.json&quot;</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conftest test . --ignore=".git/|.github/|.terraform/" --data="exception.json"</span>
 </code></pre></div>
 <h2 id="exception">Exception</h2>
 <p>ConftestのException機能を利用することで、特定のルールを例外扱いにできます。</p>
@@ -1275,8 +1275,8 @@ $<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</
 </code></pre></div>
 <p>そして、<code>conftest test</code> コマンドで <a href="https://www.conftest.dev/options/#-data">--data</a> オプションを利用し、上記のファイルを読み込みます。</p>
 <p>これにより、列挙されたルールが例外となり、<code>failures</code> ではなく <code>exception</code> としてカウントされます。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</span><span class="w"> </span>disk.tf<span class="w"> </span>--ignore<span class="o">=</span><span class="s2">&quot;.git/|.github/|.terraform/&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;exception.yml&quot;</span>
-EXCP<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </span>-<span class="w"> </span>main<span class="w"> </span>-<span class="w"> </span>data.main.exception<span class="o">[</span>_<span class="o">][</span>_<span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;sakuracloud_disk_not_encrypted&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</span><span class="w"> </span>disk.tf<span class="w"> </span>--ignore<span class="o">=</span><span class="s2">".git/|.github/|.terraform/"</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">"exception.yml"</span>
+EXCP<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </span>-<span class="w"> </span>main<span class="w"> </span>-<span class="w"> </span>data.main.exception<span class="o">[</span>_<span class="o">][</span>_<span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"sakuracloud_disk_not_encrypted"</span>
 
 <span class="m">8</span><span class="w"> </span>tests,<span class="w"> </span><span class="m">7</span><span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>warnings,<span class="w"> </span><span class="m">0</span><span class="w"> </span>failures,<span class="w"> </span><span class="m">1</span><span class="w"> </span>exception
 </code></pre></div>
@@ -1293,15 +1293,15 @@ EXCP<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </s
 <span class="k">import</span><span class="w"> </span><span class="n">rego</span><span class="p">.</span><span class="n">v1</span>
 
 <span class="n">deny_sakuracloud_disk_too_small</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">resource</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s2">&quot;sakuracloud_disk&quot;</span>
-<span class="w">    </span><span class="n">rule</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s2">&quot;sakuracloud_disk_too_small&quot;</span>
+<span class="w">    </span><span class="n">resource</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s2">"sakuracloud_disk"</span>
+<span class="w">    </span><span class="n">rule</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s2">"sakuracloud_disk_too_small"</span>
 
 <span class="w">    </span><span class="k">some</span><span class="w"> </span><span class="n">name</span>
 <span class="w">    </span><span class="n">disk</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">resource</span><span class="p">[</span><span class="n">resource</span><span class="p">][</span><span class="n">name</span><span class="p">]</span>
 <span class="w">    </span><span class="n">disk</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">40</span>
 
 <span class="w">    </span><span class="n">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">sprintf</span><span class="p">(</span>
-<span class="w">        </span><span class="s2">&quot;%s\nDisk is too small %s.%s\n&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"%s\nDisk is too small %s.%s\n"</span><span class="p">,</span>
 <span class="w">        </span><span class="p">[</span><span class="n">rule</span><span class="p">,</span><span class="w"> </span><span class="n">resource</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">],</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="p">}</span>
@@ -1309,7 +1309,7 @@ EXCP<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </s
 <h3 id="2-conftest">2. conftestコマンドでカスタムポリシーを実行</h3>
 <p>以下のように <code>conftest test</code> コマンドの <a href="https://www.conftest.dev/options/#-policy">--policy</a> オプションを利用して、デフォルトのポリシーに加えてカスタムポリシーも適用します。</p>
 <p>このコマンドでは、<code>policy/</code> ディレクトリに配置されたデフォルトポリシーと、<code>custom-policy/</code> ディレクトリに配置されたカスタムポリシーの両方が適用されます。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</span><span class="w"> </span>disk.tf<span class="w"> </span>--ignore<span class="o">=</span><span class="s2">&quot;.git/|.github/|.terraform/&quot;</span><span class="w"> </span>--policy<span class="o">=</span><span class="s2">&quot;policy/&quot;</span><span class="w"> </span>--policy<span class="o">=</span><span class="s2">&quot;custom-policy/&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conftest<span class="w"> </span><span class="nb">test</span><span class="w"> </span>disk.tf<span class="w"> </span>--ignore<span class="o">=</span><span class="s2">".git/|.github/|.terraform/"</span><span class="w"> </span>--policy<span class="o">=</span><span class="s2">"policy/"</span><span class="w"> </span>--policy<span class="o">=</span><span class="s2">"custom-policy/"</span>
 FAIL<span class="w"> </span>-<span class="w"> </span>disk.tf<span class="w"> </span>-<span class="w"> </span>main<span class="w"> </span>-<span class="w"> </span>sakuracloud_disk_too_small
 Disk<span class="w"> </span>is<span class="w"> </span>too<span class="w"> </span>small<span class="w"> </span>sakuracloud_disk.fail_disk_1
 

@@ -2451,7 +2451,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2677,7 +2677,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5578,13 +5578,13 @@
 </ul>
 <h3 id="diff1">オートスケール</h3>
 <p>オートスケールが利用可能になりました。</p>
-<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;sakuracloud_auto_scale&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">"sakuracloud_auto_scale"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">  </span><span class="na">zones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">local.zone</span><span class="p">]</span>
 
 <span class="w">  </span><span class="na">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">jsonencode</span><span class="p">({</span>
 <span class="w">    </span><span class="err">resources</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">      </span><span class="err">type</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="err">type</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Server"</span><span class="p">,</span>
 <span class="w">      </span><span class="err">selector</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="err">names</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nv">sakuracloud_server.foobar.name</span><span class="p">],</span>
 <span class="w">        </span><span class="err">zones</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nv">local.zone</span><span class="p">],</span>
@@ -5630,10 +5630,10 @@
 <li><code>windows2019-sql2019-standard-all</code></li>
 </ul>
 <p>今後Windows系OSを利用したい場合、<code>os_type</code>の代わりにnamesやtagsなどを指定してください。</p>
-<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sakuracloud_archive&quot;</span><span class="w"> </span><span class="nv">&quot;foobar&quot;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="nc">"sakuracloud_archive"</span><span class="w"> </span><span class="nv">"foobar"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">filter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="na">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Windows Server 2022 for RDS&quot;</span><span class="p">]</span>
-<span class="c1">    #tags  = [&quot;with-office&quot;]</span>
+<span class="w">    </span><span class="na">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"Windows Server 2022 for RDS"</span><span class="p">]</span>
+<span class="c1">    #tags  = ["with-office"]</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>

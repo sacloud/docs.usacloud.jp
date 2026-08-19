@@ -2364,7 +2364,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -2590,7 +2590,7 @@
   <span class="md-ellipsis">
     
   
-    スイッチ+ルータ
+    ルータ+スイッチ
   
 
     
@@ -5432,14 +5432,14 @@
 <div class="highlight"><pre><span></span><code><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nb">required_providers</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">aws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hashicorp/aws&quot;</span>
-<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~&gt; 3.0&quot;</span>
+<span class="w">      </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"hashicorp/aws"</span>
+<span class="w">      </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"~&gt; 3.0"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;aws&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">alias</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sacloud&quot;</span>
+<span class="kr">provider</span><span class="w"> </span><span class="nv">"aws"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">alias</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">"sacloud"</span>
 <span class="w">  </span><span class="na">region</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nv">var.s3_region</span>
 <span class="w">  </span><span class="na">access_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.s3_access_key</span>
 <span class="w">  </span><span class="na">secret_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.s3_secret_key</span>
@@ -5455,33 +5455,33 @@
 
 <span class="c1">#================================================</span>
 
-<span class="kr">variable</span><span class="w"> </span><span class="nv">&quot;s3_access_key&quot;</span><span class="w"> </span><span class="p">{}</span>
-<span class="kr">variable</span><span class="w"> </span><span class="nv">&quot;s3_secret_key&quot;</span><span class="w"> </span><span class="p">{}</span>
+<span class="kr">variable</span><span class="w"> </span><span class="nv">"s3_access_key"</span><span class="w"> </span><span class="p">{}</span>
+<span class="kr">variable</span><span class="w"> </span><span class="nv">"s3_secret_key"</span><span class="w"> </span><span class="p">{}</span>
 
-<span class="kr">variable</span><span class="w"> </span><span class="nv">&quot;s3_region&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;jp-north-1&quot;</span>
+<span class="kr">variable</span><span class="w"> </span><span class="nv">"s3_region"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"jp-north-1"</span>
 <span class="p">}</span>
 
-<span class="kr">variable</span><span class="w"> </span><span class="nv">&quot;s3_endpoint&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="na">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://s3.isk01.sakurastorage.jp&quot;</span>
+<span class="kr">variable</span><span class="w"> </span><span class="nv">"s3_endpoint"</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://s3.isk01.sakurastorage.jp"</span>
 <span class="p">}</span>
 
 <span class="c1">#================================================</span>
 
-<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;aws_s3_bucket&quot;</span><span class="w"> </span><span class="nv">&quot;example&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">"aws_s3_bucket"</span><span class="w"> </span><span class="nv">"example"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">aws.sacloud</span>
 
-<span class="w">  </span><span class="na">bucket</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-bucket-name&quot;</span><span class="c1"> # set your bucket name</span>
+<span class="w">  </span><span class="na">bucket</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-bucket-name"</span><span class="c1"> # set your bucket name</span>
 <span class="p">}</span>
 
-<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_s3_bucket_object&quot;</span><span class="w"> </span><span class="nv">&quot;object&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">"aws_s3_bucket_object"</span><span class="w"> </span><span class="nv">"object"</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">aws.sacloud</span>
 
 <span class="w">  </span><span class="na">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.aws_s3_bucket.example.id</span>
-<span class="w">  </span><span class="na">key</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.txt&quot;</span>
-<span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;example.txt&quot;</span>
-<span class="w">  </span><span class="na">etag</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">filemd5</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="na">acl</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public-read&quot;</span>
+<span class="w">  </span><span class="na">key</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"example.txt"</span>
+<span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"example.txt"</span>
+<span class="w">  </span><span class="na">etag</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">filemd5</span><span class="p">(</span><span class="s2">"example.txt"</span><span class="p">)</span>
+<span class="w">  </span><span class="na">acl</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">"public-read"</span>
 <span class="p">}</span>
 </code></pre></div>
 
