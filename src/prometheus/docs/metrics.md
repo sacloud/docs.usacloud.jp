@@ -10,7 +10,7 @@ The exporter returns the following metrics:
 | [Coupon](#coupon)               | sakuracloud_coupon_*         |
 | [Database](#database)           | sakuracloud_database_*       |
 | [ESME](#esme)                   | sakuracloud_esme_*           |
-| [Switch+Router](#switchrouter)  | sakuracloud_internet_*       |
+| [Router+Switch](#routerswitch)  | sakuracloud_internet_*       |
 | [LoadBalancer](#loadbalancer)   | sakuracloud_loadbalancer_*   |
 | [LocalRouter](#localrouter)     | sakuracloud_local_router_*   |
 | [MobileGateway](#mobilegateway) | sakuracloud_mobile_gateway_* |
@@ -70,7 +70,7 @@ The exporter returns the following metrics:
 | sakuracloud_esme_message_count       | A count of messages handled by ESME                             | `id`, `name`, `status`               |
 
 
-### Switch+Router
+### Router+Switch
 
 | Metric                       | Description                                                        | Labels                                                                |
 | ------                       | -----------                                                        | ------                                                                |

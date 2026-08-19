@@ -80,14 +80,14 @@ nav:
     - ネットワーク:
       - データソース:
         - ブリッジ: d/bridge.md
-        - スイッチ+ルータ: d/internet.md
+        - ルータ+スイッチ: d/internet.md
         - ローカルルータ: d/local_router.md
         - パケットフィルタ: d/packet_filter.md
         - サブネット: d/subnet.md
         - スイッチ: d/switch.md
       - リソース:
         - ブリッジ: r/bridge.md
-        - スイッチ+ルータ: r/internet.md
+        - ルータ+スイッチ: r/internet.md
         - IPv4逆引き: r/ipv4_ptr.md
         - ローカルルータ: r/local_router.md
         - パケットフィルタ: r/packet_filter.md

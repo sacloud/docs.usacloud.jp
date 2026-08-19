@@ -1,6 +1,6 @@
-# スイッチ+ルータ: sakuracloud_internet
+# ルータ+スイッチ: sakuracloud_internet
 
-スイッチ+ルータの情報を参照するためのデータソース
+ルータ+スイッチの情報を参照するためのデータソース
 
 ## Example Usage
 
@@ -39,16 +39,16 @@ data "sakuracloud_internet" "foobar" {
 * `enable_ipv6` - IPv6有効フラグ
 * `gateway` - ゲートウェイIPアドレス
 * `icon_id` - アイコンID
-* `ip_addresses` - スイッチ+ルータに割り当てられた、ユーザーが利用可能なIPアドレスのリスト
+* `ip_addresses` - ルータ+スイッチに割り当てられた、ユーザーが利用可能なIPアドレスのリスト
 * `ipv6_network_address` - IPv6ネットワークアドレス
 * `ipv6_prefix` - IPv6プレフィックス
 * `ipv6_prefix_len` - IPv6プレフィックス長
-* `max_ip_address` - スイッチ+ルータに割り当てられた、ユーザーが利用可能なIPアドレスの最大値
-* `min_ip_address` - スイッチ+ルータに割り当てられた、ユーザーが利用可能なIPアドレスの最小値
+* `max_ip_address` - ルータ+スイッチに割り当てられた、ユーザーが利用可能なIPアドレスの最大値
+* `min_ip_address` - ルータ+スイッチに割り当てられた、ユーザーが利用可能なIPアドレスの最小値
 * `name` - 名前
 * `netmask` - ネットワークマスク長
 * `network_address` - ネットワークアドレス
-* `server_ids` - スイッチ+ルータに接続しているサーバのIDのリスト
+* `server_ids` - ルータ+スイッチに接続しているサーバのIDのリスト
 * `switch_id` - スイッチID
 * `tags` - タグ
 

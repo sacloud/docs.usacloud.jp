@@ -15,7 +15,7 @@ resource "sakuracloud_subnet" "foobar" {
 
 ## Argument Reference
 
-* `internet_id` - (Required) サブネットを割り当てるスイッチ+ルータのID / この値を変更するとリソースの再作成が行われる
+* `internet_id` - (Required) サブネットを割り当てるルータ+スイッチのID / この値を変更するとリソースの再作成が行われる
 * `next_hop` - (Required) ネクストホップのIPアドレス
 * `netmask` - (Optional) サブネットのネットワークマスク長 / `26`-`28`の範囲で指定 / この値を変更するとリソースの再作成が行われる / デフォルト:`28`
 

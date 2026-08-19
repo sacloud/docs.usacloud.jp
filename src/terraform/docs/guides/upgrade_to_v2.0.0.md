@@ -35,7 +35,7 @@ terraform-provider-sakuracloud v1系をご利用中の方向けのアップグ�
         - [DNS: `sakuracloud_dns`](#resourceDNS)
         - [GSLB: `sakuracloud_gslb`](#resourceGSLB)
         - [アイコン: `sakuracloud_icon`](#resourceIcon)
-        - [スイッチ+ルータ: `sakuracloud_internet`](#resourceInternet)
+        - [ルータ+スイッチ: `sakuracloud_internet`](#resourceInternet)
         - [IPv4逆引きレコード: `sakuracloud_ipv4_ptr`](#resourceIPv4PTR)
         - [ロードバランサ: `sakuracloud_loadbalancer`](#resourceLoadBalancer)
         - [モバイルゲートウェイ : `sakuracloud_mobile_gateway`](#resourceMobileGateway)
@@ -271,7 +271,7 @@ v2では代わりに各リソースで[timeoutsブロック](https://www.terrafo
 
 ---
 
-### [スイッチ+ルータ: `sakuracloud_internet`](https://docs.usacloud.jp/terraform/d/internet) {: #dataSourceInternet}
+### [ルータ+スイッチ: `sakuracloud_internet`](https://docs.usacloud.jp/terraform/d/internet) {: #dataSourceInternet}
 
 - `ipaddresses`(名称変更) => `ip_addresses`
 - `ipv6_nw_address`(名称変更) => `ipv6_network_address`
@@ -500,7 +500,7 @@ v2時点では未実装(近日実装予定)
 
 ---
 
-### [スイッチ+ルータ: `sakuracloud_internet`](https://docs.usacloud.jp/terraform/r/internet) {: #resourceInternet }
+### [ルータ+スイッチ: `sakuracloud_internet`](https://docs.usacloud.jp/terraform/r/internet) {: #resourceInternet }
 
 - `graceful_shutdown_timeout`(廃止)
 - `ipaddresses`(名称変更) => `ip_addresses`
