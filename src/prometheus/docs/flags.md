@@ -11,7 +11,7 @@
 | `--no-collector.coupon`                        |          | `false`    | Disable the Coupon collector                         |
 | `--no-collector.database`                      |          | `false`    | Disable the Database collector                       |
 | `--no-collector.esme`                          |          | `false`    | Disable the ESME collector                           |
-| `--no-collector.internet`                      |          | `false`    | Disable the Internet(Switch+Router) collector        |
+| `--no-collector.internet`                      |          | `false`    | Disable the Internet(Router+Switch) collector        |
 | `--no-collector.load-balancer`                 |          | `false`    | Disable the LoadBalancer collector                   |
 | `--no-collector.local-router`                  |          | `false`    | Disable the LocalRouter collector                    |
 | `--no-collector.mobile-gateway`                |          | `false`    | Disable the MobileGateway collector                  |

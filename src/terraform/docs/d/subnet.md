@@ -16,8 +16,8 @@ data sakuracloud_subnet "foobar" {
 
 ## Argument Reference
 
-* `index` - (Required) スイッチ+ルータに割り当てられたサブネットのインデックス
-* `internet_id` - (Required) サブネットが割り当てられたスイッチ+ルータのID
+* `index` - (Required) ルータ+スイッチに割り当てられたサブネットのインデックス
+* `internet_id` - (Required) サブネットが割り当てられたルータ+スイッチのID
 * `zone` - (Optional) 対象ゾーンの名前 (例: `is1a`, `tk1a`) 
 
 
