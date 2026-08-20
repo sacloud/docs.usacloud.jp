@@ -76,6 +76,12 @@ resource "sakuracloud_webaccel" "foobar" {
 
 ---
 
+`origin_guard_token` ブロックは以下の引数を指定可能。
+
+* `rotate` - トークンを即時更新したい場合に指定するフラグ。新規作成時には`true`を指定できない。デフォルトで`false`。
+
+---
+
 `logging` ブロックは以下の引数を設定可能。
 
 * `s3_bucket_name` - ログ保管先のバケット名 / さくらのオブジェクトストレージのバケットを指定する必要がある
@@ -109,6 +115,12 @@ resource "sakuracloud_webaccel" "foobar" {
 * `s3_secret_access_key` - バケットへの接続で利用するS3シークレットアクセスキー
 * `s3_doc_index` - ドキュメントインデクスの有効・無効を表すフラグ
 
+---
+
+`origin_guard_token` ブロックは以下の属性値をサポートする。
+
+* `token` - オリジンガードトークンの値。
+* `rotate` - トークンを即時更新するフラグ。デフォルトで`false`。
 
 ---
 
